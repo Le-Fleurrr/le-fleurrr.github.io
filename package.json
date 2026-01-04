@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://le-fleurrr.github.io/Vinyl-Baku/",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  },
+  "homepage": "https://le-fleurrr.github.io/vinyl-baku",
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+},
   "proxy": "https://locahlost:5000",
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
