@@ -4,7 +4,6 @@ import { GenreSection } from '../GenreSection'
 import { FeaturedAlbums } from '../FeaturedAlbums'
 import { Footer } from '../Footer'
 import { Newsletter } from '../Newsletter'
-import { Account } from '../Account'
 import '../../index.css'
 
 const Index = () => {
@@ -15,9 +14,6 @@ const Index = () => {
         <FeaturedAlbums />
         <GenreSection />
         <Newsletter />
-        <section id="account">
-          <Account />
-        </section>
         <Footer />
     </div>
   )
