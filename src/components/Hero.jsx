@@ -63,7 +63,7 @@ export const Hero = () => {
             <div className="relative">
 
               <div className="absolute -left-8 top-8 w-80 h-80 bg-card rounded-lg shadow-2xl flex items-center justify-center overflow-hidden border border-border">
-                <div className="w-full h-full bg-gradient-to-br from-amber-900/50 via-orange-900/30 to-background flex items-center justify-center">
+                <div className="w-full h-full bg-gradient-to-br from-amber-900/50 via-blue-900/30 to-blue-600/30 flex items-center justify-center">
                   <div className="text-center p-8">
                     <p className="font-serif text-3xl font-bold">The Classics</p>
                     <p className="text-muted-foreground mt-2">Various Artists</p>
@@ -73,7 +73,7 @@ export const Hero = () => {
 
 
               <div className="relative z-10 animate-float">
-                <VinylRecord size="xl" spinning={true} vinylColor="purple" />
+                <VinylRecord size="xl" spinning={true} vinylColor="purple"/>
               </div>
             </div>
           </div>

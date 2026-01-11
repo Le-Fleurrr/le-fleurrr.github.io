@@ -3,6 +3,7 @@ import { VinylRecord } from "./VinylRecord.tsx";
 import { Button } from "./ui/Button.tsx";
 import { ShoppingCart, Heart } from "lucide-react";
 import { albums } from "./Albums.jsx";
+import { Link } from "react-router-dom";
 
 type VinylColor = "black" | "red" | "blue" | "purple" | "green" | "orange" | "pink" | "clear";
 
@@ -15,12 +16,29 @@ interface Album {
   year: number;
   isNew?: boolean;
   image: any;
-  vinylColor: string;
+  vinylColor: string; // Changed from VinylColor to string
   description: string;
 }
 
 export const FeaturedAlbums = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+
+  // Function to get Tailwind color classes based on color name
+  const getSleeveColorClass = (color?: string) => {
+    const colorMap: { [key: string]: string } = {
+      red: "from-red-500/20 to-transparent",
+      blue: "from-blue-500/20 to-transparent",
+      purple: "from-purple-500/20 to-transparent",
+      green: "from-green-500/20 to-transparent",
+      orange: "from-orange-500/20 to-transparent",
+      pink: "from-pink-500/20 to-transparent",
+      yellow: "from-yellow-500/20 to-transparent",
+      brown: "from-amber-700/20 to-transparent",
+      gray: "from-gray-500/20 to-transparent",
+      default: "from-primary/20 to-transparent"
+    };
+    return colorMap[color || "default"] || colorMap.default;
+  };
 
   return (
     <section id="new" className="py-24 bg-secondary/30">
@@ -35,8 +53,10 @@ export const FeaturedAlbums = () => {
               Seçilmiş Yazılar
             </h2>
           </div>
-          <Button variant="outline" className="self-start md:self-auto border-muted-foreground/30 hover:bg-secondary">
-            Bütün Kolleksiyalara Baxın
+          <Button variant="outline" className="self-start md:self-auto border-muted-foreground/30 hover:bg-secondary" asChild>
+            <Link to="/collections">
+              Bütün Kolleksiyaya Baxın
+            </Link>
           </Button>
         </div>
 
@@ -56,9 +76,9 @@ export const FeaturedAlbums = () => {
                 </span>
               )}
 
-
+              {/* Vinyl Visual with Album Art */}
               <div className="relative h-48 flex items-center justify-center mb-6">
-
+                {/* Album cover background - FIXED POSITION */}
                 {album.image && (
                   <div className="absolute inset-0 flex items-center justify-start pl-4">
                     <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl">
@@ -71,10 +91,10 @@ export const FeaturedAlbums = () => {
                   </div>
                 )}
                 
-
-                <div className="absolute w-40 h-40 bg-gradient-to-br from-primary/20 to-transparent rounded-lg transform -rotate-6" />
+                {/* Background decorative gradient */}
+                <div className={`absolute w-40 h-40 bg-gradient-to-br ${getSleeveColorClass(album.sleeveColor)} rounded-lg transform -rotate-6`} />
                 
-
+                {/* Vinyl disc - MOVES on hover */}
                 <div 
                   className={`relative transition-transform duration-500 ease-out ${
                     hoveredId === album.id ? "translate-x-16" : "translate-x-0"
@@ -107,10 +127,6 @@ export const FeaturedAlbums = () => {
                   <span className="px-2 py-1 bg-secondary rounded">{album.genre}</span>
                   <span>•</span>
                   <span>{album.year}</span>
-                </div>
-
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span>{album.description}</span>
                 </div>
 
                 <div className="flex items-center justify-between pt-4 border-t border-border">

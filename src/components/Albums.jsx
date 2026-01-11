@@ -18,6 +18,7 @@ export const albums = [
     isNew: true,
     image: hurryUpTomorrow,
     vinylColor: "clear",
+    sleeveColor: "orange",
     description: "The Weeknd çoxdan gözlənilən son albomu."
   },
   {
@@ -29,6 +30,7 @@ export const albums = [
     year: 2015,
     image: rodeo,
     vinylColor: "orange",
+    sleeveColor: "brown",
     description: "Travis Skottun hit mahnılardan ibarət debüt studiya albomu."
   },
   {
@@ -40,6 +42,7 @@ export const albums = [
     year: 2004,
     image: collegeDropout,
     vinylColor: "black",
+    sleeveColor: "yellow",
     description: "Kanye West-in debüt albomu."
   },
   {
@@ -48,10 +51,11 @@ export const albums = [
     artist: "Playboi Carti",
     price: 150,
     genre: "Hip-Hop/Rap",
-    year: 2024,
+    year: 2020,
     isNew: true,
     image: wholeLottaRed,
     vinylColor: "red",
+    sleeveColor: "red",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
   },
   {
@@ -63,6 +67,7 @@ export const albums = [
     year: 2021,
     image: callMeIfYouGetLost,
     vinylColor: "blue",
+    sleeveColor: "green",
     description: "Taylerin Qremmi mükafatı qazanan şah əsəri."
   },
   {
@@ -75,6 +80,7 @@ export const albums = [
     isNew: true,
     image: weStillDontTrustYou,
     vinylColor: "purple",
+    sleeveColor: "gray",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
 ];
