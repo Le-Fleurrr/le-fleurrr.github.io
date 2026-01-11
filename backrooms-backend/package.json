@@ -1,0 +1,24 @@
+{
+  "name": "vinyl-baku-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+},
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://le-fleurrr.github.io/Vinyl-Baku/",
+  "type": "commonjs",
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
+  }
+}
