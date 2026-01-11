@@ -4,6 +4,8 @@ import { Button } from "./ui/Button.tsx";
 import { ShoppingCart, Heart } from "lucide-react";
 import { albums } from "./Albums.jsx";
 
+type VinylColor = "black" | "red" | "blue" | "purple" | "green" | "orange" | "pink" | "clear";
+
 interface Album {
   id: number;
   title: string;
@@ -12,9 +14,9 @@ interface Album {
   genre: string;
   year: number;
   isNew?: boolean;
-  image: string;
-  vinylColor?: "black" | "red" | "blue" | "purple" | "green" | "orange" | "pink" | "clear";
-  description?: string;
+  image: any;
+  vinylColor: string; // Changed from VinylColor to string
+  description: string;
 }
 
 export const FeaturedAlbums = () => {
@@ -82,7 +84,7 @@ export const FeaturedAlbums = () => {
                   <VinylRecord 
                     size="md" 
                     spinning={hoveredId === album.id}
-                    vinylColor={album.vinylColor}
+                    vinylColor={album.vinylColor as VinylColor}
                   />
                 </div>
               </div>
@@ -111,7 +113,7 @@ export const FeaturedAlbums = () => {
                   <p className="text-2xl font-serif font-bold">{album.price} ₼</p>
                   <Button size="sm" className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90">
                     <ShoppingCart className="w-4 h-4" />
-                    Səbətə əlavə et
+                    Add to Cart
                   </Button>
                 </div>
               </div>

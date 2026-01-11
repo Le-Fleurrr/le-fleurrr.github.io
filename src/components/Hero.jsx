@@ -73,7 +73,7 @@ export const Hero = () => {
 
               {/* Vinyl record */}
               <div className="relative z-10 animate-float">
-                <VinylRecord size="xl" spinning />
+                <VinylRecord size="xl" spinning={true} vinylColor="purple" />
               </div>
             </div>
           </div>

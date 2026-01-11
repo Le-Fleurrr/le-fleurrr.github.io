@@ -1,7 +1,7 @@
 // Import all album images
-import hurryUpTomorrow from '../assets/img/hurryUpTomorrow.jpg';
+import hurryUpTomorrow from '../assets/img/hurryUpTomorrow.png';
 import rodeo from '../assets/img/rodeo.jpg';
-import collegeDropout from '../assets/img/collegeDropout.png';
+import collegeDropout from '../assets/img/theCollegeDropout.jpg';
 import wholeLottaRed from '../assets/img/WLR_FullRed.jpg';
 import callMeIfYouGetLost from '../assets/img/callMeIfYouGetLost.jpg';
 import weStillDontTrustYou from '../assets/img/weStillDontTrustYou.jpg';
@@ -17,6 +17,7 @@ export const albums = [
     year: 2025,
     isNew: true,
     image: hurryUpTomorrow,
+    vinylColor: "clear",
     description: "The highly anticipated latest album from The Weeknd."
   },
   {
@@ -27,6 +28,7 @@ export const albums = [
     genre: "Hip-Hop/Rap",
     year: 2015,
     image: rodeo,
+    vinylColor: "orange",
     description: "Travis Scott's debut studio album featuring hit tracks."
   },
   {
@@ -37,6 +39,7 @@ export const albums = [
     genre: "Hip-Hop",
     year: 2004,
     image: collegeDropout,
+    vinylColor: "black",
     description: "Kanye West's groundbreaking debut album."
   },
   {
@@ -48,6 +51,7 @@ export const albums = [
     year: 2024,
     isNew: true,
     image: wholeLottaRed,
+    vinylColor: "red",
     description: "The latest and best rage album of the '20's."
   },
   {
@@ -58,6 +62,7 @@ export const albums = [
     genre: "Hip-Hop/Rap",
     year: 2021,
     image: callMeIfYouGetLost,
+    vinylColor: "blue",
     description: "Tyler's Grammy-winning masterpiece."
   },
   {
@@ -69,6 +74,7 @@ export const albums = [
     year: 2024,
     isNew: true,
     image: weStillDontTrustYou,
+    vinylColor: "purple",
     description: "Future & Metro Boomin keep proving that they're a great duo together."
   },
 ];
