@@ -133,3 +133,17 @@
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+@keyframes vinyl-spin {
+  from {
+    transform: translateX(15%) rotate(0deg);
+  }
+  to {
+    transform: translateX(15%) rotate(360deg);
+  }
+}
+
+.vinyl-spin {
+  animation: vinyl-spin 2s linear infinite;
+}
+

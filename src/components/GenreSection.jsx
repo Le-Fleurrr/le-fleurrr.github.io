@@ -5,7 +5,7 @@ const genres = [
   { name: "Rock", count: 3450, color: "from-red-600/30 to-red-900/50" },
   { name: "Electronic", count: 890, color: "from-blue-600/30 to-blue-900/50" },
   { name: "Classical", count: 670, color: "from-purple-600/30 to-purple-900/50" },
-  { name: "Hip Hop", count: 1890, color: "from-green-600/30 to-green-900/50" },
+  { name: "Hip-Hop", count: 1890, color: "from-green-600/30 to-green-900/50" },
   { name: "Soul & R&B", count: 980, color: "from-pink-600/30 to-pink-900/50" },
 ];
 

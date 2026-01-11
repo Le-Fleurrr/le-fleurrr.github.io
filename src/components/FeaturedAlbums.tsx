@@ -2,6 +2,7 @@ import { useState } from "react";
 import { VinylRecord } from "./VinylRecord.tsx";
 import { Button } from "./ui/Button.tsx";
 import { ShoppingCart, Heart } from "lucide-react";
+import { albums } from "./Albums.jsx";
 
 interface Album {
   id: number;
@@ -11,16 +12,10 @@ interface Album {
   genre: string;
   year: number;
   isNew?: boolean;
+  image: string;
+  vinylColor?: "black" | "red" | "blue" | "purple" | "green" | "orange" | "pink" | "clear";
+  description?: string;
 }
-
-const albums: Album[] = [
-  { id: 1, title: "Hurry Up Tomorrow", artist: "The Weeknd", price: 150, genre: "R&B/Soul", year: 2025, isNew: true },
-  { id: 2, title: "Rodeo", artist: "Travis Scott", price: 130, genre: "Hip-Hop/Rap", year: 2015 },
-  { id: 3, title: "The College Dropout", artist: "Kanye West", price: 150, genre: "Pop", year: 2004 },
-  { id: 4, title: "Short 'N Sweet", artist: "Sabrina Carpenter", price: 150, genre: "Pop", year: 2024, isNew: true },
-  { id: 5, title: "Call Me If You Get Lost", artist: "Tyler, The Creator", price: 150, genre: "Hip-Hop/Rap", year: 2021 },
-  { id: 6, title: "Charm", artist: "Clairo", price: 150, genre: "Indie", year: 2024, isNew: true },
-];
 
 export const FeaturedAlbums = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -45,28 +40,51 @@ export const FeaturedAlbums = () => {
 
         {/* Albums Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {albums.map((album) => (
+          {albums.map((album: Album) => (
             <div
               key={album.id}
-              className="group relative bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300"
+              className="group relative bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
               onMouseEnter={() => setHoveredId(album.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
               {/* New Badge */}
               {album.isNew && (
-                <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+                <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
                   YENI
                 </span>
               )}
 
-              {/* Vinyl Visual */}
+              {/* Vinyl Visual with Album Art */}
               <div className="relative h-48 flex items-center justify-center mb-6">
+                {/* Album cover background - FIXED POSITION */}
+                {album.image && (
+                  <div className="absolute inset-0 flex items-center justify-start pl-4">
+                    <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl">
+                      <img 
+                        src={album.image} 
+                        alt={`${album.title} cover`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                )}
+                
+                {/* Background decorative gradient */}
                 <div className="absolute w-40 h-40 bg-gradient-to-br from-primary/20 to-transparent rounded-lg transform -rotate-6" />
-                <VinylRecord 
-                  size="md" 
-                  spinning={hoveredId === album.id}
-                  className="transform transition-transform duration-300 group-hover:translate-x-4"
-                />
+                
+                {/* Vinyl disc - MOVES on hover */}
+                <div 
+                  className={`relative transition-transform duration-500 ease-out ${
+                    hoveredId === album.id ? "translate-x-16" : "translate-x-0"
+                  }`}
+                  style={{ marginLeft: '20px' }}
+                >
+                  <VinylRecord 
+                    size="md" 
+                    spinning={hoveredId === album.id}
+                    vinylColor={album.vinylColor}
+                  />
+                </div>
               </div>
 
               {/* Info */}
@@ -93,7 +111,7 @@ export const FeaturedAlbums = () => {
                   <p className="text-2xl font-serif font-bold">{album.price} ₼</p>
                   <Button size="sm" className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90">
                     <ShoppingCart className="w-4 h-4" />
-                    Add to Cart
+                    Səbətə əlavə et
                   </Button>
                 </div>
               </div>
