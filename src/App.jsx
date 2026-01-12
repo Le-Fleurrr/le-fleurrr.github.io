@@ -4,8 +4,7 @@ import { Toaster } from "./components/ui/toaster";
 import { Toaster as Sonner } from "./components/ui/sonner";
 import { TooltipProvider } from "./components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter } from "react-router-dom";
-import Index from './components/pages/Index'
+import Index from './components/pages/Index';
 import NotFound from "./components/pages/NotFound";
 import { Account } from './components/Account';
 import { Hero } from "./components/Hero.jsx";
@@ -16,10 +15,36 @@ import { Cloudinary } from '@cloudinary/url-gen';
 
 const queryClient = new QueryClient();
 
-
 function App() {
-    const cld = new Cloudinary({ cloud: { cloudName: 'deroy68n9' } });
-    return (<QueryClientProvider client={queryClient}> <TooltipProvider> <Toaster /> <Sonner /> <HashRouter> <Routes> <Route path="/" element={<div> <Index /> <Hero /> <FeaturedAlbums /> </div>} /> <Route path="/account" element={<Account />} /> <Route path="/collections" element={<Collections />} /> <Route path="/artist/:artistName" element={<ArtistPage />} /> <Route path="/album/:albumId" element={<AlbumPage />} /> <Route path="*" element={<NotFound />} /> </Routes> </HashRouter> </TooltipProvider> </QueryClientProvider>);
+  const cld = new Cloudinary({ cloud: { cloudName: 'deroy68n9' } });
+  
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <Router basename="/">
+          <Routes>
+            <Route 
+              path="/" 
+              element={
+                <div>
+                  <Index />
+                  <Hero />
+                  <FeaturedAlbums />
+                </div>
+              } 
+            />
+            <Route path="/account" element={<Account />} />
+            <Route path="/collections" element={<Collections />} />
+            <Route path="/artist/:artistName" element={<ArtistPage />} />
+            <Route path="/album/:albumId" element={<AlbumPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Router>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
 }
 
 export default App;
