@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Collections } from './components/Collections';
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as Sonner } from "./components/ui/sonner";
@@ -23,7 +23,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <Router basename="/">
+        <Router>
           <Routes>
             <Route 
               path="/" 
