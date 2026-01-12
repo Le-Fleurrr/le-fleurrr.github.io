@@ -13,17 +13,17 @@ export const GenreSection = () => {
   return (
     <section id="genres" className="py-24">
       <div className="container mx-auto px-6">
-        {/* Header */}
+
         <div className="text-center mb-16">
           <p className="text-primary font-medium tracking-widest text-sm uppercase mb-2">
-            Explore
+            Araşdırın
           </p>
           <h2 className="text-4xl md:text-5xl font-serif font-bold">
-            Browse by Genre
+            Janra görə axtarış
           </h2>
         </div>
 
-        {/* Genre Grid */}
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {genres.map((genre) => (
             <a
@@ -31,10 +31,10 @@ export const GenreSection = () => {
               href={`#${genre.name.toLowerCase()}`}
               className="group relative overflow-hidden rounded-xl p-8 min-h-[180px] flex flex-col justify-between bg-card border border-border hover:border-primary/50 transition-all duration-300"
             >
-              {/* Background gradient */}
+
               <div className={`absolute inset-0 bg-gradient-to-br ${genre.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
               
-              {/* Content */}
+
               <div className="relative z-10">
                 <h3 className="font-serif text-2xl font-bold group-hover:text-primary transition-colors">
                   {genre.name}
@@ -42,7 +42,7 @@ export const GenreSection = () => {
                 <p className="text-muted-foreground mt-1">{genre.count.toLocaleString()} records</p>
               </div>
 
-              {/* Arrow */}
+
               <div className="relative z-10 self-end">
                 <div className="w-10 h-10 rounded-full bg-secondary group-hover:bg-primary flex items-center justify-center transition-all duration-300 transform group-hover:translate-x-1">
                   <ArrowRight className="w-5 h-5 text-foreground group-hover:text-primary-foreground transition-colors" />
