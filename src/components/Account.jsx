@@ -71,9 +71,9 @@ export const Account = () => {
                         {/* Forgot Password Link */}
                         {!isSignUp && (
                             <div className="text-right">
-                                <a href="#" className="text-sm text-primary hover:underline">
+                                <Link to className="text-sm text-primary hover:underline">
                                     Şifrəni unutmusunuz?
-                                </a>
+                                </Link>
                             </div>
                         )}
 
@@ -131,9 +131,9 @@ export const Account = () => {
                 {/* Footer Note */}
                 <p className="text-center text-xs text-muted-foreground mt-6">
                     Davam etməklə{' '}
-                    <a href="#" className="underline hover:text-foreground">Xidmət Şərtləri</a>
+                    <Link to className="underline hover:text-foreground">Xidmət Şərtləri</Link>
                     {' '}və{' '}
-                    <a href="#" className="underline hover:text-foreground">Məxfilik Siyasəti</a>
+                    <Link to className="underline hover:text-foreground">Məxfilik Siyasəti</Link>
                     {' '}ilə razılaşırsınız
                 </p>
             </div>
