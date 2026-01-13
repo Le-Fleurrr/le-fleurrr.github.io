@@ -14,7 +14,7 @@ export const Hero = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
+
           <div className="space-y-8">
             <div className="space-y-4">
               <p className="text-primary font-medium tracking-widest text-sm uppercase animate-fade-in">

@@ -1,10 +1,32 @@
-const hurryUpTomorrow = "https://res.cloudinary.com/deroy68n9/image/upload/v1768226158/hurryUpTomorrow_tqkjsu.png"
-const rodeo = 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226174/rodeo_arm5ez.jpg';
-const collegeDropout = 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226175/theCollegeDropout_asoeiz.jpg';
-const wholeLottaRed = 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226181/WLR_llw1gy.png';
-const callMeIfYouGetLost = 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226152/callMeIfYouGetLost_acytlc.jpg';
-const weStillDontTrustYou = 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226181/weStillDontTrustYou_tqhqf6.jpg';
+const hurryUpTomorrow = {
+  cover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226158/hurryUpTomorrow_tqkjsu.png",
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768320957/hurryUpTomorrow_vinyl_uczbnq.png"]
+};
 
+const rodeo = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226174/rodeo_arm5ez.jpg',
+  vinyl: []
+};
+
+const collegeDropout = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226175/theCollegeDropout_asoeiz.jpg',
+  vinyl: []
+};
+
+const wholeLottaRed = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226181/WLR_llw1gy.png',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768319053/WLR_Vinyl_gi2cye.png"]
+};
+
+const callMeIfYouGetLost = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226152/callMeIfYouGetLost_acytlc.jpg',
+  vinyl: []
+};
+
+const weStillDontTrustYou = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226181/weStillDontTrustYou_tqhqf6.jpg',
+  vinyl: []
+};
 
 export const albums = [
   {
@@ -15,11 +37,12 @@ export const albums = [
     genre: "R&B/Soul",
     year: 2025,
     isNew: true,
-    image: hurryUpTomorrow,
+    image: hurryUpTomorrow.cover,
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768299871/hurryUpTomorrow_animated_klrcv2.gif",
+    vinylImages: hurryUpTomorrow.vinyl ? [hurryUpTomorrow.vinyl] : [],
     vinylColor: "clear",
     sleeveColor: "orange",
-    accentColor: "orange", 
+    accentColor: "orange",
     description: "The Weeknd çoxdan gözlənilən son albomu."
   },
   {
@@ -29,7 +52,8 @@ export const albums = [
     price: 130,
     genre: "Hip-Hop/Rap",
     year: 2015,
-    image: rodeo,
+    image: rodeo.cover,
+    vinylImages: rodeo.vinyl ? [rodeo.vinyl] : [],
     vinylColor: "orange",
     sleeveColor: "brown",
     accentColor: "amber",
@@ -42,7 +66,8 @@ export const albums = [
     price: 150,
     genre: "Hip-Hop",
     year: 2004,
-    image: collegeDropout,
+    image: collegeDropout.cover,
+    vinylImages: collegeDropout.vinyl ? [collegeDropout.vinyl] : [],
     vinylColor: "orange",
     sleeveColor: "yellow",
     accentColor: "yellow",
@@ -56,8 +81,9 @@ export const albums = [
     genre: "Hip-Hop/Rap",
     year: 2020,
     isNew: true,
-    image: wholeLottaRed,
+    image: wholeLottaRed.cover,
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_Animated_v6qd6j.gif",
+    vinylImages: wholeLottaRed.vinyl,
     vinylColor: "red",
     sleeveColor: "red",
     accentColor: "red",
@@ -70,7 +96,8 @@ export const albums = [
     price: 150,
     genre: "Hip-Hop/Rap",
     year: 2021,
-    image: callMeIfYouGetLost,
+    image: callMeIfYouGetLost.cover,
+    vinylImages: callMeIfYouGetLost.vinyl ? [callMeIfYouGetLost.vinyl] : [],
     vinylColor: "green",
     sleeveColor: "green",
     accentColor: "green",
@@ -84,7 +111,8 @@ export const albums = [
     genre: "Hip-Hop/Rap",
     year: 2024,
     isNew: true,
-    image: weStillDontTrustYou,
+    image: weStillDontTrustYou.cover,
+    vinylImages: weStillDontTrustYou.vinyl ? [weStillDontTrustYou.vinyl] : [],
     vinylColor: "purple",
     sleeveColor: "gray",
     accentColor: "purple",
