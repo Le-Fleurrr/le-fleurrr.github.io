@@ -18,7 +18,8 @@ const AlbumPage = () => {
   const galleryImages = album ? [
     { url: showAnimated && album.animatedCover ? album.animatedCover : album.image, type: 'cover' },
     ...(album.vinylImages || []).map(url => ({ url, type: 'vinyl' })),
-    ...(album.tracklistImage ? [{ url: album.tracklistImage, type: 'tracklist' }] : [])
+    ...(album.tracklistImage ? [{ url: album.tracklistImage, type: 'tracklist' }] : []),
+    ...(album.featuresImage ? [{ url: album.featuresImage, type: 'features' }] : [])
   ] : [];
   
   // Determine which image to show

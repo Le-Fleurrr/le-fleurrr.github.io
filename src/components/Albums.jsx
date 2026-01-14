@@ -204,7 +204,7 @@ export const albums = [
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768399223/music_syouu6.gif",
     vinylImages: musicWhite.vinyl,
     tracklistImage: musicWhite.tracklist,
-    feauturesImage: musicWhite.features,
+    featuresImage: musicWhite.features,
     vinylColor: "black",
     sleeveColor: "white",
     accentColor: "white",
