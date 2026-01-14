@@ -56,8 +56,10 @@ const musicBlack = {
 
 const mbdtf = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/mbdtf_yjpzve.jpg',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226161/mbdtf_vinyl_xmejmc.jpg"],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/mbdtf1_hogcxo.jpg"
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226161/mbdtf_vinyl_xmejmc.jpg",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/mbdtf1_hogcxo.jpg"
+  ],
+  tracklist: ""
 };
 
 const playboiCarti = {
@@ -102,6 +104,24 @@ const watchTheThrone = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226180/watchTheThrone_phcnwd.jpg',
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226181/watchTheThronw_vinyl_uyge4x.jpg"]
 };
+
+const wholeLottaRedINDIE = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226186/WLR_5yearIndie_bgohfp.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226183/WLRVinyl_Indie_flowgy.jpg"],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226190/WLR_tl_oopofj.jpg"
+};
+
+const wholeLottaRedFullRed = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226189/WLR_FullRed_p9fqeq.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768406475/wlrFullred_Vinyl_fgrbpk.jpg",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768397553/R-35837188-1765880691-3401_i2vtgn.jpg",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768397555/G80NPQlXYAAaQGG_owwvdx.jpg",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768397559/R-35837188-1764950893-9607_dikte3.jpg",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768397558/R-35837188-1765880691-7002_q8jyoo.jpg"
+  ],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768397553/R-35837188-1764950326-8808_oxtwh6.jpg"
+};
+
 
 const callMeIfYouGetLost = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226152/callMeIfYouGetLost_acytlc.jpg',
@@ -2838,5 +2858,39 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     description: "Kanye West və onun 14 mahnıdan ibarət Qremmi mükafatını qazanan şah əsəri.."
+  },
+  {
+    id: 14,
+    title: "Whole Lotta Red (5 Year Indie)",
+    artist: "Playboi Carti",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2020,
+    isNew: true,
+    isExplicit: true,
+    image: wholeLottaRedINDIE.cover,
+    vinylImages: wholeLottaRedINDIE.vinyl,
+    tracklistImage: wholeLottaRedINDIE.tracklist,
+    vinylColor: "red",
+    sleeveColor: "red",
+    accentColor: "red",
+    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
+  },
+  {
+    id: 15,
+    title: "Whole Lotta Red (5 Year Anniversary)",
+    artist: "Playboi Carti",
+    price: 350,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: true,
+    isExplicit: true,
+    image: wholeLottaRedFullRed.cover,
+    vinylImages: wholeLottaRedFullRed.vinyl,
+    tracklistImage: wholeLottaRedFullRed.tracklist,
+    vinylColor: "red",
+    sleeveColor: "red",
+    accentColor: "red",
+    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
   },
 ];
