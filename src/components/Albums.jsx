@@ -25,6 +25,7 @@ const collegeDropout = {
   vinyl: [],
 };
 
+
 const dieLit = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768400430/dieLit_uhxjid.jpg',
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226155/dieLit_vinyl_euhfwp.jpg"],
@@ -46,12 +47,17 @@ const musicWhite = {
   ]
 };
 
+const musicBlack = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226162/musicBlack_xpnnbu.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226166/musicBlack_vinyl_x17lx8.jpg"],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226165/musicBlack_tl_qclu5c.jpg",
+  features: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226162/musicBlack_feats_kq6dyk.jpg"
+};
+
 const mbdtf = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/mbdtf_yjpzve.jpg',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226161/mbdtf_vinyl_xmejmc.jpg",
-    "https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/mbdtf1_hogcxo.jpg"
-  ],
-  tracklist: ""
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226161/mbdtf_vinyl_xmejmc.jpg"],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/mbdtf1_hogcxo.jpg"
 };
 
 const playboiCarti = {
@@ -2721,7 +2727,7 @@ export const albums = [
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768330013/afterHours_animated_siuhga.gif",
     vinylImages: afterHours.vinyl,
     tracklistImage: afterHours.tracklist,
-    vinylColor: "black",
+    vinylColor: "orange",
     sleeveColor: "yellow",
     accentColor: "yellow",
     description: "The Weeknd tərəfindən inanılmaz bir trilogiyanın başlanğıcı."
@@ -2739,7 +2745,7 @@ export const albums = [
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768395800/dawnFM_animated_e7930y.gif",
     vinylImages: dawnFM.vinyl,
     tracklistImage: dawnFM.tracklist,
-    vinylColor: "black",
+    vinylColor: "blue",
     sleeveColor: "blue",
     accentColor: "blue",
     description: "The Weeknd tərəfindən inanılmaz bir trilogiyanın ortası."
@@ -2754,7 +2760,7 @@ export const albums = [
     isNew: true,
     isExplicit: true,
     image: musicWhite.cover,
-    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768399223/music_syouu6.gif",
+    // animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768399223/music_syouu6.gif",
     vinylImages: musicWhite.vinyl,
     tracklistImage: musicWhite.tracklist,
     featuresImage: musicWhite.features,
@@ -2762,5 +2768,75 @@ export const albums = [
     sleeveColor: "white",
     accentColor: "white",
     description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
+  },
+  {
+    id: 10,
+    title: "MUSIC (Black)",
+    artist: "Playboi Carti",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: true,
+    isExplicit: true,
+    image: musicBlack.cover,
+    vinylImages: musicBlack.vinyl,
+    tracklistImage: musicBlack.tracklist,
+    featuresImage: musicBlack.features,
+    vinylColor: "black",
+    sleeveColor: "black",
+    accentColor: "black",
+    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
+  },
+  {
+    id: 11,
+    title: "Die Lit",
+    artist: "Playboi Carti",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: false,
+    isExplicit: true,
+    image: dieLit.cover,
+    vinylImages: dieLit.vinyl,
+    tracklistImage: dieLit.tracklist,
+    vinylColor: "black",
+    sleeveColor: "black",
+    accentColor: "black",
+    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
+  },
+  {
+    id: 12,
+    title: "Playboi Carti",
+    artist: "Playboi Carti",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2017,
+    isNew: false,
+    isExplicit: true,
+    image: playboiCarti.cover,
+    vinylImages: playboiCarti.vinyl,
+    tracklistImage: playboiCarti.tracklist,
+    vinylColor: "black",
+    sleeveColor: "yellow",
+    accentColor: "yellow",
+    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
+  },
+  {
+    id: 13,
+    title: "My Beautiful Dark Twisted Fantasy",
+    artist: "Kanye West",
+    price: 200,
+    genre: "Hip-Hop/Rap",
+    year: 2010,
+    isNew: false,
+    isExplicit: true,
+    image: mbdtf.cover,
+    vinylImages: mbdtf.vinyl,
+    tracklistImage: mbdtf.tracklist,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768404971/mbdtf_animated_xsofzd.gif",
+    vinylColor: "red",
+    sleeveColor: "red",
+    accentColor: "red",
+    description: "Kanye West və onun 14 mahnıdan ibarət Qremmi mükafatını qazanan şah əsəri.."
   },
 ];
