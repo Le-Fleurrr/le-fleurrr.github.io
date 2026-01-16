@@ -122,6 +122,42 @@ const wholeLottaRedFullRed = {
   tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768397553/R-35837188-1764950326-8808_oxtwh6.jpg"
 };
 
+const wholeLottaRedTARGET = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768569772/wlr_5yearTarget_siesp6.png',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5YearTarget_ccgqim.jpg"],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226190/WLR_tl_oopofj.jpg"
+};
+
+const wholeLottaRedRED = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768397556/G89QeAZXYAAbT0x_jkaovf.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226186/WLR_5yearRed_r5i9vm.png"],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768397553/R-35837188-1764950326-8808_oxtwh6.jpg"
+};
+
+const wholeLottaRedWHITE = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768397557/R-35942476-1765996836-9926_bxdlro.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5yearWhite_d5bnx8.png"],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768396970/WLR_tl_hz7c8r.jpg"
+};
+
+const lateRegistration = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226159/lateReegistration_gcpf2x.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/lateRegistration_vinyl_umxyv4.jpg",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/lateRegistration1_ejpxgo.png"],
+};
+
+const utopia = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768571503/utopia_wre49k.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226175/utopia_vinyl_hjwqne.jpg",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768571128/utopia_vinyl1_fxzxl7.jpg"
+  ],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768571128/utopia_tl_cakfsq.jpg"
+};
+
+const watchTheThrone = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226180/watchTheThrone_phcnwd.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226181/watchTheThronw_vinyl_uyge4x.jpg"]
+};
 
 const callMeIfYouGetLost = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226152/callMeIfYouGetLost_acytlc.jpg',
@@ -2892,5 +2928,269 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
+  },
+  {
+    id: 16,
+    title: "Late Registration",
+    artist: "Kanye West",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2004,
+    isNew: false,
+    isExplicit: true,
+    image: lateRegistration.cover,
+    vinylImages: lateRegistration.vinyl,
+    vinylColor: "black",
+    sleeveColor: "black",
+    accentColor: "black",
+    description: "Kanye West-dən ikinci möhtəşəm albomu."
+  },
+  {
+    id: 17,
+    title: "Whole Lotta Red (5 Year Target Exclusive)",
+    artist: "Playboi Carti",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: true,
+    isExplicit: true,
+    image: wholeLottaRedTARGET.cover,
+    vinylImages: wholeLottaRedTARGET.vinyl,
+    tracklistImage: wholeLottaRedTARGET.tracklist,
+    vinylColor: "black",
+    sleeveColor: "black",
+    accentColor: "black",
+    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
+  },
+  {
+    id: 18,
+    title: "UTOPIA",
+    artist: "Travis Scott",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2023,
+    isNew: true,
+    isExplicit: true,
+    image: utopia.cover,
+    vinylImages: utopia.vinyl,
+    tracklistImage: utopia.tracklist,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768300123/utopia_animated_mx5rzp.gif",
+    vinylColor: "black",
+    sleeveColor: "black",
+    accentColor: "black",
+    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
+  },
+  {
+    id: 19,
+    title: "Whole Lotta Red (5 Year Red Text)",
+    artist: "Playboi Carti",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: true,
+    isExplicit: true,
+    image: wholeLottaRedRED.cover,
+    vinylImages: wholeLottaRedRED.vinyl,
+    tracklistImage: wholeLottaRedRED.tracklist,
+    vinylColor: "red",
+    sleeveColor: "red",
+    accentColor: "red",
+    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
+  },
+  {
+    id: 20,
+    title: "Watch The Throne",
+    artist: "JAY-Z & Kanye West",
+    price: 200,
+    genre: "Hip-Hop/Rap",
+    year: 2011,
+    isNew: false,
+    isExplicit: true,
+    image: watchTheThrone.cover,
+    vinylImages: watchTheThrone.vinyl,
+    tracklistImage: watchTheThrone.tracklist,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768330012/watchTheThroneAnimated_ycprhx.gif",
+    vinylColor: "orange",
+    sleeveColor: "yellow",
+    accentColor: "yellow",
+    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
+  },
+  {
+    id: 21,
+    title: "Whole Lotta Red (5 Year White Text)",
+    artist: "Playboi Carti",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: true,
+    isExplicit: true,
+    image: wholeLottaRedWHITE.cover,
+    vinylImages: wholeLottaRedWHITE.vinyl,
+    tracklistImage: wholeLottaRedWHITE.tracklist,
+    vinylColor: "black",
+    sleeveColor: "black",
+    accentColor: "black",
+    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
+  },
+  {
+    id: 22,
+    title: "Flower Boy",
+    artist: "Tyler, The Creator",
+    price: 100,
+    genre: "Hip-Hop/Rap",
+    year: 2017,
+    isNew: false,
+    isExplicit: true,
+    image: flowerBoy.cover,
+    vinylImages: flowerBoy.vinyl,
+    vinylColor: "orange",
+    sleeveColor: "yellow",
+    accentColor: "yellow",
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+  },
+  {
+    id: 23,
+    title: "CHROMAKOPIA",
+    artist: "Tyler, The Creator",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2024,
+    isNew: true,
+    isExplicit: true,
+    image: chromakopia.cover,
+    vinylImages: chromakopia.vinyl,
+    vinylColor: "green",
+    sleeveColor: "green",
+    accentColor: "green",
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+  },
+  {
+    id: 24,
+    title: "IGOR",
+    artist: "Tyler, The Creator",
+    price: 100,
+    genre: "Hip-Hop/Rap",
+    year: 2019,
+    isNew: false,
+    isExplicit: true,
+    image: igor.cover,
+    vinylImages: igor.vinyl,
+    vinylColor: "pink",
+    sleeveColor: "pink",
+    accentColor: "pink",
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+  },
+  {
+    id: 25,
+    title: "CHERRY BOMB",
+    artist: "Tyler, The Creator",
+    price: 100,
+    genre: "Hip-Hop/Rap",
+    year: 2015,
+    isNew: false,
+    isExplicit: true,
+    image: cherryBomb.cover,
+    vinylImages: cherryBomb.vinyl,
+    vinylColor: "blue",
+    sleeveColor: "blue",
+    accentColor: "blue",
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+  },
+  {
+    id: 26,
+    title: "CHERRY BOMB (Mask Version)",
+    artist: "Tyler, The Creator",
+    price: 100,
+    genre: "Hip-Hop/Rap",
+    year: 2015,
+    isNew: false,
+    isExplicit: true,
+    image: cherryBombMASK.cover,
+    vinylImages: cherryBombMASK.vinyl,
+    vinylColor: "blue",
+    sleeveColor: "blue",
+    accentColor: "blue",
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+  },
+  {
+    id: 27,
+    title: "ASTROWORLD",
+    artist: "Travis Scott",
+    price: 100,
+    genre: "Hip-Hop/Rap",
+    year: 2018,
+    isNew: false,
+    isExplicit: true,
+    image: astroworld.cover,
+    vinylImages: astroworld.vinyl,
+    tracklistImage: astroworld.tracklist,
+    vinylColor: "black",
+    sleeveColor: "black",
+    accentColor: "black",
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+  },
+  {
+    id: 28,
+    title: "Birds In The Trap Sing McKnight",
+    artist: "Travis Scott",
+    price: 100,
+    genre: "Hip-Hop/Rap",
+    year: 2016,
+    isNew: false,
+    isExplicit: true,
+    image: bittsm.cover,
+    vinylImages: bittsm.vinyl,
+    vinylColor: "black",
+    sleeveColor: "black",
+    accentColor: "black",
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+  },
+  {
+    id: 29,
+    title: "WOLF",
+    artist: "Tyler, The Creator",
+    price: 100,
+    genre: "Hip-Hop/Rap",
+    year: 2015,
+    isNew: false,
+    isExplicit: true,
+    image: wolf.cover,
+    vinylImages: wolf.vinyl,
+    vinylColor: "pink",
+    sleeveColor: "blue",
+    accentColor: "green",
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+  },
+  {
+    id: 30,
+    title: "Kids See Ghosts",
+    artist: "Kanye West & Kid Cudi",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2018,
+    isNew: false,
+    isExplicit: true,
+    image: kidsseeghosts.cover,
+    vinylImages: kidsseeghosts.vinyl,
+    vinylColor: "pink",
+    sleeveColor: "red",
+    accentColor: "red",
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+  },
+  {
+    id: 31,
+    title: "VULTURES 1",
+    artist: "¥$, Kanye West & Ty Dolla $ign",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2024,
+    isNew: true,
+    isExplicit: true,
+    image: vultures1.cover,
+    vinylImages: vultures1.vinyl,
+    vinylColor: "orange",
+    sleeveColor: "yellow",
+    accentColor: "yellow",
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
 ];
