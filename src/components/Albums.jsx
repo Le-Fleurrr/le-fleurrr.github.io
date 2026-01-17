@@ -2801,7 +2801,7 @@ export const albums = [
     vinylImages: musicWhite.vinyl,
     tracklistImage: musicWhite.tracklist,
     featuresImage: musicWhite.features,
-    vinylColor: "black",
+    vinylColor: "white",
     sleeveColor: "white",
     accentColor: "white",
     description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
@@ -2853,7 +2853,7 @@ export const albums = [
     image: playboiCarti.cover,
     vinylImages: playboiCarti.vinyl,
     tracklistImage: playboiCarti.tracklist,
-    vinylColor: "black",
+    vinylColor: "yellow",
     sleeveColor: "yellow",
     accentColor: "yellow",
     description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
@@ -2921,7 +2921,7 @@ export const albums = [
     isExplicit: true,
     image: lateRegistration.cover,
     vinylImages: lateRegistration.vinyl,
-    vinylColor: "black",
+    vinylColor: "brown",
     sleeveColor: "black",
     accentColor: "black",
     description: "Kanye West-dən ikinci möhtəşəm albomu."
@@ -2938,7 +2938,7 @@ export const albums = [
     image: wholeLottaRedTARGET.cover,
     vinylImages: wholeLottaRedTARGET.vinyl,
     tracklistImage: wholeLottaRedTARGET.tracklist,
-    vinylColor: "black",
+    vinylColor: "white",
     sleeveColor: "black",
     accentColor: "black",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
@@ -2991,7 +2991,7 @@ export const albums = [
     vinylImages: watchTheThrone.vinyl,
     tracklistImage: watchTheThrone.tracklist,
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768330012/watchTheThroneAnimated_ycprhx.gif",
-    vinylColor: "orange",
+    vinylColor: "yellow",
     sleeveColor: "yellow",
     accentColor: "yellow",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
@@ -3008,7 +3008,7 @@ export const albums = [
     image: wholeLottaRedWHITE.cover,
     vinylImages: wholeLottaRedWHITE.vinyl,
     tracklistImage: wholeLottaRedWHITE.tracklist,
-    vinylColor: "black",
+    vinylColor: "white",
     sleeveColor: "black",
     accentColor: "black",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
@@ -3024,7 +3024,7 @@ export const albums = [
     isExplicit: true,
     image: flowerBoy.cover,
     vinylImages: flowerBoy.vinyl,
-    vinylColor: "orange",
+    vinylColor: "yellow",
     sleeveColor: "yellow",
     accentColor: "yellow",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
@@ -3105,9 +3105,9 @@ export const albums = [
     image: astroworld.cover,
     vinylImages: astroworld.vinyl,
     tracklistImage: astroworld.tracklist,
-    vinylColor: "black",
-    sleeveColor: "black",
-    accentColor: "black",
+    vinylColor: "clear",
+    sleeveColor: "yellow",
+    accentColor: "yellow",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
