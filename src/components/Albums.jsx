@@ -232,7 +232,7 @@ export const albums = [
     title: "The College Dropout",
     artist: "Kanye West",
     price: 150,
-    genre: "Hip-Hop",
+    genre: "Hip-Hop/Rap",
     year: 2004,
     isExplicit: true,
     image: collegeDropout.cover,
