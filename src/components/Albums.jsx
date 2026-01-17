@@ -86,25 +86,6 @@ const wholeLottaRed = {
   ]
 };
 
-const lateRegistration = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226159/lateReegistration_gcpf2x.jpg',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/lateRegistration_vinyl_umxyv4.jpg",
-    "https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/lateRegistration1_ejpxgo.png"],
-};
-
-const utopia = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768571503/utopia_wre49k.jpg',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226175/utopia_vinyl_hjwqne.jpg",
-    "https://res.cloudinary.com/deroy68n9/image/upload/v1768571128/utopia_vinyl1_fxzxl7.jpg"
-  ],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768571128/utopia_tl_cakfsq.jpg"
-};
-
-const watchTheThrone = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226180/watchTheThrone_phcnwd.jpg',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226181/watchTheThronw_vinyl_uyge4x.jpg"]
-};
-
 const wholeLottaRedINDIE = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226186/WLR_5yearIndie_bgohfp.jpg',
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226183/WLRVinyl_Indie_flowgy.jpg"],
