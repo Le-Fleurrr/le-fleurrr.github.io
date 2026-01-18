@@ -2767,6 +2767,7 @@ export const albums = [
     vinylColor: "orange",
     sleeveColor: "yellow",
     accentColor: "yellow",
+    format: "vinyl",
     description: "The Weeknd tərəfindən inanılmaz bir trilogiyanın başlanğıcı."
   },
   {
@@ -2785,6 +2786,7 @@ export const albums = [
     vinylColor: "blue",
     sleeveColor: "blue",
     accentColor: "blue",
+    format: "vinyl",
     description: "The Weeknd tərəfindən inanılmaz bir trilogiyanın ortası."
   },
   {
@@ -2804,6 +2806,7 @@ export const albums = [
     vinylColor: "white",
     sleeveColor: "white",
     accentColor: "white",
+    format: "vinyl",
     description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
   },
   {
@@ -2822,6 +2825,7 @@ export const albums = [
     vinylColor: "black",
     sleeveColor: "black",
     accentColor: "black",
+    format: "vinyl",
     description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
   },
   {
@@ -2839,6 +2843,7 @@ export const albums = [
     vinylColor: "black",
     sleeveColor: "black",
     accentColor: "black",
+    format: "vinyl",
     description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
   },
   {
@@ -2856,6 +2861,7 @@ export const albums = [
     vinylColor: "yellow",
     sleeveColor: "yellow",
     accentColor: "yellow",
+    format: "vinyl",
     description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
   },
   {
@@ -2874,6 +2880,7 @@ export const albums = [
     vinylColor: "red",
     sleeveColor: "red",
     accentColor: "red",
+    format: "vinyl",
     description: "Kanye West və onun 14 mahnıdan ibarət Qremmi mükafatını qazanan şah əsəri.."
   },
   {
@@ -2891,6 +2898,7 @@ export const albums = [
     vinylColor: "red",
     sleeveColor: "red",
     accentColor: "red",
+    format: "vinyl",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
   },
   {
@@ -2908,6 +2916,7 @@ export const albums = [
     vinylColor: "red",
     sleeveColor: "red",
     accentColor: "red",
+    format: "vinyl",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
   },
   {
@@ -2924,6 +2933,7 @@ export const albums = [
     vinylColor: "brown",
     sleeveColor: "black",
     accentColor: "black",
+    format: "vinyl",
     description: "Kanye West-dən ikinci möhtəşəm albomu."
   },
   {
@@ -2941,6 +2951,7 @@ export const albums = [
     vinylColor: "white",
     sleeveColor: "black",
     accentColor: "black",
+    format: "vinyl",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
   },
   {
@@ -2959,6 +2970,7 @@ export const albums = [
     vinylColor: "black",
     sleeveColor: "black",
     accentColor: "black",
+    format: "vinyl",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
   },
   {
@@ -2976,6 +2988,7 @@ export const albums = [
     vinylColor: "red",
     sleeveColor: "red",
     accentColor: "red",
+    format: "vinyl",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
   },
   {
@@ -2994,6 +3007,7 @@ export const albums = [
     vinylColor: "yellow",
     sleeveColor: "yellow",
     accentColor: "yellow",
+    format: "vinyl",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
   },
   {
@@ -3011,6 +3025,7 @@ export const albums = [
     vinylColor: "white",
     sleeveColor: "black",
     accentColor: "black",
+    format: "vinyl",
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
   },
   {
@@ -3027,6 +3042,7 @@ export const albums = [
     vinylColor: "yellow",
     sleeveColor: "yellow",
     accentColor: "yellow",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3043,6 +3059,7 @@ export const albums = [
     vinylColor: "green",
     sleeveColor: "green",
     accentColor: "green",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3059,6 +3076,7 @@ export const albums = [
     vinylColor: "pink",
     sleeveColor: "pink",
     accentColor: "pink",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3075,6 +3093,7 @@ export const albums = [
     vinylColor: "blue",
     sleeveColor: "blue",
     accentColor: "blue",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3091,6 +3110,7 @@ export const albums = [
     vinylColor: "blue",
     sleeveColor: "blue",
     accentColor: "blue",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3108,6 +3128,7 @@ export const albums = [
     vinylColor: "clear",
     sleeveColor: "yellow",
     accentColor: "yellow",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3124,6 +3145,7 @@ export const albums = [
     vinylColor: "black",
     sleeveColor: "black",
     accentColor: "black",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3140,6 +3162,7 @@ export const albums = [
     vinylColor: "pink",
     sleeveColor: "blue",
     accentColor: "green",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3156,6 +3179,7 @@ export const albums = [
     vinylColor: "pink",
     sleeveColor: "red",
     accentColor: "red",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3172,6 +3196,7 @@ export const albums = [
     vinylColor: "orange",
     sleeveColor: "yellow",
     accentColor: "yellow",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3188,6 +3213,7 @@ export const albums = [
     vinylColor: "blue",
     sleeveColor: "blue",
     accentColor: "blue",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3204,6 +3230,7 @@ export const albums = [
     vinylColor: "green",
     sleeveColor: "green",
     accentColor: "green",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3220,6 +3247,7 @@ export const albums = [
     vinylColor: "red",
     sleeveColor: "yellow",
     accentColor: "yellow",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3237,6 +3265,7 @@ export const albums = [
     vinylColor: "green",
     sleeveColor: "green",
     accentColor: "green",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3254,6 +3283,7 @@ export const albums = [
     vinylColor: "orange",
     sleeveColor: "orange",
     accentColor: "orange",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3271,6 +3301,7 @@ export const albums = [
     vinylColor: "blue",
     sleeveColor: "blue",
     accentColor: "blue",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3288,6 +3319,7 @@ export const albums = [
     vinylColor: "red",
     sleeveColor: "red",
     accentColor: "red",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
   {
@@ -3305,6 +3337,45 @@ export const albums = [
     vinylColor: "red",
     sleeveColor: "red",
     accentColor: "red",
+    format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
   },
+  {
+  id: 40,
+  title: "Playboi Carti (CD)",
+  artist: "Playboi Carti",
+  price: 50,
+  genre: "Hip-Hop/Rap",
+  year: 2017,
+  isNew: false,
+  isExplicit: true,
+  image: playboicartiCD.cover,
+  vinylImages: [],
+  sleeveColor: "red",
+  accentColor: "red",
+  format: "cd",
+  description: "CD edition of Playboi Carti's debut."
+},
+{
+  id: 41,
+  title: "DON'T BE DUMB (Ag Cassette)",
+  artist: "A$AP Rocky",
+  price: 50,
+  genre: "Hip-Hop/Rap",
+  year: 2025,
+  isNew: true,
+  isExplicit: true,
+  image: dontBeDumbCASSETTEWHITE.cover,
+  vinylImages: dontBeDumbCASSETTEWHITE.vinyl,
+  cassetteColor: "white",
+  sleeveColor: "white",
+  accentColor: "white",
+  format: "cassette",
+  description: "CD edition of Playboi Carti's debut."
+},
+
 ];
+
+albums.forEach(album => {
+  console.log(album.id, album.title, album.format);
+});

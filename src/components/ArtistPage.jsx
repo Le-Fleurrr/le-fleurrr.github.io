@@ -2,7 +2,10 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { VinylRecord } from "./VinylRecord.tsx";
 import { CDDisc } from "./CDDisc.tsx";
+<<<<<<< HEAD
 import { CassetteTape } from "./CassetteTape.tsx";
+=======
+>>>>>>> d1ddc53 (Alpha Build)
 import { Button } from "./ui/Button.tsx";
 import { ArrowLeft } from "lucide-react";
 import { albums } from "./Albums.jsx";
@@ -198,6 +201,29 @@ const ArtistPage = () => {
                       E
                     </span>
                   )}
+<<<<<<< HEAD
+=======
+                  
+                  <div 
+                    className={`relative transition-transform duration-500 ease-out ${
+                      hoveredId === album.id ? "translate-x-16" : "translate-x-0"
+                    }`}
+                    style={{ marginLeft: '20px' }}
+                  >
+                    {album.format === "cd" ? (
+                      <CDDisc 
+                        size="md" 
+                        spinning={hoveredId === album.id}
+                      />
+                    ) : (
+                      <VinylRecord 
+                        size="md" 
+                        spinning={hoveredId === album.id}
+                        vinylColor={album.vinylColor}
+                      />
+                    )}
+                  </div>
+>>>>>>> d1ddc53 (Alpha Build)
                 </div>
               </div>
             </div>
@@ -233,6 +259,37 @@ const ArtistPage = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
+<<<<<<< HEAD
+=======
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      className="text-muted-foreground hover:text-primary shrink-0"
+                      onClick={(e) => {
+                        e.preventDefault();
+                      }}
+                    >
+                      <Heart className="w-5 h-5" />
+                    </Button>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <span className="px-2 py-1 bg-secondary rounded">{album.genre}</span>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-border">
+                    <p className="text-2xl font-serif font-bold">{album.price} ₼</p>
+                    <Button 
+                      size="sm" 
+                      className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                      onClick={(e) => {
+                        e.preventDefault();
+                      }}
+                    >
+                      <ShoppingCart className="w-4 h-4" />
+                      Səbətə əlavə et
+                    </Button>
+>>>>>>> d1ddc53 (Alpha Build)
                   </div>
                 ) : null}
                 <div

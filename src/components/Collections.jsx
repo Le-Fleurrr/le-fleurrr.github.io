@@ -184,7 +184,6 @@ export const Collections = () => {
                     </div>
                   )}
 
-
                   <div className={`absolute w-40 h-40 bg-gradient-to-br ${getSleeveColorClass(album.sleeveColor)} rounded-lg transform -rotate-6`} />
 
                   <div
