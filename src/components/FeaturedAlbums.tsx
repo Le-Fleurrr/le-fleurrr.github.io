@@ -104,7 +104,6 @@ export const FeaturedAlbums = () => {
   return (
     <section id="new" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
-        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <p className="text-primary font-medium tracking-widest text-sm uppercase mb-2">
@@ -122,8 +121,6 @@ export const FeaturedAlbums = () => {
             <Link to="/collections">Bütün Kolleksiyaya Baxın</Link>
           </Button>
         </div>
-
-        {/* Album Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredAlbums.map((album) => {
             const accentColors = getAccentColors(album.accentColor);
@@ -183,8 +180,6 @@ export const FeaturedAlbums = () => {
                     )}
                   </div>
                 </div>
-
-                {/* Album Info */}
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
