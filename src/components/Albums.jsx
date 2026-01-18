@@ -549,6 +549,11 @@ const hurryUpTomorrowFirstPressing = {
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769596851/WND_Face_LP_1_5da6d65d-3392-4e1d_grqroz.png"],
 };
 
+const Heartbreak = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768747389/808s_Heartbreak_fajsxe.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768747389/808s_Heartbreak_vinyl_paznur.jpg']
+};
+
 export const albums = [
   {
     id: 1,
@@ -592,8 +597,13 @@ export const albums = [
   {
     id: 2,
     title: "Rodeo (2LP)",
+<<<<<<< HEAD
     artist: ["Travis Scott"],
     price: 99.99,
+=======
+    artist: "Travis Scott",
+    price: 130,
+>>>>>>> baab95a (Alpha Build)
     genre: "Hip-Hop/Rap",
     year: 2015,
     isExplicit: true,
@@ -627,8 +637,13 @@ export const albums = [
   {
     id: 3,
     title: "The College Dropout (2LP)",
+<<<<<<< HEAD
     artist: ["Kanye West"],
     price: 99.99,
+=======
+    artist: "Kanye West",
+    price: 150,
+>>>>>>> baab95a (Alpha Build)
     genre: "Hip-Hop/Rap",
     year: 2004,
     isExplicit: true,
@@ -667,8 +682,13 @@ export const albums = [
   {
     id: 4,
     title: "Whole Lotta Red (2LP)",
+<<<<<<< HEAD
     artist: ["Playboi Carti"],
     price: 99.99,
+=======
+    artist: "Playboi Carti",
+    price: 150,
+>>>>>>> baab95a (Alpha Build)
     genre: "Hip-Hop/Rap",
     year: 2020,
     isNew: true,
@@ -714,8 +734,13 @@ export const albums = [
   {
     id: 5,
     title: "Call Me If You Get Lost (2LP)",
+<<<<<<< HEAD
     artist: ["Tyler, The Creator"],
     price: 99.99,
+=======
+    artist: "Tyler, The Creator",
+    price: 150,
+>>>>>>> baab95a (Alpha Build)
     genre: "Hip-Hop/Rap",
     year: 2021,
     isExplicit: true,
@@ -748,9 +773,15 @@ export const albums = [
   },
   {
     id: 6,
+<<<<<<< HEAD
     title: "WE STILL DON'T TRUST YOU (2LP)",
     artist: ["Future", "Metro Boomin"],
     price: 99.99,
+=======
+    title: "We Still Don't Trust You (2LP)",
+    artist: "Future & Metro Boomin",
+    price: 150,
+>>>>>>> baab95a (Alpha Build)
     genre: "Hip-Hop/Rap",
     year: 2024,
     isNew: true,
@@ -2753,7 +2784,7 @@ export const albums = [
   },
   {
     id: 7,
-    title: "After Hours",
+    title: "After Hours (2LP)",
     artist: "The Weeknd",
     price: 150,
     genre: "R&B/Soul",
@@ -2772,7 +2803,7 @@ export const albums = [
   },
   {
     id: 8,
-    title: "Dawn FM",
+    title: "Dawn FM (2LP)",
     artist: "The Weeknd",
     price: 150,
     genre: "R&B/Soul",
@@ -2791,7 +2822,7 @@ export const albums = [
   },
   {
     id: 9,
-    title: "MUSIC (White)",
+    title: "MUSIC (2LP)",
     artist: "Playboi Carti",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -2811,7 +2842,7 @@ export const albums = [
   },
   {
     id: 10,
-    title: "MUSIC (Black)",
+    title: "MUSIC (Black) [2LP]",
     artist: "Playboi Carti",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -2830,7 +2861,7 @@ export const albums = [
   },
   {
     id: 11,
-    title: "Die Lit",
+    title: "Die Lit (2LP)",
     artist: "Playboi Carti",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -2848,9 +2879,9 @@ export const albums = [
   },
   {
     id: 12,
-    title: "Playboi Carti",
+    title: "Playboi Carti (LP)",
     artist: "Playboi Carti",
-    price: 150,
+    price: 120,
     genre: "Hip-Hop/Rap",
     year: 2017,
     isNew: false,
@@ -2866,7 +2897,7 @@ export const albums = [
   },
   {
     id: 13,
-    title: "My Beautiful Dark Twisted Fantasy",
+    title: "My Beautiful Dark Twisted Fantasy (3LP)",
     artist: "Kanye West",
     price: 200,
     genre: "Hip-Hop/Rap",
@@ -2885,7 +2916,7 @@ export const albums = [
   },
   {
     id: 14,
-    title: "Whole Lotta Red (5 Year Indie)",
+    title: "Whole Lotta Red (5 Year Indie) [2LP]",
     artist: "Playboi Carti",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -2903,7 +2934,7 @@ export const albums = [
   },
   {
     id: 15,
-    title: "Whole Lotta Red (5 Year Anniversary)",
+    title: "Whole Lotta Red (5 Year Anniversary) [2LP]",
     artist: "Playboi Carti",
     price: 350,
     genre: "Hip-Hop/Rap",
@@ -2921,7 +2952,7 @@ export const albums = [
   },
   {
     id: 16,
-    title: "Late Registration",
+    title: "Late Registration (2LP)",
     artist: "Kanye West",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -2938,7 +2969,7 @@ export const albums = [
   },
   {
     id: 17,
-    title: "Whole Lotta Red (5 Year Target Exclusive)",
+    title: "Whole Lotta Red (5 Year Target Exclusive) [2LP]",
     artist: "Playboi Carti",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -2956,7 +2987,7 @@ export const albums = [
   },
   {
     id: 18,
-    title: "UTOPIA",
+    title: "UTOPIA [2LP]",
     artist: "Travis Scott",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -2975,7 +3006,7 @@ export const albums = [
   },
   {
     id: 19,
-    title: "Whole Lotta Red (5 Year Red Text)",
+    title: "Whole Lotta Red (5 Year Red Text) [2LP]",
     artist: "Playboi Carti",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -2993,7 +3024,7 @@ export const albums = [
   },
   {
     id: 20,
-    title: "Watch The Throne",
+    title: "Watch The Throne (2LP)",
     artist: "JAY-Z & Kanye West",
     price: 200,
     genre: "Hip-Hop/Rap",
@@ -3012,7 +3043,7 @@ export const albums = [
   },
   {
     id: 21,
-    title: "Whole Lotta Red (5 Year White Text)",
+    title: "Whole Lotta Red (5 Year White Text) [2LP]",
     artist: "Playboi Carti",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -3030,7 +3061,7 @@ export const albums = [
   },
   {
     id: 22,
-    title: "Flower Boy",
+    title: "Flower Boy (2LP)",
     artist: "Tyler, The Creator",
     price: 100,
     genre: "Hip-Hop/Rap",
@@ -3047,7 +3078,7 @@ export const albums = [
   },
   {
     id: 23,
-    title: "CHROMAKOPIA",
+    title: "CHROMAKOPIA (2LP)",
     artist: "Tyler, The Creator",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -3064,7 +3095,7 @@ export const albums = [
   },
   {
     id: 24,
-    title: "IGOR",
+    title: "IGOR (LP)",
     artist: "Tyler, The Creator",
     price: 100,
     genre: "Hip-Hop/Rap",
@@ -3081,9 +3112,9 @@ export const albums = [
   },
   {
     id: 25,
-    title: "CHERRY BOMB",
+    title: "CHERRY BOMB (2LP)",
     artist: "Tyler, The Creator",
-    price: 100,
+    price: 150,
     genre: "Hip-Hop/Rap",
     year: 2015,
     isNew: false,
@@ -3098,9 +3129,9 @@ export const albums = [
   },
   {
     id: 26,
-    title: "CHERRY BOMB (Mask Version)",
+    title: "CHERRY BOMB (Mask Version) [2LP]",
     artist: "Tyler, The Creator",
-    price: 100,
+    price: 150,
     genre: "Hip-Hop/Rap",
     year: 2015,
     isNew: false,
@@ -3115,7 +3146,7 @@ export const albums = [
   },
   {
     id: 27,
-    title: "ASTROWORLD",
+    title: "ASTROWORLD (2LP)",
     artist: "Travis Scott",
     price: 100,
     genre: "Hip-Hop/Rap",
@@ -3133,7 +3164,7 @@ export const albums = [
   },
   {
     id: 28,
-    title: "Birds In The Trap Sing McKnight",
+    title: "Birds In The Trap Sing McKnight (2LP)",
     artist: "Travis Scott",
     price: 100,
     genre: "Hip-Hop/Rap",
@@ -3150,7 +3181,7 @@ export const albums = [
   },
   {
     id: 29,
-    title: "WOLF",
+    title: "WOLF (2LP)",
     artist: "Tyler, The Creator",
     price: 100,
     genre: "Hip-Hop/Rap",
@@ -3167,9 +3198,9 @@ export const albums = [
   },
   {
     id: 30,
-    title: "Kids See Ghosts",
+    title: "Kids See Ghosts (LP)",
     artist: "Kanye West & Kid Cudi",
-    price: 150,
+    price: 120,
     genre: "Hip-Hop/Rap",
     year: 2018,
     isNew: false,
@@ -3184,7 +3215,7 @@ export const albums = [
   },
   {
     id: 31,
-    title: "VULTURES 1",
+    title: "VULTURES 1 (2LP)",
     artist: "¥$, Kanye West & Ty Dolla $ign",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -3201,9 +3232,9 @@ export const albums = [
   },
   {
     id: 32,
-    title: "ye",
+    title: "ye (LP)",
     artist: "Kanye West",
-    price: 100,
+    price: 120,
     genre: "Hip-Hop/Rap",
     year: 2018,
     isNew: false,
@@ -3218,7 +3249,7 @@ export const albums = [
   },
   {
     id: 33,
-    title: "JACKBOYS",
+    title: "JACKBOYS (1LP)",
     artist: "JACKBOYS & Travis Scott",
     price: 100,
     genre: "Hip-Hop/Rap",
@@ -3235,7 +3266,7 @@ export const albums = [
   },
   {
     id: 34,
-    title: "Starboy",
+    title: "Starboy (2LP)",
     artist: "The Weeknd",
     price: 150,
     genre: "R&B/Soul",
@@ -3252,7 +3283,7 @@ export const albums = [
   },
   {
     id: 35,
-    title: "UY SCUTI",
+    title: "UY SCUTI (LP)",
     artist: "Young Thug",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -3270,7 +3301,7 @@ export const albums = [
   },
   {
     id: 36,
-    title: "UY SCUTI (SP5DER Edition)",
+    title: "UY SCUTI (SP5DER Edition) [LP]",
     artist: "Young Thug",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -3288,7 +3319,7 @@ export const albums = [
   },
   {
     id: 37,
-    title: "HARDSTONE PSYCHO",
+    title: "HARDSTONE PSYCHO (2LP)",
     artist: "Don Toliver",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -3306,7 +3337,7 @@ export const albums = [
   },
   {
     id: 38,
-    title: "Love Sick",
+    title: "Love Sick (2LP)",
     artist: "Don Toliver",
     price: 100,
     genre: "Hip-Hop/Rap",
@@ -3324,7 +3355,7 @@ export const albums = [
   },
   {
     id: 39,
-    title: "Love Sick (Deluxe)",
+    title: "Love Sick (Deluxe) [2LP]",
     artist: "Don Toliver",
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -3368,9 +3399,155 @@ export const albums = [
   image: dontBeDumbCASSETTEWHITE.cover,
   vinylImages: dontBeDumbCASSETTEWHITE.vinyl,
   cassetteColor: "white",
-  sleeveColor: "white",
   accentColor: "white",
   format: "cassette",
+  description: "CD edition of Playboi Carti's debut."
+},
+{
+  id: 42,
+  title: "DON'T BE DUMB (Qara Cassette)",
+  artist: "A$AP Rocky",
+  price: 50,
+  genre: "Hip-Hop/Rap",
+  year: 2025,
+  isNew: true,
+  isExplicit: true,
+  image: dontBeDumbCASSETTEBLACK.cover,
+  vinylImages: dontBeDumbCASSETTEBLACK.vinyl,
+  cassetteColor: "black",
+  accentColor: "black",
+  format: "cassette",
+  description: "CD edition of Playboi Carti's debut."
+},
+{
+  id: 43,
+  title: "Graduation (CD)",
+  artist: "Kanye West",
+  price: 50,
+  genre: "Hip-Hop/Rap",
+  year: 2007,
+  isNew: false,
+  isExplicit: true,
+  image: graduation.cover,
+  vinylImages: graduation.vinyl,
+  animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768299876/graduation_animated_emuqiv.gif",
+  format: "cd",
+  description: "CD edition of Playboi Carti's debut."
+},
+{
+  id: 44,
+  title: "DON'T BE DUMB (CD)",
+  artist: "A$AP Rocky",
+  price: 50,
+  genre: "Hip-Hop/Rap",
+  year: 2025,
+  isNew: true,
+  isExplicit: true,
+  image: dontBeDumbCD.cover,
+  vinylImages: dontBeDumbCD.vinyl,
+  accentColor: "white",
+  format: "cd",
+  description: "CD edition of Playboi Carti's debut."
+},
+{
+  id: 45,
+  title: "DON'T BE DUMB (2LP)",
+  artist: "A$AP Rocky",
+  price: 150,
+  genre: "Hip-Hop/Rap",
+  year: 2025,
+  isNew: true,
+  isExplicit: true,
+  image: dontBeDumb.cover,
+  vinylImages: dontBeDumb.vinyl,
+  vinylColor: "white",
+  sleeveColor: "black",
+  accentColor: "white",
+  format: "vinyl",
+  description: "CD edition of Playboi Carti's debut."
+},
+{
+  id: 46,
+  title: "Donda (Deluxe) [2LP]",
+  artist: "Kanye West",
+  price: 200,
+  genre: "Hip-Hop/Rap",
+  year: 2021,
+  isNew: false,
+  isExplicit: false,
+  image: donda.cover,
+  vinylImages: donda.vinyl,
+  vinylColor: "black",
+  sleeveColor: "black",
+  accentColor: "black",
+  format: "vinyl",
+  description: "CD edition of Playboi Carti's debut."
+},
+{
+  id: 49,
+  title: "Donda (Deluxe) [CD]",
+  artist: "Kanye West",
+  price: 100,
+  genre: "Hip-Hop/Rap",
+  year: 2021,
+  isNew: false,
+  isExplicit: false,
+  image: donda.cover,
+  vinylImages: dondaCD.vinyl,
+  format: "cd",
+  description: "CD edition of Playboi Carti's debut."
+},
+{
+  id: 50,
+  title: "Long.Live.A$AP (2LP)",
+  artist: "A$AP Rocky",
+  price: 150,
+  genre: "Hip-Hop/Rap",
+  year: 2013,
+  isNew: false,
+  isExplicit: false,
+  image: longLiveA$ap.cover,
+  vinylImages: longLiveA$ap.vinyl,
+  animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656264/longLiveA_ap_animated_cc8onr.gif",
+  vinylColor: "yellow",
+  accentColor: "yellow",
+  sleeveColor: "white",
+  format: "vinyl",
+  description: "CD edition of Playboi Carti's debut."
+},
+{
+  id: 51,
+  title: "At.Long.Last.A$AP (2LP)",
+  artist: "A$AP Rocky",
+  price: 150,
+  genre: "Hip-Hop/Rap",
+  year: 2013,
+  isNew: false,
+  isExplicit: false,
+  image: atLongLastA$ap.cover,
+  vinylImages: atLongLastA$ap.vinyl,
+  animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656266/atLongLastA_ap_animated_gv9fly.gif",
+  vinylColor: "white",
+  accentColor: "white",
+  sleeveColor: "white",
+  format: "vinyl",
+  description: "CD edition of Playboi Carti's debut."
+},
+{
+  id: 52,
+  title: "808s & Heartbreak [2LP + CD]",
+  artist: "Kanye West",
+  price: 170,
+  genre: "Hip-Hop/Rap",
+  year: 2008,
+  isNew: false,
+  isExplicit: true,
+  image: Heartbreak.cover,
+  vinylImages: Heartbreak.vinyl,
+  vinylColor: "white",
+  sleeveColor: "white",
+  accentColor: "white",
+  format: "vinyl",
   description: "CD edition of Playboi Carti's debut."
 },
 

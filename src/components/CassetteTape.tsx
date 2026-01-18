@@ -9,6 +9,7 @@ interface CassetteTapeProps {
 
 const sizeClasses = {
 <<<<<<< HEAD
+<<<<<<< HEAD
   sm: "w-40 h-24",
   md: "w-56 h-36",
   lg: "w-80 h-48",
@@ -17,6 +18,11 @@ const sizeClasses = {
   md: "w-48 h-30",
   lg: "w-64 h-40",
 >>>>>>> d1ddc53 (Alpha Build)
+=======
+  sm: "w-40 h-24",
+  md: "w-56 h-36",
+  lg: "w-80 h-48",
+>>>>>>> baab95a (Alpha Build)
   xl: "w-96 h-60",
 };
 
@@ -30,6 +36,7 @@ export const CassetteTape = ({
     switch(cassetteColor) {
       case "white":
         return {
+<<<<<<< HEAD
 <<<<<<< HEAD
           body: "linear-gradient(135deg, #fafafa 0%, #ffffff 50%, #f5f5f5 100%)",
           label: "#ffffff",
@@ -93,71 +100,95 @@ export const CassetteTape = ({
           tape: "#854d0e"
 =======
           body: "linear-gradient(to bottom, #f5f5f5, #ffffff, #e5e5e5)",
+=======
+          body: "linear-gradient(135deg, #fafafa 0%, #ffffff 50%, #f5f5f5 100%)",
+>>>>>>> baab95a (Alpha Build)
           label: "#ffffff",
-          spools: "#1a1a1a"
+          spools: "#2a2a2a",
+          tape: "#1a1a1a"
         };
       case "clear":
         return {
-          body: "linear-gradient(to bottom, rgba(228, 228, 231, 0.3), rgba(212, 212, 216, 0.2))",
-          label: "rgba(255, 255, 255, 0.9)",
-          spools: "#2a2a2a"
+          body: "linear-gradient(135deg, rgba(245, 245, 245, 0.4), rgba(255, 255, 255, 0.3))",
+          label: "rgba(255, 255, 255, 0.8)",
+          spools: "#3a3a3a",
+          tape: "#2a2a2a"
         };
       case "red":
         return {
-          body: "linear-gradient(to bottom, #991b1b, #dc2626)",
-          label: "#fca5a5",
-          spools: "#450a0a"
+          body: "linear-gradient(135deg, #dc2626, #ef4444, #dc2626)",
+          label: "#fecaca",
+          spools: "#450a0a",
+          tape: "#7f1d1d"
         };
       case "blue":
         return {
-          body: "linear-gradient(to bottom, #1e40af, #3b82f6)",
-          label: "#93c5fd",
-          spools: "#1e3a8a"
+          body: "linear-gradient(135deg, #2563eb, #3b82f6, #2563eb)",
+          label: "#bfdbfe",
+          spools: "#1e3a8a",
+          tape: "#1e40af"
         };
       case "green":
         return {
-          body: "linear-gradient(to bottom, #166534, #22c55e)",
-          label: "#86efac",
-          spools: "#14532d"
+          body: "linear-gradient(135deg, #16a34a, #22c55e, #16a34a)",
+          label: "#bbf7d0",
+          spools: "#14532d",
+          tape: "#166534"
         };
       case "purple":
         return {
-          body: "linear-gradient(to bottom, #6b21a8, #a855f7)",
-          label: "#d8b4fe",
-          spools: "#581c87"
+          body: "linear-gradient(135deg, #9333ea, #a855f7, #9333ea)",
+          label: "#e9d5ff",
+          spools: "#581c87",
+          tape: "#6b21a8"
         };
       case "orange":
         return {
-          body: "linear-gradient(to bottom, #9a3412, #f97316)",
+          body: "linear-gradient(135deg, #ea580c, #f97316, #ea580c)",
           label: "#fed7aa",
-          spools: "#7c2d12"
+          spools: "#7c2d12",
+          tape: "#9a3412"
         };
       case "pink":
         return {
-          body: "linear-gradient(to bottom, #9f1239, #ec4899)",
-          label: "#fbcfe8",
-          spools: "#831843"
+          body: "linear-gradient(135deg, #db2777, #ec4899, #db2777)",
+          label: "#fce7f3",
+          spools: "#831843",
+          tape: "#9f1239"
         };
       case "yellow":
         return {
+<<<<<<< HEAD
           body: "linear-gradient(to bottom, #a16207, #eab308)",
           label: "#fef08a",
           spools: "#854d0e"
 >>>>>>> d1ddc53 (Alpha Build)
+=======
+          body: "linear-gradient(135deg, #ca8a04, #eab308, #ca8a04)",
+          label: "#fef9c3",
+          spools: "#713f12",
+          tape: "#854d0e"
+>>>>>>> baab95a (Alpha Build)
         };
       case "black":
       default:
         return {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> baab95a (Alpha Build)
           body: "linear-gradient(135deg, #18181b, #27272a, #18181b)",
           label: "#71717a",
           spools: "#09090b",
           tape: "#3f3f46"
+<<<<<<< HEAD
 =======
           body: "linear-gradient(to bottom, #18181b, #27272a, #18181b)",
           label: "#52525b",
           spools: "#09090b"
 >>>>>>> d1ddc53 (Alpha Build)
+=======
+>>>>>>> baab95a (Alpha Build)
         };
     }
   };
@@ -168,6 +199,7 @@ export const CassetteTape = ({
     <div className={cn("relative", sizeClasses[size], className)}>
       {/* Cassette body */}
       <div 
+<<<<<<< HEAD
 <<<<<<< HEAD
         className="absolute inset-0 rounded-md overflow-hidden shadow-2xl"
         style={{ 
@@ -189,22 +221,38 @@ export const CassetteTape = ({
           <div className="absolute top-[18%] left-[15%] w-[25%] aspect-square">
 =======
         className="absolute inset-0 rounded-lg overflow-hidden shadow-2xl"
+=======
+        className="absolute inset-0 rounded-md overflow-hidden shadow-2xl"
+>>>>>>> baab95a (Alpha Build)
         style={{ 
           background: colors.body,
-          border: cassetteColor === "white" ? "1px solid #d4d4d8" : "1px solid rgba(255,255,255,0.1)"
+          border: cassetteColor === "white" ? "2px solid #e5e5e5" : "2px solid rgba(0,0,0,0.2)"
         }}
       >
-        {/* Top section with spools */}
-        <div className="absolute top-[15%] left-0 right-0 h-[45%] flex items-center justify-around px-[12%]">
+        {/* Window/Viewing area (top section) */}
+        <div 
+          className="absolute top-[8%] left-[8%] right-[8%] h-[45%] rounded-sm"
+          style={{ 
+            background: cassetteColor === "clear" 
+              ? "linear-gradient(135deg, rgba(0,0,0,0.1), rgba(0,0,0,0.05))"
+              : "rgba(0, 0, 0, 0.15)",
+            border: "1px solid rgba(0,0,0,0.1)"
+          }}
+        >
           {/* Left spool */}
+<<<<<<< HEAD
           <div className="relative w-[28%] aspect-square">
 >>>>>>> d1ddc53 (Alpha Build)
+=======
+          <div className="absolute top-[18%] left-[15%] w-[25%] aspect-square">
+>>>>>>> baab95a (Alpha Build)
             <div 
               className={cn(
                 "absolute inset-0 rounded-full",
                 spinning && "animate-spin"
               )}
               style={{ 
+<<<<<<< HEAD
 <<<<<<< HEAD
                 background: colors.spools,
                 boxShadow: "inset 0 2px 4px rgba(0,0,0,0.3)"
@@ -234,24 +282,46 @@ export const CassetteTape = ({
           <div className="absolute top-[18%] right-[15%] w-[25%] aspect-square">
 =======
                 background: `conic-gradient(from 0deg, ${colors.spools} 0%, ${colors.spools} 45%, transparent 45%, transparent 55%, ${colors.spools} 55%, ${colors.spools} 100%)`
+=======
+                background: colors.spools,
+                boxShadow: "inset 0 2px 4px rgba(0,0,0,0.3)"
+>>>>>>> baab95a (Alpha Build)
               }}
-            />
-            {/* Center hole */}
-            <div 
-              className="absolute inset-[35%] rounded-full"
-              style={{ background: colors.body }}
-            />
+            >
+              {/* Spool teeth */}
+              {[...Array(6)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-[15%] h-[60%] left-1/2 top-1/2"
+                  style={{
+                    background: colors.tape,
+                    transform: `translate(-50%, -50%) rotate(${i * 60}deg) translateY(-80%)`,
+                    transformOrigin: "center"
+                  }}
+                />
+              ))}
+              {/* Center circle */}
+              <div 
+                className="absolute inset-[25%] rounded-full"
+                style={{ background: colors.body }}
+              />
+            </div>
           </div>
 
           {/* Right spool */}
+<<<<<<< HEAD
           <div className="relative w-[28%] aspect-square">
 >>>>>>> d1ddc53 (Alpha Build)
+=======
+          <div className="absolute top-[18%] right-[15%] w-[25%] aspect-square">
+>>>>>>> baab95a (Alpha Build)
             <div 
               className={cn(
                 "absolute inset-0 rounded-full",
                 spinning && "animate-spin"
               )}
               style={{ 
+<<<<<<< HEAD
 <<<<<<< HEAD
                 background: colors.spools,
                 boxShadow: "inset 0 2px 4px rgba(0,0,0,0.3)"
@@ -349,65 +419,107 @@ export const CassetteTape = ({
         )}
 =======
                 background: `conic-gradient(from 0deg, ${colors.spools} 0%, ${colors.spools} 45%, transparent 45%, transparent 55%, ${colors.spools} 55%, ${colors.spools} 100%)`
+=======
+                background: colors.spools,
+                boxShadow: "inset 0 2px 4px rgba(0,0,0,0.3)"
+>>>>>>> baab95a (Alpha Build)
               }}
-            />
-            {/* Center hole */}
-            <div 
-              className="absolute inset-[35%] rounded-full"
-              style={{ background: colors.body }}
-            />
+            >
+              {/* Spool teeth */}
+              {[...Array(6)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-[15%] h-[60%] left-1/2 top-1/2"
+                  style={{
+                    background: colors.tape,
+                    transform: `translate(-50%, -50%) rotate(${i * 60}deg) translateY(-80%)`,
+                    transformOrigin: "center"
+                  }}
+                />
+              ))}
+              {/* Center circle */}
+              <div 
+                className="absolute inset-[25%] rounded-full"
+                style={{ background: colors.body }}
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Tape visible between spools */}
-        <div 
-          className="absolute top-[35%] left-[20%] right-[20%] h-[15%]"
-          style={{ background: colors.spools, opacity: 0.8 }}
-        />
+          {/* Tape between spools */}
+          <div 
+            className="absolute top-[40%] left-[28%] right-[28%] h-[15%] rounded-sm"
+            style={{ 
+              background: colors.tape,
+              boxShadow: "0 1px 3px rgba(0,0,0,0.3)"
+            }}
+          />
+        </div>
 
         {/* Label area */}
         <div 
-          className="absolute top-[65%] left-[8%] right-[8%] h-[25%] rounded"
+          className="absolute top-[58%] left-[10%] right-[10%] h-[32%] rounded-sm"
           style={{ 
             background: colors.label,
-            boxShadow: cassetteColor === "clear" ? "inset 0 1px 3px rgba(0,0,0,0.2)" : "inset 0 1px 3px rgba(0,0,0,0.3)"
+            border: "1px solid rgba(0,0,0,0.15)",
+            boxShadow: "inset 0 1px 3px rgba(0,0,0,0.1)"
           }}
         >
           {/* Label lines */}
-          <div className="absolute top-[25%] left-[5%] right-[5%] h-[2px] bg-black/20" />
-          <div className="absolute top-[50%] left-[5%] right-[5%] h-[2px] bg-black/20" />
-          <div className="absolute top-[75%] left-[5%] right-[5%] h-[2px] bg-black/20" />
+          <div className="absolute top-[20%] left-[8%] right-[8%] h-[1.5px]" 
+            style={{ background: "rgba(0,0,0,0.2)" }} 
+          />
+          <div className="absolute top-[40%] left-[8%] right-[8%] h-[1.5px]" 
+            style={{ background: "rgba(0,0,0,0.2)" }} 
+          />
+          <div className="absolute top-[60%] left-[8%] right-[8%] h-[1.5px]" 
+            style={{ background: "rgba(0,0,0,0.2)" }} 
+          />
+          <div className="absolute top-[80%] left-[8%] right-[8%] h-[1.5px]" 
+            style={{ background: "rgba(0,0,0,0.2)" }} 
+          />
         </div>
 
-        {/* Screws in corners */}
-        <div 
-          className="absolute top-[5%] left-[5%] w-[6%] aspect-square rounded-full"
-          style={{ background: colors.spools, border: "1px solid rgba(255,255,255,0.1)" }}
-        >
-          <div className="absolute inset-[30%] border-t border-b" style={{ borderColor: colors.body, transform: "rotate(45deg)" }} />
-        </div>
-        <div 
-          className="absolute top-[5%] right-[5%] w-[6%] aspect-square rounded-full"
-          style={{ background: colors.spools, border: "1px solid rgba(255,255,255,0.1)" }}
-        >
-          <div className="absolute inset-[30%] border-t border-b" style={{ borderColor: colors.body, transform: "rotate(45deg)" }} />
-        </div>
-        <div 
-          className="absolute bottom-[5%] left-[5%] w-[6%] aspect-square rounded-full"
-          style={{ background: colors.spools, border: "1px solid rgba(255,255,255,0.1)" }}
-        >
-          <div className="absolute inset-[30%] border-t border-b" style={{ borderColor: colors.body, transform: "rotate(45deg)" }} />
-        </div>
-        <div 
-          className="absolute bottom-[5%] right-[5%] w-[6%] aspect-square rounded-full"
-          style={{ background: colors.spools, border: "1px solid rgba(255,255,255,0.1)" }}
-        >
-          <div className="absolute inset-[30%] border-t border-b" style={{ borderColor: colors.body, transform: "rotate(45deg)" }} />
-        </div>
+        {/* Corner screws */}
+        {[
+          { top: "3%", left: "3%" },
+          { top: "3%", right: "3%" },
+          { bottom: "3%", left: "3%" },
+          { bottom: "3%", right: "3%" }
+        ].map((pos, i) => (
+          <div
+            key={i}
+            className="absolute w-[5%] aspect-square rounded-full"
+            style={{ 
+              ...pos,
+              background: colors.spools,
+              border: "1px solid rgba(0,0,0,0.3)",
+              boxShadow: "inset 0 1px 2px rgba(255,255,255,0.2)"
+            }}
+          >
+            {/* Screw slot */}
+            <div 
+              className="absolute inset-[35%]"
+              style={{ 
+                borderTop: "1.5px solid rgba(0,0,0,0.5)",
+                borderBottom: "1.5px solid rgba(0,0,0,0.5)",
+                transform: "rotate(45deg)"
+              }}
+            />
+          </div>
+        ))}
 
         {/* Shine effect */}
+<<<<<<< HEAD
         <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none" />
 >>>>>>> d1ddc53 (Alpha Build)
+=======
+        <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent pointer-events-none rounded-md" />
+        
+        {/* Additional shine for clear */}
+        {cassetteColor === "clear" && (
+          <div className="absolute inset-0 bg-gradient-to-tl from-white/20 via-transparent to-transparent pointer-events-none rounded-md" />
+        )}
+>>>>>>> baab95a (Alpha Build)
       </div>
     </div>
   );

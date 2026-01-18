@@ -184,6 +184,7 @@ export const FeaturedAlbums = () => {
             <Link to="/collections">Bütün Kolleksiyaya Baxın</Link>
           </Button>
         </div>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
         <Button
@@ -197,6 +198,8 @@ export const FeaturedAlbums = () => {
 =======
         {/* Album Grid */}
 >>>>>>> d1ddc53 (Alpha Build)
+=======
+>>>>>>> baab95a (Alpha Build)
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredAlbums.map((album) => {
             const accentColors = getAccentColors(album.accentColor);
@@ -379,8 +382,6 @@ export const FeaturedAlbums = () => {
                     )}
                   </div>
                 </div>
-
-                {/* Album Info */}
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
