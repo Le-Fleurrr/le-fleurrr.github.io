@@ -8,6 +8,7 @@ import { CassetteTape } from "./CassetteTape.tsx";
 >>>>>>> d1ddc53 (Alpha Build)
 import { Button } from "./ui/Button.tsx";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ArrowLeft } from "lucide-react";
 import { albums } from "./Albums.jsx";
 import { artistProfiles } from "./ArtistProfiles.jsx";
@@ -78,32 +79,61 @@ const ArtistPage = () => {
 
 =======
 import { Play, MoreHorizontal, Heart, Plus, ArrowLeft } from "lucide-react";
+=======
+import { MoreHorizontal, Heart, Plus, ArrowLeft } from "lucide-react";
+>>>>>>> 428aee0 (Alpha BUild)
 import { albums } from "./Albums.jsx";
 import { artistProfiles } from "./ArtistProfiles.jsx"; // Import artist profiles
 
 const ArtistPage = () => {
-  const { artistName } = useParams();
+  const { artistName } = useParams(); // Grab the artistName from URL
   const [hoveredAlbumId, setHoveredAlbumId] = useState(null);
   const [following, setFollowing] = useState(false);
 
-  const artistAlbums = albums.filter(
-    album => album.artist.toLowerCase().replace(/\s+/g, '-') === artistName
-  );
+  // Default fallback images
+  const defaultBanner = '/images/default-banner.jpg';  // Make sure these paths are correct
+  const defaultProfile = '/images/default-profile.jpg';
+
+  // Check if artistName is undefined or null
+  if (!artistName) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-center text-white">
+          <h1 className="text-4xl font-bold mb-4">Artist Not Found</h1>
+          <Link to="/" className="text-red-500 hover:text-red-400">
+            ← Go Back
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  // Log artistName to check if it's coming correctly
+  console.log("Artist Name:", artistName);
+
+  // Filter albums to find the artist's albums
+  const artistAlbums = albums.filter((album) => {
+    const artistName = album.artist[0]; // Access the first element of the artist array
+    return typeof artistName === 'string' && artistName.toLowerCase().replace(/,/g, '').replace(/\s+/g, '-') === artistName.toLowerCase().replace(/,/g, '').replace(/\s+/g, '-');
+  });
 
   const artist = artistAlbums[0]?.artist || "Artist";
-  
-  // Get artist profile data from ArtistProfiles.jsx
-  const artistProfile = artistProfiles[artist] || {};
-  
+
+  // Get artist profile data from ArtistProfiles.jsx using the exact name in artistProfiles
+  const artistProfile = artistProfiles[artistName] || {}; // Direct match with artistName
+
+  // Log artistProfile to ensure we have the correct data
+  console.log("Artist Profile:", artistProfile);
+
   // Check URL parameters for banner and profile images
   const urlParams = new URLSearchParams(window.location.search);
   const bannerFromUrl = urlParams.get('banner');
   const profileFromUrl = urlParams.get('profile');
   
-  // Priority: URL params > ArtistProfiles.jsx > fallback to gradient
-  const artistBanner = bannerFromUrl || artistProfile.banner;
-  const artistProfileImage = profileFromUrl || artistProfile.profileImage;
-  
+  // Priority: URL params > ArtistProfiles.jsx > fallback to default images
+  const artistBanner = bannerFromUrl || artistProfile.banner || defaultBanner;
+  const artistProfileImage = profileFromUrl || artistProfile.profileImage || defaultProfile;
+
   const [bannerError, setBannerError] = useState(false);
   const [profileError, setProfileError] = useState(false);
 
@@ -121,20 +151,22 @@ const ArtistPage = () => {
     );
   }
 
+  // Sort albums by year (newest first)
   const sortedAlbums = [...artistAlbums].sort((a, b) => b.year - a.year);
   const latestAlbum = sortedAlbums[0];
 
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Hero Section with Artist Banner */}
       <div className="relative">
         <div className="absolute inset-0 h-[500px] overflow-hidden">
-          {artistBanner && !bannerError ? (
+          {artistBanner ? (
             <>
               <img
                 src={artistBanner}
                 alt={`${artist} banner`}
                 className="w-full h-full object-cover"
-                onError={() => setBannerError(true)}
+                onError={() => setBannerError(true)} // Handle error if image doesn't load
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black" />
             </>
@@ -143,12 +175,17 @@ const ArtistPage = () => {
           )}
         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         <div className="absolute top-6 left-6 z-20">
           <Link to="/">
             <Button
               variant="ghost"
 =======
+=======
+        
+        {/* Back button */}
+>>>>>>> 428aee0 (Alpha BUild)
         <div className="absolute top-6 left-6 z-20">
           <Link to="/">
             <Button 
@@ -163,6 +200,7 @@ const ArtistPage = () => {
         </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className="relative pt-80 pb-8 px-8">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center gap-6">
@@ -170,19 +208,29 @@ const ArtistPage = () => {
                 <div className="relative">
 =======
         <div className="relative pt-32 pb-8 px-8">
+=======
+        {/* Artist info at bottom */}
+        <div className="relative pt-64 pb-8 px-8">
+>>>>>>> 428aee0 (Alpha BUild)
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-end gap-6">
+            <div className="flex items-center gap-6">
+              {/* Artist Profile Picture */}
               {artistProfileImage && !profileError && (
+<<<<<<< HEAD
                 <div className="relative mb-2">
 >>>>>>> baab95a (Alpha Build)
+=======
+                <div className="relative">
+>>>>>>> 428aee0 (Alpha BUild)
                   <img
                     src={artistProfileImage}
                     alt={artist}
                     className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-black shadow-2xl"
-                    onError={() => setProfileError(true)}
+                    onError={() => setProfileError(true)} // Handle error if image doesn't load
                   />
                 </div>
               )}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
               <div className="flex-1">
@@ -193,15 +241,23 @@ const ArtistPage = () => {
               
               <div className="flex-1 pb-2">
 >>>>>>> baab95a (Alpha Build)
+=======
+              
+              <div className="flex-1">
+>>>>>>> 428aee0 (Alpha BUild)
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-2 drop-shadow-lg">
                   {artist}
                 </h1>
                 <p className="text-zinc-400 text-lg">
 <<<<<<< HEAD
+<<<<<<< HEAD
                   {artistAlbums[0]?.genre || "Music"}
 =======
                   {artistAlbums.reduce((sum, album) => sum + (album.tracks?.length || 10), 0)} mahnı
 >>>>>>> baab95a (Alpha Build)
+=======
+                  {artistAlbums[0]?.genre || "Music"}
+>>>>>>> 428aee0 (Alpha BUild)
                 </p>
               </div>
             </div>
@@ -209,8 +265,13 @@ const ArtistPage = () => {
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+
+      {/* Action buttons */}
+>>>>>>> 428aee0 (Alpha BUild)
       <div className="px-8 py-4 max-w-7xl mx-auto">
         <div className="flex items-center gap-3">
           <Button
@@ -243,7 +304,12 @@ const ArtistPage = () => {
           </Button>
         </div>
       </div>
+<<<<<<< HEAD
 >>>>>>> baab95a (Alpha Build)
+=======
+
+      {/* Latest Release Section */}
+>>>>>>> 428aee0 (Alpha BUild)
       {latestAlbum && (
         <div className="px-8 py-8 max-w-7xl mx-auto">
           <h2 className="text-2xl font-bold mb-6">Son Buraxılış</h2>
@@ -269,6 +335,7 @@ const ArtistPage = () => {
                   <div className="w-full h-full bg-zinc-800 rounded-lg flex items-center justify-center">
                     {latestAlbum.format === "cd" ? (
                       <CDDisc size="sm" spinning={hoveredAlbumId === latestAlbum.id} />
+<<<<<<< HEAD
 <<<<<<< HEAD
                     ) : latestAlbum.format === "cassette" ? (
                       <CassetteTape
@@ -315,6 +382,10 @@ const ArtistPage = () => {
                         size="md" 
                         spinning={hoveredId === album.id}
 =======
+=======
+                    ) : latestAlbum.format === "cassette" ? (
+                      <div className="text-zinc-400 text-xs">CASSETTE</div>
+>>>>>>> 428aee0 (Alpha BUild)
                     ) : (
                       <VinylRecord 
                         size="sm" 
@@ -345,6 +416,8 @@ const ArtistPage = () => {
           </Link>
         </div>
       )}
+
+      {/* Albums Grid Section */}
       <div className="px-8 py-8 max-w-7xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Diskografiya</h2>
         
@@ -368,6 +441,8 @@ const ArtistPage = () => {
                   <div className="w-full h-full bg-zinc-800 rounded-lg flex items-center justify-center">
                     {album.format === "cd" ? (
                       <CDDisc size="md" spinning={hoveredAlbumId === album.id} />
+                    ) : album.format === "cassette" ? (
+                      <div className="text-zinc-400 text-sm font-bold">CASSETTE</div>
                     ) : (
                       <VinylRecord 
                         size="md" 
@@ -503,9 +578,14 @@ const ArtistPage = () => {
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> baab95a (Alpha Build)
+=======
+
+      {/* Bottom padding */}
+>>>>>>> 428aee0 (Alpha BUild)
       <div className="h-20" />
     </div>
   );

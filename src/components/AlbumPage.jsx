@@ -21,8 +21,6 @@ const getArtistList = (album) => {
 const AlbumPage = () => {
   const { albumId } = useParams();
   const navigate = useNavigate();
-  
-  // --- MISSING STATES ADDED BELOW ---
   const [activeTab, setActiveTab] = useState("description");
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -232,7 +230,7 @@ const AlbumPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
     </div>
   );
 };
