@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { VinylRecord } from "./VinylRecord.tsx";
 import { CDDisc } from "./CDDisc.tsx";
 import { CassetteTape } from "./CassetteTape.tsx";
@@ -35,7 +35,7 @@ type CassetteColor =
 interface Album {
   id: number;
   title: string;
-  artist: string;
+  artist: string[]; // always an array
   price: number;
   genre: string;
   year: number;
@@ -50,56 +50,71 @@ interface Album {
   description?: string;
 }
 
-// 🔑 Normalize raw albums so format matches union type
+// Normalize artist field and format field so component can rely on consistent shape
 const normalizeAlbums = (albums: any[]): Album[] =>
   albums.map((a) => {
+    // normalize format
     let normalizedFormat: "vinyl" | "cd" | "cassette" | undefined;
     if (a.format === "vinyl") normalizedFormat = "vinyl";
     else if (a.format === "cd") normalizedFormat = "cd";
     else if (a.format === "cassette" || a.format === "cassetteTape") normalizedFormat = "cassette";
     else normalizedFormat = undefined;
 
+    // normalize artist -> always array of strings
+    let artistArray: string[] = [];
+    if (Array.isArray(a.artist)) {
+      artistArray = a.artist.filter(Boolean).map(String);
+    } else if (Array.isArray(a.artists)) {
+      artistArray = a.artists.filter(Boolean).map(String);
+    } else if (typeof a.artist === "string") {
+      artistArray = a.artist.split("&").map((s: string) => s.trim()).filter(Boolean);
+    } else if (typeof a.artists === "string") {
+      artistArray = a.artists.split("&").map((s: string) => s.trim()).filter(Boolean);
+    }
+
     return {
       ...a,
       format: normalizedFormat,
+      artist: artistArray,
     };
   });
 
+const getSleeveColorClass = (color?: string) => {
+  const colorMap: Record<string, string> = {
+    red: "from-red-500/20 to-transparent",
+    blue: "from-blue-500/20 to-transparent",
+    purple: "from-purple-500/20 to-transparent",
+    green: "from-green-500/20 to-transparent",
+    orange: "from-orange-500/20 to-transparent",
+    pink: "from-pink-500/20 to-transparent",
+    yellow: "from-yellow-500/20 to-transparent",
+    brown: "from-amber-700/20 to-transparent",
+    gray: "from-gray-500/20 to-transparent",
+    default: "from-primary/20 to-transparent",
+  };
+  return colorMap[color || "default"] || colorMap.default;
+};
+
+const getAccentColors = (color?: string) => {
+  const colorMap: Record<string, { border: string; text: string }> = {
+    red: { border: "border-red-500/50", text: "group-hover:text-red-500" },
+    blue: { border: "border-blue-500/50", text: "group-hover:text-blue-500" },
+    purple: { border: "border-purple-500/50", text: "group-hover:text-purple-500" },
+    green: { border: "border-green-500/50", text: "group-hover:text-green-500" },
+    orange: { border: "border-orange-500/50", text: "group-hover:text-orange-500" },
+    pink: { border: "border-pink-500/50", text: "group-hover:text-pink-500" },
+    yellow: { border: "border-yellow-500/50", text: "group-hover:text-yellow-500" },
+    amber: { border: "border-amber-600/50", text: "group-hover:text-amber-600" },
+    gray: { border: "border-gray-500/50", text: "group-hover:text-gray-500" },
+    default: { border: "border-primary/50", text: "group-hover:text-primary" },
+  };
+  return colorMap[color || "default"] || colorMap.default;
+};
+
 export const FeaturedAlbums = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const navigate = useNavigate();
   const featuredAlbums: Album[] = normalizeAlbums(rawAlbums).slice(0, 6);
-
-  const getSleeveColorClass = (color?: string) => {
-    const colorMap: Record<string, string> = {
-      red: "from-red-500/20 to-transparent",
-      blue: "from-blue-500/20 to-transparent",
-      purple: "from-purple-500/20 to-transparent",
-      green: "from-green-500/20 to-transparent",
-      orange: "from-orange-500/20 to-transparent",
-      pink: "from-pink-500/20 to-transparent",
-      yellow: "from-yellow-500/20 to-transparent",
-      brown: "from-amber-700/20 to-transparent",
-      gray: "from-gray-500/20 to-transparent",
-      default: "from-primary/20 to-transparent",
-    };
-    return colorMap[color || "default"] || colorMap.default;
-  };
-
-  const getAccentColors = (color?: string) => {
-    const colorMap: Record<string, { border: string; text: string }> = {
-      red: { border: "border-red-500/50", text: "group-hover:text-red-500" },
-      blue: { border: "border-blue-500/50", text: "group-hover:text-blue-500" },
-      purple: { border: "border-purple-500/50", text: "group-hover:text-purple-500" },
-      green: { border: "border-green-500/50", text: "group-hover:text-green-500" },
-      orange: { border: "border-orange-500/50", text: "group-hover:text-orange-500" },
-      pink: { border: "border-pink-500/50", text: "group-hover:text-pink-500" },
-      yellow: { border: "border-yellow-500/50", text: "group-hover:text-yellow-500" },
-      amber: { border: "border-amber-600/50", text: "group-hover:text-amber-600" },
-      gray: { border: "border-gray-500/50", text: "group-hover:text-gray-500" },
-      default: { border: "border-primary/50", text: "group-hover:text-primary" },
-    };
-    return colorMap[color || "default"] || colorMap.default;
-  };
 
   return (
     <section id="new" className="py-24 bg-secondary/30">
@@ -121,16 +136,22 @@ export const FeaturedAlbums = () => {
             <Link to="/collections">Bütün Kolleksiyaya Baxın</Link>
           </Button>
         </div>
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredAlbums.map((album) => {
             const accentColors = getAccentColors(album.accentColor);
             return (
-              <Link
+              <div
                 key={album.id}
-                to={`/album/${album.id}`}
-                className={`group relative bg-card rounded-xl p-6 border transition-all duration-300 cursor-pointer ${accentColors.border} hover:shadow-lg block`}
+                role="button"
+                tabIndex={0}
+                onClick={() => navigate(`/album/${album.id}`)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") navigate(`/album/${album.id}`);
+                }}
                 onMouseEnter={() => setHoveredId(album.id)}
                 onMouseLeave={() => setHoveredId(null)}
+                className={`group relative bg-card rounded-xl p-6 border transition-all duration-300 cursor-pointer ${accentColors.border} hover:shadow-lg`}
               >
                 {album.isNew && (
                   <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
@@ -180,13 +201,12 @@ export const FeaturedAlbums = () => {
                     )}
                   </div>
                 </div>
+
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <h3
-                          className={`font-serif text-xl font-bold transition-colors ${accentColors.text}`}
-                        >
+                        <h3 className={`font-serif text-xl font-bold transition-colors ${accentColors.text}`}>
                           {album.title}
                         </h3>
                         {album.isExplicit && (
@@ -195,23 +215,32 @@ export const FeaturedAlbums = () => {
                           </span>
                         )}
                       </div>
-                      <p
-                        className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          window.location.href = `/artist/${album.artist
-                            .toLowerCase()
-                            .replace(/\s+/g, "-")}`;
-                        }}
-                      >
-                        {album.artist}
-                      </p>
+
+                      {/* Artists: render each as its own Link. stopPropagation so card click doesn't fire */}
+                      <div className="flex flex-wrap items-center gap-2 text-sm">
+                        {album.artist.map((artistName, idx) => {
+                          const slug = String(artistName).toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
+                          return (
+                            <span key={artistName} className="flex items-center">
+                              <Link
+                                to={`/artist/${slug}`}
+                                onClick={(e) => e.stopPropagation()}
+                                className="text-muted-foreground hover:text-primary transition-colors"
+                              >
+                                {artistName}
+                              </Link>
+                              {idx < album.artist.length - 1 && <span className="mx-1 text-muted-foreground">&</span>}
+                            </span>
+                          );
+                        })}
+                      </div>
                     </div>
+
                     <Button
                       variant="ghost"
                       size="icon"
                       className="text-muted-foreground hover:text-primary shrink-0"
-                      onClick={(e) => e.preventDefault()}
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <Heart className="w-5 h-5" />
                     </Button>
@@ -228,14 +257,17 @@ export const FeaturedAlbums = () => {
                     <Button
                       size="sm"
                       className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
-                      onClick={(e) => e.preventDefault()}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        // add to cart logic here
+                      }}
                     >
                       <ShoppingCart className="w-4 h-4" />
                       Səbətə əlavə et
                     </Button>
                   </div>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>
