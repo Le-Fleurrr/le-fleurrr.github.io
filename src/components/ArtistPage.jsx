@@ -2,60 +2,60 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { VinylRecord } from "./VinylRecord.tsx";
 import { CDDisc } from "./CDDisc.tsx";
+import { CassetteTape } from "./CassetteTape.tsx";
 import { Button } from "./ui/Button.tsx";
 import { MoreHorizontal, Heart, Plus, ArrowLeft } from "lucide-react";
 import { albums } from "./Albums.jsx";
-import { artistProfiles } from "./ArtistProfiles.jsx"; // Import artist profiles
+import { artistProfiles } from "./ArtistProfiles.jsx";
 
 const ArtistPage = () => {
-  const { artistName } = useParams(); // Grab the artistName from URL
+  const { artistName } = useParams();
   const [hoveredAlbumId, setHoveredAlbumId] = useState(null);
   const [following, setFollowing] = useState(false);
 
-  // Default fallback images
-  const defaultBanner = '/images/default-banner.jpg';  // Make sure these paths are correct
-  const defaultProfile = '/images/default-profile.jpg';
-
-  // Check if artistName is undefined or null
-  if (!artistName) {
-    return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-center text-white">
-          <h1 className="text-4xl font-bold mb-4">Artist Not Found</h1>
-          <Link to="/" className="text-red-500 hover:text-red-400">
-            ← Go Back
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  // Log artistName to check if it's coming correctly
-  console.log("Artist Name:", artistName);
-
-  // Filter albums to find the artist's albums
-  const artistAlbums = albums.filter((album) => {
-    const artistName = album.artist[0]; // Access the first element of the artist array
-    return typeof artistName === 'string' && artistName.toLowerCase().replace(/,/g, '').replace(/\s+/g, '-') === artistName.toLowerCase().replace(/,/g, '').replace(/\s+/g, '-');
+  // Normalize albums to ensure artist is always an array
+  const normalizedAlbums = albums.map(album => {
+    let artistArray = [];
+    
+    if (Array.isArray(album.artist)) {
+      // If it's already an array, keep it
+      artistArray = album.artist.filter(Boolean).map(a => String(a).trim());
+    } else if (typeof album.artist === 'string') {
+      // If it's a string, split by & or ,
+      artistArray = album.artist.split(/[&,]/).map(a => a.trim()).filter(Boolean);
+    } else {
+      artistArray = [String(album.artist)];
+    }
+    
+    return {
+      ...album,
+      artist: artistArray
+    };
   });
 
-  const artist = artistAlbums[0]?.artist || "Artist";
+  // Filter albums by matching any artist in the artist array
+  const artistAlbums = normalizedAlbums.filter(album => {
+    const artistNames = album.artist.map(a => 
+      String(a).toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')
+    );
+    return artistNames.includes(artistName);
+  });
 
-  // Get artist profile data from ArtistProfiles.jsx using the exact name in artistProfiles
-  const artistProfile = artistProfiles[artistName] || {}; // Direct match with artistName
-
-  // Log artistProfile to ensure we have the correct data
-  console.log("Artist Profile:", artistProfile);
-
+  // Get the first artist's actual name for display
+  const artist = artistAlbums[0]?.artist?.[0] || "Artist";
+  
+  // Get artist profile data - use the actual artist name, not the URL slug
+  const artistProfile = artistProfiles[artist] || {};
+  
   // Check URL parameters for banner and profile images
   const urlParams = new URLSearchParams(window.location.search);
   const bannerFromUrl = urlParams.get('banner');
   const profileFromUrl = urlParams.get('profile');
   
-  // Priority: URL params > ArtistProfiles.jsx > fallback to default images
-  const artistBanner = bannerFromUrl || artistProfile.banner || defaultBanner;
-  const artistProfileImage = profileFromUrl || artistProfile.profileImage || defaultProfile;
-
+  // Priority: URL params > ArtistProfiles.jsx > fallback to gradient
+  const artistBanner = bannerFromUrl || artistProfile.banner;
+  const artistProfileImage = profileFromUrl || artistProfile.profileImage;
+  
   const [bannerError, setBannerError] = useState(false);
   const [profileError, setProfileError] = useState(false);
 
@@ -80,15 +80,17 @@ const ArtistPage = () => {
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section with Artist Banner */}
       <div className="relative">
+        {/* Background banner image or gradient */}
         <div className="absolute inset-0 h-[500px] overflow-hidden">
-          {artistBanner ? (
+          {artistBanner && !bannerError ? (
             <>
               <img
                 src={artistBanner}
                 alt={`${artist} banner`}
                 className="w-full h-full object-cover"
-                onError={() => setBannerError(true)} // Handle error if image doesn't load
+                onError={() => setBannerError(true)}
               />
+              {/* Dark overlay for text readability */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black" />
             </>
           ) : (
@@ -110,17 +112,17 @@ const ArtistPage = () => {
         </div>
 
         {/* Artist info at bottom */}
-        <div className="relative pt-64 pb-8 px-8">
+        <div className="relative pt-80 pb-8 px-8">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center gap-6">
-              {/* Artist Profile Picture */}
+              {/* Artist Profile Picture (optional) - positioned lower */}
               {artistProfileImage && !profileError && (
                 <div className="relative">
                   <img
                     src={artistProfileImage}
                     alt={artist}
                     className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-black shadow-2xl"
-                    onError={() => setProfileError(true)} // Handle error if image doesn't load
+                    onError={() => setProfileError(true)}
                   />
                 </div>
               )}
@@ -137,42 +139,6 @@ const ArtistPage = () => {
           </div>
         </div>
       </div>
-
-      {/* Action buttons */}
-      <div className="px-8 py-4 max-w-7xl mx-auto">
-        <div className="flex items-center gap-3">
-          <Button
-            onClick={() => setFollowing(!following)}
-            variant={following ? "outline" : "default"}
-            className={`rounded-full px-6 ${
-              following 
-                ? "border-zinc-600 text-zinc-400 bg-transparent hover:border-zinc-500 hover:bg-transparent" 
-                : "bg-transparent border border-zinc-400 text-white hover:border-white hover:bg-transparent"
-            }`}
-          >
-            {following ? (
-              <>
-                <Heart className="w-4 h-4 mr-2 fill-current" />
-                İzlənir
-              </>
-            ) : (
-              <>
-                <Plus className="w-4 h-4 mr-2" />
-                İzlə
-              </>
-            )}
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="rounded-full w-10 h-10 hover:bg-zinc-800"
-          >
-            <MoreHorizontal className="w-5 h-5" />
-          </Button>
-        </div>
-      </div>
-
-      {/* Latest Release Section */}
       {latestAlbum && (
         <div className="px-8 py-8 max-w-7xl mx-auto">
           <h2 className="text-2xl font-bold mb-6">Son Buraxılış</h2>
@@ -195,12 +161,16 @@ const ArtistPage = () => {
                     {latestAlbum.format === "cd" ? (
                       <CDDisc size="sm" spinning={hoveredAlbumId === latestAlbum.id} />
                     ) : latestAlbum.format === "cassette" ? (
-                      <div className="text-zinc-400 text-xs">CASSETTE</div>
+                      <CassetteTape 
+                        size="sm" 
+                        spinning={hoveredAlbumId === latestAlbum.id}
+                        cassetteColor={latestAlbum.cassetteColor || "black"}
+                      />
                     ) : (
                       <VinylRecord 
                         size="sm" 
                         spinning={hoveredAlbumId === latestAlbum.id}
-                        vinylColor={latestAlbum.vinylColor}
+                        vinylColor={latestAlbum.vinylColor || "black"}
                       />
                     )}
                   </div>
@@ -210,23 +180,18 @@ const ArtistPage = () => {
                 <p className="text-sm text-zinc-400 mb-1">
                   {new Date(latestAlbum.year, 0).toLocaleDateString('az-AZ', { 
                     year: 'numeric', 
-                    month: 'long',
-                    day: 'numeric' 
+
                   })}
                 </p>
                 <h3 className="text-2xl font-bold mb-2 group-hover:text-red-500 transition">
                   {latestAlbum.title}
                 </h3>
-                <p className="text-zinc-400">
-                  {latestAlbum.tracks?.length || 10} mahnı • {latestAlbum.price} ₼
-                </p>
+                
               </div>
             </div>
           </Link>
         </div>
       )}
-
-      {/* Albums Grid Section */}
       <div className="px-8 py-8 max-w-7xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Diskografiya</h2>
         
@@ -251,12 +216,16 @@ const ArtistPage = () => {
                     {album.format === "cd" ? (
                       <CDDisc size="md" spinning={hoveredAlbumId === album.id} />
                     ) : album.format === "cassette" ? (
-                      <div className="text-zinc-400 text-sm font-bold">CASSETTE</div>
+                      <CassetteTape 
+                        size="md" 
+                        spinning={hoveredAlbumId === album.id}
+                        cassetteColor={album.cassetteColor || "black"}
+                      />
                     ) : (
                       <VinylRecord 
                         size="md" 
                         spinning={hoveredAlbumId === album.id}
-                        vinylColor={album.vinylColor}
+                        vinylColor={album.vinylColor || "black"}
                       />
                     )}
                   </div>
@@ -279,8 +248,6 @@ const ArtistPage = () => {
           ))}
         </div>
       </div>
-
-      {/* Bottom padding */}
       <div className="h-20" />
     </div>
   );
