@@ -394,7 +394,7 @@ export const albums = [
   {
     id: 6,
     title: "We Still Don't Trust You (2LP)",
-    artist: ["Future" , "Metro Boomin"],
+    artist: ["Future", "Metro Boomin"],
     price: 150,
     genre: "Hip-Hop/Rap",
     year: 2024,
@@ -652,7 +652,7 @@ export const albums = [
   {
     id: 20,
     title: "Watch The Throne (2LP)",
-    artist: ["JAY-Z" , "Kanye West"],
+    artist: ["JAY-Z ", "Kanye West"],
     price: 200,
     genre: "Hip-Hop/Rap",
     year: 2011,
@@ -812,7 +812,7 @@ export const albums = [
     artist: ["Tyler, The Creator"],
     price: 100,
     genre: "Hip-Hop/Rap",
-    year: 2015,
+    year: 2013,
     isNew: false,
     isExplicit: true,
     image: wolf.cover,
@@ -826,7 +826,7 @@ export const albums = [
   {
     id: 30,
     title: "Kids See Ghosts (LP)",
-    artist: ["KIDS SEE GHOSTS", "Kanye West" , "Kid Cudi"],
+    artist: ["KIDS SEE GHOSTS","Kanye West", "Kid Cudi"],
     price: 120,
     genre: "Hip-Hop/Rap",
     year: 2018,
@@ -843,7 +843,7 @@ export const albums = [
   {
     id: 31,
     title: "VULTURES 1 (2LP)",
-    artist: ["¥$", "Kanye West" , "Ty Dolla $ign"],
+    artist: ["¥$ ", "Kanye West ","Ty Dolla $ign"],
     price: 150,
     genre: "Hip-Hop/Rap",
     year: 2024,
@@ -877,7 +877,7 @@ export const albums = [
   {
     id: 33,
     title: "JACKBOYS (LP)",
-    artist: ["JACKBOYS" & "Travis Scott"],
+    artist: ["JACKBOYS ", "Travis Scott"],
     price: 100,
     genre: "Hip-Hop/Rap",
     year: 2019,

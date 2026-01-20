@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/Button.tsx";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { albums } from "./Albums.jsx";
+import { ShoppingCart, Heart } from "lucide-react";
 
 const getArtistList = (album) => {
   if (!album) return [];
@@ -76,8 +77,6 @@ const AlbumPage = () => {
                   </div>
                 </div>
               )}
-
-              {/* Navigation Arrows */}
               {galleryImages.length > 1 && (
                 <>
                   {selectedImage > 0 && (
@@ -109,8 +108,6 @@ const AlbumPage = () => {
                   </div>
                 </>
               )}
-
-              {/* Toggle animated cover */}
               {album.animatedCover && !imageError && selectedImage === 0 && (
                 <button
                   onClick={() => setShowAnimated((s) => !s)}
@@ -120,8 +117,6 @@ const AlbumPage = () => {
                 </button>
               )}
             </div>
-
-            {/* Thumbnails */}
             {galleryImages.length > 1 && (
               <div className="relative bg-card backdrop-blur-sm p-6 rounded-lg border border-border shadow-lg">
                 <div className="flex items-center justify-between mb-4">
@@ -135,9 +130,8 @@ const AlbumPage = () => {
                         setSelectedImage(index);
                         setImageError(false);
                       }}
-                      className={`flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-3 transition-all ${
-                        selectedImage === index ? "border-primary shadow-xl scale-105 ring-2 ring-primary/50" : "border-border hover:border-primary/50 hover:scale-102"
-                      }`}
+                      className={`flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-3 transition-all ${selectedImage === index ? "border-primary shadow-xl scale-105 ring-2 ring-primary/50" : "border-border hover:border-primary/50 hover:scale-102"
+                        }`}
                     >
                       <img
                         src={index === 0 && !showAnimated && album.animatedCover ? album.image : img.url}
@@ -149,8 +143,6 @@ const AlbumPage = () => {
                 </div>
               </div>
             )}
-
-            {/* Album Info Overlay */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-8 text-white">
               <div className="text-center">
                 {album.isNew && (
@@ -165,8 +157,6 @@ const AlbumPage = () => {
                     <span className="text-sm font-bold px-2.5 py-1 bg-white/20 backdrop-blur-sm text-white border border-white/30 rounded">E</span>
                   )}
                 </div>
-
-                {/* Artists (defensive) */}
                 <div className="flex items-center justify-center gap-2 mb-4">
                   {artistList.map((artist, index) => (
                     <span key={artist} className="flex items-center">
@@ -192,11 +182,32 @@ const AlbumPage = () => {
                     </>
                   )}
                 </div>
+                <div className="flex items-center justify-between pt-4 border-t border-border">
+                  <p className="text-2xl font-serif font-bold">{album.price} ₼</p>
+                </div>
               </div>
             </div>
           </div>
+          <Button
+                    size="sm"
+                    className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                  >
+                    <ShoppingCart className="w-4 h-4" />
+                    Səbətə əlavə et
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-muted-foreground hover:text-primary shrink-0"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Heart className="w-5 h-5" />
+                  </Button>
         </div>
-      </div> 
+      </div>
     </div>
   );
 };

@@ -50,17 +50,13 @@ interface Album {
   description?: string;
 }
 
-// Normalize artist field and format field so component can rely on consistent shape
 const normalizeAlbums = (albums: any[]): Album[] =>
   albums.map((a) => {
-    // normalize format
     let normalizedFormat: "vinyl" | "cd" | "cassette" | undefined;
     if (a.format === "vinyl") normalizedFormat = "vinyl";
     else if (a.format === "cd") normalizedFormat = "cd";
     else if (a.format === "cassette" || a.format === "cassetteTape") normalizedFormat = "cassette";
     else normalizedFormat = undefined;
-
-    // normalize artist -> always array of strings
     let artistArray: string[] = [];
     if (Array.isArray(a.artist)) {
       artistArray = a.artist.filter(Boolean).map(String);
@@ -179,9 +175,8 @@ export const FeaturedAlbums = () => {
                   />
 
                   <div
-                    className={`relative transition-transform duration-500 ease-out ${
-                      hoveredId === album.id ? "translate-x-16" : "translate-x-0"
-                    }`}
+                    className={`relative transition-transform duration-500 ease-out ${hoveredId === album.id ? "translate-x-16" : "translate-x-0"
+                      }`}
                     style={{ marginLeft: "20px" }}
                   >
                     {album.format === "cd" ? (
@@ -215,13 +210,16 @@ export const FeaturedAlbums = () => {
                           </span>
                         )}
                       </div>
-
-                      {/* Artists: render each as its own Link. stopPropagation so card click doesn't fire */}
                       <div className="flex flex-wrap items-center gap-2 text-sm">
                         {album.artist.map((artistName, idx) => {
-                          const slug = String(artistName).toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
+                          const slug = String(artistName)
+                            .toLowerCase()
+                            .replace(/,/g, '')
+                            .replace(/\$/g, '')
+                            .replace(/\s+/g, "-")
+                            .replace(/[^\w-]/g, "");
                           return (
-                            <span key={artistName} className="flex items-center">
+                            <span key={`${album.id}-artist-${idx}`} className="flex items-center">
                               <Link
                                 to={`/artist/${slug}`}
                                 onClick={(e) => e.stopPropagation()}
@@ -229,7 +227,9 @@ export const FeaturedAlbums = () => {
                               >
                                 {artistName}
                               </Link>
-                              {idx < album.artist.length - 1 && <span className="mx-1 text-muted-foreground">&</span>}
+                              {idx < album.artist.length - 1 && (
+                                <span className="text-muted-foreground mx-1">&</span>
+                              )}
                             </span>
                           );
                         })}
@@ -259,7 +259,6 @@ export const FeaturedAlbums = () => {
                       className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
                       onClick={(e) => {
                         e.stopPropagation();
-                        // add to cart logic here
                       }}
                     >
                       <ShoppingCart className="w-4 h-4" />
