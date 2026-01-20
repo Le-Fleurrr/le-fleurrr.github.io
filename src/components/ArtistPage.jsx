@@ -12,16 +12,12 @@ const ArtistPage = () => {
   const { artistName } = useParams();
   const [hoveredAlbumId, setHoveredAlbumId] = useState(null);
   const [following, setFollowing] = useState(false);
-
-  // Normalize albums to ensure artist is always an array
   const normalizedAlbums = albums.map(album => {
     let artistArray = [];
     
     if (Array.isArray(album.artist)) {
-      // If it's already an array, keep it
       artistArray = album.artist.filter(Boolean).map(a => String(a).trim());
     } else if (typeof album.artist === 'string') {
-      // If it's a string, split by & or ,
       artistArray = album.artist.split(/[&,]/).map(a => a.trim()).filter(Boolean);
     } else {
       artistArray = [String(album.artist)];
@@ -36,7 +32,12 @@ const ArtistPage = () => {
   // Filter albums by matching any artist in the artist array
   const artistAlbums = normalizedAlbums.filter(album => {
     const artistNames = album.artist.map(a => 
-      String(a).toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')
+      String(a)
+        .toLowerCase()
+        .replace(/,/g, '') // Remove commas
+        .replace(/\$/g, '') // Remove dollar signs
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/[^\w-]/g, '') // Remove any other special characters except hyphens
     );
     return artistNames.includes(artistName);
   });
@@ -78,9 +79,7 @@ const ArtistPage = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Hero Section with Artist Banner */}
       <div className="relative">
-        {/* Background banner image or gradient */}
         <div className="absolute inset-0 h-[500px] overflow-hidden">
           {artistBanner && !bannerError ? (
             <>
@@ -90,15 +89,12 @@ const ArtistPage = () => {
                 className="w-full h-full object-cover"
                 onError={() => setBannerError(true)}
               />
-              {/* Dark overlay for text readability */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black" />
             </>
           ) : (
             <div className="w-full h-full bg-gradient-to-b from-zinc-800 via-zinc-900 to-black" />
           )}
         </div>
-        
-        {/* Back button */}
         <div className="absolute top-6 left-6 z-20">
           <Link to="/">
             <Button 
@@ -110,12 +106,9 @@ const ArtistPage = () => {
             </Button>
           </Link>
         </div>
-
-        {/* Artist info at bottom */}
         <div className="relative pt-80 pb-8 px-8">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center gap-6">
-              {/* Artist Profile Picture (optional) - positioned lower */}
               {artistProfileImage && !profileError && (
                 <div className="relative">
                   <img
@@ -129,7 +122,9 @@ const ArtistPage = () => {
               
               <div className="flex-1">
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-2 drop-shadow-lg">
-                  {artist}
+                  {artistAlbums[0]?.artist?.length > 1 
+                    ? artistAlbums[0].artist.join(' & ')
+                    : artist}
                 </h1>
                 <p className="text-zinc-400 text-lg">
                   {artistAlbums[0]?.genre || "Music"}
@@ -180,13 +175,14 @@ const ArtistPage = () => {
                 <p className="text-sm text-zinc-400 mb-1">
                   {new Date(latestAlbum.year, 0).toLocaleDateString('az-AZ', { 
                     year: 'numeric', 
-
                   })}
                 </p>
                 <h3 className="text-2xl font-bold mb-2 group-hover:text-red-500 transition">
                   {latestAlbum.title}
                 </h3>
-                
+                <p className="text-zinc-400">
+                  {latestAlbum.tracks?.length || 10} mahnı • {latestAlbum.price} ₼
+                </p>
               </div>
             </div>
           </Link>

@@ -1126,7 +1126,7 @@ export const albums = [
 },
 {
   id: 50,
-  title: "Long.Live.A$AP (2LP)",
+  title: "LONG.LIVE.A$AP (2LP)",
   artist: ["A$AP Rocky"],
   price: 150,
   genre: "Hip-Hop/Rap",
@@ -1144,7 +1144,7 @@ export const albums = [
 },
 {
   id: 51,
-  title: "At.Long.Last.A$AP (2LP)",
+  title: "AT.LONG.LAST.A$AP (2LP)",
   artist: ["A$AP Rocky"],
   price: 150,
   genre: "Hip-Hop/Rap",
@@ -1153,7 +1153,7 @@ export const albums = [
   isExplicit: false,
   image: atLongLastA$ap.cover,
   vinylImages: atLongLastA$ap.vinyl,
-  animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656266/atLongLastA_ap_animated_gv9fly.gif",
+  animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768896718/atLongLastA_ap_animated_bwfupm.gif",
   vinylColor: "white",
   accentColor: "white",
   sleeveColor: "white",
