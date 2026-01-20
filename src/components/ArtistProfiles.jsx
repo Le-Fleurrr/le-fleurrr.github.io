@@ -117,8 +117,32 @@ export const artistProfiles = {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751227/jackboys_banner_d7xom6.jpg",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751218/jackboys_pfp_ickl3e.jpg"
   },
+  "KIDS SEE GHOSTS": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751219/kidsSeeGhosts_banner_h7r8u3.jpg",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751237/kidsSeeGhosts_pfp_mr4qjs.png"
+  },
   "¥$": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751216/_banner_mirbpx.jpg",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751223/_pfp_ixfgrj.jpg"
-  }
+  },
+  "Metro Boomin": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768926920/metroBoomin_banner_ejzcij.jpg",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927075/metroBoomin_pfp_jouenb.jpg"
+  },
+  "Kendrick Lamar": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927084/kendrickLamar_banner_l7heux.jpg",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927093/kendrickLamar_pfp_lfglqn.png"
+  },
+  "Ken Carson": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927082/kenCarson_banner_hysazj.jpg",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927088/kenCarson_pfp_uhaqem.jpg"
+  },
+  "Destroy Lonely": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927077/destroyLonely_banner_m1br9d.jpg",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927091/destroyLonely_pfp_leoelc.jpg"
+  },
+  "Homixide Gang": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927080/hxg_banner_fh8waw.jpg",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927095/hxg_pfp_zsdk7p.jpg"
+  },
 };

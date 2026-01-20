@@ -187,6 +187,11 @@ const igorCD = {
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768924800/igorCD_vcjczk.png']
 };
 
+const igorCD = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768572775/igor_smxeze.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768924800/igorCD_vcjczk.png']
+};
+
 const cherryBomb = {
   cover: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768577237/cherryBomb_hitapa.jpg',
     'https://res.cloudinary.com/deroy68n9/image/upload/v1768577236/cherryBomb_Mask_ejvftd.jpg'
@@ -573,6 +578,61 @@ const musicCD7 = {
 
 const musicCD8 = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD8_zo5jzq.png',
+};
+
+const heroesAndVillains = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768924534/heroes_villains_dj9uor.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768924533/heroes_villains_vinyl_zfhwuq.jpg']
+};
+
+const atsv = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768924542/atsv_kfevq7.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768924539/atsv_vinyl_o2c5v9.jpg']
+};
+
+const itsv = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768924547/itsv_nridto.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768924546/itsv_vinyl_menbeh.png']
+};
+
+const x = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921257/x_ztymeo.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921267/X_vinyl_bjkhcq.png']
+};
+
+const aGreatChaos = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921257/aGreatChaos_eavhph.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921266/aGreatChaos_vinyl_ynafef.png']
+};
+
+const moreChaos = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921256/moreChaos_ac06t7.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921265/moreChaos_vinyl_rtwwi7.png']
+};
+
+const noStylist = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921252/noStylist_eb1hse.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921262/noStylist_vinyl_rgl132.png']
+};
+
+const ifLooksCouldKill = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921270/ifLooksCouldKill_DirectorsCut_qb3fec.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921271/ifLooksCouldKill_vinyl_oyuwen.jpg']
+};
+
+const loveLastsForever = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921252/loveLastsForever_elerjy.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921263/loveLastsForever_vinyl_d6pwkt.png']
+};
+
+const brokenHearts3CD = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921272/brokenHearts3_zjmwwt.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921251/brokenHearts3_CD_zoaaqc.png']
+};
+
+const homixideLifestyle = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921251/homixideLifestyle_djipud.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921261/homixideLifestyle_vinyl_mjcsbi.png']
 };
 
 export const albums = [
@@ -3686,6 +3746,125 @@ export const albums = [
     sleeveColor: "white",
     accentColor: "white",
     format: "cd",
+    description: "CD edition of Playboi Carti's debut."
+  },
+  {
+    id: 61,
+    title: "IGOR (CD)",
+    artist: ["Tyler, The Creator"],
+    price: 50,
+    genre: "Hip-Hop/Rap",
+    year: 2019,
+    isNew: false,
+    isExplicit: true,
+    image: igorCD.cover,
+    vinylImages: igorCD.vinyl,
+    sleeveColor: "pink",
+    accentColor: "pink",
+    format: "cd",
+    description: "CD edition of Playboi Carti's debut."
+  },
+  {
+    id: 62,
+    title: "CALL ME IF YOU GET LOST: The Estate Sale (CD)",
+    artist: ["Tyler, The Creator"],
+    price: 50,
+    genre: "Hip-Hop/Rap",
+    year: 2021,
+    isNew: false,
+    isExplicit: true,
+    image: callMeIfYouGetLostCD.cover,
+    vinylImages: callMeIfYouGetLostCD.vinyl,
+    sleeveColor: "green",
+    accentColor: "green",
+    format: "cd",
+    description: "CD edition of Playboi Carti's debut."
+  },
+  {
+    id: 63,
+    title: "CALL ME IF YOU GET LOST: The Estate Sale (2LP)",
+    artist: ["Tyler, The Creator"],
+    price: 200,
+    genre: "Hip-Hop/Rap",
+    year: 2021,
+    isNew: false,
+    isExplicit: true,
+    image: callMeIfYouGetLostESTATESALE.cover,
+    vinylImages: callMeIfYouGetLostESTATESALE.vinyl,
+    vinylColor: "blue",
+    sleeveColor: "green",
+    accentColor: "blue",
+    format: "vinyl",
+    description: "CD edition of Playboi Carti's debut."
+  },
+  {
+    id: 64,
+    title: "We Don't Trust You (2LP)",
+    artist: ["Future", "Metro Boomin"],
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2024,
+    isNew: false,
+    isExplicit: true,
+    image: weDontTrustYou.cover,
+    vinylImages: weDontTrustYou.vinyl,
+    vinylColor: "blue",
+    sleeveColor: "blue",
+    accentColor: "blue",
+    format: "vinyl",
+    description: "CD edition of Playboi Carti's debut."
+  },
+  {
+    id: 65,
+    title: "HEROES & VILLAINS (2LP)",
+    artist: ["Future", "Metro Boomin"],
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2022,
+    isNew: false,
+    isExplicit: true,
+    image: heroesAndVillains.cover,
+    vinylImages: heroesAndVillains.vinyl,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768924497/heroes_villains_animated_uoujzk.gif",
+    vinylColor: "white",
+    sleeveColor: "white",
+    accentColor: "white",
+    format: "vinyl",
+    description: "CD edition of Playboi Carti's debut."
+  },
+  {
+    id: 66,
+    title: "METRO BOOMIN PRESENTS SPIDER-MAN: ACROSS THE SPIDER-VERSE (SOUNDTRACK FROM AND INSPIRED BY THE MOTION PICTURE) [2LP]",
+    artist: ["Metro Boomin"],
+    price: 200,
+    genre: "Soundtrack",
+    year: 2023,
+    isNew: false,
+    isExplicit: false,
+    image: atsv.cover,
+    vinylImages: atsv.vinyl,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768924495/atsv_animated_aoylxp.gif",
+    vinylColor: "clear",
+    sleeveColor: "black",
+    accentColor: "purple",
+    format: "vinyl",
+    description: "CD edition of Playboi Carti's debut."
+  },
+  {
+    id: 67,
+    title: "Spider-Man: Into the Spider-Verse (Soundtrack From & Inspired by the Motion Picture) [2LP]",
+    artist: ["Various Artists"],
+    price: 150,
+    genre: "Soundtrack",
+    year: 2018,
+    isNew: false,
+    isExplicit: false,
+    image: itsv.cover,
+    vinylImages: itsv.vinyl,
+    vinylColor: "clear",
+    sleeveColor: "black",
+    accentColor: "purple",
+    format: "vinyl",
     description: "CD edition of Playboi Carti's debut."
   },
 ];
