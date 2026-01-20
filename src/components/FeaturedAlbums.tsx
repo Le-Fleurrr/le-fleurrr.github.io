@@ -30,14 +30,21 @@ interface Album {
   description?: string;
 }
 
+<<<<<<< HEAD
 // --- Helpers ---
+=======
+>>>>>>> d93595e (Alpha BUild)
 const normalizeAlbums = (albums: any[]): Album[] =>
   albums.map((a) => {
     let normalizedFormat: "vinyl" | "cd" | "cassette" | undefined;
     if (a.format === "vinyl") normalizedFormat = "vinyl";
     else if (a.format === "cd") normalizedFormat = "cd";
     else if (a.format === "cassette" || a.format === "cassetteTape") normalizedFormat = "cassette";
+<<<<<<< HEAD
 
+=======
+    else normalizedFormat = undefined;
+>>>>>>> d93595e (Alpha BUild)
     let artistArray: string[] = [];
     const rawArtist = a.artist || a.artists;
     if (Array.isArray(rawArtist)) {
@@ -160,9 +167,8 @@ export const FeaturedAlbums = () => {
                   />
 
                   <div
-                    className={`relative transition-transform duration-500 ease-out ${
-                      hoveredId === album.id ? "translate-x-16" : "translate-x-0"
-                    }`}
+                    className={`relative transition-transform duration-500 ease-out ${hoveredId === album.id ? "translate-x-16" : "translate-x-0"
+                      }`}
                     style={{ marginLeft: "20px" }}
                   >
                     {album.format === "cd" ? (
@@ -196,6 +202,7 @@ export const FeaturedAlbums = () => {
                           </span>
                         )}
                       </div>
+<<<<<<< HEAD
                       <div className="flex flex-wrap items-center gap-1 text-sm">
                         {album.artist.map((artistName, idx) => {
                           const slug = String(artistName)
@@ -204,6 +211,18 @@ export const FeaturedAlbums = () => {
                             .replace(/[^\w-]/g, "");
                           return (
                             <span key={`${album.id}-art-${idx}`} className="flex items-center">
+=======
+                      <div className="flex flex-wrap items-center gap-2 text-sm">
+                        {album.artist.map((artistName, idx) => {
+                          const slug = String(artistName)
+                            .toLowerCase()
+                            .replace(/,/g, '')
+                            .replace(/\$/g, '')
+                            .replace(/\s+/g, "-")
+                            .replace(/[^\w-]/g, "");
+                          return (
+                            <span key={`${album.id}-artist-${idx}`} className="flex items-center">
+>>>>>>> d93595e (Alpha BUild)
                               <Link
                                 to={`/artist/${slug}`}
                                 onClick={(e) => e.stopPropagation()}
@@ -234,7 +253,10 @@ export const FeaturedAlbums = () => {
                       className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
                       onClick={(e) => {
                         e.stopPropagation();
+<<<<<<< HEAD
                         // Add cart logic here
+=======
+>>>>>>> d93595e (Alpha BUild)
                       }}
                     >
                       <ShoppingCart className="w-4 h-4" />
