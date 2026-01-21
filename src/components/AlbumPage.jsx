@@ -157,21 +157,32 @@ const AlbumPage = () => {
                     <span className="text-sm font-bold px-2.5 py-1 bg-white/20 backdrop-blur-sm text-white border border-white/30 rounded">E</span>
                   )}
                 </div>
+                {/* Artists section - around line 160 */}
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  {artistList.map((artist, index) => (
-                    <span key={artist} className="flex items-center">
-                      <Link
-                        to={`/artist/${artist.toLowerCase().replace(/\s+/g, "-")}`}
-                        className="text-xl md:text-2xl text-white/90 hover:text-primary transition-colors"
-                      >
-                        {artist}
-                      </Link>
-                      {index < artistList.length - 1 && <span className="mx-1">&</span>}
-                    </span>
-                  ))}
+                  {artistList.map((artist, index) => {
+                    const slug = String(artist)
+                      .toLowerCase()
+                      .replace(/,/g, '')
+                      .replace(/\$/g, '')
+                      .replace(/\s+/g, "-")
+                      .replace(/[^\w-]/g, "");
+                    return (
+                      <span key={`artist-${index}`} className="flex items-center">
+                        <Link
+                          to={`/artist/${slug}`}
+                          className="text-xl md:text-2xl text-white/90 hover:text-primary transition-colors"
+                        >
+                          {artist}
+                        </Link>
+                        {index < artistList.length - 1 && (
+                          <span className="text-xl md:text-2xl text-white/90 mx-2">&</span>
+                        )}
+                      </span>
+                    );
+                  })}
                 </div>
 
-                <div className="flex items-center justify-center gap-3 text-sm md:text-base text-white/80">
+                <div className="flex items-center justify-center gap-3 text-sm md:text-base text-white/80 mb-4">
                   <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-lg">{album.genre}</span>
                   <span>•</span>
                   <span>{album.year}</span>
@@ -182,33 +193,36 @@ const AlbumPage = () => {
                     </>
                   )}
                 </div>
-                <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <p className="text-2xl font-serif font-bold">{album.price} ₼</p>
+
                 </div>
               </div>
             </div>
           </div>
-          <Button
-                    size="sm"
-                    className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                    }}
-                  >
-                    <ShoppingCart className="w-4 h-4" />
-                    Səbətə əlavə et
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-muted-foreground hover:text-primary shrink-0"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Heart className="w-5 h-5" />
-                  </Button>
+          <div className="flex items-center justify-center gap-4 pt-4 border-t border-white/20">
+            <p className="text-3xl font-serif font-bold">{album.price} ₼</p>
+            <Button
+              size="default"
+              className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
+              <ShoppingCart className="w-4 h-4" />
+              Səbətə əlavə et
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-white/90 hover:text-primary hover:bg-white/10"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
+              <Heart className="w-5 h-5" />
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 
