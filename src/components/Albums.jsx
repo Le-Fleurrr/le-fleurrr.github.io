@@ -100,7 +100,7 @@ const wholeLottaRedRED = {
 const wholeLottaRedWHITE = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768397557/R-35942476-1765996836-9926_bxdlro.jpg',
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5yearWhite_d5bnx8.png"],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768396970/WLR_tl_hz7c8r.jpg"
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226190/WLR_tl_oopofj.jpg"
 };
 
 const lateRegistration = {
@@ -161,9 +161,7 @@ const chromakopia = {
 
 const igor = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768572775/igor_smxeze.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768573232/igor_vinyl_wuligt.png',
-    'https://res.cloudinary.com/deroy68n9/image/upload/v1768573231/igor_vinyl1_u5vgg0.jpg'
-  ]
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768573231/igor_vinyl1_u5vgg0.jpg']
 };
 
 const igorCD = {
@@ -740,7 +738,7 @@ export const albums = [
   },
   {
     id: 19,
-    title: "Whole Lotta Red (5 Illik Red Text) [2LP]",
+    title: "Whole Lotta Red (5 Illik Qirmizi Text) [2LP]",
     artist: ["Playboi Carti"],
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -777,7 +775,7 @@ export const albums = [
   },
   {
     id: 21,
-    title: "Whole Lotta Red (5 Illik White Text) [2LP]",
+    title: "Whole Lotta Red (5 Illik Ag Text) [2LP]",
     artist: ["Playboi Carti"],
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -950,7 +948,7 @@ export const albums = [
   {
     id: 31,
     title: "VULTURES 1 (2LP)",
-    artist: ["¥$ ", "Kanye West ", "Ty Dolla $ign"],
+    artist: ["¥$", "Kanye West", "Ty Dolla $ign"],
     price: 150,
     genre: "Hip-Hop/Rap",
     year: 2024,
@@ -1446,7 +1444,7 @@ export const albums = [
   },
   {
     id: 63,
-    title: "CALL ME IF YOU GET LOST: The Estate Sale (2LP)",
+    title: "CALL ME IF YOU GET LOST: The Estate Sale (3LP)",
     artist: ["Tyler, The Creator"],
     price: 200,
     genre: "Hip-Hop/Rap",
@@ -1481,7 +1479,7 @@ export const albums = [
   {
     id: 65,
     title: "HEROES & VILLAINS (2LP)",
-    artist: ["Future", "Metro Boomin"],
+    artist: ["Metro Boomin"],
     price: 150,
     genre: "Hip-Hop/Rap",
     year: 2022,

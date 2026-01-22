@@ -138,7 +138,6 @@ export const Collections = () => {
             </select>
           </div>
 
-          {/* Sort by Price */}
           <div>
             <label className="text-muted-foreground font-medium mr-2">
               Sort by Price:
@@ -212,8 +211,6 @@ export const Collections = () => {
                     )}
                   </div>
                 </div>
-
-                {/* Info */}
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
@@ -227,7 +224,30 @@ export const Collections = () => {
                           </span>
                         )}
                       </div>
-                      <p className="text-muted-foreground">{album.artist}</p>
+                      <div className="flex flex-wrap items-center gap-2 text-sm">
+                        {album.artist.map((artistName, idx) => {
+                          const slug = String(artistName)
+                            .toLowerCase()
+                            .replace(/,/g, '')
+                            .replace(/\$/g, '')
+                            .replace(/\s+/g, "-")
+                            .replace(/[^\w-]/g, "");
+                          return (
+                            <span key={`${album.id}-artist-${idx}`} className="flex items-center">
+                              <Link
+                                to={`/artist/${slug}`}
+                                onClick={(e) => e.stopPropagation()}
+                                className="text-muted-foreground hover:text-primary transition-colors"
+                              >
+                                {artistName}
+                              </Link>
+                              {idx < album.artist.length - 1 && (
+                                <span className="text-muted-foreground mx-1">&</span>
+                              )}
+                            </span>
+                          );
+                        })}
+                      </div>
                     </div>
                     <Button
                       variant="ghost"

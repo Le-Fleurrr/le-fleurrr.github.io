@@ -63,4 +63,8 @@ export const artistProfiles = {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927080/hxg_banner_fh8waw.jpg",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927095/hxg_pfp_zsdk7p.jpg"
   },
+  "Future": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1769094783/future-16x9_larhsy.png",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1769094783/10000x10000bb_pzcm6y.jpg"
+  },
 };
