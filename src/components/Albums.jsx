@@ -406,6 +406,10 @@ const homixideLifestyle = {
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921261/homixideLifestyle_vinyl_mjcsbi.png']
 };
 
+const yeezus = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226192/yeezus_vuqrxf.jpg',
+};
+
 export const albums = [
   {
     id: 1,
@@ -982,7 +986,7 @@ export const albums = [
   {
     id: 33,
     title: "JACKBOYS (LP)",
-    artist: ["JACKBOYS ", "Travis Scott"],
+    artist: ["JACKBOYS", "Travis Scott"],
     price: 100,
     genre: "Hip-Hop/Rap",
     year: 2019,
@@ -1527,6 +1531,20 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "purple",
     format: "vinyl",
+    description: "CD edition of Playboi Carti's debut."
+  },
+  {
+    id: 68,
+    title: "Yeezus (CD)",
+    artist: ["Kanye West"],
+    price: 50,
+    genre: "Hi-Hop/Rap",
+    year: 2013,
+    isNew: false,
+    isExplicit: true,
+    image: yeezus.cover,
+    accentColor: "red",
+    format: "cd",
     description: "CD edition of Playboi Carti's debut."
   },
 ];
