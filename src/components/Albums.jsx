@@ -118,7 +118,7 @@ const wholeLottaRedRED = {
 const wholeLottaRedWHITE = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768397557/R-35942476-1765996836-9926_bxdlro.jpg',
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5yearWhite_d5bnx8.png"],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768396970/WLR_tl_hz7c8r.jpg"
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226190/WLR_tl_oopofj.jpg"
 };
 
 const lateRegistration = {
@@ -180,11 +180,6 @@ const chromakopia = {
 const igor = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768572775/igor_smxeze.jpg',
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768573231/igor_vinyl1_u5vgg0.jpg']
-};
-
-const igorCD = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768572775/igor_smxeze.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768924800/igorCD_vcjczk.png']
 };
 
 const igorCD = {
@@ -337,66 +332,11 @@ const heartbreak = {
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768747389/808s_Heartbreak_vinyl_paznur.jpg']
 };
 
-
-const heroesAndVillains = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768924534/heroes_villains_dj9uor.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768924533/heroes_villains_vinyl_zfhwuq.jpg']
-};
-
-const atsv = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768924542/atsv_kfevq7.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768924539/atsv_vinyl_o2c5v9.jpg']
-};
-
-const itsv = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768924547/itsv_nridto.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768924546/itsv_vinyl_menbeh.png']
-};
-
-const x = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921257/x_ztymeo.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921267/X_vinyl_bjkhcq.png']
-};
-
-const aGreatChaos = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921257/aGreatChaos_eavhph.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921266/aGreatChaos_vinyl_ynafef.png']
-};
-
-const moreChaos = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921256/moreChaos_ac06t7.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921265/moreChaos_vinyl_rtwwi7.png']
-};
-
 const moreChaosCD = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921256/moreChaos_ac06t7.jpg',
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1769010710/MCCDstandardpackshot_q2urck.png']
 };
 
-const noStylist = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921252/noStylist_eb1hse.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921262/noStylist_vinyl_rgl132.png']
-};
-
-const ifLooksCouldKill = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921270/ifLooksCouldKill_DirectorsCut_qb3fec.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921271/ifLooksCouldKill_vinyl_oyuwen.jpg']
-};
-
-const loveLastsForever = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921252/loveLastsForever_elerjy.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921263/loveLastsForever_vinyl_d6pwkt.png']
-};
-
-const brokenHearts3CD = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921272/brokenHearts3_zjmwwt.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921251/brokenHearts3_CD_zoaaqc.png']
-};
-
-const homixideLifestyle = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921251/homixideLifestyle_djipud.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921261/homixideLifestyle_vinyl_mjcsbi.png']
-};
 
 const yeezus = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226192/yeezus_vuqrxf.jpg',
@@ -3076,7 +3016,7 @@ export const albums = [
   },
   {
     id: 19,
-    title: "Whole Lotta Red (5 Illik Red Text) [2LP]",
+    title: "Whole Lotta Red (5 Illik Qirmizi Text) [2LP]",
     artist: ["Playboi Carti"],
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -3113,7 +3053,7 @@ export const albums = [
   },
   {
     id: 21,
-    title: "Whole Lotta Red (5 Illik White Text) [2LP]",
+    title: "Whole Lotta Red (5 Illik Ag Text) [2LP]",
     artist: ["Playboi Carti"],
     price: 150,
     genre: "Hip-Hop/Rap",
@@ -3286,7 +3226,7 @@ export const albums = [
   {
     id: 31,
     title: "VULTURES 1 (2LP)",
-    artist: ["¥$ ", "Kanye West ", "Ty Dolla $ign"],
+    artist: ["¥$", "Kanye West", "Ty Dolla $ign"],
     price: 150,
     genre: "Hip-Hop/Rap",
     year: 2024,
@@ -3782,7 +3722,7 @@ export const albums = [
   },
   {
     id: 63,
-    title: "CALL ME IF YOU GET LOST: The Estate Sale (2LP)",
+    title: "CALL ME IF YOU GET LOST: The Estate Sale (3LP)",
     artist: ["Tyler, The Creator"],
     price: 200,
     genre: "Hip-Hop/Rap",
@@ -3817,7 +3757,7 @@ export const albums = [
   {
     id: 65,
     title: "HEROES & VILLAINS (2LP)",
-    artist: ["Future", "Metro Boomin"],
+    artist: ["Metro Boomin"],
     price: 150,
     genre: "Hip-Hop/Rap",
     year: 2022,
