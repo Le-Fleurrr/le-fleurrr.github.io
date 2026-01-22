@@ -5,10 +5,9 @@ import { ArrowRight, Play } from "lucide-react";
 export const Hero = () => {
   return (
     <section className="min-h-screen flex items-center pt-20 relative overflow-hidden">
-      {/* Background gradient */}
+
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
 
-      {/* Decorative elements */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
 
@@ -41,7 +40,6 @@ export const Hero = () => {
               </Button>
             </div>
 
-            {/* Stats */}
             <div className="flex gap-12 pt-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <div>
                 <p className="text-3xl font-serif font-bold text-gradient">15K+</p>

@@ -12,6 +12,8 @@ import ArtistPage from './components/ArtistPage';
 import AlbumPage from './components/AlbumPage';
 import { FeaturedAlbums } from './components/FeaturedAlbums.js';
 import { Cloudinary } from '@cloudinary/url-gen';
+import { MerchCollectionsPage } from "./components/MerchCollectionsPage.jsx";
+import { Merch } from "./components/Merch.jsx";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +41,8 @@ function App() {
             <Route path="/collections" element={<Collections />} />
             <Route path="/artist/:artistName" element={<ArtistPage />} />
             <Route path="/album/:albumId" element={<AlbumPage />} />
+            <Route path="/merch" element={<MerchCollectionsPage />} />
+            <Route path="/merch/:merchId" element={<Merch />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

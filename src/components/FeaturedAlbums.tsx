@@ -133,6 +133,14 @@ export const FeaturedAlbums = () => {
           </Button>
         </div>
 
+        <Button
+            variant="outline"
+            className="self-start md:self-auto border-muted-foreground/30 hover:bg-secondary"
+            asChild
+          >
+            <Link to="/merch">Bütün Kolleksiyaya Baxın (MERCH)</Link>
+          </Button>
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredAlbums.map((album) => {
             const accentColors = getAccentColors(album.accentColor);
