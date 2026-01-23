@@ -73,6 +73,51 @@ const antagonistBlackHoodie = {
   additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769007843/AntagonistTour2.0BlackHoodieBack_ip4q8b.png"]
 };
 
+const antagonistSweatPants = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769190474/AntagonistTour2.0SweatpantsFront_xsodjq.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769190475/back_PC_TOUR_25_ANTA2.0_SWEAT_jkfmrd.png"]
+};
+
+const antagonistXHoodie = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769008001/Antagonist-Tour-2.0-X-Long-Sleev_zxmbsw.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769007856/AntagonistTour2.0XHoodieBack_j2qnd8.png"]
+};
+
+const antagonistTourZipUp = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769008316/front_0e297a51-1357-4a10-b9d2-6e_jrvfoh.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769008315/back_6ed661db-c7b1-4b3d-bd17-c77_j1er7c.png"]
+};
+
+const antagonist00LongSleeve = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769008316/front_32d94ed3-6e62-4389-890e-de_qmnvdd.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769008315/back_b849d951-b619-450c-b906-0fc_elf77d.png"]
+};
+
+const antagonistVol2LongSleeve = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769008317/front_1501865a-0697-4791-9eec-93_pkcbet.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769008315/back_2fa65cb4-0d07-4b42-982a-1e0_fuu3m7.png"]
+};
+
+const antagonistDaggerLongSleeve = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769008329/front_e61962dd-a930-446a-bafd-45_osppor.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769008315/back_2fa65cb4-0d07-4b42-982a-1e0_fuu3m7.png"]
+};
+
+const antagonistXLongSleeve = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769008001/Antagonist-Tour-2.0-X-Long-Sleev_zxmbsw.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769008001/Antagonist-Tour-2.0-X-Long-Sleeve1_r5tblw.png"]
+};
+
+const antagonistOpiumHoodie = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769007854/AntagonistTour2.0OpiumHoodieFront_fnqoje.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769007844/AntagonistTour2.0OpiumHoodieBack_lrfsyy.png"]
+};
+
+const antagonistFlashlight = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769008002/AT2.0Flashlight_Secondary_loglrf.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769008002/AT2.0Flashlight_Main_ie0jnb.png"]
+};
+
 export const MerchCategories = [
   {
     name: "Antagonist 2.0",
@@ -84,7 +129,7 @@ export const MerchCategories = [
 export const Merch = [
   {
     id: 1,
-    title: "ANTAGONIST 2.0 DAGGER T-SHIRT",
+    title: "ANTAGONIST 2.0 T-SHIRT",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
     price: 100,
@@ -197,7 +242,7 @@ export const Merch = [
   },
   {
     id: 8,
-    title: "ANTAGONIST 2.0 QIRMIZI XƏNCƏR KAPSONU",
+    title: "ANTAGONIST 2.0 QIRMIZI KAPSONU",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
     price: 350,
@@ -214,7 +259,7 @@ export const Merch = [
     title: "ANTAGONIST 2.0 AÇIQ IDMAN ŞALVARLAR",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
-    price: 250,
+    price: 275,
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -278,5 +323,130 @@ export const Merch = [
     additionalImages: antagonistBlackHoodie.additionalImages,
     color: "Qara",
     description: "Ekran çaplı qrafikalı ağır çəkili hoodie.",
+  },
+  {
+    id: 14,
+    title: "ANTAGONIST 2.0 QARA AÇIQ IDMAN ŞALVARLAR",
+    artist: ["Playboi Carti"],
+    category: "Antagonist 2.0",
+    price: 275,
+    year: 2025,
+    isNew: true,
+    size: ["S", "M", "L", "XL", "2XL"],
+    image: antagonistSweatPants.front,
+    additionalImages: antagonistSweatPants.additionalImages,
+    color: "Qara",
+    description: "Ekran çaplı qrafikalı ağır çəkili idman şalvarı.",
+  },
+  {
+    id: 15,
+    title: "ANTAGONIST 2.0 X HOODIE",
+    artist: ["Playboi Carti"],
+    category: "Antagonist 2.0",
+    price: 350,
+    year: 2025,
+    isNew: true,
+    size: ["S", "M", "L", "XL", "2XL"],
+    image: antagonistXHoodie.front,
+    additionalImages: antagonistXHoodie.additionalImages,
+    color: "Qara",
+    description: "Ekran çaplı qrafikalı ağır çəkili hoodie.",
+  },
+  {
+    id: 16,
+    title: "ANTAGONIST 2.0 FERMUARLI KAPÜŞONLU",
+    artist: ["Playboi Carti"],
+    category: "Antagonist 2.0",
+    price: 150,
+    year: 2025,
+    isNew: true,
+    size: ["S", "M", "L", "XL", "2XL"],
+    image: antagonistTourZipUp.front,
+    additionalImages: antagonistTourZipUp.additionalImages,
+    color: "Qara",
+    description: "Ekran çaplı qrafikalı ağır, fermuarlı kapşonlu gödəkçə.",
+  },
+  {
+    id: 17,
+    title: "ANTAGONIST 2.0 00 UZUNGOLLU",
+    artist: ["Playboi Carti"],
+    category: "Antagonist 2.0",
+    price: 275,
+    year: 2025,
+    isNew: true,
+    size: ["S", "M", "L", "XL", "2XL"],
+    image: antagonist00LongSleeve.front,
+    additionalImages: antagonist00LongSleeve.additionalImages,
+    color: "Qara",
+    description: "Ekran üzərində çap olunmuş qrafikalı, ağır çəkili uzunqollu köynək.",
+  },
+  {
+    id: 18,
+    title: "ANTAGONIST 2.0 VOL 2 UZUNQOLLU",
+    artist: ["Playboi Carti"],
+    category: "Antagonist 2.0",
+    price: 275,
+    year: 2025,
+    isNew: true,
+    size: ["S", "M", "L", "XL", "2XL"],
+    image: antagonistVol2LongSleeve.front,
+    additionalImages: antagonistVol2LongSleeve.additionalImages,
+    color: "Qara",
+    description: "Ekran üzərində çap olunmuş qrafikalı, ağır çəkili uzunqollu köynək.",
+  },
+  {
+    id: 19,
+    title: "ANTAGONIST 2.0 UZUNQOLLU",
+    artist: ["Playboi Carti"],
+    category: "Antagonist 2.0",
+    price: 275,
+    year: 2025,
+    isNew: true,
+    size: ["S", "M", "L", "XL", "2XL"],
+    image: antagonistDaggerLongSleeve.front,
+    additionalImages: antagonistDaggerLongSleeve.additionalImages,
+    color: "Qara",
+    description: "Ekran üzərində çap olunmuş qrafikalı, ağır çəkili uzunqollu köynək.",
+  },
+  {
+    id: 20,
+    title: "ANTAGONIST 2.0 X UZUNQOLLU",
+    artist: ["Playboi Carti"],
+    category: "Antagonist 2.0",
+    price: 275,
+    year: 2025,
+    isNew: true,
+    size: ["S", "M", "L", "XL", "2XL"],
+    image: antagonistXLongSleeve.front,
+    additionalImages: antagonistXLongSleeve.additionalImages,
+    color: "Qara",
+    description: "Ekran üzərində çap olunmuş qrafikalı, ağır çəkili uzunqollu köynək.",
+  },
+  {
+    id: 21,
+    title: "ANTAGONIST 2.0 OPIUM UZUNQOLLU",
+    artist: ["Playboi Carti"],
+    category: "Antagonist 2.0",
+    price: 275,
+    year: 2025,
+    isNew: true,
+    size: ["S", "M", "L", "XL", "2XL"],
+    image: antagonistOpiumHoodie.front,
+    additionalImages: antagonistOpiumHoodie.additionalImages,
+    color: "Qara",
+    description: "Ekran üzərində çap olunmuş qrafikalı, ağır çəkili uzunqollu köynək.",
+  },
+  {
+    id: 22,
+    title: "ANTAGONIST 2.0 DUBINKA FƏNƏRİ",
+    artist: ["Playboi Carti"],
+    category: "Antagonist 2.0",
+    price: 75,
+    year: 2025,
+    isNew: true,
+    image: antagonistFlashlight.front,
+    additionalImages: antagonistFlashlight.additionalImages,
+    color: "Qara",
+    description: "31 sm ölçülü metal mini-yarasa fənəri. Parlaq LED işığı, tutacağı və bilək qayışı ilə təchiz olunub. Batareyalar daxil olmaqla qoruyucu köpüklə örtülmüş qutuda gəlir.",
   },
 ];
