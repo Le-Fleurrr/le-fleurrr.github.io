@@ -52,7 +52,6 @@ export const MerchCollectionsPage = () => {
     return yearMatch && artistMatch && categoryMatch;
   });
 
-  // Sort merch
   if (sortOrder === "price-low") {
     filteredMerch = [...filteredMerch].sort((a, b) => a.price - b.price);
   } else if (sortOrder === "price-high") {
@@ -74,7 +73,6 @@ export const MerchCollectionsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
-        {/* Header */}
         <div className="mb-12">
           <Link to="/" className="text-primary hover:underline mb-4 inline-block">
             ← Ana səhifəyə qayıt
@@ -289,7 +287,6 @@ export const MerchCollectionsPage = () => {
                     Təmizlə
                   </Button>
                 )}
-
                 <div className="flex flex-wrap gap-2">
                   {artistFilter !== "All" && (
                     <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm flex items-center gap-2">
@@ -400,7 +397,6 @@ export const MerchCollectionsPage = () => {
                         </span>
                       )}
                     </div>
-
                     <div>
                       <h3 className="font-semibold text-white group-hover:text-primary transition truncate mb-1">
                         {item.title}
