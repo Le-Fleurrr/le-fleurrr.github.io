@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/Button.tsx";
-import { ShoppingCart, Heart, Filter, X, ChevronRight } from "lucide-react";
-import { Merch } from "./Merch.jsx";
+import { ShoppingCart, Heart, Filter, X, ChevronRight, ArrowLeft } from "lucide-react";
+import { Merch, MerchCategories } from "./Merch.jsx";
 import { artistProfiles } from "./ArtistProfiles.jsx";
 
 export const MerchCollectionsPage = () => {
@@ -11,8 +11,10 @@ export const MerchCollectionsPage = () => {
   const [yearFilter, setYearFilter] = useState("All");
   const [sortOrder, setSortOrder] = useState("none");
   const [showFilters, setShowFilters] = useState(false);
-  const [viewMode, setViewMode] = useState("collections"); 
+  const [viewMode, setViewMode] = useState("categories");
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const navigate = useNavigate();
+
   const normalizedMerch = Merch.map(item => ({
     ...item,
     artist: Array.isArray(item.artist) 
@@ -21,6 +23,7 @@ export const MerchCollectionsPage = () => {
         ? item.artist.split('&').map(a => a.trim())
         : [item.artist]
   }));
+
   const allArtists = Array.from(
     new Set(normalizedMerch.flatMap(item => item.artist))
   ).sort();
@@ -34,10 +37,10 @@ export const MerchCollectionsPage = () => {
     const artistProfile = artistProfiles[artist] || {};
     
     return {
-      artist: artistProfile.merchName,
+      artist,
       itemCount: artistMerch.length,
       image: artistProfile.profileImage || artistMerch[0]?.image,
-      banner: artistProfile.merchBanner,
+      banner: artistProfile.banner,
       merch: artistMerch
     };
   }).filter(collection => collection.itemCount > 0);
@@ -45,10 +48,10 @@ export const MerchCollectionsPage = () => {
   let filteredMerch = normalizedMerch.filter((item) => {
     const yearMatch = yearFilter === "All" || item.year.toString() === yearFilter;
     const artistMatch = artistFilter === "All" || item.artist.includes(artistFilter);
-    return yearMatch && artistMatch;
+    const categoryMatch = !selectedCategory || item.category === selectedCategory;
+    return yearMatch && artistMatch && categoryMatch;
   });
 
-  // Sort merch
   if (sortOrder === "price-low") {
     filteredMerch = [...filteredMerch].sort((a, b) => a.price - b.price);
   } else if (sortOrder === "price-high") {
@@ -70,7 +73,6 @@ export const MerchCollectionsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
-        {/* Header */}
         <div className="mb-12">
           <Link to="/" className="text-primary hover:underline mb-4 inline-block">
             ← Ana səhifəyə qayıt
@@ -79,39 +81,92 @@ export const MerchCollectionsPage = () => {
             Merch Kolleksiyası
           </h1>
           <p className="text-muted-foreground text-lg">
-            {viewMode === "collections" 
-              ? `${artistCollections.length} kolleksiya`
+            {viewMode === "categories" 
+              ? `${MerchCategories?.length || 0} kateqoriya`
+              : viewMode === "subcategories"
+              ? `${selectedCategory} - ${artistCollections.filter(c => normalizedMerch.some(m => m.artist.includes(c.artist) && m.category === selectedCategory)).length} ifaçı`
               : `${filteredMerch.length} məhsul tapıldı`}
           </p>
         </div>
 
-        {/* View Mode Toggle */}
-        <div className="mb-8 flex gap-4">
+        {selectedCategory && viewMode === "subcategories" && (
           <Button
-            variant={viewMode === "collections" ? "default" : "outline"}
-            onClick={() => setViewMode("collections")}
+            variant="ghost"
+            onClick={() => {
+              setSelectedCategory(null);
+              setViewMode("categories");
+            }}
+            className="mb-8 gap-2"
           >
-            Kolleksiyalar
+            <ArrowLeft className="w-4 h-4" />
+            Kateqoriyalara qayıt
           </Button>
-          <Button
-            variant={viewMode === "all" ? "default" : "outline"}
-            onClick={() => setViewMode("all")}
-          >
-            Bütün Məhsullar
-          </Button>
-        </div>
+        )}
 
-        {/* Collections View */}
-        {viewMode === "collections" && (
+        {viewMode === "categories" && MerchCategories && (
           <div className="space-y-12">
-            {artistCollections.map((collection) => {
-              const slug = String(collection.artist)
-                .toLowerCase()
-                .replace(/,/g, '')
-                .replace(/\$/g, '')
-                .replace(/\s+/g, "-")
-                .replace(/[^\w-]/g, "");
+            {MerchCategories.map((category) => {
+              const categoryMerch = normalizedMerch.filter(item => item.category === category.name);
               
+              return (
+                <div key={category.name} className="space-y-6">
+                  <div 
+                    className="relative h-96 rounded-2xl overflow-hidden cursor-pointer group"
+                    onClick={() => {
+                      setSelectedCategory(category.name);
+                      setViewMode("subcategories");
+                    }}
+                  >
+                    {category.banner ? (
+                      <div className="absolute inset-0 bg-black">
+                        <img
+                          src={category.banner}
+                          alt={category.name}
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                        />
+                      </div>
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black" />
+                    )}
+
+                    {category.isExplicit && (
+                      <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-lg border border-white/20">
+                        <p className="text-xs font-bold">EXPLICIT CONTENT</p>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="text-center space-y-4 py-6">
+                    <h2 className="text-6xl md:text-8xl font-black text-white tracking-tight uppercase">
+                      {category.name}
+                    </h2>
+                    <p className="text-2xl text-muted-foreground font-bold">
+                      {categoryMerch.length} məhsul
+                    </p>
+                    <Button
+                      size="lg"
+                      className="gap-2 text-lg px-8 py-6 hover:scale-110 transition-transform"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedCategory(category.name);
+                        setViewMode("subcategories");
+                      }}
+                    >
+                      Kolleksiyaya Bax
+                      <ChevronRight className="w-5 h-5" />
+                    </Button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {viewMode === "subcategories" && selectedCategory && (
+          <div className="space-y-12">
+            {artistCollections
+              .filter(collection => normalizedMerch.some(m => m.artist.includes(collection.artist) && m.category === selectedCategory))
+              .map((collection) => {
               return (
                 <div key={collection.artist} className="space-y-6">
                   <div 
@@ -122,13 +177,12 @@ export const MerchCollectionsPage = () => {
                     }}
                   >
                     {collection.banner || collection.image ? (
-                      <div className="absolute inset-0">
+                      <div className="absolute inset-0 bg-black">
                         <img
                           src={collection.banner || collection.image}
                           alt={collection.artist}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
                       </div>
                     ) : (
                       <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black" />
@@ -144,7 +198,7 @@ export const MerchCollectionsPage = () => {
                       {collection.artist}
                     </h2>
                     <p className="text-2xl text-muted-foreground font-bold">
-                      {collection.itemCount} məhsul
+                      {collection.merch.filter(m => m.category === selectedCategory).length} məhsul
                     </p>
                     <Button
                       size="lg"
@@ -161,7 +215,7 @@ export const MerchCollectionsPage = () => {
                   </div>
 
                   <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                    {collection.merch.slice(0, 5).map((item) => (
+                    {collection.merch.filter(m => m.category === selectedCategory).slice(0, 5).map((item) => (
                       <div
                         key={item.id}
                         className="group cursor-pointer"
@@ -187,7 +241,7 @@ export const MerchCollectionsPage = () => {
                       </div>
                     ))}
                     
-                    {collection.merch.length > 5 && (
+                    {collection.merch.filter(m => m.category === selectedCategory).length > 5 && (
                       <div
                         className="aspect-square rounded-lg border-2 border-dashed border-border hover:border-primary transition-colors cursor-pointer flex items-center justify-center bg-card/50"
                         onClick={() => {
@@ -198,7 +252,7 @@ export const MerchCollectionsPage = () => {
                         <div className="text-center p-4">
                           <ChevronRight className="w-8 h-8 mx-auto mb-2 text-muted-foreground" />
                           <p className="text-sm font-semibold">
-                            +{collection.merch.length - 5} daha
+                            +{collection.merch.filter(m => m.category === selectedCategory).length - 5} daha
                           </p>
                         </div>
                       </div>
@@ -210,10 +264,8 @@ export const MerchCollectionsPage = () => {
           </div>
         )}
 
-        {/* All Products View */}
         {viewMode === "all" && (
           <>
-            {/* Filters Bar */}
             <div className="mb-8">
               <div className="flex flex-wrap items-center gap-4 mb-4">
                 <Button
@@ -236,7 +288,6 @@ export const MerchCollectionsPage = () => {
                   </Button>
                 )}
 
-                {/* Active Filter Tags */}
                 <div className="flex flex-wrap gap-2">
                   {artistFilter !== "All" && (
                     <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm flex items-center gap-2">
@@ -257,11 +308,9 @@ export const MerchCollectionsPage = () => {
                 </div>
               </div>
 
-              {/* Filter Options */}
               {showFilters && (
                 <div className="bg-card border border-border rounded-xl p-6 space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {/* Artist Filter */}
                     <div>
                       <label className="block text-sm font-medium mb-2">İfaçı</label>
                       <select
@@ -278,7 +327,6 @@ export const MerchCollectionsPage = () => {
                       </select>
                     </div>
 
-                    {/* Year Filter */}
                     <div>
                       <label className="block text-sm font-medium mb-2">İl</label>
                       <select
@@ -295,7 +343,6 @@ export const MerchCollectionsPage = () => {
                       </select>
                     </div>
 
-                    {/* Sort Order */}
                     <div>
                       <label className="block text-sm font-medium mb-2">Sırala</label>
                       <select
@@ -315,7 +362,6 @@ export const MerchCollectionsPage = () => {
               )}
             </div>
 
-            {/* Merch Grid */}
             {filteredMerch.length === 0 ? (
               <div className="text-center py-20">
                 <p className="text-muted-foreground text-lg">Heç bir məhsul tapılmadı</p>
@@ -333,7 +379,6 @@ export const MerchCollectionsPage = () => {
                     onMouseLeave={() => setHoveredId(null)}
                     onClick={() => navigate(`/merch/${item.id}`)}
                   >
-                    {/* Image */}
                     <div className="relative mb-4 aspect-square bg-card rounded-lg overflow-hidden border border-border hover:shadow-xl transition-shadow">
                       {item.image ? (
                         <img
@@ -354,13 +399,11 @@ export const MerchCollectionsPage = () => {
                       )}
                     </div>
 
-                    {/* Info */}
                     <div>
                       <h3 className="font-semibold text-white group-hover:text-primary transition truncate mb-1">
                         {item.title}
                       </h3>
                       
-                      {/* Artists */}
                       <p className="text-sm text-muted-foreground truncate mb-1">
                         {item.artist.join(" & ")}
                       </p>
