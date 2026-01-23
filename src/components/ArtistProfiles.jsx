@@ -2,6 +2,7 @@ export const artistProfiles = {
   "Playboi Carti": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751199/playboiCarti_banner_n8qpjf.jpg",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751234/playboiCarti_pfp_fzma49.png",
+<<<<<<< HEAD
     merchBanner: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769169960/Logos-Desktop-Carti_e853d832-8fa_f2cl7m.png'
   },
   "The Weeknd": {
@@ -84,6 +85,8 @@ export const artistProfiles = {
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768XXXXX/playboi_carti_profile.jpg",
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751199/playboiCarti_banner_n8qpjf.jpg",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751234/playboiCarti_pfp_fzma49.png"
+=======
+>>>>>>> c03daee (Alpha Build)
   },
   "The Weeknd": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751228/theWeeknd_banner_qm2hrs.jpg",

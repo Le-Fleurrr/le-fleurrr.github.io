@@ -1,11 +1,6 @@
-const AntagonistDaggerShirt = {
+const antagonistDaggerShirt = {
   front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769007844/Antagonist-Tour-2.0-Dagger-T-Shi_q4fagc.png",
   additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769007842/Antagonist-Tour-2.0-Dagger-T-Shirt1_zvfoyr.png"],
-};
-
-const OpiumAntagonistShirt = {
-  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769008335/Opium-Antagonist-Tour-2.0-T-Shirt_xfz5h4.png",
-  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769008334/Opium-Antagonist-Tour-2.0-T-Shir_onzpbw.png"]
 };
 
 const opiumAntagonistShirt = {
@@ -13,6 +8,14 @@ const opiumAntagonistShirt = {
   additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769008334/Opium-Antagonist-Tour-2.0-T-Shir_onzpbw.png"]
 };
 
+<<<<<<< HEAD
+const opiumAntagonistShirt = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769008335/Opium-Antagonist-Tour-2.0-T-Shirt_xfz5h4.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769008334/Opium-Antagonist-Tour-2.0-T-Shir_onzpbw.png"]
+};
+
+=======
+>>>>>>> c03daee (Alpha Build)
 const antagonistDoubleZip = {
   front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769007842/Antagonist-Tour-2.0-Double-Zip-H_sdlkok.png",
   additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769007842/Antagonist-Tour-2.0-Double-Zip-H2_ypfz0a.png"]
@@ -78,6 +81,7 @@ const antagonistBlackHoodie = {
   additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769007843/AntagonistTour2.0BlackHoodieBack_ip4q8b.png"]
 };
 
+<<<<<<< HEAD
 const antagonistSweatPants = {
   front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769190474/AntagonistTour2.0SweatpantsFront_xsodjq.png",
   additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769190475/back_PC_TOUR_25_ANTA2.0_SWEAT_jkfmrd.png"]
@@ -204,6 +208,8 @@ const HL2WhiteFlamesHat = {
   front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013823/TRUCKER_white_1_jcfxfb.gif",
 };
 
+=======
+>>>>>>> c03daee (Alpha Build)
 export const MerchCategories = [
   {
     name: "Antagonist 2.0",
@@ -218,21 +224,33 @@ export const Merch = [
     title: "ANTAGONIST 2.0 FUTBOLKA",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 99.99,
+=======
+    price: 100,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
     image: antagonistDaggerShirt.front,
     additionalImages: antagonistDaggerShirt.additionalImages,
     color: "Qara",
+<<<<<<< HEAD
     description: "Ekran çaplı qrafikalı ağır çəkili futbolka.",
+=======
+    description: "Heavyweight T-Shirt with screen printed graphics.",
+>>>>>>> c03daee (Alpha Build)
   },
   {
     id: 2,
     title: "OPIUM ANTAGONIST 2.0 FUTBOLKA",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 99.99,
+=======
+    price: 100,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -246,7 +264,11 @@ export const Merch = [
     title: "ANTAGONIST 2.0 TOUR İKİLİ ZİPHONE",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 149.99,
+=======
+    price: 150,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -260,7 +282,11 @@ export const Merch = [
     title: "ANTAGONI2T 2.0 QARA FUTBOLKA",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 149.99,
+=======
+    price: 150,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -289,7 +315,11 @@ export const Merch = [
     title: "ANTAGONIST 2.0 ULDUZ FUTBOLKA",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 99.99,
+=======
+    price: 100,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -303,13 +333,21 @@ export const Merch = [
     title: "ANTAGONIST 2.0 00 FUTBOLKA",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 99.99,
+=======
+    price: 100,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
     image: antagonist00Shirt.front,
     additionalImages: antagonist00Shirt.additionalImages,
+<<<<<<< HEAD
     color: "Ağ",
+=======
+    color: "Ag",
+>>>>>>> c03daee (Alpha Build)
     description: "Ekran çaplı qrafikalı ağır çəkili futbolka.",
   },
   {
@@ -317,21 +355,36 @@ export const Merch = [
     title: "ANTAGONIST 2.0 UZUNQOL",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 199.99,
+=======
+    price: 200,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
     image: antagonistOpiumLongSleeve.front,
     additionalImages: antagonistOpiumLongSleeve.additionalImages,
+<<<<<<< HEAD
     color: "Ağ",
+=======
+    color: "Ag",
+>>>>>>> c03daee (Alpha Build)
     description: "Ekran üzərində çap olunmuş qrafikalı, ağır çəkili uzunqollu köynək.",
   },
   {
     id: 8,
+<<<<<<< HEAD
     title: "ANTAGONIST 2.0 QIRMIZI HOODIE",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
     price: 274.99,
+=======
+    title: "ANTAGONIST 2.0 QIRMIZI XƏNCƏR KAPSONU",
+    artist: ["Playboi Carti"],
+    category: "Antagonist 2.0",
+    price: 350,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -345,7 +398,11 @@ export const Merch = [
     title: "ANTAGONIST 2.0 AÇIQ IDMAN ŞALVARLAR",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 274.99,
+=======
+    price: 250,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -359,7 +416,11 @@ export const Merch = [
     title: "ANTAGONIST 2.0 VOL 2 AG FUTBOLKA",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 99.99,
+=======
+    price: 100,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -373,7 +434,11 @@ export const Merch = [
     title: "ANTAGONIST 2.0 FERMUARLI KAPÜŞONLU",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 249.99,
+=======
+    price: 250,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -387,7 +452,11 @@ export const Merch = [
     title: "ANTAGONIST 2.0 QARA FUTBOLKA",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 99.99,
+=======
+    price: 100,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -401,7 +470,11 @@ export const Merch = [
     title: "ANTAGONIST 2.0 QARA HOODIE",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
+<<<<<<< HEAD
     price: 349.99,
+=======
+    price: 350,
+>>>>>>> c03daee (Alpha Build)
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -409,6 +482,7 @@ export const Merch = [
     additionalImages: antagonistBlackHoodie.additionalImages,
     color: "Qara",
     description: "Ekran çaplı qrafikalı ağır çəkili hoodie.",
+<<<<<<< HEAD
   },
   {
     id: 14,
@@ -786,5 +860,7 @@ export const Merch = [
     size: ["S", "M", "L", "XL", "2XL", "3XL"],
     color: "Qara",
     description: "Daxili suya davamlı PU örtüklü 100% neylon.",
+=======
+>>>>>>> c03daee (Alpha Build)
   },
 ];
