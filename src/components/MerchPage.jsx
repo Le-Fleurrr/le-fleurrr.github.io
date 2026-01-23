@@ -1,218 +1,316 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/Button.tsx";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
-import { merch } from "./Merch.jsx";
-import { ShoppingCart, Heart } from "lucide-react";
+import { ArrowLeft, ShoppingCart, Heart, Minus, Plus } from "lucide-react";
+import { Merch } from "./Merch.jsx";
 
-const getArtistList = (merch) => {
-  if (!merch) return [];
-  if (Array.isArray(merch.artists)) return merch.artists.filter(Boolean);
-  if (Array.isArray(album.artist)) return merch.artist.filter(Boolean);
-  if (typeof merch.artist === "string") {
-    return merch.artist.split("&").map((s) => s.trim()).filter(Boolean);
-  }
-  return [];
-};
-
-const MerchPage = () => {
+export const MerchPage = () => {
   const { merchId } = useParams();
   const navigate = useNavigate();
-  const [imageError, setImageError] = useState(false);
-  const [showAnimated, setShowAnimated] = useState(true);
+  const [quantity, setQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState("");
   const [selectedImage, setSelectedImage] = useState(0);
-  const scrollContainerRef = useRef(null);
+  const [imageError, setImageError] = useState(false);
 
-  const merch = merch.find((a) => a.id === parseInt(merchId || "", 10));
+  const item = Merch.find((m) => m.id === parseInt(merchId || "", 10));
 
-  if (!merch) {
+  if (!item) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-serif font-bold mb-4">Merch Tapılmadı</h1>
-          <Link to="/" className="text-primary hover:underline">
-            ← Ana səhifəyə qayıt
+          <h1 className="text-4xl font-serif font-bold mb-4">Məhsul Tapılmadı</h1>
+          <Link to="/merch" className="text-primary hover:underline">
+            ← Merch səhifəsinə qayıt
           </Link>
         </div>
       </div>
     );
   }
 
-  const artistList = getArtistList(merch);
+  // Normalize artist to array
+  const artistList = Array.isArray(item.artist)
+    ? item.artist
+    : typeof item.artist === 'string'
+    ? item.artist.split('&').map(a => a.trim())
+    : [item.artist];
 
+  // Gallery images (you can add multiple images to your Merch data)
   const galleryImages = [
-    ...(merch.front || []).map((url) => ({ url, type: "front" })),
-    ...(merch.back ? [{ url: merch.backImage, type: "back" }] : []),
-    ...(merch.poster ? [{ url: merch.posterImage, type: "poster" }] : []),
-  ];
+    item.image,
+    ...(item.additionalImages || [])
+  ].filter(Boolean);
 
-  const currentImage = galleryImages[selectedImage]?.url;
+  const currentImage = galleryImages[selectedImage];
+
+  const incrementQuantity = () => setQuantity(q => q + 1);
+  const decrementQuantity = () => setQuantity(q => (q > 1 ? q - 1 : 1));
+
+  const handleAddToCart = () => {
+    // Add to cart logic here
+    console.log("Adding to cart:", {
+      item: item.title,
+      quantity,
+      size: selectedSize,
+      price: item.price * quantity
+    });
+  };
 
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
+        {/* Back Button */}
         <Button variant="ghost" onClick={() => navigate(-1)} className="mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Geri
         </Button>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="relative mb-12">
-            <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl mb-6 group">
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Left Column - Images */}
+          <div>
+            {/* Main Image */}
+            <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl mb-6 bg-card border border-border">
               {currentImage && !imageError ? (
                 <img
                   src={currentImage}
-                  alt={`${merch.title} ${galleryImages[selectedImage]?.type === "cover" ? "cover" : "vinyl photo"}`}
+                  alt={item.title}
                   className="w-full h-full object-cover"
                   onError={() => setImageError(true)}
                 />
               ) : (
-                <div className="w-full h-full bg-card border border-border flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <p className="text-muted-foreground">Şəkil yüklənə bilmədi</p>
-                  </div>
+                <div className="w-full h-full flex items-center justify-center bg-muted">
+                  <ShoppingCart className="w-20 h-20 text-muted-foreground" />
                 </div>
               )}
-              {galleryImages.length > 1 && (
-                <>
-                  {selectedImage > 0 && (
-                    <button
-                      onClick={() => {
-                        setSelectedImage((s) => s - 1);
-                        setImageError(false);
-                      }}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
-                    >
-                      <ChevronLeft className="w-6 h-6" />
-                    </button>
-                  )}
-
-                  {selectedImage < galleryImages.length - 1 && (
-                    <button
-                      onClick={() => {
-                        setSelectedImage((s) => s + 1);
-                        setImageError(false);
-                      }}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
-                    >
-                      <ChevronRight className="w-6 h-6" />
-                    </button>
-                  )}
-
-                  <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {selectedImage + 1} / {galleryImages.length}
-                  </div>
-                </>
-              )}
-              {merch.animatedCover && !imageError && selectedImage === 0 && (
-                <button
-                  onClick={() => setShowAnimated((s) => !s)}
-                  className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-black/80 transition-all"
-                >
-                  {showAnimated ? "📹 Animasiya" : "🖼️ Statik"}
-                </button>
+              
+              {item.isNew && (
+                <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-sm font-bold px-4 py-2 rounded-full">
+                  YENI
+                </span>
               )}
             </div>
+
+            {/* Thumbnail Gallery */}
             {galleryImages.length > 1 && (
-              <div className="relative bg-card backdrop-blur-sm p-6 rounded-lg border border-border shadow-lg">
-                <div className="flex items-center justify-between mb-4">
-                  <p className="text-sm font-medium text-foreground">Şəkillər ({selectedImage + 1}/{galleryImages.length})</p>
-                </div>
-                <div ref={scrollContainerRef} className="flex gap-4 overflow-x-auto pb-2 scroll-smooth" style={{ scrollbarWidth: "thin" }}>
-                  {galleryImages.map((img, index) => (
+              <div className="flex gap-4 overflow-x-auto pb-2">
+                {galleryImages.map((img, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setSelectedImage(index);
+                      setImageError(false);
+                    }}
+                    className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                      selectedImage === index
+                        ? "border-primary shadow-lg scale-105"
+                        : "border-border hover:border-primary/50"
+                    }`}
+                  >
+                    <img
+                      src={img}
+                      alt={`${item.title} ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Right Column - Product Info */}
+          <div className="space-y-6">
+            {/* Title and Artists */}
+            <div>
+              <h1 className="text-4xl md:text-5xl font-serif font-bold mb-3">
+                {item.title}
+              </h1>
+              
+              {/* Artists */}
+              <div className="flex items-center gap-2 mb-4">
+                {artistList.map((artist, index) => {
+                  const slug = String(artist)
+                    .toLowerCase()
+                    .replace(/,/g, '')
+                    .replace(/\$/g, '')
+                    .replace(/\s+/g, "-")
+                    .replace(/[^\w-]/g, "");
+                  return (
+                    <span key={`artist-${index}`} className="flex items-center">
+                      <Link
+                        to={`/artist/${slug}`}
+                        className="text-xl text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {artist}
+                      </Link>
+                      {index < artistList.length - 1 && (
+                        <span className="text-xl text-muted-foreground mx-2">&</span>
+                      )}
+                    </span>
+                  );
+                })}
+              </div>
+
+              <p className="text-muted-foreground">{item.year}</p>
+            </div>
+
+            {/* Price */}
+            <div className="border-y border-border py-6">
+              <p className="text-4xl font-serif font-bold">{item.price} ₼</p>
+            </div>
+
+            {/* Description */}
+            {item.description && (
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Təsvir</h3>
+                <p className="text-muted-foreground">{item.description}</p>
+              </div>
+            )}
+
+            {/* Size Selection */}
+            {item.size && item.size.length > 0 && (
+              <div>
+                <h3 className="text-lg font-semibold mb-3">Ölçü Seçin</h3>
+                <div className="flex flex-wrap gap-3">
+                  {item.size.map((size) => (
                     <button
-                      key={index}
-                      onClick={() => {
-                        setSelectedImage(index);
-                        setImageError(false);
-                      }}
-                      className={`flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-3 transition-all ${selectedImage === index ? "border-primary shadow-xl scale-105 ring-2 ring-primary/50" : "border-border hover:border-primary/50 hover:scale-102"
-                        }`}
+                      key={size}
+                      onClick={() => setSelectedSize(size)}
+                      className={`px-6 py-3 border-2 rounded-lg font-medium transition-all ${
+                        selectedSize === size
+                          ? "border-primary bg-primary text-primary-foreground"
+                          : "border-border hover:border-primary"
+                      }`}
                     >
-                      <img
-                        src={index === 0 && merch.animatedCover ? merch.image : img.url}
-                        alt={`${img.type === "cover" ? "Cover" : "Vinyl"} ${index + 1}`}
-                        className="w-full h-full object-cover"
-                      />
+                      {size}
                     </button>
                   ))}
                 </div>
               </div>
             )}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-8 text-white">
-              <div className="text-center">
-                {merch.isNew && (
-                  <span className="inline-block bg-primary text-primary-foreground text-sm font-bold px-4 py-2 rounded-full mb-4">
-                    YENI BURAXILIŞ
+
+            {/* Color */}
+            {item.color && (
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Rəng</h3>
+                <p className="text-muted-foreground">{item.color}</p>
+              </div>
+            )}
+
+            {/* Quantity Selector */}
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Miqdar</h3>
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={decrementQuantity}
+                  disabled={quantity <= 1}
+                >
+                  <Minus className="w-4 h-4" />
+                </Button>
+                <span className="text-2xl font-semibold w-12 text-center">
+                  {quantity}
+                </span>
+                <Button variant="outline" size="icon" onClick={incrementQuantity}>
+                  <Plus className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Total Price */}
+            <div className="bg-muted rounded-lg p-4">
+              <div className="flex justify-between items-center">
+                <span className="text-lg font-medium">Cəmi:</span>
+                <span className="text-3xl font-serif font-bold">
+                  {(item.price * quantity).toFixed(0)} ₼
+                </span>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex gap-4">
+              <Button
+                size="lg"
+                className="flex-1 gap-2"
+                onClick={handleAddToCart}
+                disabled={item.size && item.size.length > 0 && !selectedSize}
+              >
+                <ShoppingCart className="w-5 h-5" />
+                Səbətə əlavə et
+              </Button>
+              <Button variant="outline" size="icon" className="shrink-0">
+                <Heart className="w-5 h-5" />
+              </Button>
+            </div>
+
+            {/* Size Warning */}
+            {item.size && item.size.length > 0 && !selectedSize && (
+              <p className="text-sm text-yellow-600">
+                * Zəhmət olmasa ölçü seçin
+              </p>
+            )}
+
+            {/* Product Details */}
+            <div className="border-t border-border pt-6">
+              <h3 className="text-lg font-semibold mb-3">Məhsul Məlumatları</h3>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <div className="flex justify-between">
+                  <span>Kateqoriya:</span>
+                  <span className="font-medium text-foreground">
+                    {item.category || "Merch"}
                   </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Buraxılış İli:</span>
+                  <span className="font-medium text-foreground">{item.year}</span>
+                </div>
+                {item.material && (
+                  <div className="flex justify-between">
+                    <span>Material:</span>
+                    <span className="font-medium text-foreground">{item.material}</span>
+                  </div>
                 )}
-
-                <div className="flex items-center justify-center gap-3 mb-3">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold">{merch.title}</h1>
-                  {merch.isExplicit && (
-                    <span className="text-sm font-bold px-2.5 py-1 bg-white/20 backdrop-blur-sm text-white border border-white/30 rounded">E</span>
-                  )}
-                </div>
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  {artistList.map((artist, index) => {
-                    const slug = String(artist)
-                      .toLowerCase()
-                      .replace(/,/g, '')
-                      .replace(/\$/g, '')
-                      .replace(/\s+/g, "-")
-                      .replace(/[^\w-]/g, "");
-                    return (
-                      <span key={`artist-${index}`} className="flex items-center">
-                        <Link
-                          to={`/artist/${slug}`}
-                          className="text-xl md:text-2xl text-white/90 hover:text-primary transition-colors"
-                        >
-                          {artist}
-                        </Link>
-                        {index < artistList.length - 1 && (
-                          <span className="text-xl md:text-2xl text-white/90 mx-2">&</span>
-                        )}
-                      </span>
-                    );
-                  })}
-                </div>
-
-                <div className="flex items-center justify-center gap-3 text-sm md:text-base text-white/80 mb-4">
-                  <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-lg">{merch.genre}</span>
-                  <span>•</span>
-                  <span>{merch.year}</span>
-                </div>
-
-                </div>
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-4 pt-4 border-t border-white/20">
-            <p className="text-3xl font-serif font-bold">{merch.price} ₼</p>
-            <Button
-              size="default"
-              className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-            >
-              <ShoppingCart className="w-4 h-4" />
-              Səbətə əlavə et
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-white/90 hover:text-primary hover:bg-white/10"
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-            >
-              <Heart className="w-5 h-5" />
-            </Button>
+        </div>
+
+        {/* Related Products */}
+        <div className="mt-20">
+          <h2 className="text-3xl font-serif font-bold mb-8">Oxşar Məhsullar</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            {Merch.filter(m => 
+              m.id !== item.id && 
+              m.artist.some(a => artistList.includes(a))
+            )
+            .slice(0, 5)
+            .map(relatedItem => (
+              <Link
+                key={relatedItem.id}
+                to={`/merch/${relatedItem.id}`}
+                className="group"
+              >
+                <div className="aspect-square bg-card rounded-lg overflow-hidden border border-border mb-3 group-hover:shadow-lg transition-shadow">
+                  {relatedItem.image ? (
+                    <img
+                      src={relatedItem.image}
+                      alt={relatedItem.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-muted">
+                      <ShoppingCart className="w-12 h-12 text-muted-foreground" />
+                    </div>
+                  )}
+                </div>
+                <h3 className="font-semibold text-sm truncate group-hover:text-primary transition">
+                  {relatedItem.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">{relatedItem.price} ₼</p>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
+    </div>
   );
 };
-
-export default AlbumPage;
