@@ -1,7 +1,9 @@
 export const artistProfiles = {
   "Playboi Carti": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751199/playboiCarti_banner_n8qpjf.jpg",
-    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751234/playboiCarti_pfp_fzma49.png"
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751234/playboiCarti_pfp_fzma49.png",
+    merchBanner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768919988/antagonist2.0_Logo_mbxh8k.png",
+    merchName: "ANTAGONIST 2.0"
   },
   "The Weeknd": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751228/theWeeknd_banner_qm2hrs.jpg",
