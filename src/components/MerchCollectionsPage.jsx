@@ -14,7 +14,6 @@ export const MerchCollectionsPage = () => {
   const [viewMode, setViewMode] = useState("categories");
   const [selectedCategory, setSelectedCategory] = useState(null);
   const navigate = useNavigate();
-
   const normalizedMerch = Merch.map(item => ({
     ...item,
     artist: Array.isArray(item.artist) 
@@ -23,7 +22,6 @@ export const MerchCollectionsPage = () => {
         ? item.artist.split('&').map(a => a.trim())
         : [item.artist]
   }));
-
   const allArtists = Array.from(
     new Set(normalizedMerch.flatMap(item => item.artist))
   ).sort();
@@ -37,7 +35,7 @@ export const MerchCollectionsPage = () => {
     const artistProfile = artistProfiles[artist] || {};
     
     return {
-      artist,
+      artist: artistProfile.merchName,
       itemCount: artistMerch.length,
       image: artistProfile.profileImage || artistMerch[0]?.image,
       banner: artistProfile.merchBanner || artistProfile.banner,
@@ -52,6 +50,7 @@ export const MerchCollectionsPage = () => {
     return yearMatch && artistMatch && categoryMatch;
   });
 
+  // Sort merch
   if (sortOrder === "price-low") {
     filteredMerch = [...filteredMerch].sort((a, b) => a.price - b.price);
   } else if (sortOrder === "price-high") {
@@ -73,6 +72,7 @@ export const MerchCollectionsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
+        {/* Header */}
         <div className="mb-12">
           <Link to="/" className="text-primary hover:underline mb-4 inline-block">
             ← Ana səhifəyə qayıt
@@ -264,8 +264,10 @@ export const MerchCollectionsPage = () => {
           </div>
         )}
 
+        {/* All Products View */}
         {viewMode === "all" && (
           <>
+            {/* Filters Bar */}
             <div className="mb-8">
               <div className="flex flex-wrap items-center gap-4 mb-4">
                 <Button
@@ -287,6 +289,8 @@ export const MerchCollectionsPage = () => {
                     Təmizlə
                   </Button>
                 )}
+
+                {/* Active Filter Tags */}
                 <div className="flex flex-wrap gap-2">
                   {artistFilter !== "All" && (
                     <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm flex items-center gap-2">
@@ -307,9 +311,11 @@ export const MerchCollectionsPage = () => {
                 </div>
               </div>
 
+              {/* Filter Options */}
               {showFilters && (
                 <div className="bg-card border border-border rounded-xl p-6 space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* Artist Filter */}
                     <div>
                       <label className="block text-sm font-medium mb-2">İfaçı</label>
                       <select
@@ -326,6 +332,7 @@ export const MerchCollectionsPage = () => {
                       </select>
                     </div>
 
+                    {/* Year Filter */}
                     <div>
                       <label className="block text-sm font-medium mb-2">İl</label>
                       <select
@@ -342,6 +349,7 @@ export const MerchCollectionsPage = () => {
                       </select>
                     </div>
 
+                    {/* Sort Order */}
                     <div>
                       <label className="block text-sm font-medium mb-2">Sırala</label>
                       <select
@@ -361,6 +369,7 @@ export const MerchCollectionsPage = () => {
               )}
             </div>
 
+            {/* Merch Grid */}
             {filteredMerch.length === 0 ? (
               <div className="text-center py-20">
                 <p className="text-muted-foreground text-lg">Heç bir məhsul tapılmadı</p>
@@ -378,6 +387,7 @@ export const MerchCollectionsPage = () => {
                     onMouseLeave={() => setHoveredId(null)}
                     onClick={() => navigate(`/merch/${item.id}`)}
                   >
+                    {/* Image */}
                     <div className="relative mb-4 aspect-square bg-card rounded-lg overflow-hidden border border-border hover:shadow-xl transition-shadow">
                       {item.image ? (
                         <img
@@ -397,6 +407,8 @@ export const MerchCollectionsPage = () => {
                         </span>
                       )}
                     </div>
+
+                    {/* Info */}
                     <div>
                       <h3 className="font-semibold text-white group-hover:text-primary transition truncate mb-1">
                         {item.title}
