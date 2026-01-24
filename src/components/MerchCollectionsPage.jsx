@@ -85,7 +85,7 @@ export const MerchCollectionsPage = () => {
               ? `${MerchCategories?.length || 0} kateqoriya`
               : viewMode === "subcategories"
               ? `${selectedCategory} - ${artistCollections.filter(c => normalizedMerch.some(m => m.artist.includes(c.artist) && m.category === selectedCategory)).length} ifaçı`
-              : `${filteredMerch.length} məhsul tapıldı`}
+              : `${filteredMerch.length} Məhsul tapıldı`}
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export const MerchCollectionsPage = () => {
                       {category.name}
                     </h2>
                     <p className="text-2xl text-muted-foreground font-bold">
-                      {categoryMerch.length} məhsul
+                      {categoryMerch.length} Məhsul
                     </p>
                     <Button
                       size="lg"
@@ -198,7 +198,7 @@ export const MerchCollectionsPage = () => {
                       {collection.artist}
                     </h2>
                     <p className="text-2xl text-muted-foreground font-bold">
-                      {collection.merch.filter(m => m.category === selectedCategory).length} məhsul
+                      {collection.merch.filter(m => m.category === selectedCategory).length} Məhsul
                     </p>
                     <Button
                       size="lg"
