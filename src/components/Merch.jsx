@@ -129,7 +129,7 @@ export const MerchCategories = [
 export const Merch = [
   {
     id: 1,
-    title: "ANTAGONIST 2.0 T-SHIRT",
+    title: "ANTAGONIST 2.0 FUTBOLKA",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
     price: 100,
@@ -139,7 +139,7 @@ export const Merch = [
     image: antagonistDaggerShirt.front,
     additionalImages: antagonistDaggerShirt.additionalImages,
     color: "Qara",
-    description: "Heavyweight T-Shirt with screen printed graphics.",
+    description: "Ekran çaplı qrafikalı ağır çəkili futbolka.",
   },
   {
     id: 2,

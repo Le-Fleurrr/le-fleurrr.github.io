@@ -20,8 +20,8 @@ export const Hero = () => {
                 Premium Vinyl Kolleksiyası
               </p>
               <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                Ən Yeni
-                <span className="text-gradient block">Bestsellerlər</span>
+                YENI DON TOLIVER
+                <span className="text-gradient block">OCTANE</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-md animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 Nadir nəşrləri, yeni buraxılışları və zamansız klassikləri kəşf edin.
@@ -42,15 +42,15 @@ export const Hero = () => {
 
             <div className="flex gap-12 pt-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <div>
-                <p className="text-3xl font-serif font-bold text-gradient">15K+</p>
+                <p className="text-3xl font-serif font-bold text-gradient">100+</p>
                 <p className="text-sm text-muted-foreground">Vinyl</p>
               </div>
               <div>
-                <p className="text-3xl font-serif font-bold text-gradient">500+</p>
+                <p className="text-3xl font-serif font-bold text-gradient">50+</p>
                 <p className="text-sm text-muted-foreground">Nadir Preslər</p>
               </div>
               <div>
-                <p className="text-3xl font-serif font-bold text-gradient">50+</p>
+                <p className="text-3xl font-serif font-bold text-gradient">10+</p>
                 <p className="text-sm text-muted-foreground">Janrlar</p>
               </div>
             </div>

@@ -7,10 +7,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Index from './components/pages/Index';
 import NotFound from "./components/pages/NotFound";
 import { Account } from './components/Account';
-import { Hero } from "./components/Hero.jsx";
 import ArtistPage from './components/ArtistPage';
 import AlbumPage from './components/AlbumPage';
-import { FeaturedAlbums } from './components/FeaturedAlbums.js';
 import { Cloudinary } from '@cloudinary/url-gen';
 import { MerchCollectionsPage } from './components/MerchCollectionsPage.jsx';
 import { MerchPage } from "./components/MerchPage.jsx";
@@ -27,16 +25,7 @@ function App() {
         <Sonner />
         <Router>
           <Routes>
-            <Route 
-              path="/" 
-              element={
-                <div>
-                  <Index />
-                  <Hero />
-                  <FeaturedAlbums />
-                </div>
-              } 
-            />
+            <Route path="/" element={<Index />} />
             <Route path="/account" element={<Account />} />
             <Route path="/collections" element={<Collections />} />
             <Route path="/artist/:artistName" element={<ArtistPage />} />
