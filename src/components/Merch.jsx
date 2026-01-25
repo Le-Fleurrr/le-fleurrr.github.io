@@ -137,6 +137,16 @@ const bh3PoemShirt = {
   additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769010701/Top_Floor_Boss_Poem_T-Shirt_Back_ed7pe2.png"]
 };
 
+const bh3WitchLongSleeve = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769010705/WitchLongSleeveT-ShirtFront_hz89su.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769010704/WitchLongSleeveT-ShirtBack_dkjkop.png"]
+};
+
+const bh3LogoManiaHoodie = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769010706/LogoManiaHoodie_Front_x0hooi.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769010707/LogoManiaHoodie_Back_tml1ve.png"]
+};
+
 export const MerchCategories = [
   {
     name: "Antagonist 2.0",
@@ -522,5 +532,19 @@ export const Merch = [
     additionalImages: bh3PoemShirt.additionalImages,
     color: "Qara",
     description: "Ekran çaplı qrafikalı böyüdülmüş futbolka. Əsl uyğunluq üçün ölçüsü kiçildilib.",
+  },
+  {
+    id: 27,
+    title: "</3³ Loqo Mania Hoodie",
+    artist: ["Destroy Lonely"],
+    category: "Antagonist 2.0",
+    price: 274.99,
+    year: 2025,
+    isNew: true,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    image: bh3LogoManiaHoodie.front,
+    additionalImages: bh3LogoManiaHoodie.additionalImages,
+    color: "Qara",
+    description: "Ekran çaplı qrafikalı ağır çəkili kapüşonlu köynək.",
   },
 ];
