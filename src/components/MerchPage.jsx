@@ -26,15 +26,11 @@ export const MerchPage = () => {
       </div>
     );
   }
-
-  // Normalize artist to array
   const artistList = Array.isArray(item.artist)
     ? item.artist
     : typeof item.artist === 'string'
     ? item.artist.split('&').map(a => a.trim())
     : [item.artist];
-
-  // Gallery images (you can add multiple images to your Merch data)
   const galleryImages = [
     item.image,
     ...(item.additionalImages || [])
@@ -46,7 +42,6 @@ export const MerchPage = () => {
   const decrementQuantity = () => setQuantity(q => (q > 1 ? q - 1 : 1));
 
   const handleAddToCart = () => {
-    // Add to cart logic here
     console.log("Adding to cart:", {
       item: item.title,
       quantity,
@@ -186,16 +181,12 @@ export const MerchPage = () => {
                 </div>
               </div>
             )}
-
-            {/* Color */}
             {item.color && (
               <div>
                 <h3 className="text-lg font-semibold mb-2">Rəng</h3>
                 <p className="text-muted-foreground">{item.color}</p>
               </div>
             )}
-
-            {/* Quantity Selector */}
             <div>
               <h3 className="text-lg font-semibold mb-3">Miqdar</h3>
               <div className="flex items-center gap-4">
@@ -216,7 +207,6 @@ export const MerchPage = () => {
               </div>
             </div>
 
-            {/* Total Price */}
             <div className="bg-muted rounded-lg p-4">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-medium">Cəmi:</span>

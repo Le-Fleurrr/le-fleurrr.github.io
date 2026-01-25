@@ -321,35 +321,15 @@ const heartbreak = {
 
 const musicCD = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739012/music_CD1_dqh236.png',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD2_ntv903.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD3_dxrohi.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD4_owvwox.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768739015/music_CD5_ejwzms.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD6_zuu2qd.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD7_rebgkq.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD8_zo5jzq.png',]
 };
 
-const musicCD2 = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD2_ntv903.png',
-};
-
-const musicCD3 = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD3_dxrohi.png',
-};
-
-const musicCD4 = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD4_owvwox.png',
-};
-
-const musicCD5 = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739015/music_CD5_ejwzms.png',
-};
-
-const musicCD6 = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD6_zuu2qd.png',
-};
-
-const musicCD7 = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD7_rebgkq.png',
-};
-
-const musicCD8 = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD8_zo5jzq.png',
-};
 
 const heroesAndVillains = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768924534/heroes_villains_dj9uor.jpg',
@@ -416,6 +396,15 @@ const octane = {
     "https://res.cloudinary.com/deroy68n9/image/upload/v1769241305/OCTANE2LPVINYL2_1175dcbb-d6a7-46_wcahji.png",
     "https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANE2LPVINYL4_93634d15-9463-4b_fuihl0.png",
     "https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANE2LPVINYL3_b8f750af-99d5-4f_iajluo.png"
+  ]
+};
+
+const octaneCD = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769241305/OCTANE2LPVINYL5_0b07d854-8265-43_bdpipu.png',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769241305/OCTANECD1_309e3e56-e2e8-4eeb-8be_efexql.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANECD5_20162d97-1fd2-4609-a85_iyiduc.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANECD2_e375e33f-3ae4-4574-be7_l0htsv.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANECD3_f3b0061b-d728-4b8f-8b1_eggjtv.png"
   ]
 };
 
@@ -1296,133 +1285,22 @@ export const albums = [
     description: "CD edition of Playboi Carti's debut."
   },
   {
-    id: 53,
-    title: "MUSIC (CD)",
-    artist: ["Playboi Carti"],
-    price: 29.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: musicCD.cover,
-    vinylImages: [],
-    sleeveColor: "white",
-    accentColor: "white",
-    format: "cd",
-    description: "CD edition of Playboi Carti's debut."
-  },
-  {
-    id: 54,
-    title: "MUSIC (CD 2)",
-    artist: ["Playboi Carti"],
-    price: 29.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: musicCD2.cover,
-    vinylImages: [],
-    sleeveColor: "black",
-    accentColor: "black",
-    format: "cd",
-    description: "CD edition of Playboi Carti's debut."
-  },
-  {
-    id: 55,
-    title: "MUSIC (CD 3)",
-    artist: ["Playboi Carti"],
-    price: 29.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: musicCD3.cover,
-    vinylImages: [],
-    sleeveColor: "black",
-    accentColor: "black",
-    format: "cd",
-    description: "CD edition of Playboi Carti's debut."
-  },
-  {
-    id: 56,
-    title: "MUSIC (CD 4)",
-    artist: ["Playboi Carti"],
-    price: 29.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: musicCD4.cover,
-    vinylImages: [],
-    sleeveColor: "white",
-    accentColor: "white",
-    format: "cd",
-    description: "CD edition of Playboi Carti's debut."
-  },
-  {
-    id: 57,
-    title: "MUSIC (CD 5)",
-    artist: ["Playboi Carti"],
-    price: 29.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: musicCD5.cover,
-    vinylImages: [],
-    sleeveColor: "black",
-    accentColor: "black",
-    format: "cd",
-    description: "CD edition of Playboi Carti's debut."
-  },
-  {
-    id: 58,
-    title: "MUSIC (CD 6)",
-    artist: ["Playboi Carti"],
-    price: 29.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: musicCD6.cover,
-    vinylImages: [],
-    sleeveColor: "white",
-    accentColor: "white",
-    format: "cd",
-    description: "CD edition of Playboi Carti's debut."
-  },
-  {
-    id: 59,
-    title: "MUSIC (CD 7)",
-    artist: ["Playboi Carti"],
-    price: 29.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: musicCD7.cover,
-    vinylImages: [],
-    sleeveColor: "white",
-    accentColor: "white",
-    format: "cd",
-    description: "CD edition of Playboi Carti's debut."
-  },
-  {
-    id: 60,
-    title: "MUSIC (CD 8)",
-    artist: ["Playboi Carti"],
-    price: 29.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: musicCD8.cover,
-    vinylImages: [],
-    sleeveColor: "white",
-    accentColor: "white",
-    format: "cd",
-    description: "CD edition of Playboi Carti's debut."
-  },
+  id: 53,
+  title: "MUSIC (CD)",
+  artist: ["Playboi Carti"],
+  price: 29.99,
+  genre: "Hip-Hop/Rap",
+  year: 2025,
+  isNew: true,
+  isExplicit: true,
+  image: musicCD.cover,
+  vinylImages: musicCD.vinyl,
+  sleeveColor: "white",
+  accentColor: "white",
+  format: "cd",
+  description: "MUSIC CD"
+},
+
   {
     id: 61,
     title: "IGOR (CD)",
@@ -1567,6 +1445,22 @@ export const albums = [
     isExplicit: true,
     image: octane.cover,
     vinylImages: octane.vinyl,
+    vinylColor: "green",
+    accentColor: "green",
+    format: "vinyl",
+    description: "CD edition of Playboi Carti's debut."
+  },
+  {
+    id: 70,
+    title: "OCTANE (CD)",
+    artist: ["Don Toliver"],
+    price: 29.99,
+    genre: "Hip-Hop/Rap",
+    year: 2026,
+    isNew: true,
+    isExplicit: true,
+    image: octaneCD.cover,
+    vinylImages: octaneCD.vinyl,
     vinylColor: "green",
     accentColor: "green",
     format: "vinyl",
