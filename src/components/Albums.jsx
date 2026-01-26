@@ -1298,7 +1298,17 @@ export const albums = [
   sleeveColor: "white",
   accentColor: "white",
   format: "cd",
-  description: "MUSIC CD"
+  description: "MUSIC CD",
+  variants: [
+    {id: 1, name: "CD 1", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739012/music_CD1_dqh236.png"},
+    {id: 2, name: "CD 2", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD2_ntv903.png"},
+    {id: 3, name: "CD 3", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD3_dxrohi.png"},
+    {id: 4, name: "CD 4", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD4_owvwox.png"},
+    {id: 5, name: "CD 5", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739015/music_CD5_ejwzms.png"},
+    {id: 6, name: "CD 6", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD6_zuu2qd.png"},
+    {id: 7, name: "CD 7", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD7_rebgkq.png"},
+    {id: 8, name: "CD 8", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD8_zo5jzq.png"},
+  ],
 },
 
   {

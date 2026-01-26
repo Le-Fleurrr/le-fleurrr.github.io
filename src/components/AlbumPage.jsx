@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/Button.tsx";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, ShoppingCart, Heart } from "lucide-react";
 import { albums } from "./Albums.jsx";
-import { ShoppingCart, Heart } from "lucide-react";
 
 const getArtistList = (album) => {
   if (!album) return [];
@@ -21,6 +20,8 @@ const AlbumPage = () => {
   const [imageError, setImageError] = useState(false);
   const [showAnimated, setShowAnimated] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [selectedVariant, setSelectedVariant] = useState(null);
+  const [quantity, setQuantity] = useState(1); // ADD THIS LINE
   const scrollContainerRef = useRef(null);
 
   const album = albums.find((a) => a.id === parseInt(albumId || "", 10));
@@ -132,9 +133,8 @@ const AlbumPage = () => {
                       setSelectedImage(index);
                       setImageError(false);
                     }}
-                    className={`flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-3 transition-all ${
-                      selectedImage === index ? "border-primary shadow-xl scale-105 ring-2 ring-primary/50" : "border-border hover:border-primary/50 hover:scale-102"
-                    }`}
+                    className={`flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-3 transition-all ${selectedImage === index ? "border-primary shadow-xl scale-105 ring-2 ring-primary/50" : "border-border hover:border-primary/50 hover:scale-102"
+                      }`}
                   >
                     <img
                       src={index === 0 && !showAnimated && album.animatedCover ? album.image : img.url}
@@ -208,15 +208,21 @@ const AlbumPage = () => {
               <div className="border-t border-border pt-6">
                 <h3 className="text-lg font-semibold mb-3">Dizayn Seçin</h3>
                 <div className="grid grid-cols-4 gap-3">
-                  {album.variants.map((variant, index) => (
+                  {album.variants.map((variant) => (
                     <button
                       key={variant.id}
-                      onClick={() => setSelectedImage(index + 1)}
-                      className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                        selectedImage === index + 1
-                          ? "border-primary ring-2 ring-primary/50"
-                          : "border-border hover:border-primary/50"
-                      }`}
+                      onClick={() => {
+                        setSelectedVariant(variant.id);
+                        // Find the index of this variant's image in the gallery
+                        const variantImageIndex = galleryImages.findIndex(img => img.url === variant.image);
+                        if (variantImageIndex !== -1) {
+                          setSelectedImage(variantImageIndex);
+                        }
+                      }}
+                      className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${selectedVariant === variant.id
+                        ? "border-primary ring-2 ring-primary/50"
+                        : "border-border hover:border-primary/50"
+                        }`}
                     >
                       <img
                         src={variant.image}
@@ -226,14 +232,46 @@ const AlbumPage = () => {
                       <div className="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-sm p-1 text-center">
                         <p className="text-xs text-white font-medium truncate">{variant.name}</p>
                       </div>
+                      {selectedVariant === variant.id && (
+                        <div className="absolute top-2 right-2 bg-primary text-primary-foreground rounded-full p-1">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                      )}
                     </button>
                   ))}
                 </div>
+                {selectedVariant && (
+                  <p className="mt-3 text-sm text-primary font-medium">
+                    ✓ Seçilmiş: {album.variants.find(v => v.id === selectedVariant)?.name}
+                  </p>
+                )}
               </div>
             )}
+            <div className="border-t border-border pt-6">
+              <h3 className="text-lg font-semibold mb-3">Miqdar</h3>
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={() => setQuantity(q => Math.max(1, q - 1))}
+                  className="w-10 h-10 rounded-lg border-2 border-border hover:border-primary transition flex items-center justify-center"
+                >
+                  <span className="text-xl font-bold">-</span>
+                </button>
+                <span className="text-2xl font-bold w-12 text-center">{quantity}</span>
+                <button
+                  onClick={() => setQuantity(q => q + 1)}
+                  className="w-10 h-10 rounded-lg border-2 border-border hover:border-primary transition flex items-center justify-center"
+                >
+                  <span className="text-xl font-bold">+</span>
+                </button>
+              </div>
+            </div>
 
             <div className="flex items-center justify-between gap-4 pt-6 border-t border-border">
-              <p className="text-4xl font-serif font-bold">{album.price} ₼</p>
+              <div>
+                <p className="text-4xl font-serif font-bold">{(album.price * quantity).toFixed(2)} ₼</p>
+              </div>
               <div className="flex gap-3">
                 <Button
                   size="lg"

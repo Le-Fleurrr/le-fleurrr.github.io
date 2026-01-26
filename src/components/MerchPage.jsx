@@ -60,9 +60,7 @@ export const MerchPage = () => {
         </Button>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Left Column - Images */}
           <div>
-            {/* Main Image */}
             <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl mb-6 bg-card border border-border">
               {currentImage && !imageError ? (
                 <img
@@ -83,8 +81,6 @@ export const MerchPage = () => {
                 </span>
               )}
             </div>
-
-            {/* Thumbnail Gallery */}
             {galleryImages.length > 1 && (
               <div className="flex gap-4 overflow-x-auto pb-2">
                 {galleryImages.map((img, index) => (
