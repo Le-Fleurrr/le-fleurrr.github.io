@@ -384,6 +384,11 @@ const octaneCD = {
   ]
 };
 
+const pinkTape = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768642828/pinkTape_vvpcza.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768642828/pinkTape_vinyl_eulham.jpg"],
+};
+
 export const albums = [
   {
     id: 1,
@@ -1450,7 +1455,26 @@ export const albums = [
     vinylImages: homixideLifestyle.vinyl,
     vinylColor: "white",
     accentColor: "white",
+    sleeveColor: "pink",
     format: "vinyl",
     description: "Homixide Lifestyle Standart LP Zərgərlik qabı qablaşdırması.",
+  },
+  {
+    id: 79,
+    title: "Pink Tape (2LP)",
+    artist: ["Lil Uzi Vert"],
+    price: 99.99,
+    genre: "Hip-Hop/Rap",
+    year: 2023,
+    isNew: false,
+    isExplicit: true,
+    image: pinkTape.cover,
+    vinylImages: pinkTape.vinyl,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656511/pinkTape_animated_jithgj.gif",
+    vinylColor: "pink",
+    accentColor: "pink",
+    sleeveColor: "pink",
+    format: "vinyl",
+    description: "Pink Tape Standart LP Zərgərlik qabı qablaşdırması.",
   }
 ];
