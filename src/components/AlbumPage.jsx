@@ -21,7 +21,7 @@ const AlbumPage = () => {
   const [showAnimated, setShowAnimated] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedVariant, setSelectedVariant] = useState(null);
-  const [quantity, setQuantity] = useState(1); // ADD THIS LINE
+  const [quantity, setQuantity] = useState(1);
   const scrollContainerRef = useRef(null);
 
   const album = albums.find((a) => a.id === parseInt(albumId || "", 10));
@@ -41,16 +41,24 @@ const AlbumPage = () => {
 
   const artistList = getArtistList(album);
 
-  const galleryImages = [
-    {
-      url: showAnimated && album.animatedCover ? album.animatedCover : album.image,
-      type: "cover",
-    },
-    ...(album.vinylImages || []).map((url) => ({ url, type: "vinyl" })),
-    ...(album.tracklistImage ? [{ url: album.tracklistImage, type: "tracklist" }] : []),
-    ...(album.featuresImage ? [{ url: album.featuresImage, type: "features" }] : []),
-  ];
-
+ const galleryImages = [
+  ...(Array.isArray(album.image)
+    ? album.image.map((url) => ({ url, type: "cover" }))
+    : album.image
+    ? [{ url: album.image, type: "cover" }]
+    : []),
+  ...(album.vinylImages || []).map((url) => ({ url, type: "vinyl" })),
+  ...(Array.isArray(album.tracklistImage)
+    ? album.tracklistImage.map((url) => ({ url, type: "tracklist" }))
+    : album.tracklistImage
+    ? [{ url: album.tracklistImage, type: "tracklist" }]
+    : []),
+  ...(Array.isArray(album.featuresImage)
+    ? album.featuresImage.map((url) => ({ url, type: "features" }))
+    : album.featuresImage
+    ? [{ url: album.featuresImage, type: "features" }]
+    : []),
+];
   const currentImage = galleryImages[selectedImage]?.url;
 
   return (

@@ -179,13 +179,14 @@ export const Collections = () => {
                     <div className="absolute inset-0 flex items-center justify-start pl-4">
                       <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl">
                         <img
-                          src={album.image}
+                          src={Array.isArray(album.image) ? album.image[0] : album.image}
                           alt={`${album.title} cover`}
                           className="w-full h-full object-cover"
                         />
                       </div>
                     </div>
                   )}
+
 
                   <div className={`absolute w-40 h-40 bg-gradient-to-br ${getSleeveColorClass(album.sleeveColor)} rounded-lg transform -rotate-6`} />
 

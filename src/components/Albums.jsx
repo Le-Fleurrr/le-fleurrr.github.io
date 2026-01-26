@@ -35,10 +35,18 @@ const dieLit = {
 };
 
 const musicWhite = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226167/musicWhite_nd1rsi.jpg',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226171/musicWhite_vinyl_wfsgve.jpg"],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226167/musicWhite_tl_m74a4g.png",
-  features: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226166/musicWhite_feats_go3pmr.jpg"
+  cover: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226167/musicWhite_nd1rsi.jpg',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768226162/musicBlack_xpnnbu.jpg'
+  ],
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226171/musicWhite_vinyl_wfsgve.jpg",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768226166/musicBlack_vinyl_x17lx8.jpg"
+  ],
+  tracklist: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226167/musicWhite_tl_m74a4g.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768226165/musicBlack_tl_qclu5c.jpg"
+  ],
+  features: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226166/musicWhite_feats_go3pmr.jpg",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768226162/musicBlack_feats_kq6dyk.jpg"
+  ]
 };
 
 const musicBlack = {
@@ -232,17 +240,13 @@ const starboy = {
 const uyScuti = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768657518/uyScuti_yb6irv.jpg',
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uySvuti_vinyl4_cfzzmx.png',
-    'https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uyScuti_vinyl5_n35dhd.png'
-  ],
-  tracklist: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768656262/uyScuti_tl1_uzatdm.png'
-};
-
-const uyScutiSP5DER = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768657519/uyScuti1_q9jg7g.png',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uy_scuti_vinyl1_zenbqk.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uyScuti_vinyl5_n35dhd.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uy_scuti_vinyl1_zenbqk.png',
     'https://res.cloudinary.com/deroy68n9/image/upload/v1768656237/uyScuti_vinyl2_gtnco1.png'
   ],
-  tracklist: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768656237/uyScuti_tl_oyy0gh.png'
+  tracklist: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768656262/uyScuti_tl1_uzatdm.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768656237/uyScuti_tl_oyy0gh.png'
+  ]
 };
 
 const hardstonePsycho = {
@@ -267,11 +271,6 @@ const playboicartiCD = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226172/playboiCarti_CD_cxubhe.png',
 };
 
-const dontBeDumbCASSETTEWHITE = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768642832/dontBeDumb_xvcjmw.png',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteWhite_o8e9iu.jpg']
-};
-
 const graduation = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226157/graduation_ukezr6.jpg',
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226157/graduation1_r5bz2u.jpg']
@@ -289,7 +288,9 @@ const dontBeDumb = {
 
 const dontBeDumbCASSETTEBLACK = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768642832/dontBeDumb_xvcjmw.png',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteBlack_clgiay.jpg']
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteBlack_clgiay.jpg',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteWhite_o8e9iu.jpg'
+  ]
 };
 
 const donda = {
@@ -572,26 +573,11 @@ export const albums = [
     sleeveColor: "white",
     accentColor: "white",
     format: "vinyl",
-    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
-  },
-  {
-    id: 10,
-    title: "MUSIC (Qara) [2LP]",
-    artist: ["Playboi Carti"],
-    price: 99.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: musicBlack.cover,
-    vinylImages: musicBlack.vinyl,
-    tracklistImage: musicBlack.tracklist,
-    featuresImage: musicBlack.features,
-    vinylColor: "black",
-    sleeveColor: "black",
-    accentColor: "black",
-    format: "vinyl",
-    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
+    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü.",
+    variants: [
+      {id: 1, name: "MUSIC (AĞ VİNİL)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226171/musicWhite_vinyl_wfsgve.jpg"},
+      {id: 2, name: "MUSIC (QARA VİNİL)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226166/musicBlack_vinyl_x17lx8.jpg"}
+    ]
   },
   {
     id: 11,
@@ -1031,25 +1017,11 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "vinyl",
-    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
-  },
-  {
-    id: 36,
-    title: "UY SCUTI (SP5DER Edition) [LP]",
-    artist: ["Young Thug"],
-    price: 59.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: uyScutiSP5DER.cover,
-    vinylImages: uyScutiSP5DER.vinyl,
-    tracklistImage: uyScutiSP5DER.tracklist,
-    vinylColor: "orange",
-    sleeveColor: "orange",
-    accentColor: "orange",
-    format: "vinyl",
-    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər.",
+    variants: [
+      {id: 1, name: "UY SCUTI (ALTERNATİV ÖRTÜK 1)", image:"https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uySvuti_vinyl4_cfzzmx.png"},
+      {id: 2, name: "UY SCUTI (SP5DER NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uy_scuti_vinyl1_zenbqk.png"}
+    ]
   },
   {
     id: 37,
@@ -1122,24 +1094,8 @@ export const albums = [
     description: "CD edition of Playboi Carti's debut."
   },
   {
-    id: 41,
-    title: "DON'T BE DUMB (Ag Cassette)",
-    artist: ["A$AP Rocky"],
-    price: 29.99,
-    genre: "Hip-Hop/Rap",
-    year: 2026,
-    isNew: true,
-    isExplicit: true,
-    image: dontBeDumbCASSETTEWHITE.cover,
-    vinylImages: dontBeDumbCASSETTEWHITE.vinyl,
-    cassetteColor: "white",
-    accentColor: "white",
-    format: "cassette",
-    description: "CD edition of Playboi Carti's debut."
-  },
-  {
     id: 42,
-    title: "DON'T BE DUMB (Qara Cassette)",
+    title: "DON'T BE DUMB (Kaset)",
     artist: ["A$AP Rocky"],
     price: 29.99,
     genre: "Hip-Hop/Rap",
@@ -1148,10 +1104,14 @@ export const albums = [
     isExplicit: true,
     image: dontBeDumbCASSETTEBLACK.cover,
     vinylImages: dontBeDumbCASSETTEBLACK.vinyl,
-    cassetteColor: "black",
-    accentColor: "black",
+    cassetteColor: "white",
+    accentColor: "white",
     format: "cassette",
-    description: "CD edition of Playboi Carti's debut."
+    description: "CD edition of Playboi Carti's debut.",
+    variants: [
+      {id: 1, name: "DON'T BE DUMB (Qara Kaset)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteBlack_clgiay.jpg"},
+      {id: 2, name: "DON'T BE DUMB (Ağ Kaset)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteWhite_o8e9iu.jpg"}
+    ]
   },
   {
     id: 43,
@@ -1458,7 +1418,7 @@ export const albums = [
     vinylColor: "green",
     accentColor: "green",
     format: "vinyl",
-    description: "CD edition of Playboi Carti's debut."
+    description: "OCTANE 2 QARA VİNİL DİSK. ÇAPLI İÇ QOLLU GENİŞ BURA GÖYƏK."
   },
   {
     id: 70,
@@ -1471,13 +1431,8 @@ export const albums = [
     isExplicit: true,
     image: octaneCD.cover,
     vinylImages: octaneCD.vinyl,
-    vinylColor: "green",
     accentColor: "green",
-    format: "vinyl",
-    description: "CD edition of Playboi Carti's debut."
+    format: "cd",
+    description: "Octane Standart CD Zərgərlik qabı qablaşdırması."
   },
 ];
-
-albums.forEach(album => {
-  console.log(album.id, album.title, album.format);
-});
