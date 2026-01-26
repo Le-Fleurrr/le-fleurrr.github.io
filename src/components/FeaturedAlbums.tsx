@@ -134,12 +134,12 @@ export const FeaturedAlbums = () => {
         </div>
 
         <Button
-            variant="outline"
-            className="self-start md:self-auto border-muted-foreground/30 hover:bg-secondary"
-            asChild
-          >
-            <Link to="/merch">Bütün Kolleksiyaya Baxın (MERCH)</Link>
-          </Button>
+          variant="outline"
+          className="self-start md:self-auto border-muted-foreground/30 hover:bg-secondary"
+          asChild
+        >
+          <Link to="/merch">Bütün Kolleksiyaya Baxın (MERCH)</Link>
+        </Button>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredAlbums.map((album) => {
@@ -168,7 +168,7 @@ export const FeaturedAlbums = () => {
                     <div className="absolute inset-0 flex items-center justify-start pl-4">
                       <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl">
                         <img
-                          src={album.image}
+                          src={Array.isArray(album.image) ? album.image[0] : album.image}
                           alt={`${album.title} cover`}
                           className="w-full h-full object-cover"
                         />

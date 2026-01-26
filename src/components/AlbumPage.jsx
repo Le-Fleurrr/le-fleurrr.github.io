@@ -41,23 +41,41 @@ const AlbumPage = () => {
 
   const artistList = getArtistList(album);
 
-  const galleryImages = [
-    {
-      url: showAnimated && album.animatedCover ? album.animatedCover : album.image,
-      type: "cover",
-    },
-    ...(album.vinylImages || []).map((url) => ({ url, type: "vinyl" })),
-    ...(Array.isArray(album.tracklistImage)
-      ? album.tracklistImage.map((url) => ({ url, type: "tracklist" }))
-      : album.tracklistImage
-        ? [{ url: album.tracklistImage, type: "tracklist" }]
-        : []),
-    ...(Array.isArray(album.featuresImage)
-      ? album.featuresImage.map((url) => ({ url, type: "features" }))
-      : album.featuresImage
-        ? [{ url: album.featuresImage, type: "features" }]
-        : []),
-  ];
+const staticCovers = Array.isArray(album.image)
+  ? album.image
+  : album.image
+    ? [album.image]
+    : [];
+
+const galleryImages = [
+  ...(album.animatedCover && showAnimated
+    ? [{ url: album.animatedCover, type: "cover", animated: true }]
+    : staticCovers.length
+      ? [{ url: staticCovers[0], type: "cover", animated: false }]
+      : []),
+
+  ...(showAnimated
+    ? staticCovers.slice(1)
+    : staticCovers
+  ).map((url) => ({ url, type: "cover", animated: false })),
+
+  ...(album.vinylImages || []).map((url) => ({ url, type: "vinyl" })),
+
+  ...(Array.isArray(album.tracklistImage)
+    ? album.tracklistImage.map((url) => ({ url, type: "tracklist" }))
+    : album.tracklistImage
+      ? [{ url: album.tracklistImage, type: "tracklist" }]
+      : []),
+
+  ...(Array.isArray(album.featuresImage)
+    ? album.featuresImage.map((url) => ({ url, type: "features" }))
+    : album.featuresImage
+      ? [{ url: album.featuresImage, type: "features" }]
+      : []),
+];
+
+
+
   const currentImage = galleryImages[selectedImage]?.url;
 
   return (
@@ -220,7 +238,6 @@ const AlbumPage = () => {
                       key={variant.id}
                       onClick={() => {
                         setSelectedVariant(variant.id);
-                        // Find the index of this variant's image in the gallery
                         const variantImageIndex = galleryImages.findIndex(img => img.url === variant.image);
                         if (variantImageIndex !== -1) {
                           setSelectedImage(variantImageIndex);

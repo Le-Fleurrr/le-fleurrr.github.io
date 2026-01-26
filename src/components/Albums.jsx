@@ -1,3 +1,5 @@
+import { X } from "lucide-react";
+
 const afterHours = {
   cover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768395280/afterHours_xelwg2.jpg",
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226152/afterHours_vinyl_utwxsx.jpg"],
@@ -49,13 +51,6 @@ const musicWhite = {
   ]
 };
 
-const musicBlack = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226162/musicBlack_xpnnbu.jpg',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226166/musicBlack_vinyl_x17lx8.jpg"],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226165/musicBlack_tl_qclu5c.jpg",
-  features: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226162/musicBlack_feats_kq6dyk.jpg"
-};
-
 const mbdtf = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/mbdtf_yjpzve.jpg',
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226161/mbdtf_vinyl_xmejmc.jpg",
@@ -71,44 +66,21 @@ const playboiCarti = {
 };
 
 const wholeLottaRed = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226181/WLR_llw1gy.png',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768319053/WLR_Vinyl_gi2cye.png"],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226190/WLR_tl_oopofj.jpg"
-};
-
-const wholeLottaRedINDIE = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226186/WLR_5yearIndie_bgohfp.jpg',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226183/WLRVinyl_Indie_flowgy.jpg"],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226190/WLR_tl_oopofj.jpg"
-};
-
-const wholeLottaRedFullRed = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226189/WLR_FullRed_p9fqeq.jpg',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768406475/wlrFullred_Vinyl_fgrbpk.jpg",
-    "https://res.cloudinary.com/deroy68n9/image/upload/v1768397553/R-35837188-1765880691-3401_i2vtgn.jpg",
-    "https://res.cloudinary.com/deroy68n9/image/upload/v1768397555/G80NPQlXYAAaQGG_owwvdx.jpg",
-    "https://res.cloudinary.com/deroy68n9/image/upload/v1768397559/R-35837188-1764950893-9607_dikte3.jpg",
-    "https://res.cloudinary.com/deroy68n9/image/upload/v1768397558/R-35837188-1765880691-7002_q8jyoo.jpg"
+  cover: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226181/WLR_llw1gy.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768226186/WLR_5yearIndie_bgohfp.jpg',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768569772/wlr_5yearTarget_siesp6.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768397556/G89QeAZXYAAbT0x_jkaovf.jpg',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768397557/R-35942476-1765996836-9926_bxdlro.jpg',
   ],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768397553/R-35837188-1764950326-8808_oxtwh6.jpg"
-};
-
-const wholeLottaRedTARGET = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768569772/wlr_5yearTarget_siesp6.png',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5YearTarget_ccgqim.jpg"],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226190/WLR_tl_oopofj.jpg"
-};
-
-const wholeLottaRedRED = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768397556/G89QeAZXYAAbT0x_jkaovf.jpg',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226186/WLR_5yearRed_r5i9vm.png"],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768397553/R-35837188-1764950326-8808_oxtwh6.jpg"
-};
-
-const wholeLottaRedWHITE = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768397557/R-35942476-1765996836-9926_bxdlro.jpg',
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5yearWhite_d5bnx8.png"],
-  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226190/WLR_tl_oopofj.jpg"
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768319053/WLR_Vinyl_gi2cye.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768226183/WLRVinyl_Indie_flowgy.jpg",
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5YearTarget_ccgqim.jpg',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768226186/WLR_5yearRed_r5i9vm.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5yearWhite_d5bnx8.png'
+  ],
+  tracklist: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226190/WLR_tl_oopofj.jpg",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1768397553/R-35837188-1764950326-8808_oxtwh6.jpg"
+  ]
 };
 
 const lateRegistration = {
@@ -178,8 +150,11 @@ const igorCD = {
 };
 
 const cherryBomb = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768577237/cherryBomb_hitapa.jpg',
+  cover: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768577237/cherryBomb_hitapa.jpg',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768577236/cherryBomb_Mask_ejvftd.jpg'
+  ],
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768577242/cherryBomb_vinyl_tyou5v.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768226153/cherryBomb_vinyl_h6ekpf.jpg',
     'https://res.cloudinary.com/deroy68n9/image/upload/v1768226154/cherryBomb1_snlpz1.jpg'
   ]
 };
@@ -461,7 +436,7 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Kanye West-in debüt albomu."
+    description: "Xüsusi buraxılışlı ikiqat vinil LP. Bu debüt albomun çıxdığı həftə Kanyenin adı Through the Wire, All Falls Down və Slow Jamz hit sinqlları ilə Top 20-lərin hamısında yer aldı. Daha da diqqətəlayiq olan odur ki, bu irəliləyiş onun həyatını az qala məhv edən avtomobil qəzasından sonra sağalması zamanı baş verdi - Through the Wire mahnısı qəza haqqındadır və xəstəxanada yatdıqdan iki həftə sonra, çənəsi hələ də bağlı vəziyyətdə lentə alınıb. O, bu hadisəni həm başına gələ biləcək ən pis şey, həm də ən yaxşısı kimi qiymətləndirib. Albom ilk həftəsində 441.000 nüsxə satılıb və həm Time, həm də Rolling Stone tərəfindən bütün zamanların ən böyük albomlarından biri adlandırılıb. Burada qonaq çıxış edənlər arasında Jay-Zi, John Legend, Ervin EP Pope, Miri Ben-Ari, Syleena Johnson və Jamie Foxx var."
   },
   {
     id: 4,
@@ -480,7 +455,15 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "vinyl",
-    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
+    description: "Whole Lotta Red —Filti və Pierre Bourne kimi an müəyyən edən oğlanlar tərəfindən istehsal olunmuş — səsi daha da irəli apararaq, möhtəşəm bir slasher filminin (“No Sl33p”, “Stop Breathing”) zirvəsini əks etdirən parlaq, qorxulu musiqi və ya təkrar-təkrar viral videolar yaratdı. Kartini lirik sadəliyi və ya palçıqda mühərrikin əks-sədası kimi tək bir ifadəyə ilişib qalması ilə fərqləndirmək — “Evdən tullanın! evdən tullanın! evdən tullanın!” — mənasızdır: O, burada rep oxumur, təmiz, ani enerji ötürür. Bunu Three 6 Mafia və ya köhnə arkad oyunlarının səssiz səsi və ya 80-ci illərin pank və hardcore musiqisinin sıxılmış zorakılığı kimi şeylərə bağlaya bilərsiniz. Amma presedentlər heç bir əhəmiyyət kəsb etmirdi, heç olmasa əslində belə deyildi",
+    variants: [
+      { id: 1, name: "Whole Lotta Red", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768319053/WLR_Vinyl_gi2cye.png" },
+      { id: 2, name: "Whole Lotta Red (Indie)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226183/WLRVinyl_Indie_flowgy.jpg" },
+      { id: 3, name: "Whole Lotta Red (Target)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5YearTarget_ccgqim.jpg" },
+      { id: 4, name: "Whole Lotta Red (Qırmızı Fon)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226186/WLR_5yearRed_r5i9vm.png" },
+      { id: 5, name: "Whole Lotta Red (Ağ Fon)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5yearWhite_d5bnx8.png" }
+
+    ]
   },
   {
     id: 5,
@@ -497,7 +480,7 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "vinyl",
-    description: "Taylerin Qremmi mükafatı qazanan şah əsəri."
+    description: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir."
   },
   {
     id: 6,
@@ -534,7 +517,7 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "The Weeknd tərəfindən inanılmaz bir trilogiyanın başlanğıcı."
+    description: "Qırmızı rəngli vinil LP ilə ikiqat ağ rəng. The Weeknd-in After Hours albomunda Heartless və Blinding Lights kimi qlobal hitlər yer alır. R&B, pop və hip-hop musiqilərini iddialı geniş ekran linzasından süzgəcdən keçirərək, öz şərtləri ilə populyar musiqini və mədəniyyəti sakitcə ələ keçirdi. Nəticədə, iki dəfə çoxplatinli Qremmi mükafatı laureatı olan müğənni 21-ci əsrin ən uğurlu və əhəmiyyətli sənətçilərindən biri kimi ortaya çıxdı."
   },
   {
     id: 8,
@@ -573,10 +556,10 @@ export const albums = [
     sleeveColor: "white",
     accentColor: "white",
     format: "vinyl",
-    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü.",
+    description: "Playboi Carti, Whole Lotta Red-dən təxminən dörd il ərzində Future, Latto və Trippie Redd kimi məşhurlarla birlikdə çıxış edərək, demək olar ki, orada olmayıb. Buna baxmayaraq, bu, onun böyük fanatlarının sonda sadəcə MUSIC kimi qısaldılmış adı ilə çıxan I AM MUSIC albomu ilə bağlı davamlı olaraq səs-küy salmasının qarşısını ala bilməyib. Mahnının uzunluğu gözləmə müddətini təsdiqləyir və ifaçının xoş gəlişini xəbər verən POP OUT və CRUSH kimi qəzəbli rep mahnıları ilə başlayır. 30 mahnıdan ibarət və 77 dəqiqəlik davam edən albomda onun səsləri aqressiv şəkildə şişirdilmiş, sintezator ağırlığı ilə məşhurlaşdığı post-trap ilə daha pop-trap arasında dəyişir, lakin bütün bunlar şübhəsiz ki, onun stilistik diapazonundadır. Karti əvvəlcə qonaq seçimini yüksək səviyyəli albom buraxılışları üçün adət halını aldığı kimi, jiletə yaxın saxlayırdı. Lakin Kendrick Lamarın GOOD CREDITə tüpürdüyünü, Future-ın TRIM-ə görə hisslərini ifadə etdiyini və ya əməkdaşlıq karyerasının əsas dayağı Lil Uzi Vertin TWIN TRIM də qələbə ilə sürüşdüyünü görməmək mümkün olmazdı. The Weeknd-in RATHER LIE mahnısındakı ən diqqət çəkən hissə, bəlkə də, onun buradakı zərfləri itələməsinin ən açıq nümunəsidir, baxmayaraq ki, Travis Scott-un PHILLY mahnısında və Young Thug və Ty Dolla $ign-dən ibarət komandanın WE NEED ALL DA VIBES mahnısında çıxışları bu istiqaməti daha da inandırıcı edir. Bu kimi dostları ilə belə, Carti özü daha parlaq şəkildə parlayır, nəfəsli, demək olar ki, falsetto səsi I SEEEEEE YOU BABY BOI video oyun arpecioları və xırıltılı xırıltısı COCAINE NOSE-nin kinematoqrafik səs-küyü ətrafında fırlanır. Yalnız gələcəyə baxmaqla kifayətlənməyərək, klassik 1017 Brick Squad kasetlərini xatırladan RADAR-da səslənən Atlantanın 2010-cu illərin əvvəllərindəki səsinə demək olar ki, nostaljik bir qiymətləndirmə var.",
     variants: [
-      {id: 1, name: "MUSIC (AĞ VİNİL)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226171/musicWhite_vinyl_wfsgve.jpg"},
-      {id: 2, name: "MUSIC (QARA VİNİL)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226166/musicBlack_vinyl_x17lx8.jpg"}
+      { id: 1, name: "MUSIC (AĞ VİNİL)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226171/musicWhite_vinyl_wfsgve.jpg" },
+      { id: 2, name: "MUSIC (QARA VİNİL)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226166/musicBlack_vinyl_x17lx8.jpg" }
     ]
   },
   {
@@ -595,7 +578,7 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
+    description: "”Die Lit“ albomu, 19 mahnı ilə birlikdə hitə çevrilən öz adını daşıyan albomdan bir il sonra gəlir. “Mıtıldayan reper” adlandırılması barədə açıq zarafat edən Karti, Atlanta aksentini daha da gücləndirərək, hətta beytlərinin ritmik, lakin anlaşılmaz vokallara çevrildiyi “Fell in Luv” və ”FlatBed Freestyle“ kimi mahnılarda da ifasını daha da gücləndirir. Ümumilikdə, ”Die Lit“ Pi'erre Bourne-dan minimal və bas-ağır istehsal üzərində qurulmuş və bəzən Lil Uzi Vert, Skepta və Nicki Minaj kimi müəlliflərin də dəstəklədiyi bir kolleksiyadır."
   },
   {
     id: 12,
@@ -613,7 +596,7 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
+    description: "Playboi Carti, Cartinin saf xarizması və trend yaradan personajı ilə hərəkətə gəlir. Unikal moda hissi və hər şeyə fərqli olan sevgisi ilə qlobal mixteypdən qeyri-ənənəvi özünüifadə brendi üçün başlanğıc nöqtəsi kimi istifadə edən sənətçi, bu radikal miksteypdən qeyri-ənənəvi özünüifadə brendi üçün başlanğıc nöqtəsi kimi istifadə edir. Layihə, yeni nəsil qəzəbli və moşerlər üçün xüsusi olaraq hazırlanmış transa səbəb olan himnlərə və mantralara çevrilən təkrarlanan nəğmələr və qulaqcıq ifadələri ilə ruhlandırılır. Tez-tez əməkdaşlıq edən Pi'erre Bourne tərəfindən hazırlanan möhtəşəm sinql olan “Magnolia”, Cartinin əsas axına gəliş anı idi və bu, əsasən onun mehriban rep üslubu sayəsində idi. Playboi Cartinin mahnıları, sözləri və reklam kitabları daha geniş pop mədəniyyəti mənzərəsinə hopmuşdur, amma çaşqın olmayın: ”Half & Half“ mahnısında o, ”Bu, pop deyil, bu, bir növ rokdur“ deyə bildirir. Hip-hopun üzr istəməyən havasından və rok-n-rolun hörmətsiz münasibətindən ilhamlanaraq, o, həsr edir"
   },
   {
     id: 13,
@@ -632,44 +615,8 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "vinyl",
-    description: "Kanye West və onun 14 mahnıdan ibarət Qremmi mükafatını qazanan şah əsəri.."
+    description: "İndiyə qədər yazılmış ən bahalı hip-hop albomu olan Kanye West-in beşinci albomu, reperin özünü tərifləmə və etiraf etmənin tək qarışığı ilə 68 dəqiqəlik LP idi. Albom, The Beatles-in art-rok ambisiyalarını, Pink Floydun dəbdəbəsini və Michael Jackson-un pop ulduz əzəmətini birləşdirdi - lakin müğənni-bəstəkar ifadəsinin şəxsi cazibəsinə malik idi. 35 dəqiqəlik qısametrajlı filmlə birlikdə doqquz dəqiqəlik prog-rap əsəri (“Runaway”) var. Albomun sənət əsəri müasir rəssam və Warhol-un əməkdaşı Corc Kondoya məxsusdur. “All of the Lights” da Rihanna, Alisiya Keys və Elton Conun orkestri və vokalları yer alır. Lakin dəbdəbəli görünüşünə baxmayaraq, “My Beautiful Dark Twisted Fantasy” albomunun əsasını Vestin köhnəlmiş düşüncələri, özünütənqidləri, münasibət problemləri, şöhrət haqqında düşüncələri və qəzəb anları ilə birlikdə dürüstlük təşkil edir. “My Beautiful Dark Twisted Fantasy” hip-hopun mənzərəsini əbədi olaraq dəyişdirəcək, janrları bir-birinə bağlayan cəsarəti, sonsuz təxəyyülü və təqdimatının dəbdəbəliliyi janrın 2010-cu illərdə maksimalist səslərə və arthaus dizaynına doğru dönüşünü qabaqcadan xəbər verir."
   },
-  {
-    id: 14,
-    title: "Whole Lotta Red (5 Illik Indie) [2LP]",
-    artist: ["Playboi Carti"],
-    price: 99.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: wholeLottaRedINDIE.cover,
-    vinylImages: wholeLottaRedINDIE.vinyl,
-    tracklistImage: wholeLottaRedINDIE.tracklist,
-    vinylColor: "red",
-    sleeveColor: "red",
-    accentColor: "red",
-    format: "vinyl",
-    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
-  },
-  /*{
-    id: 15,
-    title: "Whole Lotta Red (5 Year Anniversary) [2LP]",
-    artist: "Playboi Carti",
-    price: 350,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: wholeLottaRedFullRed.cover,
-    vinylImages: wholeLottaRedFullRed.vinyl,
-    tracklistImage: wholeLottaRedFullRed.tracklist,
-    vinylColor: "red",
-    sleeveColor: "red",
-    accentColor: "red",
-    format: "vinyl",
-    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
-  },*/
   {
     id: 16,
     title: "Late Registration (2LP)",
@@ -685,25 +632,7 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "Kanye West-dən ikinci möhtəşəm albomu."
-  },
-  {
-    id: 17,
-    title: "Whole Lotta Red (5 Illik Target Exclusive) [2LP]",
-    artist: ["Playboi Carti"],
-    price: 99.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: wholeLottaRedTARGET.cover,
-    vinylImages: wholeLottaRedTARGET.vinyl,
-    tracklistImage: wholeLottaRedTARGET.tracklist,
-    vinylColor: "white",
-    sleeveColor: "black",
-    accentColor: "black",
-    format: "vinyl",
-    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
+    description: "Late Registration amerikalı hip-hop sənətçisi Kanye Westin 30 avqust 2005-ci ildə Roc-A-Fella Records tərəfindən buraxılan ikinci studiya albomudur. Albomun səsyazma sessiyaları bir il ərzində Hollivuddakı Record Plant Studios, Chalice Recording Studios və Grandmaster Recording Studios-da, eləcə də Nyu-York şəhərindəki Sony Music Studios-da baş tutub. Late Registration albomunu hazırlamaq üçün amerikalı səsyazma prodüseri və bəstəkar Con Brionla əməkdaşlıq edib və albomda Jay-Z, Common, Lupe Fiasco, Jamie Foxx, Nas, Brandy və Adam Levine kimi sənətçilərin qonaqları yer alıb. Albom çıxdıqdan sonra musiqi tənqidçilərindən yüksək rəylər alıb və West-ə bir neçə mükafat, o cümlədən 2006-cı il Grammy mükafatlarında Ən Yaxşı Rep Albomu nominasiyasında Qremmi mükafatı və İlin Albomu nominasiyasında mükafat qazandırıb. Albom bir neçə nəşrin ilin sonu üçün ən yaxşı albom siyahılarının başında yer alıb. Rolling Stone jurnalı onu 2005-ci ilin ən yaxşı albomu adlandırmış və 2012-ci ildə Bütün Zamanların 500 Ən Böyük Albomu siyahısında 118-ci yerə daxil etmişdir."
   },
   {
     id: 18,
@@ -725,24 +654,6 @@ export const albums = [
     description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
   },
   {
-    id: 19,
-    title: "Whole Lotta Red (5 Illik Qirmizi Text) [2LP]",
-    artist: ["Playboi Carti"],
-    price: 99.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: wholeLottaRedRED.cover,
-    vinylImages: wholeLottaRedRED.vinyl,
-    tracklistImage: wholeLottaRedRED.tracklist,
-    vinylColor: "red",
-    sleeveColor: "red",
-    accentColor: "red",
-    format: "vinyl",
-    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
-  },
-  {
     id: 20,
     title: "Watch The Throne (2LP)",
     artist: ["JAY-Z ", "Kanye West"],
@@ -759,25 +670,7 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
-  },
-  {
-    id: 21,
-    title: "Whole Lotta Red (5 Illik Ag Text) [2LP]",
-    artist: ["Playboi Carti"],
-    price: 99.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: wholeLottaRedWHITE.cover,
-    vinylImages: wholeLottaRedWHITE.vinyl,
-    tracklistImage: wholeLottaRedWHITE.tracklist,
-    vinylColor: "white",
-    sleeveColor: "black",
-    accentColor: "black",
-    format: "vinyl",
-    description: "20-ci illərin ən son və ən yaxşı qəzəb albomu."
+    description: "Watch The Throne albomu, JAY-Z-nin əslində rahat səsləndiyi ilk albomdur. O qədər dar, gülməli bir şəkildə rahat deyil, sanki dağın zirvəsində vadiyə baxırmış kimi rahat: gedəcək yer yoxdur, çünki artıq oradasınız. O, 10 ildən çoxdur ki, Kanye West ilə əməkdaşlıq edir və qardaşlıqla sərhəddə olan bir kimya inkişaf etdirirdi - hiss edirsiniz ki, Cey təkcə biznesini deyil, həm də nüfuzunu ona bağlayıb. Cey baş (ayrıca, analitik) olduğu yerdə, Vest isə dağınıq, impulsiv ürəkdir. Onlar təkcə rep sikkəsinin iki fərqli tərəfini təmsil etmirlər (layihələrdə doğulmuş fırıldaqçı Cey, orta təbəqə müəllifi Vest; köhnə məktəbli Cey, yeni Kanye), onlar bir-birinin şəxsiyyətinin uzaq bölgələrini də ortaya çıxarırlar: Vestin özündən kənar dünya haqqında nüfuzlu olmaq inamı, Ceynin ehtiyatlılığını itirmək və sərbəst olmaq üçün rahatlığı."
   },
   {
     id: 22,
@@ -794,7 +687,7 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+    description: "FLOWER BOY Tyler, The Creator qrupunun uzun müddətdir gözlənilən yeni albomudur. Albom 2015-ci ildə çıxan Cherry Bomb albomunun davamıdır və vinil LP kimi satışa çıxarılıb."
   },
   {
     id: 23,
@@ -828,7 +721,7 @@ export const albums = [
     sleeveColor: "pink",
     accentColor: "pink",
     format: "vinyl",
-    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+    description: "Vinil LP, qapılı gödəkçədə basılır. 2019-cu ildə buraxılıb. Igor, reper Taylerin beşinci studiya albomu olan The Creator-dur. Tamamilə Tayler tərəfindən istehsal olunan albom, 2017-ci ildə çıxan Flower Boy albomundan sonra gəlir. Filmdə Playboi Carti, Lil Uzi Vert, Solange, Kanye West və Jerrod Carmichael qonaq çıxışları ilə yanaşı, Santigold, Jessy Wilson, La Roux, CeeLo Green, Charlie Wilson, Slowthai və Pharrell kimi vokalçılar da yer alır."
   },
   {
     id: 25,
@@ -845,24 +738,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
-  },
-  {
-    id: 26,
-    title: "CHERRY BOMB (Mask Version) [2LP]",
-    artist: ["Tyler, The Creator"],
-    price: 69.99,
-    genre: "Hip-Hop/Rap",
-    year: 2015,
-    isNew: false,
-    isExplicit: true,
-    image: cherryBombMASK.cover,
-    vinylImages: cherryBombMASK.vinyl,
-    vinylColor: "blue",
-    sleeveColor: "blue",
-    accentColor: "blue",
-    format: "vinyl",
-    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər.",
+    variants: [
+      { id: 1, name: "CHERRY BOMB", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768577242/cherryBomb_vinyl_tyou5v.png" },
+      { id: 2, name: "CHERRY BOMB (Maska Versiyası)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226153/cherryBomb_vinyl_h6ekpf.jpg" }
+    ]
   },
   {
     id: 27,
@@ -880,7 +760,7 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+    description: "Rəqəmsal yükləmə daxil olmaqla ikiqat vinil LP basımı. Astroworld, reper Travis Scottun üçüncü studiya albomudur. 3 avqust 2018-ci ildə Cactus Jack Records, Epic Records və Grand Hustle Records tərəfindən buraxılmışdır. Albom, onun ikinci studiya albomu Birds in the Trap Sing McKnight (2016) və Quavo ilə birgə çıxardığı Huncho Jack, Jack Huncho (2017) albomundan sonra gəlir. Albomda Kid Cudi, Frank Ocean, Drake, The Weeknd, James Blake, Swae Lee, Gunna, Nav, 21 Savage, Quavo, Takeoff, Juice Wrld, Sheck Wes və Don Toliver kimi qonaq vokalçılar yer alır. İstehsal Mike Dean, Allen Ritter, Hit-Boy, WondaGurl, Tay Keith, Tame Impala, Frank Dukes, Sonny Digital və Thundercat da daxil olmaqla bir çox prodüser tərəfindən həyata keçirilmişdir."
   },
   {
     id: 28,
@@ -931,7 +811,7 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "vinyl",
-    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+    description: "Kids See Ghosts hip-hop dueti Kids See Ghosts-un Kanye West və Kid Cudidən ibarət debüt studiya albomudur. Albomdan əvvəl West və Cudi 2008-ci ildə görüşdükdən bəri yaxın dost və musiqi müttəfiqləri kimi güclü münasibətlərdən zövq almış və birgə albom yazmaq istədiklərini bildirmişdilər. Albomda Pusha T, Yasiin Bey və Ty Dolla Sign-dən qonaqlar, eləcə də ölümündən sonra tanınmış sənətçi kimi tanınan Louis Prima-nın vokal nümunəsi yer alır. Albomda duetin hər iki üzvünün görkəmli prodüserliyi, eləcə də Dot da Genius, Mike Dean, Evan Mast, Plain Pat, BoogzDaBeast, Benny Blanco, Jeff Bhasker, Justin Vernon, Noah Goldstein, Andrew Dawson, Cashmere Cat və Andre 3000 və digərlərinin əsərləri yer alır."
   },
   {
     id: 31,
@@ -965,7 +845,7 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+    description: "Vinil LP presləməsi. 2018-ci ildə buraxılan, reper/prodüser Kanye Westin səkkizinci studiya albomudur. Albomda Ty Dolla Sign, PartyNextDoor, Kid Cudi, Jeremih və 070 Shake kimi qruplar qonaq vokal ifa edir. Albomun tam versiyasını West istehsal edib, əlavə olaraq həmicraçı prodüser olan Mike Dean, eləcə də Francis and the Lights, Benny Blanco, Irv Gotti, 7 Aurelius, Noah Goldstein, Che Pope, Caroline Shaw, Pi'erre Bourne və Ty Dolla Sign kimi qruplar da prodüserlik edib. Ye, West tərəfindən Wyoming Sessions adlandırılan beş yeddi mahnıdan ibarət albomdan ikincisidir. Vest albomun adını, mahnılarında tez-tez istifadə olunan öz adının kiçildilmiş versiyasını belə izah etdi: İnanıram ki, Müqəddəs Kitabda ən çox istifadə edilən ye sözüdür və Müqəddəs Kitabda sən mənasını verir. Beləliklə, mən sənəm, mən bizəm, bu bizik. Bu söz yeganə mənasını verən Kanye sözündən sadəcə Ye sözünə keçdi - sadəcə yaxşılığımızın, pisliyimizin, çaşqınlığımızın, hər şeyimizin əks olunması. Albom daha çox kim olduğumuzun əksidir."
   },
   {
     id: 33,
@@ -982,7 +862,7 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "vinyl",
-    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+    description: "Jackboys və amerikalı reper Travis Scott tərəfindən tərtib edilmiş albomdur. Jackboys, Scott-un özü, Sheck Wes, Don Toliver, Luxury Tax, Scott-un DJ-i Chase B və Pop Smoke-dan ibarət Scott-un Cactus Jack Records ilə müqavilə imzalayan amerikalı reperlərdən ibarət kollektiv və qrupdur. Albom 27 dekabr 2019-cu ildə buraxılmışdır. Albomda Migos, Young Thug və Pop Smoke trap triosundan Rosalía, Lil Baby, Quavo və Offset qonaq çıxışları yer alır."
   },
   {
     id: 34,
@@ -1019,8 +899,8 @@ export const albums = [
     format: "vinyl",
     description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər.",
     variants: [
-      {id: 1, name: "UY SCUTI (ALTERNATİV ÖRTÜK 1)", image:"https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uySvuti_vinyl4_cfzzmx.png"},
-      {id: 2, name: "UY SCUTI (SP5DER NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uy_scuti_vinyl1_zenbqk.png"}
+      { id: 1, name: "UY SCUTI (ALTERNATİV ÖRTÜK 1)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uySvuti_vinyl4_cfzzmx.png" },
+      { id: 2, name: "UY SCUTI (SP5DER NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uy_scuti_vinyl1_zenbqk.png" }
     ]
   },
   {
@@ -1039,7 +919,7 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "Future və Metro Boomin birlikdə əla duet olduqlarını sübut etməyə davam edirlər."
+    description: "Mavi Rəngli İkiqat Vinil LP presləmə. Hardstone Psycho albomuna Travis Scott, Future & Metro Boomin, Kodak Black kimi tanınmış musiqiçilər daxildir, həmçinin bu yaxınlarda buraxılmış Attitude (Ft. Charlie Wilson & Cash Cobain), Deep In The Water və Bandit kimi sinqllar da daxildir."
   },
   {
     id: 38,
@@ -1109,8 +989,8 @@ export const albums = [
     format: "cassette",
     description: "CD edition of Playboi Carti's debut.",
     variants: [
-      {id: 1, name: "DON'T BE DUMB (Qara Kaset)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteBlack_clgiay.jpg"},
-      {id: 2, name: "DON'T BE DUMB (Ağ Kaset)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteWhite_o8e9iu.jpg"}
+      { id: 1, name: "DON'T BE DUMB (Qara Kaset)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteBlack_clgiay.jpg" },
+      { id: 2, name: "DON'T BE DUMB (Ağ Kaset)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteWhite_o8e9iu.jpg" }
     ]
   },
   {
@@ -1175,7 +1055,7 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "CD edition of Playboi Carti's debut."
+    description: "Kanye West-in 10-cu studiya albomu olan Donda-da o, alboma layihənin adını daşıyan mərhum anası haqqında düşüncələrlə başlayan Syleena Johnson-u işə götürür. West səsini təkrarlayır və ritmlərini dəyişir, lakin sakitləşdirici bir impuls saxlayır. Bu, West-in layihə boyunca istifadə etməyə çalışdığı bir keçid xəttidir və o, 2019-cu ildə çıxan “Jesus is King” mahnısının qospel impulslarını fanatlarının sevimlisi olan 2013-cü ildə çıxan “Yeezus” un elektro-treşi ilə birləşdirir. Həmişə olduğu kimi, West-də də albomda The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby və başqaları da daxil olmaqla bir çox əməkdaş iştirak edir. Bəzən albom amansızcasına eksperimental xarakter daşıyır, digərləri isə pop siyahılarının zirvəsinə yüksəlmək üçün çalışır. Lakin Kanye həmişə “Donda Chant” mahnısının açılışından qaynaqlanan əsas sülhü qorumağa çalışır. Albom, Vestin bir çox sevimli səs mövzularına toxunur və bu da onu onun təkrarolunmaz metodları üçün unikal bir başlanğıc nöqtəsi kimi uyğunlaşdırır."
   },
   {
     id: 49,
@@ -1189,7 +1069,7 @@ export const albums = [
     image: donda.cover,
     vinylImages: dondaCD.vinyl,
     format: "cd",
-    description: "CD edition of Playboi Carti's debut."
+    description: "Kanye West-in 10-cu studiya albomu olan Donda-da o, alboma layihənin adını daşıyan mərhum anası haqqında düşüncələrlə başlayan Syleena Johnson-u işə götürür. West səsini təkrarlayır və ritmlərini dəyişir, lakin sakitləşdirici bir impuls saxlayır. Bu, West-in layihə boyunca istifadə etməyə çalışdığı bir keçid xəttidir və o, 2019-cu ildə çıxan “Jesus is King” mahnısının qospel impulslarını fanatlarının sevimlisi olan 2013-cü ildə çıxan “Yeezus” un elektro-treşi ilə birləşdirir. Həmişə olduğu kimi, West-də də albomda The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby və başqaları da daxil olmaqla bir çox əməkdaş iştirak edir. Bəzən albom amansızcasına eksperimental xarakter daşıyır, digərləri isə pop siyahılarının zirvəsinə yüksəlmək üçün çalışır. Lakin Kanye həmişə “Donda Chant” mahnısının açılışından qaynaqlanan əsas sülhü qorumağa çalışır. Albom, Vestin bir çox sevimli səs mövzularına toxunur və bu da onu onun təkrarolunmaz metodları üçün unikal bir başlanğıc nöqtəsi kimi uyğunlaşdırır."
   },
   {
     id: 50,
@@ -1225,7 +1105,7 @@ export const albums = [
     accentColor: "white",
     sleeveColor: "white",
     format: "vinyl",
-    description: "CD edition of Playboi Carti's debut."
+    description: "2015-ci ildə çıxan amerikalı reperin ikinci solo studiya albomu. Albom, əvvəlki Long. Live. A$AP (2013) albomunun davamı olaraq təqdim olunur. Albomda Joe Fox, Bones, Future, M.I.A., Schoolboy Q, Kanye West, Juicy J, UGK, James Fauntleroy, Lil Wayne, Rod Stewart, Miguel, Mark Ronson, Mos Def, A-Cyde və A$AP Yams kimi məşhur qruplar qonaq kimi çıxış ediblər. Albomun istehsalına Rocky özü, eləcə də Hector Delgado, Danger Mouse, Frans Mernick, Jim Jonsin, Kanye West və Mark Ronson kimi bir sıra tanınmış prodüserlər rəhbərlik edib. Alboma üç sinql dəstək olub: Lord Pretty Flacko Jodye 2 (LPFJ2), Rod Stewart, Miguel və Mark Ronsonun iştirakı iləEveryday və L$D."
   },
   {
     id: 52,
@@ -1242,34 +1122,34 @@ export const albums = [
     sleeveColor: "white",
     accentColor: "white",
     format: "vinyl",
-    description: "CD edition of Playboi Carti's debut."
+    description: "Bəlkə də 808 & Heartbreak üçün ən yaxşı müqayisə Bob Dilanın 1965-ci ildə elektrik musiqisinə keçməsi ilə bağlıdır Lakin gələcəyinizi həmin küləyin sizi hara aparacağına bahis etmək üçün kifayət qədər yaxşı daxili kompasınız olmalıdır."
   },
   {
-  id: 53,
-  title: "MUSIC (CD)",
-  artist: ["Playboi Carti"],
-  price: 29.99,
-  genre: "Hip-Hop/Rap",
-  year: 2025,
-  isNew: true,
-  isExplicit: true,
-  image: musicCD.cover,
-  vinylImages: musicCD.vinyl,
-  sleeveColor: "white",
-  accentColor: "white",
-  format: "cd",
-  description: "MUSIC CD",
-  variants: [
-    {id: 1, name: "CD 1", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739012/music_CD1_dqh236.png"},
-    {id: 2, name: "CD 2", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD2_ntv903.png"},
-    {id: 3, name: "CD 3", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD3_dxrohi.png"},
-    {id: 4, name: "CD 4", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD4_owvwox.png"},
-    {id: 5, name: "CD 5", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739015/music_CD5_ejwzms.png"},
-    {id: 6, name: "CD 6", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD6_zuu2qd.png"},
-    {id: 7, name: "CD 7", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD7_rebgkq.png"},
-    {id: 8, name: "CD 8", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD8_zo5jzq.png"},
-  ],
-},
+    id: 53,
+    title: "MUSIC (CD)",
+    artist: ["Playboi Carti"],
+    price: 29.99,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: true,
+    isExplicit: true,
+    image: musicCD.cover,
+    vinylImages: musicCD.vinyl,
+    sleeveColor: "white",
+    accentColor: "white",
+    format: "cd",
+    description: "MUSIC CD",
+    variants: [
+      { id: 1, name: "CD 1", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739012/music_CD1_dqh236.png" },
+      { id: 2, name: "CD 2", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD2_ntv903.png" },
+      { id: 3, name: "CD 3", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD3_dxrohi.png" },
+      { id: 4, name: "CD 4", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD4_owvwox.png" },
+      { id: 5, name: "CD 5", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739015/music_CD5_ejwzms.png" },
+      { id: 6, name: "CD 6", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD6_zuu2qd.png" },
+      { id: 7, name: "CD 7", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD7_rebgkq.png" },
+      { id: 8, name: "CD 8", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/music_CD8_zo5jzq.png" },
+    ],
+  },
 
   {
     id: 61,
@@ -1285,7 +1165,7 @@ export const albums = [
     sleeveColor: "pink",
     accentColor: "pink",
     format: "cd",
-    description: "CD edition of Playboi Carti's debut."
+    description: "CD, qapılı gödəkçədə basılır. 2019-cu ildə buraxılıb. Igor, reper Taylerin beşinci studiya albomu olan The Creator-dur. Tamamilə Tayler tərəfindən istehsal olunan albom, 2017-ci ildə çıxan Flower Boy albomundan sonra gəlir. Filmdə Playboi Carti, Lil Uzi Vert, Solange, Kanye West və Jerrod Carmichael qonaq çıxışları ilə yanaşı, Santigold, Jessy Wilson, La Roux, CeeLo Green, Charlie Wilson, Slowthai və Pharrell kimi vokalçılar da yer alır."
   },
   {
     id: 62,
@@ -1301,7 +1181,7 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "cd",
-    description: "CD edition of Playboi Carti's debut."
+    description: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir."
   },
   {
     id: 63,
@@ -1318,7 +1198,7 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "blue",
     format: "vinyl",
-    description: "CD edition of Playboi Carti's debut."
+    description: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir."
   },
   {
     id: 64,
@@ -1416,6 +1296,7 @@ export const albums = [
     image: octane.cover,
     vinylImages: octane.vinyl,
     vinylColor: "green",
+    sleeveColor: "green",
     accentColor: "green",
     format: "vinyl",
     description: "OCTANE 2 QARA VİNİL DİSK. ÇAPLI İÇ QOLLU GENİŞ BURA GÖYƏK."
@@ -1435,4 +1316,141 @@ export const albums = [
     format: "cd",
     description: "Octane Standart CD Zərgərlik qabı qablaşdırması."
   },
+  {
+    id: 71,
+    title: "X (LP)",
+    artist: ["Ken Carson"],
+    price: 79.99,
+    genre: "Hip-Hop/Rap",
+    year: 2022,
+    isNew: false,
+    isExplicit: true,
+    image: x.cover,
+    vinylImages: x.vinyl,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768922752/x_animated_z2ygab.gif",
+    accentColor: "white",
+    sleeveColor: "white",
+    vinylColor: "white",
+    format: "vinyl",
+    description: "X Standart LP Zərgərlik qabı qablaşdırması."
+  },
+  {
+    id: 72,
+    title: "A Great Chaos (LP)",
+    artist: ["Ken Carson"],
+    price: 79.99,
+    genre: "Hip-Hop/Rap",
+    year: 2023,
+    isNew: false,
+    isExplicit: true,
+    image: aGreatChaos.cover,
+    vinylImages: aGreatChaos.vinyl,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768922753/aGreatChaos_animated_gugwr9.gif",
+    accentColor: "gray",
+    sleeveColor: "gray",
+    vinylColor: "black",
+    format: "vinyl",
+    description: "A Great Chaos Standart LP Zərgərlik qabı qablaşdırması."
+  },
+  {
+    id: 73,
+    title: "More Chaos Chaos (2LP)",
+    artist: ["Ken Carson"],
+    price: 99.99,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: true,
+    isExplicit: true,
+    image: moreChaos.cover,
+    vinylImages: moreChaos.vinyl,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768922754/moreChaos_animated_cdjzc5.gif",
+    accentColor: "white",
+    sleeveColor: "red",
+    vinylColor: "white",
+    format: "vinyl",
+    description: "More Chaos Standart LP Zərgərlik qabı qablaşdırması."
+  },
+  {
+    id: 74,
+    title: "NO STYLIST (LP)",
+    artist: ["Destroy Lonely"],
+    price: 79.99,
+    genre: "Hip-Hop/Rap",
+    year: 2022,
+    isNew: false,
+    isExplicit: true,
+    image: noStylist.cover,
+    vinylImages: noStylist.vinyl,
+    accentColor: "grey",
+    sleeveColor: "black",
+    vinylColor: "black",
+    format: "vinyl",
+    description: "NO STYLIST Standart LP Zərgərlik qabı qablaşdırması."
+  },
+  {
+    id: 75,
+    title: "if looks could kill (2LP)",
+    artist: ["Destroy Lonely"],
+    price: 99.99,
+    genre: "Hip-Hop/Rap",
+    year: 2023,
+    isNew: false,
+    isExplicit: true,
+    image: ifLooksCouldKill.cover,
+    vinylImages: ifLooksCouldKill.vinyl,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768922761/ifLooksCouldKill_DirectorsCut__animated_mnkzuj.gif",
+    accentColor: "purple",
+    sleeveColor: "purple",
+    vinylColor: "purple",
+    format: "vinyl",
+    description: "if looks could kill Standart LP Zərgərlik qabı qablaşdırması."
+  },
+  {
+    id: 76,
+    title: "LOVE LASTS FOREVER (2LP)",
+    artist: ["Destroy Lonely"],
+    price: 99.99,
+    genre: "Hip-Hop/Rap",
+    year: 2024,
+    isNew: false,
+    isExplicit: true,
+    image: loveLastsForever.cover,
+    vinylImages: loveLastsForever.vinyl,
+    accentColor: "orange",
+    sleeveColor: "orange",
+    vinylColor: "orange",
+    format: "vinyl",
+    description: "LOVE LASTS FOREVER Standart LP Zərgərlik qabı qablaşdırması."
+  },
+  {
+    id: 77,
+    title: "＜/3³ (CD)",
+    artist: ["Destroy Lonely"],
+    price: 29.99,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: true,
+    isExplicit: true,
+    image: brokenHearts3CD.cover,
+    vinylImages: brokenHearts3CD.vinyl,
+    accentColor: "grey",
+    format: "cd",
+    description: "＜/3³ Standart LP Zərgərlik qabı qablaşdırması."
+  },
+  {
+    id: 78,
+    title: "Homixide Lifestyle (LP)",
+    artist: ["Homixide Gang"],
+    price: 79.99,
+    genre: "Hip-Hop/Rap",
+    year: 2022,
+    isNew: false,
+    isExplicit: true,
+    image: homixideLifestyle.cover,
+    vinylImages: homixideLifestyle.vinyl,
+    vinylColor: "white",
+    accentColor: "white",
+    format: "vinyl",
+    description: "Homixide Lifestyle Standart LP Zərgərlik qabı qablaşdırması.",
+  }
 ];
