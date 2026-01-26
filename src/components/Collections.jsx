@@ -171,10 +171,7 @@ export const Collections = () => {
                     YENI
                   </span>
                 )}
-
-                {/* Vinyl Visual with Album Art */}
                 <div className="relative h-48 flex items-center justify-center mb-6">
-                  {/* Album cover background - FIXED POSITION */}
                   {album.image && (
                     <div className="absolute inset-0 flex items-center justify-start pl-4">
                       <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl">

@@ -4,14 +4,15 @@ import { VinylRecord } from "./VinylRecord.tsx";
 import { CDDisc } from "./CDDisc.tsx";
 import { CassetteTape } from "./CassetteTape.tsx";
 import { Button } from "./ui/Button.tsx";
-import { MoreHorizontal, Heart, Plus, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { albums } from "./Albums.jsx";
 import { artistProfiles } from "./ArtistProfiles.jsx";
 
 const ArtistPage = () => {
   const { artistName } = useParams();
+  const [hoveredId, setHoveredId] = useState(null);
   const [hoveredAlbumId, setHoveredAlbumId] = useState(null);
-  const [following, setFollowing] = useState(false);
+
   const normalizedAlbums = albums.map(album => {
     let artistArray = [];
 
@@ -59,7 +60,6 @@ const ArtistPage = () => {
   }
 
   const artist = displayArtist;
-
   const artistProfile = artistProfiles[artist] || {};
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -84,6 +84,7 @@ const ArtistPage = () => {
       </div>
     );
   }
+
   const sortedAlbums = [...artistAlbums].sort((a, b) => b.year - a.year);
   const latestAlbum = sortedAlbums[0];
 
@@ -105,6 +106,7 @@ const ArtistPage = () => {
             <div className="w-full h-full bg-gradient-to-b from-zinc-800 via-zinc-900 to-black" />
           )}
         </div>
+
         <div className="absolute top-6 left-6 z-20">
           <Link to="/">
             <Button
@@ -143,6 +145,7 @@ const ArtistPage = () => {
           </div>
         </div>
       </div>
+
       {latestAlbum && (
         <div className="px-8 py-8 max-w-7xl mx-auto">
           <h2 className="text-2xl font-bold mb-6">Son Buraxılış</h2>
@@ -156,7 +159,7 @@ const ArtistPage = () => {
               <div className="relative w-40 h-40 flex-shrink-0">
                 {latestAlbum.image ? (
                   <img
-                    src={latestAlbum.image}
+                    src={Array.isArray(latestAlbum.image) ? latestAlbum.image[0] : latestAlbum.image}
                     alt={latestAlbum.title}
                     className="w-full h-full object-cover rounded-lg shadow-2xl"
                   />
@@ -186,14 +189,22 @@ const ArtistPage = () => {
                     year: 'numeric',
                   })}
                 </p>
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-red-500 transition">
-                  {latestAlbum.title}
-                </h3>
+                <div className="flex items-center gap-3 mb-2">
+                  <h3 className="text-2xl font-bold group-hover:text-red-500 transition">
+                    {latestAlbum.title}
+                  </h3>
+                  {latestAlbum.isExplicit && (
+                    <span className="text-sm font-bold px-2.5 py-1 bg-zinc-700 text-zinc-300 border border-zinc-600 rounded flex-shrink-0">
+                      E
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           </Link>
         </div>
       )}
+
       <div className="px-8 py-8 max-w-7xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">Diskografiya</h2>
 
@@ -202,61 +213,71 @@ const ArtistPage = () => {
             <Link
               key={album.id}
               to={`/album/${album.id}`}
-              className="group"
-              onMouseEnter={() => setHoveredAlbumId(album.id)}
-              onMouseLeave={() => setHoveredAlbumId(null)}
+              className="group relative"
+              onMouseEnter={() => setHoveredId(album.id)}
+              onMouseLeave={() => setHoveredId(null)}
             >
-              <div className="relative mb-4 aspect-square">
+              {album.isNew && (
+                <span className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">
+                  YENI
+                </span>
+              )}
+
+              <div className="relative h-40 flex items-center justify-center mb-4">
                 {album.image ? (
-                  <img
-                    src={album.image}
-                    alt={album.title}
-                    className="w-full h-full object-cover rounded-lg shadow-lg group-hover:shadow-2xl transition-shadow"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-zinc-800 rounded-lg flex items-center justify-center">
-                    {album.format === "cd" ? (
-                      <CDDisc size="md" spinning={hoveredAlbumId === album.id} />
-                    ) : album.format === "cassette" ? (
-                      <CassetteTape
-                        size="md"
-                        spinning={hoveredAlbumId === album.id}
-                        cassetteColor={album.cassetteColor || "black"}
+                  <div className="absolute inset-0 flex items-center justify-start pl-2">
+                    <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl">
+                      <img
+                        src={Array.isArray(album.image) ? album.image[0] : album.image}
+                        alt={`${album.title} cover`}
+                        className="w-full h-full object-cover"
                       />
-                    ) : (
-                      <VinylRecord
-                        size="md"
-                        spinning={hoveredAlbumId === album.id}
-                        vinylColor={album.vinylColor || "black"}
-                      />
-                    )}
+                    </div>
                   </div>
-                )}
-                {album.isNew && (
-                  <span className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                    YENI
-                  </span>
-                )}
+                ) : null}
+                <div
+                  className={`relative transition-transform duration-500 ease-out ${
+                    hoveredId === album.id ? "translate-x-12" : "translate-x-0"
+                  }`}
+                  style={{ marginLeft: "10px" }}
+                >
+                  {album.format === "cd" ? (
+                    <CDDisc size="sm" spinning={hoveredId === album.id} />
+                  ) : album.format === "cassette" ? (
+                    <CassetteTape
+                      size="sm"
+                      spinning={hoveredId === album.id}
+                      cassetteColor={album.cassetteColor || "black"}
+                    />
+                  ) : (
+                    <VinylRecord
+                      size="sm"
+                      spinning={hoveredId === album.id}
+                      vinylColor={album.vinylColor || "black"}
+                    />
+                  )}
+                </div>
               </div>
 
               <div>
-                <h3 className="font-semibold text-white group-hover:text-red-500 transition truncate">
-                  {album.title}
-                </h3>
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="font-semibold text-white group-hover:text-red-500 transition truncate">
+                    {album.title}
+                  </h3>
+                  {album.isExplicit && (
+                    <span className="text-xs font-bold px-2 py-0.5 bg-zinc-700 text-zinc-300 border border-zinc-600 rounded flex-shrink-0">
+                      E
+                    </span>
+                  )}
+                </div>
                 <p className="text-sm text-zinc-400 mt-1">{album.year}</p>
                 <p className="text-sm text-zinc-500 mt-1">{album.price} ₼</p>
-              </div>
-              <div className="flex items-center gap-2 mb-1">
-                {albums.isExplicit && (
-                  <span className="text-xs font-bold px-2 py-0.5 bg-muted text-muted-foreground border border-border rounded">
-                    E
-                  </span>
-                )}
               </div>
             </Link>
           ))}
         </div>
       </div>
+
       <div className="h-20" />
     </div>
   );

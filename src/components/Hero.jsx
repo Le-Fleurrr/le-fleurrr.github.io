@@ -26,8 +26,7 @@ export const Hero = () => {
                 <span className="text-gradient block">OCTANE</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-md animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                Nadir nəşrləri, yeni buraxılışları və zamansız klassikləri kəşf edin.
-                Musiqini eşitmək üçün nəzərdə tutulduğu kimi yaşayın.
+                "Octane" amerikalı reper və müğənni Don Toliverin beşinci studiya albomudur.
               </p>
             </div>
 

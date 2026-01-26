@@ -41,24 +41,23 @@ const AlbumPage = () => {
 
   const artistList = getArtistList(album);
 
- const galleryImages = [
-  ...(Array.isArray(album.image)
-    ? album.image.map((url) => ({ url, type: "cover" }))
-    : album.image
-    ? [{ url: album.image, type: "cover" }]
-    : []),
-  ...(album.vinylImages || []).map((url) => ({ url, type: "vinyl" })),
-  ...(Array.isArray(album.tracklistImage)
-    ? album.tracklistImage.map((url) => ({ url, type: "tracklist" }))
-    : album.tracklistImage
-    ? [{ url: album.tracklistImage, type: "tracklist" }]
-    : []),
-  ...(Array.isArray(album.featuresImage)
-    ? album.featuresImage.map((url) => ({ url, type: "features" }))
-    : album.featuresImage
-    ? [{ url: album.featuresImage, type: "features" }]
-    : []),
-];
+  const galleryImages = [
+    {
+      url: showAnimated && album.animatedCover ? album.animatedCover : album.image,
+      type: "cover",
+    },
+    ...(album.vinylImages || []).map((url) => ({ url, type: "vinyl" })),
+    ...(Array.isArray(album.tracklistImage)
+      ? album.tracklistImage.map((url) => ({ url, type: "tracklist" }))
+      : album.tracklistImage
+        ? [{ url: album.tracklistImage, type: "tracklist" }]
+        : []),
+    ...(Array.isArray(album.featuresImage)
+      ? album.featuresImage.map((url) => ({ url, type: "features" }))
+      : album.featuresImage
+        ? [{ url: album.featuresImage, type: "features" }]
+        : []),
+  ];
   const currentImage = galleryImages[selectedImage]?.url;
 
   return (
