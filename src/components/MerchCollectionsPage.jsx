@@ -40,7 +40,7 @@ export const MerchCollectionsPage = () => {
       artist,
       itemCount: artistMerch.length,
       image: artistProfile.profileImage || artistMerch[0]?.image,
-      banner: artistProfile.banner,
+      banner: artistProfile.merchBanner || artistProfile.banner,
       merch: artistMerch
     };
   }).filter(collection => collection.itemCount > 0);

@@ -2,6 +2,7 @@ export const artistProfiles = {
   "Playboi Carti": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751199/playboiCarti_banner_n8qpjf.jpg",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751234/playboiCarti_pfp_fzma49.png",
+    merchBanner: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769169960/Logos-Desktop-Carti_e853d832-8fa_f2cl7m.png'
   },
   "The Weeknd": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751228/theWeeknd_banner_qm2hrs.jpg",
@@ -53,15 +54,18 @@ export const artistProfiles = {
   },
   "Ken Carson": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927082/kenCarson_banner_hysazj.jpg",
-    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927088/kenCarson_pfp_uhaqem.jpg"
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927088/kenCarson_pfp_uhaqem.jpg",
+    merchBanner: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769169961/Logos-Desktop-kenCarson_2c683634_gosfgv.png'
   },
   "Destroy Lonely": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927077/destroyLonely_banner_m1br9d.jpg",
-    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927091/destroyLonely_pfp_leoelc.jpg"
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927091/destroyLonely_pfp_leoelc.jpg",
+    merchBanner: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769169960/Logos-Desktop-DL_j37hac.png'
   },
   "Homixide Gang": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927080/hxg_banner_fh8waw.jpg",
-    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927095/hxg_pfp_zsdk7p.jpg"
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768927095/hxg_pfp_zsdk7p.jpg",
+    merchBanner: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769169961/Logos-Desktop-HXG_mp3t81.png'
   },
   "Future": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1769094783/future-16x9_larhsy.png",

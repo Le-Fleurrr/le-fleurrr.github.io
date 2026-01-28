@@ -106,16 +106,11 @@ export const MerchPage = () => {
               </div>
             )}
           </div>
-
-          {/* Right Column - Product Info */}
           <div className="space-y-6">
-            {/* Title and Artists */}
             <div>
               <h1 className="text-4xl md:text-5xl font-serif font-bold mb-3">
                 {item.title}
               </h1>
-              
-              {/* Artists */}
               <div className="flex items-center gap-2 mb-4">
                 {artistList.map((artist, index) => {
                   const slug = String(artist)
@@ -147,16 +142,12 @@ export const MerchPage = () => {
             <div className="border-y border-border py-6">
               <p className="text-4xl font-serif font-bold">{item.price} ₼</p>
             </div>
-
-            {/* Description */}
             {item.description && (
               <div>
                 <h3 className="text-lg font-semibold mb-2">Təsvir</h3>
                 <p className="text-muted-foreground">{item.description}</p>
               </div>
             )}
-
-            {/* Size Selection */}
             {item.size && item.size.length > 0 && (
               <div>
                 <h3 className="text-lg font-semibold mb-3">Ölçü Seçin</h3>
@@ -259,8 +250,6 @@ export const MerchPage = () => {
             </div>
           </div>
         </div>
-
-        {/* Related Products */}
         <div className="mt-20">
           <h2 className="text-3xl font-serif font-bold mb-8">Oxşar Məhsullar</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">

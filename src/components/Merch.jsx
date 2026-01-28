@@ -147,6 +147,58 @@ const bh3LogoManiaHoodie = {
   additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769010707/LogoManiaHoodie_Back_tml1ve.png"]
 };
 
+const HL2CutoffShirt = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013832/SLEEVELESS_HXGwhite_1_c73a6d47_dqdcem.gif",
+};
+
+const HL2FlamesShirt = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013833/TEE_HOTWHEELS_1_1feec8a8_vbtbzx.gif",
+};
+
+const HL2MetalShirt = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013831/TEE_METALwhite_1_b132223b_kcohkf.gif",
+};
+
+const HL2Big5Shirt = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013834/TEE_BIG5_1_zvmxys.gif",
+};
+
+const HL2BlackCutoffShirt = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013835/SLEEVELESS_HXGblack_1_zmjotm.gif",
+};
+
+const HL2Windbreaker = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013835/SLEEVELESS_HXGblack_1_zmjotm.gif",
+};
+
+const HL2FlamesHoodie = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013870/HOODIE_5FLAMES_1_yg7yl7.gif",
+};
+
+const HL2FlamesPants = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013859/PANTS_5FLAMES_1_tyfu0r.gif",
+};
+
+const HL2HardyHoodie = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013862/HOODIE_HARDY_1_d830022d-b17e-4998-9a01-14c14d23d1ab_emhbhh.gif",
+};
+
+const HL2LifestyleHoodie = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013862/HOODIE_HL2black_1_68c46465-1728-4304-99ee-bea23e618f90_zjoiqk.gif",
+};
+
+const HL2DoubleLayerThermal = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013859/THERMAL_5_1_fpi5pp.gif",
+};
+
+const HL2BlackFlamesHat = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013822/TRUCKER_black_1_p2mejg.gif",
+};
+
+const HL2WhiteFlamesHat = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013823/TRUCKER_white_1_jcfxfb.gif",
+};
+
 export const MerchCategories = [
   {
     name: "Antagonist 2.0",
@@ -271,10 +323,10 @@ export const Merch = [
   },
   {
     id: 8,
-    title: "ANTAGONIST 2.0 QIRMIZI KAPSONU",
+    title: "ANTAGONIST 2.0 QIRMIZI HOODIE",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
-    price: 349.99,
+    price: 274.99,
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -453,10 +505,10 @@ export const Merch = [
   },
   {
     id: 21,
-    title: "ANTAGONIST 2.0 OPIUM UZUNQOLLU",
+    title: "ANTAGONIST 2.0 OPIUM HOODIE",
     artist: ["Playboi Carti"],
     category: "Antagonist 2.0",
-    price: 274.99,
+    price: 349.99,
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL"],
@@ -496,7 +548,7 @@ export const Merch = [
     title: "</3³ Körpə Futbolkası",
     artist: ["Destroy Lonely"],
     category: "Antagonist 2.0",
-    price: 99.99,
+    price: 119.99,
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL", "3XL"],
@@ -538,7 +590,7 @@ export const Merch = [
     title: "</3³ Loqo Mania Hoodie",
     artist: ["Destroy Lonely"],
     category: "Antagonist 2.0",
-    price: 274.99,
+    price: 349.99,
     year: 2025,
     isNew: true,
     size: ["S", "M", "L", "XL", "2XL", "3XL"],
@@ -560,5 +612,174 @@ export const Merch = [
     additionalImages: bh3PoemShirt.additionalImages,
     color: "Qara",
     description: "Ekran çaplı qrafikalı böyüdülmüş futbolka. Əsl uyğunluq üçün ölçüsü kiçildilib.",
+  },
+  {
+    id: 29,
+    title: "HXG HL2 Kəsmə Köynək",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 119.99,
+    year: 2025,
+    isNew: true,
+    image: HL2CutoffShirt.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Ekran çaplı qrafikalı ağır çəkili futbolka.",
+  },
+  {
+    id: 30,
+    title: "HL2 HXG Flames Futbolkası",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 119.99,
+    year: 2025,
+    isNew: true,
+    image: HL2FlamesShirt.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Ekran çaplı qrafikalı ağır çəkili futbolka.",
+  },
+  {
+    id: 31,
+    title: "HL2 HXG Metal Futbolkası",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 119.99,
+    year: 2025,
+    isNew: true,
+    image: HL2MetalShirt.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Ekran çaplı qrafikalı ağır çəkili futbolka.",
+  },
+  {
+    id: 32,
+    title: "HL2 HXG Metal Futbolkası",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 119.99,
+    year: 2025,
+    isNew: true,
+    image: HL2Big5Shirt.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Ekran çaplı qrafikalı ağır çəkili futbolka.",
+  },
+  {
+    id: 33,
+    title: "HL2 Qara Kəsikli Futbolka",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 119.99,
+    year: 2025,
+    isNew: true,
+    image: HL2BlackCutoffShirt.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Ekran çaplı qrafikalı ağır çəkili futbolka.",
+  },
+  {
+    id: 34,
+    title: "HL2 Külək Qırıcısı",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 169.99,
+    year: 2025,
+    isNew: true,
+    image: HL2Windbreaker.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Daxili suya davamlı PU örtüklü 100% neylon.",
+  },
+  {
+    id: 35,
+    title: "HL2 Flames Hoodie",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 349.99,
+    year: 2025,
+    isNew: true,
+    image: HL2FlamesHoodie.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Daxili suya davamlı PU örtüklü 100% neylon.",
+  },
+  {
+    id: 36,
+    title: "HL2 Flames Şalvar",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 249.99,
+    year: 2025,
+    isNew: true,
+    image: HL2FlamesPants.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Daxili suya davamlı PU örtüklü 100% neylon.",
+  },
+  {
+    id: 38,
+    title: "HL2 Hardy Hoodie",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 349.99,
+    year: 2025,
+    isNew: true,
+    image: HL2HardyHoodie.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Daxili suya davamlı PU örtüklü 100% neylon.",
+  },
+  {
+    id: 38,
+    title: "HL2 Lifestyle Hoodie",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 349.99,
+    year: 2025,
+    isNew: true,
+    image: HL2LifestyleHoodie.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Daxili suya davamlı PU örtüklü 100% neylon.",
+  },
+  {
+    id: 39,
+    title: "HL2 İkiqat Qatlı Termal",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 249.99,
+    year: 2025,
+    isNew: true,
+    image: HL2DoubleLayerThermal.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Termo qolları olan qalın futbolka.",
+  },
+  {
+    id: 40,
+    title: "HL2 Qara Flames Yük Maşını",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 149.99,
+    year: 2025,
+    isNew: true,
+    image: HL2BlackFlamesHat.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Ekran çaplı qrafikalı torlu yük maşını sürücüsü papağı.",
+  },
+  {
+    id: 41,
+    title: "HL2 Ağ Flames Yük Maşını",
+    artist: ["Homixide Gang"],
+    category: "Antagonist 2.0",
+    price: 149.99,
+    year: 2025,
+    isNew: true,
+    image: HL2WhiteFlamesHat.front,
+    size: ["S", "M", "L", "XL", "2XL", "3XL"],
+    color: "Qara",
+    description: "Daxili suya davamlı PU örtüklü 100% neylon.",
   },
 ];
