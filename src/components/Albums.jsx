@@ -404,6 +404,11 @@ const brat = {
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768739022/brat_vinyl_vv1tca.png"],
 };
 
+const charm = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739022/charm_w58wim.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768739023/charm_vinyl_p9dwgt.jpg"],
+};
+
 export const albums = [
   {
     id: 1,
@@ -1511,7 +1516,7 @@ export const albums = [
   },
   {
     id: 81,
-    title: "Short 'N Sweet",
+    title: "Short 'N Sweet (Deluxe) [2LP]",
     artist: ["Sabrina Carpenter"],
     price: 119.99,
     genre: "Pop",
@@ -1544,5 +1549,22 @@ export const albums = [
     sleeveColor: "green",
     format: "vinyl",
     description: "Brat Standart LP Zərgərlik qabı qablaşdırması.",
+  },
+  {
+    id: 83,
+    title: "Charm (LP)",
+    artist: ["Clairo"],
+    price: 99.99,
+    genre: "Pop",
+    year: 2024,
+    isNew: false,
+    isExplicit: true,
+    image: charm.cover,
+    vinylImages: charm.vinyl,
+    vinylColor: "green",
+    accentColor: "green",
+    sleeveColor: "green",
+    format: "vinyl",
+    description: "Charm Standart LP Zərgərlik qabı qablaşdırması.",
   },
 ];

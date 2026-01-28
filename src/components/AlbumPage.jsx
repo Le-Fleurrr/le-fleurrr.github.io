@@ -41,40 +41,31 @@ const AlbumPage = () => {
 
   const artistList = getArtistList(album);
 
-const staticCovers = Array.isArray(album.image)
-  ? album.image
-  : album.image
-    ? [album.image]
-    : [];
+  const staticCovers = Array.isArray(album.image) ? album.image : album.image ? [album.image] : [];
 
-const galleryImages = [
-  ...(album.animatedCover && showAnimated
-    ? [{ url: album.animatedCover, type: "cover", animated: true }]
-    : staticCovers.length
-      ? [{ url: staticCovers[0], type: "cover", animated: false }]
-      : []),
+  const galleryImages = [
+    ...(album.animatedCover
+      ? [{ url: showAnimated ? album.animatedCover : staticCovers[0], type: "cover", animated: showAnimated }]
+      : staticCovers.length
+        ? [{ url: staticCovers[0], type: "cover", animated: false }]
+        : []),
 
-  ...(showAnimated
-    ? staticCovers.slice(1)
-    : staticCovers
-  ).map((url) => ({ url, type: "cover", animated: false })),
+    ...(staticCovers.slice(album.animatedCover ? 1 : 1).map((url) => ({ url, type: "cover", animated: false }))),
 
-  ...(album.vinylImages || []).map((url) => ({ url, type: "vinyl" })),
+    ...(album.vinylImages || []).map((url) => ({ url, type: "vinyl" })),
 
-  ...(Array.isArray(album.tracklistImage)
-    ? album.tracklistImage.map((url) => ({ url, type: "tracklist" }))
-    : album.tracklistImage
-      ? [{ url: album.tracklistImage, type: "tracklist" }]
-      : []),
+    ...(Array.isArray(album.tracklistImage)
+      ? album.tracklistImage.map((url) => ({ url, type: "tracklist" }))
+      : album.tracklistImage
+        ? [{ url: album.tracklistImage, type: "tracklist" }]
+        : []),
 
-  ...(Array.isArray(album.featuresImage)
-    ? album.featuresImage.map((url) => ({ url, type: "features" }))
-    : album.featuresImage
-      ? [{ url: album.featuresImage, type: "features" }]
-      : []),
-];
-
-
+    ...(Array.isArray(album.featuresImage)
+      ? album.featuresImage.map((url) => ({ url, type: "features" }))
+      : album.featuresImage
+        ? [{ url: album.featuresImage, type: "features" }]
+        : []),
+  ];
 
   const currentImage = galleryImages[selectedImage]?.url;
 
@@ -162,8 +153,8 @@ const galleryImages = [
                       }`}
                   >
                     <img
-                      src={index === 0 && !showAnimated && album.animatedCover ? album.image : img.url}
-                      alt={`${img.type === "cover" ? "Cover" : "Vinyl"} ${index + 1}`}
+                      src={img.url}
+                      alt={`${img.type === "cover" ? "Cover" : img.type} ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
                   </button>
@@ -231,7 +222,7 @@ const galleryImages = [
 
             {album.variants && album.variants.length > 0 && (
               <div className="border-t border-border pt-6">
-                <h3 className="text-lg font-semibold mb-3">Dizayn Seçin</h3>
+                <h3 className="text-lg font-semibold mb-3">Variant Seçin</h3>
                 <div className="grid grid-cols-4 gap-3">
                   {album.variants.map((variant) => (
                     <button
@@ -273,6 +264,7 @@ const galleryImages = [
                 )}
               </div>
             )}
+            
             <div className="border-t border-border pt-6">
               <h3 className="text-lg font-semibold mb-3">Miqdar</h3>
               <div className="flex items-center gap-4">
