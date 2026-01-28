@@ -67,4 +67,12 @@ export const artistProfiles = {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1769094783/future-16x9_larhsy.png",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1769094783/10000x10000bb_pzcm6y.jpg"
   },
+  "Lil Uzi Vert": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1769520514/ibvpwqbmozk41_iffu12.jpg",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1769520513/ab6761610000e5eb62c272d76220f2e9dad56704_vuozmn.jpg"
+  },
+  "JAY-Z": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1769520513/jay-z-spotify_me38jx.png",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1769520514/ab6761610000e5ebc75afcd5a9027f60eaebb5e4_svg85h.jpg"
+  },
 };

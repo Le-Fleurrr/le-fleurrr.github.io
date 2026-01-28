@@ -389,6 +389,21 @@ const pinkTape = {
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768642828/pinkTape_vinyl_eulham.jpg"],
 };
 
+const eternalAtake = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768642829/eternalAtake_y5i2l6.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768642828/eternalAtake_vinyl_pmbcyt.jpg"],
+};
+
+const shortNSweetDeluxe = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739016/shortNSweet_k8robj.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768739019/shortNSweetDeluxe_vinyl_jpsuwt.jpg"],
+};
+
+const brat = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739022/brat_yahfyh.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768739022/brat_vinyl_vv1tca.png"],
+};
+
 export const albums = [
   {
     id: 1,
@@ -441,7 +456,7 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Xüsusi buraxılışlı ikiqat vinil LP. Bu debüt albomun çıxdığı həftə Kanyenin adı Through the Wire, All Falls Down və Slow Jamz hit sinqlları ilə Top 20-lərin hamısında yer aldı. Daha da diqqətəlayiq olan odur ki, bu irəliləyiş onun həyatını az qala məhv edən avtomobil qəzasından sonra sağalması zamanı baş verdi - Through the Wire mahnısı qəza haqqındadır və xəstəxanada yatdıqdan iki həftə sonra, çənəsi hələ də bağlı vəziyyətdə lentə alınıb. O, bu hadisəni həm başına gələ biləcək ən pis şey, həm də ən yaxşısı kimi qiymətləndirib. Albom ilk həftəsində 441.000 nüsxə satılıb və həm Time, həm də Rolling Stone tərəfindən bütün zamanların ən böyük albomlarından biri adlandırılıb. Burada qonaq çıxış edənlər arasında Jay-Zi, John Legend, Ervin EP Pope, Miri Ben-Ari, Syleena Johnson və Jamie Foxx var."
+    description: "Xüsusi buraxılışlı ikiqat vinil LP. Bu debüt albomun çıxdığı həftə Kanyenin adı Through the Wire, All Falls Down və Slow Jamz hit sinqlları ilə Top 20-lərin hamısında yer aldı. Daha da diqqətəlayiq olan odur ki, bu irəliləyiş onun həyatını az qala məhv edən avtomobil qəzasından sonra sağalması zamanı baş verdi - Through the Wire mahnısı qəza haqqındadır və xəstəxanada yatdıqdan iki həftə sonra, çənəsi hələ də bağlı vəziyyətdə lentə alınıb. O, bu hadisəni həm başına gələ biləcək ən pis şey, həm də ən yaxşısı kimi qiymətləndirib. Albom ilk həftəsində 441.000 nüsxə satılıb və həm Time, həm də Rolling Stone tərəfindən bütün zamanların ən böyük albomlarından biri adlandırılıb. Burada qonaq çıxış edənlər arasında JAY-Zi, John Legend, Ervin EP Pope, Miri Ben-Ari, Syleena Johnson və Jamie Foxx var."
   },
   {
     id: 4,
@@ -637,7 +652,7 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "Late Registration amerikalı hip-hop sənətçisi Kanye Westin 30 avqust 2005-ci ildə Roc-A-Fella Records tərəfindən buraxılan ikinci studiya albomudur. Albomun səsyazma sessiyaları bir il ərzində Hollivuddakı Record Plant Studios, Chalice Recording Studios və Grandmaster Recording Studios-da, eləcə də Nyu-York şəhərindəki Sony Music Studios-da baş tutub. Late Registration albomunu hazırlamaq üçün amerikalı səsyazma prodüseri və bəstəkar Con Brionla əməkdaşlıq edib və albomda Jay-Z, Common, Lupe Fiasco, Jamie Foxx, Nas, Brandy və Adam Levine kimi sənətçilərin qonaqları yer alıb. Albom çıxdıqdan sonra musiqi tənqidçilərindən yüksək rəylər alıb və West-ə bir neçə mükafat, o cümlədən 2006-cı il Grammy mükafatlarında Ən Yaxşı Rep Albomu nominasiyasında Qremmi mükafatı və İlin Albomu nominasiyasında mükafat qazandırıb. Albom bir neçə nəşrin ilin sonu üçün ən yaxşı albom siyahılarının başında yer alıb. Rolling Stone jurnalı onu 2005-ci ilin ən yaxşı albomu adlandırmış və 2012-ci ildə Bütün Zamanların 500 Ən Böyük Albomu siyahısında 118-ci yerə daxil etmişdir."
+    description: "Late Registration amerikalı hip-hop sənətçisi Kanye Westin 30 avqust 2005-ci ildə Roc-A-Fella Records tərəfindən buraxılan ikinci studiya albomudur. Albomun səsyazma sessiyaları bir il ərzində Hollivuddakı Record Plant Studios, Chalice Recording Studios və Grandmaster Recording Studios-da, eləcə də Nyu-York şəhərindəki Sony Music Studios-da baş tutub. Late Registration albomunu hazırlamaq üçün amerikalı səsyazma prodüseri və bəstəkar Con Brionla əməkdaşlıq edib və albomda JAY-Z, Common, Lupe Fiasco, Jamie Foxx, Nas, Brandy və Adam Levine kimi sənətçilərin qonaqları yer alıb. Albom çıxdıqdan sonra musiqi tənqidçilərindən yüksək rəylər alıb və West-ə bir neçə mükafat, o cümlədən 2006-cı il Grammy mükafatlarında Ən Yaxşı Rep Albomu nominasiyasında Qremmi mükafatı və İlin Albomu nominasiyasında mükafat qazandırıb. Albom bir neçə nəşrin ilin sonu üçün ən yaxşı albom siyahılarının başında yer alıb. Rolling Stone jurnalı onu 2005-ci ilin ən yaxşı albomu adlandırmış və 2012-ci ildə Bütün Zamanların 500 Ən Böyük Albomu siyahısında 118-ci yerə daxil etmişdir."
   },
   {
     id: 18,
@@ -661,7 +676,7 @@ export const albums = [
   {
     id: 20,
     title: "Watch The Throne (2LP)",
-    artist: ["JAY-Z ", "Kanye West"],
+    artist: ["JAY-Z", "Kanye West"],
     price: 179.99,
     genre: "Hip-Hop/Rap",
     year: 2011,
@@ -1476,5 +1491,58 @@ export const albums = [
     sleeveColor: "pink",
     format: "vinyl",
     description: "Pink Tape Standart LP Zərgərlik qabı qablaşdırması.",
-  }
+  },
+  {
+    id: 80,
+    title: "Eternal Atake (2LP)",
+    artist: ["Lil Uzi Vert"],
+    price: 129.99,
+    genre: "Hip-Hop/Rap",
+    year: 2020,
+    isNew: false,
+    isExplicit: true,
+    image: eternalAtake.cover,
+    vinylImages: eternalAtake.vinyl,
+    vinylColor: "blue",
+    accentColor: "blue",
+    sleeveColor: "blue",
+    format: "vinyl",
+    description: "Eternal Atake Standart LP Zərgərlik qabı qablaşdırması.",
+  },
+  {
+    id: 81,
+    title: "Short 'N Sweet",
+    artist: ["Sabrina Carpenter"],
+    price: 119.99,
+    genre: "Pop",
+    year: 2024,
+    isNew: false,
+    isExplicit: true,
+    image: shortNSweetDeluxe.cover,
+    vinylImages: shortNSweetDeluxe.vinyl,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1769528633/P1000007769_Anull_video_gr280_sdr_1080x1080-_ry24f5.gif",
+    vinylColor: "blue",
+    accentColor: "blue",
+    sleeveColor: "blue",
+    format: "vinyl",
+    description: "Short 'N Sweet Standart LP Zərgərlik qabı qablaşdırması.",
+  },
+  {
+    id: 82,
+    title: "BRAT",
+    artist: ["Charli xcx"],
+    price: 119.99,
+    genre: "Electronic",
+    year: 2024,
+    isNew: false,
+    isExplicit: true,
+    image: brat.cover,
+    vinylImages: brat.vinyl,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1769528632/P1223302612_Anull_video_gr280_sdr_1080x1080-_l5cvfr.gif",
+    vinylColor: "green",
+    accentColor: "green",
+    sleeveColor: "green",
+    format: "vinyl",
+    description: "Brat Standart LP Zərgərlik qabı qablaşdırması.",
+  },
 ];
