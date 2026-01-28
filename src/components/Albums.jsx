@@ -409,6 +409,37 @@ const charm = {
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768739023/charm_vinyl_p9dwgt.jpg"],
 };
 
+const damn = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739026/damn_xqfrmn.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768739026/damn_vinyl_k7lxq6.png"],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739023/damn_tl_buwfjc.jpg"
+};
+
+const goodKidMaadCity = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739007/goodKidMaadCity_uc95st.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768739008/goodKidMaadCity_vinyl_brgsj9.png"],
+};
+
+const howImFeelingNow = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739007/howImFeelingNow_ow3nq7.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768739008/howImFeelingNow_zhqi0o.png"],
+};
+
+const immunity = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739008/immunity_l34o9m.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768739007/immunity_vinyl_ghogu7.jpg"],
+};
+
+const mansBestFriend = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768739008/mansBestFriend_xhzfkh.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768739029/mansBestFriend_vinyl_syjmr3.png"],
+};
+
+const wysCD = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769008417/LUV_REGULAR_WYS_CD_FRONT_xocbwz.png',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769008414/LUV_REGULAR_WYS_CD_BACK_y43b4e.png"],
+};
+
 export const albums = [
   {
     id: 1,
@@ -1566,5 +1597,105 @@ export const albums = [
     sleeveColor: "green",
     format: "vinyl",
     description: "Charm Standart LP Zərgərlik qabı qablaşdırması.",
+  },
+  {
+    id: 84,
+    title: "DAMN. (2LP)",
+    artist: ["Kendrick Lamar"],
+    price: 99.99,
+    genre: "Hip-Hop/Rap",
+    year: 2018,
+    isNew: false,
+    isExplicit: true,
+    image: damn.cover,
+    vinylImages: damn.vinyl,
+    vinylColor: "red",
+    accentColor: "red",
+    sleeveColor: "red",
+    format: "vinyl",
+    description: "DAMN. Standart LP Zərgərlik qabı qablaşdırması.",
+  },
+  {
+    id: 85,
+    title: "Good Kid M.A.A.D. City (2LP)",
+    artist: ["Kendrick Lamar"],
+    price: 99.99,
+    genre: "Hip-Hop/Rap",
+    year: 2013,
+    isNew: false,
+    isExplicit: true,
+    image: goodKidMaadCity.cover,
+    vinylImages: goodKidMaadCity.vinyl,
+    vinylColor: "blue",
+    accentColor: "grey",
+    sleeveColor: "grey",
+    format: "vinyl",
+    description: "Good Kid M.A.A.D. City Standart LP Zərgərlik qabı qablaşdırması.",
+  },
+  {
+    id: 86,
+    title: "How I'm Feeling Now (LP)",
+    artist: ["Charli xcx"],
+    price: 99.99,
+    genre: "Pop",
+    year: 2020,
+    isNew: false,
+    isExplicit: true,
+    image: howImFeelingNow.cover,
+    vinylImages: howImFeelingNow.vinyl,
+    vinylColor: "white",
+    accentColor: "grey",
+    sleeveColor: "grey",
+    format: "vinyl",
+    description: "How I'm Feeling Now Standart LP Zərgərlik qabı qablaşdırması.",
+  },
+  {
+    id: 87,
+    title: "Man's Best Friend (2LP)",
+    artist: ["Sabrina Carpenter"],
+    price: 99.99,
+    genre: "Pop",
+    year: 2025,
+    isNew: false,
+    isExplicit: true,
+    image: mansBestFriend.cover,
+    vinylImages: mansBestFriend.vinyl,
+    vinylColor: "red",
+    accentColor: "red",
+    sleeveColor: "red",
+    format: "vinyl",
+    description: "Man's Best Friend Standart LP Zərgərlik qabı qablaşdırması.",
+  },
+  {
+    id: 88,
+    title: "What You Saying / Regular (CD)",
+    artist: ["Lil Uzi Vert"],
+    price: 29.99,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: false,
+    isExplicit: true,
+    image: wysCD.cover,
+    vinylImages: wysCD.vinyl,
+    accentColor: "gray",
+    format: "cd",
+    description: "What You Saying / Regular Standart CD Zərgərlik qabı qablaşdırması.",
+  },
+  {
+    id: 89,
+    title: "Immunity",
+    artist: ["Clairo"],
+    price: 99.99,
+    genre: "Pop",
+    year: 2019,
+    isNew: false,
+    isExplicit: true,
+    image: immunity.cover,
+    vinylImages: immunity.vinyl,
+    vinylColor: "white",
+    sleeveColor: "gray",
+    accentColor: "gray",
+    format: "vinyl",
+    description: "Immunity Standart LP Zərgərlik qabı qablaşdırması.",
   },
 ];
