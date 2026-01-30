@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { Menu, X, ShoppingBag, Search, User } from "lucide-react";
+import { Menu, X, ShoppingBag, Search, User, Heart } from "lucide-react";
 import { Button } from "./ui/Button.tsx";
+import { SearchEngine } from "./SearchEngine.jsx";
+import { albums } from "./Albums.jsx";
+import { useFavorites } from './FavoritesSystem';
 
 export const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { favoritesCount } = useFavorites();
+  const [showSearch, setShowSearch] = useState(false);
 
   const navLinks = [
     { name: "Yeni Gələnlər", href: "#new" },
@@ -16,7 +21,7 @@ export const Nav = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <a href="#" className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
               <div className="w-3 h-3 rounded-full bg-background" />
             </div>
@@ -36,12 +41,23 @@ export const Nav = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon" className="text-foreground">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-foreground"
+              onClick={() => setShowSearch(!showSearch)}
+            >
               <Search className="w-5 h-5" />
             </Button>
             <Button variant="ghost" size="icon" className="text-foreground relative">
               <ShoppingBag className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">2</span>
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">1</span>
+            </Button>
+            <Button variant="ghost" size="icon" className="text-foreground relative">
+              <Heart className="w-5 h-5" />
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">
+                {favoritesCount}
+              </span>
             </Button>
             <a href="#account">
               <Button variant="ghost" size="icon" className="text-foreground">
@@ -58,9 +74,13 @@ export const Nav = () => {
             </Button>
           </div>
         </div>
-
+        {showSearch && (
+          <div className="py-4 border-t border-border">
+            <SearchEngine albums={albums} />
+          </div>
+        )}
         {isOpen && (
-          <div className="md:hidden py-6 border-t border-border animate-fade-in">
+          <div className="md:hidden py-6 border-t border-border">
             {navLinks.map((link) => (
               <a
                 key={link.name}

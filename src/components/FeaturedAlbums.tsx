@@ -5,6 +5,7 @@ import { CDDisc } from "./CDDisc.tsx";
 import { CassetteTape } from "./CassetteTape.tsx";
 import { Button } from "./ui/Button.tsx";
 import { ShoppingCart, Heart } from "lucide-react";
+import { FavoriteButton } from './FavoritesSystem';
 import { albums as rawAlbums } from "./Albums.jsx";
 
 type VinylColor =
@@ -243,15 +244,6 @@ export const FeaturedAlbums = () => {
                         })}
                       </div>
                     </div>
-
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="text-muted-foreground hover:text-primary shrink-0"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <Heart className="w-5 h-5" />
-                    </Button>
                   </div>
 
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -272,6 +264,9 @@ export const FeaturedAlbums = () => {
                       <ShoppingCart className="w-4 h-4" />
                       Səbətə əlavə et
                     </Button>
+                    <div className="absolute top-1 left-1 z-10">
+                      <FavoriteButton albumId={album.id} size="medium" />
+                  </div>
                   </div>
                 </div>
               </div>
