@@ -105,7 +105,6 @@ const AlbumPage = () => {
         </Button>
 
         <div className="max-w-4xl mx-auto">
-          {/* IMAGE GALLERY */}
           <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl mb-6 group bg-card border border-border">
             {currentImage && !imageError ? (
               <img src={currentImage} alt={album.title} className="w-full h-full object-cover transition-opacity duration-500" onError={() => setImageError(true)} />
