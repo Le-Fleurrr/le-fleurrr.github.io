@@ -7,8 +7,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Index from './components/pages/Index';
 import NotFound from "./components/pages/NotFound";
 import { Account } from './components/Account';
+<<<<<<< HEAD
 import ArtistPage from './components/ArtistPage';
 import AlbumPage from './components/AlbumPage';
+=======
+import { Hero } from "./components/Hero.jsx";
+import ArtistPage from './components/ArtistPage';
+import AlbumPage from './components/AlbumPage';
+import { FeaturedAlbums } from './components/FeaturedAlbums.js';
+>>>>>>> 5cbb1c1 (Alpha Build)
 import { Cloudinary } from '@cloudinary/url-gen';
 import { MerchCollectionsPage } from './components/MerchCollectionsPage.jsx';
 import { MerchPage } from "./components/MerchPage.jsx";

@@ -223,9 +223,9 @@ const ArtistPage = () => {
                 </span>
               )}
 
-              <div className="relative h-40 flex items-center justify-center mb-4">
+              <div className="relative h-48 flex items-center justify-center mb-4">
                 {album.image ? (
-                  <div className="absolute inset-0 flex items-center justify-start pl-2">
+                  <div className="absolute inset-0 flex items-center justify-start pl-4">
                     <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl">
                       <img
                         src={Array.isArray(album.image) ? album.image[0] : album.image}
@@ -237,21 +237,21 @@ const ArtistPage = () => {
                 ) : null}
                 <div
                   className={`relative transition-transform duration-500 ease-out ${
-                    hoveredId === album.id ? "translate-x-12" : "translate-x-0"
+                    hoveredId === album.id ? "translate-x-16" : "translate-x-0"
                   }`}
-                  style={{ marginLeft: "10px" }}
+                  style={{ marginLeft: "20px" }}
                 >
                   {album.format === "cd" ? (
-                    <CDDisc size="sm" spinning={hoveredId === album.id} />
+                    <CDDisc size="md" spinning={hoveredId === album.id} />
                   ) : album.format === "cassette" ? (
                     <CassetteTape
-                      size="sm"
+                      size="md"
                       spinning={hoveredId === album.id}
                       cassetteColor={album.cassetteColor || "black"}
                     />
                   ) : (
                     <VinylRecord
-                      size="sm"
+                      size="md"
                       spinning={hoveredId === album.id}
                       vinylColor={album.vinylColor || "black"}
                     />
