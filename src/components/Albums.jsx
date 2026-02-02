@@ -150,21 +150,12 @@ const cherryBomb = {
   ],
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768577242/cherryBomb_vinyl_tyou5v.png',
     'https://res.cloudinary.com/deroy68n9/image/upload/v1768226153/cherryBomb_vinyl_h6ekpf.jpg',
-    'https://res.cloudinary.com/deroy68n9/image/upload/v1768226154/cherryBomb1_snlpz1.jpg'
-  ]
-};
-
-const cherryBombMASK = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768577236/cherryBomb_Mask_ejvftd.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226153/cherryBomb_vinyl_h6ekpf.jpg',
-    'https://res.cloudinary.com/deroy68n9/image/upload/v1768226154/cherryBomb1_snlpz1.jpg'
   ]
 };
 
 const astroworld = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768577237/astroworld_qhmq4j.jpg',
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226153/astroworld_vinyl_jrcxpj.jpg',
-    'https://res.cloudinary.com/deroy68n9/image/upload/v1768577987/astroworld_vinyl1_jcsrae.jpg',
   ],
   tracklist: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768577986/astroworld_tl_f4buon.jpg'
 };
@@ -1664,7 +1655,27 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "green",
     format: "vinyl",
-    description: "Wolf amerikalı reper Tyler, the Creator-un üçüncü studiya albomudur. Albom 2 aprel 2013-cü ildə buraxılmışdır. Albomda Mike G, Domo Genesis, Earl Sweatshirt, Left Brain, Hodgy Beats, Erykah Badu və Pharrell kimi qruplar qonaq kimi çıxış edirlər."
+    description: "Wolf amerikalı reper Tyler, the Creator-un üçüncü studiya albomudur. Albom 2 aprel 2013-cü ildə buraxılmışdır. Albomda Mike G, Domo Genesis, Earl Sweatshirt, Left Brain, Hodgy Beats, Erykah Badu və Pharrell kimi qruplar qonaq kimi çıxış edirlər.",
+    tracklist: [
+      {id: 1, name: "WOLF", isExplicit: true, duration: "1:50"},
+      {id: 2, name: "Jamba (feat. Hodgy)", isExplicit: false, duration: "3:32"},
+      {id: 3, name: "Cowboy", isExplicit: true, duration: "3:15"},
+      {id: 4, name: "Awkward", isExplicit: true, duration: "3:47"},
+      {id: 5, name: "Domo23", isExplicit: true, duration: "2:38"},
+      {id: 6, name: "Answer", isExplicit: true, duration: "3:50"},
+      {id: 7, name: "Slater (feat. Frank Ocean)", isExplicit: true, duration: "3:53"},
+      {id: 8, name: "48", isExplicit: true, duration: "4:07"},
+      {id: 9, name: "Colossus", isExplicit: true, duration: "3:33"},
+      {id: 10, name: "PartyIsntOver/Campfire/Bimmer (feat. Frank Ocean & Laetitia Sadier)", isExplicit: true, duration: "7:18"},
+      {id: 11, name: "IFHY (feat. Pharell Williams)", isExplicit: true, duration: "5:19"},
+      {id: 12, name: "Pigs", isExplicit: true, duration: "4:14"},
+      {id: 13, name: "Parking Lot (feat. Cassey Veggies & Mike G)", isExplicit: true, duration: "3:53"},
+      {id: 14, name: "Rusty (feat. Domo Genesis & Earl Sweatshirt)", isExplicit: true, duration: "5:09"},
+      {id: 15, name: "Trashwang (feat. Na-Kel Smith, Jasper Dolphin, Lucas, L-Boy, Taco, Left Brain & Lee Spielman)", isExplicit: true, duration: "4:42"},
+      {id: 16, name: "TreeHome95", isExplicit: true, duration: "3:00"},
+      {id: 17, name: "Tamale", isExplicit: true, duration: "2:46"},
+      {id: 18, name: "Lone", isExplicit: true, duration: "3:57"},
+    ]
   },
   {
     id: 27,
@@ -1682,11 +1693,30 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Rəqəmsal yükləmə daxil olmaqla ikiqat vinil LP basımı. Astroworld, reper Travis Scottun üçüncü studiya albomudur. 3 avqust 2018-ci ildəburaxılmışdır. Albom, onun ikinci studiya albomu Birds in the Trap Sing McKnight (2016) və Quavo ilə birgə çıxardığı Huncho Jack, Jack Huncho (2017) albomundan sonra gəlir. Albomda Kid Cudi, Frank Ocean, Drake, The Weeknd, James Blake, Swae Lee, Gunna, Nav, 21 Savage, Quavo, Takeoff, Juice Wrld, Sheck Wes və Don Toliver kimi qonaq vokalçılar yer alır. İstehsal Mike Dean, Allen Ritter, Hit-Boy, WondaGurl, Tay Keith, Tame Impala, Frank Dukes, Sonny Digital və Thundercat da daxil olmaqla bir çox prodüser tərəfindən həyata keçirilmişdir."
+    description: "Rəqəmsal yükləmə daxil olmaqla ikiqat vinil LP basımı. Astroworld, reper Travis Scottun üçüncü studiya albomudur. 3 avqust 2018-ci ildəburaxılmışdır. Albom, onun ikinci studiya albomu Birds in the Trap Sing McKnight (2016) və Quavo ilə birgə çıxardığı Huncho Jack, Jack Huncho (2017) albomundan sonra gəlir. Albomda Kid Cudi, Frank Ocean, Drake, The Weeknd, James Blake, Swae Lee, Gunna, Nav, 21 Savage, Quavo, Takeoff, Juice Wrld, Sheck Wes və Don Toliver kimi qonaq vokalçılar yer alır. İstehsal Mike Dean, Allen Ritter, Hit-Boy, WondaGurl, Tay Keith, Tame Impala, Frank Dukes, Sonny Digital və Thundercat da daxil olmaqla bir çox prodüser tərəfindən həyata keçirilmişdir.",
+    tracklist: [
+      {id: 1, name: "STARGAZING", isExplicit: true, duration: "4:30"},
+      {id: 2, name: "CAROUSEL (feat. Frank Ocean)", isExplicit: true, duration: "3:00"},
+      {id: 3, name: "SICKO MODE (feat. Drake)", isExplicit: true, duration: "5:12"},
+      {id: 4, name: "R.I.P. SCREW (feat. Swae Lee)", isExplicit: true, duration: "3:05"},
+      {id: 5, name: "STOP TRYING TO BE GOD (feat. James Blake, Kid Cudi & Phillip Bailey)", isExplicit: true, duration: "5:38"},
+      {id: 6, name: "NO BYSTANDERS (feat. Juice WRLD & Sheck Wes)", isExplicit: true, duration: "3:38"},
+      {id: 7, name: "SKELETONS (feat. Pharell Williams & The Weeknd)", isExplicit: true, duration: "2:25"},
+      {id: 8, name: "WAKE UP (feat. The Weeknd)", isExplicit: true, duration: "3:51"},
+      {id: 9, name: "5% TINT", isExplicit: true, duration: "3:16"},
+      {id: 10, name: "NC-17 (feat. 21 Savage)", isExplicit: true, duration: "2:36"},
+      {id: 11, name: "ASTROTHUNDER", isExplicit: true, duration: "2:22"},
+      {id: 12, name: "YOSEMITE (feat. Gunna & NAV)", isExplicit: true, duration: "2:30"},
+      {id: 13, name: "CAN'T SAY (feat. Don Toliver)", isExplicit: true, duration: "3:18"},
+      {id: 14, name: "WHO? WHAT! (feat. Quavo & Takeoff)", isExplicit: true, duration: "2:56"},
+      {id: 15, name: "BUTTERFLY EFFECT", isExplicit: true, duration: "3:10"},
+      {id: 16, name: "HOUSTONFORNICATION", isExplicit: true, duration: "3:37"},
+      {id: 17, name: "COFFEE BEAN", isExplicit: true, duration: "3:29"},
+    ]
   },
   {
     id: 28,
-    title: "Birds In The Trap Sing McKnight (2LP)",
+    title: "Birds in the Trap Sing McKnight (2LP)",
     artist: ["Travis Scott"],
     price: 69.99,
     genre: "Hip-Hop/Rap",
@@ -1699,7 +1729,23 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "Birds in the Trap Sing McKnight amerikalı reper Travis Skottun ikinci studiya albomudur. Albom 2 sentyabr 2016-cı ildə çıxıb. Albomda André 3000, Blac Youngsta, Kid Cudi, Nav, 21 Savage, Kendrick Lamar, Bryson Tiller, Young Thug, Quavo, K. Forest və the Weeknd kimi qruplar qonaq kimi çıxış ediblər. İstehsal Nav, Vinylz, Mike Dean, Cardo, Frank Dukes, Allen Ritter və Murda Beatz da daxil olmaqla bir sıra səsyazma prodüserləri tərəfindən həyata keçirilib."
+    description: "Birds in the Trap Sing McKnight amerikalı reper Travis Skottun ikinci studiya albomudur. Albom 2 sentyabr 2016-cı ildə çıxıb. Albomda André 3000, Blac Youngsta, Kid Cudi, Nav, 21 Savage, Kendrick Lamar, Bryson Tiller, Young Thug, Quavo, K. Forest və the Weeknd kimi qruplar qonaq kimi çıxış ediblər. İstehsal Nav, Vinylz, Mike Dean, Cardo, Frank Dukes, Allen Ritter və Murda Beatz da daxil olmaqla bir sıra səsyazma prodüserləri tərəfindən həyata keçirilib.",
+    tracklist: [
+      {id: 1, name: "the ends (feat. André 3000)", isExplicit: true, duration: "3:21"},
+      {id: 2, name: "way back", isExplicit: true, duration: "4:32"},
+      {id: 3, name: "coordniate", isExplicit: true, duration: "3:46"},
+      {id: 4, name: "through the late night(feat. Kid Cudi)", isExplicit: true, duration: "4:46"},
+      {id: 5, name: "beibs in the trap (feat. NAV)", isExplicit: true, duration: "3:33"},
+      {id: 6, name: "sdp interlude", isExplicit: true, duration: "3:11"},
+      {id: 1, name: "sweet sweet", isExplicit: true, duration: "4:30"},
+      {id: 8, name: "outside", isExplicit: true, duration: "2:56"},
+      {id: 9, name: "goosebumps (feat. Kendrick Lamar)", isExplicit: true, duration: "4:03"},
+      {id: 10, name: "first take", isExplicit: true, duration: "5:13"},
+      {id: 11, name: "pick up the phone (feat. Young Thug & Quavo)", isExplicit: true, duration: "4:12"},
+      {id: 12, name: "lose", isExplicit: true, duration: "3:20"},
+      {id: 13, name: "guidance", isExplicit: true, duration: "3:27"},
+      {id: 14, name: "wonderful", isExplicit: true, duration: "3:36"},
+    ]
   },
   {
     id: 18,
@@ -1718,7 +1764,28 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "Utopia, amerikalı reper Travis Scott-un dördüncü studiya albomudur. Albom 28 iyul 2023-cü ildə çıxıb. Albomda Teezo Touchdown, Drake, Playboi Carti, Beyoncé, Rob49, 21 Savage, the Weeknd, Swae Lee, Yung Lean, Dave Chappelle, Young Thug, Westside Gunn, Kid Cudi, Bad Bunny, SZA, Future və James Blake kimi məşhur qruplar qonaq kimi çıxış ediblər."
+    description: "Utopia, amerikalı reper Travis Scott-un dördüncü studiya albomudur. Albom 28 iyul 2023-cü ildə çıxıb. Albomda Teezo Touchdown, Drake, Playboi Carti, Beyoncé, Rob49, 21 Savage, the Weeknd, Swae Lee, Yung Lean, Dave Chappelle, Young Thug, Westside Gunn, Kid Cudi, Bad Bunny, SZA, Future və James Blake kimi məşhur qruplar qonaq kimi çıxış ediblər.",
+    tracklist: [
+      {id: 1, name: "HYENA", isExplicit: true, duration: "3:42"},
+      {id: 2, name: "THANK GOD", isExplicit: true, duration: "3:04"},
+      {id: 3, name: "MODERN JAM (feat. Teezo Touchdown)", isExplicit: true, duration: "4:15"},
+      {id: 4, name: "MY EYES", isExplicit: true, duration: "4:11"},
+      {id: 5, name: "GOD'S COUNTRY", isExplicit: true, duration: "2:07"},
+      {id: 6, name: "SIRENS", isExplicit: true, duration: "3:24"},
+      {id: 7, name: "MELTDOWN (feat. Drake)", isExplicit: true, duration: "4:06"},
+      {id: 8, name: "FE!N (feat. Playboi Carti)", isExplicit: true, duration: "3:11"},
+      {id: 9, name: "DELRESTO (ECHOES) [feat. Beyoncé]", isExplicit: false, duration: "4:34"},
+      {id: 10, name: "I KNOW ?", isExplicit: true, duration: "3:31"},
+      {id: 11, name: "TOPIA TWINS (feat. Rob49 & 21 Savage)", isExplicit: true, duration: "3:43"},
+      {id: 12, name: "CIRCUS MAXIMUS (feat. The Weeknd & Swae Lee)", isExplicit: true, duration: "4:18"},
+      {id: 13, name: "PARASAIL (feat. Yung Lean & Dave Chappelle)", isExplicit: true, duration: "2:34"},
+      {id: 14, name: "SKITZO (feat. Young Thug)", isExplicit: true, duration: "6:06"},
+      {id: 15, name: "LOST FOREVER (feat. Westside Gunn)", isExplicit: true, duration: "2:43"},
+      {id: 16, name: "LOOOVE (feat. Kid Cudi)", isExplicit: true, duration: "3:46"},
+      {id: 17, name: "K-POP (feat. Bad Bunny & The Weeknd)", isExplicit: true, duration: "3:05"},
+      {id: 18, name: "TELEKINESIS (feat. SZA & Future)", isExplicit: true, duration: "5:53"},
+      {id: 1, name: "TIL FURTHER NOTICE (feat. James Blake & 21 Savage)", isExplicit: true, duration: "5:14"},
+    ]
   },
   {
     id: 33,
@@ -1735,11 +1802,20 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "vinyl",
-    description: "Jackboys və amerikalı reper Travis Scott tərəfindən tərtib edilmiş albomdur. Jackboys, Scott-un özü, Sheck Wes, Don Toliver, Luxury Tax, Scott-un DJ-i Chase B və Pop Smoke-dan ibarət Scott-un ilə müqavilə imzalayan amerikalı reperlərdən ibarət kollektiv və qrupdur. Albom 27 dekabr 2019-cu ildə buraxılmışdır. Albomda Migos, Young Thug və Pop Smoke trap triosundan Rosalía, Lil Baby, Quavo və Offset qonaq çıxışları yer alır."
+    description: "Jackboys və amerikalı reper Travis Scott tərəfindən tərtib edilmiş albomdur. Jackboys, Scott-un özü, Sheck Wes, Don Toliver, Luxury Tax, Scott-un DJ-i Chase B və Pop Smoke-dan ibarət Scott-un ilə müqavilə imzalayan amerikalı reperlərdən ibarət kollektiv və qrupdur. Albom 27 dekabr 2019-cu ildə buraxılmışdır. Albomda Migos, Young Thug və Pop Smoke trap triosundan Rosalía, Lil Baby, Quavo və Offset qonaq çıxışları yer alır.",
+    tracklist: [
+      {id: 1, name: "HIGHEST IN THE ROOM (by Travis Scott, Lil Baby & ROSALÍA)", isExplicit: true, duration: "4:04"},
+      {id: 2, name: "JACKBOYS", isExplicit: false, duration: "0:46"},
+      {id: 3, name: "GANG GANG (by Sheck Wes)", isExplicit: true, duration: "4:04"},
+      {id: 4, name: "HAD ENOUGH (by Don Toliver, Offest & Quavo)", isExplicit: true, duration: "2:37"},
+      {id: 5, name: "OUT WEST (by Travis Scott & Young Thug)", isExplicit: true, duration: "2:37"},
+      {id: 6, name: "WHAT TO DO? (by Travis Scott & Don Toliver)", isExplicit: true, duration: "4:10"},
+      {id: 7, name: "GATTI (by Travis Scott & Pop Smoke)", isExplicit: true, duration: "3:01"},
+    ]
   },
   {
     id: 30,
-    title: "Kids See Ghosts (LP)",
+    title: "KIDS SEE GHOSTS (LP)",
     artist: ["KIDS SEE GHOSTS", "Kanye West", "Kid Cudi"],
     price: 79.99,
     genre: "Hip-Hop/Rap",
@@ -1752,7 +1828,16 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "vinyl",
-    description: "Kids See Ghosts hip-hop dueti Kids See Ghosts-un Kanye West və Kid Cudidən ibarət debüt studiya albomudur. Albomdan əvvəl West və Cudi 2008-ci ildə görüşdükdən bəri yaxın dost və musiqi müttəfiqləri kimi güclü münasibətlərdən zövq almış və birgə albom yazmaq istədiklərini bildirmişdilər. Albomda Pusha T, Yasiin Bey və Ty Dolla Sign-dən qonaqlar, eləcə də ölümündən sonra tanınmış sənətçi kimi tanınan Louis Prima-nın vokal nümunəsi yer alır. Albomda duetin hər iki üzvünün görkəmli prodüserliyi, eləcə də Dot da Genius, Mike Dean, Evan Mast, Plain Pat, BoogzDaBeast, Benny Blanco, Jeff Bhasker, Justin Vernon, Noah Goldstein, Andrew Dawson, Cashmere Cat və Andre 3000 və digərlərinin əsərləri yer alır."
+    description: "Kids See Ghosts hip-hop dueti Kids See Ghosts-un Kanye West və Kid Cudidən ibarət debüt studiya albomudur. Albomdan əvvəl West və Cudi 2008-ci ildə görüşdükdən bəri yaxın dost və musiqi müttəfiqləri kimi güclü münasibətlərdən zövq almış və birgə albom yazmaq istədiklərini bildirmişdilər. Albomda Pusha T, Yasiin Bey və Ty Dolla Sign-dən qonaqlar, eləcə də ölümündən sonra tanınmış sənətçi kimi tanınan Louis Prima-nın vokal nümunəsi yer alır. Albomda duetin hər iki üzvünün görkəmli prodüserliyi, eləcə də Dot da Genius, Mike Dean, Evan Mast, Plain Pat, BoogzDaBeast, Benny Blanco, Jeff Bhasker, Justin Vernon, Noah Goldstein, Andrew Dawson, Cashmere Cat və Andre 3000 və digərlərinin əsərləri yer alır.",
+    tracklist: [
+      {id: 1, name: "Feel The Love (feat. Pusha T)", isExplicit: true, duration: "2:45"},
+      {id: 2, name: "Fire", isExplicit: true, duration: "2:20"},
+      {id: 3, name: "4th Dimension (feat. Louis Prima)", isExplicit: true, duration: "2:33"},
+      {id: 4, name: "Freeee (Ghost Town Pt. 2)", isExplicit: true, duration: "2:33"},
+      {id: 5, name: "Reborn", isExplicit: true, duration: "5:24"},
+      {id: 6, name: "Kids See Ghosts (feat. Yasiin Bey)", isExplicit: true, duration: "4:05"},
+      {id: 7, name: "Cudi Montage", isExplicit: true, duration: "3:17"},
+    ]
   },
   {
     id: 31,
@@ -1769,7 +1854,24 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Vultures 1 reper Kanye West və müğənni Ty Dolla Sign-dən ibarət Amerika hip-hop superqrupu ¥$-ın debüt studiya albomudur. Albom 10 fevral 2024-cü ildə çıxıb. Qonaq qruplar arasında West-in qızı North, India Love, Freddie Gibbs, YG, Nipsey Hussle, Quavo, Playboi Carti, Travis Scott, Bump J, Lil Durk, Rich the Kid və Chris Brown yer alır. İstehsal əsasən West və Ty Dolla Sign tərəfindən Legendary Traxster, 88-Keys, Camper, JPEGMafia, Timbaland, Swizz Beatz, Ojivolta, Chrishan, Anthony Kilhoffer və başqaları tərəfindən həyata keçirilib."
+    description: "Vultures 1 reper Kanye West və müğənni Ty Dolla $ign-dən ibarət Amerika hip-hop superqrupu ¥$-ın debüt studiya albomudur. Albom 10 fevral 2024-cü ildə çıxıb. Qonaq qruplar arasında West-in qızı North, India Love, Freddie Gibbs, YG, Nipsey Hussle, Quavo, Playboi Carti, Travis Scott, Bump J, Lil Durk, Rich the Kid və Chris Brown yer alır. İstehsal əsasən West və Ty Dolla Sign tərəfindən Legendary Traxster, 88-Keys, Camper, JPEGMafia, Timbaland, Swizz Beatz, Ojivolta, Chrishan, Anthony Kilhoffer və başqaları tərəfindən həyata keçirilib.",
+    tracklist: [
+      {id: 1, name: "STARS", isExplicit: true, duration: "1:55"},
+      {id: 2, name: "KEYS TO MY LIFE (feat. India Love)", isExplicit: true, duration: "2:54"},
+      {id: 3, name: "PAID", isExplicit: true, duration: "3:15"},
+      {id: 4, name: "TALKING (feat. North West)", isExplicit: true, duration: "3:05"},
+      {id: 5, name: "BACK TO ME (feat. Freddie Gibbs)", isExplicit: true, duration: "4:55"},
+      {id: 6, name: "HOODRAT (feat. Mike Tyson)", isExplicit: true, duration: "3:43"},
+      {id: 7, name: "DO IT (feat. Nipsey Hussle & YG)", isExplicit: true, duration: "3:45"},
+      {id: 8, name: "PAPERWORK (feat. Quavo)", isExplicit: true, duration: "2:25"},
+      {id: 9, name: "BURN", isExplicit: true, duration: "1:51"},
+      {id: 10, name: "FUK SUMN (feat. Travis Scott & Playboi Carti)", isExplicit: true, duration: "3:29"},
+      {id: 11, name: "VULTURES (feat. Bump J & Lil Durk)", isExplicit: true, duration: "4:36"},
+      {id: 12, name: "CARNIVAL (feat. Rich The Kid & Playboi Carti)", isExplicit: true, duration: "4:24"},
+      {id: 13, name: "BEG FORGIVENESS", isExplicit: true, duration: "6:08"},
+      {id: 14, name: "PROBLEMATIC", isExplicit: true, duration: "3:14"},
+      {id: 15, name: "KING", isExplicit: true, duration: "2:36"},
+    ]
   },
   {
     id: 32,
@@ -1786,7 +1888,16 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "Vinil LP presləməsi. 2018-ci ildə buraxılan, reper/prodüser Kanye Westin səkkizinci studiya albomudur. Albomda Ty Dolla Sign, PartyNextDoor, Kid Cudi, Jeremih və 070 Shake kimi qruplar qonaq vokal ifa edir. Albomun tam versiyasını West istehsal edib, əlavə olaraq həmicraçı prodüser olan Mike Dean, eləcə də Francis and the Lights, Benny Blanco, Irv Gotti, 7 Aurelius, Noah Goldstein, Che Pope, Caroline Shaw, Pi'erre Bourne və Ty Dolla Sign kimi qruplar da prodüserlik edib. Ye, West tərəfindən Wyoming Sessions adlandırılan beş yeddi mahnıdan ibarət albomdan ikincisidir. Vest albomun adını, mahnılarında tez-tez istifadə olunan öz adının kiçildilmiş versiyasını belə izah etdi: İnanıram ki, Müqəddəs Kitabda ən çox istifadə edilən ye sözüdür və Müqəddəs Kitabda sən mənasını verir. Beləliklə, mən sənəm, mən bizəm, bu bizik. Bu söz yeganə mənasını verən Kanye sözündən sadəcə Ye sözünə keçdi - sadəcə yaxşılığımızın, pisliyimizin, çaşqınlığımızın, hər şeyimizin əks olunması. Albom daha çox kim olduğumuzun əksidir."
+    description: "Vinil LP presləməsi. 2018-ci ildə buraxılan, reper/prodüser Kanye Westin səkkizinci studiya albomudur. Albomda Ty Dolla Sign, PartyNextDoor, Kid Cudi, Jeremih və 070 Shake kimi qruplar qonaq vokal ifa edir. Albomun tam versiyasını West istehsal edib, əlavə olaraq həmicraçı prodüser olan Mike Dean, eləcə də Francis and the Lights, Benny Blanco, Irv Gotti, 7 Aurelius, Noah Goldstein, Che Pope, Caroline Shaw, Pi'erre Bourne və Ty Dolla Sign kimi qruplar da prodüserlik edib. Ye, West tərəfindən Wyoming Sessions adlandırılan beş yeddi mahnıdan ibarət albomdan ikincisidir. Vest albomun adını, mahnılarında tez-tez istifadə olunan öz adının kiçildilmiş versiyasını belə izah etdi: İnanıram ki, Müqəddəs Kitabda ən çox istifadə edilən ye sözüdür və Müqəddəs Kitabda sən mənasını verir. Beləliklə, mən sənəm, mən bizəm, bu bizik. Bu söz yeganə mənasını verən Kanye sözündən sadəcə Ye sözünə keçdi - sadəcə yaxşılığımızın, pisliyimizin, çaşqınlığımızın, hər şeyimizin əks olunması. Albom daha çox kim olduğumuzun əksidir.",
+    tracklist: [
+      {id: 1, name: "I Thought About Killing You", isExplicit: true, duration: "4:34"},
+      {id: 2, name: "Yikes", isExplicit: true, duration: "3:08"},
+      {id: 3, name: "All Mine", isExplicit: true, duration: "2:25"},
+      {id: 4, name: "Wouldn't Leave (feat. PARTYNEXTDOOR)", isExplicit: true, duration: "3:25"},
+      {id: 5, name: "No Mistakes", isExplicit: true, duration: "2:03"},
+      {id: 6, name: "Ghost Town (feat. 070 Shake, Kid Cudi & PARTYNEXTDOOR)", isExplicit: true, duration: "4:31"},
+      {id: 1, name: "Violent Crimes", isExplicit: true, duration: "3:35"},
+    ]
   },
   {
     id: 13,
@@ -1805,7 +1916,22 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "vinyl",
-    description: "İndiyə qədər yazılmış ən bahalı hip-hop albomu olan Kanye West-in beşinci albomu, reperin özünü tərifləmə və etiraf etmənin tək qarışığı ilə 68 dəqiqəlik LP idi. Albom, The Beatles-in art-rok ambisiyalarını, Pink Floydun dəbdəbəsini və Michael Jackson-un pop ulduz əzəmətini birləşdirdi - lakin müğənni-bəstəkar ifadəsinin şəxsi cazibəsinə malik idi. 35 dəqiqəlik qısametrajlı filmlə birlikdə doqquz dəqiqəlik prog-rap əsəri (“Runaway”) var. Albomun sənət əsəri müasir rəssam və Warhol-un əməkdaşı Corc Kondoya məxsusdur. “All of the Lights” da Rihanna, Alisiya Keys və Elton Conun orkestri və vokalları yer alır. Lakin dəbdəbəli görünüşünə baxmayaraq, “My Beautiful Dark Twisted Fantasy” albomunun əsasını Vestin köhnəlmiş düşüncələri, özünütənqidləri, münasibət problemləri, şöhrət haqqında düşüncələri və qəzəb anları ilə birlikdə dürüstlük təşkil edir. “My Beautiful Dark Twisted Fantasy” hip-hopun mənzərəsini əbədi olaraq dəyişdirəcək, janrları bir-birinə bağlayan cəsarəti, sonsuz təxəyyülü və təqdimatının dəbdəbəliliyi janrın 2010-cu illərdə maksimalist səslərə və arthaus dizaynına doğru dönüşünü qabaqcadan xəbər verir."
+    description: "İndiyə qədər yazılmış ən bahalı hip-hop albomu olan Kanye West-in beşinci albomu, reperin özünü tərifləmə və etiraf etmənin tək qarışığı ilə 68 dəqiqəlik LP idi. Albom, The Beatles-in art-rok ambisiyalarını, Pink Floydun dəbdəbəsini və Michael Jackson-un pop ulduz əzəmətini birləşdirdi - lakin müğənni-bəstəkar ifadəsinin şəxsi cazibəsinə malik idi. 35 dəqiqəlik qısametrajlı filmlə birlikdə doqquz dəqiqəlik prog-rap əsəri (“Runaway”) var. Albomun sənət əsəri müasir rəssam və Warhol-un əməkdaşı Corc Kondoya məxsusdur. “All of the Lights” da Rihanna, Alisiya Keys və Elton Conun orkestri və vokalları yer alır. Lakin dəbdəbəli görünüşünə baxmayaraq, “My Beautiful Dark Twisted Fantasy” albomunun əsasını Vestin köhnəlmiş düşüncələri, özünütənqidləri, münasibət problemləri, şöhrət haqqında düşüncələri və qəzəb anları ilə birlikdə dürüstlük təşkil edir. “My Beautiful Dark Twisted Fantasy” hip-hopun mənzərəsini əbədi olaraq dəyişdirəcək, janrları bir-birinə bağlayan cəsarəti, sonsuz təxəyyülü və təqdimatının dəbdəbəliliyi janrın 2010-cu illərdə maksimalist səslərə və arthaus dizaynına doğru dönüşünü qabaqcadan xəbər verir.",
+    tracklist: [
+      {id: 1, name: "Dark Fantasy", isExplicit: true, duration: "4:40"},
+      {id: 2, name: "Gorgeous (feat. Kid Cudi & Raekwon)", isExplicit: true, duration: "5:57"},
+      {id: 3, name: "POWER", isExplicit: true, duration: "4:52"},
+      {id: 4, name: "All Of The Lights (Interlude)", isExplicit: false, duration: "1:02"},
+      {id: 5, name: "All Of The Lights", isExplicit: true, duration: "4:59"},
+      {id: 6, name: "Monster (feat. JAY-Z, Rick Ross, Nicki Minaj & Bon Iver)", isExplicit: true, duration: "6:18"},
+      {id: 7, name: "So Appalled (feat. JAY-Z, Pusha T, CyHi, Swizz Beats, RZA)", isExplicit: true, duration: "6:37"},
+      {id: 8, name: "Devil In A New Dress (feat. Rick Ross)", isExplicit: true, duration: "5:51"},
+      {id: 9, name: "Runaway (feat. Pusha T)", isExplicit: true, duration: "9:07"},
+      {id: 10, name: "Hell Of A Life", isExplicit: true, duration: "5:27"},
+      {id: 11, name: "Blame Game (feat. John Legend)", isExplicit: true, duration: "7:49"},
+      {id: 12, name: "Lost In The World (feat. Bon Iver)", isExplicit: true, duration: "4:16"},
+      {id: 13, name: "Who Will Survive In America", isExplicit: true, duration: "1:38"},
+    ]
   },
   {
     id: 16,
@@ -1822,13 +1948,36 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "Late Registration amerikalı hip-hop sənətçisi Kanye Westin 30 avqust 2005-ci ildə buraxılan ikinci studiya albomudur. Albomun səsyazma sessiyaları bir il ərzində Hollivuddakı Record Plant Studios, Chalice Recording Studios və Grandmaster Recording Studios-da, eləcə də Nyu-York şəhərindəki Sony Music Studios-da baş tutub. Late Registration albomunu hazırlamaq üçün amerikalı səsyazma prodüseri və bəstəkar Con Brionla əməkdaşlıq edib və albomda JAY-Z, Common, Lupe Fiasco, Jamie Foxx, Nas, Brandy və Adam Levine kimi sənətçilərin qonaqları yer alıb. Albom çıxdıqdan sonra musiqi tənqidçilərindən yüksək rəylər alıb və West-ə bir neçə mükafat, o cümlədən 2006-cı il Grammy mükafatlarında Ən Yaxşı Rep Albomu nominasiyasında Qremmi mükafatı və İlin Albomu nominasiyasında mükafat qazandırıb. Albom bir neçə nəşrin ilin sonu üçün ən yaxşı albom siyahılarının başında yer alıb. Rolling Stone jurnalı onu 2005-ci ilin ən yaxşı albomu adlandırmış və 2012-ci ildə Bütün Zamanların 500 Ən Böyük Albomu siyahısında 118-ci yerə daxil etmişdir."
+    description: "Late Registration amerikalı hip-hop sənətçisi Kanye Westin 30 avqust 2005-ci ildə buraxılan ikinci studiya albomudur. Albomun səsyazma sessiyaları bir il ərzində Hollivuddakı Record Plant Studios, Chalice Recording Studios və Grandmaster Recording Studios-da, eləcə də Nyu-York şəhərindəki Sony Music Studios-da baş tutub. Late Registration albomunu hazırlamaq üçün amerikalı səsyazma prodüseri və bəstəkar Con Brionla əməkdaşlıq edib və albomda JAY-Z, Common, Lupe Fiasco, Jamie Foxx, Nas, Brandy və Adam Levine kimi sənətçilərin qonaqları yer alıb. Albom çıxdıqdan sonra musiqi tənqidçilərindən yüksək rəylər alıb və West-ə bir neçə mükafat, o cümlədən 2006-cı il Grammy mükafatlarında Ən Yaxşı Rep Albomu nominasiyasında Qremmi mükafatı və İlin Albomu nominasiyasında mükafat qazandırıb. Albom bir neçə nəşrin ilin sonu üçün ən yaxşı albom siyahılarının başında yer alıb. Rolling Stone jurnalı onu 2005-ci ilin ən yaxşı albomu adlandırmış və 2012-ci ildə Bütün Zamanların 500 Ən Böyük Albomu siyahısında 118-ci yerə daxil etmişdir.",
+    tracklist: [
+      {id: 1, name: "Wake Up Mr. West", isExplicit: true, duration: "0:41"},
+      {id: 2, name: "Heard 'Em Say (feat. Adam Levine)", isExplicit: true, duration: "3:23"},
+      {id: 3, name: "Touch The Sky", isExplicit: true, duration: "3:56"},
+      {id: 4, name: "Gold Digger (feat. Jamie Foxx)", isExplicit: true, duration: "3:27"},
+      {id: 5, name: "Skit #1", isExplicit: true, duration: "0:33"},
+      {id: 6, name: "Drive Slow (feat. Paul Wall & GLC)", isExplicit: true, duration: "4:32"},
+      {id: 7, name: "My Way Home (feat. Common)", isExplicit: true, duration: "1:43"},
+      {id: 8, name: "Crack Music (feat. The Game)", isExplicit: true, duration: "4:30"},
+      {id: 9, name: "Roses", isExplicit: true, duration: "4:05"},
+      {id: 10, name: "Bring Me Down", isExplicit: true, duration: "3:18"},
+      {id: 11, name: "Addiction", isExplicit: true, duration: "4:27"},
+      {id: 12, name: "Skit #2", isExplicit: true, duration: "0:31"},
+      {id: 13, name: "Diamonds From Sierra Leone - Remix (feat. JAY-Z)", isExplicit: true, duration: "3:53"},
+      {id: 14, name: "We Major (feat. Nas & Really Doe)", isExplicit: true, duration: "7:28"},
+      {id: 15, name: "Skit #3", isExplicit: true, duration: "0:24"},
+      {id: 16, name: "Hey Mama", isExplicit: true, duration: "5:05"},
+      {id: 17, name: "Celebration", isExplicit: true, duration: "3:18"},
+      {id: 18, name: "Skit #4", isExplicit: true, duration: "1:18"},
+      {id: 19, name: "Gone", isExplicit: true, duration: "5:33"},
+      {id: 20, name: "Diamonds From Sierra Leone - Bonus Track", isExplicit: true, duration: "3:58"},
+      {id: 21, name: "Late", isExplicit: true, duration: "3:50"},
+    ]
   },
   {
     id: 20,
     title: "Watch The Throne (2LP)",
     artist: ["JAY-Z", "Kanye West"],
-    price: 179.99,
+    price: 299.99,
     genre: "Hip-Hop/Rap",
     year: 2011,
     isNew: false,
@@ -1841,7 +1990,21 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Watch The Throne albomu, JAY-Z-nin əslində rahat səsləndiyi ilk albomdur. O qədər dar, gülməli bir şəkildə rahat deyil, sanki dağın zirvəsində vadiyə baxırmış kimi rahat: gedəcək yer yoxdur, çünki artıq oradasınız. O, 10 ildən çoxdur ki, Kanye West ilə əməkdaşlıq edir və qardaşlıqla sərhəddə olan bir kimya inkişaf etdirirdi - hiss edirsiniz ki, Cey təkcə biznesini deyil, həm də nüfuzunu ona bağlayıb. Cey baş (ayrıca, analitik) olduğu yerdə, Vest isə dağınıq, impulsiv ürəkdir. Onlar təkcə rep sikkəsinin iki fərqli tərəfini təmsil etmirlər (layihələrdə doğulmuş fırıldaqçı Cey, orta təbəqə müəllifi Vest; köhnə məktəbli Cey, yeni Kanye), onlar bir-birinin şəxsiyyətinin uzaq bölgələrini də ortaya çıxarırlar: Vestin özündən kənar dünya haqqında nüfuzlu olmaq inamı, Ceynin ehtiyatlılığını itirmək və sərbəst olmaq üçün rahatlığı."
+    description: "Watch The Throne albomu, JAY-Z-nin əslində rahat səsləndiyi ilk albomdur. O qədər dar, gülməli bir şəkildə rahat deyil, sanki dağın zirvəsində vadiyə baxırmış kimi rahat: gedəcək yer yoxdur, çünki artıq oradasınız. O, 10 ildən çoxdur ki, Kanye West ilə əməkdaşlıq edir və qardaşlıqla sərhəddə olan bir kimya inkişaf etdirirdi - hiss edirsiniz ki, Cey təkcə biznesini deyil, həm də nüfuzunu ona bağlayıb. Cey baş (ayrıca, analitik) olduğu yerdə, Vest isə dağınıq, impulsiv ürəkdir. Onlar təkcə rep sikkəsinin iki fərqli tərəfini təmsil etmirlər (layihələrdə doğulmuş fırıldaqçı Cey, orta təbəqə müəllifi Vest; köhnə məktəbli Cey, yeni Kanye), onlar bir-birinin şəxsiyyətinin uzaq bölgələrini də ortaya çıxarırlar: Vestin özündən kənar dünya haqqında nüfuzlu olmaq inamı, Ceynin ehtiyatlılığını itirmək və sərbəst olmaq üçün rahatlığı.",
+    tracklist: [
+      {id: 1, name: "No Church In The Wild (feat. Frank Ocean)", isExplicit: true, duration: "4:32"},
+      {id: 2, name: "Lift Off (feat. Beyoncé)", isExplicit: true, duration: "4:26"},
+      {id: 3, name: "N****s In Paris", isExplicit: true, duration: "3:39"},
+      {id: 4, name: "Otis (feat. Otis Redding)", isExplicit: true, duration: "2:58"},
+      {id: 5, name: "Gotta Have It", isExplicit: true, duration: "2:20"},
+      {id: 6, name: "New Day", isExplicit: true, duration: "4:32"},
+      {id: 7, name: "That's My Bitch", isExplicit: true, duration: "3:32"},
+      {id: 8, name: "Welcome To The Jungle", isExplicit: true, duration: "2:54"},
+      {id: 9, name: "Who Gon Stop Me", isExplicit: true, duration: "4:16"},
+      {id: 10, name: "Murder To Excellence", isExplicit: true, duration: "5:00"},
+      {id: 11, name: "Made In America (feat. Frank Ocean)", isExplicit: true, duration: "4:52"},
+      {id: 12, name: "Why I Love You", isExplicit: true, duration: "3:21"},
+    ]
   },
   {
     id: 46,

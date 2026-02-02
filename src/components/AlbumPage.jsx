@@ -68,7 +68,6 @@ const AlbumPage = () => {
     ...(Array.isArray(album.featuresImage)
       ? album.featuresImage.map((url) => ({ url, type: "features" }))
       : album.featuresImage ? [{ url: album.featuresImage, type: "features" }] : []),
-    ...(album.variants || []).map(variant => ({ url: variant.image, type: "variant" })),
   ];
 
   const currentImage = galleryImages[selectedImage]?.url;
@@ -173,6 +172,7 @@ const AlbumPage = () => {
             </div>
           </div>
 
+          {/* TABS */}
           <div className="flex border-b border-border mb-8 overflow-x-auto">
             {[
               { id: "description", label: "Təsvir", icon: <Info className="w-4 h-4" /> },
@@ -191,6 +191,7 @@ const AlbumPage = () => {
             ))}
           </div>
 
+          {/* TAB CONTENT */}
           <div className="min-h-[300px] mb-12">
             {activeTab === "description" && (
               <div className="space-y-6">
@@ -208,6 +209,7 @@ const AlbumPage = () => {
                   </div>
                 )}
 
+                {/* VARIANTS */}
                 {album.variants && album.variants.length > 0 && (
                   <div className="border-t border-border pt-6">
                     <h3 className="text-lg font-semibold mb-3">Dizayn Seçin</h3>
@@ -246,6 +248,7 @@ const AlbumPage = () => {
                   </div>
                 )}
 
+                {/* QUANTITY */}
                 <div className="border-t border-border pt-6">
                   <h3 className="text-lg font-semibold mb-3">Miqdar</h3>
                   <div className="flex items-center gap-4">
@@ -342,8 +345,6 @@ const AlbumPage = () => {
               </div>
             )}
           </div>
-
-          {/* BUY BAR */}
           <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-8">
             <div className="text-center sm:text-left">
               <p className="text-4xl font-serif font-bold">{(album.price * quantity).toFixed(2)} ₼</p>
