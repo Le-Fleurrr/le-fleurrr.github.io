@@ -3,7 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+<<<<<<< HEAD
   "homepage": "https://le-fleurrr.github.io/Backrooms/",
+=======
+  "homepage": "https://le-fleurrr.github.io/",
+>>>>>>> main
   "scripts": {
     "dev": "vite",
     "build": "vite build",
