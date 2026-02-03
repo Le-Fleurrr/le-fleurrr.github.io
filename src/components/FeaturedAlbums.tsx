@@ -4,45 +4,24 @@ import { VinylRecord } from "./VinylRecord.tsx";
 import { CDDisc } from "./CDDisc.tsx";
 import { CassetteTape } from "./CassetteTape.tsx";
 import { Button } from "./ui/Button.tsx";
-import { ShoppingCart, Heart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { FavoriteButton } from './FavoritesSystem';
 import { albums as rawAlbums } from "./Albums.jsx";
 
-type VinylColor =
-  | "black"
-  | "red"
-  | "blue"
-  | "purple"
-  | "green"
-  | "orange"
-  | "pink"
-  | "clear"
-  | "yellow"
-  | "white"
-  | "brown";
-
-type CassetteColor =
-  | "black"
-  | "red"
-  | "blue"
-  | "purple"
-  | "green"
-  | "orange"
-  | "pink"
-  | "clear"
-  | "yellow"
-  | "white";
+// --- Types ---
+type VinylColor = "black" | "red" | "blue" | "purple" | "green" | "orange" | "pink" | "clear" | "yellow" | "white" | "brown";
+type CassetteColor = "black" | "red" | "blue" | "purple" | "green" | "orange" | "pink" | "clear" | "yellow" | "white";
 
 interface Album {
   id: number;
   title: string;
-  artist: string[]; // always an array
+  artist: string[];
   price: number;
   genre: string;
   year: number;
   isNew?: boolean;
   isExplicit?: boolean;
-  image?: string;
+  image?: string | string[];
   format?: "vinyl" | "cd" | "cassette";
   vinylColor?: VinylColor;
   cassetteColor?: CassetteColor;
@@ -51,22 +30,20 @@ interface Album {
   description?: string;
 }
 
+// --- Helpers ---
 const normalizeAlbums = (albums: any[]): Album[] =>
   albums.map((a) => {
     let normalizedFormat: "vinyl" | "cd" | "cassette" | undefined;
     if (a.format === "vinyl") normalizedFormat = "vinyl";
     else if (a.format === "cd") normalizedFormat = "cd";
     else if (a.format === "cassette" || a.format === "cassetteTape") normalizedFormat = "cassette";
-    else normalizedFormat = undefined;
+
     let artistArray: string[] = [];
-    if (Array.isArray(a.artist)) {
-      artistArray = a.artist.filter(Boolean).map(String);
-    } else if (Array.isArray(a.artists)) {
-      artistArray = a.artists.filter(Boolean).map(String);
-    } else if (typeof a.artist === "string") {
-      artistArray = a.artist.split("&").map((s: string) => s.trim()).filter(Boolean);
-    } else if (typeof a.artists === "string") {
-      artistArray = a.artists.split("&").map((s: string) => s.trim()).filter(Boolean);
+    const rawArtist = a.artist || a.artists;
+    if (Array.isArray(rawArtist)) {
+      artistArray = rawArtist.filter(Boolean).map(String);
+    } else if (typeof rawArtist === "string") {
+      artistArray = rawArtist.split("&").map((s: string) => s.trim()).filter(Boolean);
     }
 
     return {
@@ -108,6 +85,7 @@ const getAccentColors = (color?: string) => {
   return colorMap[color || "default"] || colorMap.default;
 };
 
+// --- Component ---
 export const FeaturedAlbums = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const navigate = useNavigate();
@@ -134,17 +112,11 @@ export const FeaturedAlbums = () => {
           </Button>
         </div>
 
-        <Button
-          variant="outline"
-          className="self-start md:self-auto border-muted-foreground/30 hover:bg-secondary"
-          asChild
-        >
-          <Link to="/merch">Bütün Kolleksiyaya Baxın (MERCH)</Link>
-        </Button>
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredAlbums.map((album) => {
             const accentColors = getAccentColors(album.accentColor);
+            const coverImage = Array.isArray(album.image) ? album.image[0] : album.image;
+
             return (
               <div
                 key={album.id}
@@ -160,16 +132,20 @@ export const FeaturedAlbums = () => {
               >
                 {album.isNew && (
                   <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
-                    YENI
+                    YENİ
                   </span>
                 )}
 
+                <div className="absolute top-4 left-4 z-20">
+                  <FavoriteButton albumId={album.id} size="medium" />
+                </div>
+
                 <div className="relative h-48 flex items-center justify-center mb-6">
-                  {album.image && (
+                  {coverImage && (
                     <div className="absolute inset-0 flex items-center justify-start pl-4">
-                      <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl">
+                      <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl z-10">
                         <img
-                          src={Array.isArray(album.image) ? album.image[0] : album.image}
+                          src={coverImage}
                           alt={`${album.title} cover`}
                           className="w-full h-full object-cover"
                         />
@@ -184,8 +160,9 @@ export const FeaturedAlbums = () => {
                   />
 
                   <div
-                    className={`relative transition-transform duration-500 ease-out ${hoveredId === album.id ? "translate-x-16" : "translate-x-0"
-                      }`}
+                    className={`relative transition-transform duration-500 ease-out ${
+                      hoveredId === album.id ? "translate-x-16" : "translate-x-0"
+                    }`}
                     style={{ marginLeft: "20px" }}
                   >
                     {album.format === "cd" ? (
@@ -219,16 +196,14 @@ export const FeaturedAlbums = () => {
                           </span>
                         )}
                       </div>
-                      <div className="flex flex-wrap items-center gap-2 text-sm">
+                      <div className="flex flex-wrap items-center gap-1 text-sm">
                         {album.artist.map((artistName, idx) => {
                           const slug = String(artistName)
                             .toLowerCase()
-                            .replace(/,/g, '')
-                            .replace(/\$/g, '')
                             .replace(/\s+/g, "-")
                             .replace(/[^\w-]/g, "");
                           return (
-                            <span key={`${album.id}-artist-${idx}`} className="flex items-center">
+                            <span key={`${album.id}-art-${idx}`} className="flex items-center">
                               <Link
                                 to={`/artist/${slug}`}
                                 onClick={(e) => e.stopPropagation()}
@@ -259,14 +234,12 @@ export const FeaturedAlbums = () => {
                       className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
                       onClick={(e) => {
                         e.stopPropagation();
+                        // Add cart logic here
                       }}
                     >
                       <ShoppingCart className="w-4 h-4" />
                       Səbətə əlavə et
                     </Button>
-                    <div className="absolute top-1 left-1 z-10">
-                      <FavoriteButton albumId={album.id} size="medium" />
-                  </div>
                   </div>
                 </div>
               </div>
