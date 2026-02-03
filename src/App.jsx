@@ -42,7 +42,7 @@ function App() {
             <Route path="/artist/:artistName" element={<ArtistPage />} />
             <Route path="/album/:albumId" element={<AlbumPage />} />
             <Route path="/merch" element={<MerchCollectionsPage />} />
-            <Route path="/merch/:merchId" element={<Merch />} />
+            <Route path="/merch/:merchId" element={<MerchPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

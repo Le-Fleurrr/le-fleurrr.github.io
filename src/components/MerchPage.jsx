@@ -81,6 +81,8 @@ export const MerchPage = () => {
                 </span>
               )}
             </div>
+
+            {/* Thumbnail Gallery */}
             {galleryImages.length > 1 && (
               <div className="flex gap-4 overflow-x-auto pb-2">
                 {galleryImages.map((img, index) => (

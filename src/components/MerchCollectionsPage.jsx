@@ -52,6 +52,7 @@ export const MerchCollectionsPage = () => {
     return yearMatch && artistMatch && categoryMatch;
   });
 
+  // Sort merch
   if (sortOrder === "price-low") {
     filteredMerch = [...filteredMerch].sort((a, b) => a.price - b.price);
   } else if (sortOrder === "price-high") {
@@ -73,6 +74,7 @@ export const MerchCollectionsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
+        {/* Header */}
         <div className="mb-12">
           <Link to="/" className="text-primary hover:underline mb-4 inline-block">
             ← Ana səhifəyə qayıt

@@ -1,6 +1,11 @@
-const antagonistDaggerShirt = {
+const AntagonistDaggerShirt = {
   front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769007844/Antagonist-Tour-2.0-Dagger-T-Shi_q4fagc.png",
   additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769007842/Antagonist-Tour-2.0-Dagger-T-Shirt1_zvfoyr.png"],
+};
+
+const OpiumAntagonistShirt = {
+  front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769008335/Opium-Antagonist-Tour-2.0-T-Shirt_xfz5h4.png",
+  additionalImages: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769008334/Opium-Antagonist-Tour-2.0-T-Shir_onzpbw.png"]
 };
 
 const opiumAntagonistShirt = {
