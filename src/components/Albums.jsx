@@ -337,11 +337,6 @@ const moreChaosCD = {
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1769010710/MCCDstandardpackshot_q2urck.png']
 };
 
-
-const yeezus = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226192/yeezus_vuqrxf.jpg',
-};
-
 const octane = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769241305/OCTANE2LPVINYL5_0b07d854-8265-43_bdpipu.png',
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANE2LPVINYL1_43f4f4cd-98bb-40_wgt2sl.png",
