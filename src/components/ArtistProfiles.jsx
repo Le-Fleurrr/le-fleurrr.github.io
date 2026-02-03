@@ -1,7 +1,5 @@
 export const artistProfiles = {
   "Playboi Carti": {
-<<<<<<< HEAD
-<<<<<<< HEAD
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751199/playboiCarti_banner_n8qpjf.jpg",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751234/playboiCarti_pfp_fzma49.png",
     merchBanner: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769169960/Logos-Desktop-Carti_e853d832-8fa_f2cl7m.png'
@@ -81,13 +79,11 @@ export const artistProfiles = {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1769520513/jay-z-spotify_me38jx.png",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1769520514/ab6761610000e5ebc75afcd5a9027f60eaebb5e4_svg85h.jpg"
   },
-=======
+  "Playboi Carti": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768XXXXX/playboi_carti_banner.jpg",
-    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768XXXXX/playboi_carti_profile.jpg"
-=======
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768XXXXX/playboi_carti_profile.jpg",
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751199/playboiCarti_banner_n8qpjf.jpg",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751234/playboiCarti_pfp_fzma49.png"
->>>>>>> 428aee0 (Alpha BUild)
   },
   "The Weeknd": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751228/theWeeknd_banner_qm2hrs.jpg",
@@ -125,5 +121,4 @@ export const artistProfiles = {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751216/_banner_mirbpx.jpg",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751223/_pfp_ixfgrj.jpg"
   }
->>>>>>> baab95a (Alpha Build)
 };

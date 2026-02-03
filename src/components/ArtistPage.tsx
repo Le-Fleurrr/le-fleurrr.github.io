@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { VinylRecord } from "./VinylRecord.tsx";
 import { CDDisc } from "./CDDisc.tsx";
 import { CassetteTape } from "./CassetteTape.tsx";
+import { Button } from "./ui/Button.tsx";
 import { MoreHorizontal, Heart, Plus, ArrowLeft } from "lucide-react";
 import { albums } from "./Albums.jsx";
 import { artistProfiles } from "./ArtistProfiles.jsx";
@@ -148,7 +149,6 @@ const ArtistPage = () => {
               onMouseLeave={() => setHoveredAlbumId(null)}
             >
               <div className="relative aspect-square mb-4 bg-zinc-900 rounded-lg flex items-center justify-center overflow-hidden">
-                {/* Note: Your image structure is album.image.cover based on the error */}
                 {album.image?.cover ? (
                   <img src={album.image.cover} alt={album.title} className="w-full h-full object-cover rounded-lg group-hover:opacity-40 transition-opacity" />
                 ) : (
