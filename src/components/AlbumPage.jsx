@@ -24,23 +24,8 @@ const AlbumPage = () => {
   
   // UI States
   const [imageError, setImageError] = useState(false);
-  const [showAnimated, setShowAnimated] = useState(true);
-  const [selectedImage, setSelectedImage] = useState(0);
-  const [selectedVariant, setSelectedVariant] = useState(null);
-  const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState("description");
-  const scrollContainerRef = useRef(null);
-
-  // Interaction States
-  const [interactions, setInteractions] = useState([]);
-  const [rating, setRating] = useState(5);
-  const [hoverRating, setHoverRating] = useState(0);
-  const [reviewComment, setReviewComment] = useState("");
-  const [questionText, setQuestionText] = useState("");
-  const [replyingTo, setReplyingTo] = useState(null);
-  const [replyText, setReplyText] = useState("");
-
-  const album = albums.find((a) => a.id === parseInt(albumId || "", 10));
+  
+  const album = albums.find(a => a.id === parseInt(albumId));
 
   if (!album) {
     return (
@@ -105,58 +90,22 @@ const AlbumPage = () => {
         </Button>
 
         <div className="max-w-4xl mx-auto">
-          {/* IMAGE GALLERY */}
-          <div className="relative aspect-square w-full rounded-xl overflow-hidden shadow-2xl mb-6 group bg-card border border-border">
-            {currentImage && !imageError ? (
-              <img src={currentImage} alt={album.title} className="w-full h-full object-cover transition-opacity duration-500" onError={() => setImageError(true)} />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center">Şəkil yüklənmədi</div>
-            )}
-            
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-mono z-20">
-              {selectedImage + 1} / {galleryImages.length}
-            </div>
-
-            {selectedImage > 0 && (
-              <button onClick={() => setSelectedImage(s => s - 1)} className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/70 p-3 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all z-10"><ChevronLeft /></button>
-            )}
-            {selectedImage < galleryImages.length - 1 && (
-              <button onClick={() => setSelectedImage(s => s + 1)} className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/70 p-3 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all z-10"><ChevronRight /></button>
-            )}
-
-            {album.animatedCover && selectedImage === 0 && (
-              <button onClick={() => setShowAnimated(!showAnimated)} className="absolute top-4 right-4 bg-black/60 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-black/80 transition-all z-20">
-                {showAnimated ? "📹 Animasiya" : "🖼️ Statik"}
-              </button>
-            )}
-          </div>
-
-          {/* THUMBNAILS */}
-          {galleryImages.length > 1 && (
-            <div className="relative bg-card backdrop-blur-sm p-6 rounded-lg border border-border shadow-lg mb-8">
-              <p className="text-sm font-medium text-foreground mb-4">Şəkillər ({selectedImage + 1}/{galleryImages.length})</p>
-              <div ref={scrollContainerRef} className="flex gap-4 overflow-x-auto pb-2 scroll-smooth" style={{ scrollbarWidth: "thin" }}>
-                {galleryImages.map((img, index) => (
-                  <button
-                    key={index}
-                    onClick={() => { setSelectedImage(index); setImageError(false); }}
-                    className={`flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-3 transition-all ${
-                      selectedImage === index ? "border-primary shadow-xl scale-105 ring-2 ring-primary/50" : "border-border hover:border-primary/50"
-                    }`}
-                  >
-                    <img src={img.url} alt={`${img.type} ${index + 1}`} className="w-full h-full object-cover" />
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* ALBUM INFO */}
-          <div className="mb-10 space-y-4">
-            <div className="flex items-center gap-3 flex-wrap">
-              <h1 className="text-5xl font-serif font-bold tracking-tight">{album.title}</h1>
-              {album.isExplicit && (
-                <span className="bg-red-500/10 text-red-500 border border-red-500/20 px-2 py-1 rounded text-xs font-bold self-center">E</span>
+          {/* Album Cover at Top */}
+          <div className="relative mb-8">
+            <div className="aspect-square w-full rounded-xl overflow-hidden shadow-2xl">
+              {album.image && !imageError ? (
+                <img 
+                  src={album.image} 
+                  alt={`${album.title} cover`}
+                  className="w-full h-full object-cover"
+                  onError={() => setImageError(true)}
+                />
+              ) : (
+                <div className="w-full h-full bg-card border border-border flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <p className="text-muted-foreground">Şəkil yüklənə bilmədi</p>
+                  </div>
+                </div>
               )}
             </div>
             <div className="flex items-center gap-2 text-2xl text-muted-foreground">
