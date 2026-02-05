@@ -242,7 +242,14 @@ const playboicartiCD = {
 
 const graduation = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226157/graduation_ukezr6.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226157/graduation1_r5bz2u.jpg']
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1770315068/R-30328484-1712487904-9408_jxcrxf.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1768226157/graduation1_r5bz2u.jpg',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770315068/R-30328484-1712487907-1590_jzx652.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770315069/R-30328484-1712487907-4756_edcmyi.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770315068/R-30328484-1712487908-4181_uhiq5h.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770315068/R-30328484-1712487906-6943_nzbuaz.png'
+  ],
+  tracklist: 'https://res.cloudinary.com/deroy68n9/image/upload/v1770315068/R-30328484-1712487907-1665_x9cze0.png'
 };
 
 const dontBeDumbCD = {
@@ -2036,7 +2043,41 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "Kanye West-in 10-cu studiya albomu olan Donda-da o, alboma layihənin adını daşıyan mərhum anası haqqında düşüncələrlə başlayan Syleena Johnson-u işə götürür. West səsini təkrarlayır və ritmlərini dəyişir, lakin sakitləşdirici bir impuls saxlayır. Bu, West-in layihə boyunca istifadə etməyə çalışdığı bir keçid xəttidir və o, 2019-cu ildə çıxan “Jesus is King” mahnısının qospel impulslarını fanatlarının sevimlisi olan 2013-cü ildə çıxan “Yeezus” un elektro-treşi ilə birləşdirir. Həmişə olduğu kimi, West-də də albomda The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby və başqaları da daxil olmaqla bir çox əməkdaş iştirak edir. Bəzən albom amansızcasına eksperimental xarakter daşıyır, digərləri isə pop siyahılarının zirvəsinə yüksəlmək üçün çalışır. Lakin Kanye həmişə “Donda Chant” mahnısının açılışından qaynaqlanan əsas sülhü qorumağa çalışır. Albom, Vestin bir çox sevimli səs mövzularına toxunur və bu da onu onun təkrarolunmaz metodları üçün unikal bir başlanğıc nöqtəsi kimi uyğunlaşdırır."
+    description: "Kanye West-in 10-cu studiya albomu olan Donda-da o, alboma layihənin adını daşıyan mərhum anası haqqında düşüncələrlə başlayan Syleena Johnson-u işə götürür. West səsini təkrarlayır və ritmlərini dəyişir, lakin sakitləşdirici bir impuls saxlayır. Bu, West-in layihə boyunca istifadə etməyə çalışdığı bir keçid xəttidir və o, 2019-cu ildə çıxan “Jesus is King” mahnısının qospel impulslarını fanatlarının sevimlisi olan 2013-cü ildə çıxan “Yeezus” un elektro-treşi ilə birləşdirir. Həmişə olduğu kimi, West-də də albomda The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby və başqaları da daxil olmaqla bir çox əməkdaş iştirak edir. Bəzən albom amansızcasına eksperimental xarakter daşıyır, digərləri isə pop siyahılarının zirvəsinə yüksəlmək üçün çalışır. Lakin Kanye həmişə “Donda Chant” mahnısının açılışından qaynaqlanan əsas sülhü qorumağa çalışır. Albom, Vestin bir çox sevimli səs mövzularına toxunur və bu da onu onun təkrarolunmaz metodları üçün unikal bir başlanğıc nöqtəsi kimi uyğunlaşdırır.",
+    tracklist: [
+      { id: 1, name: "Donda Chant", isExplicit: false, duration: "0:52" },
+      { id: 2, name: "Hurricane (feat. The Weeknd & Lil Baby)", isExplicit: false, duration: "4:03" },
+      { id: 3, name: "Moon (feat. Don Toliver & Kid Cudi)", isExplicit: false, duration: "2:36" },
+      { id: 4, name: "Life Of The Party (feat. André 3000)", isExplicit: false, duration: "6:31" },
+      { id: 5, name: "Off The Grid (feat. Playboi Carti & Fivio Foreign)", isExplicit: false, duration: "5:39" },
+      { id: 6, name: "Jail (feat. JAY-Z)", isExplicit: false, duration: "4:57" },
+      { id: 7, name: "Praise God (feat. Baby Keem & Travis Scott)", isExplicit: false, duration: "3:46" },
+      { id: 8, name: "Come To Life", isExplicit: false, duration: "5:10" },
+      { id: 9, name: "Believe What I Say", isExplicit: false, duration: "4:52" },
+      { id: 10, name: "No Child Left Behind (feat. Vory)", isExplicit: false, duration: "2:58" },
+      { id: 11, name: "Up From The Ashes", isExplicit: false, duration: "2:42" },
+      { id: 12, name: "Remote Control pt 2 (feat. Young Thug & Kid Cudi)", isExplicit: false, duration: "5:23" },
+      { id: 13, name: "God Breathed (feat. Vory)", isExplicit: false, duration: "5:23" },
+      { id: 14, name: "Lord I Need You", isExplicit: false, duration: "2:42" },
+      { id: 15, name: "24", isExplicit: false, duration: "3:17" },
+      { id: 16, name: "Junya (feat. Playboi Carti)", isExplicit: false, duration: "2:27" },
+      { id: 17, name: "Never Abandon Your Family", isExplicit: false, duration: "3:27" },
+      { id: 18, name: "Donda (feat. Stalone & World Famous Tony Williams)", isExplicit: false, duration: "2:08" },
+      { id: 19, name: "Keep My Spirit Alive (feat. Conway the Machine & Westside Gunn)", isExplicit: false, duration: "3:41" },
+      { id: 20, name: "Jesus Lord pt 2 (feat. Jay Electronica & The LOX)", isExplicit: false, duration: "12:05" },
+      { id: 21, name: "Heaven and Hell", isExplicit: false, duration: "2:25" },
+      { id: 22, name: "Remote Control (feat. Young Thug)", isExplicit: false, duration: "3:18" },
+      { id: 23, name: "Tell The Vision (feat. Pop Smoke)", isExplicit: false, duration: "1:44" },
+      { id: 24, name: "Jonah (feat. Lil Durk & Vory)", isExplicit: false, duration: "3:15" },
+      { id: 25, name: "Pure Souls (feat. Roddy Rich & Shenseea)", isExplicit: false, duration: "5:58" },
+      { id: 26, name: "Ok Ok (feat. Lil Yachty & Rooga)", isExplicit: false, duration: "3:24" },
+      { id: 27, name: "New Again", isExplicit: false, duration: "3:03" },
+      { id: 28, name: "Jesus Lord (feat. Jay Electronica)", isExplicit: false, duration: "9:33" },
+      { id: 29, name: "Ok Ok pt 2 (feat. Shennesea)", isExplicit: false, duration: "2:34" },
+      { id: 30, name: "Junya pt 2 (feat. PLayboi Carti & Ty Dolla $ign)", isExplicit: false, duration: "3:02" },
+      { id: 31, name: "Jail pt 2 (feat. DaBaby & Marilyn Manson)", isExplicit: false, duration: "4:56" },
+      { id: 32, name: "Keep My Spirit Alive pt 2 (feat. Conway the Machine, KayCyy & Westside Gunn)", isExplicit: false, duration: "3:41" }
+    ]
   },
   {
     id: 49,
@@ -2050,7 +2091,41 @@ export const albums = [
     image: donda.cover,
     vinylImages: dondaCD.vinyl,
     format: "cd",
-    description: "Kanye West-in 10-cu studiya albomu olan Donda-da o, alboma layihənin adını daşıyan mərhum anası haqqında düşüncələrlə başlayan Syleena Johnson-u işə götürür. West səsini təkrarlayır və ritmlərini dəyişir, lakin sakitləşdirici bir impuls saxlayır. Bu, West-in layihə boyunca istifadə etməyə çalışdığı bir keçid xəttidir və o, 2019-cu ildə çıxan “Jesus is King” mahnısının qospel impulslarını fanatlarının sevimlisi olan 2013-cü ildə çıxan “Yeezus” un elektro-treşi ilə birləşdirir. Həmişə olduğu kimi, West-də də albomda The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby və başqaları da daxil olmaqla bir çox əməkdaş iştirak edir. Bəzən albom amansızcasına eksperimental xarakter daşıyır, digərləri isə pop siyahılarının zirvəsinə yüksəlmək üçün çalışır. Lakin Kanye həmişə “Donda Chant” mahnısının açılışından qaynaqlanan əsas sülhü qorumağa çalışır. Albom, Vestin bir çox sevimli səs mövzularına toxunur və bu da onu onun təkrarolunmaz metodları üçün unikal bir başlanğıc nöqtəsi kimi uyğunlaşdırır."
+    description: "Kanye West-in 10-cu studiya albomu olan Donda-da o, alboma layihənin adını daşıyan mərhum anası haqqında düşüncələrlə başlayan Syleena Johnson-u işə götürür. West səsini təkrarlayır və ritmlərini dəyişir, lakin sakitləşdirici bir impuls saxlayır. Bu, West-in layihə boyunca istifadə etməyə çalışdığı bir keçid xəttidir və o, 2019-cu ildə çıxan “Jesus is King” mahnısının qospel impulslarını fanatlarının sevimlisi olan 2013-cü ildə çıxan “Yeezus” un elektro-treşi ilə birləşdirir. Həmişə olduğu kimi, West-də də albomda The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby və başqaları da daxil olmaqla bir çox əməkdaş iştirak edir. Bəzən albom amansızcasına eksperimental xarakter daşıyır, digərləri isə pop siyahılarının zirvəsinə yüksəlmək üçün çalışır. Lakin Kanye həmişə “Donda Chant” mahnısının açılışından qaynaqlanan əsas sülhü qorumağa çalışır. Albom, Vestin bir çox sevimli səs mövzularına toxunur və bu da onu onun təkrarolunmaz metodları üçün unikal bir başlanğıc nöqtəsi kimi uyğunlaşdırır.",
+    tracklist: [
+      { id: 1, name: "Donda Chant", isExplicit: false, duration: "0:52" },
+      { id: 2, name: "Hurricane (feat. The Weeknd & Lil Baby)", isExplicit: false, duration: "4:03" },
+      { id: 3, name: "Moon (feat. Don Toliver & Kid Cudi)", isExplicit: false, duration: "2:36" },
+      { id: 4, name: "Life Of The Party (feat. André 3000)", isExplicit: false, duration: "6:31" },
+      { id: 5, name: "Off The Grid (feat. Playboi Carti & Fivio Foreign)", isExplicit: false, duration: "5:39" },
+      { id: 6, name: "Jail (feat. JAY-Z)", isExplicit: false, duration: "4:57" },
+      { id: 7, name: "Praise God (feat. Baby Keem & Travis Scott)", isExplicit: false, duration: "3:46" },
+      { id: 8, name: "Come To Life", isExplicit: false, duration: "5:10" },
+      { id: 9, name: "Believe What I Say", isExplicit: false, duration: "4:52" },
+      { id: 10, name: "No Child Left Behind (feat. Vory)", isExplicit: false, duration: "2:58" },
+      { id: 11, name: "Up From The Ashes", isExplicit: false, duration: "2:42" },
+      { id: 12, name: "Remote Control pt 2 (feat. Young Thug & Kid Cudi)", isExplicit: false, duration: "5:23" },
+      { id: 13, name: "God Breathed (feat. Vory)", isExplicit: false, duration: "5:23" },
+      { id: 14, name: "Lord I Need You", isExplicit: false, duration: "2:42" },
+      { id: 15, name: "24", isExplicit: false, duration: "3:17" },
+      { id: 16, name: "Junya (feat. Playboi Carti)", isExplicit: false, duration: "2:27" },
+      { id: 17, name: "Never Abandon Your Family", isExplicit: false, duration: "3:27" },
+      { id: 18, name: "Donda (feat. Stalone & World Famous Tony Williams)", isExplicit: false, duration: "2:08" },
+      { id: 19, name: "Keep My Spirit Alive (feat. Conway the Machine & Westside Gunn)", isExplicit: false, duration: "3:41" },
+      { id: 20, name: "Jesus Lord pt 2 (feat. Jay Electronica & The LOX)", isExplicit: false, duration: "12:05" },
+      { id: 21, name: "Heaven and Hell", isExplicit: false, duration: "2:25" },
+      { id: 22, name: "Remote Control (feat. Young Thug)", isExplicit: false, duration: "3:18" },
+      { id: 23, name: "Tell The Vision (feat. Pop Smoke)", isExplicit: false, duration: "1:44" },
+      { id: 24, name: "Jonah (feat. Lil Durk & Vory)", isExplicit: false, duration: "3:15" },
+      { id: 25, name: "Pure Souls (feat. Roddy Rich & Shenseea)", isExplicit: false, duration: "5:58" },
+      { id: 26, name: "Ok Ok (feat. Lil Yachty & Rooga)", isExplicit: false, duration: "3:24" },
+      { id: 27, name: "New Again", isExplicit: false, duration: "3:03" },
+      { id: 28, name: "Jesus Lord (feat. Jay Electronica)", isExplicit: false, duration: "9:33" },
+      { id: 29, name: "Ok Ok pt 2 (feat. Shennesea)", isExplicit: false, duration: "2:34" },
+      { id: 30, name: "Junya pt 2 (feat. PLayboi Carti & Ty Dolla $ign)", isExplicit: false, duration: "3:02" },
+      { id: 31, name: "Jail pt 2 (feat. DaBaby & Marilyn Manson)", isExplicit: false, duration: "4:56" },
+      { id: 32, name: "Keep My Spirit Alive pt 2 (feat. Conway the Machine, KayCyy & Westside Gunn)", isExplicit: false, duration: "3:41" }
+    ]
   },
   {
     id: 52,
@@ -2060,14 +2135,28 @@ export const albums = [
     genre: "Hip-Hop/Rap",
     year: 2008,
     isNew: false,
-    isExplicit: true,
+    isExplicit: false,
     image: heartbreak.cover,
     vinylImages: heartbreak.vinyl,
     vinylColor: "white",
     sleeveColor: "white",
     accentColor: "white",
     format: "vinyl",
-    description: "Bəlkə də 808 & Heartbreak üçün ən yaxşı müqayisə Bob Dilanın 1965-ci ildə elektrik musiqisinə keçməsi ilə bağlıdır Lakin gələcəyinizi həmin küləyin sizi hara aparacağına bahis etmək üçün kifayət qədər yaxşı daxili kompasınız olmalıdır."
+    description: "Bəlkə də 808 & Heartbreak üçün ən yaxşı müqayisə Bob Dilanın 1965-ci ildə elektrik musiqisinə keçməsi ilə bağlıdır Lakin gələcəyinizi həmin küləyin sizi hara aparacağına bahis etmək üçün kifayət qədər yaxşı daxili kompasınız olmalıdır.",
+    tracklist: [
+      { id: 1, name: "Say You Will", isExplicit: false, duration: "6:17" },
+      { id: 2, name: "Welcome To Heartbreak (feat. Kid Cudi)", isExplicit: false, duration: "4:22" },
+      { id: 3, name: "Heartless", isExplicit: false, duration: "3:31" },
+      { id: 4, name: "Amazing (feat. Jeezy)", isExplicit: false, duration: "3:58" },
+      { id: 5, name: "Love Lockdown", isExplicit: false, duration: "4:30" },
+      { id: 6, name: "Paranoid (feat. Mr Hudston)", isExplicit: false, duration: "4:37" },
+      { id: 7, name: "RoboCop", isExplicit: false, duration: "4:34" },
+      { id: 8, name: "Street Lights", isExplicit: false, duration: "3:09" },
+      { id: 9, name: "Bad News", isExplicit: false, duration: "3:58" },
+      { id: 10, name: "See You In My Nightmares (feat. Lil Wayne)", isExplicit: false, duration: "4:18" },
+      { id: 11, name: "Coldest Winter", isExplicit: false, duration: "2:44" },
+      { id: 12, name: "Pinochio Story", isExplicit: false, duration: "6:01" },
+    ]
   },
   {
     id: 43,
@@ -2080,9 +2169,26 @@ export const albums = [
     isExplicit: true,
     image: graduation.cover,
     vinylImages: graduation.vinyl,
+    tracklistImage: graduation.tracklist,
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768299876/graduation_animated_emuqiv.gif",
     format: "cd",
-    description: "Graduation amerikalı reper Kanye Westin üçüncü studiya albomudur. Albom 11 sentyabr 2007-ci ildə çıxıb. Albomun prodüserliyi əsasən Westin özü tərəfindən həyata keçirilib və DJ Toomp da daxil olmaqla, müxtəlif prodüserlər də bu albomu hazırlayıblar. Albomda Dwele, T-Pain, Lil Wayne, Mos Def, DJ Premier və Chris Martin kimi səsyazma sənətçiləri qonaq kimi çıxış ediblər."
+    description: "Graduation amerikalı reper Kanye Westin üçüncü studiya albomudur. Albom 11 sentyabr 2007-ci ildə çıxıb. Albomun prodüserliyi əsasən Westin özü tərəfindən həyata keçirilib və DJ Toomp da daxil olmaqla, müxtəlif prodüserlər də bu albomu hazırlayıblar. Albomda Dwele, T-Pain, Lil Wayne, Mos Def, DJ Premier və Chris Martin kimi səsyazma sənətçiləri qonaq kimi çıxış ediblər.",
+    tracklist: [
+      { id: 1, name: "Good Morning", isExplicit: true, duration: "3:15" },
+      { id: 2, name: "Champion", isExplicit: true, duration: "2:47" },
+      { id: 3, name: "Stronger", isExplicit: true, duration: "5:11" },
+      { id: 4, name: "I Wonder", isExplicit: true, duration: "4:03" },
+      { id: 5, name: "Good Life (feat. T-Pain)", isExplicit: true, duration: "3:27" },
+      { id: 6, name: "Can't Tell Me Nothing", isExplicit: true, duration: "4:26" },
+      { id: 7, name: "Barry Bonds (feat. Lil Wayne)", isExplicit: true, duration: "3:24" },
+      { id: 8, name: "Drunk and Hot Girls (feat. Mos Def)", isExplicit: true, duration: "5:13" },
+      { id: 9, name: "Flashing Lights (feat. Dwele)", isExplicit: true, duration: "3:57" },
+      { id: 10, name: "Everything I Am (feat. DJ Premier)", isExplicit: true, duration: "3:47" },
+      { id: 11, name: "The Glory", isExplicit: true, duration: "3:32" },
+      { id: 12, name: "Homecoming", isExplicit: true, duration: "3:23" },
+      { id: 13, name: "Big Brother", isExplicit: true, duration: "4:47" },
+      { id: 14, name: "Good Night (feat. Mos Def & Albe Back)", isExplicit: true, duration: "3:05" },
+    ]
   },
   {
     id: 68,
@@ -2096,7 +2202,19 @@ export const albums = [
     image: yeezus.cover,
     accentColor: "red",
     format: "cd",
-    description: "Yeezus, amerikalı reper Kanye Westin altıncı studiya albomudur. Albom 18 iyun 2013-cü ildə çıxıb. Qonaq qruplar arasında Justin Vernon, Chief Keef, Kid Cudi, Assassin, King L, Charlie Wilson və Frank Ocean yer alır."
+    description: "Yeezus, amerikalı reper Kanye Westin altıncı studiya albomudur. Albom 18 iyun 2013-cü ildə çıxıb. Qonaq qruplar arasında Justin Vernon, Chief Keef, Kid Cudi, Assassin, King L, Charlie Wilson və Frank Ocean yer alır.",
+    tracklist: [
+      { id: 1, name: "On Sight", isExplicit: true, duration: "2:36" },
+      { id: 2, name: "Black Skinhead", isExplicit: true, duration: "3:08" },
+      { id: 3, name: "I Am A God", isExplicit: true, duration: "3:51" },
+      { id: 4, name: "New Slaves", isExplicit: true, duration: "4:16" },
+      { id: 5, name: "Hold My Liquor", isExplicit: true, duration: "5:26" },
+      { id: 6, name: "I'm In It", isExplicit: true, duration: "3:54" },
+      { id: 7, name: "Blood On The Leaves", isExplicit: true, duration: "5:59" },
+      { id: 8, name: "Guilt Trip", isExplicit: true, duration: "4:03" },
+      { id: 9, name: "Send It Up", isExplicit: true, duration: "2:58" },
+      { id: 10, name: "Bound 2", isExplicit: true, duration: "3:49" },
+    ]
   },
   {
     id: 35,
@@ -2118,6 +2236,20 @@ export const albums = [
     variants: [
       { id: 1, name: "UY SCUTI (ALTERNATİV ÖRTÜK 1)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uySvuti_vinyl4_cfzzmx.png" },
       { id: 2, name: "UY SCUTI (SP5DER NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uy_scuti_vinyl1_zenbqk.png" }
+    ],
+    tracklist: [
+      { id: 1, name: "Sad Slime", isExplicit: true, duration: "3:28" },
+      { id: 2, name: "Fucking Told U", isExplicit: true, duration: "2:54" },
+      { id: 3, name: "Money On Money (feat. Future)", isExplicit: true, duration: "3:56" },
+      { id: 4, name: "Walk Down (feat. 21 Savage)", isExplicit: true, duration: "2:40" },
+      { id: 5, name: "Yuck (feat. Ken Carson)", isExplicit: true, duration: "4:08" },
+      { id: 6, name: "Pipe Down (feat. Travis Scott)", isExplicit: true, duration: "3:30" },
+      { id: 7, name: "Spit In My Mouth", isExplicit: true, duration: "3:31" },
+      { id: 8, name: "Birthday Boy (feat. Maria The Scientist)", isExplicit: true, duration: "3:21" },
+      { id: 9, name: "Pussy Smell Like This", isExplicit: true, duration: "2:27" },
+      { id: 10, name: "Mami (feat. Sexyy Red)", isExplicit: true, duration: "2:47" },
+      { id: 11, name: "I'm So Dope", isExplicit: true, duration: "2:35" },
+      { id: 12, name: "On The News", isExplicit: true, duration: "3:14" },
     ]
   },
   {
