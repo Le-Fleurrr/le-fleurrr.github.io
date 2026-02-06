@@ -32,7 +32,6 @@ export const FavoritesProvider = ({ children }) => {
         }
       }
     } catch (error) {
-      console.log('No favorites found or error loading:', error);
       setFavorites([]);
     } finally {
       setIsLoading(false);
@@ -41,7 +40,7 @@ export const FavoritesProvider = ({ children }) => {
 
   const saveFavorites = async (newFavorites) => {
     try {
-      if (typeof window !== 'undefined' && window.storage) {
+      if (typeof window !== 'undefined' && window.Storage) {
         await window.Storage.set('favorites', JSON.stringify(newFavorites));
       } else {
         localStorage.setItem('favorites', JSON.stringify(newFavorites));
@@ -110,8 +109,6 @@ export const FavoriteButton = ({ albumId, size = "default", className = "" }) =>
     e.preventDefault();
     e.stopPropagation();
     
-    console.log('FavoriteButton clicked for album:', albumId);
-    
     setIsAnimating(true);
     await toggleFavorite(albumId);
     
@@ -119,8 +116,6 @@ export const FavoriteButton = ({ albumId, size = "default", className = "" }) =>
   };
 
   const favorited = isFavorite(albumId);
-  
-  console.log('FavoriteButton render - albumId:', albumId, 'favorited:', favorited);
   
   const sizeClasses = {
     small: "w-8 h-8",

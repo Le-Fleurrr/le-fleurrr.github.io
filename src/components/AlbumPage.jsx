@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/Button.tsx";
-import { 
-  ArrowLeft, ChevronLeft, ChevronRight, ShoppingCart, 
-  Star, MessageSquare, ListMusic, Info, Reply 
+import {
+  ArrowLeft, ChevronLeft, ChevronRight, ShoppingCart,
+  Star, MessageSquare, ListMusic, Info, Reply, Play, Pause
 } from "lucide-react";
 import { albums } from "./Albums.jsx";
 import { FavoriteButton } from './FavoritesSystem';
@@ -21,7 +21,7 @@ const getArtistList = (album) => {
 const AlbumPage = () => {
   const { albumId } = useParams();
   const navigate = useNavigate();
-  
+
   // UI States
   const [imageError, setImageError] = useState(false);
   const [showAnimated, setShowAnimated] = useState(true);
@@ -40,6 +40,10 @@ const AlbumPage = () => {
   const [replyingTo, setReplyingTo] = useState(null);
   const [replyText, setReplyText] = useState("");
 
+  const [currentlyPlaying, setCurrentlyPlaying] = useState(null); // { discIndex, trackIndex }
+  const audioRef = useRef(null);
+
+
   const album = albums.find((a) => a.id === parseInt(albumId || "", 10));
 
   if (!album) {
@@ -55,7 +59,7 @@ const AlbumPage = () => {
 
   const artistList = getArtistList(album);
   const staticCovers = Array.isArray(album.image) ? album.image : album.image ? [album.image] : [];
-  
+
   const galleryImages = [
     ...(album.animatedCover
       ? [{ url: showAnimated ? album.animatedCover : staticCovers[0], type: "cover" }]
@@ -97,6 +101,30 @@ const AlbumPage = () => {
     setReplyingTo(null);
   };
 
+  const handlePlayPause = (discIndex, trackIndex, audioUrl) => {
+    if (!audioUrl) return;
+
+    const isSameTrack = currentlyPlaying?.discIndex === discIndex && currentlyPlaying?.trackIndex === trackIndex;
+
+    if (isSameTrack) {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+      setCurrentlyPlaying(null);
+    } else {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = audioUrl;
+        audioRef.current.play().catch(err => console.error("Audio playback error:", err));
+      }
+      setCurrentlyPlaying({ discIndex, trackIndex });
+    }
+  };
+
+  const isTrackPlaying = (discIndex, trackIndex) => {
+    return currentlyPlaying?.discIndex === discIndex && currentlyPlaying?.trackIndex === trackIndex;
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
@@ -111,7 +139,7 @@ const AlbumPage = () => {
             ) : (
               <div className="w-full h-full flex items-center justify-center">Şəkil yüklənmədi</div>
             )}
-            
+
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-mono z-20">
               {selectedImage + 1} / {galleryImages.length}
             </div>
@@ -139,9 +167,8 @@ const AlbumPage = () => {
                   <button
                     key={index}
                     onClick={() => { setSelectedImage(index); setImageError(false); }}
-                    className={`flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-3 transition-all ${
-                      selectedImage === index ? "border-primary shadow-xl scale-105 ring-2 ring-primary/50" : "border-border hover:border-primary/50"
-                    }`}
+                    className={`flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-3 transition-all ${selectedImage === index ? "border-primary shadow-xl scale-105 ring-2 ring-primary/50" : "border-border hover:border-primary/50"
+                      }`}
                   >
                     <img src={img.url} alt={`${img.type} ${index + 1}`} className="w-full h-full object-cover" />
                   </button>
@@ -178,12 +205,11 @@ const AlbumPage = () => {
               { id: "tracklist", label: "Mahnı Siyahısı", icon: <ListMusic className="w-4 h-4" /> },
               { id: "interactions", label: "Rəylər və Suallar", icon: <MessageSquare className="w-4 h-4" /> }
             ].map((tab) => (
-              <button 
-                key={tab.id} 
-                onClick={() => setActiveTab(tab.id)} 
-                className={`flex items-center gap-2 px-8 py-4 text-sm font-bold transition-all border-b-2 ${
-                  activeTab === tab.id ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-foreground"
-                }`}
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center gap-2 px-8 py-4 text-sm font-bold transition-all border-b-2 ${activeTab === tab.id ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 {tab.icon} {tab.label}
               </button>
@@ -221,9 +247,8 @@ const AlbumPage = () => {
                             const variantImageIndex = galleryImages.findIndex(img => img.url === variant.image);
                             if (variantImageIndex !== -1) setSelectedImage(variantImageIndex);
                           }}
-                          className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                            selectedVariant === variant.id ? "border-primary ring-2 ring-primary/50" : "border-border hover:border-primary/50"
-                          }`}
+                          className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${selectedVariant === variant.id ? "border-primary ring-2 ring-primary/50" : "border-border hover:border-primary/50"
+                            }`}
                         >
                           <img src={variant.image} alt={variant.name} className="w-full h-full object-cover" />
                           <div className="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-sm p-1 text-center">
@@ -263,23 +288,94 @@ const AlbumPage = () => {
               </div>
             )}
             {activeTab === "tracklist" && (
-              <div className="space-y-1">
-                {album.tracklist?.map((track, i) => {
-                  const isTrackExplicit = typeof track === 'object' ? (track.explicit || track.isExplicit) : false;
-                  const trackTitle = typeof track === 'object' ? (track.title || track.name) : track;
-                  return (
-                    <div key={i} className="flex justify-between items-center p-4 rounded-xl hover:bg-muted/50 transition-colors">
-                      <div className="flex items-center gap-4">
-                        <span className="font-mono text-muted-foreground w-6">{i + 1}</span>
-                        <div className="flex items-center gap-2">
-                          <span className="font-medium">{trackTitle}</span>
-                          {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
-                        </div>
-                      </div>
-                      <span className="text-sm font-mono text-muted-foreground">{track.duration || "--:--"}</span>
+              <div className="space-y-6">
+                {/* Hidden audio element for playback */}
+                <audio ref={audioRef} onEnded={() => setCurrentlyPlaying(null)} />
+                
+                {album.discs ? (
+                  // Multi-disc album
+                  album.discs.map((disc, discIndex) => (
+                    <div key={discIndex} className="space-y-2">
+                      <h3 className="text-lg font-bold text-primary mt-6 mb-3">
+                        {disc.title || `Disc ${discIndex + 1}`}
+                      </h3>
+                      {disc.tracks?.map((track, trackIndex) => {
+                        const isTrackExplicit = typeof track === 'object' ? (track.explicit || track.isExplicit) : false;
+                        const trackTitle = typeof track === 'object' ? (track.title || track.name) : track;
+                        const audioUrl = typeof track === 'object' ? track.audio : null;
+                        const playing = isTrackPlaying(discIndex, trackIndex);
+                        
+                        return (
+                          <div key={trackIndex} className="flex justify-between items-center p-4 rounded-xl hover:bg-muted/50 transition-colors group">
+                            <div className="flex items-center gap-4">
+                              {audioUrl && (
+                                <button
+                                  onClick={() => handlePlayPause(discIndex, trackIndex, audioUrl)}
+                                  className="w-8 h-8 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-all"
+                                >
+                                  {playing ? (
+                                    <Pause className="w-4 h-4 text-primary" />
+                                  ) : (
+                                    <Play className="w-4 h-4 text-primary ml-0.5" />
+                                  )}
+                                </button>
+                              )}
+                              <span className="font-mono text-muted-foreground w-6">{trackIndex + 1}</span>
+                              <div className="flex items-center gap-2">
+                                <span className={`font-medium ${playing ? 'text-primary' : ''}`}>{trackTitle}</span>
+                                {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
+                              </div>
+                            </div>
+                            <span className="text-sm font-mono text-muted-foreground">{track.duration || "--:--"}</span>
+                          </div>
+                        );
+                      })}
                     </div>
-                  );
-                })}
+                  ))
+                ) : (
+                  // Single-disc album
+                  <div className="space-y-1">
+                    {album.tracklist?.map((track, trackIndex) => {
+                      const isTrackExplicit = typeof track === 'object' ? (track.explicit || track.isExplicit) : false;
+                      const trackTitle = typeof track === 'object' ? (track.title || track.name) : track;
+                      const audioUrl = typeof track === 'object' ? track.audio : null;
+                      const playing = isTrackPlaying(0, trackIndex);
+                      
+                      return (
+                        <div key={trackIndex} className="flex justify-between items-center p-4 rounded-xl hover:bg-muted/50 transition-colors group">
+                          <div className="flex items-center gap-4">
+                            {audioUrl && (
+                              <button
+                                onClick={() => handlePlayPause(0, trackIndex, audioUrl)}
+                                className="w-8 h-8 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-all"
+                              >
+                                {playing ? (
+                                  <Pause className="w-4 h-4 text-primary" />
+                                ) : (
+                                  <Play className="w-4 h-4 text-primary ml-0.5" />
+                                )}
+                              </button>
+                            )}
+                            <span className="font-mono text-muted-foreground w-6">{trackIndex + 1}</span>
+                            <div className="flex items-center gap-2">
+                              <span className={`font-medium ${playing ? 'text-primary' : ''}`}>{trackTitle}</span>
+                              {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
+                            </div>
+                          </div>
+                          <span className="text-sm font-mono text-muted-foreground">{track.duration || "--:--"}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+                <div className="pt-6 mt-6 border-t border-border">
+                  <p className="text-xs text-muted-foreground text-left">
+                    {album.releaseDate && <span>{album.releaseDate} <br /></span>}
+                    {album.duration && <span>{album.duration}</span>}
+                    {(album.releaseDate || album.duration) && album.label && <br />}
+                    {album.label && <span>© {album.year} {album.label}</span>}
+                  </p>
+                </div>
               </div>
             )}
 
@@ -344,6 +440,7 @@ const AlbumPage = () => {
               </div>
             )}
           </div>
+          
           <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-8">
             <div className="text-center sm:text-left">
               <p className="text-4xl font-serif font-bold">{(album.price * quantity).toFixed(2)} ₼</p>

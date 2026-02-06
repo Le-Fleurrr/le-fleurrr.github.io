@@ -63,19 +63,15 @@ const playboiCarti = {
 const wholeLottaRed = {
   cover: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226181/WLR_llw1gy.png',
     'https://res.cloudinary.com/deroy68n9/image/upload/v1768226186/WLR_5yearIndie_bgohfp.jpg',
-    'https://res.cloudinary.com/deroy68n9/image/upload/v1768569772/wlr_5yearTarget_siesp6.png',
     'https://res.cloudinary.com/deroy68n9/image/upload/v1768397556/G89QeAZXYAAbT0x_jkaovf.jpg',
     'https://res.cloudinary.com/deroy68n9/image/upload/v1768397557/R-35942476-1765996836-9926_bxdlro.jpg',
   ],
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768319053/WLR_Vinyl_gi2cye.png",
     "https://res.cloudinary.com/deroy68n9/image/upload/v1768226183/WLRVinyl_Indie_flowgy.jpg",
-    'https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5YearTarget_ccgqim.jpg',
     'https://res.cloudinary.com/deroy68n9/image/upload/v1768226186/WLR_5yearRed_r5i9vm.png',
     'https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5yearWhite_d5bnx8.png'
   ],
-  tracklist: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226190/WLR_tl_oopofj.jpg",
-    "https://res.cloudinary.com/deroy68n9/image/upload/v1768397553/R-35837188-1764950326-8808_oxtwh6.jpg"
-  ]
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226190/WLR_tl_oopofj.jpg"
 };
 
 const lateRegistration = {
@@ -555,7 +551,10 @@ export const albums = [
       { id: 20, name: "Red Terror", isExplicit: false, duration: "3:51" },
       { id: 21, name: "Without A Warning", isExplicit: false, duration: "4:57" },
       { id: 22, name: "Hurry Up Tomorrow", isExplicit: false, duration: "4:51" },
-    ]
+    ],
+    releaseDate: "31 January 2025",
+    duration: "22 mahnılar, 1 saat 24 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc.",
   },
   {
     id: 2,
@@ -590,7 +589,10 @@ export const albums = [
       { id: 14, name: "Apple Pie", isExplicit: true, duration: "3:39" },
       { id: 15, name: "Ok Alright (feat. ScHoolboy Q)", isExplicit: true, duration: "6:57" },
       { id: 16, name: "Never Catch Me", isExplicit: true, duration: "2:56" },
-    ]
+    ],
+    releaseDate: "14 September 2015",
+    duration: "16 mahnılar, 1 saat 15 dəqiqə",
+    label: "Cactus Jack Records, LLC under exclusive license to Epic Records, a division of Sony Music Entertainment",
   },
   {
     id: 3,
@@ -630,7 +632,10 @@ export const albums = [
       { id: 19, name: "Through THe Wire", isExplicit: true, duration: "3:41" },
       { id: 20, name: "Family Business", isExplicit: true, duration: "4:38" },
       { id: 21, name: "Last Call", isExplicit: true, duration: "12:40" },
-    ]
+    ],
+    releaseDate: "10 February 2004",
+    duration: "21 mahnılar, 1 saat 16 dəqiqə",
+    label: "UMG Recording, Inc.",
   },
   {
     id: 4,
@@ -681,7 +686,10 @@ export const albums = [
       { id: 22, name: "Die4Guy", isExplicit: true, duration: "2:11" },
       { id: 1, name: "Not PLaying", isExplicit: true, duration: "2:10" },
       { id: 1, name: "F33l Like Dyin", isExplicit: true, duration: "3:24" },
-    ]
+    ],
+    releaseDate: "25 December 2020",
+    duration: "24 mahnılar, 1 saat 13 dəqiqə",
+    label: "AWGE/Interscope",
   },
   {
     id: 5,
@@ -716,7 +724,10 @@ export const albums = [
       { id: 14, name: "JUGGERNAUT (feat Lil Uzi Vert & Pharell Williams)", isExplicit: true, duration: "2:26" },
       { id: 15, name: "WILLSHIRE", isExplicit: true, duration: "8:35" },
       { id: 16, name: "SAFARI", isExplicit: true, duration: "2:57" },
-    ]
+    ],
+    releaseDate: "25 June 2021",
+    duration: "16 mahnılar, 52 dəqiqə",
+    label: "Columbia Records, a Division of Sony Entertainment, as exclusive licensee",
   },
   {
     id: 6,
@@ -735,33 +746,43 @@ export const albums = [
     accentColor: "purple",
     format: "vinyl",
     description: "We Still Don't Trust You amerikalı reper Future və amerikalı səs prodüseri Metro Boominin ikinci birgə studiya albomudur. Albom 12 aprel 2024-cü ildə satışa çıxarılıb. Albomda Weeknd, Chris Brown, Brownstone, Ty Dolla Sign, J. Cole, Lil Baby və A$AP Rocky kimi qrupların qonaq çıxışları yer alıb. İstehsal əsasən Metro tərəfindən Mike Dean, Wheezy, Dre Moon, Southside, Chopsquad DJ, Allen Ritter, Oz, Honorable C.N.O.T.E. və başqalarının köməyi ilə həyata keçirilib. Albom Future və Metro Boominin We Still Don't Trust You albomundan üç həftə əvvəl çıxan ilk əməkdaşlığı olan We Don't Trust You albomundan sonra çıxıb.",
-    tracklist: [
-      { id: 1, name: "We Still Don't Trust You (feat. The Weeknd)", isExplicit: true, duration: "4:12" },
-      { id: 2, name: "Drink N Dance", isExplicit: true, duration: "3:40" },
-      { id: 3, name: "Out Of My Hands", isExplicit: true, duration: "4:03" },
-      { id: 4, name: "Jealous", isExplicit: true, duration: "3:44" },
-      { id: 5, name: "This Sunday", isExplicit: true, duration: "3:18" },
-      { id: 6, name: "Luv Bad Bitches (feat. Brownstone)", isExplicit: true, duration: "3:16" },
-      { id: 7, name: "Amazing (Interlude)", isExplicit: true, duration: "2:24" },
-      { id: 8, name: "All TO Myself (feat. The Weeknd)", isExplicit: true, duration: "4:14" },
-      { id: 9, name: "Nights Like This", isExplicit: true, duration: "3:52" },
-      { id: 10, name: "Came to the Party", isExplicit: true, duration: "3:18" },
-      { id: 11, name: "Right 4 You", isExplicit: true, duration: "3:56" },
-      { id: 12, name: "Mile High Memories", isExplicit: true, duration: "3:39" },
-      { id: 13, name: "Overload", isExplicit: true, duration: "3:44" },
-      { id: 14, name: "Gracious (feat. Ty Dolla $ign)", isExplicit: true, duration: "3:06" },
-      { id: 15, name: "Beat It", isExplicit: true, duration: "3:18" },
-      { id: 16, name: "Always Be My Fault (feat. The Weeknd)", isExplicit: true, duration: "4:06" },
-      { id: 17, name: "One Big Family", isExplicit: true, duration: "4:05" },
-      { id: 18, name: "Red Leather", isExplicit: true, duration: "6:54" },
-      { id: 19, name: "[DISK 2] #1 (Intro)", isExplicit: true, duration: "0:41" },
-      { id: 20, name: "Nobody Knows My Struggle", isExplicit: true, duration: "3:25" },
-      { id: 21, name: "All My Life (feat. Lil Baby)", isExplicit: true, duration: "3:10" },
-      { id: 22, name: "Crossed Out", isExplicit: true, duration: "2:22" },
-      { id: 23, name: "Crazy Clientele", isExplicit: true, duration: "3:09" },
-      { id: 24, name: "Show Of Hands (feat. A$AP Rocky)", isExplicit: true, duration: "3:33" },
-      { id: 15, name: "Streets Made Me A King", isExplicit: true, duration: "3:04" },
-    ]
+    discs: [
+      {
+        title: "Disk 1",
+        tracks: [{ id: 1, name: "We Still Don't Trust You (feat. The Weeknd)", isExplicit: true, duration: "4:12" },
+        { id: 2, name: "Drink N Dance", isExplicit: true, duration: "3:40" },
+        { id: 3, name: "Out Of My Hands", isExplicit: true, duration: "4:03" },
+        { id: 4, name: "Jealous", isExplicit: true, duration: "3:44" },
+        { id: 5, name: "This Sunday", isExplicit: true, duration: "3:18" },
+        { id: 6, name: "Luv Bad Bitches (feat. Brownstone)", isExplicit: true, duration: "3:16" },
+        { id: 7, name: "Amazing (Interlude)", isExplicit: true, duration: "2:24" },
+        { id: 8, name: "All TO Myself (feat. The Weeknd)", isExplicit: true, duration: "4:14" },
+        { id: 9, name: "Nights Like This", isExplicit: true, duration: "3:52" },
+        { id: 10, name: "Came to the Party", isExplicit: true, duration: "3:18" },
+        { id: 11, name: "Right 4 You", isExplicit: true, duration: "3:56" },
+        { id: 12, name: "Mile High Memories", isExplicit: true, duration: "3:39" },
+        { id: 13, name: "Overload", isExplicit: true, duration: "3:44" },
+        { id: 14, name: "Gracious (feat. Ty Dolla $ign)", isExplicit: true, duration: "3:06" },
+        { id: 15, name: "Beat It", isExplicit: true, duration: "3:18" },
+        { id: 16, name: "Always Be My Fault (feat. The Weeknd)", isExplicit: true, duration: "4:06" },
+        { id: 17, name: "One Big Family", isExplicit: true, duration: "4:05" },
+        { id: 18, name: "Red Leather", isExplicit: true, duration: "6:54" },]
+      },
+      {
+        title: "Disk 2",
+        tracks: [
+          { id: 1, name: "#1 (Intro)", isExplicit: true, duration: "0:41" },
+          { id: 2, name: "Nobody Knows My Struggle", isExplicit: true, duration: "3:25" },
+          { id: 3, name: "All My Life (feat. Lil Baby)", isExplicit: true, duration: "3:10" },
+          { id: 4, name: "Crossed Out", isExplicit: true, duration: "2:22" },
+          { id: 5, name: "Crazy Clientele", isExplicit: true, duration: "3:09" },
+          { id: 6, name: "Show Of Hands (feat. A$AP Rocky)", isExplicit: true, duration: "3:33" },
+          { id: 7, name: "Streets Made Me A King", isExplicit: true, duration: "3:04" },]
+      }
+    ],
+    releaseDate: "12 Aprel 2024",
+    duration: "24 mahnılar, 1 saat 13 dəqiqə",
+    label: "AWGE/Interscope",
   },
   {
     id: 14,
@@ -802,7 +823,10 @@ export const albums = [
       { id: 20, name: "Red Terror", isExplicit: false, duration: "3:51" },
       { id: 21, name: "Without A Warning", isExplicit: false, duration: "4:57" },
       { id: 22, name: "Hurry Up Tomorrow", isExplicit: false, duration: "4:51" },
-    ]
+    ],
+    releaseDate: "31 January 2025",
+    duration: "22 mahnılar, 1 saat 24 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc.",
   },
   {
     id: 48,
@@ -832,7 +856,9 @@ export const albums = [
       { id: 9, name: "Give Me Mercy", isExplicit: false, duration: "3:45" },
       { id: 10, name: "Enjoy The Show (feat. Future)", isExplicit: true, duration: "5:01" },
       { id: 11, name: "Runaway", isExplicit: false, duration: "3:20" },
-    ]
+    ], releaseDate: "31 January 2025",
+    duration: "22 mahnılar, 1 saat 24 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc.",
   },
   {
     id: 53,
@@ -862,10 +888,13 @@ export const albums = [
       { id: 9, name: "Give Me Mercy", isExplicit: false, duration: "3:45" },
       { id: 10, name: "Enjoy The Show (feat. Future)", isExplicit: true, duration: "5:01" },
       { id: 11, name: "Runaway", isExplicit: false, duration: "3:20" },
-    ]
+    ],
+    releaseDate: "31 January 2025",
+    duration: "22 mahnılar, 1 saat 24 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc.",
   },
   {
-    id: 37,
+    id: 23421,
     title: "Hurry Up Tomorrow (Original Motion Soundtrack) [2LP]",
     artist: ["The Weeknd"],
     price: 99.99,
@@ -907,7 +936,10 @@ export const albums = [
       { id: 21, name: "Red Terror", isExplicit: false, duration: "3:51" },
       { id: 22, name: "Without A Warning", isExplicit: false, duration: "4:57" },
       { id: 23, name: "Hurry Up Tomorrow", isExplicit: false, duration: "4:51" },
-    ]
+    ],
+    releaseDate: "31 January 2025",
+    duration: "22 mahnılar, 1 saat 24 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc.",
   },
   {
     id: 40,
@@ -951,7 +983,10 @@ export const albums = [
       { id: 21, name: "Red Terror", isExplicit: false, duration: "3:51" },
       { id: 22, name: "Without A Warning", isExplicit: false, duration: "4:57" },
       { id: 23, name: "Hurry Up Tomorrow", isExplicit: false, duration: "4:51" },
-    ]
+    ],
+    releaseDate: "31 January 2025",
+    duration: "22 mahnılar, 1 saat 24 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc.",
   },
   {
     id: 7,
@@ -986,7 +1021,10 @@ export const albums = [
       { id: 12, name: "Repeat After Me", isExplicit: true, duration: "3:15" },
       { id: 13, name: "After Hours", isExplicit: true, duration: "6:01" },
       { id: 14, name: "Until I Bleed Out", isExplicit: true, duration: "3:10" },
-    ]
+    ],
+    releaseDate: "20 March 2020",
+    duration: "14 mahnılar, 56 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc.",
   },
   {
     id: 15,
@@ -1024,7 +1062,10 @@ export const albums = [
       { id: 12, name: "Repeat After Me", isExplicit: true, duration: "3:15" },
       { id: 13, name: "After Hours", isExplicit: true, duration: "6:01" },
       { id: 14, name: "Until I Bleed Out", isExplicit: true, duration: "3:10" },
-    ]
+    ],
+    releaseDate: "20 March 2020",
+    duration: "14 mahnılar, 56 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc.",
   },
   {
     id: 8,
@@ -1513,7 +1554,10 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "cd",
-    description: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir."
+    description: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir.",
+    releaseDate: "25 June 2021",
+    duration: "16 mahnılar, 52 dəqiqə",
+    label: "Columbia Records, a Division of Sony Entertainment, as exclusive licensee",
   },
   {
     id: 63,
@@ -1530,7 +1574,10 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "blue",
     format: "vinyl",
-    description: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir."
+    description: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir.",
+    releaseDate: "25 June 2021",
+    duration: "16 mahnılar, 52 dəqiqə",
+    label: "Columbia Records, a Division of Sony Entertainment, as exclusive licensee",
   },
   {
     id: 23,
@@ -2269,7 +2316,44 @@ export const albums = [
     accentColor: "blue",
     format: "vinyl",
     description: "Hardstone Psycho albomuna Travis Scott, Future & Metro Boomin, Kodak Black kimi tanınmış musiqiçilər daxildir, həmçinin bu yaxınlarda buraxılmış Attitude (Ft. Charlie Wilson & Cash Cobain), Deep In The Water və Bandit kimi sinqllar da daxildir.",
-    tracklist: []
+    discs: [
+      {
+        title: "Disk 1",
+        tracks: [
+          { id: 1, name: "KRYPTONITE", isExplicit: true, duration: "3:02" },
+          { id: 2, name: "TORE UP", isExplicit: true, duration: "2:06" },
+          { id: 3, name: "BROTHER STONE (FEAT. KODAK BLACK)", isExplicit: true, duration: "3:22" },
+          { id: 4, name: "ATTITUDE (FEAT. CHARLIE WILSON & CASH COBAIN)", isExplicit: true, duration: "2:41" }
+        ]
+      },
+      {
+        title: "Disk 2",
+        tracks: [
+          { id: 1, name: "BANDIT", isExplicit: true, duration: "2:27" },
+          { id: 2, name: "GLOCK", isExplicit: true, duration: "3:48" },
+          { id: 3, name: "ICE AGE (FEAT. TRAVIS SCOTT)", isExplicit: true, duration: "3:38" },
+          { id: 4, name: "4X4", isExplicit: true, duration: "3:22" }
+        ]
+      },
+      {
+        title: "Disk 3",
+        tracks: [
+          { id: 1, name: "PURPLE RAIN (FEAT. FUTURE & METRO BOOMIN)", isExplicit: true, duration: "3:27" },
+          { id: 2, name: "NEW DROP", isExplicit: true, duration: "3:37" },
+          { id: 3, name: "BACKSTREETS (FEAT. TEEZO TOUCHDOWN)", isExplicit: true, duration: "3:17" },
+          { id: 4, name: "DEEP IN THE WATER", isExplicit: true, duration: "2:50" },
+        ]
+      },
+      {
+        title: "Disk 4",
+        tracks: [
+          { id: 1, name: "INSIDE (FEAT. TRAVIS SCOTT)", isExplicit: true, duration: "4:10" },
+          { id: 2, name: "5 TO 10", isExplicit: true, duration: "3:13" },
+          { id: 3, name: "LAST LAUGH", isExplicit: true, duration: "4:01" },
+          { id: 4, name: "HARSTONE NATIONAL ANTHEM", isExplicit: true, duration: "2:41" },
+        ]
+      }
+    ]
   },
   {
     id: 39,
