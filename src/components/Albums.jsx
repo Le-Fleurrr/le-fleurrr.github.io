@@ -2268,7 +2268,8 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "Hardstone Psycho albomuna Travis Scott, Future & Metro Boomin, Kodak Black kimi tanınmış musiqiçilər daxildir, həmçinin bu yaxınlarda buraxılmış Attitude (Ft. Charlie Wilson & Cash Cobain), Deep In The Water və Bandit kimi sinqllar da daxildir."
+    description: "Hardstone Psycho albomuna Travis Scott, Future & Metro Boomin, Kodak Black kimi tanınmış musiqiçilər daxildir, həmçinin bu yaxınlarda buraxılmış Attitude (Ft. Charlie Wilson & Cash Cobain), Deep In The Water və Bandit kimi sinqllar da daxildir.",
+    tracklist: []
   },
   {
     id: 39,
