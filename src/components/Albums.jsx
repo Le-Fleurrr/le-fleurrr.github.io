@@ -1276,7 +1276,10 @@ export const albums = [
       { id: 16, name: "Wicked Games", isExplicit: true, duration: "5:25" },
       { id: 17, name: "The Morning", isExplicit: true, duration: "5:15" },
       { id: 18, name: "After Hours", isExplicit: false, duration: "6:01" },
-    ]
+    ],
+    releaseDate: "5 Fevral 2021",
+    duration: "18 mahnılar, 1 saat 17 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc."
   },
   {
     id: 36,
@@ -1312,7 +1315,10 @@ export const albums = [
       { id: 16, name: "Wicked Games", isExplicit: true, duration: "5:25" },
       { id: 17, name: "The Morning", isExplicit: true, duration: "5:15" },
       { id: 18, name: "After Hours", isExplicit: false, duration: "6:01" },
-    ]
+    ],
+    releaseDate: "5 Fevral 2021",
+    duration: "18 mahnılar, 1 saat 17 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc."
   },
   {
     id: 9,
@@ -1368,7 +1374,10 @@ export const albums = [
       { id: 28, name: "HBA", isExplicit: true, duration: "3:33" },
       { id: 29, name: "OVERLY", isExplicit: true, duration: "1:46" },
       { id: 30, name: "SOUTH ATLANTA BABY", isExplicit: true, duration: "2:13" },
-    ]
+    ],
+    releaseDate: "14 Mart 2025",
+    duration: "30 mahnılar, 1 saat 16 dəqiqə",
+    label: "AWGE/Interscope"
   },
   {
     id: 17,
@@ -1426,7 +1435,10 @@ export const albums = [
       { id: 28, name: "HBA", isExplicit: true, duration: "3:33" },
       { id: 29, name: "OVERLY", isExplicit: true, duration: "1:46" },
       { id: 30, name: "SOUTH ATLANTA BABY", isExplicit: true, duration: "2:13" },
-    ]
+    ],
+    releaseDate: "14 Mart 2025",
+    duration: "30 mahnılar, 1 saat 16 dəqiqə",
+    label: "AWGE/Interscope"
   },
   {
     id: 11,
@@ -1465,7 +1477,10 @@ export const albums = [
       { id: 17, name: "Choppa Won't Miss (feat. Young Thug)", isExplicit: true, duration: "3:27" },
       { id: 18, name: "R.I.P. Fredo (Notice Me)", isExplicit: true, duration: "2:41" },
       { id: 19, name: "Top (feat. Pi'erre Bourne)", isExplicit: true, duration: "2:13" },
-    ]
+    ],
+    releaseDate: "14 Mart 2018",
+    duration: "19 mahnılar, 1 saat 16 dəqiqə",
+    label: "AWGE/Interscope"
   },
   {
     id: 12,
