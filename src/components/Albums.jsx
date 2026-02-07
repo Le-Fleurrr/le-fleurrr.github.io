@@ -705,7 +705,7 @@ export const albums = [
     ],
     releaseDate: "25 Dekabr 2020",
     duration: "24 mahnılar, 1 saat 13 dəqiqə",
-    label: "AWGE/Interscope",
+    label: "AWGE/Interscope Records",
   },
   {
     id: 5,
@@ -1438,7 +1438,7 @@ export const albums = [
     ],
     releaseDate: "14 Mart 2025",
     duration: "30 mahnılar, 1 saat 16 dəqiqə",
-    label: "AWGE/Interscope"
+    label: "AWGE/Interscope Records"
   },
   {
     id: 11,
@@ -1478,9 +1478,9 @@ export const albums = [
       { id: 18, name: "R.I.P. Fredo (Notice Me)", isExplicit: true, duration: "2:41" },
       { id: 19, name: "Top (feat. Pi'erre Bourne)", isExplicit: true, duration: "2:13" },
     ],
-    releaseDate: "14 Mart 2018",
-    duration: "19 mahnılar, 1 saat 16 dəqiqə",
-    label: "AWGE/Interscope"
+    releaseDate: "11 May 2018",
+    duration: "19 mahnılar, 57 dəqiqə",
+    label: "AWGE/Interscope Records"
   },
   {
     id: 12,
@@ -1515,7 +1515,10 @@ export const albums = [
       { id: 13, name: "Flex (feat. Leven Kali)", isExplicit: true, duration: "4:00" },
       { id: 14, name: "Kelly K", isExplicit: true, duration: "4:31" },
       { id: 15, name: "Had 2", isExplicit: true, duration: "2:19" },
-    ]
+    ],
+    releaseDate: "14 Aprel 2018",
+    duration: "15 mahnılar, 46 dəqiqə",
+    label: "AWGE/Interscope Records"
   },
   {
     id: 41,
@@ -1548,7 +1551,10 @@ export const albums = [
       { id: 13, name: "Flex (feat. Leven Kali)", isExplicit: true, duration: "4:00" },
       { id: 14, name: "Kelly K", isExplicit: true, duration: "4:31" },
       { id: 15, name: "Had 2", isExplicit: true, duration: "2:19" },
-    ]
+    ],
+    releaseDate: "14 Aprel 2018",
+    duration: "15 mahnılar, 46 dəqiqə",
+    label: "AWGE/Interscope Records"
   },
   {
     id: 22,
