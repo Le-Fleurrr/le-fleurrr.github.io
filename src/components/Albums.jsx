@@ -369,11 +369,27 @@ const yeezus = {
 };
 
 const octane = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769241305/OCTANE2LPVINYL5_0b07d854-8265-43_bdpipu.png',
+  cover: ['https://res.cloudinary.com/deroy68n9/image/upload/v1769241305/OCTANE2LPVINYL5_0b07d854-8265-43_bdpipu.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481122/OCTANE2LPVINYL_TUNNELEDITION_5_e_s8gidf.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481124/OCTANE2LPVINYL_PLAYBACKEDITION_5_d7iufv.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481123/OCTANE2LPVINYL_NUCLEAREDITION_5_fx84wb.png'
+  ],
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANE2LPVINYL1_43f4f4cd-98bb-40_wgt2sl.png",
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481123/OCTANE2LPVINYL_TUNNELEDITION_1_1_pn6fiz.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481123/OCTANE2LPVINYL_PLAYBACKEDITION_1_wqtjw9.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481124/OCTANE2LPVINYL_NUCLEAREDITION_1_wljd8q.png',
     "https://res.cloudinary.com/deroy68n9/image/upload/v1769241305/OCTANE2LPVINYL2_1175dcbb-d6a7-46_wcahji.png",
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481123/OCTANE2LPVINYL_TUNNELEDITION_2_d_z4qzqu.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481123/OCTANE2LPVINYL_PLAYBACKEDITION_2_nf8lpn.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481124/OCTANE2LPVINYL_NUCLEAREDITION_2_wsp9nd.png',
     "https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANE2LPVINYL4_93634d15-9463-4b_fuihl0.png",
-    "https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANE2LPVINYL3_b8f750af-99d5-4f_iajluo.png"
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481123/OCTANE2LPVINYL_TUNNELEDITION_4_8_ragzxd.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481124/OCTANE2LPVINYL_PLAYBACKEDITION_4_fdc5ti.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481124/OCTANE2LPVINYL_NUCLEAREDITION_4_prftj8.png',
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANE2LPVINYL3_b8f750af-99d5-4f_iajluo.png",
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481123/OCTANE2LPVINYL_TUNNELEDITION_3_3_yagjrn.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481124/OCTANE2LPVINYL_PLAYBACKEDITION_3_ycpqyx.png',
+    'https://res.cloudinary.com/deroy68n9/image/upload/v1770481124/OCTANE2LPVINYL_NUCLEAREDITION_3_ckerwv.png'
   ]
 };
 
@@ -529,7 +545,7 @@ export const albums = [
     format: "vinyl",
     description: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
     tracklist: [
-      { id: 1, name: "Wake Me Up (feat. Justice)", isExplicit: false, duration: "5:08" },
+      { id: 1, name: "Wake Me Up (feat. Justice)", isExplicit: false, duration: "5:08", spotifyEmbed: "https://open.spotify.com/embed/track/5673WA8EEUSPx1ir26lhGW"},
       { id: 2, name: "Cry For Me", isExplicit: true, duration: "3:44" },
       { id: 3, name: "I Can't Fucking Sing", isExplicit: true, duration: "0:12" },
       { id: 4, name: "São Paulo (feat. Annita)", isExplicit: true, duration: "5:01" },
@@ -1102,7 +1118,10 @@ export const albums = [
       { id: 14, name: "I Heard You're Married (feat. Lil Wayne)", isExplicit: true, duration: "4:23" },
       { id: 15, name: "Less Than Zero", isExplicit: false, duration: "3: 31" },
       { id: 16, name: "Phantom Regret by Jim", isExplicit: false, duration: "2: 59" },
-    ]
+    ],
+    releaseDate: "6 Yanvar 2022",
+    duration: "16 mahnılar, 51 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc."
   },
   {
     id: 21,
@@ -1138,7 +1157,10 @@ export const albums = [
       { id: 14, name: "I Heard You're Married (feat. Lil Wayne)", isExplicit: true, duration: "4:23" },
       { id: 15, name: "Less Than Zero", isExplicit: false, duration: "3: 31" },
       { id: 16, name: "Phantom Regret by Jim", isExplicit: false, duration: "2: 59" },
-    ]
+    ],
+    releaseDate: "6 Yanvar 2022",
+    duration: "16 mahnılar, 51 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc."
   },
   {
     id: 34,
@@ -1175,7 +1197,10 @@ export const albums = [
       { id: 16, name: "All I Know (feat. Future)", isExplicit: true, duration: "5:21" },
       { id: 17, name: "Die For You", isExplicit: false, duration: "4:20" },
       { id: 18, name: "I Feel It Coming (feat. Daft Punk)", isExplicit: false, duration: "4:29" },
-    ]
+    ],
+    releaseDate: "6 Noyabr 2016",
+    duration: "18 mahnılar, 1 saat 8 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc."
   },
   {
     id: 47,
@@ -1211,7 +1236,10 @@ export const albums = [
       { id: 16, name: "All I Know (feat. Future)", isExplicit: true, duration: "5:21" },
       { id: 17, name: "Die For You", isExplicit: false, duration: "4:20" },
       { id: 18, name: "I Feel It Coming (feat. Daft Punk)", isExplicit: false, duration: "4:29" },
-    ]
+    ],
+    releaseDate: "6 Noyabr 2016",
+    duration: "18 mahnılar, 1 saat 8 dəqiqə",
+    label: "The Weeknd XO, Inc., marketed by Republic Records, a division of UMG Recordings, Inc."
   },
   {
     id: 26,
@@ -2408,7 +2436,17 @@ export const albums = [
       { id: 16, name: "TMU", isExplicit: true, duration: "3:00" },
       { id: 17, name: "Pleasure's Mine", isExplicit: true, duration: "2:57" },
       { id: 18, name: "Sweet Home", isExplicit: true, duration: "3:20" },
-    ]
+    ],
+    variants: [
+      {id: 1, name: "OCTANE", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANE2LPVINYL1_43f4f4cd-98bb-40_wgt2sl.png"},
+      {id: 2, name: "OCTANE (TUNEL NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1770481123/OCTANE2LPVINYL_TUNNELEDITION_1_1_pn6fiz.png"},
+      {id: 3, name: "OCTANE (OXUDULMA NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1769593564/OCTANE2LPVINYL_PLAYBACKEDITION_1_wewbae.png"},
+      {id: 4, name: "OCTANE (NÜVƏ NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1770481124/OCTANE2LPVINYL_NUCLEAREDITION_1_wljd8q.png"},
+    ],
+    releaseDate: "30 Yanvar 2026",
+    duration: "18 mahnılar, 49 dəqiqə",
+    label: "Cactus Jack / Donnway & Co / Atlantic Records, © 2026 Donnway & Co LLC, under exclusive license to Atlantic Recording Corporation"
+
   },
   {
     id: 70,
@@ -2443,7 +2481,10 @@ export const albums = [
       { id: 16, name: "TMU", isExplicit: true, duration: "3:00" },
       { id: 17, name: "Pleasure's Mine", isExplicit: true, duration: "2:57" },
       { id: 18, name: "Sweet Home", isExplicit: true, duration: "3:20" },
-    ]
+    ],
+    releaseDate: "30 Yanvar 2026",
+    duration: "18 mahnılar, 49 dəqiqə",
+    label: "Cactus Jack / Donnway & Co / Atlantic Records, © 2026 Donnway & Co LLC, under exclusive license to Atlantic Recording Corporation"
   },
   {
     id: 42,

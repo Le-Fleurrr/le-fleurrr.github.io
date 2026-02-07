@@ -7,6 +7,27 @@ import { albums } from "./Albums.jsx";
 export const Hero = () => {
   const featuredAlbum = albums.find(album => album.id === 69) || albums[0];
 
+  // Get the first cover image (supports both single image and array)
+  const getCoverImage = (album) => {
+    if (!album) return null;
+    
+    // If there's an animated cover, use it
+    if (album.animatedCover) {
+      return album.animatedCover;
+    }
+    
+    // If image is an array, use the first one
+    if (Array.isArray(album.image)) {
+      return album.image[0];
+    }
+    
+    // Otherwise use the image directly
+    return album.image;
+  };
+
+  const coverImage = getCoverImage(featuredAlbum);
+  const isVideo = coverImage && (coverImage.endsWith('.mp4') || coverImage.endsWith('.webm') || coverImage.endsWith('.mov'));
+
   return (
     <section className="min-h-screen flex items-center pt-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
@@ -59,14 +80,25 @@ export const Hero = () => {
 
           <div className="relative flex justify-center lg:justify-end animate-scale-in" style={{ animationDelay: "0.2s" }}>
             <div className="relative h-96 flex items-center justify-center">
-              {featuredAlbum?.image && (
+              {coverImage && (
                 <div className="absolute inset-0 flex items-center justify-start pl-4">
-                  <div className="w-80 h-80 rounded-lg overflow-hidden shadow-xl">
-                    <img
-                      src={featuredAlbum.image}
-                      alt={`${featuredAlbum.title} cover`}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-80 h-80 rounded-lg overflow-hidden shadow-xl bg-black">
+                    {isVideo ? (
+                      <video
+                        src={coverImage}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <img
+                        src={coverImage}
+                        alt={`${featuredAlbum.title} cover`}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </div>
                 </div>
               )}
