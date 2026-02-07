@@ -9,14 +9,12 @@ import NotFound from "./components/pages/NotFound";
 import { Account } from './components/Account';
 import ArtistPage from './components/ArtistPage';
 import AlbumPage from './components/AlbumPage';
-import { Cloudinary } from '@cloudinary/url-gen';
 import { MerchCollectionsPage } from './components/MerchCollectionsPage';
 import { MerchPage } from "./components/MerchPage";
 import { FavoritesProvider, FavoritesPage } from './components/FavoritesSystem';
 import { albums } from './components/Albums';
 
 const queryClient = new QueryClient();
-const cld = new Cloudinary({ cloud: { cloudName: 'deroy68n9' } });
 
 function App() {
   return (
