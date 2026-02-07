@@ -1,8 +1,8 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Collections } from './components/Collections';
-import { Toaster } from "./components/ui/toaster";
-import { Toaster as Sonner } from "./components/ui/sonner";
-import { TooltipProvider } from "./components/ui/tooltip";
+import { Toaster } from "./components/ui/Toaster";
+import { Toaster as Sonner } from "./components/ui/Sonner";
+import { TooltipProvider } from "./components/ui/Tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Index from './components/pages/Index';
 import NotFound from "./components/pages/NotFound";
