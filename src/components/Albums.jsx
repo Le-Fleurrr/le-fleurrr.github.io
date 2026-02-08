@@ -1,3 +1,45 @@
+/* 
+  TEMPLATES:
+
+
+  const ALBUMNAME = {
+  cover: "https://example.com",
+  vinyl: ["https://example.com"],
+  features: ["https://example.com"],
+  tracklist: ["https://example.com"]
+  };
+
+  {
+    id: 63,
+    title: "ALBUMNAME (2LP)",
+    artist: ["ARTISTNAME"],
+    price: 99.99,
+    genre: "ALBUMGENRE",
+    year: ALNUMYEAR,
+    isNew: false,
+    isExplicit: true,
+    image: ALBUMNAME.cover,
+    vinylImages: ALBUMNAME.vinyl,
+    vinylColor: "blue",
+    sleeveColor: "blue",
+    accentColor: "blue",
+    format: "vinyl",
+    description: "ALBUMDESCRIPTION",
+    variants: [
+      { id: 1, name: "ALBUMVARIANT1", image: "https://example.com"},
+      { id: 2, name: "ALBUMVARIANT2", image: "https://example.com"}
+    ]
+    tracklist: [
+      {id: 1, name: "TRACKNAME1", duration: "2:13", isExplicit: true, spotifyEmbed: "https://example.com"},
+      {id: 2, name: "TRACKNAME2", duration: "3:26", isExplicit: true, spotifyEmbed: "https://example.com"}
+    ],
+    releaseDate: ALBUMRELEASEDATE,
+    duration: "x mahnılar, x dəqiqə",
+    label: ALBUMLABEL
+
+  }
+*/
+
 const afterHours = {
   cover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768395280/afterHours_xelwg2.jpg",
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226152/afterHours_vinyl_utwxsx.jpg"],
@@ -110,9 +152,7 @@ const callMeIfYouGetLostCD = {
 
 const flowerBoy = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768572775/flowerBoy_vkgov9.jpg',
-  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226156/flowerBoy_vinyl_cjs4ya.jpg',
-    'https://res.cloudinary.com/deroy68n9/image/upload/v1768226156/flowerBoy1_cp6uqn.jpg'
-  ]
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226156/flowerBoy_vinyl_cjs4ya.jpg',]
 };
 
 const weDontTrustYou = {
@@ -545,7 +585,7 @@ export const albums = [
     format: "vinyl",
     description: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
     tracklist: [
-      { id: 1, name: "Wake Me Up (feat. Justice)", isExplicit: false, duration: "5:08", spotifyEmbed: "https://open.spotify.com/embed/track/5673WA8EEUSPx1ir26lhGW"},
+      { id: 1, name: "Wake Me Up (feat. Justice)", isExplicit: false, duration: "5:08", spotifyEmbed: "https://open.spotify.com/embed/track/5673WA8EEUSPx1ir26lhGW" },
       { id: 2, name: "Cry For Me", isExplicit: true, duration: "3:44" },
       { id: 3, name: "I Can't Fucking Sing", isExplicit: true, duration: "0:12" },
       { id: 4, name: "São Paulo (feat. Annita)", isExplicit: true, duration: "5:01" },
@@ -1571,7 +1611,7 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "FLOWER BOY Tyler, The Creator qrupunun uzun müddətdir gözlənilən yeni albomudur. Albom 2015-ci ildə çıxan Cherry Bomb albomunun davamıdır və vinil LP kimi satışa çıxarılıb.",
+    description: "Flower Boy Tyler, The Creator qrupunun uzun müddətdir gözlənilən yeni albomudur. Albom 2015-ci ildə çıxan Cherry Bomb albomunun davamıdır və vinil LP kimi satışa çıxarılıb.",
     tracklist: [
       { id: 1, name: "Foreword (feat. Rex Orange County)", isExplicit: true, duration: "3:14" },
       { id: 2, name: "Where This Flower Blooms (feat. Frank Ocean)", isExplicit: true, duration: "3:14" },
@@ -1587,7 +1627,10 @@ export const albums = [
       { id: 12, name: "November", isExplicit: true, duration: "3:45" },
       { id: 13, name: "Glitter", isExplicit: true, duration: "3:44" },
       { id: 14, name: "Enjoy Right Now, Today", isExplicit: false, duration: "3:55" },
-    ]
+    ],
+    releaseDate: "21 Iyul 2017",
+    duration: "14 mahnılar, 46 dəqiqə",
+    label: "Columbia Records, a Division of Sony Music Entertainment, as exclusive licensee"
   },
   {
     id: 62,
@@ -1595,7 +1638,7 @@ export const albums = [
     artist: ["Tyler, The Creator"],
     price: 24.99,
     genre: "Hip-Hop/Rap",
-    year: 2021,
+    year: 2023,
     isNew: false,
     isExplicit: true,
     image: callMeIfYouGetLostCD.cover,
@@ -1604,8 +1647,35 @@ export const albums = [
     accentColor: "green",
     format: "cd",
     description: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir.",
-    releaseDate: "25 June 2021",
-    duration: "16 mahnılar, 52 dəqiqə",
+    tracklist: [
+      { id: 1, name: "SIR BAUDELAIRE (feat. DJ Drama)", isExplicit: true, duration: "1:28" },
+      { id: 2, name: "CORSO", isExplicit: true, duration: "2:26" },
+      { id: 3, name: "LEMONHEAD (feat. 42 Dugg)", isExplicit: true, duration: "2:10" },
+      { id: 4, name: "WUSYANAME (feat. YoungBoy Never Broke Again & Ty Dolla $ign)", isExplicit: true, duration: "2:01" },
+      { id: 5, name: "LUMBERJACK", isExplicit: true, duration: "2:18" },
+      { id: 6, name: "HOT WIND BLOWS (feat. Lil Wayne)", isExplicit: true, duration: "2:35" },
+      { id: 7, name: "MASSA", isExplicit: true, duration: "3:43" },
+      { id: 8, name: "RUNITUP (feat. Teezo Touchdown)", isExplicit: true, duration: "3:49" },
+      { id: 9, name: "MANIFESTO (feat. Domo Genesis)", isExplicit: true, duration: "2:55" },
+      { id: 10, name: "SWEET / THOUGHT YOU WANTED TO DANCE (feat. Brent Fayaz & Fana Hues)", isExplicit: true, duration: "9:48" },
+      { id: 11, name: "MOMMA TALK", isExplicit: true, duration: "1:10" },
+      { id: 12, name: "RISE! (feat. DAISY WORLD)", isExplicit: true, duration: "3:23" },
+      { id: 13, name: "BLESSED", isExplicit: true, duration: "0:57" },
+      { id: 14, name: "JUGGERNAUT (feat Lil Uzi Vert & Pharell Williams)", isExplicit: true, duration: "2:26" },
+      { id: 15, name: "WILLSHIRE", isExplicit: true, duration: "8:35" },
+      { id: 16, name: "SAFARI", isExplicit: true, duration: "2:57" },
+      { id: 17, name: "EVERYTHING MUST GO", isExplicit: false, duration: "0:28" },
+      { id: 18, name: "STUNTMAN (feat. Vince Staples)", isExplicit: true, duration: "3:19" },
+      { id: 19, name: "WHAT A DAY", isExplicit: true, duration: "3:36" },
+      { id: 20, name: "WHARF TALK (feat. A$AP Rocky)", isExplicit: true, duration: "3:24" },
+      { id: 21, name: "DOGTOOTH", isExplicit: true, duration: "2:41" },
+      { id: 22, name: "HEAVEN TO ME", isExplicit: true, duration: "3:50" },
+      { id: 23, name: "BOYFRIEND GIRLFRIEND (2020 DEMO) [feat. YG]", isExplicit: true, duration: "3:24" },
+      { id: 24, name: "SORRY NOT SORRY", isExplicit: true, duration: "3:26" },
+    ],
+
+    releaseDate: "31 Mart 2023",
+    duration: "24 mahnılar, 1 saat 17 dəqiqə",
     label: "Columbia Records, a Division of Sony Entertainment, as exclusive licensee",
   },
   {
@@ -1614,7 +1684,7 @@ export const albums = [
     artist: ["Tyler, The Creator"],
     price: 119.99,
     genre: "Hip-Hop/Rap",
-    year: 2021,
+    year: 2023,
     isNew: false,
     isExplicit: true,
     image: callMeIfYouGetLostESTATESALE.cover,
@@ -1624,8 +1694,34 @@ export const albums = [
     accentColor: "blue",
     format: "vinyl",
     description: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir.",
-    releaseDate: "25 June 2021",
-    duration: "16 mahnılar, 52 dəqiqə",
+    tracklist: [
+      { id: 1, name: "SIR BAUDELAIRE (feat. DJ Drama)", isExplicit: true, duration: "1:28" },
+      { id: 2, name: "CORSO", isExplicit: true, duration: "2:26" },
+      { id: 3, name: "LEMONHEAD (feat. 42 Dugg)", isExplicit: true, duration: "2:10" },
+      { id: 4, name: "WUSYANAME (feat. YoungBoy Never Broke Again & Ty Dolla $ign)", isExplicit: true, duration: "2:01" },
+      { id: 5, name: "LUMBERJACK", isExplicit: true, duration: "2:18" },
+      { id: 6, name: "HOT WIND BLOWS (feat. Lil Wayne)", isExplicit: true, duration: "2:35" },
+      { id: 7, name: "MASSA", isExplicit: true, duration: "3:43" },
+      { id: 8, name: "RUNITUP (feat. Teezo Touchdown)", isExplicit: true, duration: "3:49" },
+      { id: 9, name: "MANIFESTO (feat. Domo Genesis)", isExplicit: true, duration: "2:55" },
+      { id: 10, name: "SWEET / THOUGHT YOU WANTED TO DANCE (feat. Brent Fayaz & Fana Hues)", isExplicit: true, duration: "9:48" },
+      { id: 11, name: "MOMMA TALK", isExplicit: true, duration: "1:10" },
+      { id: 12, name: "RISE! (feat. DAISY WORLD)", isExplicit: true, duration: "3:23" },
+      { id: 13, name: "BLESSED", isExplicit: true, duration: "0:57" },
+      { id: 14, name: "JUGGERNAUT (feat Lil Uzi Vert & Pharell Williams)", isExplicit: true, duration: "2:26" },
+      { id: 15, name: "WILLSHIRE", isExplicit: true, duration: "8:35" },
+      { id: 16, name: "SAFARI", isExplicit: true, duration: "2:57" },
+      { id: 17, name: "EVERYTHING MUST GO", isExplicit: false, duration: "0:28" },
+      { id: 18, name: "STUNTMAN (feat. Vince Staples)", isExplicit: true, duration: "3:19" },
+      { id: 19, name: "WHAT A DAY", isExplicit: true, duration: "3:36" },
+      { id: 20, name: "WHARF TALK (feat. A$AP Rocky)", isExplicit: true, duration: "3:24" },
+      { id: 21, name: "DOGTOOTH", isExplicit: true, duration: "2:41" },
+      { id: 22, name: "HEAVEN TO ME", isExplicit: true, duration: "3:50" },
+      { id: 23, name: "BOYFRIEND GIRLFRIEND (2020 DEMO) [feat. YG]", isExplicit: true, duration: "3:24" },
+      { id: 24, name: "SORRY NOT SORRY", isExplicit: true, duration: "3:26" },
+    ],
+    releaseDate: "31 Mart 2023",
+    duration: "24 mahnılar, 1 saat 17 dəqiqə",
     label: "Columbia Records, a Division of Sony Entertainment, as exclusive licensee",
   },
   {
@@ -1659,7 +1755,10 @@ export const albums = [
       { id: 12, name: "Like Him (feat. Lola Young)", isExplicit: true, duration: "4:38" },
       { id: 13, name: "Balloon (feat. Doechii)", isExplicit: true, duration: "2:34" },
       { id: 14, name: "I Hope You Find Your Way Home", isExplicit: true, duration: "4:29" },
-    ]
+    ],
+    releaseDate: "28 Oktyabr 2024",
+    duration: "14 mahnılar, 53 dəqiqə",
+    label: "Columbia Records, a Division of Sony Entertainment, as exclusive licensee",
   },
   {
     id: 24,
@@ -1690,7 +1789,10 @@ export const albums = [
       { id: 10, name: "GONE GONE / THANK YOU", isExplicit: true, duration: "6:15" },
       { id: 11, name: "I DON'T LOVE YOU ANYMORE", isExplicit: true, duration: "2:41" },
       { id: 12, name: "ARE WE STILL FRIENDS?", isExplicit: true, duration: "4:25" },
-    ]
+    ],
+    releaseDate: "17 May 2019",
+    duration: "12 mahnılar, 39 dəqiqə",
+    label: "Columbia Records, a Division of Sony Entertainment, as exclusive licensee",
   },
   {
     id: 61,
@@ -1720,7 +1822,10 @@ export const albums = [
       { id: 10, name: "GONE GONE / THANK YOU", isExplicit: true, duration: "6:15" },
       { id: 11, name: "I DON'T LOVE YOU ANYMORE", isExplicit: true, duration: "2:41" },
       { id: 12, name: "ARE WE STILL FRIENDS?", isExplicit: true, duration: "4:25" },
-    ]
+    ],
+    releaseDate: "17 May 2019",
+    duration: "12 mahnılar, 39 dəqiqə",
+    label: "Columbia Records, a Division of Sony Entertainment, as exclusive licensee",
   },
   {
     id: 25,
@@ -1756,7 +1861,10 @@ export const albums = [
       { id: 11, name: "SMUCKERS (feat. Lil Wayne and Kanye West)", isExplicit: true, duration: "5:34" },
       { id: 12, name: "KEEP DA O'S (feat. Pharrell Williams and Coco O.)", isExplicit: true, duration: "4:08" },
       { id: 13, name: "OKAGA, CA (feat. Alice Smith, Leon Ware and Clem Creevy)", isExplicit: true, duration: "6:37" },
-    ]
+    ],
+    releaseDate: "13 Aprel 2015",
+    duration: "13 mahnılar, 54 dəqiqə",
+    label: "Odd Future LLC",
   },
   {
     id: 29,
@@ -1793,7 +1901,10 @@ export const albums = [
       { id: 16, name: "TreeHome95", isExplicit: true, duration: "3:00" },
       { id: 17, name: "Tamale", isExplicit: true, duration: "2:46" },
       { id: 18, name: "Lone", isExplicit: true, duration: "3:57" },
-    ]
+    ],
+    releaseDate: "1 Aprel 2013",
+    duration: "18 mahnılar, 1 saat 10 dəqiqə",
+    label: "Odd Future LLC",
   },
   {
     id: 27,
@@ -2402,7 +2513,10 @@ export const albums = [
           { id: 4, name: "HARSTONE NATIONAL ANTHEM", isExplicit: true, duration: "2:41" },
         ]
       }
-    ]
+    ],
+    releaseDate: "14 Iyun 2024",
+    duration: "16 mahnılar, 51 dəqiqə",
+    label: "© Cactus Jack, © 2024 Atlantic Records Group LLC"
   },
   {
     id: 39,
@@ -2420,7 +2534,32 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "vinyl",
-    description: "Love Sick amerikalı reper və müğənni Don Toliverin üçüncü studiya albomudur. Albom 24 fevral 2023-cü ildə çıxıb. Albomda James Blake, Lil Durk, GloRilla, Kali Uchis, TisaKorean, Justin Bieber, Future, Wizkid, Charlie Wilson, Brent Faiyaz və Toro y Moi kimi qruplar qonaq kimi çıxış ediblər. Albomun delüks versiyası dörd gün sonra çıxıb və Travis Scott və Teezo Touchdown kimi qruplar da əlavə qonaq kimi çıxış ediblər. İstehsal işləri Blake və TisaKorean, Cardo, DJ Burn One, Oz, Wheezy, Hit-Boy, Nez, Rodaidh McDonald, Kaytranada, Sevn Thomas, Boi-1da, DJ Dahi, Ronny J və DJ Fresh kimi bir çox prodüser tərəfindən həyata keçirilib."
+    description: "Love Sick amerikalı reper və müğənni Don Toliverin üçüncü studiya albomudur. Albom 24 fevral 2023-cü ildə çıxıb. Albomda James Blake, Lil Durk, GloRilla, Kali Uchis, TisaKorean, Justin Bieber, Future, Wizkid, Charlie Wilson, Brent Faiyaz və Toro y Moi kimi qruplar qonaq kimi çıxış ediblər. Albomun delüks versiyası dörd gün sonra çıxıb və Travis Scott və Teezo Touchdown kimi qruplar da əlavə qonaq kimi çıxış ediblər. İstehsal işləri Blake və TisaKorean, Cardo, DJ Burn One, Oz, Wheezy, Hit-Boy, Nez, Rodaidh McDonald, Kaytranada, Sevn Thomas, Boi-1da, DJ Dahi, Ronny J və DJ Fresh kimi bir çox prodüser tərəfindən həyata keçirilib.",
+    tracklist: [
+      { id: 1, name: "No Pole", isExplicit: true, duration: "3:07" },
+      { id: 2, name: "Embarassed (feat. Travis Scott)", isExplicit: true, duration: "3:12" },
+      { id: 3, name: "Geronimo", isExplicit: true, duration: "2:03" },
+      { id: 4, name: "Luckily I'm Having (feat. Teezo Touchdown)", isExplicit: true, duration: "3:14" },
+      { id: 5, name: "LoveSickness", isExplicit: true, duration: "1:54" },
+      { id: 6, name: "Let Her Go (feat. James Blake)", isExplicit: true, duration: "3:12" },
+      { id: 7, name: "Leave The Club (feat. Lil Durk & GloRilla)", isExplicit: true, duration: "3:42" },
+      { id: 8, name: "4 Me (feat. Kali Uchis)", isExplicit: true, duration: "2:40" },
+      { id: 9, name: "Go Down (feat. TisaKorean)", isExplicit: true, duration: "3:30" },
+      { id: 10, name: "Time Heals All", isExplicit: true, duration: "3:53" },
+      { id: 11, name: "Leather Coat", isExplicit: true, duration: "4:01" },
+      { id: 12, name: "Honeymoon", isExplicit: true, duration: "3:04" },
+      { id: 13, name: "Private Landing (feat. Justin Bieber & Future)", isExplicit: true, duration: "3:58" },
+      { id: 14, name: "Slow Motion (feat. Wizkid)", isExplicit: true, duration: "2:48" },
+      { id: 15, name: "Do It Right", isExplicit: true, duration: "2:54" },
+      { id: 16, name: "If I Had (feat. Charlie Wilson)", isExplicit: true, duration: "3:28" },
+      { id: 17, name: "Company Pt. 3", isExplicit: true, duration: "3:00" },
+      { id: 18, name: "Bus Stop (feat. Brent Fayaz)", isExplicit: true, duration: "3:56" },
+      { id: 19, name: "Cinderella (feat. Toro y Moi)", isExplicit: true, duration: "3:46" },
+      { id: 20, name: "Encouragement", isExplicit: true, duration: "2:56" }
+    ],
+    releaseDate: "28 Fevral 2023",
+    duration: "20 mahnılar, 1 saat 4 dəqiqə",
+    label: "Cactus Jack, © 2023 Atlantic Records Group LLC"
   },
   {
     id: 69,
@@ -2445,7 +2584,7 @@ export const albums = [
       { id: 4, name: "Secondhand (feat. Rema)", isExplicit: true, duration: "3:46" },
       { id: 5, name: "Tiramisu", isExplicit: true, duration: "2:18" },
       { id: 6, name: "ATM", isExplicit: true, duration: "3:00" },
-      { id: 7, name: "Long Way TO Calabasas", isExplicit: true, duration: "1:39" },
+      { id: 7, name: "Long Way To Calabasas", isExplicit: true, duration: "1:39" },
       { id: 8, name: "Rosary (feat. Travis Scott)", isExplicit: true, duration: "3:14" },
       { id: 9, name: "All The Signs (feat. Teezo Touchdown)", isExplicit: true, duration: "3:20" },
       { id: 10, name: "Call Back", isExplicit: true, duration: "2:03" },
@@ -2459,10 +2598,10 @@ export const albums = [
       { id: 18, name: "Sweet Home", isExplicit: true, duration: "3:20" },
     ],
     variants: [
-      {id: 1, name: "OCTANE", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANE2LPVINYL1_43f4f4cd-98bb-40_wgt2sl.png"},
-      {id: 2, name: "OCTANE (TUNEL NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1770481123/OCTANE2LPVINYL_TUNNELEDITION_1_1_pn6fiz.png"},
-      {id: 3, name: "OCTANE (OXUDULMA NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1769593564/OCTANE2LPVINYL_PLAYBACKEDITION_1_wewbae.png"},
-      {id: 4, name: "OCTANE (NÜVƏ NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1770481124/OCTANE2LPVINYL_NUCLEAREDITION_1_wljd8q.png"},
+      { id: 1, name: "OCTANE", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1769241304/OCTANE2LPVINYL1_43f4f4cd-98bb-40_wgt2sl.png" },
+      { id: 2, name: "OCTANE (TUNEL NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1770481123/OCTANE2LPVINYL_TUNNELEDITION_1_1_pn6fiz.png" },
+      { id: 3, name: "OCTANE (OXUDULMA NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1769593564/OCTANE2LPVINYL_PLAYBACKEDITION_1_wewbae.png" },
+      { id: 4, name: "OCTANE (NÜVƏ NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1770481124/OCTANE2LPVINYL_NUCLEAREDITION_1_wljd8q.png" },
     ],
     releaseDate: "30 Yanvar 2026",
     duration: "18 mahnılar, 49 dəqiqə",
@@ -2508,6 +2647,78 @@ export const albums = [
     label: "Cactus Jack / Donnway & Co / Atlantic Records, © 2026 Donnway & Co LLC, under exclusive license to Atlantic Recording Corporation"
   },
   {
+    id: 45,
+    title: "DON'T BE DUMB (2LP)",
+    artist: ["A$AP Rocky"],
+    price: 99.99,
+    genre: "Hip-Hop/Rap",
+    year: 2026,
+    isNew: true,
+    isExplicit: true,
+    image: dontBeDumb.cover,
+    vinylImages: dontBeDumb.vinyl,
+    vinylColor: "white",
+    sleeveColor: "black",
+    accentColor: "white",
+    format: "vinyl",
+    description: "Don't Be Dumb amerikalı reper və səs prodüseri A$AP Rocky-nin dördüncü studiya albomudur. Albom 16 yanvar 2026-cı ildə vasitəsilə buraxılmışdır. Albomda BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn və will.i.am kimi qonaq qruplar da daxil olmaqla geniş sayda iştirakçı iştirak edir; rəqəmsal nəşrlərdə əlavə olaraq Jozzy, Tokischa və Tyler, the Creator da yer alır. Bu, Rocky-nin Testing (2018) albomundan bəri təxminən səkkiz il ərzində ilk albomudur.",
+    tracklist: [
+      { id: 1, name: "ORDER OF PROTECTION", isExplicit: true, duration: "2:51", spotifyEmbed: "https://open.spotify.com/embed/track/1jux3g1YXNub0NkYbLTLIp" },
+      { id: 2, name: "HELICOPTER", isExplicit: true, duration: "2:40", spotifyEmbed: "https://open.spotify.com/embed/track/6zJ68ym0Buv2TpuUu8tw9A" },
+      { id: 3, name: "INTERROGATION (SKIT)", isExplicit: true, duration: "0:49" },
+      { id: 4, name: "STOLE YA FLOW", isExplicit: true, duration: "3:19", spotifyEmbed: "https://open.spotify.com/embed/track/2FycFFuNMVVYIiIqeldXF5" },
+      { id: 5, name: "STAY HERE 4 LIFE (feat. Brent Faiyaz)", isExplicit: true, duration: "5:46", spotifyEmbed: "https://open.spotify.com/embed/track/2xsTsnA5QOFCnFXdEHGkli" },
+      { id: 6, name: "PLAYA", isExplicit: true, duration: "3:47", spotifyEmbed: "https://open.spotify.com/embed/track/3sXsbaZlsTv2iJiEntsgM5" },
+      { id: 7, name: "NO TRESPASSING", isExplicit: true, duration: "3:15", spotifyEmbed: "https://open.spotify.com/embed/track/7eEnuNVAHQXEwg18zZnmdL" },
+      { id: 8, name: "STOP SNITCHING (feat. BossMan Dlow & Sauce Walka)", isExplicit: true, duration: "3:12", spotifyEmbed: "https://open.spotify.com/embed/track/2lSDVBIWbWQ7z5Lw15GRNw" },
+      { id: 9, name: "STFU (feat. Slay Squad)", isExplicit: true, duration: "2:58", spotifyEmbed: "https://open.spotify.com/embed/track/2pwOJNlr5TJaR30dJIqK9M" },
+      { id: 10, name: "PUNK ROCKY", isExplicit: true, duration: "3:54", spotifyEmbed: "https://open.spotify.com/embed/track/1AXsHbdIYx2OyKmdOcIL5T" },
+      { id: 11, name: "AIR FORCE (BLACK DEMARCO)", isExplicit: true, duration: "3:44", spotifyEmbed: "https://open.spotify.com/embed/track/4WGk4UwyQD0mxTN6gEL4wl" },
+      { id: 12, name: "WHISKEY (RELEASE ME) [feat. Gorillaz & Westside Gunn)", isExplicit: true, duration: "4:05", spotifyEmbed: "https://open.spotify.com/embed/track/69AHqDMcDKyxKL1lNNCIve" },
+      { id: 13, name: "ROBBERY (feat. Doechii)", isExplicit: true, duration: "3:55", spotifyEmbed: "https://open.spotify.com/embed/track/5FYaSV8TLF7qvonB1BDOw0" },
+      { id: 14, name: "DON'T BE DUMB / TRIP BABY", isExplicit: true, duration: "4:45", spotifyEmbed: "https://open.spotify.com/embed/track/2JfyjfqbQrTXMzH8n0fOht" },
+      { id: 15, name: "THE END (feat. will.i.am & Jessica Pratt)", isExplicit: true, duration: "3:34", spotifyEmbed: "https://open.spotify.com/embed/track/22FKiBdLUCRHlZJthzTlAy" },
+    ],
+    releaseDate: "16 Yanvar 2026",
+    duration: "15 mahnılar, 52 dəqiqə",
+    label: "A$AP Rocky Recordings LLC"
+  },
+  {
+    id: 44,
+    title: "DON'T BE DUMB (CD)",
+    artist: ["A$AP Rocky"],
+    price: 29.99,
+    genre: "Hip-Hop/Rap",
+    year: 2026,
+    isNew: true,
+    isExplicit: true,
+    image: dontBeDumbCD.cover,
+    vinylImages: dontBeDumbCD.vinyl,
+    accentColor: "white",
+    format: "cd",
+    description: "Don't Be Dumb amerikalı reper və səs prodüseri ASAP Rocky-nin dördüncü studiya albomudur. Albom 16 yanvar 2026-cı ildə buraxılmışdır. Albomda BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn və will.i.am kimi qonaq qruplar da daxil olmaqla geniş sayda iştirakçı iştirak edir; rəqəmsal nəşrlərdə əlavə olaraq Jozzy, Tokischa və Tyler, the Creator da yer alır. Bu, Rocky-nin Testing (2018) albomundan bəri təxminən səkkiz il ərzində ilk albomudur.",
+    tracklist: [
+      { id: 1, name: "ORDER OF PROTECTION", isExplicit: true, duration: "2:51", spotifyEmbed: "https://open.spotify.com/embed/track/1jux3g1YXNub0NkYbLTLIp" },
+      { id: 2, name: "HELICOPTER", isExplicit: true, duration: "2:40", spotifyEmbed: "https://open.spotify.com/embed/track/6zJ68ym0Buv2TpuUu8tw9A" },
+      { id: 3, name: "INTERROGATION (SKIT)", isExplicit: true, duration: "0:49" },
+      { id: 4, name: "STOLE YA FLOW", isExplicit: true, duration: "3:19", spotifyEmbed: "https://open.spotify.com/embed/track/2FycFFuNMVVYIiIqeldXF5" },
+      { id: 5, name: "STAY HERE 4 LIFE (feat. Brent Faiyaz)", isExplicit: true, duration: "5:46", spotifyEmbed: "https://open.spotify.com/embed/track/2xsTsnA5QOFCnFXdEHGkli" },
+      { id: 6, name: "PLAYA", isExplicit: true, duration: "3:47", spotifyEmbed: "https://open.spotify.com/embed/track/3sXsbaZlsTv2iJiEntsgM5" },
+      { id: 7, name: "NO TRESPASSING", isExplicit: true, duration: "3:15", spotifyEmbed: "https://open.spotify.com/embed/track/7eEnuNVAHQXEwg18zZnmdL" },
+      { id: 8, name: "STOP SNITCHING (feat. BossMan Dlow & Sauce Walka)", isExplicit: true, duration: "3:12", spotifyEmbed: "https://open.spotify.com/embed/track/2lSDVBIWbWQ7z5Lw15GRNw" },
+      { id: 9, name: "STFU (feat. Slay Squad)", isExplicit: true, duration: "2:58", spotifyEmbed: "https://open.spotify.com/embed/track/2pwOJNlr5TJaR30dJIqK9M" },
+      { id: 10, name: "PUNK ROCKY", isExplicit: true, duration: "3:54", spotifyEmbed: "https://open.spotify.com/embed/track/1AXsHbdIYx2OyKmdOcIL5T" },
+      { id: 11, name: "AIR FORCE (BLACK DEMARCO)", isExplicit: true, duration: "3:44", spotifyEmbed: "https://open.spotify.com/embed/track/4WGk4UwyQD0mxTN6gEL4wl" },
+      { id: 12, name: "WHISKEY (RELEASE ME) [feat. Gorillaz & Westside Gunn)", isExplicit: true, duration: "4:05", spotifyEmbed: "https://open.spotify.com/embed/track/69AHqDMcDKyxKL1lNNCIve" },
+      { id: 13, name: "ROBBERY (feat. Doechii)", isExplicit: true, duration: "3:55", spotifyEmbed: "https://open.spotify.com/embed/track/5FYaSV8TLF7qvonB1BDOw0" },
+      { id: 14, name: "DON'T BE DUMB / TRIP BABY", isExplicit: true, duration: "4:45", spotifyEmbed: "https://open.spotify.com/embed/track/2JfyjfqbQrTXMzH8n0fOht" },
+      { id: 15, name: "THE END (feat. will.i.am & Jessica Pratt)", isExplicit: true, duration: "3:34", spotifyEmbed: "https://open.spotify.com/embed/track/22FKiBdLUCRHlZJthzTlAy" },
+    ],
+    releaseDate: "16 Yanvar 2026",
+    duration: "15 mahnılar, 52 dəqiqə",
+    label: "A$AP Rocky Recordings LLC"
+  },
+  {
     id: 42,
     title: "DON'T BE DUMB (Kaset)",
     artist: ["A$AP Rocky"],
@@ -2525,39 +2736,27 @@ export const albums = [
     variants: [
       { id: 1, name: "DON'T BE DUMB (Qara Kaset)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteBlack_clgiay.jpg" },
       { id: 2, name: "DON'T BE DUMB (Ağ Kaset)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteWhite_o8e9iu.jpg" }
-    ]
-  },
-  {
-    id: 44,
-    title: "DON'T BE DUMB (CD)",
-    artist: ["A$AP Rocky"],
-    price: 29.99,
-    genre: "Hip-Hop/Rap",
-    year: 2026,
-    isNew: true,
-    isExplicit: true,
-    image: dontBeDumbCD.cover,
-    vinylImages: dontBeDumbCD.vinyl,
-    accentColor: "white",
-    format: "cd",
-    description: "Don't Be Dumb amerikalı reper və səs prodüseri ASAP Rocky-nin dördüncü studiya albomudur. Albom 16 yanvar 2026-cı ildə buraxılmışdır. Albomda BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn və will.i.am kimi qonaq qruplar da daxil olmaqla geniş sayda iştirakçı iştirak edir; rəqəmsal nəşrlərdə əlavə olaraq Jozzy, Tokischa və Tyler, the Creator da yer alır. Bu, Rocky-nin Testing (2018) albomundan bəri təxminən səkkiz il ərzində ilk albomudur."
-  },
-  {
-    id: 45,
-    title: "DON'T BE DUMB (2LP)",
-    artist: ["A$AP Rocky"],
-    price: 99.99,
-    genre: "Hip-Hop/Rap",
-    year: 2026,
-    isNew: true,
-    isExplicit: true,
-    image: dontBeDumb.cover,
-    vinylImages: dontBeDumb.vinyl,
-    vinylColor: "white",
-    sleeveColor: "black",
-    accentColor: "white",
-    format: "vinyl",
-    description: "Don't Be Dumb amerikalı reper və səs prodüseri A$AP Rocky-nin dördüncü studiya albomudur. Albom 16 yanvar 2026-cı ildə vasitəsilə buraxılmışdır. Albomda BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn və will.i.am kimi qonaq qruplar da daxil olmaqla geniş sayda iştirakçı iştirak edir; rəqəmsal nəşrlərdə əlavə olaraq Jozzy, Tokischa və Tyler, the Creator da yer alır. Bu, Rocky-nin Testing (2018) albomundan bəri təxminən səkkiz il ərzində ilk albomudur."
+    ],
+    tracklist: [
+      { id: 1, name: "ORDER OF PROTECTION", isExplicit: true, duration: "2:51", spotifyEmbed: "https://open.spotify.com/embed/track/1jux3g1YXNub0NkYbLTLIp" },
+      { id: 2, name: "HELICOPTER", isExplicit: true, duration: "2:40", spotifyEmbed: "https://open.spotify.com/embed/track/6zJ68ym0Buv2TpuUu8tw9A" },
+      { id: 3, name: "INTERROGATION (SKIT)", isExplicit: true, duration: "0:49" },
+      { id: 4, name: "STOLE YA FLOW", isExplicit: true, duration: "3:19", spotifyEmbed: "https://open.spotify.com/embed/track/2FycFFuNMVVYIiIqeldXF5" },
+      { id: 5, name: "STAY HERE 4 LIFE (feat. Brent Faiyaz)", isExplicit: true, duration: "5:46", spotifyEmbed: "https://open.spotify.com/embed/track/2xsTsnA5QOFCnFXdEHGkli" },
+      { id: 6, name: "PLAYA", isExplicit: true, duration: "3:47", spotifyEmbed: "https://open.spotify.com/embed/track/3sXsbaZlsTv2iJiEntsgM5" },
+      { id: 7, name: "NO TRESPASSING", isExplicit: true, duration: "3:15", spotifyEmbed: "https://open.spotify.com/embed/track/7eEnuNVAHQXEwg18zZnmdL" },
+      { id: 8, name: "STOP SNITCHING (feat. BossMan Dlow & Sauce Walka)", isExplicit: true, duration: "3:12", spotifyEmbed: "https://open.spotify.com/embed/track/2lSDVBIWbWQ7z5Lw15GRNw" },
+      { id: 9, name: "STFU (feat. Slay Squad)", isExplicit: true, duration: "2:58", spotifyEmbed: "https://open.spotify.com/embed/track/2pwOJNlr5TJaR30dJIqK9M" },
+      { id: 10, name: "PUNK ROCKY", isExplicit: true, duration: "3:54", spotifyEmbed: "https://open.spotify.com/embed/track/1AXsHbdIYx2OyKmdOcIL5T" },
+      { id: 11, name: "AIR FORCE (BLACK DEMARCO)", isExplicit: true, duration: "3:44", spotifyEmbed: "https://open.spotify.com/embed/track/4WGk4UwyQD0mxTN6gEL4wl" },
+      { id: 12, name: "WHISKEY (RELEASE ME) [feat. Gorillaz & Westside Gunn)", isExplicit: true, duration: "4:05", spotifyEmbed: "https://open.spotify.com/embed/track/69AHqDMcDKyxKL1lNNCIve" },
+      { id: 13, name: "ROBBERY (feat. Doechii)", isExplicit: true, duration: "3:55", spotifyEmbed: "https://open.spotify.com/embed/track/5FYaSV8TLF7qvonB1BDOw0" },
+      { id: 14, name: "DON'T BE DUMB / TRIP BABY", isExplicit: true, duration: "4:45", spotifyEmbed: "https://open.spotify.com/embed/track/2JfyjfqbQrTXMzH8n0fOht" },
+      { id: 15, name: "THE END (feat. will.i.am & Jessica Pratt)", isExplicit: true, duration: "3:34", spotifyEmbed: "https://open.spotify.com/embed/track/22FKiBdLUCRHlZJthzTlAy" },
+    ],
+    releaseDate: "16 Yanvar 2026",
+    duration: "15 mahnılar, 52 dəqiqə",
+    label: "A$AP Rocky Recordings LLC"
   },
   {
     id: 50,
@@ -2567,7 +2766,7 @@ export const albums = [
     genre: "Hip-Hop/Rap",
     year: 2013,
     isNew: false,
-    isExplicit: false,
+    isExplicit: true,
     image: longLiveA$ap.cover,
     vinylImages: longLiveA$ap.vinyl,
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656264/longLiveA_ap_animated_cc8onr.gif",
@@ -2575,7 +2774,28 @@ export const albums = [
     accentColor: "yellow",
     sleeveColor: "white",
     format: "vinyl",
-    description: "Long.Live.ASAP, amerikalı reper ASAP Rocky-nin debüt studiya albomudur. 15 yanvar 2013-cü ildə çıxıb. Hip-hop və cloud rep janrında olan albomda Kendrick Lamar, Schoolboy Q, 2 Chainz, Drake, Big K.R.I.T., Santigold, Overdoz, Yelawolf, Florence Welch, Danny Brown, Action Bronson, Joey Badass, Gunplay və ASAP Ferg kimi məşhur qruplar qonaq kimi çıxış ediblər. Albomun istehsalına Rocky özü, Hector Delgado, Hit-Boy, Clams Casino, Jim Jonsin, T-Minus, Danger Mouse, 40, Skrillex və Emile Haynie və digər tanınmış prodüserlər rəhbərlik ediblər."
+    description: "Long.Live.ASAP, amerikalı reper A$AP Rocky-nin debüt studiya albomudur. 15 yanvar 2013-cü ildə çıxıb. Hip-Hop və cloud rep janrında olan albomda Kendrick Lamar, Schoolboy Q, 2 Chainz, Drake, Big K.R.I.T., Santigold, Overdoz, Yelawolf, Florence Welch, Danny Brown, Action Bronson, Joey Badass, Gunplay və A$AP Ferg kimi məşhur qruplar qonaq kimi çıxış ediblər. Albomun istehsalına Rocky özü, Hector Delgado, Hit-Boy, Clams Casino, Jim Jonsin, T-Minus, Danger Mouse, 40, Skrillex və Emile Haynie və digər tanınmış prodüserlər rəhbərlik ediblər.",
+    tracklist: [
+      { id: 1, name: "Long Live A$AP", isExplicit: true, duration: "4:49", spotifyEmbed: "https://open.spotify.com/embed/track/60Mq4EumvcSXznNugo9Op3" },
+      { id: 2, name: "Goldie", isExplicit: true, duration: "3:12", spotifyEmbed: "https://open.spotify.com/embed/track/31G9RaSaDOI2NWcpnIp734" },
+      { id: 3, name: "PMW (All I Really Need) [feat. ScHoolboy Q]", isExplicit: true, duration: "3:54", spotifyEmbed: "https://open.spotify.com/embed/track/5oeKoJMi9g6GXEbtz1ta0f" },
+      { id: 4, name: "LVL", isExplicit: true, duration: "3:40", spotifyEmbed: "https://open.spotify.com/embed/track/787rCZF9i4L1cXGMkdyIk4" },
+      { id: 5, name: "Hell (feat. Santigold)", isExplicit: true, duration: "3:51", spotifyEmbed: "https://open.spotify.com/embed/track/5Uc07fEUpjjFcLEIleEHkJ" },
+      { id: 6, name: "Pain (feat. OverDoz)", isExplicit: true, duration: "3:53", spotifyEmbed: "https://open.spotify.com/embed/track/6CZpEC9kyyCJWWZKPnviXY" },
+      { id: 7, name: "F**kin' Problems (feat. Drake, 2 Chainz & Kendrick Lamar)", isExplicit: true, duration: "3:40", spotifyEmbed: "https://open.spotify.com/embed/track/4X5f3vT8MRuXF68pfjNte5" },
+      { id: 8, name: "Wild for the Night (feat. Skrillex & Birdy Nam Ham)", isExplicit: true, duration: "3:40", spotifyEmbed: "https://open.spotify.com/embed/track/2rzBvHM9h36Tpdj7Jdajka" },
+      { id: 9, name: "1Train (feat. Kendrick Lamar, Joey Bada$$, Yelawolf, Danny Brown, Action Bronson & Big K.R.I.T.)", isExplicit: true, duration: "3:40", spotifyEmbed: "https://open.spotify.com/embed/track/1eLU27PPFxBhbp1CBjPh9J" },
+      { id: 10, name: "Fashion Killa", isExplicit: true, duration: "3:56", spotifyEmbed: "https://open.spotify.com/embed/track/0O3TAouZE4vL9dM5SyxgvH" },
+      { id: 11, name: "Pheonix", isExplicit: true, duration: "3:53", spotifyEmbed: "https://open.spotify.com/embed/track/77v9kYcrCZV615E0P9WMrD" },
+      { id: 12, name: "Suddenly", isExplicit: true, duration: "4:30", spotifyEmbed: "https://open.spotify.com/embed/track/5YwewdqOOG0OPhALYN1gS" },
+      { id: 13, name: "Jodye", isExplicit: true, duration: "4:20", spotifyEmbed: "https://open.spotify.com/embed/track/375YEKrb4JSu03HPzwOFfJ" },
+      { id: 14, name: "Ghetto Symphony (feat. Gunplay & A$AP Ferg)", isExplicit: true, duration: "3:40", spotifyEmbed: "https://open.spotify.com/embed/track/57pOLYHz6mt5aMkOXa2Gis" },
+      { id: 15, name: "Angels", isExplicit: true, duration: "3:47", spotifyEmbed: "https://open.spotify.com/embed/track/0NFCFdJxEGCGO6EGkFCGgF" },
+      { id: 16, name: "I Come Apart (feat. Florence Welch)", isExplicit: true, duration: "3:37", spotifyEmbed: "https://open.spotify.com/embed/track/6PnmrzPJXoDBj5NKUCnC8e" },
+    ],
+    releaseDate: "15 Yanvar 2013",
+    duration: "16 mahnılar, 1 saat 19 dəqiqə",
+    label: "A$AP Rocky Recordings LLC/RCA Records. Marketed & Distributed by Polo Grounds Music/RCA Records."
   },
   {
     id: 51,
@@ -2585,7 +2805,7 @@ export const albums = [
     genre: "Hip-Hop/Rap",
     year: 2015,
     isNew: false,
-    isExplicit: false,
+    isExplicit: true,
     image: atLongLastA$ap.cover,
     vinylImages: atLongLastA$ap.vinyl,
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768896718/atLongLastA_ap_animated_bwfupm.gif",
@@ -2593,13 +2813,36 @@ export const albums = [
     accentColor: "white",
     sleeveColor: "white",
     format: "vinyl",
-    description: "2015-ci ildə çıxan amerikalı reperin ikinci solo studiya albomu. Albom, əvvəlki Long. Live. A$AP (2013) albomunun davamı olaraq təqdim olunur. Albomda Joe Fox, Bones, Future, M.I.A., Schoolboy Q, Kanye West, Juicy J, UGK, James Fauntleroy, Lil Wayne, Rod Stewart, Miguel, Mark Ronson, Mos Def, A-Cyde və A$AP Yams kimi məşhur qruplar qonaq kimi çıxış ediblər. Albomun istehsalına Rocky özü, eləcə də Hector Delgado, Danger Mouse, Frans Mernick, Jim Jonsin, Kanye West və Mark Ronson kimi bir sıra tanınmış prodüserlər rəhbərlik edib. Alboma üç sinql dəstək olub: Lord Pretty Flacko Jodye 2 (LPFJ2), Rod Stewart, Miguel və Mark Ronsonun iştirakı iləEveryday və L$D."
+    description: "2015-ci ildə çıxan amerikalı reperin ikinci solo studiya albomu. Albom, əvvəlki Long. Live. A$AP (2013) albomunun davamı olaraq təqdim olunur. Albomda Joe Fox, Bones, Future, M.I.A., Schoolboy Q, Kanye West, Juicy J, UGK, James Fauntleroy, Lil Wayne, Rod Stewart, Miguel, Mark Ronson, Mos Def, A-Cyde və A$AP Yams kimi məşhur qruplar qonaq kimi çıxış ediblər. Albomun istehsalına Rocky özü, eləcə də Hector Delgado, Danger Mouse, Frans Mernick, Jim Jonsin, Kanye West və Mark Ronson kimi bir sıra tanınmış prodüserlər rəhbərlik edib. Alboma üç sinql dəstək olub: Lord Pretty Flacko Jodye 2 (LPFJ2), Rod Stewart, Miguel və Mark Ronsonun iştirakı iləEveryday və L$D.",
+    tracklist: [
+      {id: 1, name: "Holy Ghost (feat. Joe Fox)", duration: "3:11", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/6AHNkRbVzkh95xilnYzDT7"},
+      {id: 2, name: "Canal St. (feat. BONES)", duration: "3:47", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/0rBMP6VVGRgwnzZCLpijyl"},
+      {id: 3, name: "Fine Wine (feat. Joe Fox, Future & M.I.A.)", duration: "3:38", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2WxzLbJfPA2vJGxQiKd7Jq"},
+      {id: 4, name: "L$D", duration: "2:13", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/4S7YHmlWwfwArgd8LfSPud"},
+      {id: 5, name: "Excuse Me", duration: "3:58", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3I8MbKRkS2IBDuslhCS3iT"},
+      {id: 6, name: "JD", duration: "1:45", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/6wwPtKxaMEbQYc6atQmhTE"},
+      {id: 7, name: "Lord Pretty Flacko Jodye 2 (LPFJ2)", duration: "2:06", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/1j6kDJttn6wbVyMaM42Nxm"},
+      {id: 8, name: "Electric Body (feat. ScHoolboy Q)", duration: "4:15", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/6br4Pc0BzU6dTD5fEmks2i"},
+      {id: 9, name: "Jukebox Joints (feat. Joe Fox & Kanye West)", duration: "5:23", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2gAGWaK4wvt2xrFUlR4mK8"},
+      {id: 10, name: "Max B (feat. Joe Fox)", duration: "2:13", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/4wuOxtRDeD9YiQOcmgay7e"},
+      {id: 11, name: "Pharsyde (feat. Joe Fox)", duration: "3:42", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/6J9FgTr3z44Bw6ABeVL415"},
+      {id: 12, name: "Wavybone (feat. Juicy J & UGK)", duration: "5:03", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/5cYZm4KeDKM8Pw8z5XRKJt"},
+      {id: 13, name: "West Side Highway (feat. James Fauntleroy)", duration: "2:56", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3RySVukMPe4R7lAP8oGI17"},
+      {id: 14, name: "Better Things", duration: "3:19", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3nHbQNMuGuEtIVhPGVfFbF"},
+      {id: 15, name: "M'$ (feat. Lil Wayne)", duration: "3:53", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/29ZSk6XmWPx3DX69xBb7Yi"},
+      {id: 16, name: "Dreams (Interlude)", duration: "2:16", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2JqNypbkqPNtCLBeuUqmnm"},
+      {id: 17, name: "Everyday (feat. Rod Stewart, Miguel & Mark Ronson)", duration: "4:20", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2N3U8uTYhjX2KwGT0pf5x0"},
+      {id: 18, name: "Back Home (feat. Mos Def, Acyde & Yams)", duration: "4:38", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/41FxRrhwqe2LvFcU3WapS1"},
+    ],
+    releaseDate: "26 May 2015",
+    duration: "18 mahnılar, 1 saat 6 dəqiqə",
+    label: "A$AP Rocky Recordings LLC/RCA Records. Marketed & Distributed by Polo Grounds Music/RCA Records."
   },
 
 
   {
     id: 64,
-    title: "We Don't Trust You (2LP)",
+    title: "WE DON'T TRUST YOU (2LP)",
     artist: ["Future", "Metro Boomin"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -2612,7 +2855,29 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "We Don't Trust You amerikalı reper Future və amerikalı səs prodüseri Metro Boomin tərəfindən 22 mart 2024-cü ildə çıxan ilk birgə studiya albomudur. Albomda Weeknd, Travis Scott, Playboi Carti, Kendrick Lamar və Rick Ross kimi məşhurlar qonaq kimi çıxış edirlər. İstehsal əsasən Metro tərəfindən özü, Mike Dean, Oz, Southside, Boi-1da, Honorable C.N.O.T.E., Allen Ritter, Dre Moon, Zaytoven, Doughboy, Lil 88, Wheezy, G Koop və başqaları tərəfindən həyata keçirilib."
+    description: "We Don't Trust You amerikalı reper Future və amerikalı səs prodüseri Metro Boomin tərəfindən 22 mart 2024-cü ildə çıxan ilk birgə studiya albomudur. Albomda Weeknd, Travis Scott, Playboi Carti, Kendrick Lamar və Rick Ross kimi məşhurlar qonaq kimi çıxış edirlər. İstehsal əsasən Metro tərəfindən özü, Mike Dean, Oz, Southside, Boi-1da, Honorable C.N.O.T.E., Allen Ritter, Dre Moon, Zaytoven, Doughboy, Lil 88, Wheezy, G Koop və başqaları tərəfindən həyata keçirilib.",
+    tracklist: [
+      {id: 1, name: "We Don't Trust You", duration: "3:46", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/1pnDvUuAEd6z8bKEsbAjk1"},
+      {id: 2, name: "Young Metro (feat. The Weeknd)", duration: "3:25", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3OxL6MuctgZp1e0zxoAZhH"},
+      {id: 3, name: "Ice Attack", duration: "3:19", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/70ToiXlzl8N1EgfC07ZcZE"},
+      {id: 4, name: "Type Shit (feat. Playboi Carti & Travis Scott)", duration: "3:48", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/28drn6tQo95MRvO0jQEo5C"},
+      {id: 5, name: "Claustrophobic", duration: "3:42", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/57ELn9TPDIhrpl0dasS465"},
+      {id: 6, name: "Like That (feat. Kendrick Lamar)", duration: "4:27", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2tudvzsrR56uom6smgOcSf"},
+      {id: 7, name: "Slimed In", duration: "3:14", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2GLWhy9iiO1wrLUF5l4FtJ"},
+      {id: 8, name: "Magic John Juan (Princess Diana)", duration: "3:40", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/7pBcryEKcUEaWHwAu1wUyP"},
+      {id: 9, name: "Cinderella (feat. Travis Scott)", duration: "2:49", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/0hKtu53OlIFXVuYkZwcn3o"},
+      {id: 10, name: "Runnin Outta Time", duration: "3:25", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/4q7y1JFDBJSBSLqXVgcI51"},
+      {id: 11, name: "Fried (She a Vibe)", duration: "3:30", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/28xOPIPw0joNPwYd0asIT5"},
+      {id: 12, name: "Ain't No Love", duration: "3:02", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/72qABvaqn3TP6drO2tByA6"},
+      {id: 13, name: "Everyday Hussle (feat. Rick Ross)", duration: "2:13", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3Vg7nPYlOrCkcV1abKbRQ1"},
+      {id: 14, name: "GTA", duration: "3:53", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/4XF9fk0STp9hx8xn5Suwpz"},
+      {id: 15, name: "Seen It All", duration: "2:59", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/5imsnhkfPCm3wajS9ksb21"},
+      {id: 16, name: "WTFYM", duration: "4:52", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/1xwvjqcwflD2NEqRCNcCo2"},
+      {id: 17, name: "Where My Twin @", duration: "2:02", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/30TcFxtFyju8isK6Hjo9KY"},
+    ],
+    releaseDate: "22 Mart 2024",
+    duration: "17 mahnılar, 59 dəqiqə",
+    label: "Wilburn Holding Co. and Boominati Worldwide, under exclusive license to Epic Records, a division of Sony Music Entertainment. With Republic Records, a division of UMG Recordings, Inc."
   },
   {
     id: 65,
@@ -2943,7 +3208,7 @@ export const albums = [
   },
   {
     id: 82,
-    title: "BRAT",
+    title: "BRAT (2LP)",
     artist: ["Charli xcx"],
     price: 119.99,
     genre: "Electronic",
@@ -2995,7 +3260,7 @@ export const albums = [
   },
   {
     id: 89,
-    title: "Immunity",
+    title: "Immunity (LP)",
     artist: ["Clairo"],
     price: 99.99,
     genre: "Alternative",
