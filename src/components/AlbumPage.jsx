@@ -32,7 +32,6 @@ const AlbumPage = () => {
   const [activeTab, setActiveTab] = useState("description");
   const scrollContainerRef = useRef(null);
 
-  // Interaction States
   const [interactions, setInteractions] = useState([]);
   const [rating, setRating] = useState(5);
   const [hoverRating, setHoverRating] = useState(0);
@@ -41,11 +40,11 @@ const AlbumPage = () => {
   const [replyingTo, setReplyingTo] = useState(null);
   const [replyText, setReplyText] = useState("");
 
-  // Audio Playback States
-  const [currentlyPlaying, setCurrentlyPlaying] = useState(null); // { discIndex, trackIndex }
+
+  const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
   const audioRef = useRef(null);
-  const [hoveredTrack, setHoveredTrack] = useState(null); // For hover previews
-  const [expandedSpotifyTrack, setExpandedSpotifyTrack] = useState(null); // For Spotify embeds
+  const [hoveredTrack, setHoveredTrack] = useState(null);
+  const [expandedSpotifyTrack, setExpandedSpotifyTrack] = useState(null);
 
   const album = albums.find((a) => a.id === parseInt(albumId || "", 10));
 
@@ -104,20 +103,17 @@ const AlbumPage = () => {
     setReplyingTo(null);
   };
 
-  // Audio Playback Handlers
   const handlePlayPause = (discIndex, trackIndex, audioUrl) => {
     if (!audioUrl) return;
 
     const isSameTrack = currentlyPlaying?.discIndex === discIndex && currentlyPlaying?.trackIndex === trackIndex;
 
     if (isSameTrack) {
-      // Pause current track
       if (audioRef.current) {
         audioRef.current.pause();
       }
       setCurrentlyPlaying(null);
     } else {
-      // Play new track
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.src = audioUrl;
@@ -130,10 +126,8 @@ const AlbumPage = () => {
   const handleSpotifyToggle = (discIndex, trackIndex) => {
     const trackKey = `${discIndex}-${trackIndex}`;
     if (expandedSpotifyTrack === trackKey) {
-      // Collapse if already expanded
       setExpandedSpotifyTrack(null);
     } else {
-      // Expand and auto-play
       setExpandedSpotifyTrack(trackKey);
     }
   };
@@ -146,18 +140,15 @@ const AlbumPage = () => {
     return expandedSpotifyTrack === `${discIndex}-${trackIndex}`;
   };
 
-  // Hover Preview Handlers
   const handleTrackHover = (discIndex, trackIndex, audioUrl, previewUrl) => {
-    // Don't play preview if track is already playing
     if (isTrackPlaying(discIndex, trackIndex)) return;
 
     const trackKey = `${discIndex}-${trackIndex}`;
     setHoveredTrack(trackKey);
 
-    // Use preview URL if available, otherwise use full audio starting at 30s
     const urlToPlay = previewUrl || audioUrl;
     if (urlToPlay) {
-      previewPlayer.playPreview(urlToPlay, 30, 10); // Start at 30s, play for 10s
+      previewPlayer.playPreview(urlToPlay, 30, 10);
     }
   };
 
@@ -179,7 +170,7 @@ const AlbumPage = () => {
               <img
                 src={currentImage}
                 alt={album.title}
-                className="w-full h-full object-cover transition-opacity duration-500"
+                className="w-full h-full object-contain transition-opacity duration-500"
                 onError={() => setImageError(true)}
               />
             ) : (
@@ -204,7 +195,6 @@ const AlbumPage = () => {
             )}
           </div>
 
-          {/* THUMBNAILS */}
           {galleryImages.length > 1 && (
             <div className="relative bg-card backdrop-blur-sm p-6 rounded-lg border border-border shadow-lg mb-8">
               <p className="text-sm font-medium text-foreground mb-4">Şəkillər ({selectedImage + 1}/{galleryImages.length})</p>
@@ -216,14 +206,13 @@ const AlbumPage = () => {
                     className={`flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-3 transition-all ${selectedImage === index ? "border-primary shadow-xl scale-105 ring-2 ring-primary/50" : "border-border hover:border-primary/50"
                       }`}
                   >
-                    <img src={img.url} alt={`${img.type} ${index + 1}`} className="w-full h-full object-cover" />
+                    <img src={img.url} alt={`${img.type} ${index + 1}`} className="w-full h-full object-contain" />
                   </button>
                 ))}
               </div>
             </div>
           )}
 
-          {/* ALBUM INFO */}
           <div className="mb-10 space-y-4">
             <div className="flex items-center gap-3 flex-wrap">
               <h1 className="text-5xl font-serif font-bold tracking-tight">{album.title}</h1>
@@ -260,6 +249,7 @@ const AlbumPage = () => {
               </button>
             ))}
           </div>
+
           <div className="min-h-[300px] mb-12">
             {activeTab === "description" && (
               <div className="space-y-6">
@@ -267,6 +257,7 @@ const AlbumPage = () => {
                   <span className="px-3 py-1 bg-secondary rounded-lg">{album.genre}</span>
                   <span>•</span>
                   <span>{album.year}</span>
+                  {album.vinylColor && (<><span>•</span><span className="capitalize">{album.vinylColor} Vinyl</span></>)}
                 </div>
 
                 {album.description && (
@@ -276,7 +267,6 @@ const AlbumPage = () => {
                   </div>
                 )}
 
-                {/* VARIANTS */}
                 {album.variants && album.variants.length > 0 && (
                   <div className="border-t border-border pt-6">
                     <h3 className="text-lg font-semibold mb-3">Dizayn Seçin</h3>
@@ -331,11 +321,9 @@ const AlbumPage = () => {
             )}
             {activeTab === "tracklist" && (
               <div className="space-y-6">
-                {/* Hidden audio element for playback */}
                 <audio ref={audioRef} onEnded={() => setCurrentlyPlaying(null)} />
 
                 {album.discs ? (
-                  // Multi-disc album
                   album.discs.map((disc, discIndex) => (
                     <div key={discIndex} className="space-y-2">
                       <h3 className="text-lg font-bold text-primary mt-6 mb-3">
@@ -344,6 +332,7 @@ const AlbumPage = () => {
                       {disc.tracks?.map((track, trackIndex) => {
                         const isTrackExplicit = typeof track === 'object' ? (track.explicit || track.isExplicit) : false;
                         const trackTitle = typeof track === 'object' ? (track.title || track.name) : track;
+                        const trackFeatures = typeof track === 'object' ? track.features : null;
                         const audioUrl = typeof track === 'object' ? track.audio : null;
                         const spotifyEmbed = typeof track === 'object' ? track.spotifyEmbed : null;
                         const playing = isTrackPlaying(discIndex, trackIndex);
@@ -376,9 +365,14 @@ const AlbumPage = () => {
                                   </button>
                                 )}
                                 <span className="font-mono text-muted-foreground w-6">{trackIndex + 1}</span>
-                                <div className="flex items-center gap-2">
-                                  <span className={`font-medium ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
-                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
+                                <div className="flex flex-col gap-1">
+                                  <div className="flex items-center gap-2">
+                                    <span className={`font-medium ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
+                                    {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
+                                  </div>
+                                  {trackFeatures && (
+                                    <span className="text-sm text-muted-foreground">{trackFeatures}</span>
+                                  )}
                                 </div>
                               </div>
                               <span className="text-sm font-mono text-muted-foreground">{track.duration || "--:--"}</span>
@@ -409,6 +403,7 @@ const AlbumPage = () => {
                     {album.tracklist?.map((track, trackIndex) => {
                       const isTrackExplicit = typeof track === 'object' ? (track.explicit || track.isExplicit) : false;
                       const trackTitle = typeof track === 'object' ? (track.title || track.name) : track;
+                      const trackFeatures = typeof track === 'object' ? track.features : null;
                       const audioUrl = typeof track === 'object' ? track.audio : null;
                       const spotifyEmbed = typeof track === 'object' ? track.spotifyEmbed : null;
                       const playing = isTrackPlaying(0, trackIndex);
@@ -421,20 +416,6 @@ const AlbumPage = () => {
                             onMouseEnter={() => handleTrackHover(0, trackIndex, audioUrl, track.preview)}
                             onMouseLeave={handleTrackLeave}
                           >
-                            {/* LEFT SIDE: Number and Title */}
-                            <div className="flex items-center gap-4">
-                              <span className="font-mono text-muted-foreground w-6">{trackIndex + 1}</span>
-                              <div className="flex items-center gap-2">
-                                <span className={`font-medium ${playing || spotifyExpanded ? 'text-primary' : ''}`}>
-                                  {trackTitle}
-                                </span>
-                                {isTrackExplicit && (
-                                  <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>
-                                )}
-                              </div>
-                            </div>
-
-                            {/* RIGHT SIDE: Duration and Play Button */}
                             <div className="flex items-center gap-4">
                               {(audioUrl || spotifyEmbed) && (
                                 <button
@@ -454,24 +435,31 @@ const AlbumPage = () => {
                                   )}
                                 </button>
                               )}
-
-                              <span className="text-sm font-mono text-muted-foreground min-w-[40px] text-right">
-                                {track.duration || "--:--"}
-                              </span>
+                              <span className="font-mono text-muted-foreground w-6">{trackIndex + 1}</span>
+                              <div className="flex flex-col gap-1">
+                                <div className="flex items-center gap-2">
+                                  <span className={`font-medium ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
+                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
+                                </div>
+                                {trackFeatures && (
+                                  <span className="text-sm text-muted-foreground">{trackFeatures}</span>
+                                )}
+                              </div>
                             </div>
+                            <span className="text-sm font-mono text-muted-foreground">{track.duration || "--:--"}</span>
                           </div>
 
                           {spotifyEmbed && spotifyExpanded && (
                             <div className="px-4 pb-4">
                               <iframe
-                                key={`spotify-${trackIndex}`}
+                                key={`spotify-player-${trackIndex}`}
                                 style={{ borderRadius: '12px' }}
                                 src={`${spotifyEmbed}?autoplay=1`}
                                 width="100%"
                                 height="152"
                                 frameBorder="0"
                                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                loading="lazy"
+                                loading="eager"
                               />
                             </div>
                           )}

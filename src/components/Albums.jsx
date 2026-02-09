@@ -2934,6 +2934,7 @@ export const albums = [
     tracklist: [
       {id: 1, name: "Annihilate (feat. Swae Lee, Lil Wayne & Offset)", duration: "3:51", isExplicit: false, spotifyEmbed: "https://open.spotify.com/embed/track/39MK3d3fonIP8Mz9oHCTBB"},
       {id: 2, name: "Am I Dreaming (feat. A$AP Rocky & Roisee)", duration: "4:16", isExplicit: false, spotifyEmbed: "https://open.spotify.com/embed/track/6Ec5LeRzkisa5KJtwLfOoW"},
+      {id: 3, name: "All The Way Live (feat. Future & Lil Uzi Vert)", duration: "2:13", isExplicit: true, spotifyEmbed: "https://example.com"},
     ]
   },
   {
