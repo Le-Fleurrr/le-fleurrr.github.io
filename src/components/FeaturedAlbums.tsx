@@ -4,7 +4,7 @@ import { VinylRecord } from "./VinylRecord.tsx";
 import { CDDisc } from "./CDDisc.tsx";
 import { CassetteTape } from "./CassetteTape.tsx";
 import { Button } from "./ui/Button.tsx";
-import { ShoppingCart, Heart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { FavoriteButton } from './FavoritesSystem';
 import { albums as rawAlbums } from "./Albums.jsx";
 

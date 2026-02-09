@@ -156,7 +156,7 @@ const flowerBoy = {
 };
 
 const weDontTrustYou = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768924554/weDontTrustYou_ldyads.jpg',
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1770570523/ab67616d0000b273cec3fc072352b5f4_pia27o.png',
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768924552/weDontTrustYou_vinyl_c8mvwy.jpg']
 };
 
@@ -345,7 +345,7 @@ const musicCD = {
 
 
 const heroesAndVillains = {
-  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768924534/heroes_villains_dj9uor.jpg',
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1770570523/ab67616d0000b273c4fee55d7b514796_jxmbas.png',
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768924533/heroes_villains_vinyl_zfhwuq.jpg']
 };
 
@@ -749,7 +749,7 @@ export const albums = [
   },
   {
     id: 5,
-    title: "Call Me If You Get Lost (2LP)",
+    title: "CALL ME IF YOU GET LOST (2LP)",
     artist: ["Tyler, The Creator"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -1868,7 +1868,7 @@ export const albums = [
   },
   {
     id: 29,
-    title: "WOLF (2LP)",
+    title: "Wolf (2LP)",
     artist: ["Tyler, The Creator"],
     price: 79.99,
     genre: "Hip-Hop/Rap",
@@ -2895,7 +2895,24 @@ export const albums = [
     sleeveColor: "white",
     accentColor: "white",
     format: "vinyl",
-    description: "Heroes & Villains Amerikalı səsyazma prodüseri Metro Boomin-in ikinci solo studiya albomudur. Albom 2 dekabr 2022-ci ildə çıxıb. Albomda John Legend, Future, Chris Brown, Don Toliver, Travis Scott, 21 Savage, Young Nudy, Young Thug, the Weeknd, Mustafa, ASAP Rocky, the late Takeoff və Gunna kimi qruplar qonaq kimi çıxış ediblər. Albomun istehsalı əsasən Metro özü, TM88, DJ Moon, Peter Lee Johnson, Johan Lenox, Allen Ritter, David x Eli, Honorable C.N.O.T.E., Scriptplugg, Prince85, Oz, Nik D, D. Rich, DaHeala, My Best Friend Jacob, Elkan, Simon on the Moon və Xz tərəfindən həyata keçirilib."
+    description: "Heroes & Villains Amerikalı səsyazma prodüseri Metro Boomin-in ikinci solo studiya albomudur. Albom 2 dekabr 2022-ci ildə çıxıb. Albomda John Legend, Future, Chris Brown, Don Toliver, Travis Scott, 21 Savage, Young Nudy, Young Thug, the Weeknd, Mustafa, ASAP Rocky, the late Takeoff və Gunna kimi qruplar qonaq kimi çıxış ediblər. Albomun istehsalı əsasən Metro özü, TM88, DJ Moon, Peter Lee Johnson, Johan Lenox, Allen Ritter, David x Eli, Honorable C.N.O.T.E., Scriptplugg, Prince85, Oz, Nik D, D. Rich, DaHeala, My Best Friend Jacob, Elkan, Simon on the Moon və Xz tərəfindən həyata keçirilib.",
+    tracklist: [
+      {id: 1, name: "On Time (feat. John Legend)", duration: "2:48", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/0YFqKxV9uNu6LUeYkLOKRS"},
+      {id: 2, name: "Superhero (feat. Future & Chris Brown)", duration: "3:02", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/0vjeOZ3Ft5jvAi9SBFJm1j"},
+      {id: 3, name: "Too Many Nights (feat. Don Toliver & Future)", duration: "3:19", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2Hh3ETdQKrmSI3QS0hme7g"},
+      {id: 4, name: "Raindrops (Insane) [feat. Travis Scott]", duration: "3:08", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/1pacwLXyRO47ka0v6LTIiY"},
+      {id: 5, name: "Umbrella (feat. 21 Savage & Young Nudy)", duration: "3:42", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2Yt4SXIgmoaPZHGdRafp4P"},
+      {id: 6, name: "Trance (feat. Travis Scott & Young Thug)", duration: "3:14", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/5wG3HvLhF6Y5KTGlK0IW3J"},
+      {id: 7, name: "Around Me (feat. Don Toliver)", duration: "3:11", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/221qmpQeBNV87sUjQeUTVH"},
+      {id: 8, name: "Metro Spider (feat. Young Thug)", duration: "2:13", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2VtgzixdB967bHDNu5A1nh"},
+      {id: 9, name: "I Can't Save You (Interlude) [feat. Future & Young Thug)", duration: "1:30", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2N9LEu6Pf8nDcp3GjWJT1Z"},
+      {id: 10, name: "Creepin' (feat. The Weeknd & 21 Savage)", duration: "3:41", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2dHHgzDwk4BJdRwy9uXhTO"},
+      {id: 11, name: "Niagra Falls (Foot or 2) [feat. Travis Scott & 21 Savage]", duration: "3:27", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/4WuOWVnAqvEQxgSRrspBgt"},
+      {id: 12, name: "Walk Em Down (Don't Kill Civilians) [feat. 21 Savage & Mustafa]", duration: "5:10", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/1UsQe17Ef7tV1ahFqHEFR3"},
+      {id: 13, name: "Lock On Me (feat. Travis Scott & Future)", duration: "3:27", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/0OoNzMdPSgbkM5MkcuEZfm"},
+      {id: 14, name: "Feel The Fiyaaaah (feat. A$AP Rocky & feat. Takeoff)", duration: "3:09", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3SsJ17EnPIu1B4GZshqjIS"},
+      {id: 15, name: "All The Money (feat. Gunna) [Bonus]", duration: "2:47", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/4a1fh9vJMMoRjNrBmEWoM0"},
+    ]
   },
   {
     id: 66,
@@ -2913,7 +2930,11 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "purple",
     format: "vinyl",
-    description: "Sony Pictures Animation tərəfindən istehsal olunmuş və Miles Moralesin superqəhrəman Hörümçək Adam təcəssümü əsasında çəkilmiş 2023-cü il Amerika cizgi filmi Spider-Man: Across The Spider-Verse-nın saundtreki, amerikalı səsyazma prodüseri Metro Boomin tərəfindən hazırlanmış saundtrek albomundan və ingilis bəstəkar Daniel Pemberton tərəfindən bəstələnmiş orijinal musiqidən ibarətdir. Hər iki albom filmin buraxılışı ilə birlikdə 2 iyun 2023-cü ildə buraxılmışdır. Filmdə Swae Lee, Lil Wayne, Offset, ASAP Rocky, Roisee, Future, Lil Uzi Vert, JID, James Blake, Nav, A Boogie wit da Hoodie, Ei8ht, Don Toliver, Wizkid, Beam, Toian, Coi Leray, 21 Savage, 2 Chainz və Nas rol almışdır. Saundtrekin delüks versiyası üç gün sonra, 5 iyun 2023-cü ildə yayımlandı. Filmdə Mora, Becky G, Ayra Starr, Shenseea, Myke Towers, Big Boss Vette, Omah Lay və Pop Money kimi digər sənətçilərin ifasında əlavə mahnılar da yer alır."
+    description: "Sony Pictures Animation tərəfindən istehsal olunmuş və Miles Moralesin superqəhrəman Hörümçək Adam təcəssümü əsasında çəkilmiş 2023-cü il Amerika cizgi filmi Spider-Man: Across The Spider-Verse-nın saundtreki, amerikalı səsyazma prodüseri Metro Boomin tərəfindən hazırlanmış saundtrek albomundan və ingilis bəstəkar Daniel Pemberton tərəfindən bəstələnmiş orijinal musiqidən ibarətdir. Hər iki albom filmin buraxılışı ilə birlikdə 2 iyun 2023-cü ildə buraxılmışdır. Filmdə Swae Lee, Lil Wayne, Offset, ASAP Rocky, Roisee, Future, Lil Uzi Vert, JID, James Blake, Nav, A Boogie wit da Hoodie, Ei8ht, Don Toliver, Wizkid, Beam, Toian, Coi Leray, 21 Savage, 2 Chainz və Nas rol almışdır. Saundtrekin delüks versiyası üç gün sonra, 5 iyun 2023-cü ildə yayımlandı. Filmdə Mora, Becky G, Ayra Starr, Shenseea, Myke Towers, Big Boss Vette, Omah Lay və Pop Money kimi digər sənətçilərin ifasında əlavə mahnılar da yer alır.",
+    tracklist: [
+      {id: 1, name: "Annihilate (feat. Swae Lee, Lil Wayne & Offset)", duration: "3:51", isExplicit: false, spotifyEmbed: "https://open.spotify.com/embed/track/39MK3d3fonIP8Mz9oHCTBB"},
+      {id: 2, name: "Am I Dreaming (feat. A$AP Rocky & Roisee)", duration: "4:16", isExplicit: false, spotifyEmbed: "https://open.spotify.com/embed/track/6Ec5LeRzkisa5KJtwLfOoW"},
+    ]
   },
   {
     id: 67,

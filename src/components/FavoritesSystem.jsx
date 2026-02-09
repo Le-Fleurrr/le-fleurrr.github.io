@@ -137,7 +137,7 @@ export const FavoriteButton = ({ albumId, size = "default", className = "" }) =>
       onClick={handleClick}
       className={`${sizeClasses[size]} rounded-full flex items-center justify-center transition-all ${
         favorited 
-          ? 'bg-red-500 hover:bg-red-600 text-white' 
+          ? 'bg-blue-500 hover:bg-blue-600 text-white' 
           : 'bg-card hover:bg-secondary border border-border text-foreground'
       } ${isAnimating ? 'scale-125' : 'scale-100'} ${className}`}
       aria-label={favorited ? "Remove from favorites" : "Add to favorites"}
