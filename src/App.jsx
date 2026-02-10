@@ -6,6 +6,7 @@ import { TooltipProvider } from "./components/ui/Tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Index from './components/pages/Index';
 import NotFound from "./components/pages/NotFound";
+import { LanguageProvider } from "./components/LanguageContext.jsx";
 import { Account } from './components/Account';
 import ArtistPage from './components/ArtistPage';
 import AlbumPage from './components/AlbumPage';
@@ -18,6 +19,7 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
+    <LanguageProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <FavoritesProvider>
@@ -39,6 +41,7 @@ function App() {
         </FavoritesProvider>
       </TooltipProvider>
     </QueryClientProvider>
+    </LanguageProvider>
   );
 }
 

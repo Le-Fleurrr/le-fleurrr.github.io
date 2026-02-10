@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { X, Type, MousePointer, AlignLeft, Zap, Palette, Sun, Moon, Languages, Disc } from "lucide-react";
+import { useState, useEffect } from "react";
+import { X, Type, MousePointer, Zap, Palette, Sun, Moon, Languages, Disc } from "lucide-react";
 import { Button } from "./ui/Button.tsx";
+import { useLanguage } from "./LanguageContext.jsx";
 
 export const Settings = ({ isOpen, onClose }) => {
+  const { setLanguage, t } = useLanguage();
+
   const [settings, setSettings] = useState({
     biggerText: false,
     biggerCursor: false,
@@ -33,6 +36,7 @@ export const Settings = ({ isOpen, onClose }) => {
   useEffect(() => {
     localStorage.setItem("userSettings", JSON.stringify(settings));
     applySettings(settings);
+    setLanguage(settings.language);
   }, [settings]);
 
   const applySettings = (s) => {
@@ -67,14 +71,9 @@ export const Settings = ({ isOpen, onClose }) => {
     }
 
     let vinylState = "none";
-    if (s.hideVinylEntirely) {
-      vinylState = "all";
-    } else if (s.hideVinylArtistOnly) {
-      vinylState = "artist";
-    }
-
+    if (s.hideVinylEntirely) vinylState = "all";
+    else if (s.hideVinylArtistOnly) vinylState = "artist";
     root.setAttribute("data-hide-vinyl", vinylState);
-    root.classList.toggle("vinyl-stop", s.stopAnimations);
 
     root.setAttribute("lang", s.language);
   };
@@ -102,8 +101,8 @@ export const Settings = ({ isOpen, onClose }) => {
       <div className="bg-background border border-border w-full max-w-2xl max-h-[85vh] overflow-hidden shadow-2xl rounded-2xl flex flex-col">
         <div className="px-8 py-6 border-b border-border flex items-center justify-between bg-muted/30">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight">Parametrlər</h2>
-            <p className="text-sm text-muted-foreground">Görünüşü və interfeysi fərdiləşdirin</p>
+            <h2 className="text-2xl font-bold tracking-tight">{t.settings}</h2>
+            <p className="text-sm text-muted-foreground">{t.customize}</p>
           </div>
           <button onClick={onClose} className="p-2 hover:bg-muted rounded-full transition-colors">
             <X className="w-6 h-6" />
@@ -113,14 +112,14 @@ export const Settings = ({ isOpen, onClose }) => {
         <div className="p-8 overflow-y-auto space-y-10">
           <section>
             <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2">
-              <Disc className="w-4 h-4" /> Vinyl Tənzimləmələri
+              <Disc className="w-4 h-4" /> {t.vinylSettings}
             </h3>
             <div className="grid grid-cols-1 gap-3">
               <button
-                onClick={() => setSettings(s => ({ ...s, hideVinylEntirely: !s.hideVinylEntirely }))}
+                onClick={() => setSettings(s => ({ ...s, hideVinylEntirely: !s.hideVinylEntirely, hideVinylArtistOnly: false }))}
                 className={`flex items-center justify-between p-4 rounded-xl border-2 transition-all ${settings.hideVinylEntirely ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`}
               >
-                <span className="font-semibold text-sm">Vinyl-ı tamamilə gizlə</span>
+                <span className="font-semibold text-sm">{t.hideVinylAll}</span>
                 <div className={`w-10 h-5 rounded-full relative transition-colors ${settings.hideVinylEntirely ? "bg-primary" : "bg-muted"}`}>
                   <div className={`absolute top-1 w-3 h-3 bg-white rounded-full transition-all ${settings.hideVinylEntirely ? "left-6" : "left-1"}`} />
                 </div>
@@ -131,7 +130,7 @@ export const Settings = ({ isOpen, onClose }) => {
                 onClick={() => setSettings(s => ({ ...s, hideVinylArtistOnly: !s.hideVinylArtistOnly }))}
                 className={`flex items-center justify-between p-4 rounded-xl border-2 transition-all ${settings.hideVinylArtistOnly ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"} ${settings.hideVinylEntirely ? "opacity-40 cursor-not-allowed" : ""}`}
               >
-                <span className="font-semibold text-sm">Yalnız Artist səhifəsində gizlə</span>
+                <span className="font-semibold text-sm">{t.hideVinylArtist}</span>
                 <div className={`w-10 h-5 rounded-full relative transition-colors ${settings.hideVinylArtistOnly ? "bg-primary" : "bg-muted"}`}>
                   <div className={`absolute top-1 w-3 h-3 bg-white rounded-full transition-all ${settings.hideVinylArtistOnly ? "left-6" : "left-1"}`} />
                 </div>
@@ -141,7 +140,7 @@ export const Settings = ({ isOpen, onClose }) => {
 
           <section>
             <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2">
-              <Type className="w-4 h-4" /> Məzmun Görünüşü
+              <Type className="w-4 h-4" /> {t.contentView}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <button
@@ -151,7 +150,7 @@ export const Settings = ({ isOpen, onClose }) => {
                 <div className={`p-2 rounded-lg ${settings.biggerText ? "bg-primary text-primary-foreground" : "bg-muted"}`}>
                   <Type className="w-6 h-6" />
                 </div>
-                <span className="font-semibold">Böyük Mətn</span>
+                <span className="font-semibold">{t.biggerText}</span>
               </button>
 
               <button
@@ -161,27 +160,27 @@ export const Settings = ({ isOpen, onClose }) => {
                 <div className={`p-2 rounded-lg ${settings.biggerCursor ? "bg-primary text-primary-foreground" : "bg-muted"}`}>
                   <MousePointer className="w-6 h-6" />
                 </div>
-                <span className="font-semibold">Böyük Kursor</span>
+                <span className="font-semibold">{t.biggerCursor}</span>
               </button>
             </div>
 
             <div className="mt-6">
-              <label className="block text-sm font-medium mb-2">Sətir Hündürlüyü</label>
+              <label className="block text-sm font-medium mb-2">{t.lineHeight}</label>
               <select
                 value={settings.lineHeight}
                 onChange={(e) => setSettings(s => ({ ...s, lineHeight: e.target.value }))}
                 className="w-full p-3 rounded-lg bg-muted border border-border focus:ring-2 ring-primary outline-none"
               >
-                <option value="normal">Normal</option>
-                <option value="relaxed">Rahat</option>
-                <option value="loose">Geniş</option>
+                <option value="normal">{t.lineNormal}</option>
+                <option value="relaxed">{t.lineRelaxed}</option>
+                <option value="loose">{t.lineLoose}</option>
               </select>
             </div>
           </section>
 
           <section>
             <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2">
-              <Zap className="w-4 h-4" /> Effektlər və Rənglər
+              <Zap className="w-4 h-4" /> {t.effectsColors}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <button
@@ -189,7 +188,7 @@ export const Settings = ({ isOpen, onClose }) => {
                 className={`flex items-center gap-4 p-4 rounded-xl border-2 transition-all ${settings.stopAnimations ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`}
               >
                 <Zap className={`w-6 h-6 ${settings.stopAnimations ? "text-primary" : "text-muted-foreground"}`} />
-                <span className="font-semibold">Animasiyaları Dayandır</span>
+                <span className="font-semibold">{t.stopAnimations}</span>
               </button>
 
               <button
@@ -197,15 +196,13 @@ export const Settings = ({ isOpen, onClose }) => {
                 className={`flex items-center gap-4 p-4 rounded-xl border-2 transition-all ${settings.invertColors ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`}
               >
                 <Palette className={`w-6 h-6 ${settings.invertColors ? "text-primary" : "text-muted-foreground"}`} />
-                <span className="font-semibold">Rəngləri Çevir</span>
+                <span className="font-semibold">{t.invertColors}</span>
               </button>
             </div>
 
             <div className="mt-6 space-y-6">
               <div>
-                <div className="flex justify-between mb-2">
-                  <label className="text-sm font-medium">Parlaqlıq: {settings.brightness}%</label>
-                </div>
+                <label className="text-sm font-medium block mb-2">{t.brightness}: {settings.brightness}%</label>
                 <input
                   type="range" min="50" max="150" value={settings.brightness}
                   onChange={(e) => setSettings(s => ({ ...s, brightness: parseInt(e.target.value) }))}
@@ -213,9 +210,7 @@ export const Settings = ({ isOpen, onClose }) => {
                 />
               </div>
               <div>
-                <div className="flex justify-between mb-2">
-                  <label className="text-sm font-medium">Kontrast: {settings.contrast}%</label>
-                </div>
+                <label className="text-sm font-medium block mb-2">{t.contrast}: {settings.contrast}%</label>
                 <input
                   type="range" min="50" max="150" value={settings.contrast}
                   onChange={(e) => setSettings(s => ({ ...s, contrast: parseInt(e.target.value) }))}
@@ -227,33 +222,35 @@ export const Settings = ({ isOpen, onClose }) => {
 
           <section>
             <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2">
-              <Languages className="w-4 h-4" /> Dil
+              <Languages className="w-4 h-4" /> {t.language}
             </h3>
-            <select
-              value={settings.language}
-              onChange={(e) => setSettings(s => ({ ...s, language: e.target.value }))}
-              className="w-full p-3 rounded-lg bg-muted border border-border focus:ring-2 ring-primary outline-none"
-            >
-              <option value="az">Azərbaycan</option>
-              <option value="en">English</option>
-              <option value="ru">Русский</option>
-            </select>
+            <div className="flex p-1 bg-muted rounded-xl gap-1">
+              {["az", "en", "ru"].map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => setSettings(s => ({ ...s, language: lang }))}
+                  className={`flex-1 py-3 rounded-lg transition-all font-semibold text-sm ${settings.language === lang ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                >
+                  {lang === "az" ? "Azərbaycan" : lang === "en" ? "English" : "Русский"}
+                </button>
+              ))}
+            </div>
           </section>
 
           <section>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Görünüş Rejimi</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">{t.theme}</h3>
             <div className="flex p-1 bg-muted rounded-xl gap-1">
               <button
-                onClick={() => setSettings(s => ({ ...s, theme: 'dark' }))}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-lg transition-all ${settings.theme === 'dark' ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                onClick={() => setSettings(s => ({ ...s, theme: "dark" }))}
+                className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-lg transition-all ${settings.theme === "dark" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
               >
-                <Moon className="w-4 h-4" /> Qaranlıq
+                <Moon className="w-4 h-4" /> {t.dark}
               </button>
               <button
-                onClick={() => setSettings(s => ({ ...s, theme: 'light' }))}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-lg transition-all ${settings.theme === 'light' ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+                onClick={() => setSettings(s => ({ ...s, theme: "light" }))}
+                className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-lg transition-all ${settings.theme === "light" ? "bg-background shadow-sm text-foreground" : "text-muted-foreground hover:text-foreground"}`}
               >
-                <Sun className="w-4 h-4" /> İşıqlı
+                <Sun className="w-4 h-4" /> {t.light}
               </button>
             </div>
           </section>
@@ -261,7 +258,7 @@ export const Settings = ({ isOpen, onClose }) => {
 
         <div className="p-6 border-t border-border bg-muted/20">
           <Button onClick={resetSettings} variant="outline" className="w-full">
-            Parametrləri Sıfırla
+            {t.reset}
           </Button>
         </div>
       </div>

@@ -88,12 +88,13 @@
     font-family: 'Playfair Display', serif;
   }
 
-  html.no-animations .vinyl-record-element,
-html.no-animations .vinyl-disk {
-  animation: none !important;
-  transition: none !important;
+html.no-animations *,
+html.no-animations *::before,
+html.no-animations *::after {
+  animation-play-state: paused !important;
+  animation-duration: 0s !important;
+  transition-duration: 0s !important;
 }
-
 html[data-hide-vinyl="all"] .vinyl-record-container {
   display: none !important;
 }
