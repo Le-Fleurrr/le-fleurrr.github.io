@@ -1529,16 +1529,16 @@ export const albums = [
     ],
     tracklist: [
       { id: 1, name: "POP OUT", isExplicit: true, duration: "2:42" },
-      { id: 2, name: "CRUSH", features: "Playboi Carti & Travis Scott", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3VdooJLOy4tLxKpnn46SMP", duration: "2:53" },
+      { id: 2, name: "CRUSH", features: "Playboi Carti & Travis Scott", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3VdooJLOy4tLxKpnn46SMP", musicVideo: "https://www.youtube.com/watch?v=94B_-0kP684", duration: "2:53" },
       { id: 3, name: "K POP", isExplicit: true, duration: "1:53" },
-      { id: 4, name: "EVIL J0RDAN", isExplicit: true, duration: "3:04" },
+      { id: 4, name: "EVIL J0RDAN", isExplicit: true, musicVideo: "https://youtu.be/VcRc2DHHhoM?si=DR3qRwstvsJjh3Dh", duration: "3:04" },
       { id: 5, name: "MOJO JOJO", isExplicit: true, duration: "2:36" },
       { id: 6, name: "PHILLY", features: "Playboi Carti & Travis Scott", isExplicit: true, duration: "3:06" },
       { id: 7, name: "RADAR", isExplicit: true, duration: "1:48" },
       { id: 8, name: "RATHER LIE", features: "Playboi Carti & The Weeknd", isExplicit: true, duration: "3:30" },
-      { id: 9, name: "FINE SHIT", isExplicit: true, duration: "1:47" },
-      { id: 10, name: "BACKD00R (feat. Jhené Aiko)", features: "Playboi Carti, Kendrick Lamar", isExplicit: true, duration: "3:10" },
-      { id: 11, name: "TOXIC (fdeat. Skepta)", isExplicit: true, duration: "2:15" },
+      { id: 9, name: "FINE SHIT", isExplicit: true, duration: "1:47", musicVideo: "https://youtu.be/uMZiaJ4speo?si=jxBUmPC8Q8Asz4QQ" },
+      { id: 10, name: "BACKD00R (feat. Jhené Aiko)", features: "Playboi Carti & Kendrick Lamar", isExplicit: true, duration: "3:10" },
+      { id: 11, name: "TOXIC (feat. Skepta)", isExplicit: true, duration: "2:15" },
       { id: 12, name: "MUNYUN", isExplicit: true, duration: "2:34" },
       { id: 13, name: "CRANK", isExplicit: true, duration: "2:28" },
       { id: 14, name: "CHARGE DEM HOES A FEE", features: "Playboi Carti, Future & Travis Scott", isExplicit: true, duration: "3:45" },
@@ -1552,7 +1552,7 @@ export const albums = [
       { id: 22, name: "OLYMPIAN", isExplicit: true, duration: "2:55" },
       { id: 23, name: "OPM BABI", isExplicit: true, duration: "2:53" },
       { id: 24, name: "TWIN TRIM", features: "Playboi Carti & Lil Uzi Vert", isExplicit: true, duration: "1:35" },
-      { id: 25, name: "LIKE WEEZY", isExplicit: true, duration: "1:56" },
+      { id: 25, name: "LIKE WEEZY", isExplicit: true, duration: "1:56", musicVideo: "https://youtu.be/C217vygclrk?si=kdaYGpTONUe9Bd0L" },
       { id: 26, name: "DIS 1 GOT IT", isExplicit: true, duration: "2:04" },
       { id: 27, name: "WALK", isExplicit: true, duration: "1:34" },
       { id: 28, name: "HBA", isExplicit: true, duration: "3:33" },
@@ -1590,16 +1590,16 @@ export const albums = [
     ],
     tracklist: [
       { id: 1, name: "POP OUT", isExplicit: true, duration: "2:42" },
-      { id: 2, name: "CRUSH", features: "Playboi Carti & Travis Scott", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3VdooJLOy4tLxKpnn46SMP", duration: "2:53" },
+      { id: 2, name: "CRUSH", features: "Playboi Carti & Travis Scott", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3VdooJLOy4tLxKpnn46SMP", musicVideo: "https://www.youtube.com/watch?v=94B_-0kP684", duration: "2:53" },
       { id: 3, name: "K POP", isExplicit: true, duration: "1:53" },
-      { id: 4, name: "EVIL J0RDAN", isExplicit: true, duration: "3:04" },
+      { id: 4, name: "EVIL J0RDAN", isExplicit: true, musicVideo: "https://youtu.be/VcRc2DHHhoM?si=DR3qRwstvsJjh3Dh", duration: "3:04" },
       { id: 5, name: "MOJO JOJO", isExplicit: true, duration: "2:36" },
       { id: 6, name: "PHILLY", features: "Playboi Carti & Travis Scott", isExplicit: true, duration: "3:06" },
       { id: 7, name: "RADAR", isExplicit: true, duration: "1:48" },
       { id: 8, name: "RATHER LIE", features: "Playboi Carti & The Weeknd", isExplicit: true, duration: "3:30" },
-      { id: 9, name: "FINE SHIT", isExplicit: true, duration: "1:47" },
-      { id: 10, name: "BACKD00R", features: "Playboi Carti, Kendrick Lamar & Jhené Aiko", isExplicit: true, duration: "3:10" },
-      { id: 11, name: "TOXIC (feat. Skepta", isExplicit: true, duration: "2:15" },
+      { id: 9, name: "FINE SHIT", isExplicit: true, duration: "1:47", musicVideo: "https://youtu.be/uMZiaJ4speo?si=jxBUmPC8Q8Asz4QQ" },
+      { id: 10, name: "BACKD00R (feat. Jhené Aiko)", features: "Playboi Carti & Kendrick Lamar", isExplicit: true, duration: "3:10" },
+      { id: 11, name: "TOXIC (feat. Skepta)", isExplicit: true, duration: "2:15" },
       { id: 12, name: "MUNYUN", isExplicit: true, duration: "2:34" },
       { id: 13, name: "CRANK", isExplicit: true, duration: "2:28" },
       { id: 14, name: "CHARGE DEM HOES A FEE", features: "Playboi Carti, Future & Travis Scott", isExplicit: true, duration: "3:45" },
@@ -1613,7 +1613,7 @@ export const albums = [
       { id: 22, name: "OLYMPIAN", isExplicit: true, duration: "2:55" },
       { id: 23, name: "OPM BABI", isExplicit: true, duration: "2:53" },
       { id: 24, name: "TWIN TRIM", features: "Playboi Carti & Lil Uzi Vert", isExplicit: true, duration: "1:35" },
-      { id: 25, name: "LIKE WEEZY", isExplicit: true, duration: "1:56" },
+      { id: 25, name: "LIKE WEEZY", isExplicit: true, duration: "1:56", musicVideo: "https://youtu.be/C217vygclrk?si=kdaYGpTONUe9Bd0L" },
       { id: 26, name: "DIS 1 GOT IT", isExplicit: true, duration: "2:04" },
       { id: 27, name: "WALK", isExplicit: true, duration: "1:34" },
       { id: 28, name: "HBA", isExplicit: true, duration: "3:33" },
@@ -2628,7 +2628,7 @@ export const albums = [
     description: "Vinil LP presləməsi. 2018-ci ildə buraxılan, reper/prodüser Kanye Westin səkkizinci studiya albomudur. Albomda Ty Dolla Sign, PartyNextDoor, Kid Cudi, Jeremih və 070 Shake kimi qruplar qonaq vokal ifa edir. Albomun tam versiyasını West istehsal edib, əlavə olaraq həmicraçı prodüser olan Mike Dean, eləcə də Francis and the Lights, Benny Blanco, Irv Gotti, 7 Aurelius, Noah Goldstein, Che Pope, Caroline Shaw, Pi'erre Bourne və Ty Dolla Sign kimi qruplar da prodüserlik edib. Ye, West tərəfindən Wyoming Sessions adlandırılan beş yeddi mahnıdan ibarət albomdan ikincisidir. Vest albomun adını, mahnılarında tez-tez istifadə olunan öz adının kiçildilmiş versiyasını belə izah etdi: İnanıram ki, Müqəddəs Kitabda ən çox istifadə edilən ye sözüdür və Müqəddəs Kitabda sən mənasını verir. Beləliklə, mən sənəm, mən bizəm, bu bizik. Bu söz yeganə mənasını verən Kanye sözündən sadəcə Ye sözünə keçdi - sadəcə yaxşılığımızın, pisliyimizin, çaşqınlığımızın, hər şeyimizin əks olunması. Albom daha çox kim olduğumuzun əksidir.",
     releaseDate: "27 Mart 2026",
   },
-    {
+  {
     id: 39,
     title: "Love Sick (Deluxe) [2LP]",
     artist: ["Don Toliver"],
@@ -2895,7 +2895,7 @@ export const albums = [
     duration: "18 mahnılar, 1 saat 6 dəqiqə",
     label: "A$AP Rocky Recordings LLC/RCA Records. Marketed & Distributed by Polo Grounds Music/RCA Records."
   },
-    {
+  {
     id: 45,
     title: "DON'T BE DUMB (2LP)",
     artist: ["A$AP Rocky"],
@@ -3289,7 +3289,7 @@ export const albums = [
     format: "vinyl",
     description: "Eternal Atake amerikalı reper və müğənni Lil Uzi Vertin ikinci studiya albomudur. Albom 6 mart 2020-ci ildə çıxıb. Albomda amerikalı müğənni Syd yeganə qonaq kimi çıxış edir. Prodüserlik işləri Bobby Raps, Brandon Finessin, Bugz Ronin, Chief Keef, Oogie Mane, TM88, Wheezy və başqaları tərəfindən həyata keçirilib.",
   },
-    {
+  {
     id: 79,
     title: "Pink Tape (2LP)",
     artist: ["Lil Uzi Vert"],
@@ -3322,7 +3322,7 @@ export const albums = [
     format: "cd",
     description: "What You Saying / Regular Standart CD Zərgərlik qabı qablaşdırması.",
   },
-    {
+  {
     id: 85,
     title: "Good Kid M.A.A.D. City (2LP)",
     artist: ["Kendrick Lamar"],
@@ -3373,7 +3373,7 @@ export const albums = [
     format: "vinyl",
     description: "Man's Best Friend amerikalı müğənni və bəstəkar Sabrina Karpenterin yeddinci studiya albomudur. Albom 29 avqust 2025-ci ildə buraxılmışdır. Karpenter albomu Cek Antonoff və Con Rayanla birlikdə hazırlamışdır. Rayan da onun əvvəlki studiya albomu olan Short n Sweet (2024) üçün mahnılar hazırlamışdır. Əsasən pop və soft rok albomudur.",
   },
-    {
+  {
     id: 86,
     title: "How I'm Feeling Now (LP)",
     artist: ["Charli xcx"],

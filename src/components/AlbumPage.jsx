@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/Button.tsx";
 import {
   ArrowLeft, ChevronLeft, ChevronRight, ShoppingCart,
-  Star, MessageSquare, ListMusic, Info, Reply, Play, Pause
+  Star, MessageSquare, ListMusic, Info, Reply, Play, Pause, Video
 } from "lucide-react";
 import { albums } from "./Albums.jsx";
 import { FavoriteButton } from './FavoritesSystem';
@@ -38,7 +38,7 @@ const FeaturesList = ({ features }) => {
           <span key={idx}>
             <Link 
               to={`/artist/${slug}`} 
-              className="hover:underline transition-colors"
+              className="hover:text-primary hover:underline transition-colors"
             >
               {artist}
             </Link>
@@ -79,6 +79,8 @@ const AlbumPage = () => {
   const audioRef = useRef(null);
   const [hoveredTrack, setHoveredTrack] = useState(null);
   const [expandedSpotifyTrack, setExpandedSpotifyTrack] = useState(null);
+  const [musicVideoUrl, setMusicVideoUrl] = useState(null);
+  const [showMusicVideo, setShowMusicVideo] = useState(false);
 
   if (!album) {
     return (
@@ -182,6 +184,16 @@ const AlbumPage = () => {
     previewPlayer.stop();
   };
 
+  const handleMusicVideoClick = (videoUrl) => {
+    setMusicVideoUrl(videoUrl);
+    setShowMusicVideo(true);
+  };
+
+  const closeMusicVideo = () => {
+    setShowMusicVideo(false);
+    setMusicVideoUrl(null);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
@@ -239,9 +251,9 @@ const AlbumPage = () => {
 
           <div className="mb-10 space-y-4">
             <div className="flex items-center gap-3 flex-wrap">
-              <h1 className="text-5xl font-backrooms font-bold tracking-tight">{album.title}</h1>
+              <h1 className="text-5xl font-spotify font-black tracking-tight">{album.title}</h1>
               {album.isExplicit && (
-                <span className="bg-gray-400 text-black borde px-2 py-1 rounded text-xs font-bold self-center">E</span>
+                <span className="bg-red-500/10 text-red-500 border border-red-500/20 px-2 py-1 rounded text-xs font-bold self-center">E</span>
               )}
             </div>
             <div className="flex items-center gap-2 text-2xl text-muted-foreground">
@@ -249,7 +261,7 @@ const AlbumPage = () => {
                 const slug = String(artist).toLowerCase().replace(/,/g, '').replace(/\$/g, '').replace(/\s+/g, '-').replace(/[^\w-]/g, '');
                 return (
                   <span key={idx}>
-                    <Link to={`/artist/${slug}`} className="hover:underline transition-colors">{artist}</Link>
+                    <Link to={`/artist/${slug}`} className="hover:text-primary transition-colors">{artist}</Link>
                     {idx < artistList.length - 1 && <span className="mx-2">&</span>}
                   </span>
                 );
@@ -359,6 +371,7 @@ const AlbumPage = () => {
                         const trackFeatures = typeof track === 'object' ? track.features : null;
                         const audioUrl = typeof track === 'object' ? track.audio : null;
                         const spotifyEmbed = typeof track === 'object' ? track.spotifyEmbed : null;
+                        const musicVideo = typeof track === 'object' ? track.musicVideo : null;
                         const playing = isTrackPlaying(discIndex, trackIndex);
                         const spotifyExpanded = isSpotifyExpanded(discIndex, trackIndex);
 
@@ -374,12 +387,25 @@ const AlbumPage = () => {
                                 <div className="flex flex-col gap-1">
                                   <div className="flex items-center gap-2">
                                     <span className={`font-sans font-normal text-base ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
-                                    {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-muted-foreground border border-border rounded">E</span>}
+                                    {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
                                   </div>
                                   {trackFeatures && <FeaturesList features={trackFeatures} />}
                                 </div>
                               </div>
                               <div className="flex items-center gap-4">
+                                {musicVideo && (
+                                  <a
+                                    href={musicVideo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-8 h-8 rounded-full bg-red-500/10 hover:bg-red-500/20 flex items-center justify-center transition-all group/video"
+                                    title="Watch Music Video"
+                                  >
+                                    <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                                      <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/>
+                                    </svg>
+                                  </a>
+                                )}
                                 {(audioUrl || spotifyEmbed) && (
                                   <button
                                     onClick={() => {
@@ -429,6 +455,7 @@ const AlbumPage = () => {
                       const trackFeatures = typeof track === 'object' ? track.features : null;
                       const audioUrl = typeof track === 'object' ? track.audio : null;
                       const spotifyEmbed = typeof track === 'object' ? track.spotifyEmbed : null;
+                      const musicVideo = typeof track === 'object' ? track.musicVideo : null;
                       const playing = isTrackPlaying(0, trackIndex);
                       const spotifyExpanded = isSpotifyExpanded(0, trackIndex);
 
@@ -444,12 +471,25 @@ const AlbumPage = () => {
                               <div className="flex flex-col gap-1">
                                 <div className="flex items-center gap-2">
                                   <span className={`font-sans font-normal text-base ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
-                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black border border-border rounded">E</span>}
+                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
                                 </div>
                                 {trackFeatures && <FeaturesList features={trackFeatures} />}
                               </div>
                             </div>
                             <div className="flex items-center gap-4">
+                              {musicVideo && (
+                                <a
+                                  href={musicVideo}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="w-8 h-8 rounded-full bg-red-500/10 hover:bg-red-500/20 flex items-center justify-center transition-all"
+                                  title="Watch Music Video"
+                                >
+                                  <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/>
+                                  </svg>
+                                </a>
+                              )}
                               {(audioUrl || spotifyEmbed) && (
                                 <button
                                   onClick={() => {
