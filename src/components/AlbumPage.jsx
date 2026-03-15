@@ -251,9 +251,9 @@ const AlbumPage = () => {
 
           <div className="mb-10 space-y-4">
             <div className="flex items-center gap-3 flex-wrap">
-              <h1 className="text-5xl font-spotify font-black tracking-tight">{album.title}</h1>
+              <h1 className="text-5xl font-backrooms font-black tracking-tight">{album.title}</h1>
               {album.isExplicit && (
-                <span className="bg-red-500/10 text-red-500 border border-red-500/20 px-2 py-1 rounded text-xs font-bold self-center">E</span>
+                <span className="bg-gray-400 text-black border px-2 py-1 rounded text-xs font-bold self-center">E</span>
               )}
             </div>
             <div className="flex items-center gap-2 text-2xl text-muted-foreground">
@@ -261,7 +261,7 @@ const AlbumPage = () => {
                 const slug = String(artist).toLowerCase().replace(/,/g, '').replace(/\$/g, '').replace(/\s+/g, '-').replace(/[^\w-]/g, '');
                 return (
                   <span key={idx}>
-                    <Link to={`/artist/${slug}`} className="hover:text-primary transition-colors">{artist}</Link>
+                    <Link to={`/artist/${slug}`} className="hover:underline transition-colors">{artist}</Link>
                     {idx < artistList.length - 1 && <span className="mx-2">&</span>}
                   </span>
                 );
@@ -471,7 +471,7 @@ const AlbumPage = () => {
                               <div className="flex flex-col gap-1">
                                 <div className="flex items-center gap-2">
                                   <span className={`font-sans font-normal text-base ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
-                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
+                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black border border-border rounded">E</span>}
                                 </div>
                                 {trackFeatures && <FeaturesList features={trackFeatures} />}
                               </div>

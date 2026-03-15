@@ -10,6 +10,7 @@ export default {
         'sans': ['Inter', 'sans-serif'],
         'serif': ['Playfair Display', 'serif'],
         'backrooms': ['Nunito', 'sans-serif'],
+        'Robot': ['Robot', 'sans-serif']
       },
       colors: {
         border: 'hsl(var(--border) / <alpha-value>)',
