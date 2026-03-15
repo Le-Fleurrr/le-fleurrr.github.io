@@ -213,11 +213,11 @@ export const Collections = () => {
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <h3 className={`font-serif text-xl font-bold transition-colors ${accentColors.text}`}>
+                        <h3 className={`font-serif text-xl font-bold hover:underline transition-colors ${accentColors.text}`}>
                           {album.title}
                         </h3>
                         {album.isExplicit && (
-                          <span className="text-xs font-bold px-2 py-0.5 bg-muted text-muted-foreground border border-border rounded">
+                          <span className="text-xs text-black font-bold px-2 py-0.5 bg-gray-400 border border-border rounded">
                             E
                           </span>
                         )}
@@ -235,7 +235,7 @@ export const Collections = () => {
                               <Link
                                 to={`/artist/${slug}`}
                                 onClick={(e) => e.stopPropagation()}
-                                className="text-muted-foreground hover:text-primary transition-colors"
+                                className="text-muted-foreground hover:underline transition-colors"
                               >
                                 {artistName}
                               </Link>

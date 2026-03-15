@@ -12,7 +12,6 @@ export const Footer = () => {
     <footer id="about" className="bg-card border-t border-border">
       <div className="container mx-auto px-6 py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-12">
-          {/* Brand */}
           <div className="lg:col-span-1">
             <a href="/" className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/Button.tsx";
 import {
@@ -8,6 +8,7 @@ import {
 import { albums } from "./Albums.jsx";
 import { FavoriteButton } from './FavoritesSystem';
 import { previewPlayer } from './audioPreviewPlayer.js';
+import { useSpotifyTracklist } from './useSpotifyTracklist.js';
 
 const getArtistList = (album) => {
   if (!album) return [];
@@ -19,11 +20,45 @@ const getArtistList = (album) => {
   return [];
 };
 
+const FeaturesList = ({ features }) => {
+  if (!features) return null;
+  
+  const featureArtists = features.split(/,|&/).map(name => name.trim());
+  
+  return (
+    <span className="text-sm text-muted-foreground">
+      {featureArtists.map((artist, idx) => {
+        const slug = artist.toLowerCase()
+          .replace(/,/g, '')
+          .replace(/\$/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/[^\w-]/g, '');
+        
+        return (
+          <span key={idx}>
+            <Link 
+              to={`/artist/${slug}`} 
+              className="hover:underline transition-colors"
+            >
+              {artist}
+            </Link>
+            {idx < featureArtists.length - 1 && (
+              features.includes('&') && idx === featureArtists.length - 2 ? ' & ' : ', '
+            )}
+          </span>
+        );
+      })}
+    </span>
+  );
+};
+
 const AlbumPage = () => {
   const { albumId } = useParams();
   const navigate = useNavigate();
+  const album = albums.find((a) => a.id === parseInt(albumId || "", 10));
+  
+  const { data: spotifyData, loading: spotifyLoading } = useSpotifyTracklist(album?.spotifyAlbumId);
 
-  // UI States
   const [imageError, setImageError] = useState(false);
   const [showAnimated, setShowAnimated] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -40,13 +75,10 @@ const AlbumPage = () => {
   const [replyingTo, setReplyingTo] = useState(null);
   const [replyText, setReplyText] = useState("");
 
-
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
   const audioRef = useRef(null);
   const [hoveredTrack, setHoveredTrack] = useState(null);
   const [expandedSpotifyTrack, setExpandedSpotifyTrack] = useState(null);
-
-  const album = albums.find((a) => a.id === parseInt(albumId || "", 10));
 
   if (!album) {
     return (
@@ -58,6 +90,11 @@ const AlbumPage = () => {
       </div>
     );
   }
+
+  const tracklist = spotifyData?.tracklist || album?.tracklist || [];
+  const releaseDate = spotifyData?.releaseDate || album?.releaseDate;
+  const duration = spotifyData?.duration || album?.duration;
+  const label = spotifyData?.label || album?.label;
 
   const artistList = getArtistList(album);
   const staticCovers = Array.isArray(album.image) ? album.image : album.image ? [album.image] : [];
@@ -105,13 +142,9 @@ const AlbumPage = () => {
 
   const handlePlayPause = (discIndex, trackIndex, audioUrl) => {
     if (!audioUrl) return;
-
     const isSameTrack = currentlyPlaying?.discIndex === discIndex && currentlyPlaying?.trackIndex === trackIndex;
-
     if (isSameTrack) {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
+      if (audioRef.current) audioRef.current.pause();
       setCurrentlyPlaying(null);
     } else {
       if (audioRef.current) {
@@ -125,11 +158,7 @@ const AlbumPage = () => {
 
   const handleSpotifyToggle = (discIndex, trackIndex) => {
     const trackKey = `${discIndex}-${trackIndex}`;
-    if (expandedSpotifyTrack === trackKey) {
-      setExpandedSpotifyTrack(null);
-    } else {
-      setExpandedSpotifyTrack(trackKey);
-    }
+    setExpandedSpotifyTrack(expandedSpotifyTrack === trackKey ? null : trackKey);
   };
 
   const isTrackPlaying = (discIndex, trackIndex) => {
@@ -142,14 +171,10 @@ const AlbumPage = () => {
 
   const handleTrackHover = (discIndex, trackIndex, audioUrl, previewUrl) => {
     if (isTrackPlaying(discIndex, trackIndex)) return;
-
     const trackKey = `${discIndex}-${trackIndex}`;
     setHoveredTrack(trackKey);
-
     const urlToPlay = previewUrl || audioUrl;
-    if (urlToPlay) {
-      previewPlayer.playPreview(urlToPlay, 30, 10);
-    }
+    if (urlToPlay) previewPlayer.playPreview(urlToPlay, 30, 10);
   };
 
   const handleTrackLeave = () => {
@@ -203,8 +228,7 @@ const AlbumPage = () => {
                   <button
                     key={index}
                     onClick={() => { setSelectedImage(index); setImageError(false); }}
-                    className={`flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-3 transition-all ${selectedImage === index ? "border-primary shadow-xl scale-105 ring-2 ring-primary/50" : "border-border hover:border-primary/50"
-                      }`}
+                    className={`flex-shrink-0 w-28 h-28 rounded-lg overflow-hidden border-3 transition-all ${selectedImage === index ? "border-primary shadow-xl scale-105 ring-2 ring-primary/50" : "border-border hover:border-primary/50"}`}
                   >
                     <img src={img.url} alt={`${img.type} ${index + 1}`} className="w-full h-full object-contain" />
                   </button>
@@ -215,9 +239,9 @@ const AlbumPage = () => {
 
           <div className="mb-10 space-y-4">
             <div className="flex items-center gap-3 flex-wrap">
-              <h1 className="text-5xl font-serif font-bold tracking-tight">{album.title}</h1>
+              <h1 className="text-5xl font-backrooms font-bold tracking-tight">{album.title}</h1>
               {album.isExplicit && (
-                <span className="bg-red-500/10 text-red-500 border border-red-500/20 px-2 py-1 rounded text-xs font-bold self-center">E</span>
+                <span className="bg-gray-400 text-black borde px-2 py-1 rounded text-xs font-bold self-center">E</span>
               )}
             </div>
             <div className="flex items-center gap-2 text-2xl text-muted-foreground">
@@ -225,7 +249,7 @@ const AlbumPage = () => {
                 const slug = String(artist).toLowerCase().replace(/,/g, '').replace(/\$/g, '').replace(/\s+/g, '-').replace(/[^\w-]/g, '');
                 return (
                   <span key={idx}>
-                    <Link to={`/artist/${slug}`} className="hover:text-primary transition-colors">{artist}</Link>
+                    <Link to={`/artist/${slug}`} className="hover:underline transition-colors">{artist}</Link>
                     {idx < artistList.length - 1 && <span className="mx-2">&</span>}
                   </span>
                 );
@@ -242,8 +266,7 @@ const AlbumPage = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-8 py-4 text-sm font-bold transition-all border-b-2 ${activeTab === tab.id ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-foreground"
-                  }`}
+                className={`flex items-center gap-2 px-8 py-4 text-sm font-bold transition-all border-b-2 ${activeTab === tab.id ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-foreground"}`}
               >
                 {tab.icon} {tab.label}
               </button>
@@ -279,8 +302,7 @@ const AlbumPage = () => {
                             const variantImageIndex = galleryImages.findIndex(img => img.url === variant.image);
                             if (variantImageIndex !== -1) setSelectedImage(variantImageIndex);
                           }}
-                          className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${selectedVariant === variant.id ? "border-primary ring-2 ring-primary/50" : "border-border hover:border-primary/50"
-                            }`}
+                          className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${selectedVariant === variant.id ? "border-primary ring-2 ring-primary/50" : "border-border hover:border-primary/50"}`}
                         >
                           <img src={variant.image} alt={variant.name} className="w-full h-full object-cover" />
                           <div className="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-sm p-1 text-center">
@@ -304,7 +326,6 @@ const AlbumPage = () => {
                   </div>
                 )}
 
-                {/* QUANTITY */}
                 <div className="border-t border-border pt-6">
                   <h3 className="text-lg font-semibold mb-3">Miqdar</h3>
                   <div className="flex items-center gap-4">
@@ -319,8 +340,11 @@ const AlbumPage = () => {
                 </div>
               </div>
             )}
+            
             {activeTab === "tracklist" && (
               <div className="space-y-6">
+                {spotifyLoading && <p className="text-center text-muted-foreground">Mahnı siyahısı yüklənir...</p>}
+                
                 <audio ref={audioRef} onEnded={() => setCurrentlyPlaying(null)} />
 
                 {album.discs ? (
@@ -346,6 +370,16 @@ const AlbumPage = () => {
                               onMouseLeave={handleTrackLeave}
                             >
                               <div className="flex items-center gap-4">
+                                <span className="font-mono text-muted-foreground w-6">{trackIndex + 1}</span>
+                                <div className="flex flex-col gap-1">
+                                  <div className="flex items-center gap-2">
+                                    <span className={`font-sans font-normal text-base ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
+                                    {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-muted-foreground border border-border rounded">E</span>}
+                                  </div>
+                                  {trackFeatures && <FeaturesList features={trackFeatures} />}
+                                </div>
+                              </div>
+                              <div className="flex items-center gap-4">
                                 {(audioUrl || spotifyEmbed) && (
                                   <button
                                     onClick={() => {
@@ -364,18 +398,8 @@ const AlbumPage = () => {
                                     )}
                                   </button>
                                 )}
-                                <span className="font-mono text-muted-foreground w-6">{trackIndex + 1}</span>
-                                <div className="flex flex-col gap-1">
-                                  <div className="flex items-center gap-2">
-                                    <span className={`font-medium ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
-                                    {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
-                                  </div>
-                                  {trackFeatures && (
-                                    <span className="text-sm text-muted-foreground">{trackFeatures}</span>
-                                  )}
-                                </div>
+                                <span className="text-sm font-mono text-muted-foreground">{track.duration || "--:--"}</span>
                               </div>
-                              <span className="text-sm font-mono text-muted-foreground">{track.duration || "--:--"}</span>
                             </div>
 
                             {spotifyEmbed && spotifyExpanded && (
@@ -398,9 +422,8 @@ const AlbumPage = () => {
                     </div>
                   ))
                 ) : (
-                  // Single-disc album
                   <div className="space-y-1">
-                    {album.tracklist?.map((track, trackIndex) => {
+                    {tracklist?.map((track, trackIndex) => {
                       const isTrackExplicit = typeof track === 'object' ? (track.explicit || track.isExplicit) : false;
                       const trackTitle = typeof track === 'object' ? (track.title || track.name) : track;
                       const trackFeatures = typeof track === 'object' ? track.features : null;
@@ -416,6 +439,16 @@ const AlbumPage = () => {
                             onMouseEnter={() => handleTrackHover(0, trackIndex, audioUrl, track.preview)}
                             onMouseLeave={handleTrackLeave}
                           >
+                            <div className="flex items-center gap-4">
+                              <span className="font-mono text-muted-foreground w-6">{trackIndex + 1}</span>
+                              <div className="flex flex-col gap-1">
+                                <div className="flex items-center gap-2">
+                                  <span className={`font-sans font-normal text-base ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
+                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black border border-border rounded">E</span>}
+                                </div>
+                                {trackFeatures && <FeaturesList features={trackFeatures} />}
+                              </div>
+                            </div>
                             <div className="flex items-center gap-4">
                               {(audioUrl || spotifyEmbed) && (
                                 <button
@@ -435,18 +468,8 @@ const AlbumPage = () => {
                                   )}
                                 </button>
                               )}
-                              <span className="font-mono text-muted-foreground w-6">{trackIndex + 1}</span>
-                              <div className="flex flex-col gap-1">
-                                <div className="flex items-center gap-2">
-                                  <span className={`font-medium ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
-                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
-                                </div>
-                                {trackFeatures && (
-                                  <span className="text-sm text-muted-foreground">{trackFeatures}</span>
-                                )}
-                              </div>
+                              <span className="text-sm font-mono text-muted-foreground">{track.duration || "--:--"}</span>
                             </div>
-                            <span className="text-sm font-mono text-muted-foreground">{track.duration || "--:--"}</span>
                           </div>
 
                           {spotifyEmbed && spotifyExpanded && (
@@ -468,13 +491,14 @@ const AlbumPage = () => {
                     })}
                   </div>
                 )}
+                
                 <div className="pt-6 mt-6 border-t border-border">
                   <p className="text-xs text-muted-foreground text-left">
-                    {album.releaseDate && <span>{album.releaseDate}</span>}
-                    {album.releaseDate && album.duration && <span className="mx-2">•</span>}
-                    {album.duration && <span>{album.duration}</span>}
-                    {(album.releaseDate || album.duration) && album.label && <br />}
-                    {album.label && <span>© {album.year} {album.label}</span>}
+                    {releaseDate && <span>{releaseDate}</span>}
+                    {releaseDate && duration && <span className="mx-2">•</span>}
+                    {duration && <span>{duration}</span>}
+                    {(releaseDate || duration) && label && <br />}
+                    {label && <span>© {album.year} {label}</span>}
                   </p>
                 </div>
               </div>

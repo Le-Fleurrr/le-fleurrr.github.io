@@ -5,23 +5,19 @@ import { Link } from "react-router-dom";
 import { albums } from "./Albums.jsx";
 
 export const Hero = () => {
-  const featuredAlbum = albums.find(album => album.id === 69) || albums[0];
+  const featuredAlbum = albums.find(album => album.id === 76) || albums[0];
 
-  // Get the first cover image (supports both single image and array)
   const getCoverImage = (album) => {
     if (!album) return null;
-    
-    // If there's an animated cover, use it
+
     if (album.animatedCover) {
       return album.animatedCover;
     }
-    
-    // If image is an array, use the first one
+
     if (Array.isArray(album.image)) {
       return album.image[0];
     }
     
-    // Otherwise use the image directly
     return album.image;
   };
 
@@ -43,17 +39,17 @@ export const Hero = () => {
                 Premium Vinyl Kolleksiyası
               </p>
               <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                YENI! <br />DON TOLIVER -
-                <span className="text-gradient block">OCTANE</span>
+                YENI! <br />KANYE WEST -
+                <span className="text-gradient block">BULLY</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-md animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                "Octane" amerikalı reper və müğənni Don Toliverin beşinci studiya albomudur.
+                "BULLY" amerikalı reper və müğənni Kanye Westin yeni studiya albomudur.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Button size="lg" className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-8">
-                <Link to="/album/69">İndi alış-veriş edin</Link>
+                <Link to="/album/76">İndi alış-veriş edin</Link>
                 <ArrowRight className="w-4 h-4" />
               </Button>
               <Button size="lg" variant="outline" className="gap-2 border-muted-foreground/30 hover:bg-secondary">

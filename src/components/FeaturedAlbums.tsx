@@ -36,7 +36,7 @@ type CassetteColor =
 interface Album {
   id: number;
   title: string;
-  artist: string[]; // always an array
+  artist: string[];
   price: number;
   genre: string;
   year: number;
@@ -210,7 +210,7 @@ export const FeaturedAlbums = () => {
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <h3 className={`font-serif text-xl font-bold transition-colors ${accentColors.text}`}>
+                        <h3 className={`font-serif text-xl hover:underline font-bold transition-colors ${accentColors.text}`}>
                           {album.title}
                         </h3>
                         {album.isExplicit && (
@@ -232,7 +232,7 @@ export const FeaturedAlbums = () => {
                               <Link
                                 to={`/artist/${slug}`}
                                 onClick={(e) => e.stopPropagation()}
-                                className="text-muted-foreground hover:text-primary transition-colors"
+                                className="text-muted-foreground hover:underline transition-colors"
                               >
                                 {artistName}
                               </Link>

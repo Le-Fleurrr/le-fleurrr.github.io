@@ -79,4 +79,8 @@ export const artistProfiles = {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1769520513/jay-z-spotify_me38jx.png",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1769520514/ab6761610000e5ebc75afcd5a9027f60eaebb5e4_svg85h.jpg"
   },
+  "Yeat": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1773579819/new-yeat-spotify-pfp-v0-410t8rzc_b0uwxh.png",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1773579819/10000x10000bb_otrove.jpg"
+  }
 };
