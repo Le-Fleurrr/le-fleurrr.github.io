@@ -1,17 +1,36 @@
+import { useParams } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { albums } from "./Albums.jsx";
+import { artistProfiles } from "./ArtistProfiles.jsx";
 import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { VinylRecord } from "./VinylRecord.tsx";
 import { CDDisc } from "./CDDisc.tsx";
 import { CassetteTape } from "./CassetteTape.tsx";
 import { Button } from "./ui/Button.tsx";
-import { ArrowLeft } from "lucide-react";
-import { albums } from "./Albums.jsx";
-import { artistProfiles } from "./ArtistProfiles.jsx";
+
+const getAccentColor = (color) => {
+  const colorMap = {
+    red: '#ef4444',
+    blue: '#3b82f6',
+    purple: '#a855f7',
+    green: '#22c55e',
+    orange: '#f97316',
+    pink: '#ec4899',
+    yellow: '#eab308',
+    white: '#ffffff',
+    gray: '#9ca3af',
+    grey: '#9ca3af',
+  };
+  return colorMap[color?.toLowerCase()] || '#ffffff';
+};
 
 const ArtistPage = () => {
   const { artistName } = useParams();
   const [hoveredId, setHoveredId] = useState(null);
   const [hoveredAlbumId, setHoveredAlbumId] = useState(null);
+  const [bannerError, setBannerError] = useState(false);
+  const [profileError, setProfileError] = useState(false);
 
   const normalizedAlbums = albums.map(album => {
     let artistArray = [];
@@ -69,15 +88,12 @@ const ArtistPage = () => {
   const artistBanner = bannerFromUrl || artistProfile.banner;
   const artistProfileImage = profileFromUrl || artistProfile.profileImage;
 
-  const [bannerError, setBannerError] = useState(false);
-  const [profileError, setProfileError] = useState(false);
-
   if (artistAlbums.length === 0) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-center text-white">
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Artist Not Found</h1>
-          <Link to="/" className="text-red-500 hover:text-red-400">
+          <Link to="/" className="text-primary hover:underline">
             ← Ana səhifəyə qayıt
           </Link>
         </div>
@@ -89,7 +105,7 @@ const ArtistPage = () => {
   const latestAlbum = sortedAlbums[0];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground artist-page">
       <div className="relative">
         <div className="absolute inset-0 h-[500px] overflow-hidden">
           {artistBanner && !bannerError ? (
@@ -100,10 +116,10 @@ const ArtistPage = () => {
                 className="w-full h-full object-cover"
                 onError={() => setBannerError(true)}
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black" />
+              <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
             </>
           ) : (
-            <div className="w-full h-full bg-gradient-to-b from-zinc-800 via-zinc-900 to-black" />
+            <div className="w-full h-full bg-gradient-to-b from-muted via-card to-background" />
           )}
         </div>
 
@@ -111,7 +127,7 @@ const ArtistPage = () => {
           <Link to="/">
             <Button
               variant="ghost"
-              className="text-white/90 hover:text-white hover:bg-white/10 backdrop-blur-sm"
+              className="backdrop-blur-sm"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Geri
@@ -123,11 +139,11 @@ const ArtistPage = () => {
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center gap-6">
               {artistProfileImage && !profileError && (
-                <div className="relative">
+                <div className="relative vinyl-record-container">
                   <img
                     src={artistProfileImage}
                     alt={artist}
-                    className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-black shadow-2xl"
+                    className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-background shadow-2xl"
                     onError={() => setProfileError(true)}
                   />
                 </div>
@@ -137,7 +153,7 @@ const ArtistPage = () => {
                 <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-2 drop-shadow-lg">
                   {artist}
                 </h1>
-                <p className="text-zinc-400 text-lg">
+                <p className="text-muted-foreground text-lg">
                   {artistAlbums[0]?.genre || "Music"}
                 </p>
               </div>
@@ -155,7 +171,7 @@ const ArtistPage = () => {
             onMouseEnter={() => setHoveredAlbumId(latestAlbum.id)}
             onMouseLeave={() => setHoveredAlbumId(null)}
           >
-            <div className="flex items-center gap-6 p-4 rounded-lg hover:bg-zinc-900/50 transition-all">
+            <div className="flex items-center gap-6 p-4 rounded-lg hover:bg-muted/50 transition-all">
               <div className="relative w-40 h-40 flex-shrink-0">
                 {latestAlbum.image ? (
                   <img
@@ -164,7 +180,7 @@ const ArtistPage = () => {
                     className="w-full h-full object-cover rounded-lg shadow-2xl"
                   />
                 ) : (
-                  <div className="w-full h-full bg-zinc-800 rounded-lg flex items-center justify-center">
+                  <div className="w-full h-full bg-card rounded-lg flex items-center justify-center">
                     {latestAlbum.format === "cd" ? (
                       <CDDisc size="sm" spinning={hoveredAlbumId === latestAlbum.id} />
                     ) : latestAlbum.format === "cassette" ? (
@@ -184,17 +200,22 @@ const ArtistPage = () => {
                 )}
               </div>
               <div className="flex-1">
-                <p className="text-sm text-zinc-400 mb-1">
-                  {new Date(latestAlbum.year, 0).toLocaleDateString('az-AZ', {
-                    year: 'numeric',
-                  })}
+                <p className="text-sm text-muted-foreground mb-1">
+                  {latestAlbum.year}
                 </p>
                 <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-2xl font-bold group-hover:text-red-500 transition">
+                  <h3 
+                    className={`text-2xl font-bold transition-all ${hoveredAlbumId === latestAlbum.id ? 'underline' : ''}`}
+                    style={{
+                      color: hoveredAlbumId === latestAlbum.id ? 
+                        getAccentColor(latestAlbum.accentColor) : 
+                        'white'
+                    }}
+                  >
                     {latestAlbum.title}
                   </h3>
                   {latestAlbum.isExplicit && (
-                    <span className="text-sm font-bold px-2.5 py-1 bg-gray-400 text-black border border-zinc-600 rounded flex-shrink-0">
+                    <span className="text-sm font-bold px-2.5 py-1 bg-gray-400 text-black border border-border rounded flex-shrink-0">
                       E
                     </span>
                   )}
@@ -218,12 +239,12 @@ const ArtistPage = () => {
               onMouseLeave={() => setHoveredId(null)}
             >
               {album.isNew && (
-                <span className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">
+                <span className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
                   YENI
                 </span>
               )}
 
-              <div className="relative h-40 flex items-center justify-center mb-4">
+              <div className="relative h-40 flex items-center justify-center mb-4 vinyl-record-container">
                 {album.image ? (
                   <div className="absolute inset-0 flex items-center justify-start pl-2">
                     <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl">
@@ -261,17 +282,24 @@ const ArtistPage = () => {
 
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <h3 className="font-semibold text-white group-hover:text-red-500 transition truncate">
+                  <h3 
+                    className={`font-serif text-xl font-bold transition-all ${hoveredId === album.id ? 'underline' : ''}`}
+                    style={{
+                      color: hoveredId === album.id ? 
+                        getAccentColor(album.accentColor) : 
+                        'white'
+                    }}
+                  >
                     {album.title}
                   </h3>
                   {album.isExplicit && (
-                    <span className="text-xs font-bold px-2 py-0.5 bg-gray-400 text-black border border-zinc-600 rounded flex-shrink-0">
+                    <span className="text-xs font-bold px-2 py-0.5 bg-gray-400 text-black border border-border rounded flex-shrink-0">
                       E
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-zinc-400 mt-1">{album.year}</p>
-                <p className="text-sm text-zinc-500 mt-1">{album.price} ₼</p>
+                <p className="text-sm text-muted-foreground mt-1">{album.year}</p>
+                <p className="text-sm text-muted-foreground mt-1">{album.price} ₼</p>
               </div>
             </Link>
           ))}
