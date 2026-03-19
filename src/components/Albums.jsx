@@ -54,17 +54,21 @@ const dawnFM = {
 
 const hurryUpTomorrow = {
   cover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226158/hurryUpTomorrow_tqkjsu.png",
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768320957/hurryUpTomorrow_vinyl_uczbnq.png"],
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768320957/hurryUpTomorrow_vinyl_uczbnq.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1773602668/12_-COVER_VINYL-DOUBLEDISC-CLEAR_q6qbql.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1773602668/HUT-FP-VINYL-BACK.png-02_v6w7fn.png"
+  ],
 };
 
 const rodeo = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226174/rodeo_arm5ez.jpg',
-  vinyl: [],
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1773901526/71nRyIRaleL._UF1000_1000_QL80__qn6udt.jpg'],
 };
 
 const collegeDropout = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226175/theCollegeDropout_asoeiz.jpg',
-  vinyl: [],
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1773602668/8131j2MuspL._SL1500_bxpc0e.png'],
+  tracklist: ['https://res.cloudinary.com/deroy68n9/image/upload/v1773602668/61T9gi1VMuL._SL1069_yygzq0.png']
 };
 
 const dieLit = {
@@ -74,7 +78,7 @@ const dieLit = {
 };
 
 const musicWhite = {
-  cover: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226167/musicWhite_nd1rsi.jpg',
+  cover: ['https://res.cloudinary.com/deroy68n9/image/upload/v1773900242/0x1900-000000-80-0-0_sjw18o.jpg',
     'https://res.cloudinary.com/deroy68n9/image/upload/v1768226162/musicBlack_xpnnbu.jpg'
   ],
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226171/musicWhite_vinyl_wfsgve.jpg",
@@ -88,12 +92,17 @@ const musicWhite = {
   ]
 };
 
+const musicSorry4DaWait = {
+  cover: "https://res.cloudinary.com/deroy68n9/image/upload/v1773901125/music-sorry-4-da-wait_lrnbm5_kzyezh.jpg",
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1773899939/playboi-carti-music-sorry-4-da-wait_wamzjn.png"],
+  features: ["https://res.cloudinary.com/deroy68n9/image/upload/v1773901373/musicRed_feats_kq6dyk_aokr9l.jpg"]
+}
+
 const mbdtf = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/mbdtf_yjpzve.jpg',
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226161/mbdtf_vinyl_xmejmc.jpg",
     "https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/mbdtf1_hogcxo.jpg"
   ],
-  tracklist: ""
 };
 
 const playboiCarti = {
@@ -1625,6 +1634,63 @@ export const albums = [
     label: "AWGE/Interscope Records"
   },
   {
+    id: 1341,
+    title: "MUSIC - SORRY 4 DA WAIT (2LP)",
+    artist: ["Playboi Carti"],
+    price: 119.99,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: true,
+    isExplicit: true,
+    image: musicSorry4DaWait.cover,
+    vinylImages: musicSorry4DaWait.vinyl,
+    featuresImage: musicSorry4DaWait.features,
+    vinylColor: "red",
+    sleeveColor: "red",
+    accentColor: "red",
+    format: "vinyl",
+    description: "Playboi Carti, Whole Lotta Red-dən təxminən dörd il ərzində Future, Latto və Trippie Redd kimi məşhurlarla birlikdə çıxış edərək, demək olar ki, orada olmayıb. Buna baxmayaraq, bu, onun böyük fanatlarının sonda sadəcə MUSIC kimi qısaldılmış adı ilə çıxan I AM MUSIC albomu ilə bağlı davamlı olaraq səs-küy salmasının qarşısını ala bilməyib. Mahnının uzunluğu gözləmə müddətini təsdiqləyir və ifaçının xoş gəlişini xəbər verən POP OUT və CRUSH kimi qəzəbli rep mahnıları ilə başlayır. 30 mahnıdan ibarət və 77 dəqiqəlik davam edən albomda onun səsləri aqressiv şəkildə şişirdilmiş, sintezator ağırlığı ilə məşhurlaşdığı post-trap ilə daha pop-trap arasında dəyişir, lakin bütün bunlar şübhəsiz ki, onun stilistik diapazonundadır. Karti əvvəlcə qonaq seçimini yüksək səviyyəli albom buraxılışları üçün adət halını aldığı kimi, jiletə yaxın saxlayırdı. Lakin Kendrick Lamarın GOOD CREDITə tüpürdüyünü, Future-ın TRIM-ə görə hisslərini ifadə etdiyini və ya əməkdaşlıq karyerasının əsas dayağı Lil Uzi Vertin TWIN TRIM də qələbə ilə sürüşdüyünü görməmək mümkün olmazdı. The Weeknd-in RATHER LIE mahnısındakı ən diqqət çəkən hissə, bəlkə də, onun buradakı zərfləri itələməsinin ən açıq nümunəsidir, baxmayaraq ki, Travis Scott-un PHILLY mahnısında və Young Thug və Ty Dolla $ign-dən ibarət komandanın WE NEED ALL DA VIBES mahnısında çıxışları bu istiqaməti daha da inandırıcı edir. Bu kimi dostları ilə belə, Carti özü daha parlaq şəkildə parlayır, nəfəsli, demək olar ki, falsetto səsi I SEEEEEE YOU BABY BOI video oyun arpecioları və xırıltılı xırıltısı COCAINE NOSE-nin kinematoqrafik səs-küyü ətrafında fırlanır. Yalnız gələcəyə baxmaqla kifayətlənməyərək, klassik 1017 Brick Squad kasetlərini xatırladan RADAR-da səslənən Atlantanın 2010-cu illərin əvvəllərindəki səsinə demək olar ki, nostaljik bir qiymətləndirmə var.",
+    tracklist: [
+      { id: 1, name: "POP OUT", isExplicit: true, duration: "2:42" },
+      { id: 2, name: "CRUSH", features: "Playboi Carti & Travis Scott", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3VdooJLOy4tLxKpnn46SMP", musicVideo: "https://www.youtube.com/watch?v=94B_-0kP684", duration: "2:53" },
+      { id: 3, name: "K POP", isExplicit: true, duration: "1:53" },
+      { id: 4, name: "EVIL J0RDAN", isExplicit: true, musicVideo: "https://youtu.be/VcRc2DHHhoM?si=DR3qRwstvsJjh3Dh", duration: "3:04" },
+      { id: 5, name: "MOJO JOJO", isExplicit: true, duration: "2:36" },
+      { id: 6, name: "PHILLY", features: "Playboi Carti & Travis Scott", isExplicit: true, duration: "3:06" },
+      { id: 7, name: "RADAR", isExplicit: true, duration: "1:48" },
+      { id: 8, name: "RATHER LIE", features: "Playboi Carti & The Weeknd", isExplicit: true, duration: "3:30" },
+      { id: 9, name: "FINE SHIT", isExplicit: true, duration: "1:47", musicVideo: "https://youtu.be/uMZiaJ4speo?si=jxBUmPC8Q8Asz4QQ" },
+      { id: 10, name: "BACKD00R (feat. Jhené Aiko)", features: "Playboi Carti & Kendrick Lamar", isExplicit: true, duration: "3:10" },
+      { id: 11, name: "TOXIC (feat. Skepta)", isExplicit: true, duration: "2:15" },
+      { id: 12, name: "MUNYUN", isExplicit: true, duration: "2:34" },
+      { id: 13, name: "CRANK", isExplicit: true, duration: "2:28" },
+      { id: 14, name: "CHARGE DEM HOES A FEE", features: "Playboi Carti, Future & Travis Scott", isExplicit: true, duration: "3:45" },
+      { id: 15, name: "GOOD CREDIT", features: "Playboi Carti & Kendrick Lamar", isExplicit: true, duration: "3:10" },
+      { id: 16, name: "I SEEEEEE YOU BABY BOI", isExplicit: true, duration: "2:39" },
+      { id: 17, name: "WAKE UP F1LTHY", features: "Playboi Carti & Travis Scott", isExplicit: true, duration: "2:49" },
+      { id: 18, name: "JUMPIN", features: "Playboi Carti & Lil Uzi Vert", isExplicit: true, duration: "1:33" },
+      { id: 19, name: "TRIM", features: "Playboi Carti & Future", isExplicit: true, duration: "3:14" },
+      { id: 20, name: "COCAINE NOSE", isExplicit: true, duration: "2:31" },
+      { id: 21, name: "WE NEED ALL DA VIBES", features: "Playboi Carti, Young Thug & Ty Dolla $ign", isExplicit: true, duration: "3:02" },
+      { id: 22, name: "OLYMPIAN", isExplicit: true, duration: "2:55" },
+      { id: 23, name: "OPM BABI", isExplicit: true, duration: "2:53" },
+      { id: 24, name: "TWIN TRIM", features: "Playboi Carti & Lil Uzi Vert", isExplicit: true, duration: "1:35" },
+      { id: 25, name: "LIKE WEEZY", isExplicit: true, duration: "1:56", musicVideo: "https://youtu.be/C217vygclrk?si=kdaYGpTONUe9Bd0L" },
+      { id: 26, name: "DIS 1 GOT IT", isExplicit: true, duration: "2:04" },
+      { id: 27, name: "WALK", isExplicit: true, duration: "1:34" },
+      { id: 28, name: "HBA / H00DBYAIR", musicVideo: "https://youtu.be/GEofzpwSqho?si=R_cvXYnPFNIlHCEC", isExplicit: true, duration: "3:33" },
+      { id: 29, name: "OVERLY", isExplicit: true, duration: "1:46" },
+      { id: 30, name: "SOUTH ATLANTA BABY", isExplicit: true, duration: "2:13" },
+      { id: 31, name: "DIFFERENT DAY", isExplicit: true, duration: "2:46", spotifyEmbed: "https://open.spotify.com/embed/track/0dApSLrXvnYWy1wagJOmpp", musicVideo: "https://youtu.be/8VOGJYZxDjA?si=PZmR6UBaHxu-iW2A" },
+      { id: 32, name: "2024", isExplicit: true, duration: "3:29", spotifyEmbed: "https://open.spotify.com/embed/track/1bAv1DWUibxCIjAk9SlzRi", musicVideo: "https://youtu.be/YG3EhWlBaoI?si=lT1LVBd1S5UC0dbP"  },
+      { id: 33, name: "BACKR00MS", features: "Playboi Carti & Travis Scott", isExplicit: true, duration: "2:40", musicVideo: "https://youtu.be/ftaXMKV3ffE?si=j_wb9SzLgnpa7kXg", spotifyEmbed: "https://open.spotify.com/embed/track/2cjhSZd6uZIrp4ddxvvBdn" },
+      { id: 34, name: "FOMDJ", isExplicit: true, musicVideo: "https://youtu.be/N5dOy9FGtDg?si=-5nP-s1af_1CICZs", spotifyEmbed: "https://open.spotify.com/embed/track/7bO7a1KrtmGNDIOy2u3siZ", duration: "3:20" },
+    ],
+    releaseDate: "14 Mart 2025",
+    duration: "34 mahnılar, 1 saat 31 dəqiqə",
+    label: "AWGE/Interscope"
+  },
+  {
     id: 29,
     title: "Wolf (2LP)",
     artist: ["Tyler, The Creator"],
@@ -1944,7 +2010,6 @@ export const albums = [
     isExplicit: true,
     image: rodeo.cover,
     vinylImages: rodeo.vinyl,
-    tracklistImage: rodeo.tracklist,
     vinylColor: "orange",
     sleeveColor: "brown",
     accentColor: "amber",
