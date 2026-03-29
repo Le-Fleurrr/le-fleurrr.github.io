@@ -292,7 +292,6 @@ const AlbumPage = () => {
                   <span className="px-3 py-1 bg-secondary rounded-lg">{album.genre}</span>
                   <span>•</span>
                   <span>{album.year}</span>
-                  {album.vinylColor && (<><span>•</span><span className="capitalize">{album.vinylColor} Vinyl</span></>)}
                 </div>
 
                 {album.description && (
