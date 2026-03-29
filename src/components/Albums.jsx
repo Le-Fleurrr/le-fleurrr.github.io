@@ -34,7 +34,7 @@
       { id: 2, name: "TRACKNAME2", duration: "3:26", isExplicit: false, spotifyEmbed: "https://example.com" }
     ],
     releaseDate: ALBUMRELEASEDATE,
-    duration: "x mahnılar, x dəqiqə",
+    duration: "x mahnılar, x mahnılar",
     label: ALBUMLABEL
 
   }
@@ -2674,8 +2674,28 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Vinil LP presləməsi. 2018-ci ildə buraxılan, reper/prodüser Kanye Westin səkkizinci studiya albomudur. Albomda Ty Dolla Sign, PartyNextDoor, Kid Cudi, Jeremih və 070 Shake kimi qruplar qonaq vokal ifa edir. Albomun tam versiyasını West istehsal edib, əlavə olaraq həmicraçı prodüser olan Mike Dean, eləcə də Francis and the Lights, Benny Blanco, Irv Gotti, 7 Aurelius, Noah Goldstein, Che Pope, Caroline Shaw, Pi'erre Bourne və Ty Dolla Sign kimi qruplar da prodüserlik edib. Ye, West tərəfindən Wyoming Sessions adlandırılan beş yeddi mahnıdan ibarət albomdan ikincisidir. Vest albomun adını, mahnılarında tez-tez istifadə olunan öz adının kiçildilmiş versiyasını belə izah etdi: İnanıram ki, Müqəddəs Kitabda ən çox istifadə edilən ye sözüdür və Müqəddəs Kitabda sən mənasını verir. Beləliklə, mən sənəm, mən bizəm, bu bizik. Bu söz yeganə mənasını verən Kanye sözündən sadəcə Ye sözünə keçdi - sadəcə yaxşılığımızın, pisliyimizin, çaşqınlığımızın, hər şeyimizin əks olunması. Albom daha çox kim olduğumuzun əksidir.",
+    description: "ADL, amerikalı reper Yeat-in altıncı studiya albomudur. 27 mart 2026-cı ildə Lyfestyle Corporation, Field Trip Recordings və Capitol Records tərəfindən buraxılmışdır. İkiqat albom olan bu albom, A Dangerous Lyfe və A Dangerous Love disklərindən ibarətdir. Elton John, Don Toliver, YoungBoy Never Broke Again, Kid Cudi, Grimes, Julia Wolf, Kylie Jenner (onun alter-eqosu King Kylie-nin rəhbərliyi altında), Swizz Beatz, Joji və 070 Shake ilə əməkdaşlıq edir. İstehsal işləri Dylan Brady, Bnyx, Rampa, Synthetic, Lucid və Sapjer və digərləri tərəfindən həyata keçirilmişdir. Mahnıya “Let King Tonka Talk” sinqlı dəstək vermişdir.",
+    tracklist: [
+      { id: 1, name: "Purpose General", isExplicit: true, duration: "3:25", spotifyEmbed: "https://open.spotify.com/embed/track/44PH8NLzVddk4qhAUvm4v3"},
+      { id: 2, name: "Let King Tonka Talk", isExplicit: true, duration: "3:00", spotifyEmbed: "https://open.spotify.com/embed/track/10Jh65STFxzCdmm1CHgKW5?si=847aea1484fd400e"},
+      { id: 3, name: "My Way", isExplicit: true, duration: "2:46", spotifyEmbed: "https://open.spotify.com/embed/track/04KGYP88lnBiS5kDZFgJV7?si=904fde00882a42ab"},
+      { id: 4, name: "Liv Likë Dis", isExplicit: true, duration: "2:39", spotifyEmbed: "https://open.spotify.com/embed/track/2MicPxl8S4JpPpWSitf6N2?si=6436347a39f84a1a"},
+      { id: 5, name: "Made It On Our Own", features: "Yeat & EsDeeKid", isExplicit: true, duration: "2:49", spotifyEmbed: "https://open.spotify.com/embed/track/13Z2JpNwN54a5WXacGYtLs?si=e07e3c4dc81c400d"},
+      { id: 6, name: "Lose Control", features:"Yeat & Elton John", isExplicit: true, duration: "1:24", spotifyEmbed: "https://open.spotify.com/embed/track/7f6kRhjrpsZzfcpI0o7xVr?si=e611a968b7234620"},
+      { id: 7, name: "Face the Flamë (feat. Grimes)", isExplicit: true, duration: "2:44", spotifyEmbed: "https://open.spotify.com/embed/track/5WTG3IGRkPoOj03HC4wT9v?si=d247491f32fa400f"},
+      { id: 8, name: "Dangerous House", isExplicit: true, duration: "3:55", spotifyEmbed: "https://open.spotify.com/embed/track/5SpNyQKfpsETyU51SNOI1S?si=5d398c9b6b754e07"},
+      { id: 9, name: "NO MORE GHOSTS", features:"Yeat & Kid Cudi", isExplicit: true, duration: "2:52", spotifyEmbed: "https://open.spotify.com/embed/track/6p0ckgvqiffTIOS7VYnuog?si=14f5731bb0454b24"},
+      { id: 10, name: "Naked", isExplicit: true, duration: "1:30", spotifyEmbed: "https://open.spotify.com/embed/track/44VsiAaMVbnj1zeqVUEspg?si=0e0e77fa63ae4774"},
+      { id: 11, name: "2Nite", isExplicit: true, duration: "2:45", spotifyEmbed: "https://open.spotify.com/embed/track/7aqmWmJqahTatuuDVXVzUp?si=d17ba09cd8a04ef3"},
+      { id: 12, name: "Geek Luv", isExplicit: true, duration: "2:28", spotifyEmbed: "https://open.spotify.com/embed/track/4Ju97cZLTQuiYyCoPULu6z?si=f0ea4633eb1d4cd3"},
+      { id: 13, name: "Silk Facë", isExplicit: true, duration: "2:33", spotifyEmbed: "https://open.spotify.com/embed/track/1Do46rEcHMv3u9P5lUzJ9Z?si=413d18ad4c5b41ff"},
+      { id: 14, name: "My Time (feat. Swiss Beatz)",  isExplicit: true, duration: "3:30", spotifyEmbed: "https://open.spotify.com/embed/track/4l3z5vr4sgHuY6IMWzsgnN?si=e7876c812cc14a39"},
+      { id: 15, name: "Back Home", features:"Yeat & Joji", isExplicit: true, duration: "3:11", spotifyEmbed: "https://open.spotify.com/embed/track/40oYjPdjvFBCZH1Smsk46H?si=a8ebeb9d188042b0"},
+      { id: 16, name: "Up From Here", isExplicit: true, duration: "3:40", spotifyEmbed: "https://open.spotify.com/embed/track/63jpEaRkGiUGvhnC9tRfVZ?si=44d85c6b7cf74de7"},
+    ],
+    duration: "21 mahnılar, 1 saat 2 mahnılar",
     releaseDate: "27 Mart 2026",
+    label: "Lyfestyle Corporation / Field Trip Recordings and UMG Recordings, Inc"
   },
   {
     id: 79,
@@ -2690,7 +2710,28 @@ export const albums = [
     vinylImages: adlCD.vinyl,
     accentColor: "yellow",
     format: "cd",
-    description: "Vinil LP presləməsi. 2018-ci ildə buraxılan, reper/prodüser Kanye Westin səkkizinci studiya albomudur. Albomda Ty Dolla Sign, PartyNextDoor, Kid Cudi, Jeremih və 070 Shake kimi qruplar qonaq vokal ifa edir. Albomun tam versiyasını West istehsal edib, əlavə olaraq həmicraçı prodüser olan Mike Dean, eləcə də Francis and the Lights, Benny Blanco, Irv Gotti, 7 Aurelius, Noah Goldstein, Che Pope, Caroline Shaw, Pi'erre Bourne və Ty Dolla Sign kimi qruplar da prodüserlik edib. Ye, West tərəfindən Wyoming Sessions adlandırılan beş yeddi mahnıdan ibarət albomdan ikincisidir. Vest albomun adını, mahnılarında tez-tez istifadə olunan öz adının kiçildilmiş versiyasını belə izah etdi: İnanıram ki, Müqəddəs Kitabda ən çox istifadə edilən ye sözüdür və Müqəddəs Kitabda sən mənasını verir. Beləliklə, mən sənəm, mən bizəm, bu bizik. Bu söz yeganə mənasını verən Kanye sözündən sadəcə Ye sözünə keçdi - sadəcə yaxşılığımızın, pisliyimizin, çaşqınlığımızın, hər şeyimizin əks olunması. Albom daha çox kim olduğumuzun əksidir.",
+    description: "ADL, amerikalı reper Yeat-in altıncı studiya albomudur. 27 mart 2026-cı ildə Lyfestyle Corporation, Field Trip Recordings və Capitol Records tərəfindən buraxılmışdır. İkiqat albom olan bu albom, A Dangerous Lyfe və A Dangerous Love disklərindən ibarətdir. Elton John, Don Toliver, YoungBoy Never Broke Again, Kid Cudi, Grimes, Julia Wolf, Kylie Jenner (onun alter-eqosu King Kylie-nin rəhbərliyi altında), Swizz Beatz, Joji və 070 Shake ilə əməkdaşlıq edir. İstehsal işləri Dylan Brady, Bnyx, Rampa, Synthetic, Lucid və Sapjer və digərləri tərəfindən həyata keçirilmişdir. Mahnıya “Let King Tonka Talk” sinqlı dəstək vermişdir.",
+    tracklist: [
+      { id: 1, name: "Purpose General", isExplicit: true, duration: "3:25", spotifyEmbed: "https://open.spotify.com/embed/track/44PH8NLzVddk4qhAUvm4v3"},
+      { id: 2, name: "Let King Tonka Talk", isExplicit: true, duration: "3:00", spotifyEmbed: "https://open.spotify.com/embed/track/10Jh65STFxzCdmm1CHgKW5?si=847aea1484fd400e"},
+      { id: 3, name: "My Way", isExplicit: true, duration: "2:46", spotifyEmbed: "https://open.spotify.com/embed/track/04KGYP88lnBiS5kDZFgJV7?si=904fde00882a42ab"},
+      { id: 4, name: "Liv Likë Dis", isExplicit: true, duration: "2:39", spotifyEmbed: "https://open.spotify.com/embed/track/2MicPxl8S4JpPpWSitf6N2?si=6436347a39f84a1a"},
+      { id: 5, name: "Made It On Our Own", features: "Yeat & EsDeeKid", isExplicit: true, duration: "2:49", spotifyEmbed: "https://open.spotify.com/embed/track/13Z2JpNwN54a5WXacGYtLs?si=e07e3c4dc81c400d"},
+      { id: 6, name: "Lose Control", features:"Yeat & Elton John", isExplicit: true, duration: "1:24", spotifyEmbed: "https://open.spotify.com/embed/track/7f6kRhjrpsZzfcpI0o7xVr?si=e611a968b7234620"},
+      { id: 7, name: "Face the Flamë (feat. Grimes)", isExplicit: true, duration: "2:44", spotifyEmbed: "https://open.spotify.com/embed/track/5WTG3IGRkPoOj03HC4wT9v?si=d247491f32fa400f"},
+      { id: 8, name: "Dangerous House", isExplicit: true, duration: "3:55", spotifyEmbed: "https://open.spotify.com/embed/track/5SpNyQKfpsETyU51SNOI1S?si=5d398c9b6b754e07"},
+      { id: 9, name: "NO MORE GHOSTS", features:"Yeat & Kid Cudi", isExplicit: true, duration: "2:52", spotifyEmbed: "https://open.spotify.com/embed/track/6p0ckgvqiffTIOS7VYnuog?si=14f5731bb0454b24"},
+      { id: 10, name: "Naked", isExplicit: true, duration: "1:30", spotifyEmbed: "https://open.spotify.com/embed/track/44VsiAaMVbnj1zeqVUEspg?si=0e0e77fa63ae4774"},
+      { id: 11, name: "2Nite", isExplicit: true, duration: "2:45", spotifyEmbed: "https://open.spotify.com/embed/track/7aqmWmJqahTatuuDVXVzUp?si=d17ba09cd8a04ef3"},
+      { id: 12, name: "Geek Luv", isExplicit: true, duration: "2:28", spotifyEmbed: "https://open.spotify.com/embed/track/4Ju97cZLTQuiYyCoPULu6z?si=f0ea4633eb1d4cd3"},
+      { id: 13, name: "Silk Facë", isExplicit: true, duration: "2:33", spotifyEmbed: "https://open.spotify.com/embed/track/1Do46rEcHMv3u9P5lUzJ9Z?si=413d18ad4c5b41ff"},
+      { id: 14, name: "My Time (feat. Swiss Beatz)",  isExplicit: true, duration: "3:30", spotifyEmbed: "https://open.spotify.com/embed/track/4l3z5vr4sgHuY6IMWzsgnN?si=e7876c812cc14a39"},
+      { id: 15, name: "Back Home", features:"Yeat & Joji", isExplicit: true, duration: "3:11", spotifyEmbed: "https://open.spotify.com/embed/track/40oYjPdjvFBCZH1Smsk46H?si=a8ebeb9d188042b0"},
+      { id: 16, name: "Up From Here", isExplicit: true, duration: "3:40", spotifyEmbed: "https://open.spotify.com/embed/track/63jpEaRkGiUGvhnC9tRfVZ?si=44d85c6b7cf74de7"},
+    ],
+    duration: "21 mahnılar, 1 saat 2 mahnılar",
+    releaseDate: "27 Mart 2026",
+    label: "Lyfestyle Corporation / Field Trip Recordings and UMG Recordings, Inc",
     releaseDate: "27 Mart 2026",
   },
   {
@@ -3197,7 +3238,13 @@ export const albums = [
     sleeveColor: "white",
     vinylColor: "white",
     format: "vinyl",
-    description: "X, amerikalı reper Ken Karsonun 8 iyul 2022-ci ildə çıxan ikinci studiya albomudur. Karsonun əsas leybldakı debütü olan albom, Opium leybl rəhbəri Playboi Carti tərəfindən icraçı prodüserlik edilmişdir və leybl həmkarları Destroy Lonely və Homixide Gang-ın qonaq çıxışlarını özündə birləşdirir. X, sintezatorlar, 808 zərb alətləri və Auto-Tuned vokalları ilə yüksək enerjili elektron istehsalı təqdim edən qəzəbli bir albomdur."
+    description: "X, amerikalı reper Ken Karsonun 8 iyul 2022-ci ildə çıxan ikinci studiya albomudur. Karsonun əsas leybldakı debütü olan albom, Opium leybl rəhbəri Playboi Carti tərəfindən icraçı prodüserlik edilmişdir və leybl həmkarları Destroy Lonely və Homixide Gang-ın qonaq çıxışlarını özündə birləşdirir. X, sintezatorlar, 808 zərb alətləri və Auto-Tuned vokalları ilə yüksək enerjili elektron istehsalı təqdim edən qəzəbli bir albomdur.",
+    tracklist: [
+      { id: 1, name: "Intro", duration: "3:15", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/6LAnpZIX3mgbLSF3YfNd7H"},
+      { id: 2, name: "New", duration: "2:49", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2ht2G1JL1yg0kIbz6Wfr8V"},
+      { id: 3, name: "Gems", duration: "2:16", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/1gRVXWiWJPkP8CpiMnHK7K"},
+      { id: 4, name: "Nobody", duration: "2:10", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/6LAnpZIX3mgbLSF3YfNd7H"},
+    ]
   },
   {
     id: 72,
