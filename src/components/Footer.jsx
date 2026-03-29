@@ -2,10 +2,10 @@ import { Instagram, Twitter, Youtube, Facebook } from "lucide-react";
 
 export const Footer = () => {
   const footerLinks = {
-    Shop: ["New Arrivals", "Best Sellers", "Pre-Orders", "Sale"],
-    Genres: ["Jazz", "Rock", "Electronic", "Classical", "Hip Hop"],
-    Support: ["Contact Us", "Shipping Info", "Returns", "FAQ"],
-    Company: ["About Us", "Careers", "Press", "Blog"],
+    Mağaz: ["Yeni Gəlişlər", "Ən çox Satılanlar", "Əvvəlcədən Sifarişlər", "Satış"],
+    Janrlar: ["Jazz", "Rock", "Electronic", "Classik", "Hip-Hop"],
+    Dəstək: ["Bizimlə Əlaqə", "Göndərmə Məlumatı", "Qaytarılmalar", "Tez-Tez verilən suallar"],
+    Şirkət: ["Haqqımızda", "Karyeralar", "Bloq"],
   };
 
   return (
@@ -23,7 +23,7 @@ export const Footer = () => {
               Premium vinil valları üçün məkanınız. Musiqini eşitmək üçün nəzərdə tutulduğu kimi yaşayın.
             </p>
             <div className="flex gap-4">
-              {[Instagram, Twitter, Youtube, Facebook].map((Icon, index) => (
+              {[Instagram, Twitter, Youtube].map((Icon, index) => (
                 <a
                   key={index}
                   href="#"
@@ -35,7 +35,6 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Links */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
               <h4 className="font-serif font-bold mb-4">{title}</h4>
@@ -55,14 +54,13 @@ export const Footer = () => {
           ))}
         </div>
 
-        {/* Bottom */}
         <div className="border-t border-border mt-16 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2026 Backrooms. All rights reserved.
+            © 2026 Backrooms. Bütün hüquqlar qorunur.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-foreground transition-colors">Məxfilik Siyasəti</a>
+            <a href="#" className="hover:text-foreground transition-colors">Xidmət Şərtləri</a>
           </div>
         </div>
       </div>
