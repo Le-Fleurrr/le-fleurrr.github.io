@@ -29,8 +29,8 @@ export const MerchPage = () => {
   const artistList = Array.isArray(item.artist)
     ? item.artist
     : typeof item.artist === 'string'
-    ? item.artist.split('&').map(a => a.trim())
-    : [item.artist];
+      ? item.artist.split('&').map(a => a.trim())
+      : [item.artist];
   const galleryImages = [
     item.image,
     ...(item.additionalImages || [])
@@ -53,7 +53,6 @@ export const MerchPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
-        {/* Back Button */}
         <Button variant="ghost" onClick={() => navigate(-1)} className="mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Geri
@@ -74,7 +73,7 @@ export const MerchPage = () => {
                   <ShoppingCart className="w-20 h-20 text-muted-foreground" />
                 </div>
               )}
-              
+
               {item.isNew && (
                 <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-sm font-bold px-4 py-2 rounded-full">
                   YENI
@@ -90,11 +89,10 @@ export const MerchPage = () => {
                       setSelectedImage(index);
                       setImageError(false);
                     }}
-                    className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
-                      selectedImage === index
+                    className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${selectedImage === index
                         ? "border-primary shadow-lg scale-105"
                         : "border-border hover:border-primary/50"
-                    }`}
+                      }`}
                   >
                     <img
                       src={img}
@@ -123,7 +121,7 @@ export const MerchPage = () => {
                     <span key={`artist-${index}`} className="flex items-center">
                       <Link
                         to={`/artist/${slug}`}
-                        className="text-xl text-muted-foreground hover:text-primary transition-colors"
+                        className="text-xl text-muted-foreground hover:text-primary hover:underline transition-colors"
                       >
                         {artist}
                       </Link>
@@ -138,7 +136,6 @@ export const MerchPage = () => {
               <p className="text-muted-foreground">{item.year}</p>
             </div>
 
-            {/* Price */}
             <div className="border-y border-border py-6">
               <p className="text-4xl font-serif font-bold">{item.price} ₼</p>
             </div>
@@ -151,16 +148,20 @@ export const MerchPage = () => {
             {item.size && item.size.length > 0 && (
               <div>
                 <h3 className="text-lg font-semibold mb-3">Ölçü Seçin</h3>
+                {item.size && item.size.length > 0 && !selectedSize && (
+              <span className="text-me text-red-500 font-medium animate-pulse">
+                ⚠️ Zəhmət olmasa dizayn seçin
+              </span>
+            )}
                 <div className="flex flex-wrap gap-3">
                   {item.size.map((size) => (
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
-                      className={`px-6 py-3 border-2 rounded-lg font-medium transition-all ${
-                        selectedSize === size
+                      className={`px-6 py-3 border-2 rounded-lg font-medium transition-all ${selectedSize === size
                           ? "border-primary bg-primary text-primary-foreground"
                           : "border-border hover:border-primary"
-                      }`}
+                        }`}
                     >
                       {size}
                     </button>
@@ -203,7 +204,6 @@ export const MerchPage = () => {
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex gap-4">
               <Button
                 size="lg"
@@ -219,14 +219,6 @@ export const MerchPage = () => {
               </Button>
             </div>
 
-            {/* Size Warning */}
-            {item.size && item.size.length > 0 && !selectedSize && (
-              <p className="text-sm text-yellow-600">
-                * Zəhmət olmasa ölçü seçin
-              </p>
-            )}
-
-            {/* Product Details */}
             <div className="border-t border-border pt-6">
               <h3 className="text-lg font-semibold mb-3">Məhsul Məlumatları</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
@@ -253,36 +245,36 @@ export const MerchPage = () => {
         <div className="mt-20">
           <h2 className="text-3xl font-serif font-bold mb-8">Oxşar Məhsullar</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {Merch.filter(m => 
-              m.id !== item.id && 
+            {Merch.filter(m =>
+              m.id !== item.id &&
               m.artist.some(a => artistList.includes(a))
             )
-            .slice(0, 5)
-            .map(relatedItem => (
-              <Link
-                key={relatedItem.id}
-                to={`/merch/${relatedItem.id}`}
-                className="group"
-              >
-                <div className="aspect-square bg-card rounded-lg overflow-hidden border border-border mb-3 group-hover:shadow-lg transition-shadow">
-                  {relatedItem.image ? (
-                    <img
-                      src={relatedItem.image}
-                      alt={relatedItem.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-muted">
-                      <ShoppingCart className="w-12 h-12 text-muted-foreground" />
-                    </div>
-                  )}
-                </div>
-                <h3 className="font-semibold text-sm truncate group-hover:text-primary transition">
-                  {relatedItem.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">{relatedItem.price} ₼</p>
-              </Link>
-            ))}
+              .slice(0, 5)
+              .map(relatedItem => (
+                <Link
+                  key={relatedItem.id}
+                  to={`/merch/${relatedItem.id}`}
+                  className="group"
+                >
+                  <div className="aspect-square bg-card rounded-lg overflow-hidden border border-border mb-3 group-hover:shadow-lg transition-shadow">
+                    {relatedItem.image ? (
+                      <img
+                        src={relatedItem.image}
+                        alt={relatedItem.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-muted">
+                        <ShoppingCart className="w-12 h-12 text-muted-foreground" />
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="font-semibold text-sm truncate group-hover:text-primary transition">
+                    {relatedItem.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{relatedItem.price} ₼</p>
+                </Link>
+              ))}
           </div>
         </div>
       </div>

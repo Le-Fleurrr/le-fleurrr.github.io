@@ -81,6 +81,7 @@ const AlbumPage = () => {
   const [expandedSpotifyTrack, setExpandedSpotifyTrack] = useState(null);
   const [musicVideoUrl, setMusicVideoUrl] = useState(null);
   const [showMusicVideo, setShowMusicVideo] = useState(false);
+  const [variantError, setVariantError] = useState(false);
 
   if (!album) {
     return (
@@ -194,6 +195,27 @@ const AlbumPage = () => {
     setMusicVideoUrl(null);
   };
 
+  const handleAddToCart = () => {
+    // Check if album has variants and if one is selected
+    if (album.variants && album.variants.length > 0 && !selectedVariant) {
+      setVariantError(true);
+      // Scroll to variant section
+      const variantSection = document.getElementById('variant-section');
+      if (variantSection) {
+        variantSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+    
+    setVariantError(false);
+    // TODO: Add to cart logic here
+    console.log('Added to cart:', {
+      albumId: album.id,
+      quantity,
+      variant: selectedVariant,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
@@ -251,7 +273,7 @@ const AlbumPage = () => {
 
           <div className="mb-10 space-y-4">
             <div className="flex items-center gap-3 flex-wrap">
-              <h1 className="text-5xl font-backrooms font-black tracking-tight">{album.title}</h1>
+              <h1 className="text-5xl font-spotify font-black tracking-tight">{album.title}</h1>
               {album.isExplicit && (
                 <span className="bg-gray-400 text-black border px-2 py-1 rounded text-xs font-bold self-center">E</span>
               )}
@@ -261,7 +283,7 @@ const AlbumPage = () => {
                 const slug = String(artist).toLowerCase().replace(/,/g, '').replace(/\$/g, '').replace(/\s+/g, '-').replace(/[^\w-]/g, '');
                 return (
                   <span key={idx}>
-                    <Link to={`/artist/${slug}`} className="hover:underline transition-colors">{artist}</Link>
+                    <Link to={`/artist/${slug}`} className="hover:text-primary transition-colors">{artist}</Link>
                     {idx < artistList.length - 1 && <span className="mx-2">&</span>}
                   </span>
                 );
@@ -292,6 +314,7 @@ const AlbumPage = () => {
                   <span className="px-3 py-1 bg-secondary rounded-lg">{album.genre}</span>
                   <span>•</span>
                   <span>{album.year}</span>
+                  {album.vinylColor && (<><span>•</span><span className="capitalize">{album.vinylColor} Vinyl</span></>)}
                 </div>
 
                 {album.description && (
@@ -302,14 +325,22 @@ const AlbumPage = () => {
                 )}
 
                 {album.variants && album.variants.length > 0 && (
-                  <div className="border-t border-border pt-6">
-                    <h3 className="text-lg font-semibold mb-3">Dizayn Seçin</h3>
-                    <div className="grid grid-cols-4 gap-3">
+                  <div id="variant-section" className="border-t border-border pt-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-lg font-semibold">Dizayn Seçin</h3>
+                      {variantError && (
+                        <span className="text-sm text-red-500 font-medium animate-pulse">
+                          ⚠️ Zəhmət olmasa dizayn seçin
+                        </span>
+                      )}
+                    </div>
+                    <div className={`grid grid-cols-4 gap-3 ${variantError ? 'ring-2 ring-red-500 rounded-lg p-2' : ''}`}>
                       {album.variants.map((variant) => (
                         <button
                           key={variant.id}
                           onClick={() => {
                             setSelectedVariant(variant.id);
+                            setVariantError(false);
                             const variantImageIndex = galleryImages.findIndex(img => img.url === variant.image);
                             if (variantImageIndex !== -1) setSelectedImage(variantImageIndex);
                           }}
@@ -470,7 +501,7 @@ const AlbumPage = () => {
                               <div className="flex flex-col gap-1">
                                 <div className="flex items-center gap-2">
                                   <span className={`font-sans font-normal text-base ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
-                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black border border-border rounded">E</span>}
+                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
                                 </div>
                                 {trackFeatures && <FeaturesList features={trackFeatures} />}
                               </div>
@@ -612,10 +643,71 @@ const AlbumPage = () => {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-4">
                 <FavoriteButton albumId={album.id} size="large" />
-                <Button size="lg" className="h-14 font-bold px-8 shadow-xl shadow-primary/20 bg-primary text-primary-foreground">
+                <Button 
+                  size="lg" 
+                  onClick={handleAddToCart}
+                  className="h-14 font-bold px-8 shadow-xl shadow-primary/20 bg-primary text-primary-foreground"
+                >
                   <ShoppingCart className="mr-2 h-5 w-5" /> Səbətə əlavə et
                 </Button>
               </div>
+            </div>
+          </div>
+
+          <div className="mt-16 pt-8 border-t border-border">
+            <h2 className="text-2xl font-bold mb-6">Tövsiyə Edilən Məhsullar</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {albums
+                .filter(a => 
+                  a.id !== album.id && 
+                  (a.artist?.includes(artistList[0]) || a.genre === album.genre)
+                )
+                .slice(0, 4)
+                .map((recommendedAlbum) => {
+                  const recommendedArtists = Array.isArray(recommendedAlbum.artist) 
+                    ? recommendedAlbum.artist 
+                    : [recommendedAlbum.artist];
+                  
+                  return (
+                    <Link
+                      key={recommendedAlbum.id}
+                      to={`/album/${recommendedAlbum.id}`}
+                      className="group"
+                    >
+                      <div className="relative aspect-square rounded-lg overflow-hidden mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
+                        <img
+                          src={Array.isArray(recommendedAlbum.image) 
+                            ? recommendedAlbum.image[0] 
+                            : recommendedAlbum.image
+                          }
+                          alt={recommendedAlbum.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        {recommendedAlbum.isNew && (
+                          <span className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">
+                            YENI
+                          </span>
+                        )}
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <h3 className="font-semibold text-sm group-hover:text-primary transition-colors line-clamp-1">
+                            {recommendedAlbum.title}
+                          </h3>
+                          {recommendedAlbum.isExplicit && (
+                            <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black rounded flex-shrink-0">
+                              E
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-xs text-muted-foreground line-clamp-1">
+                          {recommendedArtists.join(', ')}
+                        </p>
+                        <p className="text-sm font-bold mt-1">{recommendedAlbum.price} ₼</p>
+                      </div>
+                    </Link>
+                  );
+                })}
             </div>
           </div>
         </div>
