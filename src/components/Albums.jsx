@@ -581,10 +581,14 @@ const hurryUpTomorrowFirstPressing = {
 
 const bully = {
   cover: "https://res.cloudinary.com/deroy68n9/image/upload/v1770570524/0x1900-000000-80-0-0_lfrc87.jpg",
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1773577733/GUEST_afc933c9-0bac-491c-a5ad-e8_haso6y.png",
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1774979097/a5ba183b-d3ff-4149-b589-1ec9addb0581_emoqax.png",
     "https://res.cloudinary.com/deroy68n9/image/upload/v1774793390/04b2a24f-8103-4bb9-8c56-a26586a0c123_cahwxq.png",
     "https://res.cloudinary.com/deroy68n9/image/upload/v1774793391/ffae7830-5768-4bc4-91fa-5ae0998f4b4e_uplzrt.png",
-    "https://res.cloudinary.com/deroy68n9/image/upload/v1774793388/9100667e-b2ca-40dd-a20a-d3a7d1604733_yrkxu4.png"
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1774793388/9100667e-b2ca-40dd-a20a-d3a7d1604733_yrkxu4.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1774978195/7fc58f8f-5308-4da6-bd0b-004d07f7f120_f6vnt3.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1774978196/9a0c01b3-bd4c-456d-92d1-1e33d67e2aa2_ooc69s.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1774978195/43b29357-8f3f-43a8-814c-bb10d4b7efcb_s5hik0.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1774978195/b066b7f5-5212-4ea8-959f-8160a656a470_uusgpm.png"
   ]
 };
 
@@ -2684,10 +2688,14 @@ export const albums = [
       { id: 13, name: "LOSING YOUR MIND", isExplicit: false, duration: "3:26", spotifyEmbed: "https://open.spotify.com/embed/track/3zUNCyezZQ7Wg2wYcsjGN4" },
     ],
     variants: [
-      { id: 1, name: "Qara Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1773577733/GUEST_afc933c9-0bac-491c-a5ad-e8_haso6y.png" },
+      { id: 1, name: "Qara Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1774979097/a5ba183b-d3ff-4149-b589-1ec9addb0581_emoqax.png" },
       { id: 2, name: "Qırmızı Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1774793390/04b2a24f-8103-4bb9-8c56-a26586a0c123_cahwxq.png" },
       { id: 3, name: "Şəffaf Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1774793391/ffae7830-5768-4bc4-91fa-5ae0998f4b4e_uplzrt.png" },
-      { id: 4, name: "Qara Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1774793388/9100667e-b2ca-40dd-a20a-d3a7d1604733_yrkxu4.png" },
+      { id: 4, name: "Xrom Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1774793388/9100667e-b2ca-40dd-a20a-d3a7d1604733_yrkxu4.png" },
+      { id: 5, name: "Boz Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1774978195/7fc58f8f-5308-4da6-bd0b-004d07f7f120_f6vnt3.png" },
+      { id: 6, name: "Qəhvəyi Rəngli Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1774978196/9a0c01b3-bd4c-456d-92d1-1e33d67e2aa2_ooc69s.png" },
+      { id: 7, name: "Qəhvəyi Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1774978195/43b29357-8f3f-43a8-814c-bb10d4b7efcb_s5hik0.png" },
+      { id: 8, name: "Mavi Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1774978195/b066b7f5-5212-4ea8-959f-8160a656a470_uusgpm.png" }
     ],
     releaseDate: "27 Mart 2026",
     duration: "13 mahnılar, 30 dəqiqə",
