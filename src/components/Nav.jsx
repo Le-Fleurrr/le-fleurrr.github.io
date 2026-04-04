@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Menu, X, ShoppingBag, Search, User, Heart, Settings as SettingsIcon } from "lucide-react";
+import { Menu, X, ShoppingBag, Search, Heart, Settings as SettingsIcon } from "lucide-react";
 import { Button } from "./ui/Button.tsx";
 import { SearchEngine } from "./SearchEngine.jsx";
 import { albums } from "./Albums.jsx";
 import { useFavorites } from './FavoritesSystem';
-import { Settings }from "./Settings";
+import { Settings } from "./Settings";
+import { UserMenu } from './UserMenu';
 
 export const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,11 +75,7 @@ export const Nav = () => {
                 <SettingsIcon className="w-5 h-5" />
               </Button>
 
-              <a href="#account">
-                <Button variant="ghost" size="icon" className="text-foreground">
-                  <User className="w-5 h-5" />
-                </Button>
-              </a>
+              <UserMenu />
 
               <Button
                 variant="ghost"

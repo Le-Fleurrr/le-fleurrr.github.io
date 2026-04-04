@@ -7,40 +7,45 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Index from './components/pages/Index';
 import NotFound from "./components/pages/NotFound";
 import { LanguageProvider } from "./components/LanguageContext.jsx";
-import { Account } from './components/Account';
 import ArtistPage from './components/ArtistPage';
 import AlbumPage from './components/AlbumPage';
 import { MerchCollectionsPage } from './components/MerchCollectionsPage';
 import { MerchPage } from "./components/MerchPage";
 import { FavoritesProvider, FavoritesPage } from './components/FavoritesSystem';
 import { albums } from './components/Albums';
+import { AuthProvider } from './contexts/authContext';
+import { Login } from './components/Login';
+import { Signup } from './components/SignUp';
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <LanguageProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <FavoritesProvider>
-          <Toaster />
-          <Sonner />
-          <Router>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/account" element={<Account />} />
-              <Route path="/collections" element={<Collections />} />
-              <Route path="/favorites" element={<FavoritesPage albums={albums} />} />
-              <Route path="/artist/:artistName" element={<ArtistPage />} />
-              <Route path="/album/:albumId" element={<AlbumPage />} />
-              <Route path="/merch" element={<MerchCollectionsPage />} />
-              <Route path="/merch/:merchId" element={<MerchPage />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Router>
-        </FavoritesProvider>
-      </TooltipProvider>
-    </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <FavoritesProvider>
+            <AuthProvider>
+              <Toaster />
+              <Sonner />
+              <Router>
+                <Routes>
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<Signup />} />
+                  <Route path="/" element={<Index />} />
+                  <Route path="/collections" element={<Collections />} />
+                  <Route path="/favorites" element={<FavoritesPage albums={albums} />} />
+                  <Route path="/artist/:artistName" element={<ArtistPage />} />
+                  <Route path="/album/:albumId" element={<AlbumPage />} />
+                  <Route path="/merch" element={<MerchCollectionsPage />} />
+                  <Route path="/merch/:merchId" element={<MerchPage />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Router>
+            </AuthProvider>
+          </FavoritesProvider>
+        </TooltipProvider>
+      </QueryClientProvider>
     </LanguageProvider>
   );
 }
