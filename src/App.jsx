@@ -14,40 +14,42 @@ import { MerchPage } from "./components/MerchPage";
 import { FavoritesProvider, FavoritesPage } from './components/FavoritesSystem';
 import { albums } from './components/Albums';
 import { AuthProvider } from './contexts/authContext';
-import { Login } from './components/Login';
-import { Signup } from './components/SignUp';
+import { Account } from './components/Acccount';
+import { ShopifyCartProvider } from './contexts/Shopifycartcontext';
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <LanguageProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <FavoritesProvider>
-            <AuthProvider>
-              <Toaster />
-              <Sonner />
-              <Router>
-                <Routes>
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/signup" element={<Signup />} />
-                  <Route path="/" element={<Index />} />
-                  <Route path="/collections" element={<Collections />} />
-                  <Route path="/favorites" element={<FavoritesPage albums={albums} />} />
-                  <Route path="/artist/:artistName" element={<ArtistPage />} />
-                  <Route path="/album/:albumId" element={<AlbumPage />} />
-                  <Route path="/merch" element={<MerchCollectionsPage />} />
-                  <Route path="/merch/:merchId" element={<MerchPage />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Router>
-            </AuthProvider>
-          </FavoritesProvider>
-        </TooltipProvider>
-      </QueryClientProvider>
+      <Router>
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <FavoritesProvider>
+              <AuthProvider>
+                <ShopifyCartProvider>
+                  <Toaster />
+                  <Sonner />
+                  <Routes>
+                    <Route path="/account" element={<Account />} />
+                    <Route path="/" element={<Index />} />
+                    <Route path="/collections" element={<Collections />} />
+                    <Route path="/favorites" element={<FavoritesPage albums={albums} />} />
+                    <Route path="/artist/:artistName" element={<ArtistPage />} />
+                    <Route path="/album/:albumId" element={<AlbumPage />} />
+                    <Route path="/merch" element={<MerchCollectionsPage />} />
+                    <Route path="/merch/:merchId" element={<MerchPage />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </ShopifyCartProvider>
+              </AuthProvider>
+            </FavoritesProvider>
+          </TooltipProvider>
+        </QueryClientProvider>
+      </Router>
     </LanguageProvider>
   );
 }
+
 
 export default App;

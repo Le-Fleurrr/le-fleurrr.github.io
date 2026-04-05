@@ -9,6 +9,7 @@ import { albums } from "./Albums.jsx";
 import { FavoriteButton } from './FavoritesSystem';
 import { previewPlayer } from './audioPreviewPlayer.js';
 import { useSpotifyTracklist } from './useSpotifyTracklist.js';
+import { useShopifyCart } from '../contexts/Shopifycartcontext';
 
 const getArtistList = (album) => {
   if (!album) return [];
@@ -20,11 +21,13 @@ const getArtistList = (album) => {
   return [];
 };
 
+
+
 const FeaturesList = ({ features }) => {
   if (!features) return null;
-  
+
   const featureArtists = features.split(/,|&/).map(name => name.trim());
-  
+
   return (
     <span className="text-sm text-muted-foreground">
       {featureArtists.map((artist, idx) => {
@@ -33,11 +36,11 @@ const FeaturesList = ({ features }) => {
           .replace(/\$/g, '')
           .replace(/\s+/g, '-')
           .replace(/[^\w-]/g, '');
-        
+
         return (
           <span key={idx}>
-            <Link 
-              to={`/artist/${slug}`} 
+            <Link
+              to={`/artist/${slug}`}
               className="hover:text-primary hover:underline transition-colors"
             >
               {artist}
@@ -55,8 +58,9 @@ const FeaturesList = ({ features }) => {
 const AlbumPage = () => {
   const { albumId } = useParams();
   const navigate = useNavigate();
+  const { addToCart, loading: cartLoading } = useShopifyCart();
   const album = albums.find((a) => a.id === parseInt(albumId || "", 10));
-  
+
   const { data: spotifyData, loading: spotifyLoading } = useSpotifyTracklist(album?.spotifyAlbumId);
 
   const [imageError, setImageError] = useState(false);
@@ -195,25 +199,36 @@ const AlbumPage = () => {
     setMusicVideoUrl(null);
   };
 
-  const handleAddToCart = () => {
-    // Check if album has variants and if one is selected
+  const handleAddToCart = async () => {
     if (album.variants && album.variants.length > 0 && !selectedVariant) {
       setVariantError(true);
-      // Scroll to variant section
+
       const variantSection = document.getElementById('variant-section');
       if (variantSection) {
         variantSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
+
       return;
     }
-    
+
     setVariantError(false);
-    // TODO: Add to cart logic here
-    console.log('Added to cart:', {
-      albumId: album.id,
-      quantity,
-      variant: selectedVariant,
-    });
+
+    const shopifyVariantId =
+      album.shopifyVariantId ||
+      album.variants?.find(v => v.id === selectedVariant)?.shopifyVariantId;
+
+    if (!shopifyVariantId) {
+      alert('Shopify məhsul ID-si tapılmadı');
+      return;
+    }
+
+    const result = await addToCart(shopifyVariantId, quantity);
+
+    if (result.success) {
+      alert('Səbətə əlavə edildi! ✓');
+    } else {
+      alert('Xəta baş verdi. Yenidən cəhd edin.');
+    }
   };
 
   return (
@@ -382,11 +397,11 @@ const AlbumPage = () => {
                 </div>
               </div>
             )}
-            
+
             {activeTab === "tracklist" && (
               <div className="space-y-6">
                 {spotifyLoading && <p className="text-center text-muted-foreground">Mahnı siyahısı yüklənir...</p>}
-                
+
                 <audio ref={audioRef} onEnded={() => setCurrentlyPlaying(null)} />
 
                 {album.discs ? (
@@ -432,7 +447,7 @@ const AlbumPage = () => {
                                     title="Watch Music Video"
                                   >
                                     <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-                                      <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/>
+                                      <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z" />
                                     </svg>
                                   </a>
                                 )}
@@ -516,7 +531,7 @@ const AlbumPage = () => {
                                   title="Watch Music Video"
                                 >
                                   <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/>
+                                    <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z" />
                                   </svg>
                                 </a>
                               )}
@@ -561,7 +576,7 @@ const AlbumPage = () => {
                     })}
                   </div>
                 )}
-                
+
                 <div className="pt-6 mt-6 border-t border-border">
                   <p className="text-xs text-muted-foreground text-left">
                     {releaseDate && <span>{releaseDate}</span>}
@@ -643,12 +658,14 @@ const AlbumPage = () => {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-4">
                 <FavoriteButton albumId={album.id} size="large" />
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   onClick={handleAddToCart}
+                  disabled={cartLoading}
                   className="h-14 font-bold px-8 shadow-xl shadow-primary/20 bg-primary text-primary-foreground"
                 >
-                  <ShoppingCart className="mr-2 h-5 w-5" /> Səbətə əlavə et
+                  <ShoppingCart className="mr-2 h-5 w-5" />
+                  {cartLoading ? 'Əlavə edilir...' : 'Səbətə əlavə et'}
                 </Button>
               </div>
             </div>
@@ -658,16 +675,16 @@ const AlbumPage = () => {
             <h2 className="text-2xl font-bold mb-6">Tövsiyə Edilən Məhsullar</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {albums
-                .filter(a => 
-                  a.id !== album.id && 
+                .filter(a =>
+                  a.id !== album.id &&
                   (a.artist?.includes(artistList[0]) || a.genre === album.genre)
                 )
                 .slice(0, 4)
                 .map((recommendedAlbum) => {
-                  const recommendedArtists = Array.isArray(recommendedAlbum.artist) 
-                    ? recommendedAlbum.artist 
+                  const recommendedArtists = Array.isArray(recommendedAlbum.artist)
+                    ? recommendedAlbum.artist
                     : [recommendedAlbum.artist];
-                  
+
                   return (
                     <Link
                       key={recommendedAlbum.id}
@@ -676,8 +693,8 @@ const AlbumPage = () => {
                     >
                       <div className="relative aspect-square rounded-lg overflow-hidden mb-3 shadow-lg group-hover:shadow-xl transition-shadow">
                         <img
-                          src={Array.isArray(recommendedAlbum.image) 
-                            ? recommendedAlbum.image[0] 
+                          src={Array.isArray(recommendedAlbum.image)
+                            ? recommendedAlbum.image[0]
                             : recommendedAlbum.image
                           }
                           alt={recommendedAlbum.title}
