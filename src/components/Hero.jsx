@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { albums } from "./Albums.jsx";
 
 export const Hero = () => {
-  const featuredAlbum = albums.find(album => album.id === 76) || albums[0];
+  const featuredAlbum = albums.find(album => album.id === 78) || albums[0];
 
   const getCoverImage = (album) => {
     if (!album) return null;
@@ -39,11 +39,11 @@ export const Hero = () => {
                 Premium Vinyl Kolleksiyası
               </p>
               <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                YENI! <br />KANYE WEST -
-                <span className="text-gradient block">BULLY</span>
+                YENI! <br />YEAT -
+                <span className="text-gradient block">ADL</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-md animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                "BULLY" amerikalı reper və müğənni Kanye Westin yeni studiya albomudur.
+                "ADL" amerikalı reper və müğənni Yeatin yeni studiya albomudur.
               </p>
             </div>
 

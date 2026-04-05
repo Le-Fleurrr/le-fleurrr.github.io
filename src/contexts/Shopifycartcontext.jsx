@@ -1,93 +1,119 @@
-import { createContext, useContext, useState, useEffect } from "react";
-import client from "../shopify-client";
+import { createContext, useContext, useState, useEffect } from 'react';
+import client from '../shopify-client';
 
-const ShopifyCartContext = createContext({});
+const ShopifyCartContext = createContext();
 
-export const useShopifyCart = () => {
-  const context = useContext(ShopifyCartContext);
-  if (!context) {
-    throw new Error("useShopifyCart must be used within a ShopifyCartProvider");
-  }
-  return context;
-};
+export function useShopifyCart() {
+  return useContext(ShopifyCartContext);
+}
 
-export const ShopifyCartProvider = ({ children }) => {
+export function ShopifyCartProvider({ children }) {
   const [cart, setCart] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // Initialize cart on mount
   useEffect(() => {
     initializeCart();
   }, []);
 
   async function initializeCart() {
     try {
-      const cartId = localStorage.getItem("shopify_cart_id");
-
+      // Check if cart exists in localStorage
+      const cartId = localStorage.getItem('shopify_cart_id');
+      
       if (cartId) {
-        const existingCart = await client.checkout.fetch(cartId);
-        if (existingCart && !existingCart.completedAt) {
-          setCart(existingCart);
-          return;
+        try {
+          // Try to fetch existing cart
+          const existingCart = await client.cart.fetch(cartId);
+          if (existingCart) {
+            setCart(existingCart);
+            return;
+          }
+        } catch (error) {
+          console.log('Existing cart not found, creating new one');
+          localStorage.removeItem('shopify_cart_id');
         }
       }
-
-      const newCart = await client.checkout.create();
-      localStorage.setItem("shopify_cart_id", newCart.id);
+      
+      // Create new cart using the new Cart API
+      const newCart = await client.cart.create();
+      localStorage.setItem('shopify_cart_id', newCart.id);
       setCart(newCart);
     } catch (error) {
-      console.error("Cart initialization error:", error);
+      console.error('Cart initialization error:', error);
+      // Create minimal cart object to prevent errors
+      setCart({ 
+        id: null, 
+        lines: [], 
+        cost: { totalAmount: { amount: '0.00' } } 
+      });
     }
   }
 
-  async function addToCart(variantId, quantity = 1) {
+  async function addToCart(merchandiseId, quantity = 1) {
     setLoading(true);
     try {
-      const lineItemsToAdd = [{ variantId, quantity: parseInt(quantity, 10) }];
-      const updatedCart = await client.checkout.addLineItems(cart.id, lineItemsToAdd);
+      if (!cart?.id) {
+        await initializeCart();
+      }
+
+      const lines = [{
+        merchandiseId, // Note: Changed from variantId to merchandiseId
+        quantity: parseInt(quantity, 10)
+      }];
+      
+      const updatedCart = await client.cart.linesAdd(cart.id, lines);
       setCart(updatedCart);
       return { success: true };
     } catch (error) {
-      console.error("Add to cart error:", error);
+      console.error('Add to cart error:', error);
       return { success: false, error };
     } finally {
       setLoading(false);
     }
   }
 
-  async function removeFromCart(lineItemId) {
+  async function removeFromCart(lineId) {
     setLoading(true);
     try {
-      const updatedCart = await client.checkout.removeLineItems(cart.id, [lineItemId]);
+      const updatedCart = await client.cart.linesRemove(cart.id, [lineId]);
       setCart(updatedCart);
     } catch (error) {
-      console.error("Remove from cart error:", error);
+      console.error('Remove from cart error:', error);
     } finally {
       setLoading(false);
     }
   }
 
-  async function updateQuantity(lineItemId, quantity) {
+  async function updateQuantity(lineId, quantity) {
     setLoading(true);
     try {
-      const lineItemsToUpdate = [{ id: lineItemId, quantity: parseInt(quantity, 10) }];
-      const updatedCart = await client.checkout.updateLineItems(cart.id, lineItemsToUpdate);
+      const lines = [{
+        id: lineId,
+        quantity: parseInt(quantity, 10)
+      }];
+      
+      const updatedCart = await client.cart.linesUpdate(cart.id, lines);
       setCart(updatedCart);
     } catch (error) {
-      console.error("Update quantity error:", error);
+      console.error('Update quantity error:', error);
     } finally {
       setLoading(false);
     }
   }
 
   function openCheckout() {
-    if (cart?.webUrl) {
-      window.location.href = cart.webUrl;
+    if (cart?.checkoutUrl) {
+      window.location.href = cart.checkoutUrl;
     }
   }
 
-  const cartCount =
-    cart?.lineItems?.reduce((total, item) => total + item.quantity, 0) || 0;
-  const cartTotal = cart?.totalPrice?.amount || "0.00";
+  // Calculate cart totals from new Cart API structure
+  const cartCount = cart?.lines?.edges?.reduce((total, edge) => {
+    return total + edge.node.quantity;
+  }, 0) || 0;
+
+  const cartTotal = cart?.cost?.totalAmount?.amount || '0.00';
 
   const value = {
     cart,
@@ -97,7 +123,7 @@ export const ShopifyCartProvider = ({ children }) => {
     addToCart,
     removeFromCart,
     updateQuantity,
-    openCheckout,
+    openCheckout
   };
 
   return (
@@ -105,4 +131,4 @@ export const ShopifyCartProvider = ({ children }) => {
       {children}
     </ShopifyCartContext.Provider>
   );
-};
+}

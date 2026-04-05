@@ -35,27 +35,27 @@ export function CartSidebar({ isOpen, onClose }) {
 
         {/* Cart Items */}
         <div className="flex-1 overflow-y-auto p-6">
-          {cart?.lineItems?.length === 0 ? (
+          {!cart?.lines?.edges || cart.lines.edges.length === 0 ? (
             <div className="text-center py-12">
               <ShoppingBag className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
               <p className="text-muted-foreground">Səbət boşdur</p>
             </div>
           ) : (
             <div className="space-y-4">
-              {cart?.lineItems?.map((item) => (
+              {cart.lines.edges.map(({ node: item }) => (
                 <div key={item.id} className="flex gap-4 p-4 bg-card rounded-lg border border-border">
                   {/* Product Image */}
                   <img 
-                    src={item.variant.image?.src || '/placeholder.png'} 
-                    alt={item.title}
+                    src={item.merchandise.image?.url || '/placeholder.png'} 
+                    alt={item.merchandise.product.title}
                     className="w-20 h-20 object-cover rounded"
                   />
                   
                   {/* Product Info */}
                   <div className="flex-1">
-                    <h3 className="font-semibold mb-1">{item.title}</h3>
+                    <h3 className="font-semibold mb-1">{item.merchandise.product.title}</h3>
                     <p className="text-sm text-muted-foreground mb-2">
-                      {item.variant.title !== 'Default Title' && item.variant.title}
+                      {item.merchandise.title !== 'Default Title' && item.merchandise.title}
                     </p>
                     
                     {/* Quantity Controls */}
@@ -89,7 +89,7 @@ export function CartSidebar({ isOpen, onClose }) {
                   {/* Price */}
                   <div className="text-right">
                     <p className="font-bold">
-                      {parseFloat(item.variant.price.amount).toFixed(2)} ₼
+                      {parseFloat(item.cost.totalAmount.amount).toFixed(2)} ₼
                     </p>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ export function CartSidebar({ isOpen, onClose }) {
         </div>
 
         {/* Footer */}
-        {cart?.lineItems?.length > 0 && (
+        {cart?.lines?.edges && cart.lines.edges.length > 0 && (
           <div className="border-t border-border p-6 space-y-4">
             <div className="flex justify-between items-center text-lg">
               <span className="font-semibold">Cəmi:</span>

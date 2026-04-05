@@ -432,7 +432,7 @@ const AlbumPage = () => {
                                 <div className="flex flex-col gap-1">
                                   <div className="flex items-center gap-2">
                                     <span className={`font-sans font-normal text-base ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
-                                    {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
+                                    {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black border border-border rounded">E</span>}
                                   </div>
                                   {trackFeatures && <FeaturesList features={trackFeatures} />}
                                 </div>
@@ -516,7 +516,7 @@ const AlbumPage = () => {
                               <div className="flex flex-col gap-1">
                                 <div className="flex items-center gap-2">
                                   <span className={`font-sans font-normal text-base ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
-                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-muted-foreground border border-border rounded">E</span>}
+                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black border border-border rounded">E</span>}
                                 </div>
                                 {trackFeatures && <FeaturesList features={trackFeatures} />}
                               </div>
