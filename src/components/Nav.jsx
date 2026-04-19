@@ -37,7 +37,6 @@ export const Nav = ({ albums }) => {
               <span className="font-serif text-2xl font-bold tracking-tight">Backrooms</span>
             </a>
 
-            {/* Desktop nav links */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <a

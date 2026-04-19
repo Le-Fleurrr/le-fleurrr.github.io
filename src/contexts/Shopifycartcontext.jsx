@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import client from '../shopify-client';
+import client from '../shopify-client'; 
 
 const ShopifyCartContext = createContext();
 
@@ -11,58 +11,66 @@ export function ShopifyCartProvider({ children }) {
   const [cart, setCart] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // Initialize cart on mount
+  // Helper to prevent the "undefined" crash
+  const isClientReady = client && client.cart;
+
   useEffect(() => {
-    initializeCart();
+    if (isClientReady) {
+      initializeCart();
+    } else {
+      console.error("Shopify Client is not initialized. Check your Storefront Access Token.");
+      // Set a fallback state so the UI doesn't break
+      setCart({ lines: { edges: [] }, cost: { totalAmount: { amount: '0.00' } } });
+    }
   }, []);
 
   async function initializeCart() {
     try {
-      // Check if cart exists in localStorage
       const cartId = localStorage.getItem('shopify_cart_id');
       
       if (cartId) {
         try {
-          // Try to fetch existing cart
           const existingCart = await client.cart.fetch(cartId);
           if (existingCart) {
             setCart(existingCart);
             return;
           }
         } catch (error) {
-          console.log('Existing cart not found, creating new one');
           localStorage.removeItem('shopify_cart_id');
         }
       }
       
-      // Create new cart using the new Cart API
+      // The crash happened here because client.cart was undefined
       const newCart = await client.cart.create();
       localStorage.setItem('shopify_cart_id', newCart.id);
       setCart(newCart);
     } catch (error) {
       console.error('Cart initialization error:', error);
-      // Create minimal cart object to prevent errors
       setCart({ 
         id: null, 
-        lines: [], 
+        lines: { edges: [] }, 
         cost: { totalAmount: { amount: '0.00' } } 
       });
     }
   }
 
   async function addToCart(merchandiseId, quantity = 1) {
+    if (!isClientReady) return { success: false, error: 'Client not ready' };
     setLoading(true);
     try {
-      if (!cart?.id) {
-        await initializeCart();
+      let currentCartId = cart?.id;
+      if (!currentCartId) {
+        const newCart = await client.cart.create();
+        currentCartId = newCart.id;
+        localStorage.setItem('shopify_cart_id', currentCartId);
       }
 
       const lines = [{
-        merchandiseId, // Note: Changed from variantId to merchandiseId
+        merchandiseId,
         quantity: parseInt(quantity, 10)
       }];
       
-      const updatedCart = await client.cart.linesAdd(cart.id, lines);
+      const updatedCart = await client.cart.linesAdd(currentCartId, lines);
       setCart(updatedCart);
       return { success: true };
     } catch (error) {
@@ -74,6 +82,7 @@ export function ShopifyCartProvider({ children }) {
   }
 
   async function removeFromCart(lineId) {
+    if (!isClientReady || !cart?.id) return;
     setLoading(true);
     try {
       const updatedCart = await client.cart.linesRemove(cart.id, [lineId]);
@@ -86,13 +95,10 @@ export function ShopifyCartProvider({ children }) {
   }
 
   async function updateQuantity(lineId, quantity) {
+    if (!isClientReady || !cart?.id) return;
     setLoading(true);
     try {
-      const lines = [{
-        id: lineId,
-        quantity: parseInt(quantity, 10)
-      }];
-      
+      const lines = [{ id: lineId, quantity: parseInt(quantity, 10) }];
       const updatedCart = await client.cart.linesUpdate(cart.id, lines);
       setCart(updatedCart);
     } catch (error) {
@@ -105,10 +111,11 @@ export function ShopifyCartProvider({ children }) {
   function openCheckout() {
     if (cart?.checkoutUrl) {
       window.location.href = cart.checkoutUrl;
+    } else {
+      console.warn("No checkout URL available. Check your Storefront API permissions.");
     }
   }
 
-  // Calculate cart totals from new Cart API structure
   const cartCount = cart?.lines?.edges?.reduce((total, edge) => {
     return total + edge.node.quantity;
   }, 0) || 0;

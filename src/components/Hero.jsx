@@ -49,7 +49,7 @@ export const Hero = () => {
 
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Button size="lg" className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-8">
-                <Link to="/album/76">İndi alış-veriş edin</Link>
+                <Link to="/album/78">İndi alış-veriş edin</Link>
                 <ArrowRight className="w-4 h-4" />
               </Button>
               <Button size="lg" variant="outline" className="gap-2 border-muted-foreground/30 hover:bg-secondary">

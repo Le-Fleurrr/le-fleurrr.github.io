@@ -293,7 +293,7 @@ const AlbumPage = () => {
                 <span className="bg-gray-400 text-black border px-2 py-1 rounded text-xs font-bold self-center">E</span>
               )}
             </div>
-            <div className="flex items-center gap-2 text-2xl text-muted-foreground">
+            <div className="flex items-center gap-2 text-2xl hover:text-primary hover:underline transition-colors">
               {artistList.map((artist, idx) => {
                 const slug = String(artist).toLowerCase().replace(/,/g, '').replace(/\$/g, '').replace(/\s+/g, '-').replace(/[^\w-]/g, '');
                 return (
