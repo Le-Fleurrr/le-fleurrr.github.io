@@ -10,30 +10,18 @@ export function PromoBanner() {
   const promos = [
     {
       id: 1,
-      albumId: 89,
-      title: "Yeni Buraxılış: Immunity (LP)",
-      artist: "Clairo",
-      image: "https://your-image-url.com/immunity-banner.jpg", // Banner-sized image
-      bgColor: "#1a1a1a",
-      textColor: "#ffffff"
+      albumId: 9,
+      image: ""
     },
     {
       id: 2,
       albumId: 45,
-      title: "İndi Satışda: DAMN.",
-      artist: "Kendrick Lamar",
       image: "https://your-image-url.com/damn-banner.jpg",
-      bgColor: "#c41e3a",
-      textColor: "#ffffff"
     },
     {
       id: 3,
       albumId: 67,
-      title: "Məhdud Nəşr: BRAT",
-      artist: "Charli XCX",
       image: "https://your-image-url.com/brat-banner.jpg",
-      bgColor: "#8ace00",
-      textColor: "#000000"
     }
   ];
 
@@ -65,7 +53,7 @@ export function PromoBanner() {
 
   return (
     <div 
-      className="relative w-full h-[400px] md:h-[500px] overflow-hidden group"
+      className="relative w-[1900px] h-[720px] md:h-[850px] overflow-hidden group"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -81,43 +69,12 @@ export function PromoBanner() {
             style={{ backgroundColor: promo.bgColor }}
           >
             <div 
-              className="absolute inset-0 bg-cover bg-center opacity-40"
+              className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${promo.image})` }}
             />
             
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
-            
             <div className="relative z-10 container mx-auto px-6 flex items-center gap-8">
               <div className="hidden md:block">
-                <img 
-                  src={promo.image}
-                  alt={promo.title}
-                  className="w-64 h-64 object-cover rounded-lg shadow-2xl"
-                />
-              </div>
-              
-              <div className="flex-1">
-                <h2 
-                  className="text-5xl md:text-7xl font-black mb-4"
-                  style={{ color: promo.textColor }}
-                >
-                  {promo.title}
-                </h2>
-                <p 
-                  className="text-2xl md:text-3xl font-semibold mb-6"
-                  style={{ color: promo.textColor }}
-                >
-                  {promo.artist}
-                </p>
-                <button 
-                  className="px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform"
-                  style={{ 
-                    backgroundColor: promo.textColor,
-                    color: promo.bgColor 
-                  }}
-                >
-                  İndi Al
-                </button>
               </div>
             </div>
           </Link>
@@ -157,7 +114,7 @@ export function PromoBanner() {
           />
         ))}
       </div>
- 
+
       {!isPaused && (
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-20">
           <div 

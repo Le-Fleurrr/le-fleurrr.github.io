@@ -11,6 +11,3 @@ export function ProtectedRoute({ children }) {
 
   return children;
 }
-
-// Usage in App.jsx:
-// <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />

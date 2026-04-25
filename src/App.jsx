@@ -18,6 +18,7 @@ import { Login } from './components/Login';
 import { Signup } from './components/Signup';
 import { ShopifyCartProvider } from './contexts/ShopifyCartContext';
 import { SearchPage } from './components/SearchPage';
+import { Accessories } from './components/Accessories.jsx';
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,8 @@ function App() {
                     <Route path="/album/:albumId" element={<AlbumPage />} />
                     <Route path="/merch" element={<MerchCollectionsPage />} />
                     <Route path="/merch/:merchId" element={<MerchPage />} />
+                    <Route path="/accessories" element={<Accessories />}/>
+                    <Route path="/accessories/:accessoriesId" element={<Accessories />}/>
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Router>
