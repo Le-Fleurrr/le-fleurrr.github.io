@@ -150,7 +150,7 @@ export const MerchPage = () => {
                 <h3 className="text-lg font-semibold mb-3">Ölçü Seçin</h3>
                 {item.size && item.size.length > 0 && !selectedSize && (
               <span className="text-me text-red-500 font-medium animate-pulse">
-                ⚠️ Zəhmət olmasa dizayn seçin
+                ⚠️ Zəhmət olmasa ölçüsü seçin
               </span>
             )}
                 <div className="flex flex-wrap gap-3">

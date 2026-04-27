@@ -20,7 +20,6 @@ const Index = () => {
         <FeaturedAlbums />
         <MerchPromoSection />
         <AccessoriesSection />
-        <GenreSection />
         <Newsletter />
         <Footer />
       </div>

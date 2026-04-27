@@ -82,5 +82,25 @@ export const artistProfiles = {
   "Yeat": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1773579819/new-yeat-spotify-pfp-v0-410t8rzc_b0uwxh.png",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1773579819/10000x10000bb_otrove.jpg"
+  },
+  "Clairo": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1777298267/Clairo1_o4tikd.png",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1777298265/10000x10000bb_ji53aq.jpg"
+  },
+  "Sabrina Carpenter": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1777298265/Sabrina_Carpenter_Banner_iagzeh.png",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1777298265/10000x10000bb_1_plt28v.jpg"
+  },
+  "Charli xcx": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1777298812/prod-bof-media.s3.eu-west-1.amazonaws_inodd1.png",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1777298639/10000x10000bb_haaljj.jpg"
+  },
+  "Latto": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1777305187/latto-artist-you-need-to-know_sb5det.png",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1777305186/ab6761610000e5eba11b0b5c37498f5dddb1bd7b_eacpdz.jpg"
+  },
+  "Camila Cabello": {
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1777305859/Camila-Cabello-press-photo-Bad-Things-Still-1-PC-Drew-Levin-billboard-1548_0_wgph1j.jpg",
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1777305770/ami-identity-8f1a193175612e1ca5cde75c8e8f331d-2025-04-04T05-22-43.481Z_cropped_ew15sm.png"
   }
 };

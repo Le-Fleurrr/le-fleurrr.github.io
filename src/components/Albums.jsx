@@ -623,6 +623,21 @@ const adlCD = {
   ]
 };
 
+const bigMama = {
+  cover: "https://res.cloudinary.com/deroy68n9/image/upload/v1777300861/1200x630bb_ps1qrs.jpg",
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1777300860/preview_wb8nnx.png"]
+};
+
+const bigMamaCD = {
+  cover: "https://res.cloudinary.com/deroy68n9/image/upload/v1777300861/1200x630bb_ps1qrs.jpg",
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1777300861/preview_1_hat0c9.png"]
+};
+
+const cXOXO = {
+  cover: "https://res.cloudinary.com/deroy68n9/image/upload/v1777305769/24UMGIM39247.rgb_cvwsmr.jpg",
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1777305768/Standard_Sky_Blue_Vinyl_svbsuy.png"]
+}
+
 export const albums = [
   {
     id: 1,
@@ -3683,5 +3698,58 @@ export const albums = [
     accentColor: "gray",
     format: "vinyl",
     description: "Immunity amerikalı müğənni-bəstəkar Clairo-nun 2 avqust 2019-cu ildə çıxan debüt studiya albomudur. Albom Clairo və əvvəllər Vampire Weekend qrupundan olan Rostam Batmanglij tərəfindən birgə istehsal olunub.",
+  },
+  {
+    id: 90,
+    title: "Big Mama (2LP)",
+    artist: ["Latto"],
+    price: 99.99,
+    genre: "Hip-Hop/Rap",
+    year: 2026,
+    isNew: true,
+    isExplicit: true,
+    image: bigMama.cover,
+    vinylImages: bigMama.vinyl,
+    vinylColor: "white",
+    sleeveColor: "gray",
+    accentColor: "gray",
+    format: "vinyl",
+    description: "Immunity amerikalı müğənni-bəstəkar Clairo-nun 2 avqust 2019-cu ildə çıxan debüt studiya albomudur. Albom Clairo və əvvəllər Vampire Weekend qrupundan olan Rostam Batmanglij tərəfindən birgə istehsal olunub.",
+  },
+  {
+    id: 91,
+    title: "Big Mama (CD)",
+    artist: ["Latto"],
+    price: 29.99,
+    genre: "Hip-Hop/Rap",
+    year: 2026,
+    isNew: true,
+    isExplicit: true,
+    image: bigMamaCD.cover,
+    vinylImages: bigMamaCD.vinyl,
+    sleeveColor: "gray",
+    accentColor: "gray",
+    format: "cd",
+    description: "Immunity amerikalı müğənni-bəstəkar Clairo-nun 2 avqust 2019-cu ildə çıxan debüt studiya albomudur. Albom Clairo və əvvəllər Vampire Weekend qrupundan olan Rostam Batmanglij tərəfindən birgə istehsal olunub.",
+  },
+  {
+    id: 92,
+    title: "C, XOXO (2LP)",
+    artist: ["Camila Cabello"],
+    price: 99.99,
+    genre: "Pop",
+    year: 2024,
+    isNew: false,
+    isExplicit: true,
+    image: cXOXO.cover,
+    vinylImages: cXOXO.vinyl,
+    vinylColor: "blue",
+    sleeveColor: "blue",
+    accentColor: "blue",
+    format: "vinyl",
+    description: "Immunity amerikalı müğənni-bəstəkar Clairo-nun 2 avqust 2019-cu ildə çıxan debüt studiya albomudur. Albom Clairo və əvvəllər Vampire Weekend qrupundan olan Rostam Batmanglij tərəfindən birgə istehsal olunub.",
+    variants: [
+      { id: 1, name: "Mavi Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1777305768/Standard_Sky_Blue_Vinyl_svbsuy.png" },
+    ],
   },
 ];
