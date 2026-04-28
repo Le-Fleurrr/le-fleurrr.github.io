@@ -635,7 +635,9 @@ const bigMamaCD = {
 
 const cXOXO = {
   cover: "https://res.cloudinary.com/deroy68n9/image/upload/v1777305769/24UMGIM39247.rgb_cvwsmr.jpg",
-  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1777305768/Standard_Sky_Blue_Vinyl_svbsuy.png"]
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1777305768/Standard_Sky_Blue_Vinyl_svbsuy.png",
+    "https://res.cloudinary.com/deroy68n9/image/upload/v1777305768/Exclusive_Baby_Pink_Vinyl_fh3jno.png"
+  ]
 }
 
 export const albums = [
@@ -3743,13 +3745,15 @@ export const albums = [
     isExplicit: true,
     image: cXOXO.cover,
     vinylImages: cXOXO.vinyl,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1777362268/P864631484_Anull_video_gr280_sdr_1080x1080-_ryzmgy.gif",
     vinylColor: "blue",
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "Immunity amerikalı müğənni-bəstəkar Clairo-nun 2 avqust 2019-cu ildə çıxan debüt studiya albomudur. Albom Clairo və əvvəllər Vampire Weekend qrupundan olan Rostam Batmanglij tərəfindən birgə istehsal olunub.",
+    description: "C,XOXO — ABŞ müğənnisi Kamila Kabellonun dördüncü studiya albomu. 28 iyun 2024-cü ildə Geffen-in və Interscope Records tərəfindən buraxılıb.",
     variants: [
       { id: 1, name: "Mavi Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1777305768/Standard_Sky_Blue_Vinyl_svbsuy.png" },
+      { id: 2, name: "Çəhrayı Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1777305768/Exclusive_Baby_Pink_Vinyl_fh3jno.png" },
     ],
   },
 ];
