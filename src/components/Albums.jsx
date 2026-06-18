@@ -2095,7 +2095,7 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "vinyl",
-    description: "Chromakopia, amerikalı reper Tyler, the Creator-un səkkizinci studiya albomudur. Albom 28 oktyabr 2024-cü ildə Call Me If You Get Lost (2021) albomunun davamı olaraq buraxılmışdır. Chromakopia albomunun ssenarisini yazan, prodüserlik edən və aranjiman edən Tylerdir. Albomda Daniel Caesar, Doechii, GloRilla, LaToiya Williams, Lil Wayne, Lola Young, Santigold, Schoolboy Q, Sexyy Red və Teezo Touchdown kimi qruplar qonaq kimi çıxış edirlər.",
+    description: "Chromakopia, amerikalı reper Tyler, The Creator-un səkkizinci studiya albomudur. Albom 28 oktyabr 2024-cü ildə Call Me If You Get Lost (2021) albomunun davamı olaraq buraxılmışdır. Chromakopia albomunun ssenarisini yazan, prodüserlik edən və aranjiman edən Tylerdir. Albomda Daniel Caesar, Doechii, GloRilla, LaToiya Williams, Lil Wayne, Lola Young, Santigold, Schoolboy Q, Sexyy Red və Teezo Touchdown kimi qruplar qonaq kimi çıxış edirlər.",
     tracklist: [
       { id: 1, name: "St. Chroma", features: "Tyler The Creator & Daniel Caesar", isExplicit: true, duration: "3:17" },
       { id: 2, name: "Rah Tah Tah", isExplicit: true, duration: "2:45" },
