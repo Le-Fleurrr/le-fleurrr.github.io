@@ -1,8 +1,8 @@
 import Client from 'shopify-buy';
 
 const client = Client.buildClient({
-  domain: 'fphfku-p0.myshopify.com',
-  storefrontAccessToken: '6b6d2a9124b101d3c86575f78bb5450b'
+  domain: 'fphfku-p0.myshopify.com', 
+  storefrontAccessToken: 'fa639c4c0273c75e1c4ae253942e3169' 
 });
 
 export default client;

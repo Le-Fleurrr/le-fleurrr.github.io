@@ -10,7 +10,7 @@ export const artistProfiles = {
   },
   "Kanye West": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751231/kanyeWest_pfp_neut7h.png",
-    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751231/kanyeWest_pfp_neut7h.png"
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751231/kanyeWest_pfp_neut7h.png",
   },
   "Travis Scott": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751788/travisScott_banner_cocq1j.gif",

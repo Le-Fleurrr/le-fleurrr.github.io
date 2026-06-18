@@ -129,11 +129,6 @@ export const MerchCollectionsPage = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black" />
                     )}
 
-                    {category.isExplicit && (
-                      <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-lg border border-white/20">
-                        <p className="text-xs font-bold">EXPLICIT CONTENT</p>
-                      </div>
-                    )}
                   </div>
 
                   <div className="text-center space-y-4 py-6">
@@ -188,9 +183,7 @@ export const MerchCollectionsPage = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black" />
                     )}
 
-                    <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-lg border border-white/20">
-                      <p className="text-xs font-bold">EXPLICIT CONTENT</p>
-                    </div>
+                   
                   </div>
 
                   <div className="text-center space-y-4 py-6">
