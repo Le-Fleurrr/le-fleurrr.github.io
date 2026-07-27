@@ -39,6 +39,15 @@ export const Settings = ({ isOpen, onClose }) => {
     setLanguage(settings.language);
   }, [settings]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isOpen, onClose]);
+
   const applySettings = (s) => {
     const root = document.documentElement;
 
@@ -97,8 +106,17 @@ export const Settings = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4">
-      <div className="bg-background border border-border w-full max-w-2xl max-h-[85vh] overflow-hidden shadow-2xl rounded-2xl flex flex-col">
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4"
+      onClick={onClose}
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={t.settings}
+        onClick={(e) => e.stopPropagation()}
+        className="bg-background border border-border w-full max-w-2xl max-h-[85vh] overflow-hidden shadow-2xl rounded-2xl flex flex-col"
+      >
         <div className="px-8 py-6 border-b border-border flex items-center justify-between bg-muted/30">
           <div>
             <h2 className="text-2xl font-bold tracking-tight">{t.settings}</h2>

@@ -52,8 +52,8 @@ export function PromoBanner() {
   };
 
   return (
-    <div 
-      className="relative w-[1900px] h-[720px] md:h-[850px] overflow-hidden group"
+    <div
+      className="relative w-full h-[380px] sm:h-[540px] md:h-[720px] lg:h-[850px] overflow-hidden group"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

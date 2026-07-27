@@ -1,7 +1,30 @@
+import { useState } from "react";
 import { Button } from "./ui/Button";
 import { VinylRecord } from "./VinylRecord";
+import { useLanguage } from "./LanguageContext.jsx";
+import { toast } from "sonner";
 
 export const Newsletter = () => {
+  const { t } = useLanguage();
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!/^\S+@\S+\.\S+$/.test(email.trim())) {
+      toast.error(t.invalidEmail);
+      return;
+    }
+    try {
+      const subscribers = JSON.parse(localStorage.getItem("newsletter_subscribers") || "[]");
+      if (!subscribers.includes(email.trim())) {
+        subscribers.push(email.trim());
+        localStorage.setItem("newsletter_subscribers", JSON.stringify(subscribers));
+      }
+    } catch { /* storage unavailable — subscription is still acknowledged */ }
+    toast.success(t.subscribedToast);
+    setEmail("");
+  };
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background */}
@@ -18,28 +41,30 @@ export const Newsletter = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-primary font-medium tracking-widest text-sm uppercase mb-2">
-            Yeniliklərdən xəbərdar olun
+            {t.newsletterTag}
           </p>
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-            Backrooms bülleteninə qoşulun
+            {t.newsletterTitle}
           </h2>
           <p className="text-muted-foreground text-lg mb-8">
-            Spam olmadan yeni buraxılışlara, nadir tapıntılara və xüsusi endirimlərə eksklüziv giriş əldə edin.
+            {t.newsletterSubtitle}
           </p>
 
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
-              placeholder="Email daxil edin"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={t.emailPlaceholder}
               className="flex-1 bg-background border h-12 px-4 rounded-md focus:border-primary"
             />
             <Button type="submit" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8">
-              Abunə olun
+              {t.subscribe}
             </Button>
           </form>
 
           <p className="text-sm text-muted-foreground mt-4">
-            Klubda artıq 10.000+ vinil abunəçisinə qoşulun
+            {t.newsletterNote}
           </p>
         </div>
       </div>

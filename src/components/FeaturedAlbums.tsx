@@ -7,6 +7,9 @@ import { Button } from "./ui/Button.tsx";
 import { ShoppingCart } from "lucide-react";
 import { FavoriteButton } from './FavoritesSystem';
 import { albums as rawAlbums } from "./Albums.jsx";
+import { useLanguage } from "./LanguageContext.jsx";
+import { useShopifyCart } from "../contexts/Shopifycartcontext";
+import { toast } from "sonner";
 
 type VinylColor =
   | "black"
@@ -49,6 +52,7 @@ interface Album {
   sleeveColor?: string;
   accentColor?: string;
   description?: string;
+  shopifyVariantId?: string;
 }
 
 const normalizeAlbums = (albums: any[]): Album[] =>
@@ -111,6 +115,20 @@ const getAccentColors = (color?: string) => {
 export const FeaturedAlbums = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const navigate = useNavigate();
+  const { t } = useLanguage();
+  const { addToCart } = useShopifyCart();
+
+  // Adds directly when the album is linked to Shopify; otherwise opens the
+  // product page where variants and quantity can be chosen.
+  const handleCardAddToCart = async (album: Album) => {
+    if (album.shopifyVariantId) {
+      const result = await addToCart(album.shopifyVariantId, 1);
+      if (result.success) toast.success(t.addedToCart);
+      else toast.error(t.errorTryAgain);
+    } else {
+      navigate(`/album/${album.id}`);
+    }
+  };
   const featuredAlbums: Album[] = normalizeAlbums(rawAlbums).slice(0, 6);
 
   return (
@@ -119,10 +137,10 @@ export const FeaturedAlbums = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <p className="text-primary font-medium tracking-widest text-sm uppercase mb-2">
-              Bu Həftə Yeni
+              {t.newThisWeek}
             </p>
             <h2 className="text-4xl md:text-5xl font-serif font-bold">
-              Seçilmiş Yazılar
+              {t.featuredRecords}
             </h2>
           </div>
           <Button
@@ -130,7 +148,7 @@ export const FeaturedAlbums = () => {
             className="self-start md:self-auto border-muted-foreground/30 hover:bg-secondary"
             asChild
           >
-            <Link to="/collections">Bütün Kolleksiyaya Baxın</Link>
+            <Link to="/collections">{t.viewAllCollection}</Link>
           </Button>
         </div>
 
@@ -152,7 +170,7 @@ export const FeaturedAlbums = () => {
               >
                 {album.isNew && (
                   <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
-                    YENI
+                    {t.newBadge}
                   </span>
                 )}
 
@@ -251,10 +269,11 @@ export const FeaturedAlbums = () => {
                       className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
                       onClick={(e) => {
                         e.stopPropagation();
+                        handleCardAddToCart(album);
                       }}
                     >
                       <ShoppingCart className="w-4 h-4" />
-                      Səbətə əlavə et
+                      {t.addToCart}
                     </Button>
                     <div className="absolute top-1 left-1 z-10">
                       <FavoriteButton albumId={album.id} size="medium" />

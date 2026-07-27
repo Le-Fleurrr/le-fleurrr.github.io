@@ -3,9 +3,20 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, ShoppingCart } from 'lucide-react';
 import { Accessories, AccessoryCategories } from './Accessories';
 import { Button } from './ui/Button';
+import { useLanguage } from './LanguageContext.jsx';
 
 export function AccessoriesSection() {
+  const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const categoryNames = {
+    all: t.catAll,
+    turntable: t.catTurntable,
+    'cd-player': t.catCdPlayer,
+    storage: t.catStorage,
+    cleaning: t.catCleaning,
+    accessories: t.catAccessories,
+  };
 
   const filteredAccessories = selectedCategory === 'all'
     ? Accessories
@@ -16,14 +27,14 @@ export function AccessoriesSection() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-3xl font-bold mb-2">Avadanlıq və Aksessuarlar</h2>
+            <h2 className="text-3xl font-bold mb-2">{t.accessoriesTitle}</h2>
             <p className="text-muted-foreground">
-              Vinyl kolleksiyanız üçün hər şey
+              {t.accessoriesSubtitle}
             </p>
           </div>
           <Link to="/accessories">
             <Button variant="ghost" className="gap-2">
-              Hamısına bax
+              {t.viewAll}
               <ChevronRight className="w-4 h-4" />
             </Button>
           </Link>
@@ -42,7 +53,7 @@ export function AccessoriesSection() {
               }`}
             >
               <span className="mr-2">{cat.icon}</span>
-              {cat.name}
+              {categoryNames[cat.id] || cat.name}
             </button>
           ))}
         </div>
@@ -63,7 +74,7 @@ export function AccessoriesSection() {
                 />
                 {!item.inStock && (
                   <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">Tükənib</span>
+                    <span className="text-white font-bold text-sm">{t.outOfStock}</span>
                   </div>
                 )}
               </div>

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/Button.tsx";
 import {
@@ -10,6 +10,11 @@ import { FavoriteButton } from './FavoritesSystem';
 import { previewPlayer } from './audioPreviewPlayer.js';
 import { useSpotifyTracklist } from './useSpotifyTracklist.js';
 import { useShopifyCart } from '../contexts/Shopifycartcontext';
+import { useLanguage } from './LanguageContext.jsx';
+import { toast } from 'sonner';
+import { useAuth } from '../contexts/authContext';
+import { loadInteractions, addInteraction, addReplyToInteraction } from './albumInteractions.js';
+import { usePageTitle } from './usePageTitle.js';
 
 const getArtistList = (album) => {
   if (!album) return [];
@@ -58,10 +63,13 @@ const FeaturesList = ({ features }) => {
 const AlbumPage = () => {
   const { albumId } = useParams();
   const navigate = useNavigate();
+  const { t } = useLanguage();
+  const { currentUser } = useAuth();
   const { addToCart, loading: cartLoading } = useShopifyCart();
   const album = albums.find((a) => a.id === parseInt(albumId || "", 10));
+  usePageTitle(album?.title);
 
-  const { data: spotifyData, loading: spotifyLoading } = useSpotifyTracklist(album?.spotifyAlbumId);
+  const { data: spotifyData, loading: spotifyLoading } = useSpotifyTracklist(album);
 
   const [imageError, setImageError] = useState(false);
   const [showAnimated, setShowAnimated] = useState(true);
@@ -79,6 +87,16 @@ const AlbumPage = () => {
   const [replyingTo, setReplyingTo] = useState(null);
   const [replyText, setReplyText] = useState("");
 
+  useEffect(() => {
+    if (!album?.id) return;
+    let cancelled = false;
+    loadInteractions(album.id)
+      .then(items => { if (!cancelled) setInteractions(items); })
+      .catch(err => console.error('Could not load reviews from Firestore:', err));
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [album?.id]);
+
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
   const audioRef = useRef(null);
   const [hoveredTrack, setHoveredTrack] = useState(null);
@@ -91,8 +109,8 @@ const AlbumPage = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-serif font-bold mb-4">Albom Tapılmadı</h1>
-          <Link to="/" className="text-primary hover:underline">← Ana səhifəyə qayıt</Link>
+          <h1 className="text-4xl font-serif font-bold mb-4">{t.notFound}</h1>
+          <Link to="/" className="text-primary hover:underline">← {t.backHome}</Link>
         </div>
       </div>
     );
@@ -122,29 +140,59 @@ const AlbumPage = () => {
 
   const currentImage = galleryImages[selectedImage]?.url;
 
-  const handleAddReview = () => {
+  const handleAddReview = async () => {
     if (!reviewComment.trim()) return;
-    setInteractions([{
-      id: Date.now(), type: 'review', user: "Alıcı", rating, comment: reviewComment, date: new Date().toLocaleDateString()
-    }, ...interactions]);
+    const item = {
+      type: 'review', user: currentUser?.displayName || "Alıcı", rating,
+      comment: reviewComment, date: new Date().toLocaleDateString(),
+      replies: [], createdAt: Date.now()
+    };
     setReviewComment("");
+    try {
+      const docId = await addInteraction(album.id, item);
+      setInteractions(prev => [{ ...item, id: docId }, ...prev]);
+    } catch (err) {
+      console.error('Could not save review to Firestore:', err);
+      setInteractions(prev => [{ ...item, id: Date.now() }, ...prev]);
+    }
   };
 
-  const handleAddQuestion = () => {
+  const handleAddQuestion = async () => {
     if (!questionText.trim()) return;
-    setInteractions([{
-      id: Date.now(), type: 'question', user: "İstifadəçi", text: questionText, replies: [], date: new Date().toLocaleDateString()
-    }, ...interactions]);
+    const item = {
+      type: 'question', user: currentUser?.displayName || "İstifadəçi",
+      text: questionText, replies: [], date: new Date().toLocaleDateString(),
+      createdAt: Date.now()
+    };
     setQuestionText("");
+    try {
+      const docId = await addInteraction(album.id, item);
+      setInteractions(prev => [{ ...item, id: docId }, ...prev]);
+    } catch (err) {
+      console.error('Could not save question to Firestore:', err);
+      setInteractions(prev => [{ ...item, id: Date.now() }, ...prev]);
+    }
   };
 
-  const handleAddReply = (parentId) => {
+  const handleAddReply = async (parentId) => {
     if (!replyText.trim()) return;
+    const reply = {
+      id: Date.now(), user: currentUser?.displayName || "İstifadəçi",
+      text: replyText, date: new Date().toLocaleDateString()
+    };
     setInteractions(prev => prev.map(item => item.id === parentId ? {
-      ...item, replies: [...(item.replies || []), { id: Date.now(), user: "İstifadəçi", text: replyText, date: "İndi" }]
+      ...item, replies: [...(item.replies || []), reply]
     } : item));
     setReplyText("");
     setReplyingTo(null);
+    // Firestore doc ids are strings; local-only fallback items have numeric ids
+    if (typeof parentId === 'string') {
+      try {
+        await addReplyToInteraction(album.id, parentId, reply);
+      } catch (err) {
+        console.error('Could not save reply to Firestore:', err);
+      }
+    }
   };
 
   const handlePlayPause = (discIndex, trackIndex, audioUrl) => {
@@ -176,12 +224,13 @@ const AlbumPage = () => {
     return expandedSpotifyTrack === `${discIndex}-${trackIndex}`;
   };
 
-  const handleTrackHover = (discIndex, trackIndex, audioUrl, previewUrl) => {
+  const handleTrackHover = (discIndex, trackIndex, audioUrl, previewUrl, isPreviewClip) => {
     if (isTrackPlaying(discIndex, trackIndex)) return;
     const trackKey = `${discIndex}-${trackIndex}`;
     setHoveredTrack(trackKey);
     const urlToPlay = previewUrl || audioUrl;
-    if (urlToPlay) previewPlayer.playPreview(urlToPlay, 30, 10);
+    // Spotify preview clips are 30s files — start them from the beginning
+    if (urlToPlay) previewPlayer.playPreview(urlToPlay, isPreviewClip ? 0 : 30, 10);
   };
 
   const handleTrackLeave = () => {
@@ -218,16 +267,16 @@ const AlbumPage = () => {
       album.variants?.find(v => v.id === selectedVariant)?.shopifyVariantId;
 
     if (!shopifyVariantId) {
-      alert('Shopify məhsul ID-si tapılmadı');
+      toast.error(t.productUnavailable);
       return;
     }
 
     const result = await addToCart(shopifyVariantId, quantity);
 
     if (result.success) {
-      alert('Səbətə əlavə edildi! ✓');
+      toast.success(t.addedToCart);
     } else {
-      alert('Xəta baş verdi. Yenidən cəhd edin.');
+      toast.error(t.errorTryAgain);
     }
   };
 
@@ -235,7 +284,7 @@ const AlbumPage = () => {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
         <Button variant="ghost" onClick={() => navigate(-1)} className="mb-8 font-bold">
-          <ArrowLeft className="w-4 h-4 mr-2" /> Geri
+          <ArrowLeft className="w-4 h-4 mr-2" /> {t.back}
         </Button>
 
         <div className="max-w-4xl mx-auto">
@@ -248,7 +297,7 @@ const AlbumPage = () => {
                 onError={() => setImageError(true)}
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center">Şəkil yüklənmədi</div>
+              <div className="w-full h-full flex items-center justify-center">{t.imageNotLoaded}</div>
             )}
 
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-mono z-20">
@@ -264,14 +313,14 @@ const AlbumPage = () => {
 
             {album.animatedCover && selectedImage === 0 && (
               <button onClick={() => setShowAnimated(!showAnimated)} className="absolute top-4 right-4 bg-black/60 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-black/80 transition-all z-20">
-                {showAnimated ? "📹 Animasiya" : "🖼️ Statik"}
+                {showAnimated ? `📹 ${t.animated}` : `🖼️ ${t.static}`}
               </button>
             )}
           </div>
 
           {galleryImages.length > 1 && (
             <div className="relative bg-card backdrop-blur-sm p-6 rounded-lg border border-border shadow-lg mb-8">
-              <p className="text-sm font-medium text-foreground mb-4">Şəkillər ({selectedImage + 1}/{galleryImages.length})</p>
+              <p className="text-sm font-medium text-foreground mb-4">{t.images} ({selectedImage + 1}/{galleryImages.length})</p>
               <div ref={scrollContainerRef} className="flex gap-4 overflow-x-auto pb-2 scroll-smooth" style={{ scrollbarWidth: "thin" }}>
                 {galleryImages.map((img, index) => (
                   <button
@@ -308,9 +357,9 @@ const AlbumPage = () => {
 
           <div className="flex border-b border-border mb-8 overflow-x-auto">
             {[
-              { id: "description", label: "Təsvir", icon: <Info className="w-4 h-4" /> },
-              { id: "tracklist", label: "Mahnı Siyahısı", icon: <ListMusic className="w-4 h-4" /> },
-              { id: "interactions", label: "Rəylər və Suallar", icon: <MessageSquare className="w-4 h-4" /> }
+              { id: "description", label: t.description, icon: <Info className="w-4 h-4" /> },
+              { id: "tracklist", label: t.tracklist, icon: <ListMusic className="w-4 h-4" /> },
+              { id: "interactions", label: t.reviews, icon: <MessageSquare className="w-4 h-4" /> }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -334,7 +383,7 @@ const AlbumPage = () => {
 
                 {album.description && (
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Təsvir</h3>
+                    <h3 className="text-lg font-semibold mb-2">{t.description}</h3>
                     <p className="text-muted-foreground">{album.description}</p>
                   </div>
                 )}
@@ -342,10 +391,10 @@ const AlbumPage = () => {
                 {album.variants && album.variants.length > 0 && (
                   <div id="variant-section" className="border-t border-border pt-6">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-lg font-semibold">Dizayn Seçin</h3>
+                      <h3 className="text-lg font-semibold">{t.selectDesign}</h3>
                       {variantError && (
                         <span className="text-sm text-red-500 font-medium animate-pulse">
-                          ⚠️ Zəhmət olmasa dizayn seçin
+                          {t.selectDesignWarning}
                         </span>
                       )}
                     </div>
@@ -377,14 +426,14 @@ const AlbumPage = () => {
                     </div>
                     {selectedVariant && (
                       <p className="mt-3 text-sm text-primary font-medium">
-                        ✓ Seçilmiş: {album.variants.find(v => v.id === selectedVariant)?.name}
+                        ✓ {t.selected}: {album.variants.find(v => v.id === selectedVariant)?.name}
                       </p>
                     )}
                   </div>
                 )}
 
                 <div className="border-t border-border pt-6">
-                  <h3 className="text-lg font-semibold mb-3">Miqdar</h3>
+                  <h3 className="text-lg font-semibold mb-3">{t.quantity}</h3>
                   <div className="flex items-center gap-4">
                     <button onClick={() => setQuantity(q => Math.max(1, q - 1))} className="w-10 h-10 rounded-lg border-2 border-border hover:border-primary transition flex items-center justify-center">
                       <span className="text-xl font-bold">-</span>
@@ -400,7 +449,10 @@ const AlbumPage = () => {
 
             {activeTab === "tracklist" && (
               <div className="space-y-6">
-                {spotifyLoading && <p className="text-center text-muted-foreground">Mahnı siyahısı yüklənir...</p>}
+                {spotifyLoading && <p className="text-center text-muted-foreground">{t.tracklistLoading}</p>}
+                {!spotifyLoading && !album.discs && tracklist.length === 0 && (
+                  <p className="text-center text-muted-foreground py-8">{t.tracklistUnavailable}</p>
+                )}
 
                 <audio ref={audioRef} onEnded={() => setCurrentlyPlaying(null)} />
 
@@ -424,7 +476,7 @@ const AlbumPage = () => {
                           <div key={trackIndex}>
                             <div
                               className="flex justify-between items-center p-4 rounded-xl hover:bg-muted/50 transition-colors group"
-                              onMouseEnter={() => handleTrackHover(discIndex, trackIndex, audioUrl, track.preview)}
+                              onMouseEnter={() => handleTrackHover(discIndex, trackIndex, audioUrl, track.preview, track.isPreviewClip)}
                               onMouseLeave={handleTrackLeave}
                             >
                               <div className="flex items-center gap-4">
@@ -508,7 +560,7 @@ const AlbumPage = () => {
                         <div key={trackIndex}>
                           <div
                             className="flex justify-between items-center p-4 rounded-xl hover:bg-muted/50 transition-colors group"
-                            onMouseEnter={() => handleTrackHover(0, trackIndex, audioUrl, track.preview)}
+                            onMouseEnter={() => handleTrackHover(0, trackIndex, audioUrl, track.preview, track.isPreviewClip)}
                             onMouseLeave={handleTrackLeave}
                           >
                             <div className="flex items-center gap-4">
@@ -593,19 +645,19 @@ const AlbumPage = () => {
               <div className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="p-6 bg-card rounded-2xl border border-border space-y-4">
-                    <h3 className="font-bold">Rəy Bildir</h3>
+                    <h3 className="font-bold">{t.leaveReview}</h3>
                     <div className="flex gap-1">
                       {[1, 2, 3, 4, 5].map((s) => (
                         <Star key={s} className={`w-5 h-5 cursor-pointer ${(hoverRating || rating) >= s ? "fill-yellow-500 text-yellow-500" : "text-muted"}`} onClick={() => setRating(s)} onMouseEnter={() => setHoverRating(s)} onMouseLeave={() => setHoverRating(0)} />
                       ))}
                     </div>
-                    <textarea value={reviewComment} onChange={(e) => setReviewComment(e.target.value)} placeholder="Rəyinizi yazın..." className="w-full p-3 rounded-xl bg-background border border-border text-sm h-20 resize-none" />
-                    <Button onClick={handleAddReview} className="w-full font-bold">Paylaş</Button>
+                    <textarea value={reviewComment} onChange={(e) => setReviewComment(e.target.value)} placeholder={t.writeReview} className="w-full p-3 rounded-xl bg-background border border-border text-sm h-20 resize-none" />
+                    <Button onClick={handleAddReview} className="w-full font-bold">{t.submitReview}</Button>
                   </div>
                   <div className="p-6 bg-card rounded-2xl border border-border space-y-4">
-                    <h3 className="font-bold">Sual Ver</h3>
-                    <textarea value={questionText} onChange={(e) => setQuestionText(e.target.value)} placeholder="Sualınızı yazın..." className="w-full p-3 rounded-xl bg-background border border-border text-sm h-20 resize-none" />
-                    <Button variant="secondary" onClick={handleAddQuestion} className="w-full font-bold">Sualı Göndər</Button>
+                    <h3 className="font-bold">{t.askQuestion}</h3>
+                    <textarea value={questionText} onChange={(e) => setQuestionText(e.target.value)} placeholder={t.writeQuestion} className="w-full p-3 rounded-xl bg-background border border-border text-sm h-20 resize-none" />
+                    <Button variant="secondary" onClick={handleAddQuestion} className="w-full font-bold">{t.submitQuestion}</Button>
                   </div>
                 </div>
 
@@ -636,11 +688,11 @@ const AlbumPage = () => {
                           ))}
                           {replyingTo === item.id ? (
                             <div className="flex gap-2 mt-2">
-                              <input value={replyText} onChange={(e) => setReplyText(e.target.value)} className="flex-1 bg-background border rounded-lg px-3 text-sm" placeholder="Cavabınız..." />
-                              <Button size="sm" onClick={() => handleAddReply(item.id)}>Göndər</Button>
+                              <input value={replyText} onChange={(e) => setReplyText(e.target.value)} className="flex-1 bg-background border rounded-lg px-3 text-sm" placeholder={t.replyPlaceholder} />
+                              <Button size="sm" onClick={() => handleAddReply(item.id)}>{t.send}</Button>
                             </div>
                           ) : (
-                            <button onClick={() => setReplyingTo(item.id)} className="text-xs text-primary font-bold flex items-center gap-1 hover:underline"><Reply className="w-3 h-3" /> Cavabla</button>
+                            <button onClick={() => setReplyingTo(item.id)} className="text-xs text-primary font-bold flex items-center gap-1 hover:underline"><Reply className="w-3 h-3" /> {t.reply}</button>
                           )}
                         </div>
                       )}
@@ -665,14 +717,14 @@ const AlbumPage = () => {
                   className="h-14 font-bold px-8 shadow-xl shadow-primary/20 bg-primary text-primary-foreground"
                 >
                   <ShoppingCart className="mr-2 h-5 w-5" />
-                  {cartLoading ? 'Əlavə edilir...' : 'Səbətə əlavə et'}
+                  {cartLoading ? t.adding : t.addToCart}
                 </Button>
               </div>
             </div>
           </div>
 
           <div className="mt-16 pt-8 border-t border-border">
-            <h2 className="text-2xl font-bold mb-6">Tövsiyə Edilən Məhsullar</h2>
+            <h2 className="text-2xl font-bold mb-6">{t.recommendedProducts}</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {albums
                 .filter(a =>
@@ -702,7 +754,7 @@ const AlbumPage = () => {
                         />
                         {recommendedAlbum.isNew && (
                           <span className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">
-                            YENI
+                            {t.newBadge}
                           </span>
                         )}
                       </div>

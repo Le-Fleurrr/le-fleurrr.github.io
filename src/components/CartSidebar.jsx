@@ -1,9 +1,12 @@
 import { X, ShoppingBag, Trash2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useShopifyCart } from '../contexts/Shopifycartcontext';
 import { Button } from './ui/Button';
+import { useLanguage } from './LanguageContext.jsx';
 
 export function CartSidebar({ isOpen, onClose }) {
   const { cart, cartCount, cartTotal, removeFromCart, updateQuantity, openCheckout, loading } = useShopifyCart();
+  const { t } = useLanguage();
 
   if (!isOpen) return null;
 
@@ -22,7 +25,7 @@ export function CartSidebar({ isOpen, onClose }) {
           <div className="flex items-center gap-2">
             <ShoppingBag className="w-5 h-5" />
             <h2 className="text-xl font-bold">
-              Səbət ({cartCount})
+              {t.cart} ({cartCount})
             </h2>
           </div>
           <button 
@@ -38,7 +41,7 @@ export function CartSidebar({ isOpen, onClose }) {
           {!cart?.lines?.edges || cart.lines.edges.length === 0 ? (
             <div className="text-center py-12">
               <ShoppingBag className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
-              <p className="text-muted-foreground">Səbət boşdur</p>
+              <p className="text-muted-foreground">{t.cartEmpty}</p>
             </div>
           ) : (
             <div className="space-y-4">
@@ -102,7 +105,7 @@ export function CartSidebar({ isOpen, onClose }) {
         {cart?.lines?.edges && cart.lines.edges.length > 0 && (
           <div className="border-t border-border p-6 space-y-4">
             <div className="flex justify-between items-center text-lg">
-              <span className="font-semibold">Cəmi:</span>
+              <span className="font-semibold">{t.total}</span>
               <span className="font-bold text-2xl">
                 {parseFloat(cartTotal).toFixed(2)} ₼
               </span>
@@ -113,14 +116,18 @@ export function CartSidebar({ isOpen, onClose }) {
               disabled={loading}
               className="w-full h-12 text-lg font-bold"
             >
-              Ödənişə keç
+              {t.checkout}
             </Button>
-            
+
+            <Button asChild variant="outline" className="w-full">
+              <Link to="/cart" onClick={onClose}>{t.viewCart}</Link>
+            </Button>
+
             <button
               onClick={onClose}
               className="w-full text-sm text-muted-foreground hover:text-foreground transition"
             >
-              Alış-verişə davam et
+              {t.continueShopping}
             </button>
           </div>
         )}

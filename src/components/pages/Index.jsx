@@ -18,6 +18,7 @@ const Index = () => {
         <Nav />
         <Hero />
         <FeaturedAlbums />
+        <GenreSection />
         <MerchPromoSection />
         <AccessoriesSection />
         <Newsletter />

@@ -2,24 +2,26 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, Shirt, Package } from 'lucide-react';
 import { Merch } from './Merch';
 import { Button } from './ui/Button';
+import { useLanguage } from './LanguageContext.jsx';
 
 export function MerchPromoSection() {
+  const { t } = useLanguage();
   const featuredMerch = Merch.slice(0, 4);
 
   return (
-    <section className="py-16 bg-background">
+    <section id="orders" className="py-16 bg-background">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-3xl font-bold mb-2">Official Merch</h2>
+            <h2 className="text-3xl font-bold mb-2">{t.officialMerch}</h2>
             <p className="text-muted-foreground">
-              Artist geyimləri və kolleksiya əşyaları
+              {t.merchSubtitle}
             </p>
           </div>
           <Link to="/merch">
             <Button className="gap-2">
               <Shirt className="w-4 h-4" />
-              Merch Mağazası
+              {t.merchStore}
               <ChevronRight className="w-4 h-4" />
             </Button>
           </Link>
@@ -94,15 +96,15 @@ export function MerchPromoSection() {
             <div>
               <h3 className="text-2xl font-bold mb-2 flex items-center gap-2">
                 <Package className="w-6 h-6" />
-                Eksklüziv Merch Kolleksiyaları
+                {t.exclusiveMerch}
               </h3>
               <p className="text-muted-foreground">
-                Sevimli artistlərindən original geyim və aksessuarlar
+                {t.merchCtaSubtitle}
               </p>
             </div>
             <Link to="/merch">
               <Button size="lg" variant="outline" className="gap-2">
-                İndi Al
+                {t.buyNow}
                 <ChevronRight className="w-4 h-4" />
               </Button>
             </Link>

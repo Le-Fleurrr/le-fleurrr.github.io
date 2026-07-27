@@ -4,8 +4,10 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { Search, ArrowLeft } from 'lucide-react';
 import { albums } from '../components/Albums'; // Adjust path if needed
 import { Button } from '../components/ui/Button'; // Adjust path if needed
+import { useLanguage } from './LanguageContext.jsx';
 
 export function SearchPage() {
+  const { t } = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
   const [selectedGenre, setSelectedGenre] = useState('all');
@@ -71,7 +73,7 @@ export function SearchPage() {
           <Link to="/">
             <Button variant="ghost" className="mb-4">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Geri
+              {t.back}
             </Button>
           </Link>
 
@@ -82,7 +84,7 @@ export function SearchPage() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Albom, artist və ya janr axtar..."
+              placeholder={t.searchPlaceholder}
               className="w-full pl-12 pr-4 py-4 rounded-full bg-card border border-border focus:border-primary focus:outline-none text-lg"
               autoFocus
             />
@@ -91,7 +93,7 @@ export function SearchPage() {
 
         {/* Genre Browser */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Janrlar</h2>
+          <h2 className="text-2xl font-bold mb-4">{t.navGenres}</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {genres.map((genre) => (
               <button
@@ -105,7 +107,7 @@ export function SearchPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/40" />
                 <div className="relative h-full flex items-end p-4">
                   <h3 className="text-white font-bold text-xl capitalize">
-                    {genre === 'all' ? 'Hamısı' : genre}
+                    {genre === 'all' ? t.all : genre}
                   </h3>
                 </div>
                 {selectedGenre === genre && (
@@ -124,19 +126,19 @@ export function SearchPage() {
         <div>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-2xl font-bold">
-              {searchQuery ? `"${searchQuery}" üçün nəticələr` : 'Bütün albomlar'}
+              {searchQuery ? t.resultsFor.replace('{query}', searchQuery) : t.allAlbums}
             </h2>
             <span className="text-muted-foreground">
-              {filteredAlbums.length} nəticə
+              {filteredAlbums.length} {t.resultsWord}
             </span>
           </div>
 
           {filteredAlbums.length === 0 ? (
             <div className="text-center py-20">
               <Search className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
-              <h3 className="text-xl font-semibold mb-2">Heç bir nəticə tapılmadı</h3>
+              <h3 className="text-xl font-semibold mb-2">{t.noResults}</h3>
               <p className="text-muted-foreground">
-                Başqa açar söz və ya janr sınayın
+                {t.tryDifferent}
               </p>
             </div>
           ) : (
@@ -156,7 +158,7 @@ export function SearchPage() {
                     />
                     {album.isNew && (
                       <span className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">
-                        YENI
+                        {t.newBadge}
                       </span>
                     )}
                   </div>
@@ -192,7 +194,7 @@ export function SearchPage() {
         {/* Recommended Genres (if searching) */}
         {searchQuery && filteredAlbums.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-2xl font-bold mb-4">Oxşar janrlar</h2>
+            <h2 className="text-2xl font-bold mb-4">{t.similarGenres}</h2>
             <div className="flex gap-3 flex-wrap">
               {genres.filter(g => g !== 'all' && g !== selectedGenre).slice(0, 5).map((genre) => (
                 <button

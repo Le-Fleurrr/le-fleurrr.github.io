@@ -1,4 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { db } from '../Firebase/Firebase.js';
+import { useAuth } from '../contexts/authContext';
 
 const FavoritesContext = createContext();
 
@@ -10,49 +13,62 @@ export const useFavorites = () => {
   return context;
 };
 
+const readLocalFavorites = () => {
+  try {
+    return JSON.parse(localStorage.getItem('favorites') || '[]');
+  } catch {
+    return [];
+  }
+};
+
 export const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     loadFavorites();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentUser?.uid]);
 
   const loadFavorites = async () => {
-    try {
-      if (typeof window !== 'undefined' && window.storage) {
-        const result = await window.Storage.get('favorites');
-        if (result && result.value) {
-          setFavorites(JSON.parse(result.value));
+    setIsLoading(true);
+    const local = readLocalFavorites();
+
+    if (currentUser) {
+      // Logged in: merge the account's favorites with anything saved locally,
+      // so favorites picked before logging in are kept.
+      try {
+        const snap = await getDoc(doc(db, 'users', currentUser.uid));
+        const remote = snap.exists() ? snap.data().favorites || [] : [];
+        const merged = [...new Set([...remote, ...local])];
+        setFavorites(merged);
+        localStorage.setItem('favorites', JSON.stringify(merged));
+        if (merged.length !== remote.length) {
+          await setDoc(doc(db, 'users', currentUser.uid), { favorites: merged }, { merge: true });
         }
-      } else {
-        const stored = localStorage.getItem('favorites');
-        if (stored) {
-          setFavorites(JSON.parse(stored));
-        }
+      } catch (error) {
+        console.error('Favorites sync failed, using local copy:', error);
+        setFavorites(local);
       }
-    } catch (error) {
-      setFavorites([]);
-    } finally {
-      setIsLoading(false);
+    } else {
+      setFavorites(local);
     }
+    setIsLoading(false);
   };
 
   const saveFavorites = async (newFavorites) => {
+    setFavorites(newFavorites);
     try {
-      if (typeof window !== 'undefined' && window.Storage) {
-        await window.Storage.set('favorites', JSON.stringify(newFavorites));
-      } else {
-        localStorage.setItem('favorites', JSON.stringify(newFavorites));
-      }
-      setFavorites(newFavorites);
+      localStorage.setItem('favorites', JSON.stringify(newFavorites));
     } catch (error) {
-      console.error('Error saving favorites:', error);
+      console.error('Error saving favorites locally:', error);
+    }
+    if (currentUser) {
       try {
-        localStorage.setItem('favorites', JSON.stringify(newFavorites));
-        setFavorites(newFavorites);
-      } catch (e) {
-        console.error('localStorage also failed:', e);
+        await setDoc(doc(db, 'users', currentUser.uid), { favorites: newFavorites }, { merge: true });
+      } catch (error) {
+        console.error('Favorites sync failed:', error);
       }
     }
   };
@@ -156,95 +172,6 @@ export const FavoriteButton = ({ albumId, size = "default", className = "" }) =>
         />
       </svg>
     </button>
-  );
-};
-
-export const FavoritesPage = ({ albums }) => {
-  const { favorites, isLoading } = useFavorites();
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-muted-foreground">Yüklənir...</p>
-        </div>
-      </div>
-    );
-  }
-
-  const favoriteAlbums = albums.filter(album => favorites.includes(album.id));
-
-  return (
-    <div className="min-h-screen bg-background py-24 px-6">
-      <div className="container mx-auto max-w-7xl">
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-2">Sevimlilər</h1>
-          <p className="text-muted-foreground">
-            {favoriteAlbums.length} albom
-          </p>
-        </div>
-
-        {favoriteAlbums.length === 0 ? (
-          <div className="text-center py-20">
-            <svg
-              className="w-24 h-24 text-muted-foreground mx-auto mb-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
-              />
-            </svg>
-            <h2 className="text-2xl font-bold mb-2">Hələ sevimli yoxdur</h2>
-            <p className="text-muted-foreground">
-              Bəyəndiyiniz albomları sevimlilərinizə əlavə edin
-            </p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {favoriteAlbums.map((album) => (
-              <a
-                key={album.id}
-                href={`/album/${album.id}`}
-                className="group relative"
-              >
-                <div className="relative aspect-square rounded-lg overflow-hidden mb-4 bg-card border border-border">
-                  {album.image ? (
-                    <img
-                      src={Array.isArray(album.image) ? album.image[0] : album.image}
-                      alt={album.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-secondary">
-                      <svg className="w-16 h-16 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-                      </svg>
-                    </div>
-                  )}
-                  <div className="absolute top-2 right-2">
-                    <FavoriteButton albumId={album.id} size="small" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors truncate">
-                    {album.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground truncate">
-                    {Array.isArray(album.artist) ? album.artist.join(', ') : album.artist}
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">{album.year}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
   );
 };
 

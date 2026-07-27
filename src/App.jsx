@@ -1,57 +1,72 @@
+import { lazy, Suspense } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import { Collections } from './components/Collections';
 import { Toaster } from "./components/ui/Toaster";
 import { Toaster as Sonner } from "./components/ui/Sonner";
 import { TooltipProvider } from "./components/ui/Tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Index from './components/pages/Index';
-import NotFound from "./components/pages/NotFound";
-import { LanguageProvider } from "./components/LanguageContext.jsx";
-import ArtistPage from './components/ArtistPage';
-import AlbumPage from './components/AlbumPage';
-import { MerchCollectionsPage } from './components/MerchCollectionsPage';
-import { MerchPage } from "./components/MerchPage";
-import { FavoritesProvider, FavoritesPage } from './components/FavoritesSystem';
-import { albums } from './components/Albums';
+import { LanguageProvider, useLanguage } from "./components/LanguageContext.jsx";
+import { FavoritesProvider } from './components/FavoritesSystem';
 import { AuthProvider } from './contexts/AuthContext';
-import { Login } from './components/Login';
-import { Signup } from './components/Signup';
 import { ShopifyCartProvider } from './contexts/ShopifyCartContext';
-import { SearchPage } from './components/SearchPage';
-import { Accessories } from './components/Accessories.jsx';
+
+const Index = lazy(() => import('./components/pages/Index'));
+const NotFound = lazy(() => import("./components/pages/NotFound"));
+const ArtistPage = lazy(() => import('./components/ArtistPage'));
+const AlbumPage = lazy(() => import('./components/AlbumPage'));
+const FavoritesPage = lazy(() => import('./components/FavoritesPage'));
+const AccessoriesPage = lazy(() => import('./components/pages/AccessoriesPage'));
+const Collections = lazy(() => import('./components/Collections').then(m => ({ default: m.Collections })));
+const MerchCollectionsPage = lazy(() => import('./components/MerchCollectionsPage').then(m => ({ default: m.MerchCollectionsPage })));
+const MerchPage = lazy(() => import('./components/MerchPage').then(m => ({ default: m.MerchPage })));
+const Login = lazy(() => import('./components/Login').then(m => ({ default: m.Login })));
+const Signup = lazy(() => import('./components/Signup').then(m => ({ default: m.Signup })));
+const SearchPage = lazy(() => import('./components/SearchPage').then(m => ({ default: m.SearchPage })));
+const CartPage = lazy(() => import('./components/CartPage'));
 
 const queryClient = new QueryClient();
+
+const PageLoader = () => {
+  const { t } = useLanguage();
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center">
+      <p className="text-muted-foreground">{t.loading}</p>
+    </div>
+  );
+};
 
 function App() {
   return (
     <LanguageProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <FavoritesProvider>
-            <AuthProvider>
+          <AuthProvider>
+            <FavoritesProvider>
               <ShopifyCartProvider>
                 <Toaster />
                 <Sonner />
                 <Router>
-                  <Routes>
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/" element={<Index />} />
-                    <Route path="/search" element={<SearchPage />} />
-                    <Route path="/collections" element={<Collections />} />
-                    <Route path="/favorites" element={<FavoritesPage albums={albums} />} />
-                    <Route path="/artist/:artistName" element={<ArtistPage />} />
-                    <Route path="/album/:albumId" element={<AlbumPage />} />
-                    <Route path="/merch" element={<MerchCollectionsPage />} />
-                    <Route path="/merch/:merchId" element={<MerchPage />} />
-                    <Route path="/accessories" element={<Accessories />}/>
-                    <Route path="/accessories/:accessoriesId" element={<Accessories />}/>
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
+                  <Suspense fallback={<PageLoader />}>
+                    <Routes>
+                      <Route path="/login" element={<Login />} />
+                      <Route path="/signup" element={<Signup />} />
+                      <Route path="/" element={<Index />} />
+                      <Route path="/search" element={<SearchPage />} />
+                      <Route path="/collections" element={<Collections />} />
+                      <Route path="/favorites" element={<FavoritesPage />} />
+                      <Route path="/cart" element={<CartPage />} />
+                      <Route path="/artist/:artistName" element={<ArtistPage />} />
+                      <Route path="/album/:albumId" element={<AlbumPage />} />
+                      <Route path="/merch" element={<MerchCollectionsPage />} />
+                      <Route path="/merch/:merchId" element={<MerchPage />} />
+                      <Route path="/accessories" element={<AccessoriesPage />} />
+                      <Route path="/accessories/:accessoriesId" element={<AccessoriesPage />} />
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </Suspense>
                 </Router>
               </ShopifyCartProvider>
-            </AuthProvider>
-          </FavoritesProvider>
+            </FavoritesProvider>
+          </AuthProvider>
         </TooltipProvider>
       </QueryClientProvider>
     </LanguageProvider>

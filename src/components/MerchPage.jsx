@@ -3,24 +3,31 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/Button.tsx";
 import { ArrowLeft, ShoppingCart, Heart, Minus, Plus } from "lucide-react";
 import { Merch } from "./Merch.jsx";
+import { useLanguage } from "./LanguageContext.jsx";
+import { useShopifyCart } from "../contexts/Shopifycartcontext";
+import { toast } from "sonner";
+import { usePageTitle } from "./usePageTitle.js";
 
 export const MerchPage = () => {
   const { merchId } = useParams();
   const navigate = useNavigate();
+  const { t } = useLanguage();
+  const { addToCart, loading: cartLoading } = useShopifyCart();
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedImage, setSelectedImage] = useState(0);
   const [imageError, setImageError] = useState(false);
 
   const item = Merch.find((m) => m.id === parseInt(merchId || "", 10));
+  usePageTitle(item?.title);
 
   if (!item) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-serif font-bold mb-4">Məhsul Tapılmadı</h1>
+          <h1 className="text-4xl font-serif font-bold mb-4">{t.productNotFound}</h1>
           <Link to="/merch" className="text-primary hover:underline">
-            ← Merch səhifəsinə qayıt
+            {t.backToMerch}
           </Link>
         </div>
       </div>
@@ -41,13 +48,14 @@ export const MerchPage = () => {
   const incrementQuantity = () => setQuantity(q => q + 1);
   const decrementQuantity = () => setQuantity(q => (q > 1 ? q - 1 : 1));
 
-  const handleAddToCart = () => {
-    console.log("Adding to cart:", {
-      item: item.title,
-      quantity,
-      size: selectedSize,
-      price: item.price * quantity
-    });
+  const handleAddToCart = async () => {
+    if (!item.shopifyVariantId) {
+      toast.error(t.productUnavailable);
+      return;
+    }
+    const result = await addToCart(item.shopifyVariantId, quantity);
+    if (result.success) toast.success(t.addedToCart);
+    else toast.error(t.errorTryAgain);
   };
 
   return (
@@ -55,7 +63,7 @@ export const MerchPage = () => {
       <div className="container mx-auto px-6 py-12">
         <Button variant="ghost" onClick={() => navigate(-1)} className="mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Geri
+          {t.back}
         </Button>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -76,7 +84,7 @@ export const MerchPage = () => {
 
               {item.isNew && (
                 <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-sm font-bold px-4 py-2 rounded-full">
-                  YENI
+                  {t.newBadge}
                 </span>
               )}
             </div>
@@ -141,16 +149,16 @@ export const MerchPage = () => {
             </div>
             {item.description && (
               <div>
-                <h3 className="text-lg font-semibold mb-2">Təsvir</h3>
+                <h3 className="text-lg font-semibold mb-2">{t.description}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
               </div>
             )}
             {item.size && item.size.length > 0 && (
               <div>
-                <h3 className="text-lg font-semibold mb-3">Ölçü Seçin</h3>
+                <h3 className="text-lg font-semibold mb-3">{t.selectSize}</h3>
                 {item.size && item.size.length > 0 && !selectedSize && (
               <span className="text-me text-red-500 font-medium animate-pulse">
-                ⚠️ Zəhmət olmasa ölçüsü seçin
+                {t.selectSizeWarning}
               </span>
             )}
                 <div className="flex flex-wrap gap-3">
@@ -171,12 +179,12 @@ export const MerchPage = () => {
             )}
             {item.color && (
               <div>
-                <h3 className="text-lg font-semibold mb-2">Rəng</h3>
+                <h3 className="text-lg font-semibold mb-2">{t.colorLabel}</h3>
                 <p className="text-muted-foreground">{item.color}</p>
               </div>
             )}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Miqdar</h3>
+              <h3 className="text-lg font-semibold mb-3">{t.quantity}</h3>
               <div className="flex items-center gap-4">
                 <Button
                   variant="outline"
@@ -197,7 +205,7 @@ export const MerchPage = () => {
 
             <div className="bg-muted rounded-lg p-4">
               <div className="flex justify-between items-center">
-                <span className="text-lg font-medium">Cəmi:</span>
+                <span className="text-lg font-medium">{t.total}</span>
                 <span className="text-3xl font-serif font-bold">
                   {(item.price * quantity).toFixed(0)} ₼
                 </span>
@@ -209,10 +217,10 @@ export const MerchPage = () => {
                 size="lg"
                 className="flex-1 gap-2"
                 onClick={handleAddToCart}
-                disabled={item.size && item.size.length > 0 && !selectedSize}
+                disabled={cartLoading || (item.size && item.size.length > 0 && !selectedSize)}
               >
                 <ShoppingCart className="w-5 h-5" />
-                Səbətə əlavə et
+                {t.addToCart}
               </Button>
               <Button variant="outline" size="icon" className="shrink-0">
                 <Heart className="w-5 h-5" />
@@ -220,21 +228,21 @@ export const MerchPage = () => {
             </div>
 
             <div className="border-t border-border pt-6">
-              <h3 className="text-lg font-semibold mb-3">Məhsul Məlumatları</h3>
+              <h3 className="text-lg font-semibold mb-3">{t.productDetails}</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
                 <div className="flex justify-between">
-                  <span>Kateqoriya:</span>
+                  <span>{t.categoryLabel}</span>
                   <span className="font-medium text-foreground">
                     {item.category || "Merch"}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Buraxılış İli:</span>
+                  <span>{t.releaseYear}</span>
                   <span className="font-medium text-foreground">{item.year}</span>
                 </div>
                 {item.material && (
                   <div className="flex justify-between">
-                    <span>Material:</span>
+                    <span>{t.materialLabel}</span>
                     <span className="font-medium text-foreground">{item.material}</span>
                   </div>
                 )}
@@ -243,7 +251,7 @@ export const MerchPage = () => {
           </div>
         </div>
         <div className="mt-20">
-          <h2 className="text-3xl font-serif font-bold mb-8">Oxşar Məhsullar</h2>
+          <h2 className="text-3xl font-serif font-bold mb-8">{t.similarProducts}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {Merch.filter(m =>
               m.id !== item.id &&

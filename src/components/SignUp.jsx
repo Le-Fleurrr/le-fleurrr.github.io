@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { useAuth } from '../contexts/authContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
+import { useLanguage } from './LanguageContext.jsx';
 
 export function Signup() {
+  const { t } = useLanguage();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,11 +19,11 @@ export function Signup() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      return setError('Şifrələr uyğun gəlmir');
+      return setError(t.passwordsMismatch);
     }
 
     if (password.length < 6) {
-      return setError('Şifrə ən azı 6 simvoldan ibarət olmalıdır');
+      return setError(t.passwordTooShort);
     }
 
     try {
@@ -31,13 +33,13 @@ export function Signup() {
       navigate('/');
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
-        setError('Bu email artıq istifadə olunur');
+        setError(t.emailInUse);
       } else if (error.code === 'auth/weak-password') {
-        setError('Şifrə çox zəifdir');
+        setError(t.weakPassword);
       } else if (error.code === 'auth/invalid-email') {
-        setError('Yanlış email formatı');
+        setError(t.invalidEmail);
       } else {
-        setError('Qeydiyyat uğursuz oldu: ' + error.message);
+        setError(t.signupFailed + error.message);
       }
     }
 
@@ -51,7 +53,7 @@ export function Signup() {
       await loginWithGoogle();
       navigate('/');
     } catch (error) {
-      setError('Google ilə qeydiyyat uğursuz oldu: ' + error.message);
+      setError(t.googleSignupFailed + error.message);
     }
 
     setLoading(false);
@@ -61,9 +63,9 @@ export function Signup() {
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <h2 className="text-center text-3xl font-bold">Qeydiyyat</h2>
+          <h2 className="text-center text-3xl font-bold">{t.signupTitle}</h2>
           <p className="mt-2 text-center text-sm text-muted-foreground">
-            Yeni hesab yaradın
+            {t.signupSubtitle}
           </p>
         </div>
 
@@ -77,7 +79,7 @@ export function Signup() {
           <div className="space-y-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Ad Soyad
+                {t.nameLabel}
               </label>
               <input
                 id="name"
@@ -108,7 +110,7 @@ export function Signup() {
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium mb-2">
-                Şifrə
+                {t.passwordLabel}
               </label>
               <input
                 id="password"
@@ -124,7 +126,7 @@ export function Signup() {
 
             <div>
               <label htmlFor="confirm-password" className="block text-sm font-medium mb-2">
-                Şifrəni təsdiqlə
+                {t.confirmPasswordLabel}
               </label>
               <input
                 id="confirm-password"
@@ -145,7 +147,7 @@ export function Signup() {
               disabled={loading}
               className="w-full"
             >
-              {loading ? 'Gözləyin...' : 'Qeydiyyatdan keç'}
+              {loading ? t.pleaseWait : t.signUpBtn}
             </Button>
           </div>
 
@@ -154,7 +156,7 @@ export function Signup() {
               <div className="w-full border-t border-border"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-background text-muted-foreground">və ya</span>
+              <span className="px-2 bg-background text-muted-foreground">{t.orWord}</span>
             </div>
           </div>
 
@@ -171,14 +173,14 @@ export function Signup() {
               <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
               <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
             </svg>
-            Google ilə qeydiyyat
+            {t.googleSignUp}
           </Button>
         </form>
 
         <p className="text-center text-sm">
-          Artıq hesabınız var?{' '}
+          {t.haveAccountQ}{' '}
           <Link to="/login" className="text-primary hover:underline font-medium">
-            Daxil olun
+            {t.signInLink}
           </Link>
         </p>
       </div>

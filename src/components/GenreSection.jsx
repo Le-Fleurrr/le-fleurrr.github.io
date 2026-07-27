@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "./LanguageContext.jsx";
 
 const genres = [
   { name: "Jazz", count: 1240, color: "from-amber-600/30 to-amber-900/50" },
@@ -10,16 +11,17 @@ const genres = [
 ];
 
 export const GenreSection = () => {
+  const { t } = useLanguage();
   return (
     <section id="genres" className="py-24">
       <div className="container mx-auto px-6">
 
         <div className="text-center mb-16">
           <p className="text-primary font-medium tracking-widest text-sm uppercase mb-2">
-            Araşdırın
+            {t.explore}
           </p>
           <h2 className="text-4xl md:text-5xl font-serif font-bold">
-            Janra görə axtarış
+            {t.browseByGenre}
           </h2>
         </div>
 
@@ -39,7 +41,7 @@ export const GenreSection = () => {
                 <h3 className="font-serif text-2xl font-bold group-hover:text-primary transition-colors">
                   {genre.name}
                 </h3>
-                <p className="text-muted-foreground mt-1">{genre.count.toLocaleString()} records</p>
+                <p className="text-muted-foreground mt-1">{genre.count.toLocaleString()} {t.recordsWord}</p>
               </div>
 
 

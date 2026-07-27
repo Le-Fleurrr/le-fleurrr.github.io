@@ -3,10 +3,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search } from 'lucide-react';
+import { useLanguage } from './LanguageContext.jsx';
 
 export function SearchEngine({ albums = [] }) {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +58,7 @@ export function SearchEngine({ albums = [] }) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Albom və ya artist axtar..."
+            placeholder={t.searchPlaceholderShort}
             className="w-full pl-12 pr-4 py-3 rounded-full bg-background border border-border focus:border-primary focus:outline-none"
           />
         </div>
@@ -95,7 +97,7 @@ export function SearchEngine({ albums = [] }) {
             onClick={handleViewAllResults}
             className="w-full p-3 text-sm text-primary font-medium hover:bg-muted transition-colors border-t border-border"
           >
-            Bütün nəticələrə bax →
+            {t.viewAllResults}
           </button>
         </div>
       )}
@@ -103,7 +105,7 @@ export function SearchEngine({ albums = [] }) {
       {/* No results message */}
       {query.trim() && quickResults.length === 0 && (
         <div className="absolute top-full mt-2 w-full bg-card border border-border rounded-lg shadow-lg z-50 p-4 text-center text-sm text-muted-foreground">
-          Heç bir nəticə tapılmadı
+          {t.noResults}
         </div>
       )}
     </div>

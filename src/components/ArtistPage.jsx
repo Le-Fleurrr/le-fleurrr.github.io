@@ -8,6 +8,8 @@ import { VinylRecord } from "./VinylRecord.tsx";
 import { CDDisc } from "./CDDisc.tsx";
 import { CassetteTape } from "./CassetteTape.tsx";
 import { Button } from "./ui/Button.tsx";
+import { useLanguage } from "./LanguageContext.jsx";
+import { usePageTitle } from "./usePageTitle.js";
 
 const getAccentColor = (color) => {
   const colorMap = {
@@ -18,15 +20,15 @@ const getAccentColor = (color) => {
     orange: '#f97316',
     pink: '#ec4899',
     yellow: '#eab308',
-    white: '#ffffff',
     gray: '#9ca3af',
     grey: '#9ca3af',
   };
-  return colorMap[color?.toLowerCase()] || '#ffffff';
+  return colorMap[color?.toLowerCase()];
 };
 
 const ArtistPage = () => {
   const { artistName } = useParams();
+  const { t } = useLanguage();
   const [hoveredId, setHoveredId] = useState(null);
   const [hoveredAlbumId, setHoveredAlbumId] = useState(null);
   const [bannerError, setBannerError] = useState(false);
@@ -79,6 +81,7 @@ const ArtistPage = () => {
   }
 
   const artist = displayArtist;
+  usePageTitle(artist !== "Artist" ? artist : null);
   const artistProfile = artistProfiles[artist] || {};
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -92,9 +95,9 @@ const ArtistPage = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Artist Not Found</h1>
+          <h1 className="text-4xl font-bold mb-4">{t.artistNotFound}</h1>
           <Link to="/" className="text-primary hover:underline">
-            ← Ana səhifəyə qayıt
+            ← {t.backHome}
           </Link>
         </div>
       </div>
@@ -130,7 +133,7 @@ const ArtistPage = () => {
               className="backdrop-blur-sm"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Geri
+              {t.back}
             </Button>
           </Link>
         </div>
@@ -154,7 +157,7 @@ const ArtistPage = () => {
                   {artist}
                 </h1>
                 <p className="text-muted-foreground text-lg">
-                  {artistAlbums[0]?.genre || "Music"}
+                  {artistAlbums[0]?.genre || t.music}
                 </p>
               </div>
             </div>
@@ -164,7 +167,7 @@ const ArtistPage = () => {
 
       {latestAlbum && (
         <div className="px-8 py-8 max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Son Buraxılış</h2>
+          <h2 className="text-2xl font-bold mb-6">{t.latestRelease}</h2>
           <Link
             to={`/album/${latestAlbum.id}`}
             className="block group"
@@ -204,12 +207,12 @@ const ArtistPage = () => {
                   {latestAlbum.year}
                 </p>
                 <div className="flex items-center gap-3 mb-2">
-                  <h3 
-                    className={`text-2xl font-bold transition-all ${hoveredAlbumId === latestAlbum.id ? 'underline' : ''}`}
+                  <h3
+                    className={`text-2xl font-bold text-foreground transition-all ${hoveredAlbumId === latestAlbum.id ? 'underline' : ''}`}
                     style={{
-                      color: hoveredAlbumId === latestAlbum.id ? 
-                        getAccentColor(latestAlbum.accentColor) : 
-                        'white'
+                      color: hoveredAlbumId === latestAlbum.id
+                        ? getAccentColor(latestAlbum.accentColor)
+                        : undefined
                     }}
                   >
                     {latestAlbum.title}
@@ -227,7 +230,7 @@ const ArtistPage = () => {
       )}
 
       <div className="px-8 py-8 max-w-7xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">Diskografiya</h2>
+        <h2 className="text-2xl font-bold mb-6">{t.discography}</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {sortedAlbums.map((album) => (
@@ -240,7 +243,7 @@ const ArtistPage = () => {
             >
               {album.isNew && (
                 <span className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
-                  YENI
+                  {t.newBadge}
                 </span>
               )}
 
@@ -282,12 +285,12 @@ const ArtistPage = () => {
 
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <h3 
-                    className={`font-serif text-xl font-bold transition-all ${hoveredId === album.id ? 'underline' : ''}`}
+                  <h3
+                    className={`font-serif text-xl font-bold text-foreground transition-all ${hoveredId === album.id ? 'underline' : ''}`}
                     style={{
-                      color: hoveredId === album.id ? 
-                        getAccentColor(album.accentColor) : 
-                        'white'
+                      color: hoveredId === album.id
+                        ? getAccentColor(album.accentColor)
+                        : undefined
                     }}
                   >
                     {album.title}

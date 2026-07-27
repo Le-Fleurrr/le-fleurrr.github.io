@@ -3,12 +3,31 @@ import { VinylRecord } from "../components/VinylRecord.tsx";
 import { CDDisc } from "../components/CDDisc.tsx";
 import { CassetteTape } from '../components/CassetteTape.tsx';
 import { Button } from "../components/ui/Button.tsx";
-import { ShoppingCart, Heart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { albums } from "./Albums.jsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useLanguage } from "./LanguageContext.jsx";
+import { useShopifyCart } from "../contexts/Shopifycartcontext";
+import { FavoriteButton } from "./FavoritesSystem";
+import { toast } from "sonner";
+import { usePageTitle } from "./usePageTitle.js";
 
 export const Collections = () => {
+  const { t } = useLanguage();
+  usePageTitle(t.allCollection);
+  const navigate = useNavigate();
+  const { addToCart } = useShopifyCart();
   const [hoveredId, setHoveredId] = useState(null);
+
+  const handleCardAddToCart = async (album) => {
+    if (album.shopifyVariantId) {
+      const result = await addToCart(album.shopifyVariantId, 1);
+      if (result.success) toast.success(t.addedToCart);
+      else toast.error(t.errorTryAgain);
+    } else {
+      navigate(`/album/${album.id}`);
+    }
+  };
   const [genreFilter, setGenreFilter] = useState("All");
   const [yearFilter, setYearFilter] = useState("All");
   const [artistFilter, setArtistFilter] = useState("All");
@@ -67,15 +86,15 @@ export const Collections = () => {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
         <Link to="/" className="text-primary hover:underline mb-4 inline-block">
-          ← Geri
+          ← {t.back}
         </Link>
 
         <div className="mb-12">
           <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4">
-            Bütün Kolleksiya
+            {t.allCollection}
           </h1>
           <p className="text-muted-foreground text-lg">
-            {filteredAlbums.length} vinil qeydimizi kəşf edin
+            {filteredAlbums.length} {t.discoverRecords}
           </p>
         </div>
 
@@ -84,14 +103,14 @@ export const Collections = () => {
           {/* Genre Filter */}
           <div>
             <label className="text-muted-foreground font-medium mr-2">
-              Filter by Genre:
+              {t.filterByGenre}
             </label>
             <select
               value={genreFilter}
               onChange={(e) => setGenreFilter(e.target.value)}
               className="border border-border rounded px-3 py-2 bg-card text-foreground"
             >
-              <option value="All">All</option>
+              <option value="All">{t.all}</option>
               {[...new Set(albums.map((album) => album.genre))].map((genre) => (
                 <option key={genre} value={genre}>
                   {genre}
@@ -103,14 +122,14 @@ export const Collections = () => {
           {/* Year Filter */}
           <div>
             <label className="text-muted-foreground font-medium mr-2">
-              Filter by Year:
+              {t.filterByYear}
             </label>
             <select
               value={yearFilter}
               onChange={(e) => setYearFilter(e.target.value)}
               className="border border-border rounded px-3 py-2 bg-card text-foreground"
             >
-              <option value="All">All</option>
+              <option value="All">{t.all}</option>
               {[...new Set(albums.map((album) => album.year))].map((year) => (
                 <option key={year} value={year}>
                   {year}
@@ -122,14 +141,14 @@ export const Collections = () => {
           {/* Artist Filter */}
           <div>
             <label className="text-muted-foreground font-medium mr-2">
-              Filter by Artist:
+              {t.filterByArtist}
             </label>
             <select
               value={artistFilter}
               onChange={(e) => setArtistFilter(e.target.value)}
               className="border border-border rounded px-3 py-2 bg-card text-foreground"
             >
-              <option value="All">All</option>
+              <option value="All">{t.all}</option>
               {[...new Set(albums.map((album) => album.artist))].map((artist) => (
                 <option key={artist} value={artist}>
                   {artist}
@@ -140,16 +159,16 @@ export const Collections = () => {
 
           <div>
             <label className="text-muted-foreground font-medium mr-2">
-              Sort by Price:
+              {t.sortByPrice}
             </label>
             <select
               value={sortOrder}
               onChange={(e) => setSortOrder(e.target.value)}
               className="border border-border rounded px-3 py-2 bg-card text-foreground"
             >
-              <option value="none">None</option>
-              <option value="cheap">Cheapest → Most Expensive</option>
-              <option value="expensive">Most Expensive → Cheapest</option>
+              <option value="none">{t.sortNone}</option>
+              <option value="cheap">{t.sortCheap}</option>
+              <option value="expensive">{t.sortExpensive}</option>
             </select>
           </div>
         </div>
@@ -168,7 +187,7 @@ export const Collections = () => {
               >
                 {album.isNew && (
                   <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
-                    YENI
+                    {t.newBadge}
                   </span>
                 )}
                 <div className="relative h-48 flex items-center justify-center mb-6">
@@ -247,14 +266,7 @@ export const Collections = () => {
                         })}
                       </div>
                     </div>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="text-muted-foreground hover:text-primary shrink-0"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <Heart className="w-5 h-5" />
-                    </Button>
+                    <FavoriteButton albumId={album.id} size="medium" className="shrink-0" />
                   </div>
 
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -270,10 +282,14 @@ export const Collections = () => {
                     <Button
                       size="sm"
                       className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
-                      onClick={(e) => e.preventDefault()}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleCardAddToCart(album);
+                      }}
                     >
                       <ShoppingCart className="w-4 h-4" />
-                      Səbətə əlavə et
+                      {t.addToCart}
                     </Button>
                   </div>
                 </div>

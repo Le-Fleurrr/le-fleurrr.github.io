@@ -393,6 +393,16 @@ const moreChaosCD = {
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1769010710/MCCDstandardpackshot_q2urck.png']
 };
 
+const xperiment = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1785152750/26UMGIM78337.rgb_1_tfz56k.png',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1785151752/KC_x_Standard_Clearwater_ltaglq.png']
+}
+
+const xperimentCD = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1785152750/26UMGIM78337.rgb_1_tfz56k.png',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1785151752/0002_KC_x_CD-Packshot_Standard_gqpei8.png']
+}
+
 const noStylist = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768921252/noStylist_eb1hse.jpg',
   vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768921262/noStylist_vinyl_rgl132.png']
@@ -690,6 +700,7 @@ export const albums = [
   {
     id: 81,
     title: "Short n' Sweet (Deluxe) [2LP]",
+    spotifyAlbumId: "1ILW5rLFAFzW5ARP09OQEg",
     artist: ["Sabrina Carpenter"],
     price: 119.99,
     genre: "Pop",
@@ -767,6 +778,7 @@ export const albums = [
   {
     id: 83,
     title: "Charm (LP)",
+    spotifyAlbumId: "3vQEoTzNlZ4JYQm2I8LLQo",
     artist: ["Clairo"],
     price: 99.99,
     genre: "Alternative",
@@ -1750,63 +1762,6 @@ export const albums = [
     label: "AWGE/Interscope Records"
   },
   {
-    id: 1341,
-    title: "MUSIC - SORRY 4 DA WAIT (2LP)",
-    artist: ["Playboi Carti"],
-    price: 119.99,
-    genre: "Hip-Hop/Rap",
-    year: 2025,
-    isNew: true,
-    isExplicit: true,
-    image: musicSorry4DaWait.cover,
-    vinylImages: musicSorry4DaWait.vinyl,
-    featuresImage: musicSorry4DaWait.features,
-    vinylColor: "red",
-    sleeveColor: "red",
-    accentColor: "red",
-    format: "vinyl",
-    description: "Playboi Carti, Whole Lotta Red-dən təxminən dörd il ərzində Future, Latto və Trippie Redd kimi məşhurlarla birlikdə çıxış edərək, demək olar ki, orada olmayıb. Buna baxmayaraq, bu, onun böyük fanatlarının sonda sadəcə MUSIC kimi qısaldılmış adı ilə çıxan I AM MUSIC albomu ilə bağlı davamlı olaraq səs-küy salmasının qarşısını ala bilməyib. Mahnının uzunluğu gözləmə müddətini təsdiqləyir və ifaçının xoş gəlişini xəbər verən POP OUT və CRUSH kimi qəzəbli rep mahnıları ilə başlayır. 30 mahnıdan ibarət və 77 dəqiqəlik davam edən albomda onun səsləri aqressiv şəkildə şişirdilmiş, sintezator ağırlığı ilə məşhurlaşdığı post-trap ilə daha pop-trap arasında dəyişir, lakin bütün bunlar şübhəsiz ki, onun stilistik diapazonundadır. Karti əvvəlcə qonaq seçimini yüksək səviyyəli albom buraxılışları üçün adət halını aldığı kimi, jiletə yaxın saxlayırdı. Lakin Kendrick Lamarın GOOD CREDITə tüpürdüyünü, Future-ın TRIM-ə görə hisslərini ifadə etdiyini və ya əməkdaşlıq karyerasının əsas dayağı Lil Uzi Vertin TWIN TRIM də qələbə ilə sürüşdüyünü görməmək mümkün olmazdı. The Weeknd-in RATHER LIE mahnısındakı ən diqqət çəkən hissə, bəlkə də, onun buradakı zərfləri itələməsinin ən açıq nümunəsidir, baxmayaraq ki, Travis Scott-un PHILLY mahnısında və Young Thug və Ty Dolla $ign-dən ibarət komandanın WE NEED ALL DA VIBES mahnısında çıxışları bu istiqaməti daha da inandırıcı edir. Bu kimi dostları ilə belə, Carti özü daha parlaq şəkildə parlayır, nəfəsli, demək olar ki, falsetto səsi I SEEEEEE YOU BABY BOI video oyun arpecioları və xırıltılı xırıltısı COCAINE NOSE-nin kinematoqrafik səs-küyü ətrafında fırlanır. Yalnız gələcəyə baxmaqla kifayətlənməyərək, klassik 1017 Brick Squad kasetlərini xatırladan RADAR-da səslənən Atlantanın 2010-cu illərin əvvəllərindəki səsinə demək olar ki, nostaljik bir qiymətləndirmə var.",
-    tracklist: [
-      { id: 1, name: "POP OUT", isExplicit: true, duration: "2:42", spotifyEmbed: "https://open.spotify.com/embed/track/3j3SfV4hAcR4XjCvW393Gr?si=9887770c97b546ba" },
-      { id: 2, name: "CRUSH", features: "Playboi Carti & Travis Scott", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3VdooJLOy4tLxKpnn46SMP", musicVideo: "https://www.youtube.com/watch?v=94B_-0kP684", duration: "2:53" },
-      { id: 3, name: "K POP", isExplicit: true, duration: "1:53", spotifyEmbed: "https://open.spotify.com/embed/track/00iLTetTLAeImmBlh6jOJh?si=7cda30efb9924e64", musicVideo: "https://www.youtube.com/watch?v=aqHA5WLRtMA" },
-      { id: 4, name: "EVIL J0RDAN", isExplicit: true, musicVideo: "https://youtu.be/VcRc2DHHhoM?si=DR3qRwstvsJjh3Dh", duration: "3:04", spotifyEmbed: "https://open.spotify.com/embed/track/6iycYUk3oB0NPMdaDUrN1w?si=5ded42079f854fb7" },
-      { id: 5, name: "MOJO JOJO", isExplicit: true, duration: "2:36", spotifyEmbed: "https://open.spotify.com/embed/track/3WRUvGqySBZC6RkB5c2w1S?si=779d837221d74627" },
-      { id: 6, name: "PHILLY", features: "Playboi Carti & Travis Scott", isExplicit: true, duration: "3:06", spotifyEmbed: "https://open.spotify.com/embed/track/5SIvP6TdWc9DNvKbENjnYc?si=99377f3a3aff4e3f" },
-      { id: 7, name: "RADAR", isExplicit: true, duration: "1:48", spotifyEmbed: "https://open.spotify.com/embed/track/3lAEHk0eZzMKtCUFLXz8Ln?si=805dcd22bc044f6f" },
-      { id: 8, name: "RATHER LIE", features: "Playboi Carti & The Weeknd", isExplicit: true, duration: "3:30", spotifyEmbed: "https://open.spotify.com/embed/track/68qeaZhtMZ6abrJCYt6nQn?si=f9057c5bfc304a1d" },
-      { id: 9, name: "FINE SHIT", isExplicit: true, duration: "1:47", musicVideo: "https://youtu.be/uMZiaJ4speo?si=jxBUmPC8Q8Asz4QQ", spotifyEmbed: "https://open.spotify.com/embed/track/79mFFAOYcG8ZF6AN1JecAL?si=a2c1b2d9f2524353" },
-      { id: 10, name: "BACKD00R (feat. Jhené Aiko)", features: "Playboi Carti & Kendrick Lamar", isExplicit: true, duration: "3:10", spotifyEmbed: "https://open.spotify.com/embed/track/0rNgWFQJtfttOYIHfDOHCg?si=ea427ff6cae042e2" },
-      { id: 11, name: "TOXIC (feat. Skepta)", isExplicit: true, duration: "2:15", spotifyEmbed: "https://open.spotify.com/embed/track/4evMMKc2HD6fV9slMfgkMx?si=74c072b4d15849d8" },
-      { id: 12, name: "MUNYUN", isExplicit: true, duration: "2:34", spotifyEmbed: "https://open.spotify.com/embed/track/2JJFJEvFSWyQ59Pwl2gqSF?si=2735aa5c5a164d85" },
-      { id: 13, name: "CRANK", isExplicit: true, duration: "2:28", spotifyEmbed: "https://open.spotify.com/embed/track/7xAvtuHf8nGi5OtXVPYgb3?si=462999de96134d27" },
-      { id: 14, name: "CHARGE DEM HOES A FEE", features: "Playboi Carti, Future & Travis Scott", isExplicit: true, duration: "3:45", spotifyEmbed: "https://open.spotify.com/embed/track/21aDVa64pWR8SYQ7wBRMkd?si=f90f9c8609184dc1" },
-      { id: 15, name: "GOOD CREDIT", features: "Playboi Carti & Kendrick Lamar", isExplicit: true, duration: "3:10", spotifyEmbed: "https://open.spotify.com/embed/track/2n9fC0A4ptmWqYeMXEVaok?si=fd32daf6d4c14c99" },
-      { id: 16, name: "I SEEEEEE YOU BABY BOI", isExplicit: true, duration: "2:39", spotifyEmbed: "https://open.spotify.com/embed/track/2ydagYqcyFfRtQPzKc5E8l?si=97abf2afeec941c2" },
-      { id: 17, name: "WAKE UP F1LTHY", features: "Playboi Carti & Travis Scott", isExplicit: true, duration: "2:49", spotifyEmbed: "https://open.spotify.com/embed/track/1pzN8bCzy017iK3vWzkk6Z?si=6b9903cce3d44553" },
-      { id: 18, name: "JUMPIN", features: "Playboi Carti & Lil Uzi Vert", isExplicit: true, duration: "1:33", spotifyEmbed: "https://open.spotify.com/embed/track/7oZOCPjlLpHZtIebTXhlfZ?si=1be932ea9519438f" },
-      { id: 19, name: "TRIM", features: "Playboi Carti & Future", isExplicit: true, duration: "3:14", spotifyEmbed: "https://open.spotify.com/embed/track/4qvsNsA4gQKC9HLrmPC2Vx?si=f0b1f2cbef854aef" },
-      { id: 20, name: "COCAINE NOSE", isExplicit: true, duration: "2:31", spotifyEmbed: "https://open.spotify.com/embed/track/4rXxjHSAglOynjIF8Z34dx?si=7bc9ae9a31c44438" },
-      { id: 21, name: "WE NEED ALL DA VIBES", features: "Playboi Carti, Young Thug & Ty Dolla $ign", spotifyEmbed: "https://open.spotify.com/embed/track/4XcZp2xqbiD8YsnPboNUDo?si=c08dee76131b4be5", isExplicit: true, duration: "3:02" },
-      { id: 22, name: "OLYMPIAN", isExplicit: true, duration: "2:55", spotifyEmbed: "https://open.spotify.com/embed/track/4uoADk7q83CHvXHW3k1etM?si=b15442d80db640f4" },
-      { id: 23, name: "OPM BABI", isExplicit: true, duration: "2:53", spotifyEmbed: "https://open.spotify.com/embed/track/76yJsfb1CUy5Um8nFL7jKQ?si=e289f7bba48548e7", musicVideo: "https://youtu.be/UNAWyLCfhPo?si=RM-bLSm5Y_uSLbGm" },
-      { id: 24, name: "TWIN TRIM", features: "Playboi Carti & Lil Uzi Vert", isExplicit: true, duration: "1:35", spotifyEmbed: "https://open.spotify.com/embed/track/3surY3LebvLLdJezmiKUBO?si=d8aacc5f54854d1b" },
-      { id: 25, name: "LIKE WEEZY", isExplicit: true, duration: "1:56", musicVideo: "https://youtu.be/C217vygclrk?si=kdaYGpTONUe9Bd0L", spotifyEmbed: "https://open.spotify.com/embed/track/4zK082ykqJzJGzC64NXjp1?si=b0081e43f0134666" },
-      { id: 26, name: "DIS 1 GOT IT", isExplicit: true, duration: "2:04", spotifyEmbed: "https://open.spotify.com/embed/track/4tMhjP02FRQ0KIUUEJ2oGK?si=6656a4a2dd164450", musicVideo: "https://youtu.be/0WmwToGLXHM?si=BlQ3W-NDZn4Y7d4T" },
-      { id: 27, name: "WALK", isExplicit: true, duration: "1:34", spotifyEmbed: "https://open.spotify.com/embed/track/5Qya13gFXqupr4sSmZMKDg?si=e90116f06f474b52" },
-      { id: 28, name: "HBA / H00DBYAIR", musicVideo: "https://youtu.be/GEofzpwSqho?si=R_cvXYnPFNIlHCEC", isExplicit: true, duration: "3:33", spotifyEmbed: "https://open.spotify.com/embed/track/6q2PbvM9UEig4r8xku7VIb?si=d4741c1363b64696" },
-      { id: 29, name: "OVERLY", isExplicit: true, duration: "1:46", spotifyEmbed: "https://open.spotify.com/embed/track/5tRylsadMpm8TydUgq7NWj?si=2cc0bf54efed418b" },
-      { id: 30, name: "SOUTH ATLANTA BABY", isExplicit: true, duration: "2:13", spotifyEmbed: "https://open.spotify.com/embed/track/7cHhlnawdN87aZbjO6LMRN?si=304ddfaaae2c4594" },
-      { id: 31, name: "DIFFERENT DAY", isExplicit: true, duration: "2:46", spotifyEmbed: "https://open.spotify.com/embed/track/0dApSLrXvnYWy1wagJOmpp", musicVideo: "https://youtu.be/8VOGJYZxDjA?si=PZmR6UBaHxu-iW2A" },
-      { id: 32, name: "2024", isExplicit: true, duration: "3:29", spotifyEmbed: "https://open.spotify.com/embed/track/1bAv1DWUibxCIjAk9SlzRi", musicVideo: "https://youtu.be/YG3EhWlBaoI?si=lT1LVBd1S5UC0dbP" },
-      { id: 33, name: "BACKR00MS", features: "Playboi Carti & Travis Scott", isExplicit: true, duration: "2:40", musicVideo: "https://youtu.be/ftaXMKV3ffE?si=j_wb9SzLgnpa7kXg", spotifyEmbed: "https://open.spotify.com/embed/track/2cjhSZd6uZIrp4ddxvvBdn" },
-      { id: 34, name: "FOMDJ", isExplicit: true, musicVideo: "https://youtu.be/N5dOy9FGtDg?si=-5nP-s1af_1CICZs", spotifyEmbed: "https://open.spotify.com/embed/track/7bO7a1KrtmGNDIOy2u3siZ", duration: "3:20" },
-    ],
-    releaseDate: "14 Mart 2025",
-    duration: "34 mahnılar, 1 saat 31 dəqiqə",
-    label: "AWGE/Interscope"
-  },
-  {
     id: 29,
     title: "Wolf (2LP)",
     artist: ["Tyler, The Creator"],
@@ -2731,7 +2686,6 @@ export const albums = [
     vinylImages: bullyCD.vinyl,
     accentColor: "grey",
     format: "cd",
-    description: "Vinil LP presləməsi. 2018-ci ildə buraxılan, reper/prodüser Kanye Westin səkkizinci studiya albomudur. Albomda Ty Dolla Sign, PartyNextDoor, Kid Cudi, Jeremih və 070 Shake kimi qruplar qonaq vokal ifa edir. Albomun tam versiyasını West istehsal edib, əlavə olaraq həmicraçı prodüser olan Mike Dean, eləcə də Francis and the Lights, Benny Blanco, Irv Gotti, 7 Aurelius, Noah Goldstein, Che Pope, Caroline Shaw, Pi'erre Bourne və Ty Dolla Sign kimi qruplar da prodüserlik edib. Ye, West tərəfindən Wyoming Sessions adlandırılan beş yeddi mahnıdan ibarət albomdan ikincisidir. Vest albomun adını, mahnılarında tez-tez istifadə olunan öz adının kiçildilmiş versiyasını belə izah etdi: İnanıram ki, Müqəddəs Kitabda ən çox istifadə edilən ye sözüdür və Müqəddəs Kitabda sən mənasını verir. Beləliklə, mən sənəm, mən bizəm, bu bizik. Bu söz yeganə mənasını verən Kanye sözündən sadəcə Ye sözünə keçdi - sadəcə yaxşılığımızın, pisliyimizin, çaşqınlığımızın, hər şeyimizin əks olunması. Albom daha çox kim olduğumuzun əksidir.",
     description: "“Bully” amerikalı reper Kanye Westin on ikinci studiya albomudur. Albom 28 mart 2026-cı ildə YZY və Gamma tərəfindən buraxılmışdır. Vest albomu musiqi direktoru Andre Troutman, Legendary Traxster, 88-Keys və James Blake ilə birlikdə hazırlamışdır. Troutman həmçinin Travis Scott, CeeLo Green, Peso Pluma və Don Toliver ilə birlikdə qonaq qismində çıxış edir, əlavə olaraq Nine Vicious və Ty Dolla Sign qrupları da vokal çıxışları etmişdir.",
     tracklist: [
       { id: 1, name: "PREACHER MAN", isExplicit: false, duration: "3:01", spotifyEmbed: "https://open.spotify.com/embed/track/0fD7KBtQgPR1YCtuPAsyZJ?si=ac12d9c60a5a40b9" },
@@ -3369,6 +3323,7 @@ export const albums = [
   {
     id: 67,
     title: "Spider-Man: Into the Spider-Verse (Soundtrack From & Inspired by the Motion Picture) [2LP]",
+    spotifyAlbumId: "35s58BRTGAEWztPo9WqCIs",
     artist: ["Various Artists"],
     price: 99.99,
     genre: "Soundtrack",
@@ -3386,6 +3341,7 @@ export const albums = [
   {
     id: 71,
     title: "X (LP)",
+    spotifyAlbumId: "3iBQSabXhatxvOKlo35Sya",
     artist: ["Ken Carson"],
     price: 79.99,
     genre: "Hip-Hop/Rap",
@@ -3410,6 +3366,7 @@ export const albums = [
   {
     id: 72,
     title: "A Great Chaos (LP)",
+    spotifyAlbumId: "6L6WCu3cwXc9XYa2zyH1y8",
     artist: ["Ken Carson"],
     price: 79.99,
     genre: "Hip-Hop/Rap",
@@ -3428,6 +3385,7 @@ export const albums = [
   {
     id: 73,
     title: "More Chaos (2LP)",
+    spotifyAlbumId: "1qO5gHs2mJWd9Nx4dqvAMG",
     artist: ["Ken Carson"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -3444,13 +3402,14 @@ export const albums = [
     description: "More Chaos amerikalı reper Ken Karsonun dördüncü studiya albomudur. Albom 11 aprel 2025-ci ildə buraxılıb. Karson albomun böyük hissəsini 2024-cü ildə üçüncü albomuna dəstək məqsədilə qastrol səfərlərində olarkən yazıb. Albomun prodüserləri F1lthy, Lil 88, Star Boy və Outtatown və digərləridir. Albomun standart nəşrində qonaq çıxışlar yoxdur, lakin Off the Meter adlı bonus trekdə Opium leybl yoldaşları Playboi Carti və Destroy Lonely yer alır."
   },
   {
-    id: 14,
+    id: 93,
     title: "More Chaos (CD)",
+    spotifyAlbumId: "1qO5gHs2mJWd9Nx4dqvAMG",
     artist: ["Ken Carson"],
     price: 29.99,
     genre: "Hip-Hop/Rap",
     year: 2025,
-    isNew: true,
+    isNew: false,
     isExplicit: true,
     image: moreChaosCD.cover,
     vinylImages: moreChaosCD.vinyl,
@@ -3461,8 +3420,44 @@ export const albums = [
     description: "More Chaos amerikalı reper Ken Karsonun dördüncü studiya albomudur. Albom 11 aprel 2025-ci ildə buraxılıb. Karson albomun böyük hissəsini 2024-cü ildə üçüncü albomuna dəstək məqsədilə qastrol səfərlərində olarkən yazıb. Albomun prodüserləri F1lthy, Lil 88, Star Boy və Outtatown və digərləridir. Albomun standart nəşrində qonaq çıxışlar yoxdur, lakin Off the Meter adlı bonus trekdə Opium leybl yoldaşları Playboi Carti və Destroy Lonely yer alır."
   },
   {
+    id: 3418,
+    title: "xperiment (2LP)",
+    spotifyAlbumId: "1qO5gHs2mJWd9Nx4dqvAMG",
+    artist: ["Ken Carson"],
+    price: 99.99,
+    genre: "Hip-Hop/Rap",
+    year: 2026,
+    isNew: true,
+    isExplicit: true,
+    image: xperiment.cover,
+    vinylImages: xperiment.vinyl,
+    accentColor: "red",
+    sleeveColor: "red",
+    vinylColor: "red",
+    format: "vinyl",
+    description: "Xperiment amerikalı reper Ken Karsonun 3 iyul 2026-cı ildə Opium və Interscope Records vasitəsilə buraxılan beşinci studiya albomudur. Xperiment 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti və Young Thug ilə əməkdaşlıq edir. Karsonun albomu dəstəkləmək üçün 2026-cı ilin avqust-sentyabr aylarında Şimali Amerikada Xperimenting Turuna çıxması planlaşdırılır. Albom tənqidçilərdən müsbət rəylər aldı və ABŞ Billboard 200-də yeddinci yerdə debüt etdiyi ilk həftədə 42.000 albom ekvivalenti qazandı."
+  },
+  {
+    id: 3242,
+    title: "xperiment (CD)",
+    spotifyAlbumId: "1qO5gHs2mJWd9Nx4dqvAMG",
+    artist: ["Ken Carson"],
+    price: 99.99,
+    genre: "Hip-Hop/Rap",
+    year: 2026,
+    isNew: true,
+    isExplicit: true,
+    image: xperimentCD.cover,
+    vinylImages: xperimentCD.vinyl,
+    accentColor: "red",
+    sleeveColor: "red",
+    format: "cd",
+    description: "Xperiment amerikalı reper Ken Karsonun 3 iyul 2026-cı ildə Opium və Interscope Records vasitəsilə buraxılan beşinci studiya albomudur. Xperiment 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti və Young Thug ilə əməkdaşlıq edir. Karsonun albomu dəstəkləmək üçün 2026-cı ilin avqust-sentyabr aylarında Şimali Amerikada Xperimenting Turuna çıxması planlaşdırılır. Albom tənqidçilərdən müsbət rəylər aldı və ABŞ Billboard 200-də yeddinci yerdə debüt etdiyi ilk həftədə 42.000 albom ekvivalenti qazandı."
+  },
+  {
     id: 74,
     title: "NO STYLIST (LP)",
+    spotifyAlbumId: "42f9YhQCWIlQzBvxkkV8pP",
     artist: ["Destroy Lonely"],
     price: 79.99,
     genre: "Hip-Hop/Rap",
@@ -3480,6 +3475,7 @@ export const albums = [
   {
     id: 75,
     title: "if looks could kill (2LP)",
+    spotifyAlbumId: "4FyesJzVpA39hbYvcseO2d",
     artist: ["Destroy Lonely"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -3496,8 +3492,9 @@ export const albums = [
     description: "If Looks Could Kill amerikalı reper Destroy Lonely-nin 5 may 2023-cü ildə çıxan debüt studiya albomudur. Bu albom üzərində Clayco, Cxdy, DxnnyFxntom, Lil 88 və TM88 kimi bir sıra prodüserlər çalışıb. Qorxu filmləri, video oyunlar və alternativ rokdan təsirlənən bu albom, sintezator və gitaraları özündə birləşdirən qaranlıq, atmosferik istehsalı özündə birləşdirən hip-hop albomudur. Sözləri Lonely-nin həyat tərzini, narahatlığını, narkotikləri, pulu, qadınları, modasını və həyat seçimlərini araşdırır. Albomun mahnılarında, rəsm əsərlərində, musiqi videolarında və albomla eyni gündə çıxan qısametrajlı filmdə Look Killa kimi tanınan alter eqosu qəbul edən Lonely ifaçısıdır."
   },
   {
-    id: 76,
+    id: 94,
     title: "LOVE LASTS FOREVER (2LP)",
+    spotifyAlbumId: "5EEPSOqhj6xXFmXQQb0gLK",
     artist: ["Destroy Lonely"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -3513,8 +3510,9 @@ export const albums = [
     description: "Love Lasts Forever amerikalı reper və müğənni Destroy Lonely-nin ikinci studiya albomudur. Albom 30 avqust 2024-cü ildə çıxıb. Albomda Lil Uzi Vert və Ken Carson qonaq kimi çıxış edirlər. Albomun istehsalı əsasən Lil 88 tərəfindən həyata keçirilib və o, bütün albomu Wheezy, Cxdy, Dylxn, Yugen və Outtatown ilə birlikdə hazırlayıb."
   },
   {
-    id: 77,
+    id: 95,
     title: "＜/3³ (CD)",
+    spotifyAlbumId: "7oq7ILf2ntYRsAnnvFZGqT",
     artist: ["Destroy Lonely"],
     price: 29.99,
     genre: "Hip-Hop/Rap",
@@ -3528,8 +3526,9 @@ export const albums = [
     description: "＜/3³ (Broken Hearts 3 kimi tələffüz olunur) amerikalı reper Destroy Lonely-nin altıncı miksteypidir. 19 sentyabr 2025-ci ildə çıxmışdır. Miksteyp onun üçüncü miksteypi olan ᐸ/3 (2020) və onun dəbdəbəli nəşri olan ᐸ/3² (2020)-nin davamıdır. Albomun yeganə qonaq qismində Opium leyblı Ken Karson Open It Up trekində çıxış etmişdir."
   },
   {
-    id: 78,
+    id: 96,
     title: "Homixide Lifestyle (LP)",
+    spotifyAlbumId: "3PFaHQZC8EWbhGPzGmLlNa",
     artist: ["Homixide Gang"],
     price: 79.99,
     genre: "Hip-Hop/Rap",
@@ -3547,6 +3546,7 @@ export const albums = [
   {
     id: 80,
     title: "Eternal Atake (2LP)",
+    spotifyAlbumId: "6WLJDhDIbyGFoj5u0iZTmg",
     artist: ["Lil Uzi Vert"],
     price: 129.99,
     genre: "Hip-Hop/Rap",
@@ -3562,8 +3562,9 @@ export const albums = [
     description: "Eternal Atake amerikalı reper və müğənni Lil Uzi Vertin ikinci studiya albomudur. Albom 6 mart 2020-ci ildə çıxıb. Albomda amerikalı müğənni Syd yeganə qonaq kimi çıxış edir. Prodüserlik işləri Bobby Raps, Brandon Finessin, Bugz Ronin, Chief Keef, Oogie Mane, TM88, Wheezy və başqaları tərəfindən həyata keçirilib.",
   },
   {
-    id: 79,
+    id: 97,
     title: "Pink Tape (2LP)",
+    spotifyAlbumId: "7gjDAWSrFszPJRHtUvXWSN",
     artist: ["Lil Uzi Vert"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -3601,6 +3602,7 @@ export const albums = [
   {
     id: 85,
     title: "Good Kid M.A.A.D. City (2LP)",
+    spotifyAlbumId: "3DGQ1iZ9XKUQxAUWjfC34w",
     artist: ["Kendrick Lamar"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -3618,6 +3620,7 @@ export const albums = [
   {
     id: 84,
     title: "DAMN. (2LP)",
+    spotifyAlbumId: "4eLPsYPBmXABThSJ821sqY",
     artist: ["Kendrick Lamar"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -3652,6 +3655,7 @@ export const albums = [
   {
     id: 86,
     title: "How I'm Feeling Now (LP)",
+    spotifyAlbumId: "3f1PiqKPvdSZgaYP0u4j3m",
     artist: ["Charli xcx"],
     price: 99.99,
     genre: "Pop",
@@ -3669,6 +3673,7 @@ export const albums = [
   {
     id: 82,
     title: "BRAT (2LP)",
+    spotifyAlbumId: "2lIZef4lzdvZkiiCzvPKj7",
     artist: ["Charli xcx"],
     price: 119.99,
     genre: "Electronic",
@@ -3687,6 +3692,7 @@ export const albums = [
   {
     id: 89,
     title: "Immunity (LP)",
+    spotifyAlbumId: "2DDv7gTOpB3D3kDEHddP9z",
     artist: ["Clairo"],
     price: 99.99,
     genre: "Alternative",
@@ -3716,7 +3722,10 @@ export const albums = [
     sleeveColor: "gray",
     accentColor: "gray",
     format: "vinyl",
-    description: "Immunity amerikalı müğənni-bəstəkar Clairo-nun 2 avqust 2019-cu ildə çıxan debüt studiya albomudur. Albom Clairo və əvvəllər Vampire Weekend qrupundan olan Rostam Batmanglij tərəfindən birgə istehsal olunub.",
+    description: "“Big Mama” amerikalı reper Lattonun dördüncü studiya albomudur. 29 may 2026-cı ildə Streamcut və RCA Records vasitəsilə satışa çıxarılıb. Albom onun 2024-cü ildə çıxan “Sugar Honey Iced Tea” albomunun davamı olaraq təqdim olunur və üç sinql ilə dəstəklənir: “Somebody”, “Business and Personal (Intro)” və “GOMF”. Albomda GloRilla, Doja Cat, 21 Savage, Sexyy Red, Mariah the Scientist, Odeal, Wizkid, Teyana Taylor və Jelly Roll qonaq çıxışları var.",
+    tracklist: [
+      { id: 1, name: "Business & Personal (Intro)", isExplicit: true, duration: "5:33" },
+    ]
   },
   {
     id: 91,

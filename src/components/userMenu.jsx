@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { User, Package, LogOut } from "lucide-react";
 import { Button } from "./ui/Button.tsx";
 import { Orders } from "./Orders";
+import { useLanguage } from "./LanguageContext.jsx";
 
 export const UserMenu = () => {
   const [open, setOpen] = useState(false);
   const [showOrders, setShowOrders] = useState(false);
+  const { t } = useLanguage();
 
   const handleOrdersClick = () => {
     setShowOrders(true);
@@ -13,8 +15,8 @@ export const UserMenu = () => {
   };
 
   const menuItems = [
-    { name: "Sifarişlər", icon: <Package className="w-4 h-4" />, action: handleOrdersClick },
-    { name: "Çıxış", icon: <LogOut className="w-4 h-4" /> },
+    { name: t.orders, icon: <Package className="w-4 h-4" />, action: handleOrdersClick },
+    { name: t.logout, icon: <LogOut className="w-4 h-4" /> },
   ];
 
   return (
@@ -60,7 +62,7 @@ export const UserMenu = () => {
           <Orders />
           <div className="mt-3 text-right">
             <Button variant="ghost" size="sm" onClick={() => setShowOrders(false)}>
-              Bağla
+              {t.close}
             </Button>
           </div>
         </div>

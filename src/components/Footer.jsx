@@ -1,11 +1,14 @@
 import { Instagram, Twitter, Youtube, Facebook } from "lucide-react";
+import { useLanguage } from "./LanguageContext.jsx";
 
 export const Footer = () => {
+  const { t } = useLanguage();
+
   const footerLinks = {
-    Mağaz: ["Yeni Gəlişlər", "Ən çox Satılanlar", "Əvvəlcədən Sifarişlər", "Satış"],
-    Janrlar: ["Jazz", "Rock", "Electronic", "Classik", "Hip-Hop"],
-    Dəstək: ["Bizimlə Əlaqə", "Göndərmə Məlumatı", "Qaytarılmalar", "Tez-Tez verilən suallar"],
-    Şirkət: ["Haqqımızda", "Karyeralar", "Bloq"],
+    [t.footerShop]: [t.footerNewArrivals, t.footerBestSellers, t.footerPreOrders, t.footerSale],
+    [t.footerGenres]: ["Jazz", "Rock", "Electronic", "Classic", "Hip-Hop"],
+    [t.footerSupport]: [t.footerContact, t.footerShipping, t.footerReturns, t.footerFaq],
+    [t.footerCompany]: [t.footerAbout, t.footerCareers, t.footerBlog],
   };
 
   return (
@@ -20,7 +23,7 @@ export const Footer = () => {
               <span className="font-serif text-2xl font-bold">Backrooms</span>
             </a>
             <p className="text-muted-foreground text-sm mb-6">
-              Premium vinil valları üçün məkanınız. Musiqini eşitmək üçün nəzərdə tutulduğu kimi yaşayın.
+              {t.footerTagline}
             </p>
             <div className="flex gap-4">
               {[Instagram, Twitter, Youtube].map((Icon, index) => (
@@ -56,11 +59,11 @@ export const Footer = () => {
 
         <div className="border-t border-border mt-16 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2026 Backrooms. Bütün hüquqlar qorunur.
+            {t.footerRights}
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Məxfilik Siyasəti</a>
-            <a href="#" className="hover:text-foreground transition-colors">Xidmət Şərtləri</a>
+            <a href="#" className="hover:text-foreground transition-colors">{t.privacyPolicy}</a>
+            <a href="#" className="hover:text-foreground transition-colors">{t.termsOfService}</a>
           </div>
         </div>
       </div>

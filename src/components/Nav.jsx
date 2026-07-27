@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useShopifyCart } from "../contexts/Shopifycartcontext";
 import { CartSidebar } from "./CartSidebar";
 
@@ -8,20 +9,22 @@ import { UserMenu } from "./UserMenu";
 import { Settings } from "./Settings";
 import { SearchEngine } from "./SearchEngine";
 import { useFavorites } from "./FavoritesSystem";
+import { useLanguage } from "./LanguageContext.jsx";
 
 export const Nav = ({ albums }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { favoritesCount } = useFavorites();
   const { cartCount } = useShopifyCart();
+  const { t } = useLanguage();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
   const navLinks = [
-    { name: "Yeni Gələnlər", href: "#new" },
-    { name: "Janrlar", href: "#genres" },
-    { name: "Sifariş", href: "#orders" },
-    { name: "Haqqımızda", href: "#about" },
+    { name: t.navNew, href: "#new" },
+    { name: t.navGenres, href: "#genres" },
+    { name: t.navOrders, href: "#orders" },
+    { name: t.navAbout, href: "#about" },
   ];
 
   return (
@@ -57,6 +60,7 @@ export const Nav = ({ albums }) => {
                 size="icon"
                 className="text-foreground"
                 onClick={() => setShowSearch(!showSearch)}
+                aria-label={t.searchPlaceholderShort}
               >
                 <Search className="w-5 h-5" />
               </Button>
@@ -67,6 +71,7 @@ export const Nav = ({ albums }) => {
                 size="icon"
                 className="text-foreground relative"
                 onClick={() => setCartOpen(true)}
+                aria-label={t.cart}
               >
                 <ShoppingBag className="w-5 h-5" />
                 {cartCount > 0 && (
@@ -77,11 +82,13 @@ export const Nav = ({ albums }) => {
               </Button>
 
               {/* Favorites */}
-              <Button variant="ghost" size="icon" className="text-foreground relative">
-                <Heart className="w-5 h-5" />
-                <span className="absolute -top-1 -right-1 w-4 h-4 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">
-                  {favoritesCount}
-                </span>
+              <Button variant="ghost" size="icon" className="text-foreground relative" asChild>
+                <Link to="/favorites" aria-label={t.favoritesTitle}>
+                  <Heart className="w-5 h-5" />
+                  <span className="absolute -top-1 -right-1 w-4 h-4 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">
+                    {favoritesCount}
+                  </span>
+                </Link>
               </Button>
 
               {/* Settings */}
@@ -90,6 +97,7 @@ export const Nav = ({ albums }) => {
                 size="icon"
                 onClick={() => setSettingsOpen(true)}
                 className="text-foreground"
+                aria-label={t.settings}
               >
                 <SettingsIcon className="w-5 h-5" />
               </Button>

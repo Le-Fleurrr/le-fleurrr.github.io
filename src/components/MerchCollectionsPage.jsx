@@ -4,8 +4,15 @@ import { Button } from "./ui/Button.tsx";
 import { ShoppingCart, Heart, Filter, X, ChevronRight, ArrowLeft } from "lucide-react";
 import { Merch, MerchCategories } from "./Merch.jsx";
 import { artistProfiles } from "./ArtistProfiles.jsx";
+import { useLanguage } from "./LanguageContext.jsx";
+
+// Category names in the data are inconsistently cased ("ANTAGONIST 2.0" vs
+// "Antagonist 2.0"), so all category comparisons are case-insensitive.
+const sameCategory = (a, b) =>
+  String(a || "").trim().toLowerCase() === String(b || "").trim().toLowerCase();
 
 export const MerchCollectionsPage = () => {
+  const { t } = useLanguage();
   const [hoveredId, setHoveredId] = useState(null);
   const [artistFilter, setArtistFilter] = useState("All");
   const [yearFilter, setYearFilter] = useState("All");
@@ -48,7 +55,7 @@ export const MerchCollectionsPage = () => {
   let filteredMerch = normalizedMerch.filter((item) => {
     const yearMatch = yearFilter === "All" || item.year.toString() === yearFilter;
     const artistMatch = artistFilter === "All" || item.artist.includes(artistFilter);
-    const categoryMatch = !selectedCategory || item.category === selectedCategory;
+    const categoryMatch = !selectedCategory || sameCategory(item.category, selectedCategory);
     return yearMatch && artistMatch && categoryMatch;
   });
 
@@ -75,17 +82,17 @@ export const MerchCollectionsPage = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="mb-12">
           <Link to="/" className="text-primary hover:underline mb-4 inline-block">
-            ← Ana səhifəyə qayıt
+            ← {t.backHome}
           </Link>
           <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4">
-            Merch Kolleksiyası
+            {t.merchCollection}
           </h1>
           <p className="text-muted-foreground text-lg">
-            {viewMode === "categories" 
-              ? `${MerchCategories?.length || 0} kateqoriya`
+            {viewMode === "categories"
+              ? `${(MerchCategories || []).filter(c => normalizedMerch.some(i => sameCategory(i.category, c.name))).length} ${t.categoriesWord}`
               : viewMode === "subcategories"
-              ? `${selectedCategory} - ${artistCollections.filter(c => normalizedMerch.some(m => m.artist.includes(c.artist) && m.category === selectedCategory)).length} ifaçı`
-              : `${filteredMerch.length} Məhsul tapıldı`}
+              ? `${selectedCategory} - ${artistCollections.filter(c => normalizedMerch.some(m => m.artist.includes(c.artist) && sameCategory(m.category, selectedCategory))).length} ${t.artistsWord}`
+              : `${filteredMerch.length} ${t.productsFound}`}
           </p>
         </div>
 
@@ -99,55 +106,58 @@ export const MerchCollectionsPage = () => {
             className="mb-8 gap-2"
           >
             <ArrowLeft className="w-4 h-4" />
-            Kateqoriyalara qayıt
+            {t.backToCategories}
           </Button>
         )}
 
         {viewMode === "categories" && MerchCategories && (
           <div className="space-y-12">
             {MerchCategories.map((category) => {
-              const categoryMerch = normalizedMerch.filter(item => item.category === category.name);
-              
+              const categoryMerch = normalizedMerch.filter(item => sameCategory(item.category, category.name));
+              if (categoryMerch.length === 0) return null;
+
               return (
-                <div key={category.name} className="space-y-6">
-                  <div 
-                    className="relative h-96 rounded-2xl overflow-hidden cursor-pointer group"
-                    onClick={() => {
-                      setSelectedCategory(category.name);
-                      setViewMode("subcategories");
-                    }}
-                  >
-                    {category.banner ? (
-                      <div className="absolute inset-0 bg-black">
-                        <img
-                          src={category.banner}
-                          alt={category.name}
-                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
-                        />
-                      </div>
-                    ) : (
-                      <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black" />
-                    )}
+                <div
+                  key={category.name}
+                  className="relative h-72 md:h-96 rounded-2xl overflow-hidden cursor-pointer group border border-border hover:border-primary/60 shadow-lg hover:shadow-2xl transition-all duration-300"
+                  onClick={() => {
+                    setSelectedCategory(category.name);
+                    setViewMode("subcategories");
+                  }}
+                >
+                  {category.banner ? (
+                    <div className="absolute inset-0 bg-black">
+                      <img
+                        src={category.banner}
+                        alt={category.name}
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black" />
+                  )}
 
-                  </div>
-
-                  <div className="text-center space-y-4 py-6">
-                    <h2 className="text-6xl md:text-8xl font-black text-white tracking-tight uppercase">
-                      {category.name}
-                    </h2>
-                    <p className="text-2xl text-muted-foreground font-bold">
-                      {categoryMerch.length} Məhsul
-                    </p>
+                  {/* Overlay text sits on a dark gradient, so white is safe in both themes */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div>
+                      <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase drop-shadow-lg">
+                        {category.name}
+                      </h2>
+                      <p className="text-white/70 font-semibold mt-1">
+                        {categoryMerch.length} {t.productsWord}
+                      </p>
+                    </div>
                     <Button
                       size="lg"
-                      className="gap-2 text-lg px-8 py-6 hover:scale-110 transition-transform"
+                      className="gap-2 self-start sm:self-auto shadow-xl"
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedCategory(category.name);
                         setViewMode("subcategories");
                       }}
                     >
-                      Kolleksiyaya Bax
+                      {t.viewCollection}
                       <ChevronRight className="w-5 h-5" />
                     </Button>
                   </div>
@@ -160,12 +170,12 @@ export const MerchCollectionsPage = () => {
         {viewMode === "subcategories" && selectedCategory && (
           <div className="space-y-12">
             {artistCollections
-              .filter(collection => normalizedMerch.some(m => m.artist.includes(collection.artist) && m.category === selectedCategory))
+              .filter(collection => normalizedMerch.some(m => m.artist.includes(collection.artist) && sameCategory(m.category, selectedCategory)))
               .map((collection) => {
               return (
                 <div key={collection.artist} className="space-y-6">
-                  <div 
-                    className="relative h-96 rounded-2xl overflow-hidden cursor-pointer group"
+                  <div
+                    className="relative h-64 md:h-80 rounded-2xl overflow-hidden cursor-pointer group border border-border hover:border-primary/60 shadow-lg hover:shadow-2xl transition-all duration-300"
                     onClick={() => {
                       setArtistFilter(collection.artist);
                       setViewMode("all");
@@ -183,38 +193,39 @@ export const MerchCollectionsPage = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black" />
                     )}
 
-                   
-                  </div>
-
-                  <div className="text-center space-y-4 py-6">
-                    <h2 className="text-6xl md:text-8xl font-black text-white tracking-tight uppercase">
-                      {collection.artist}
-                    </h2>
-                    <p className="text-2xl text-muted-foreground font-bold">
-                      {collection.merch.filter(m => m.category === selectedCategory).length} Məhsul
-                    </p>
-                    <Button
-                      size="lg"
-                      className="gap-2 text-lg px-8 py-6 hover:scale-110 transition-transform"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setArtistFilter(collection.artist);
-                        setViewMode("all");
-                      }}
-                    >
-                      Kolleksiyaya Bax
-                      <ChevronRight className="w-5 h-5" />
-                    </Button>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                      <div>
+                        <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase drop-shadow-lg">
+                          {collection.artist}
+                        </h2>
+                        <p className="text-white/70 font-semibold mt-1">
+                          {collection.merch.filter(m => sameCategory(m.category, selectedCategory)).length} {t.productsWord}
+                        </p>
+                      </div>
+                      <Button
+                        size="lg"
+                        className="gap-2 self-start sm:self-auto shadow-xl"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setArtistFilter(collection.artist);
+                          setViewMode("all");
+                        }}
+                      >
+                        {t.viewCollection}
+                        <ChevronRight className="w-5 h-5" />
+                      </Button>
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                    {collection.merch.filter(m => m.category === selectedCategory).slice(0, 5).map((item) => (
+                    {collection.merch.filter(m => sameCategory(m.category, selectedCategory)).slice(0, 5).map((item) => (
                       <div
                         key={item.id}
-                        className="group cursor-pointer"
+                        className="group cursor-pointer bg-card border border-border rounded-xl p-3 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                         onClick={() => navigate(`/merch/${item.id}`)}
                       >
-                        <div className="aspect-square rounded-lg overflow-hidden border border-border mb-3 group-hover:shadow-xl transition-shadow bg-black">
+                        <div className="aspect-square rounded-lg overflow-hidden mb-3 bg-black">
                           {item.image ? (
                             <img
                               src={item.image}
@@ -234,7 +245,7 @@ export const MerchCollectionsPage = () => {
                       </div>
                     ))}
                     
-                    {collection.merch.filter(m => m.category === selectedCategory).length > 5 && (
+                    {collection.merch.filter(m => sameCategory(m.category, selectedCategory)).length > 5 && (
                       <div
                         className="aspect-square rounded-lg border-2 border-dashed border-border hover:border-primary transition-colors cursor-pointer flex items-center justify-center bg-card/50"
                         onClick={() => {
@@ -245,7 +256,7 @@ export const MerchCollectionsPage = () => {
                         <div className="text-center p-4">
                           <ChevronRight className="w-8 h-8 mx-auto mb-2 text-muted-foreground" />
                           <p className="text-sm font-semibold">
-                            +{collection.merch.filter(m => m.category === selectedCategory).length - 5} daha
+                            +{collection.merch.filter(m => sameCategory(m.category, selectedCategory)).length - 5} {t.moreWord}
                           </p>
                         </div>
                       </div>
@@ -267,7 +278,7 @@ export const MerchCollectionsPage = () => {
                   className="gap-2"
                 >
                   <Filter className="w-4 h-4" />
-                  Filtrlər {hasActiveFilters && `(${[artistFilter !== "All", yearFilter !== "All", sortOrder !== "none"].filter(Boolean).length})`}
+                  {t.filters} {hasActiveFilters && `(${[artistFilter !== "All", yearFilter !== "All", sortOrder !== "none"].filter(Boolean).length})`}
                 </Button>
 
                 {hasActiveFilters && (
@@ -277,7 +288,7 @@ export const MerchCollectionsPage = () => {
                     className="gap-2 text-muted-foreground hover:text-foreground"
                   >
                     <X className="w-4 h-4" />
-                    Təmizlə
+                    {t.clear}
                   </Button>
                 )}
 
@@ -305,13 +316,13 @@ export const MerchCollectionsPage = () => {
                 <div className="bg-card border border-border rounded-xl p-6 space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <label className="block text-sm font-medium mb-2">İfaçı</label>
+                      <label className="block text-sm font-medium mb-2">{t.artistLabel}</label>
                       <select
                         value={artistFilter}
                         onChange={(e) => setArtistFilter(e.target.value)}
                         className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       >
-                        <option value="All">Hamısı</option>
+                        <option value="All">{t.all}</option>
                         {allArtists.map((artist) => (
                           <option key={artist} value={artist}>
                             {artist}
@@ -321,13 +332,13 @@ export const MerchCollectionsPage = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium mb-2">İl</label>
+                      <label className="block text-sm font-medium mb-2">{t.yearLabel}</label>
                       <select
                         value={yearFilter}
                         onChange={(e) => setYearFilter(e.target.value)}
                         className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       >
-                        <option value="All">Hamısı</option>
+                        <option value="All">{t.all}</option>
                         {allYears.map((year) => (
                           <option key={year} value={year}>
                             {year}
@@ -337,17 +348,17 @@ export const MerchCollectionsPage = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium mb-2">Sırala</label>
+                      <label className="block text-sm font-medium mb-2">{t.sortLabel}</label>
                       <select
                         value={sortOrder}
                         onChange={(e) => setSortOrder(e.target.value)}
                         className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       >
-                        <option value="none">Standart</option>
-                        <option value="price-low">Qiymət: Azdan Çoxa</option>
-                        <option value="price-high">Qiymət: Çoxdan Aza</option>
-                        <option value="year-new">İl: Yenidən Köhnəyə</option>
-                        <option value="year-old">İl: Köhnədən Yeniyə</option>
+                        <option value="none">{t.sortDefault}</option>
+                        <option value="price-low">{t.priceLowHigh}</option>
+                        <option value="price-high">{t.priceHighLow}</option>
+                        <option value="year-new">{t.yearNewOld}</option>
+                        <option value="year-old">{t.yearOldNew}</option>
                       </select>
                     </div>
                   </div>
@@ -357,9 +368,9 @@ export const MerchCollectionsPage = () => {
 
             {filteredMerch.length === 0 ? (
               <div className="text-center py-20">
-                <p className="text-muted-foreground text-lg">Heç bir məhsul tapılmadı</p>
+                <p className="text-muted-foreground text-lg">{t.noProductsFound}</p>
                 <Button onClick={clearFilters} className="mt-4">
-                  Filtrləri Təmizlə
+                  {t.clearFilters}
                 </Button>
               </div>
             ) : (
@@ -372,37 +383,37 @@ export const MerchCollectionsPage = () => {
                     onMouseLeave={() => setHoveredId(null)}
                     onClick={() => navigate(`/merch/${item.id}`)}
                   >
-                    <div className="relative mb-4 aspect-square bg-card rounded-lg overflow-hidden border border-border hover:shadow-xl transition-shadow">
-                      {item.image ? (
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-muted">
-                          <ShoppingCart className="w-12 h-12 text-muted-foreground" />
-                        </div>
-                      )}
-                      
-                      {item.isNew && (
-                        <span className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">
-                          YENI
-                        </span>
-                      )}
-                    </div>
+                    <div className="bg-card border border-border rounded-xl p-3 group-hover:border-primary/50 group-hover:shadow-lg group-hover:-translate-y-1 transition-all duration-300">
+                      <div className="relative mb-3 aspect-square bg-black rounded-lg overflow-hidden">
+                        {item.image ? (
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center bg-muted">
+                            <ShoppingCart className="w-12 h-12 text-muted-foreground" />
+                          </div>
+                        )}
 
-                    <div>
-                      <h3 className="font-semibold text-white group-hover:text-primary transition truncate mb-1">
+                        {item.isNew && (
+                          <span className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full shadow">
+                            {t.newBadge}
+                          </span>
+                        )}
+                      </div>
+
+                      <h3 className="font-semibold text-foreground group-hover:text-primary transition truncate mb-1">
                         {item.title}
                       </h3>
-                      
-                      <p className="text-sm text-muted-foreground truncate mb-1">
+
+                      <p className="text-sm text-muted-foreground truncate mb-2">
                         {item.artist.join(" & ")}
                       </p>
-                      
-                      <div className="flex items-center justify-between">
-                        <p className="text-sm text-muted-foreground">{item.year}</p>
+
+                      <div className="flex items-center justify-between pt-2 border-t border-border">
+                        <p className="text-xs text-muted-foreground">{item.year}</p>
                         <p className="font-bold text-primary">{item.price} ₼</p>
                       </div>
                     </div>

@@ -725,7 +725,7 @@ export const Merch = [
     description: "Daxili suya davamlı PU örtüklü 100% neylon.",
   },
   {
-    id: 38,
+    id: 37,
     title: "HL2 Hardy Hoodie",
     artist: ["Homixide Gang"],
     category: "Antagonist 2.0",
