@@ -199,10 +199,6 @@ const HL2WhiteFlamesHat = {
   front: "https://res.cloudinary.com/deroy68n9/image/upload/v1769013823/TRUCKER_white_1_jcfxfb.gif",
 };
 
-const SL01 = {
-  front: ""
-}
-
 export const MerchCategories = [
   {
     name: "ANTAGONIST 2.0",
@@ -211,6 +207,10 @@ export const MerchCategories = [
   {
     name: "YEEZY",
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1777801546/Adidas_Yeezy_Logo_ve9qix_rxknb0.png",
+  },
+  {
+    name: "THE WEEKND",
+    banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1785157142/g3muq0jxsgce1_ognw7j.jpg"
   },
 ];
 

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, ShoppingCart } from 'lucide-react';
 import { Accessories, AccessoryCategories } from './Accessories';
 import { Button } from './ui/Button';
-import { useLanguage } from './LanguageContext.jsx';
+import { useLanguage, localizeText } from './LanguageContext.jsx';
 
 export function AccessoriesSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const categoryNames = {
@@ -85,7 +85,7 @@ export function AccessoriesSection() {
                   {item.name}
                 </h3>
                 <p className="text-xs text-muted-foreground mb-3 line-clamp-1">
-                  {item.description}
+                  {localizeText(item.description, language)}
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-lg">{item.price} ₼</span>

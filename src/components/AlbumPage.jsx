@@ -10,7 +10,7 @@ import { FavoriteButton } from './FavoritesSystem';
 import { previewPlayer } from './audioPreviewPlayer.js';
 import { useSpotifyTracklist } from './useSpotifyTracklist.js';
 import { useShopifyCart } from '../contexts/Shopifycartcontext';
-import { useLanguage } from './LanguageContext.jsx';
+import { useLanguage, localizeText } from './LanguageContext.jsx';
 import { toast } from 'sonner';
 import { useAuth } from '../contexts/authContext';
 import { loadInteractions, addInteraction, addReplyToInteraction } from './albumInteractions.js';
@@ -63,7 +63,7 @@ const FeaturesList = ({ features }) => {
 const AlbumPage = () => {
   const { albumId } = useParams();
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { currentUser } = useAuth();
   const { addToCart, loading: cartLoading } = useShopifyCart();
   const album = albums.find((a) => a.id === parseInt(albumId || "", 10));
@@ -384,7 +384,7 @@ const AlbumPage = () => {
                 {album.description && (
                   <div>
                     <h3 className="text-lg font-semibold mb-2">{t.description}</h3>
-                    <p className="text-muted-foreground">{album.description}</p>
+                    <p className="text-muted-foreground">{localizeText(album.description, language)}</p>
                   </div>
                 )}
 

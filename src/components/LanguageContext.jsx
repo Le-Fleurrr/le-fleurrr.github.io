@@ -699,6 +699,16 @@ const translations = {
   }
 };
 
+// Returns the right variant of a translatable data field.
+// Accepts either a plain string (returned unchanged) or an object like
+// { az: "...", en: "...", ru: "..." } — falls back to az, then to any value.
+export const localizeText = (value, language) => {
+  if (value && typeof value === "object") {
+    return value[language] || value.az || Object.values(value)[0] || "";
+  }
+  return value;
+};
+
 const LanguageContext = createContext(null);
 
 export const LanguageProvider = ({ children }) => {

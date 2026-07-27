@@ -2643,7 +2643,11 @@ export const albums = [
     sleeveColor: "grey",
     accentColor: "grey",
     format: "vinyl",
-    description: "“Bully” amerikalı reper Kanye Westin on ikinci studiya albomudur. Albom 28 mart 2026-cı ildə YZY və Gamma tərəfindən buraxılmışdır. Vest albomu musiqi direktoru Andre Troutman, Legendary Traxster, 88-Keys və James Blake ilə birlikdə hazırlamışdır. Troutman həmçinin Travis Scott, CeeLo Green, Peso Pluma və Don Toliver ilə birlikdə qonaq qismində çıxış edir, əlavə olaraq Nine Vicious və Ty Dolla Sign qrupları da vokal çıxışları etmişdir.",
+    description: {
+      az: "“Bully” amerikalı reper Kanye Westin on ikinci studiya albomudur. Albom 28 mart 2026-cı ildə YZY və Gamma tərəfindən buraxılmışdır. Vest albomu musiqi direktoru Andre Troutman, Legendary Traxster, 88-Keys və James Blake ilə birlikdə hazırlamışdır. Troutman həmçinin Travis Scott, CeeLo Green, Peso Pluma və Don Toliver ilə birlikdə qonaq qismində çıxış edir, əlavə olaraq Nine Vicious və Ty Dolla Sign qrupları da vokal çıxışları etmişdir.",
+      en: "“Bully” is the twelfth studio album by American rapper Kanye West, released on March 28, 2026 by YZY and Gamma. West produced the album alongside musical director Andre Troutman, Legendary Traxster, 88-Keys and James Blake. Troutman also appears as a guest together with Travis Scott, CeeLo Green, Peso Pluma and Don Toliver, with additional vocals from Nine Vicious and Ty Dolla Sign.",
+      ru: "«Bully» — двенадцатый студийный альбом американского рэпера Канье Уэста, выпущенный 28 марта 2026 года лейблами YZY и Gamma. Уэст создал альбом вместе с музыкальным директором Андре Траутманом, Legendary Traxster, 88-Keys и Джеймсом Блейком. Траутман также выступает в качестве гостя вместе с Трэвисом Скоттом, CeeLo Green, Peso Pluma и Доном Толивером; дополнительный вокал — Nine Vicious и Ty Dolla Sign.",
+    },
     tracklist: [
       { id: 1, name: "PREACHER MAN", isExplicit: false, duration: "3:01", spotifyEmbed: "https://open.spotify.com/embed/track/0fD7KBtQgPR1YCtuPAsyZJ?si=ac12d9c60a5a40b9" },
       { id: 2, name: "BEAUTY AND THE BEAST", isExplicit: false, duration: "1:45", spotifyEmbed: "https://open.spotify.com/embed/track/6pxHjkpwGmg97Yn5HcwNTn?si=32667000f7044506" },
@@ -2686,7 +2690,11 @@ export const albums = [
     vinylImages: bullyCD.vinyl,
     accentColor: "grey",
     format: "cd",
-    description: "“Bully” amerikalı reper Kanye Westin on ikinci studiya albomudur. Albom 28 mart 2026-cı ildə YZY və Gamma tərəfindən buraxılmışdır. Vest albomu musiqi direktoru Andre Troutman, Legendary Traxster, 88-Keys və James Blake ilə birlikdə hazırlamışdır. Troutman həmçinin Travis Scott, CeeLo Green, Peso Pluma və Don Toliver ilə birlikdə qonaq qismində çıxış edir, əlavə olaraq Nine Vicious və Ty Dolla Sign qrupları da vokal çıxışları etmişdir.",
+    description: {
+      az: "“Bully” amerikalı reper Kanye Westin on ikinci studiya albomudur. Albom 28 mart 2026-cı ildə YZY və Gamma tərəfindən buraxılmışdır. Vest albomu musiqi direktoru Andre Troutman, Legendary Traxster, 88-Keys və James Blake ilə birlikdə hazırlamışdır. Troutman həmçinin Travis Scott, CeeLo Green, Peso Pluma və Don Toliver ilə birlikdə qonaq qismində çıxış edir, əlavə olaraq Nine Vicious və Ty Dolla Sign qrupları da vokal çıxışları etmişdir.",
+      en: "“Bully” is the twelfth studio album by American rapper Kanye West, released on March 28, 2026 by YZY and Gamma. West produced the album alongside musical director Andre Troutman, Legendary Traxster, 88-Keys and James Blake. Troutman also appears as a guest together with Travis Scott, CeeLo Green, Peso Pluma and Don Toliver, with additional vocals from Nine Vicious and Ty Dolla Sign.",
+      ru: "«Bully» — двенадцатый студийный альбом американского рэпера Канье Уэста, выпущенный 28 марта 2026 года лейблами YZY и Gamma. Уэст создал альбом вместе с музыкальным директором Андре Траутманом, Legendary Traxster, 88-Keys и Джеймсом Блейком. Траутман также выступает в качестве гостя вместе с Трэвисом Скоттом, CeeLo Green, Peso Pluma и Доном Толивером; дополнительный вокал — Nine Vicious и Ty Dolla Sign.",
+    },
     tracklist: [
       { id: 1, name: "PREACHER MAN", isExplicit: false, duration: "3:01", spotifyEmbed: "https://open.spotify.com/embed/track/0fD7KBtQgPR1YCtuPAsyZJ?si=ac12d9c60a5a40b9" },
       { id: 2, name: "BEAUTY AND THE BEAST", isExplicit: false, duration: "1:45", spotifyEmbed: "https://open.spotify.com/embed/track/6pxHjkpwGmg97Yn5HcwNTn?si=32667000f7044506" },
@@ -2719,7 +2727,11 @@ export const albums = [
     vinylImages: bullyCassette.vinyl,
     accentColor: "grey",
     format: "cassette",
-    description: "“Bully” amerikalı reper Kanye Westin on ikinci studiya albomudur. Albom 28 mart 2026-cı ildə YZY və Gamma tərəfindən buraxılmışdır. Vest albomu musiqi direktoru Andre Troutman, Legendary Traxster, 88-Keys və James Blake ilə birlikdə hazırlamışdır. Troutman həmçinin Travis Scott, CeeLo Green, Peso Pluma və Don Toliver ilə birlikdə qonaq qismində çıxış edir, əlavə olaraq Nine Vicious və Ty Dolla Sign qrupları da vokal çıxışları etmişdir.",
+    description: {
+      az: "“Bully” amerikalı reper Kanye Westin on ikinci studiya albomudur. Albom 28 mart 2026-cı ildə YZY və Gamma tərəfindən buraxılmışdır. Vest albomu musiqi direktoru Andre Troutman, Legendary Traxster, 88-Keys və James Blake ilə birlikdə hazırlamışdır. Troutman həmçinin Travis Scott, CeeLo Green, Peso Pluma və Don Toliver ilə birlikdə qonaq qismində çıxış edir, əlavə olaraq Nine Vicious və Ty Dolla Sign qrupları da vokal çıxışları etmişdir.",
+      en: "“Bully” is the twelfth studio album by American rapper Kanye West, released on March 28, 2026 by YZY and Gamma. West produced the album alongside musical director Andre Troutman, Legendary Traxster, 88-Keys and James Blake. Troutman also appears as a guest together with Travis Scott, CeeLo Green, Peso Pluma and Don Toliver, with additional vocals from Nine Vicious and Ty Dolla Sign.",
+      ru: "«Bully» — двенадцатый студийный альбом американского рэпера Канье Уэста, выпущенный 28 марта 2026 года лейблами YZY и Gamma. Уэст создал альбом вместе с музыкальным директором Андре Траутманом, Legendary Traxster, 88-Keys и Джеймсом Блейком. Траутман также выступает в качестве гостя вместе с Трэвисом Скоттом, CeeLo Green, Peso Pluma и Доном Толивером; дополнительный вокал — Nine Vicious и Ty Dolla Sign.",
+    },
     tracklist: [
       { id: 1, name: "PREACHER MAN", isExplicit: false, duration: "3:01", spotifyEmbed: "https://open.spotify.com/embed/track/0fD7KBtQgPR1YCtuPAsyZJ?si=ac12d9c60a5a40b9" },
       { id: 2, name: "BEAUTY AND THE BEAST", isExplicit: false, duration: "1:45", spotifyEmbed: "https://open.spotify.com/embed/track/6pxHjkpwGmg97Yn5HcwNTn?si=32667000f7044506" },
@@ -3422,7 +3434,7 @@ export const albums = [
   {
     id: 3418,
     title: "xperiment (2LP)",
-    spotifyAlbumId: "1qO5gHs2mJWd9Nx4dqvAMG",
+    spotifyAlbumId: "0EOwIqfcx025yJLSIpcNi9",
     artist: ["Ken Carson"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -3435,12 +3447,39 @@ export const albums = [
     sleeveColor: "red",
     vinylColor: "red",
     format: "vinyl",
-    description: "Xperiment amerikalı reper Ken Karsonun 3 iyul 2026-cı ildə Opium və Interscope Records vasitəsilə buraxılan beşinci studiya albomudur. Xperiment 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti və Young Thug ilə əməkdaşlıq edir. Karsonun albomu dəstəkləmək üçün 2026-cı ilin avqust-sentyabr aylarında Şimali Amerikada Xperimenting Turuna çıxması planlaşdırılır. Albom tənqidçilərdən müsbət rəylər aldı və ABŞ Billboard 200-də yeddinci yerdə debüt etdiyi ilk həftədə 42.000 albom ekvivalenti qazandı."
+    description: "Xperiment amerikalı reper Ken Karsonun 3 iyul 2026-cı ildə Opium və Interscope Records vasitəsilə buraxılan beşinci studiya albomudur. Xperiment 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti və Young Thug ilə əməkdaşlıq edir. Karsonun albomu dəstəkləmək üçün 2026-cı ilin avqust-sentyabr aylarında Şimali Amerikada Xperimenting Turuna çıxması planlaşdırılır. Albom tənqidçilərdən müsbət rəylər aldı və ABŞ Billboard 200-də yeddinci yerdə debüt etdiyi ilk həftədə 42.000 albom ekvivalenti qazandı.",
+    tracklist: [
+      { name: "wheredoistart", isExplicit: true, duration: "2:43", spotifyEmbed: "https://open.spotify.com/embed/track/1lJWyDulWuGHlPccvRdZVs" },
+      { name: "deaf note", features: "Ken Carson & Playboi Carti", isExplicit: true, duration: "3:18", spotifyEmbed: "hhttps://open.spotify.com/embed/track/17BcTd9O7iLnHQfGo31ntV" },
+      { name: "shadeson", isExplicit: true, features:"Ken Carson & 2hollis", duration: "1:58", spotifyEmbed: "https://open.spotify.com/embed/track/7155NVwKKJjtQtssuaqgJ9" },
+      { name: "gynecologist", isExplicit: true, duration: "2:15", spotifyEmbed: "https://open.spotify.com/embed/track/6AoCjfTG81tgoy08bOLX2H" },
+      { name: "wrist", isExplicit: true, duration: "2:50", spotifyEmbed: "https://open.spotify.com/embed/track/2LLALDUCUNpRPNNGLOwOrq" },
+      { name: "edm", isExplicit: true, duration: "3:28", spotifyEmbed: "https://open.spotify.com/embed/track/3XhMqaH1IhunxatNHlPZED" },
+      { name: "truth", isExplicit: true, duration: "2:26", spotifyEmbed: "https://open.spotify.com/embed/track/51bG14rUj0hyH1Ts8vmbZt" },
+      { name: "outofmybody", isExplicit: true, duration: "2:01", spotifyEmbed: "https://open.spotify.com/embed/track/4JFYg64vXvuTeWUMYKJH6A" },
+      { name: "the ritual", isExplicit: true, duration: "2:40", spotifyEmbed: "https://open.spotify.com/embed/track/3Tfu5jSKfVpjHxwteBnJC8" },
+      { name: "interlude", isExplicit: true, duration: "1:28", spotifyEmbed: "https://open.spotify.com/embed/track/1GXj5hng2c7W42ZCwhjxna" },
+      { name: "ghost", features: "Ken Carson & Lil Uzi Vert", isExplicit: true, duration: "3:53", spotifyEmbed: "https://open.spotify.com/embed/track/5l2JiMegRp9HTtnlVDDdJb" },
+      { name: "drug kit", features: "Ken Carson & Young Thug", isExplicit: true, duration: "3:27", spotifyEmbed: "https://open.spotify.com/embed/track/1QW7B0KaSknMeHfhBTRWky" },
+      { name: "possesion", isExplicit: true, duration: "2:13", spotifyEmbed: "https://open.spotify.com/embed/track/7fqzm05AMU8nxELARCtGZr" },
+      { name: "fw00", isExplicit: true, duration: "2:42", spotifyEmbed: "https://open.spotify.com/embed/track/0oxF7piKUJQDaM5hyK7DbD" },
+      { name: "somanybags", isExplicit: true, duration: "1:49", spotifyEmbed: "https://open.spotify.com/embed/track/2uOrtaTKpLlCnpW9wy0ldX" },
+      { name: "shopping", isExplicit: true, features: "Ken Carson & Destroy Lonely", duration: "3:59", spotifyEmbed: "https://open.spotify.com/embed/track/7xKm3Uo6n2yHS4pfKjD1xY" },
+      { name: "amandabynes", isExplicit: true, duration: "2:30", spotifyEmbed: "https://open.spotify.com/embed/track/2jwUDUQcIAuEBh7qqabhwM" },
+      { name: "amnesia", isExplicit: true, duration: "2:20", spotifyEmbed: "https://open.spotify.com/embed/track/6nqUtTNGowzyJYhuIuZj9Z" },
+      { name: "flamethrower", isExplicit: true, duration: "2:19", spotifyEmbed: "https://open.spotify.com/embed/track/5wJAqGjFPUPZVqk1f3k3PO" },
+      { name: "knocking", isExplicit: true, duration: "3:15", spotifyEmbed: "https://open.spotify.com/embed/track/019BNL7sruegNcJiErXwFT" },
+      { name: "addiction", isExplicit: true, duration: "3:16", spotifyEmbed: "https://open.spotify.com/embed/track/4aYn09UUPuJUrShKktcr02" },
+      { name: "wedidit", features: "Ken Carson & Playboi Carti", isExplicit: true, duration: "3:42", spotifyEmbed: "https://open.spotify.com/embed/track/7ijEnS2juTHSM7tD8byqrD" },
+    ],
+    releaseDate: "3 Iyul 2026",
+    duration: "1 saat",
+    label: "Opium/Interscope"
   },
   {
     id: 3242,
     title: "xperiment (CD)",
-    spotifyAlbumId: "1qO5gHs2mJWd9Nx4dqvAMG",
+    spotifyAlbumId: "0EOwIqfcx025yJLSIpcNi9",
     artist: ["Ken Carson"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -3507,7 +3546,11 @@ export const albums = [
     sleeveColor: "orange",
     vinylColor: "orange",
     format: "vinyl",
-    description: "Love Lasts Forever amerikalı reper və müğənni Destroy Lonely-nin ikinci studiya albomudur. Albom 30 avqust 2024-cü ildə çıxıb. Albomda Lil Uzi Vert və Ken Carson qonaq kimi çıxış edirlər. Albomun istehsalı əsasən Lil 88 tərəfindən həyata keçirilib və o, bütün albomu Wheezy, Cxdy, Dylxn, Yugen və Outtatown ilə birlikdə hazırlayıb."
+    description: {
+      az: "Love Lasts Forever amerikalı reper və müğənni Destroy Lonely-nin ikinci studiya albomudur. Albom 30 avqust 2024-cü ildə çıxıb. Albomda Lil Uzi Vert və Ken Carson qonaq kimi çıxış edirlər. Albomun istehsalı əsasən Lil 88 tərəfindən həyata keçirilib və o, bütün albomu Wheezy, Cxdy, Dylxn, Yugen və Outtatown ilə birlikdə hazırlayıb.",
+      en: "Love Lasts Forever is the second studio album by American rapper and singer Destroy Lonely, released on August 30, 2024. It features guest appearances from Lil Uzi Vert and Ken Carson. Production was handled primarily by Lil 88, who worked on the entire album together with Wheezy, Cxdy, Dylxn, Yugen and Outtatown.",
+      ru: "Love Lasts Forever — второй студийный альбом американского рэпера и певца Destroy Lonely, вышедший 30 августа 2024 года. В записи приняли участие Lil Uzi Vert и Ken Carson. Продюсированием занимался в основном Lil 88, работавший над всем альбомом вместе с Wheezy, Cxdy, Dylxn, Yugen и Outtatown.",
+    }
   },
   {
     id: 95,
@@ -3705,7 +3748,11 @@ export const albums = [
     sleeveColor: "gray",
     accentColor: "gray",
     format: "vinyl",
-    description: "Immunity amerikalı müğənni-bəstəkar Clairo-nun 2 avqust 2019-cu ildə çıxan debüt studiya albomudur. Albom Clairo və əvvəllər Vampire Weekend qrupundan olan Rostam Batmanglij tərəfindən birgə istehsal olunub.",
+    description: {
+      az: "Immunity amerikalı müğənni-bəstəkar Clairo-nun 2 avqust 2019-cu ildə çıxan debüt studiya albomudur. Albom Clairo və əvvəllər Vampire Weekend qrupundan olan Rostam Batmanglij tərəfindən birgə istehsal olunub.",
+      en: "Immunity is the debut studio album by American singer-songwriter Clairo, released on August 2, 2019. The album was co-produced by Clairo and Rostam Batmanglij, formerly of Vampire Weekend.",
+      ru: "Immunity — дебютный студийный альбом американской певицы и автора песен Clairo, вышедший 2 августа 2019 года. Альбом спродюсирован совместно Clairo и Ростамом Батманглиджем, бывшим участником Vampire Weekend.",
+    },
   },
   {
     id: 90,
@@ -3741,7 +3788,11 @@ export const albums = [
     sleeveColor: "gray",
     accentColor: "gray",
     format: "cd",
-    description: "Immunity amerikalı müğənni-bəstəkar Clairo-nun 2 avqust 2019-cu ildə çıxan debüt studiya albomudur. Albom Clairo və əvvəllər Vampire Weekend qrupundan olan Rostam Batmanglij tərəfindən birgə istehsal olunub.",
+    description: {
+      az: "Immunity amerikalı müğənni-bəstəkar Clairo-nun 2 avqust 2019-cu ildə çıxan debüt studiya albomudur. Albom Clairo və əvvəllər Vampire Weekend qrupundan olan Rostam Batmanglij tərəfindən birgə istehsal olunub.",
+      en: "Immunity is the debut studio album by American singer-songwriter Clairo, released on August 2, 2019. The album was co-produced by Clairo and Rostam Batmanglij, formerly of Vampire Weekend.",
+      ru: "Immunity — дебютный студийный альбом американской певицы и автора песен Clairo, вышедший 2 августа 2019 года. Альбом спродюсирован совместно Clairo и Ростамом Батманглиджем, бывшим участником Vampire Weekend.",
+    },
   },
   {
     id: 92,

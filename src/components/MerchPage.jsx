@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/Button.tsx";
 import { ArrowLeft, ShoppingCart, Heart, Minus, Plus } from "lucide-react";
 import { Merch } from "./Merch.jsx";
-import { useLanguage } from "./LanguageContext.jsx";
+import { useLanguage, localizeText } from "./LanguageContext.jsx";
 import { useShopifyCart } from "../contexts/Shopifycartcontext";
 import { toast } from "sonner";
 import { usePageTitle } from "./usePageTitle.js";
@@ -11,7 +11,7 @@ import { usePageTitle } from "./usePageTitle.js";
 export const MerchPage = () => {
   const { merchId } = useParams();
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { addToCart, loading: cartLoading } = useShopifyCart();
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("");
@@ -150,7 +150,7 @@ export const MerchPage = () => {
             {item.description && (
               <div>
                 <h3 className="text-lg font-semibold mb-2">{t.description}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
+                <p className="text-muted-foreground">{localizeText(item.description, language)}</p>
               </div>
             )}
             {item.size && item.size.length > 0 && (
