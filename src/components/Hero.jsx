@@ -7,7 +7,7 @@ import { useLanguage } from "./LanguageContext.jsx";
 
 export const Hero = () => {
   const { t } = useLanguage();
-  const featuredAlbum = albums.find(album => album.id === 78) || albums[0];
+  const featuredAlbum = albums.find(album => album.id === 3418) || albums[0];
 
   const getCoverImage = (album) => {
     if (!album) return null;
@@ -41,8 +41,8 @@ export const Hero = () => {
                 {t.heroTag}
               </p>
               <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                {t.heroNew} <br />YEAT -
-                <span className="text-gradient block">ADL</span>
+                {t.heroNew} <br />KEN CARSON -
+                <span className="text-gradient block">XPERIMENT</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-md animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 {t.heroDesc}
@@ -51,11 +51,11 @@ export const Hero = () => {
 
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Button size="lg" className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-8">
-                <Link to="/album/78">{t.shopNow}</Link>
+                <Link to="/album/3418">{t.shopNow}</Link>
                 <ArrowRight className="w-4 h-4" />
               </Button>
               <Button size="lg" variant="outline" className="gap-2 border-muted-foreground/30 hover:bg-secondary" asChild>
-                <Link to={`/album/${featuredAlbum?.id || 78}`}>
+                <Link to={`/album/${featuredAlbum?.id ||3418}`}>
                   <Play className="w-4 h-4" />
                   {t.listenPreview}
                 </Link>
