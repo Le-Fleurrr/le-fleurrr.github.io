@@ -3033,7 +3033,11 @@ export const albums = [
       { id: 10, name: "Mami (feat. Sexyy Red)", isExplicit: true, duration: "2:47" },
       { id: 11, name: "I'm So Dope", isExplicit: true, duration: "2:35" },
       { id: 12, name: "On The News", isExplicit: true, duration: "3:14" },
-    ]
+    ],
+    releaseDate: "29 Sentyabr 2025",
+    duration: "1 Saat",
+    label: "Young Stoner Life Records"
+
   },
   {
     id: 78,
@@ -3896,7 +3900,12 @@ export const albums = [
       az: "No Stylist amerikalı reper Destroy Lonely-nin beşinci və ilk kommersiya miksteypidir. Albom 12 avqust 2022-ci ildə çıxıb. Miksteypdə Opium leyblının həmkarı Ken Karson qonaq kimi çıxış edir. İstehsalçılar Cxdy, Lil 88, TM88, Y2tnb və digərləri tərəfindən idarə olunub.",
       en: "No Stylist is the fifth and first commercial mixtape by American rapper Destroy Lonely. It was released on August 12, 2022. The mixtape features a guest appearance from Opium labelmate Ken Carson. Production was handled by Cxdy, Lil 88, TM88, Y2tnb and others.",
       ru: "No Stylist — пятый и первый коммерческий микстейп американского рэпера Destroy Lonely. Он вышел 12 августа 2022 года. В микстейпе гостем выступает коллега по лейблу Opium Ken Carson. Продюсированием занимались Cxdy, Lil 88, TM88, Y2tnb и другие.",
-    }
+    },
+    tracklist: [
+      { name: "JETLGGD", isExplicit: true, duration: "1:56", spotifyEmbed: "https://open.spotify.com/embed/track/730Sd7tP4eRKvPhQceOPYn" },
+      { name: "BERGDORF", isExplicit: true, duration: "2:25", spotifyEmbed: "https://open.spotify.com/embed/track/0fK6XT64jrGLtjxNW9taov" },
+      { name: "<3MYGNG", isExplicit: true, duration: "1:57", spotifyEmbed: "https://open.spotify.com/embed/track/4p2quX65rUCRFjfPJYIU0I" },
+    ]
   },
   {
     id: 75,
