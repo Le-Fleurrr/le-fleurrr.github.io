@@ -363,7 +363,11 @@ const AlbumPage = () => {
                 const slug = String(artist).toLowerCase().replace(/,/g, '').replace(/\$/g, '').replace(/\s+/g, '-').replace(/[^\w-]/g, '');
                 return (
                   <span key={idx}>
-                    <Link to={`/artist/${slug}`} className="hover:text-primary transition-colors">{artist}</Link>
+                    {artist === "Various Artists" ? (
+                      <span className="cursor-default select-none">{artist}</span>
+                    ) : (
+                      <Link to={`/artist/${slug}`} className="hover:text-primary transition-colors">{artist}</Link>
+                    )}
                     {idx < artistList.length - 1 && <span className="mx-2">&</span>}
                   </span>
                 );

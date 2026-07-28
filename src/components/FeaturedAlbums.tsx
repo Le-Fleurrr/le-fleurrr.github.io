@@ -239,13 +239,17 @@ export const FeaturedAlbums = () => {
                             .replace(/[^\w-]/g, "");
                           return (
                             <span key={`${album.id}-artist-${idx}`} className="flex items-center">
-                              <Link
-                                to={`/artist/${slug}`}
-                                onClick={(e) => e.stopPropagation()}
-                                className="text-muted-foreground hover:underline transition-colors"
-                              >
-                                {artistName}
-                              </Link>
+                              {artistName === "Various Artists" ? (
+                                <span className="text-muted-foreground select-none">{artistName}</span>
+                              ) : (
+                                <Link
+                                  to={`/artist/${slug}`}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="text-muted-foreground hover:underline transition-colors"
+                                >
+                                  {artistName}
+                                </Link>
+                              )}
                               {idx < album.artist.length - 1 && (
                                 <span className="text-muted-foreground mx-1">&</span>
                               )}

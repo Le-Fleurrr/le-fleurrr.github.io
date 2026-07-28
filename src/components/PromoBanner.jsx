@@ -3,29 +3,23 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { albums } from './Albums.jsx';
 
-const basePromos = [
-  { id: 1, albumId: 9, image: "" },
-  { id: 2, albumId: 45, image: "https://your-image-url.com/damn-banner.jpg" },
-  { id: 3, albumId: 67, image: "https://your-image-url.com/brat-banner.jpg" }
-];
+// Three random albums are promoted on every visit (picked once per page
+// load, stable while browsing within the session).
+const getCover = (album) =>
+  Array.isArray(album.image) ? album.image[0] : album.image;
 
-// A custom banner image wins when it's a real URL; otherwise the slide
-// falls back to the promoted album's own cover art.
-const isRealImage = (url) => !!url && !url.includes('your-image-url.com');
+const shuffled = albums
+  .filter((album) => getCover(album))
+  .map((album) => ({ album, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ album }) => album);
 
-const promos = basePromos
-  .map((promo) => {
-    const album = albums.find((a) => a.id === promo.albumId);
-    const cover = album
-      ? (Array.isArray(album.image) ? album.image[0] : album.image)
-      : null;
-    return {
-      ...promo,
-      image: isRealImage(promo.image) ? promo.image : cover,
-      title: album?.title || '',
-    };
-  })
-  .filter((promo) => promo.image);
+const promos = shuffled.slice(0, 3).map((album) => ({
+  id: album.id,
+  albumId: album.id,
+  image: getCover(album),
+  title: album.title,
+}));
 
 export function PromoBanner() {
   const [currentSlide, setCurrentSlide] = useState(0);

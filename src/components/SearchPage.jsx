@@ -11,7 +11,17 @@ export function SearchPage() {
   const { t } = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
-  const [selectedGenre, setSelectedGenre] = useState('all');
+  const [selectedGenre, setSelectedGenre] = useState(searchParams.get('genre') || 'all');
+
+  // Keeps the URL shareable: /search?genre=Pop&q=... reflects the current view
+  const chooseGenre = (genre, { clearQuery = false } = {}) => {
+    setSelectedGenre(genre);
+    if (clearQuery) setSearchQuery('');
+    const next = {};
+    if (!clearQuery && searchQuery.trim()) next.q = searchQuery;
+    if (genre !== 'all') next.genre = genre;
+    setSearchParams(next);
+  };
   const [filteredAlbums, setFilteredAlbums] = useState([]);
 
   // Extract unique genres from albums
@@ -58,7 +68,9 @@ export function SearchPage() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setSearchParams({ q: searchQuery });
+    const next = { q: searchQuery };
+    if (selectedGenre !== 'all') next.genre = selectedGenre;
+    setSearchParams(next);
   };
 
   const getArtistName = (artist) => {
@@ -99,7 +111,7 @@ export function SearchPage() {
             {genres.map((genre) => (
               <button
                 key={genre}
-                onClick={() => setSelectedGenre(genre)}
+                onClick={() => chooseGenre(genre)}
                 className="relative h-32 rounded-lg overflow-hidden group transition-transform hover:scale-105"
                 style={{ 
                   backgroundColor: genreColors[genre] || '#535353'
@@ -201,10 +213,7 @@ export function SearchPage() {
               {genres.filter(g => g !== 'all' && g !== selectedGenre).slice(0, 5).map((genre) => (
                 <button
                   key={genre}
-                  onClick={() => {
-                    setSelectedGenre(genre);
-                    setSearchQuery('');
-                  }}
+                  onClick={() => chooseGenre(genre, { clearQuery: true })}
                   className="px-6 py-3 rounded-full bg-card border border-border hover:border-primary transition-colors"
                 >
                   {genre}
