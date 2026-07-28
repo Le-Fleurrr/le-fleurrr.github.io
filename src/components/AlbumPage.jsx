@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { albums } from "./Albums.jsx";
 import { FavoriteButton } from './FavoritesSystem';
-import { previewPlayer } from './audioPreviewPlayer.js';
+import { previewPlayer } from './AudioPreviewPlayer.js';
 import { useSpotifyTracklist } from './useSpotifyTracklist.js';
 import { useShopifyCart } from '../contexts/Shopifycartcontext';
 import { useLanguage, localizeText, localizeReleaseDate, localizeDuration } from './LanguageContext.jsx';

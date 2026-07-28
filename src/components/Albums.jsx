@@ -3036,7 +3036,7 @@ export const albums = [
     ],
     releaseDate: "29 Sentyabr 2025",
     duration: "1 Saat",
-    label: "Young Stoner Life Records"
+    label: "A Young Stoner Life Records / 300 Entertainment Release, Atlantic Recording Corporation"
 
   },
   {

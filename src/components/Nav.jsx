@@ -5,7 +5,7 @@ import { CartSidebar } from "./CartSidebar";
 
 import { Button } from "./ui/Button";
 import { Search, ShoppingBag, Heart, Settings as SettingsIcon, Menu, X } from "lucide-react";
-import { UserMenu } from "./UserMenu";
+import { UserMenu } from "./userMenu";
 import { Settings } from "./Settings";
 import { SearchEngine } from "./SearchEngine";
 import { useFavorites } from "./FavoritesSystem";

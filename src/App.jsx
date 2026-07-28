@@ -7,8 +7,8 @@ import { TooltipProvider } from "./components/ui/Tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { LanguageProvider, useLanguage } from "./components/LanguageContext.jsx";
 import { FavoritesProvider } from './components/FavoritesSystem';
-import { AuthProvider } from './contexts/AuthContext';
-import { ShopifyCartProvider } from './contexts/ShopifyCartContext';
+import { AuthProvider } from './contexts/authContext';
+import { ShopifyCartProvider } from './contexts/Shopifycartcontext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
 const Index = lazy(() => import('./components/pages/Index'));
@@ -21,7 +21,7 @@ const Collections = lazy(() => import('./components/Collections').then(m => ({ d
 const MerchCollectionsPage = lazy(() => import('./components/MerchCollectionsPage').then(m => ({ default: m.MerchCollectionsPage })));
 const MerchPage = lazy(() => import('./components/MerchPage').then(m => ({ default: m.MerchPage })));
 const Login = lazy(() => import('./components/Login').then(m => ({ default: m.Login })));
-const Signup = lazy(() => import('./components/Signup').then(m => ({ default: m.Signup })));
+const Signup = lazy(() => import('./components/SignUp').then(m => ({ default: m.Signup })));
 const SearchPage = lazy(() => import('./components/SearchPage').then(m => ({ default: m.SearchPage })));
 const CartPage = lazy(() => import('./components/CartPage'));
 const AccountPage = lazy(() => import('./components/AccountPage'));
