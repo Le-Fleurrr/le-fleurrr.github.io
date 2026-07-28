@@ -552,7 +552,7 @@ export const Merch = [
   },
   {
     id: 24,
-    title: "</3³ Körpə Futbolkası",
+    title: "＜/3³ Körpə Futbolkası",
     artist: ["Destroy Lonely"],
     category: "Antagonist 2.0",
     price: 119.99,
@@ -566,7 +566,7 @@ export const Merch = [
   },
   {
     id: 25,
-    title: "</3³ Pirsinqli Qız Köynəyi",
+    title: "＜/3³ Pirsinqli Qız Köynəyi",
     artist: ["Destroy Lonely"],
     category: "Antagonist 2.0",
     price: 119.99,
@@ -580,7 +580,7 @@ export const Merch = [
   },
   {
     id: 26,
-    title: "</3³ Cadugər Uzunqollu Futbolka",
+    title: "＜/3³ Cadugər Uzunqollu Futbolka",
     artist: ["Destroy Lonely"],
     category: "Antagonist 2.0",
     price: 149.99,
@@ -594,7 +594,7 @@ export const Merch = [
   },
   {
     id: 27,
-    title: "</3³ Loqo Mania Hoodie",
+    title: "＜/3³ Loqo Mania Hoodie",
     artist: ["Destroy Lonely"],
     category: "Antagonist 2.0",
     price: 349.99,
@@ -608,7 +608,7 @@ export const Merch = [
   },
   {
     id: 28,
-    title: "</3³ Top Floor Boss Şeir Futbolka",
+    title: "＜/3³ Top Floor Boss Şeir Futbolka",
     artist: ["Destroy Lonely"],
     category: "Antagonist 2.0",
     price: 99.99,

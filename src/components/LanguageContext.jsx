@@ -56,7 +56,7 @@ const translations = {
     // Hero
     heroTag: "Premium Vinyl Kolleksiyası",
     heroNew: "YENI!",
-    heroDesc: '"ADL" amerikalı reper və müğənni Yeatin yeni studiya albomudur.',
+    heroDesc: '"xperiment" amerikalı reper və müğənni Ken Carsonun yeni studiya albomudur.',
     shopNow: "İndi alış-veriş edin",
     listenPreview: "Dinləmə Önizləməsi",
     statVinyl: "Vinyl",
@@ -120,6 +120,8 @@ const translations = {
     cart: "Səbət",
     cartEmpty: "Səbət boşdur",
     viewCart: "Səbətə bax",
+    maxQuantityReached: "Bir məhsuldan maksimum 4 ədəd əlavə etmək olar",
+    quantityLimitNote: "Hər müştəri üçün limit: bir məhsuldan maksimum 4 ədəd",
     orderSummary: "Sifariş xülasəsi",
     total: "Cəmi:",
     checkout: "Ödənişə keç",
@@ -232,6 +234,30 @@ const translations = {
     emailInUse: "Bu email artıq istifadə olunur",
     weakPassword: "Şifrə çox zəifdir",
     invalidEmail: "Yanlış email formatı",
+    account: "Hesab",
+    accountSubtitle: "Profilinizi, ünvanlarınızı və kartlarınızı idarə edin",
+    profile: "Profil",
+    username: "İstifadəçi adı",
+    addresses: "Ünvanlar",
+    addAddress: "Ünvan əlavə et",
+    addressLabel: "Başlıq (məs. Ev, İş)",
+    addressText: "Tam ünvan",
+    noAddresses: "Heç bir ünvan əlavə edilməyib",
+    paymentMethods: "Ödəniş kartları",
+    addCard: "Kart əlavə et",
+    cardHolder: "Kart sahibi",
+    cardLast4: "Kartın son 4 rəqəmi",
+    cardExpiry: "Bitmə tarixi (AA/İİ)",
+    cardBrand: "Kart növü",
+    noCards: "Heç bir kart əlavə edilməyib",
+    cardSecurityNote: "Təhlükəsizlik üçün tam kart nömrəsi saxlanılmır — ödəniş kassada aparılır.",
+    myOrders: "Sifarişlərim",
+    noOrders: "Hazırda heç bir sifariş yoxdur",
+    save: "Yadda saxla",
+    cancel: "Ləğv et",
+    removeItem: "Sil",
+    savedToast: "Yadda saxlanıldı ✓",
+    signedInAs: "Daxil olub:",
   },
   en: {
     settings: "Settings",
@@ -288,7 +314,7 @@ const translations = {
     // Hero
     heroTag: "Premium Vinyl Collection",
     heroNew: "NEW!",
-    heroDesc: '"ADL" is the new studio album by American rapper and singer Yeat.',
+    heroDesc: '"xperiment" is the new studio album by American rapper and singer Ken Carson.',
     shopNow: "Shop Now",
     listenPreview: "Listen Preview",
     statVinyl: "Vinyl",
@@ -352,6 +378,8 @@ const translations = {
     cart: "Cart",
     cartEmpty: "Your cart is empty",
     viewCart: "View Cart",
+    maxQuantityReached: "Maximum 4 of the same product per order",
+    quantityLimitNote: "Limit of 4 per product per customer",
     orderSummary: "Order Summary",
     total: "Total:",
     checkout: "Checkout",
@@ -464,6 +492,30 @@ const translations = {
     emailInUse: "This email is already in use",
     weakPassword: "Password is too weak",
     invalidEmail: "Invalid email format",
+    account: "Account",
+    accountSubtitle: "Manage your profile, addresses and cards",
+    profile: "Profile",
+    username: "Username",
+    addresses: "Addresses",
+    addAddress: "Add Address",
+    addressLabel: "Label (e.g. Home, Work)",
+    addressText: "Full address",
+    noAddresses: "No addresses added yet",
+    paymentMethods: "Payment Cards",
+    addCard: "Add Card",
+    cardHolder: "Cardholder name",
+    cardLast4: "Last 4 digits",
+    cardExpiry: "Expiry (MM/YY)",
+    cardBrand: "Card type",
+    noCards: "No cards added yet",
+    cardSecurityNote: "For security, full card numbers are never stored — payment happens at checkout.",
+    myOrders: "My Orders",
+    noOrders: "No orders yet",
+    save: "Save",
+    cancel: "Cancel",
+    removeItem: "Remove",
+    savedToast: "Saved ✓",
+    signedInAs: "Signed in as",
   },
   ru: {
     settings: "Настройки",
@@ -520,7 +572,7 @@ const translations = {
     // Hero
     heroTag: "Премиальная коллекция винила",
     heroNew: "НОВИНКА!",
-    heroDesc: "«ADL» — новый студийный альбом американского рэпера и певца Yeat.",
+    heroDesc: "«xperiment» — новый студийный альбом американского рэпера и певца Ken Carson.",
     shopNow: "Купить сейчас",
     listenPreview: "Прослушать превью",
     statVinyl: "Винил",
@@ -584,6 +636,8 @@ const translations = {
     cart: "Корзина",
     cartEmpty: "Корзина пуста",
     viewCart: "Перейти в корзину",
+    maxQuantityReached: "Не более 4 штук одного товара в заказе",
+    quantityLimitNote: "Лимит: не более 4 штук одного товара на покупателя",
     orderSummary: "Сводка заказа",
     total: "Итого:",
     checkout: "Оформить заказ",
@@ -696,6 +750,30 @@ const translations = {
     emailInUse: "Этот email уже используется",
     weakPassword: "Слишком слабый пароль",
     invalidEmail: "Неверный формат email",
+    account: "Аккаунт",
+    accountSubtitle: "Управляйте профилем, адресами и картами",
+    profile: "Профиль",
+    username: "Имя пользователя",
+    addresses: "Адреса",
+    addAddress: "Добавить адрес",
+    addressLabel: "Название (напр. Дом, Работа)",
+    addressText: "Полный адрес",
+    noAddresses: "Адреса пока не добавлены",
+    paymentMethods: "Платёжные карты",
+    addCard: "Добавить карту",
+    cardHolder: "Имя владельца карты",
+    cardLast4: "Последние 4 цифры",
+    cardExpiry: "Срок действия (ММ/ГГ)",
+    cardBrand: "Тип карты",
+    noCards: "Карты пока не добавлены",
+    cardSecurityNote: "В целях безопасности полный номер карты не хранится — оплата происходит при оформлении заказа.",
+    myOrders: "Мои заказы",
+    noOrders: "Заказов пока нет",
+    save: "Сохранить",
+    cancel: "Отмена",
+    removeItem: "Удалить",
+    savedToast: "Сохранено ✓",
+    signedInAs: "Вы вошли как",
   }
 };
 
@@ -706,6 +784,65 @@ export const localizeText = (value, language) => {
   if (value && typeof value === "object") {
     return value[language] || value.az || Object.values(value)[0] || "";
   }
+  return value;
+};
+
+// --- Localization of catalog date/duration strings ------------------------
+// Catalog data stores dates like "24 Noyabr 2008" and durations like
+// "12 mahnı, 52 dəqiqə" (the formats the Spotify fetcher also produces).
+// These helpers translate those patterns on the fly, and also accept
+// hand-written { az, en, ru } objects like descriptions do.
+
+const AZ_MONTHS = ["yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avqust", "sentyabr", "oktyabr", "noyabr", "dekabr"];
+const EN_MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const RU_MONTHS = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+
+// Azerbaijani "İ" lowercases to "i" + combining dot — normalize that away
+const azFold = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+const ruPlural = (n, one, few, many) => {
+  const mod10 = n % 10, mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return one;
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return few;
+  return many;
+};
+
+export const localizeReleaseDate = (value, language) => {
+  if (value && typeof value === "object") return localizeText(value, language);
+  if (!value || language === "az") return value;
+  const m = String(value).trim().match(/^(\d{1,2})\s+(\S+)\s+(\d{4})$/);
+  if (!m) return value;
+  const idx = AZ_MONTHS.indexOf(azFold(m[2]));
+  if (idx === -1) return value;
+  const day = parseInt(m[1], 10), year = m[3];
+  if (language === "en") return `${EN_MONTHS[idx]} ${day}, ${year}`;
+  if (language === "ru") return `${day} ${RU_MONTHS[idx]} ${year}`;
+  return value;
+};
+
+export const localizeDuration = (value, language) => {
+  if (value && typeof value === "object") return localizeText(value, language);
+  if (!value || language === "az") return value;
+  const str = String(value).trim();
+
+  const full = str.match(/^(\d+)\s*mahnı(?:lar)?\s*,\s*(\d+)\s*dəqiqə$/i);
+  if (full) {
+    const songs = parseInt(full[1], 10), mins = parseInt(full[2], 10);
+    if (language === "en") {
+      return `${songs} ${songs === 1 ? "song" : "songs"}, ${mins} ${mins === 1 ? "minute" : "minutes"}`;
+    }
+    if (language === "ru") {
+      return `${songs} ${ruPlural(songs, "песня", "песни", "песен")}, ${mins} ${ruPlural(mins, "минута", "минуты", "минут")}`;
+    }
+  }
+
+  const minsOnly = str.match(/^(\d+)\s*dəqiqə$/i);
+  if (minsOnly) {
+    const mins = parseInt(minsOnly[1], 10);
+    if (language === "en") return `${mins} ${mins === 1 ? "minute" : "minutes"}`;
+    if (language === "ru") return `${mins} ${ruPlural(mins, "минута", "минуты", "минут")}`;
+  }
+
   return value;
 };
 

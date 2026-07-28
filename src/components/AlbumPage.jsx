@@ -10,7 +10,7 @@ import { FavoriteButton } from './FavoritesSystem';
 import { previewPlayer } from './audioPreviewPlayer.js';
 import { useSpotifyTracklist } from './useSpotifyTracklist.js';
 import { useShopifyCart } from '../contexts/Shopifycartcontext';
-import { useLanguage, localizeText } from './LanguageContext.jsx';
+import { useLanguage, localizeText, localizeReleaseDate, localizeDuration } from './LanguageContext.jsx';
 import { toast } from 'sonner';
 import { useAuth } from '../contexts/authContext';
 import { loadInteractions, addInteraction, addReplyToInteraction } from './albumInteractions.js';
@@ -68,6 +68,10 @@ const AlbumPage = () => {
   const { addToCart, loading: cartLoading } = useShopifyCart();
   const album = albums.find((a) => a.id === parseInt(albumId || "", 10));
   usePageTitle(album?.title);
+
+  // iOS 26 Apple Music-style backdrop: the cover itself, heavily blurred,
+  // glowing behind the top of the page and dissolving into the background
+  const coverForTint = Array.isArray(album?.image) ? album.image[0] : album?.image;
 
   const { data: spotifyData, loading: spotifyLoading } = useSpotifyTracklist(album);
 
@@ -140,38 +144,37 @@ const AlbumPage = () => {
 
   const currentImage = galleryImages[selectedImage]?.url;
 
-  const handleAddReview = async () => {
+  // Optimistic: the item appears immediately; Firestore persistence runs in
+  // the background (its promise can hang indefinitely when the DB is
+  // unreachable, so the UI must never wait on it).
+  const handleAddReview = () => {
     if (!reviewComment.trim()) return;
+    const tempId = `local-${Date.now()}`;
     const item = {
       type: 'review', user: currentUser?.displayName || "Alıcı", rating,
       comment: reviewComment, date: new Date().toLocaleDateString(),
       replies: [], createdAt: Date.now()
     };
+    setInteractions(prev => [{ ...item, id: tempId }, ...prev]);
     setReviewComment("");
-    try {
-      const docId = await addInteraction(album.id, item);
-      setInteractions(prev => [{ ...item, id: docId }, ...prev]);
-    } catch (err) {
-      console.error('Could not save review to Firestore:', err);
-      setInteractions(prev => [{ ...item, id: Date.now() }, ...prev]);
-    }
+    addInteraction(album.id, item)
+      .then(docId => setInteractions(prev => prev.map(i => i.id === tempId ? { ...i, id: docId } : i)))
+      .catch(err => console.warn('Review kept locally only (Firestore unavailable):', err));
   };
 
-  const handleAddQuestion = async () => {
+  const handleAddQuestion = () => {
     if (!questionText.trim()) return;
+    const tempId = `local-${Date.now()}`;
     const item = {
       type: 'question', user: currentUser?.displayName || "İstifadəçi",
       text: questionText, replies: [], date: new Date().toLocaleDateString(),
       createdAt: Date.now()
     };
+    setInteractions(prev => [{ ...item, id: tempId }, ...prev]);
     setQuestionText("");
-    try {
-      const docId = await addInteraction(album.id, item);
-      setInteractions(prev => [{ ...item, id: docId }, ...prev]);
-    } catch (err) {
-      console.error('Could not save question to Firestore:', err);
-      setInteractions(prev => [{ ...item, id: Date.now() }, ...prev]);
-    }
+    addInteraction(album.id, item)
+      .then(docId => setInteractions(prev => prev.map(i => i.id === tempId ? { ...i, id: docId } : i)))
+      .catch(err => console.warn('Question kept locally only (Firestore unavailable):', err));
   };
 
   const handleAddReply = async (parentId) => {
@@ -185,13 +188,11 @@ const AlbumPage = () => {
     } : item));
     setReplyText("");
     setReplyingTo(null);
-    // Firestore doc ids are strings; local-only fallback items have numeric ids
-    if (typeof parentId === 'string') {
-      try {
-        await addReplyToInteraction(album.id, parentId, reply);
-      } catch (err) {
-        console.error('Could not save reply to Firestore:', err);
-      }
+    // Persist only for items that made it to Firestore (real doc ids);
+    // locally-kept items have ids prefixed with "local-"
+    if (typeof parentId === 'string' && !parentId.startsWith('local-')) {
+      addReplyToInteraction(album.id, parentId, reply)
+        .catch(err => console.warn('Reply kept locally only (Firestore unavailable):', err));
     }
   };
 
@@ -281,8 +282,23 @@ const AlbumPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-6 py-12">
+    <div className="min-h-screen bg-background relative">
+      {coverForTint && (
+        <div className="absolute inset-x-0 top-0 h-[560px] overflow-hidden pointer-events-none" aria-hidden="true">
+          <div
+            className="absolute inset-0 scale-125"
+            style={{
+              backgroundImage: `url(${coverForTint})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              filter: 'blur(90px) saturate(1.5)',
+              opacity: 0.5,
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/45 to-background" />
+        </div>
+      )}
+      <div className="container mx-auto px-6 py-12 relative">
         <Button variant="ghost" onClick={() => navigate(-1)} className="mb-8 font-bold">
           <ArrowLeft className="w-4 h-4 mr-2" /> {t.back}
         </Button>
@@ -339,7 +355,7 @@ const AlbumPage = () => {
             <div className="flex items-center gap-3 flex-wrap">
               <h1 className="text-5xl font-spotify font-black tracking-tight">{album.title}</h1>
               {album.isExplicit && (
-                <span className="bg-gray-400 text-black border px-2 py-1 rounded text-xs font-bold self-center">E</span>
+                <span className="bg-gray-400 text-black border px-2 py-1 rounded text-xs font-bold self-center select-none">E</span>
               )}
             </div>
             <div className="flex items-center gap-2 text-2xl hover:text-primary hover:underline transition-colors">
@@ -353,6 +369,21 @@ const AlbumPage = () => {
                 );
               })}
             </div>
+            {(() => {
+              const ratedReviews = interactions.filter(i => i.type === 'review' && i.rating);
+              if (ratedReviews.length === 0) return null;
+              const avg = ratedReviews.reduce((sum, r) => sum + r.rating, 0) / ratedReviews.length;
+              return (
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-0.5">
+                    {[1, 2, 3, 4, 5].map(s => (
+                      <Star key={s} className={`w-4 h-4 ${avg >= s - 0.5 ? "fill-yellow-500 text-yellow-500" : "text-muted"}`} />
+                    ))}
+                  </div>
+                  <span className="text-sm text-muted-foreground">{avg.toFixed(1)} ({ratedReviews.length})</span>
+                </div>
+              );
+            })()}
           </div>
 
           <div className="flex border-b border-border mb-8 overflow-x-auto">
@@ -439,10 +470,11 @@ const AlbumPage = () => {
                       <span className="text-xl font-bold">-</span>
                     </button>
                     <span className="text-2xl font-bold w-12 text-center">{quantity}</span>
-                    <button onClick={() => setQuantity(q => q + 1)} className="w-10 h-10 rounded-lg border-2 border-border hover:border-primary transition flex items-center justify-center">
+                    <button onClick={() => setQuantity(q => Math.min(4, q + 1))} disabled={quantity >= 4} className="w-10 h-10 rounded-lg border-2 border-border hover:border-primary transition flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed">
                       <span className="text-xl font-bold">+</span>
                     </button>
                   </div>
+                  <p className="text-xs text-muted-foreground mt-2">{t.quantityLimitNote}</p>
                 </div>
               </div>
             )}
@@ -475,7 +507,7 @@ const AlbumPage = () => {
                         return (
                           <div key={trackIndex}>
                             <div
-                              className="flex justify-between items-center p-4 rounded-xl hover:bg-muted/50 transition-colors group"
+                              className="flex justify-between items-center p-4 rounded-xl hover:bg-muted/50 transition-colors group select-none"
                               onMouseEnter={() => handleTrackHover(discIndex, trackIndex, audioUrl, track.preview, track.isPreviewClip)}
                               onMouseLeave={handleTrackLeave}
                             >
@@ -484,7 +516,7 @@ const AlbumPage = () => {
                                 <div className="flex flex-col gap-1">
                                   <div className="flex items-center gap-2">
                                     <span className={`font-sans font-normal text-base ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
-                                    {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black border border-border rounded">E</span>}
+                                    {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black border border-border rounded select-none">E</span>}
                                   </div>
                                   {trackFeatures && <FeaturesList features={trackFeatures} />}
                                 </div>
@@ -559,7 +591,7 @@ const AlbumPage = () => {
                       return (
                         <div key={trackIndex}>
                           <div
-                            className="flex justify-between items-center p-4 rounded-xl hover:bg-muted/50 transition-colors group"
+                            className="flex justify-between items-center p-4 rounded-xl hover:bg-muted/50 transition-colors group select-none"
                             onMouseEnter={() => handleTrackHover(0, trackIndex, audioUrl, track.preview, track.isPreviewClip)}
                             onMouseLeave={handleTrackLeave}
                           >
@@ -568,7 +600,7 @@ const AlbumPage = () => {
                               <div className="flex flex-col gap-1">
                                 <div className="flex items-center gap-2">
                                   <span className={`font-sans font-normal text-base ${playing || spotifyExpanded ? 'text-primary' : ''}`}>{trackTitle}</span>
-                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black border border-border rounded">E</span>}
+                                  {isTrackExplicit && <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black border border-border rounded select-none">E</span>}
                                 </div>
                                 {trackFeatures && <FeaturesList features={trackFeatures} />}
                               </div>
@@ -630,10 +662,10 @@ const AlbumPage = () => {
                 )}
 
                 <div className="pt-6 mt-6 border-t border-border">
-                  <p className="text-xs text-muted-foreground text-left">
-                    {releaseDate && <span>{releaseDate}</span>}
+                  <p className="text-xs text-muted-foreground text-left select-none">
+                    {releaseDate && <span>{localizeReleaseDate(releaseDate, language)}</span>}
                     {releaseDate && duration && <span className="mx-2">•</span>}
-                    {duration && <span>{duration}</span>}
+                    {duration && <span>{localizeDuration(duration, language)}</span>}
                     {(releaseDate || duration) && label && <br />}
                     {label && <span>© {album.year} {label}</span>}
                   </p>
@@ -764,7 +796,7 @@ const AlbumPage = () => {
                             {recommendedAlbum.title}
                           </h3>
                           {recommendedAlbum.isExplicit && (
-                            <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black rounded flex-shrink-0">
+                            <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black rounded flex-shrink-0 select-none">
                               E
                             </span>
                           )}

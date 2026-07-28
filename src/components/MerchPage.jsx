@@ -45,7 +45,7 @@ export const MerchPage = () => {
 
   const currentImage = galleryImages[selectedImage];
 
-  const incrementQuantity = () => setQuantity(q => q + 1);
+  const incrementQuantity = () => setQuantity(q => Math.min(4, q + 1));
   const decrementQuantity = () => setQuantity(q => (q > 1 ? q - 1 : 1));
 
   const handleAddToCart = async () => {
@@ -197,10 +197,11 @@ export const MerchPage = () => {
                 <span className="text-2xl font-semibold w-12 text-center">
                   {quantity}
                 </span>
-                <Button variant="outline" size="icon" onClick={incrementQuantity}>
+                <Button variant="outline" size="icon" onClick={incrementQuantity} disabled={quantity >= 4}>
                   <Plus className="w-4 h-4" />
                 </Button>
               </div>
+              <p className="text-xs text-muted-foreground mt-2">{t.quantityLimitNote}</p>
             </div>
 
             <div className="bg-muted rounded-lg p-4">

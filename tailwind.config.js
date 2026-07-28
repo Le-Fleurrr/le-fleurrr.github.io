@@ -10,7 +10,9 @@ export default {
         'sans': ['Inter', 'sans-serif'],
         'serif': ['Playfair Display', 'serif'],
         'backrooms': ['Nunito', 'sans-serif'],
-        'Robot': ['Robot', 'sans-serif']
+        'Robot': ['Robot', 'sans-serif'],
+        // Closest free alternative to Spotify's proprietary Circular font
+        'spotify': ['Figtree', 'CircularSp', 'Helvetica', 'Arial', 'sans-serif']
       },
       colors: {
         border: 'hsl(var(--border) / <alpha-value>)',

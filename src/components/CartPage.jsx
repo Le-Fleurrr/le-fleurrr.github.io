@@ -4,11 +4,19 @@ import { useShopifyCart } from '../contexts/Shopifycartcontext';
 import { useLanguage } from './LanguageContext.jsx';
 import { usePageTitle } from './usePageTitle.js';
 import { Button } from './ui/Button.tsx';
+import { useAuth } from '../contexts/authContext';
+import { recordCheckoutOrder } from './userProfileStore.js';
 
 export const CartPage = () => {
   const { cart, cartCount, cartTotal, removeFromCart, updateQuantity, openCheckout, loading } = useShopifyCart();
   const { t } = useLanguage();
+  const { currentUser } = useAuth();
   usePageTitle(t.cart);
+
+  const handleCheckout = () => {
+    recordCheckoutOrder(currentUser, cart, cartTotal);
+    openCheckout();
+  };
 
   const lines = cart?.lines?.edges || [];
 
@@ -72,7 +80,7 @@ export const CartPage = () => {
                       <span className="w-8 text-center font-semibold">{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        disabled={loading}
+                        disabled={loading || item.quantity >= 4}
                         className="w-8 h-8 rounded-lg border-2 border-border hover:border-primary transition flex items-center justify-center disabled:opacity-50"
                         aria-label="+"
                       >
@@ -111,7 +119,7 @@ export const CartPage = () => {
               </div>
 
               <Button
-                onClick={openCheckout}
+                onClick={handleCheckout}
                 disabled={loading}
                 className="w-full h-12 text-lg font-bold"
               >

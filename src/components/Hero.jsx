@@ -55,7 +55,7 @@ export const Hero = () => {
                 <ArrowRight className="w-4 h-4" />
               </Button>
               <Button size="lg" variant="outline" className="gap-2 border-muted-foreground/30 hover:bg-secondary" asChild>
-                <Link to={`/album/${featuredAlbum?.id ||3418}`}>
+                <Link to={`/album/${featuredAlbum?.id ||1}`}>
                   <Play className="w-4 h-4" />
                   {t.listenPreview}
                 </Link>

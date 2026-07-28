@@ -34,7 +34,7 @@
       { id: 2, name: "TRACKNAME2", duration: "3:26", isExplicit: false, spotifyEmbed: "https://example.com" }
     ],
     releaseDate: ALBUMRELEASEDATE,
-    duration: "x mahnılar, x mahnılar",
+    duration: "x saat, x dəqiqə",
     label: ALBUMLABEL
 
   }
@@ -668,7 +668,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+    description: {
+      az: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+      en: "“Hurry Up Tomorrow” is primarily a synth-pop and R&B album that also explores a variety of genres such as Brazilian funk and hip-hop. The album is the final part of the trilogy following The Weeknd's two previous studio albums, “After Hours” (2020) and “Dawn FM” (2022). Hinting that Hurry Up Tomorrow could be his last album under his stage name, The Weeknd revealed that the album was partly inspired by losing his voice while on tour in 2022. Hurry Up Tomorrow was supported by the singles “Timeless”, “São Paulo” and “Cry for Me”. To promote the album, the continuation of his tour with Playboi Carti began in the summer of 2025 and will conclude in 2026.",
+      ru: "«Hurry Up Tomorrow» — это прежде всего синти-поп и R&B альбом, который также исследует различные жанры, такие как бразильский фанк и хип-хоп. Альбом является заключительной частью трилогии, следующей за двумя предыдущими студийными альбомами The Weeknd — «After Hours» (2020) и «Dawn FM» (2022). Намекнув, что Hurry Up Tomorrow может стать его последним альбомом под сценическим именем, The Weeknd рассказал, что альбом отчасти вдохновлён потерей голоса во время гастролей в 2022 году. Альбом Hurry Up Tomorrow поддержали синглы «Timeless», «São Paulo» и «Cry for Me». В рамках промо альбома продолжение его совместного тура с Playboi Carti началось летом 2025 года и завершится в 2026 году.",
+    },
     tracklist: [
       { id: 1, name: "Wake Me Up (feat. Justice)", isExplicit: false, duration: "5:08", spotifyEmbed: "https://open.spotify.com/embed/track/5673WA8EEUSPx1ir26lhGW" },
       { id: 2, name: "Cry For Me", isExplicit: true, duration: "3:44", spotifyEmbed: "https://open.spotify.com/embed/track/3AWDeHLc88XogCaCnZQLVI?si=321b755ae5fa4c7c", musicVideo: "https://youtu.be/bn8gP5N8hqM?si=N5k50S6IMQR391Ks" },
@@ -714,7 +718,11 @@ export const albums = [
     accentColor: "blue",
     sleeveColor: "blue",
     format: "vinyl",
-    description: "Short N Sweet amerikalı müğənni Sabrina Karpenterin altıncı studiya albomudur. Albom 23 avqust 2024-cü ildə çıxıb. Əsasən pop və dance-pop albomu olan Short N Sweet albomunun prodüserləri Julian Bunetta, John Ryan, Ian Kirkpatrick və Jack Antonoffdur. Albom Karpenterin sevgi həyatını və 2020-ci illərin sevgi münasibətlərinə baxışlarını araşdırır.",
+    description: {
+      az: "Short N Sweet amerikalı müğənni Sabrina Karpenterin altıncı studiya albomudur. Albom 23 avqust 2024-cü ildə çıxıb. Əsasən pop və dance-pop albomu olan Short N Sweet albomunun prodüserləri Julian Bunetta, John Ryan, Ian Kirkpatrick və Jack Antonoffdur. Albom Karpenterin sevgi həyatını və 2020-ci illərin sevgi münasibətlərinə baxışlarını araşdırır.",
+      en: "Short N Sweet is the sixth studio album by American singer Sabrina Carpenter. The album was released on August 23, 2024. A primarily pop and dance-pop album, Short N Sweet was produced by Julian Bunetta, John Ryan, Ian Kirkpatrick and Jack Antonoff. The album explores Carpenter's love life and her views on romantic relationships in the 2020s.",
+      ru: "Short N Sweet — шестой студийный альбом американской певицы Sabrina Carpenter. Альбом вышел 23 августа 2024 года. Преимущественно поп- и дэнс-поп-альбом, Short N Sweet спродюсирован Julian Bunetta, John Ryan, Ian Kirkpatrick и Jack Antonoff. Альбом исследует личную жизнь Carpenter и её взгляды на романтические отношения 2020-х годов.",
+    },
     tracklist: [
       { id: 1, name: "Taste", isExplicit: false, duration: "2:37", spotifyEmbed: "https://open.spotify.com/embed/track/0lTDxglypMd8e8Q5hnmDnI?si=b973bf8ba4e742f9", musicVideo: "https://youtu.be/KEG7b851Ric?si=T-7xHMGouxxQEMPx" },
       { id: 2, name: "Please Please Please", isExplicit: true, duration: "3:06", spotifyEmbed: "https://open.spotify.com/embed/track/2OyX4SHk1oVRBP2dBOqRqC?si=c05f338368a941fb", musicVideo: "https://youtu.be/cF1Na4AIecM?si=2LCLJpTumDe55T36" },
@@ -753,7 +761,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Xüsusi buraxılışlı ikiqat vinil LP. Bu debüt albomun çıxdığı həftə Kanyenin adı Through the Wire, All Falls Down və Slow Jamz hit sinqlları ilə Top 20-lərin hamısında yer aldı. Daha da diqqətəlayiq olan odur ki, bu irəliləyiş onun həyatını az qala məhv edən avtomobil qəzasından sonra sağalması zamanı baş verdi - Through the Wire mahnısı qəza haqqındadır və xəstəxanada yatdıqdan iki həftə sonra, çənəsi hələ də bağlı vəziyyətdə lentə alınıb. O, bu hadisəni həm başına gələ biləcək ən pis şey, həm də ən yaxşısı kimi qiymətləndirib. Albom ilk həftəsində 441.000 nüsxə satılıb və həm Time, həm də Rolling Stone tərəfindən bütün zamanların ən böyük albomlarından biri adlandırılıb. Burada qonaq çıxış edənlər arasında JAY-Zi, John Legend, Ervin EP Pope, Miri Ben-Ari, Syleena Johnson və Jamie Foxx var.",
+    description: {
+      az: "Xüsusi buraxılışlı ikiqat vinil LP. Bu debüt albomun çıxdığı həftə Kanyenin adı Through the Wire, All Falls Down və Slow Jamz hit sinqlları ilə Top 20-lərin hamısında yer aldı. Daha da diqqətəlayiq olan odur ki, bu irəliləyiş onun həyatını az qala məhv edən avtomobil qəzasından sonra sağalması zamanı baş verdi - Through the Wire mahnısı qəza haqqındadır və xəstəxanada yatdıqdan iki həftə sonra, çənəsi hələ də bağlı vəziyyətdə lentə alınıb. O, bu hadisəni həm başına gələ biləcək ən pis şey, həm də ən yaxşısı kimi qiymətləndirib. Albom ilk həftəsində 441.000 nüsxə satılıb və həm Time, həm də Rolling Stone tərəfindən bütün zamanların ən böyük albomlarından biri adlandırılıb. Burada qonaq çıxış edənlər arasında JAY-Zi, John Legend, Ervin EP Pope, Miri Ben-Ari, Syleena Johnson və Jamie Foxx var.",
+      en: "Special edition double vinyl LP. The week this debut album was released, Kanye's name was all over the Top 20 with the hit singles Through the Wire, All Falls Down and Slow Jamz. Even more remarkable, this breakthrough came while he was recovering from a car accident that nearly destroyed his life — Through the Wire is about the crash and was recorded two weeks after his hospital stay, while his jaw was still wired shut. He described the incident as both the worst and the best thing that could have happened to him. The album sold 441,000 copies in its first week and has been named one of the greatest albums of all time by both Time and Rolling Stone. Guest appearances include JAY-Z, John Legend, Ervin EP Pope, Miri Ben-Ari, Syleena Johnson and Jamie Foxx.",
+      ru: "Специальное издание на двойном виниле. В неделю выхода этого дебютного альбома имя Kanye звучало во всех Top 20 с хит-синглами Through the Wire, All Falls Down и Slow Jamz. Ещё примечательнее то, что этот прорыв произошёл во время его восстановления после автокатастрофы, едва не разрушившей его жизнь: песня Through the Wire посвящена аварии и была записана через две недели после выписки из больницы, когда его челюсть всё ещё была зафиксирована. Он назвал это событие одновременно худшим и лучшим из того, что могло с ним случиться. За первую неделю альбом разошёлся тиражом 441 000 копий и был назван одним из величайших альбомов всех времён по версии как Time, так и Rolling Stone. Среди гостей — JAY-Z, John Legend, Ervin EP Pope, Miri Ben-Ari, Syleena Johnson и Jamie Foxx.",
+    },
     tracklist: [
       { id: 1, name: "We Don't Care", isExplicit: true, duration: "3:59", spotifyEmbed: "https://open.spotify.com/embed/track/0IW0qaeyxL5Et4UG2MrJKB?si=d9dbe91d5bec4597" },
       { id: 2, name: "Graduation Day", isExplicit: true, duration: "1:21", spotifyEmbed: "https://open.spotify.com/embed/track/7wL7Lb8Q3aYyq6gmRL0PZq?si=e193d0a972ea4cc1" },
@@ -791,7 +803,11 @@ export const albums = [
     accentColor: "green",
     sleeveColor: "green",
     format: "vinyl",
-    description: "“Charm” amerikalı müğənni-bəstəkar Clairo-nun 12 iyul 2024-cü ildə çıxan üçüncü studiya albomudur. Onun ikinci albomu olan “Sling”in (2021) davamı olan bu albom, əvvəlki iki albomunun müvafiq olaraq Fader və Republic tərəfindən buraxılmasından sonra ilk öz-özünə buraxılan studiya albomudur",
+    description: {
+      az: "“Charm” amerikalı müğənni-bəstəkar Clairo-nun 12 iyul 2024-cü ildə çıxan üçüncü studiya albomudur. Onun ikinci albomu olan “Sling”in (2021) davamı olan bu albom, əvvəlki iki albomunun müvafiq olaraq Fader və Republic tərəfindən buraxılmasından sonra ilk öz-özünə buraxılan studiya albomudur",
+      en: "“Charm” is the third studio album by American singer-songwriter Clairo, released on July 12, 2024. The follow-up to her second album “Sling” (2021), it is her first self-released studio album, after her previous two albums were released by Fader and Republic respectively",
+      ru: "«Charm» — третий студийный альбом американской певицы и автора песен Clairo, вышедший 12 июля 2024 года. Продолжение её второго альбома «Sling» (2021), это её первый самостоятельно выпущенный студийный альбом — два предыдущих выходили на Fader и Republic соответственно",
+    },
     tracklist: [
       { id: 1, name: "Nomad", isExplicit: false, duration: "3:45", spotifyEmbed: "https://open.spotify.com/embed/track/4WJPxTsvWIdRZ9vMtqk7fj?si=e8deef4d4f9b4657" },
       { id: 2, name: "Sexy to Someone", isExplicit: false, duration: "3:27", spotifyEmbed: "https://open.spotify.com/embed/track/3awweDjWIuXNMogMClJnvE?si=1eee3666469048eb" },
@@ -824,7 +840,11 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "vinyl",
-    description: "Call Me If You Get Lost amerikalı reper və prodüser Tyler, the Creator tərəfindən yazılmış yeddinci studiya albomudur. Albom 25 iyun 2021-ci ildə buraxılmışdır. Albom DJ Drama tərəfindən səsləndirilib və 42 Dugg, YoungBoy Never Broke Again, Ty Dolla Sign, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların qonaq çıxışlarını özündə birləşdirir. Albomun prodüserliyini Tyler özü, əlavə prodüserlik işləri isə Ceymi xx və Cey Versace tərəfindən həyata keçirilib. Albomdakı janrlar hip-hop, pop, caz, soul və reqqi musiqilərini əhatə edir.",
+    description: {
+      az: "Call Me If You Get Lost amerikalı reper və prodüser Tyler, the Creator tərəfindən yazılmış yeddinci studiya albomudur. Albom 25 iyun 2021-ci ildə buraxılmışdır. Albom DJ Drama tərəfindən səsləndirilib və 42 Dugg, YoungBoy Never Broke Again, Ty Dolla Sign, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların qonaq çıxışlarını özündə birləşdirir. Albomun prodüserliyini Tyler özü, əlavə prodüserlik işləri isə Ceymi xx və Cey Versace tərəfindən həyata keçirilib. Albomdakı janrlar hip-hop, pop, caz, soul və reqqi musiqilərini əhatə edir.",
+      en: "Call Me If You Get Lost is the seventh studio album by American rapper and producer Tyler, the Creator, released on June 25, 2021. The album is narrated by DJ Drama and features guest appearances from 42 Dugg, YoungBoy Never Broke Again, Ty Dolla Sign, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues and Daisy World. The album was produced by Tyler himself, with additional production by Jamie xx and Jay Versace. The genres on the album span hip-hop, pop, jazz, soul and reggae.",
+      ru: "Call Me If You Get Lost — седьмой студийный альбом американского рэпера и продюсера Tyler, the Creator, выпущенный 25 июня 2021 года. Альбом озвучен DJ Drama и включает гостевые участия 42 Dugg, YoungBoy Never Broke Again, Ty Dolla Sign, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues и Daisy World. Продюсированием альбома занимался сам Tyler, дополнительное продюсирование — Jamie xx и Jay Versace. Жанры альбома охватывают хип-хоп, поп, джаз, соул и регги.",
+    },
     tracklist: [
       { id: 1, name: "SIR BAUDELAIRE (feat. DJ Drama)", isExplicit: true, duration: "1:28", spotifyEmbed: "https://open.spotify.com/embed/track/4ydmav4vl7hebadtfZtMrg?si=7762170fc9834231" },
       { id: 2, name: "CORSO", isExplicit: true, duration: "2:26", spotifyEmbed: "https://open.spotify.com/embed/track/46oHvXwpEZOFX518we1nJD?si=2de240dca4c34318", musicVideo: "https://youtu.be/Lqvwm3zAILI?si=KDH_cYke45qHUZce" },
@@ -863,7 +883,11 @@ export const albums = [
     sleeveColor: "gray",
     accentColor: "purple",
     format: "vinyl",
-    description: "We Still Don't Trust You amerikalı reper Future və amerikalı səs prodüseri Metro Boominin ikinci birgə studiya albomudur. Albom 12 aprel 2024-cü ildə satışa çıxarılıb. Albomda Weeknd, Chris Brown, Brownstone, Ty Dolla Sign, J. Cole, Lil Baby və A$AP Rocky kimi qrupların qonaq çıxışları yer alıb. İstehsal əsasən Metro tərəfindən Mike Dean, Wheezy, Dre Moon, Southside, Chopsquad DJ, Allen Ritter, Oz, Honorable C.N.O.T.E. və başqalarının köməyi ilə həyata keçirilib. Albom Future və Metro Boominin We Still Don't Trust You albomundan üç həftə əvvəl çıxan ilk əməkdaşlığı olan We Don't Trust You albomundan sonra çıxıb.",
+    description: {
+      az: "We Still Don't Trust You amerikalı reper Future və amerikalı səs prodüseri Metro Boominin ikinci birgə studiya albomudur. Albom 12 aprel 2024-cü ildə satışa çıxarılıb. Albomda Weeknd, Chris Brown, Brownstone, Ty Dolla Sign, J. Cole, Lil Baby və A$AP Rocky kimi qrupların qonaq çıxışları yer alıb. İstehsal əsasən Metro tərəfindən Mike Dean, Wheezy, Dre Moon, Southside, Chopsquad DJ, Allen Ritter, Oz, Honorable C.N.O.T.E. və başqalarının köməyi ilə həyata keçirilib. Albom Future və Metro Boominin We Still Don't Trust You albomundan üç həftə əvvəl çıxan ilk əməkdaşlığı olan We Don't Trust You albomundan sonra çıxıb.",
+      en: "We Still Don't Trust You is the second collaborative studio album by American rapper Future and American record producer Metro Boomin. The album was released on April 12, 2024. It features guest appearances from The Weeknd, Chris Brown, Brownstone, Ty Dolla Sign, J. Cole, Lil Baby and A$AP Rocky. Production was handled mainly by Metro with help from Mike Dean, Wheezy, Dre Moon, Southside, Chopsquad DJ, Allen Ritter, Oz, Honorable C.N.O.T.E. and others. The album follows We Don't Trust You, Future and Metro Boomin's first collaboration, released three weeks earlier.",
+      ru: "We Still Don't Trust You — второй совместный студийный альбом американского рэпера Future и американского продюсера Metro Boomin. Альбом вышел 12 апреля 2024 года. В нём приняли участие The Weeknd, Chris Brown, Brownstone, Ty Dolla Sign, J. Cole, Lil Baby и A$AP Rocky. Продюсированием занимался в основном Metro при участии Mike Dean, Wheezy, Dre Moon, Southside, Chopsquad DJ, Allen Ritter, Oz, Honorable C.N.O.T.E. и других. Альбом вышел вслед за We Don't Trust You — первой совместной работой Future и Metro Boomin, выпущенной тремя неделями ранее.",
+    },
     discs: [
       {
         title: "Disk 1",
@@ -920,7 +944,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "cd",
-    description: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+    description: {
+      az: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+      en: "“Hurry Up Tomorrow” is primarily a synth-pop and R&B album that also explores a variety of genres such as Brazilian funk and hip-hop. The album is the final part of the trilogy following The Weeknd's two previous studio albums, “After Hours” (2020) and “Dawn FM” (2022). Hinting that Hurry Up Tomorrow could be his last album under his stage name, The Weeknd revealed that the album was partly inspired by losing his voice while on tour in 2022. Hurry Up Tomorrow was supported by the singles “Timeless”, “São Paulo” and “Cry for Me”. To promote the album, the continuation of his tour with Playboi Carti began in the summer of 2025 and will conclude in 2026.",
+      ru: "«Hurry Up Tomorrow» — это прежде всего синти-поп и R&B альбом, который также исследует различные жанры, такие как бразильский фанк и хип-хоп. Альбом является заключительной частью трилогии, следующей за двумя предыдущими студийными альбомами The Weeknd — «After Hours» (2020) и «Dawn FM» (2022). Намекнув, что Hurry Up Tomorrow может стать его последним альбомом под сценическим именем, The Weeknd рассказал, что альбом отчасти вдохновлён потерей голоса во время гастролей в 2022 году. Альбом Hurry Up Tomorrow поддержали синглы «Timeless», «São Paulo» и «Cry for Me». В рамках промо альбома продолжение его совместного тура с Playboi Carti началось летом 2025 года и завершится в 2026 году.",
+    },
     tracklist: [
       { id: 1, name: "Wake Me Up (feat. Justice)", isExplicit: false, duration: "5:08", spotifyEmbed: "https://open.spotify.com/embed/track/5673WA8EEUSPx1ir26lhGW" },
       { id: 2, name: "Cry For Me", isExplicit: true, duration: "3:44", spotifyEmbed: "https://open.spotify.com/embed/track/3AWDeHLc88XogCaCnZQLVI?si=321b755ae5fa4c7c", musicVideo: "https://youtu.be/bn8gP5N8hqM?si=N5k50S6IMQR391Ks" },
@@ -964,7 +992,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+    description: {
+      az: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+      en: "“Hurry Up Tomorrow” is primarily a synth-pop and R&B album that also explores a variety of genres such as Brazilian funk and hip-hop. The album is the final part of the trilogy following The Weeknd's two previous studio albums, “After Hours” (2020) and “Dawn FM” (2022). Hinting that Hurry Up Tomorrow could be his last album under his stage name, The Weeknd revealed that the album was partly inspired by losing his voice while on tour in 2022. Hurry Up Tomorrow was supported by the singles “Timeless”, “São Paulo” and “Cry for Me”. To promote the album, the continuation of his tour with Playboi Carti began in the summer of 2025 and will conclude in 2026.",
+      ru: "«Hurry Up Tomorrow» — это прежде всего синти-поп и R&B альбом, который также исследует различные жанры, такие как бразильский фанк и хип-хоп. Альбом является заключительной частью трилогии, следующей за двумя предыдущими студийными альбомами The Weeknd — «After Hours» (2020) и «Dawn FM» (2022). Намекнув, что Hurry Up Tomorrow может стать его последним альбомом под сценическим именем, The Weeknd рассказал, что альбом отчасти вдохновлён потерей голоса во время гастролей в 2022 году. Альбом Hurry Up Tomorrow поддержали синглы «Timeless», «São Paulo» и «Cry for Me». В рамках промо альбома продолжение его совместного тура с Playboi Carti началось летом 2025 года и завершится в 2026 году.",
+    },
     tracklist: [
       { id: 1, name: "Without A Warning", isExplicit: false, duration: "4:57" },
       { id: 2, name: "Cry For Me", isExplicit: true, duration: "3:44" },
@@ -997,7 +1029,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+    description: {
+      az: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+      en: "“Hurry Up Tomorrow” is primarily a synth-pop and R&B album that also explores a variety of genres such as Brazilian funk and hip-hop. The album is the final part of the trilogy following The Weeknd's two previous studio albums, “After Hours” (2020) and “Dawn FM” (2022). Hinting that Hurry Up Tomorrow could be his last album under his stage name, The Weeknd revealed that the album was partly inspired by losing his voice while on tour in 2022. Hurry Up Tomorrow was supported by the singles “Timeless”, “São Paulo” and “Cry for Me”. To promote the album, the continuation of his tour with Playboi Carti began in the summer of 2025 and will conclude in 2026.",
+      ru: "«Hurry Up Tomorrow» — это прежде всего синти-поп и R&B альбом, который также исследует различные жанры, такие как бразильский фанк и хип-хоп. Альбом является заключительной частью трилогии, следующей за двумя предыдущими студийными альбомами The Weeknd — «After Hours» (2020) и «Dawn FM» (2022). Намекнув, что Hurry Up Tomorrow может стать его последним альбомом под сценическим именем, The Weeknd рассказал, что альбом отчасти вдохновлён потерей голоса во время гастролей в 2022 году. Альбом Hurry Up Tomorrow поддержали синглы «Timeless», «São Paulo» и «Cry for Me». В рамках промо альбома продолжение его совместного тура с Playboi Carti началось летом 2025 года и завершится в 2026 году.",
+    },
     tracklist: [
       { id: 1, name: "Without A Warning", isExplicit: false, duration: "4:57" },
       { id: 2, name: "Cry For Me", isExplicit: true, duration: "3:44" },
@@ -1030,7 +1066,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+    description: {
+      az: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+      en: "“Hurry Up Tomorrow” is primarily a synth-pop and R&B album that also explores a variety of genres such as Brazilian funk and hip-hop. The album is the final part of the trilogy following The Weeknd's two previous studio albums, “After Hours” (2020) and “Dawn FM” (2022). Hinting that Hurry Up Tomorrow could be his last album under his stage name, The Weeknd revealed that the album was partly inspired by losing his voice while on tour in 2022. Hurry Up Tomorrow was supported by the singles “Timeless”, “São Paulo” and “Cry for Me”. To promote the album, the continuation of his tour with Playboi Carti began in the summer of 2025 and will conclude in 2026.",
+      ru: "«Hurry Up Tomorrow» — это прежде всего синти-поп и R&B альбом, который также исследует различные жанры, такие как бразильский фанк и хип-хоп. Альбом является заключительной частью трилогии, следующей за двумя предыдущими студийными альбомами The Weeknd — «After Hours» (2020) и «Dawn FM» (2022). Намекнув, что Hurry Up Tomorrow может стать его последним альбомом под сценическим именем, The Weeknd рассказал, что альбом отчасти вдохновлён потерей голоса во время гастролей в 2022 году. Альбом Hurry Up Tomorrow поддержали синглы «Timeless», «São Paulo» и «Cry for Me». В рамках промо альбома продолжение его совместного тура с Playboi Carti началось летом 2025 года и завершится в 2026 году.",
+    },
     tracklist: [
       { id: 1, name: "Please Leave A Message", isExplicit: false, duration: "2:16" },
       { id: 2, name: "Anima Pt. 1", isExplicit: false, duration: "3:54" },
@@ -1077,7 +1117,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "cd",
-    description: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+    description: {
+      az: "“Hurry Up Tomorrow” əsasən sintezator-pop və R&B albomu olmaqla yanaşı, Braziliya fankı və hip-hop kimi müxtəlif janrları da araşdırır. Albom, Weeknd-in əvvəlki iki studiya albomu olan “After Hours” (2020) və “Dawn FM” (2022) albomlarından sonrakı trilogiyanın son hissəsidir. The Weeknd Hurry Up Tomorrow-un onun səhnə adı altında son albomu ola biləcəyinə işarə edərək, albomun qismən 2022-ci ildə qastrol səfərində olarkən səsini itirməsindən ilhamlandığını açıqlayıb. Hurry Up Tomorrow albomuna “Timeless”, “São Paulo” və “Cry for Me” sinqlları dəstək verib. Albomun tanıtımı üçün onun Playboi Carti ilə birlikdə qastrol səfərinin davamı 2025-ci ilin yayında başlayıb və 2026-cı ildə başa çatacaq.",
+      en: "“Hurry Up Tomorrow” is primarily a synth-pop and R&B album that also explores a variety of genres such as Brazilian funk and hip-hop. The album is the final part of the trilogy following The Weeknd's two previous studio albums, “After Hours” (2020) and “Dawn FM” (2022). Hinting that Hurry Up Tomorrow could be his last album under his stage name, The Weeknd revealed that the album was partly inspired by losing his voice while on tour in 2022. Hurry Up Tomorrow was supported by the singles “Timeless”, “São Paulo” and “Cry for Me”. To promote the album, the continuation of his tour with Playboi Carti began in the summer of 2025 and will conclude in 2026.",
+      ru: "«Hurry Up Tomorrow» — это прежде всего синти-поп и R&B альбом, который также исследует различные жанры, такие как бразильский фанк и хип-хоп. Альбом является заключительной частью трилогии, следующей за двумя предыдущими студийными альбомами The Weeknd — «After Hours» (2020) и «Dawn FM» (2022). Намекнув, что Hurry Up Tomorrow может стать его последним альбомом под сценическим именем, The Weeknd рассказал, что альбом отчасти вдохновлён потерей голоса во время гастролей в 2022 году. Альбом Hurry Up Tomorrow поддержали синглы «Timeless», «São Paulo» и «Cry for Me». В рамках промо альбома продолжение его совместного тура с Playboi Carti началось летом 2025 года и завершится в 2026 году.",
+    },
     tracklist: [
       { id: 1, name: "Please Leave A Message", isExplicit: false, duration: "2:16" },
       { id: 2, name: "Anima Pt. 1", isExplicit: false, duration: "3:54" },
@@ -1127,7 +1171,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Qırmızı rəngli vinil LP ilə ikiqat ağ rəng. The Weeknd-in After Hours albomunda Heartless və Blinding Lights kimi qlobal hitlər yer alır. R&B, pop və hip-hop musiqilərini iddialı geniş ekran linzasından süzgəcdən keçirərək, öz şərtləri ilə populyar musiqini və mədəniyyəti sakitcə ələ keçirdi. Nəticədə, iki dəfə çoxplatinli Qremmi mükafatı laureatı olan müğənni 21-ci əsrin ən uğurlu və əhəmiyyətli sənətçilərindən biri kimi ortaya çıxdı.",
+    description: {
+      az: "Qırmızı rəngli vinil LP ilə ikiqat ağ rəng. The Weeknd-in After Hours albomunda Heartless və Blinding Lights kimi qlobal hitlər yer alır. R&B, pop və hip-hop musiqilərini iddialı geniş ekran linzasından süzgəcdən keçirərək, öz şərtləri ilə populyar musiqini və mədəniyyəti sakitcə ələ keçirdi. Nəticədə, iki dəfə çoxplatinli Qremmi mükafatı laureatı olan müğənni 21-ci əsrin ən uğurlu və əhəmiyyətli sənətçilərindən biri kimi ortaya çıxdı.",
+      en: "Double white-and-red colored vinyl LP. The Weeknd's After Hours features global hits like Heartless and Blinding Lights. Filtering R&B, pop and hip-hop through an ambitious widescreen lens, he quietly took over popular music and culture on his own terms. As a result, the two-time multi-platinum Grammy winner emerged as one of the most successful and significant artists of the 21st century.",
+      ru: "Двойной виниловый LP в красно-белом цвете. Альбом The Weeknd After Hours включает мировые хиты Heartless и Blinding Lights. Пропуская R&B, поп и хип-хоп через амбициозную широкоэкранную линзу, он незаметно завоевал популярную музыку и культуру на собственных условиях. В результате дважды мультиплатиновый обладатель премии Grammy стал одним из самых успешных и значимых артистов XXI века.",
+    },
     tracklist: [
       { id: 1, name: "Alone Again", isExplicit: true, duration: "4:10" },
       { id: 2, name: "Too Late", isExplicit: true, duration: "3:59" },
@@ -1164,7 +1212,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "cd",
-    description: "Qırmızı rəngli vinil LP ilə ikiqat ağ rəng. The Weeknd-in After Hours albomunda Heartless və Blinding Lights kimi qlobal hitlər yer alır. R&B, pop və hip-hop musiqilərini iddialı geniş ekran linzasından süzgəcdən keçirərək, öz şərtləri ilə populyar musiqini və mədəniyyəti sakitcə ələ keçirdi. Nəticədə, iki dəfə çoxplatinli Qremmi mükafatı laureatı olan müğənni 21-ci əsrin ən uğurlu və əhəmiyyətli sənətçilərindən biri kimi ortaya çıxdı.",
+    description: {
+      az: "Qırmızı rəngli vinil LP ilə ikiqat ağ rəng. The Weeknd-in After Hours albomunda Heartless və Blinding Lights kimi qlobal hitlər yer alır. R&B, pop və hip-hop musiqilərini iddialı geniş ekran linzasından süzgəcdən keçirərək, öz şərtləri ilə populyar musiqini və mədəniyyəti sakitcə ələ keçirdi. Nəticədə, iki dəfə çoxplatinli Qremmi mükafatı laureatı olan müğənni 21-ci əsrin ən uğurlu və əhəmiyyətli sənətçilərindən biri kimi ortaya çıxdı.",
+      en: "Double white-and-red colored vinyl LP. The Weeknd's After Hours features global hits like Heartless and Blinding Lights. Filtering R&B, pop and hip-hop through an ambitious widescreen lens, he quietly took over popular music and culture on his own terms. As a result, the two-time multi-platinum Grammy winner emerged as one of the most successful and significant artists of the 21st century.",
+      ru: "Двойной виниловый LP в красно-белом цвете. Альбом The Weeknd After Hours включает мировые хиты Heartless и Blinding Lights. Пропуская R&B, поп и хип-хоп через амбициозную широкоэкранную линзу, он незаметно завоевал популярную музыку и культуру на собственных условиях. В результате дважды мультиплатиновый обладатель премии Grammy стал одним из самых успешных и значимых артистов XXI века.",
+    },
     variants: [
       { id: 1, name: "After Hours", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1769016197/AfterHoursCD-Front_xeuqo4.png" },
       { id: 2, name: "After Hours (Alternativ Örtük)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1769016149/AfterHoursTargetAlt_TheWeeknd_FR_xzkucs.png" }
@@ -1206,7 +1258,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "Dawn FM, 1980-ci illərin yeni dalğası, fank və elektron rəqs musiqisindən ilhamlanan rəqs-pop və sint-pop mahnılarını özündə birləşdirən ümumiyyətlə optimist bir albomdur. Konseptual olaraq, Weeknd albomu əfsanəvi bir dövrü əks etdirən bir albom kimi təsvir etdi, tənqidçilər isə onun psixodelik və ekzistensial mövzuları araşdırdığını qeyd etdilər. Bu, həmçinin After Hours (2020) və Hurry Up Tomorrow (2025) albomlarından əvvəlki trilogiyanın ikinci hissəsidir.",
+    description: {
+      az: "Dawn FM, 1980-ci illərin yeni dalğası, fank və elektron rəqs musiqisindən ilhamlanan rəqs-pop və sint-pop mahnılarını özündə birləşdirən ümumiyyətlə optimist bir albomdur. Konseptual olaraq, Weeknd albomu əfsanəvi bir dövrü əks etdirən bir albom kimi təsvir etdi, tənqidçilər isə onun psixodelik və ekzistensial mövzuları araşdırdığını qeyd etdilər. Bu, həmçinin After Hours (2020) və Hurry Up Tomorrow (2025) albomlarından əvvəlki trilogiyanın ikinci hissəsidir.",
+      en: "Dawn FM is a generally upbeat album that combines dance-pop and synth-pop songs inspired by 1980s new wave, funk and electronic dance music. Conceptually, The Weeknd described the album as one reflecting a legendary era, while critics noted that it explores psychedelic and existential themes. It is also the second part of the trilogy alongside After Hours (2020) and Hurry Up Tomorrow (2025).",
+      ru: "Dawn FM — в целом оптимистичный альбом, сочетающий дэнс-поп и синти-поп композиции, вдохновлённые новой волной 1980-х, фанком и электронной танцевальной музыкой. Концептуально The Weeknd описал альбом как отражение легендарной эпохи, а критики отмечали, что он исследует психоделические и экзистенциальные темы. Это также вторая часть трилогии наряду с After Hours (2020) и Hurry Up Tomorrow (2025).",
+    },
     tracklist: [
       { id: 1, name: "Dawn FM", isExplicit: false, duration: "1:36" },
       { id: 2, name: "Gasoline", isExplicit: false, duration: "3:32" },
@@ -1245,7 +1301,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "cd",
-    description: "Dawn FM, 1980-ci illərin yeni dalğası, fank və elektron rəqs musiqisindən ilhamlanan rəqs-pop və sint-pop mahnılarını özündə birləşdirən ümumiyyətlə optimist bir albomdur. Konseptual olaraq, Weeknd albomu əfsanəvi bir dövrü əks etdirən bir albom kimi təsvir etdi, tənqidçilər isə onun psixodelik və ekzistensial mövzuları araşdırdığını qeyd etdilər. Bu, həmçinin After Hours (2020) və Hurry Up Tomorrow (2025) albomlarından əvvəlki trilogiyanın ikinci hissəsidir.",
+    description: {
+      az: "Dawn FM, 1980-ci illərin yeni dalğası, fank və elektron rəqs musiqisindən ilhamlanan rəqs-pop və sint-pop mahnılarını özündə birləşdirən ümumiyyətlə optimist bir albomdur. Konseptual olaraq, Weeknd albomu əfsanəvi bir dövrü əks etdirən bir albom kimi təsvir etdi, tənqidçilər isə onun psixodelik və ekzistensial mövzuları araşdırdığını qeyd etdilər. Bu, həmçinin After Hours (2020) və Hurry Up Tomorrow (2025) albomlarından əvvəlki trilogiyanın ikinci hissəsidir.",
+      en: "Dawn FM is a generally upbeat album that combines dance-pop and synth-pop songs inspired by 1980s new wave, funk and electronic dance music. Conceptually, The Weeknd described the album as one reflecting a legendary era, while critics noted that it explores psychedelic and existential themes. It is also the second part of the trilogy alongside After Hours (2020) and Hurry Up Tomorrow (2025).",
+      ru: "Dawn FM — в целом оптимистичный альбом, сочетающий дэнс-поп и синти-поп композиции, вдохновлённые новой волной 1980-х, фанком и электронной танцевальной музыкой. Концептуально The Weeknd описал альбом как отражение легендарной эпохи, а критики отмечали, что он исследует психоделические и экзистенциальные темы. Это также вторая часть трилогии наряду с After Hours (2020) и Hurry Up Tomorrow (2025).",
+    },
     tracklist: [
       { id: 1, name: "Dawn FM", isExplicit: false, duration: "1:36" },
       { id: 2, name: "Gasoline", isExplicit: false, duration: "3:32" },
@@ -1283,7 +1343,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Starboy Kanadalı müğənni-bəstəkar The Weeknd-in 25 noyabr 2016-cı ildə buraxılan üçüncü studiya albomudur. Albomda Daft Punk, Lana Del Rey, Kendrick Lamar və Future qonaq kimi çıxış edirlər. Albomun icraçı prodüserləri kimi The Weeknd və Doc McKinney Diplo, Cashmere Cat, Metro Boomin, Frank Dukes və Labrinth kimi müxtəlif prodüserləri cəlb ediblər.",
+    description: {
+      az: "Starboy Kanadalı müğənni-bəstəkar The Weeknd-in 25 noyabr 2016-cı ildə buraxılan üçüncü studiya albomudur. Albomda Daft Punk, Lana Del Rey, Kendrick Lamar və Future qonaq kimi çıxış edirlər. Albomun icraçı prodüserləri kimi The Weeknd və Doc McKinney Diplo, Cashmere Cat, Metro Boomin, Frank Dukes və Labrinth kimi müxtəlif prodüserləri cəlb ediblər.",
+      en: "Starboy is the third studio album by Canadian singer-songwriter The Weeknd, released on November 25, 2016. The album features guest appearances from Daft Punk, Lana Del Rey, Kendrick Lamar and Future. As executive producers, The Weeknd and Doc McKinney enlisted a variety of producers such as Diplo, Cashmere Cat, Metro Boomin, Frank Dukes and Labrinth.",
+      ru: "Starboy — третий студийный альбом канадского певца и автора песен The Weeknd, выпущенный 25 ноября 2016 года. В альбоме в качестве гостей участвуют Daft Punk, Lana Del Rey, Kendrick Lamar и Future. Исполнительные продюсеры The Weeknd и Doc McKinney привлекли к работе таких продюсеров, как Diplo, Cashmere Cat, Metro Boomin, Frank Dukes и Labrinth.",
+    },
     tracklist: [
       { id: 1, name: "Starboy", features: "The Weeknd & Daft Punk", isExplicit: true, duration: "3:50" },
       { id: 2, name: "Party Monster", isExplicit: true, duration: "4:09" },
@@ -1322,7 +1386,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "cd",
-    description: "Starboy Kanadalı müğənni-bəstəkar The Weeknd-in 25 noyabr 2016-cı ildə buraxılan üçüncü studiya albomudur. Albomda Daft Punk, Lana Del Rey, Kendrick Lamar və Future qonaq kimi çıxış edirlər. Albomun icraçı prodüserləri kimi The Weeknd və Doc McKinney Diplo, Cashmere Cat, Metro Boomin, Frank Dukes və Labrinth kimi müxtəlif prodüserləri cəlb ediblər.",
+    description: {
+      az: "Starboy Kanadalı müğənni-bəstəkar The Weeknd-in 25 noyabr 2016-cı ildə buraxılan üçüncü studiya albomudur. Albomda Daft Punk, Lana Del Rey, Kendrick Lamar və Future qonaq kimi çıxış edirlər. Albomun icraçı prodüserləri kimi The Weeknd və Doc McKinney Diplo, Cashmere Cat, Metro Boomin, Frank Dukes və Labrinth kimi müxtəlif prodüserləri cəlb ediblər.",
+      en: "Starboy is the third studio album by Canadian singer-songwriter The Weeknd, released on November 25, 2016. The album features guest appearances from Daft Punk, Lana Del Rey, Kendrick Lamar and Future. As executive producers, The Weeknd and Doc McKinney enlisted a variety of producers such as Diplo, Cashmere Cat, Metro Boomin, Frank Dukes and Labrinth.",
+      ru: "Starboy — третий студийный альбом канадского певца и автора песен The Weeknd, выпущенный 25 ноября 2016 года. В альбоме в качестве гостей участвуют Daft Punk, Lana Del Rey, Kendrick Lamar и Future. Исполнительные продюсеры The Weeknd и Doc McKinney привлекли к работе таких продюсеров, как Diplo, Cashmere Cat, Metro Boomin, Frank Dukes и Labrinth.",
+    },
     tracklist: [
       { id: 1, name: "Starboy", features: "The Weeknd & Daft Punk", isExplicit: true, duration: "3:50" },
       { id: 2, name: "Party Monster", isExplicit: true, duration: "4:09" },
@@ -1362,7 +1430,11 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "vinyl",
-    description: "The Highlights Kanadalı müğənni və bəstəkar The Weeknd-in ikinci və qlobal miqyasda ilk hit albomudur. Albom 5 fevral 2021-ci ildə çıxıb və onun dördüncü studiya albomu After Hours (2020) və ilk ən böyük hit albomu The Weeknd in Japan (2018)-in çıxmasından sonra çıxıb. Albom onun Super Bowl LV-nin fasilə şousundakı çıxışı ərəfəsində buraxılıb.",
+    description: {
+      az: "The Highlights Kanadalı müğənni və bəstəkar The Weeknd-in ikinci və qlobal miqyasda ilk hit albomudur. Albom 5 fevral 2021-ci ildə çıxıb və onun dördüncü studiya albomu After Hours (2020) və ilk ən böyük hit albomu The Weeknd in Japan (2018)-in çıxmasından sonra çıxıb. Albom onun Super Bowl LV-nin fasilə şousundakı çıxışı ərəfəsində buraxılıb.",
+      en: "The Highlights is the second greatest hits album by Canadian singer-songwriter The Weeknd and his first released globally. It came out on February 5, 2021, following his fourth studio album After Hours (2020) and his first greatest hits album The Weeknd in Japan (2018). The album was released in the lead-up to his Super Bowl LV halftime show performance.",
+      ru: "The Highlights — второй сборник хитов канадского певца и автора песен The Weeknd и первый, выпущенный в мировом масштабе. Он вышел 5 февраля 2021 года, после его четвёртого студийного альбома After Hours (2020) и первого сборника хитов The Weeknd in Japan (2018). Альбом был выпущен в преддверии его выступления в перерыве Super Bowl LV.",
+    },
     tracklist: [
       { id: 1, name: "Save Your Tears", isExplicit: true, duration: "3:35" },
       { id: 2, name: "Blinding Lights", isExplicit: false, duration: "3:20" },
@@ -1401,7 +1473,11 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "cd",
-    description: "The Highlights Kanadalı müğənni və bəstəkar The Weeknd-in ikinci və qlobal miqyasda ilk hit albomudur. Albom 5 fevral 2021-ci ildə çıxıb və onun dördüncü studiya albomu After Hours (2020) və ilk ən böyük hit albomu The Weeknd in Japan (2018)-in çıxmasından sonra çıxıb. Albom onun Super Bowl LV-nin fasilə şousundakı çıxışı ərəfəsində buraxılıb.",
+    description: {
+      az: "The Highlights Kanadalı müğənni və bəstəkar The Weeknd-in ikinci və qlobal miqyasda ilk hit albomudur. Albom 5 fevral 2021-ci ildə çıxıb və onun dördüncü studiya albomu After Hours (2020) və ilk ən böyük hit albomu The Weeknd in Japan (2018)-in çıxmasından sonra çıxıb. Albom onun Super Bowl LV-nin fasilə şousundakı çıxışı ərəfəsində buraxılıb.",
+      en: "The Highlights is the second greatest hits album by Canadian singer-songwriter The Weeknd and his first released globally. It came out on February 5, 2021, following his fourth studio album After Hours (2020) and his first greatest hits album The Weeknd in Japan (2018). The album was released in the lead-up to his Super Bowl LV halftime show performance.",
+      ru: "The Highlights — второй сборник хитов канадского певца и автора песен The Weeknd и первый, выпущенный в мировом масштабе. Он вышел 5 февраля 2021 года, после его четвёртого студийного альбома After Hours (2020) и первого сборника хитов The Weeknd in Japan (2018). Альбом был выпущен в преддверии его выступления в перерыве Super Bowl LV.",
+    },
     tracklist: [
       { id: 1, name: "Save Your Tears", isExplicit: true, duration: "3:35" },
       { id: 2, name: "Blinding Lights", isExplicit: false, duration: "3:20" },
@@ -1442,7 +1518,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Playboi Carti, Cartinin saf xarizması və trend yaradan personajı ilə hərəkətə gəlir. Unikal moda hissi və hər şeyə fərqli olan sevgisi ilə qlobal mixteypdən qeyri-ənənəvi özünüifadə brendi üçün başlanğıc nöqtəsi kimi istifadə edən sənətçi, bu radikal miksteypdən qeyri-ənənəvi özünüifadə brendi üçün başlanğıc nöqtəsi kimi istifadə edir. Layihə, yeni nəsil qəzəbli və moşerlər üçün xüsusi olaraq hazırlanmış transa səbəb olan himnlərə və mantralara çevrilən təkrarlanan nəğmələr və qulaqcıq ifadələri ilə ruhlandırılır. Tez-tez əməkdaşlıq edən Pi'erre Bourne tərəfindən hazırlanan möhtəşəm sinql olan “Magnolia”, Cartinin əsas axına gəliş anı idi və bu, əsasən onun mehriban rep üslubu sayəsində idi. Playboi Cartinin mahnıları, sözləri və reklam kitabları daha geniş pop mədəniyyəti mənzərəsinə hopmuşdur, amma çaşqın olmayın: ”Half & Half“ mahnısında o, ”Bu, pop deyil, bu, bir növ rokdur“ deyə bildirir. Hip-hopun üzr istəməyən havasından və rok-n-rolun hörmətsiz münasibətindən ilhamlanaraq, o, həsr edir",
+    description: {
+      az: "Playboi Carti, Cartinin saf xarizması və trend yaradan personajı ilə hərəkətə gəlir. Unikal moda hissi və hər şeyə fərqli olan sevgisi ilə qlobal mixteypdən qeyri-ənənəvi özünüifadə brendi üçün başlanğıc nöqtəsi kimi istifadə edən sənətçi, bu radikal miksteypdən qeyri-ənənəvi özünüifadə brendi üçün başlanğıc nöqtəsi kimi istifadə edir. Layihə, yeni nəsil qəzəbli və moşerlər üçün xüsusi olaraq hazırlanmış transa səbəb olan himnlərə və mantralara çevrilən təkrarlanan nəğmələr və qulaqcıq ifadələri ilə ruhlandırılır. Tez-tez əməkdaşlıq edən Pi'erre Bourne tərəfindən hazırlanan möhtəşəm sinql olan “Magnolia”, Cartinin əsas axına gəliş anı idi və bu, əsasən onun mehriban rep üslubu sayəsində idi. Playboi Cartinin mahnıları, sözləri və reklam kitabları daha geniş pop mədəniyyəti mənzərəsinə hopmuşdur, amma çaşqın olmayın: ”Half & Half“ mahnısında o, ”Bu, pop deyil, bu, bir növ rokdur“ deyə bildirir. Hip-hopun üzr istəməyən havasından və rok-n-rolun hörmətsiz münasibətindən ilhamlanaraq, o, həsr edir",
+      en: "Playboi Carti runs on Carti's pure charisma and trendsetting persona. With a unique sense of fashion and a love for all things different, the artist uses this radical mixtape as a launching pad for his unconventional brand of self-expression. The project thrives on repetitive chants and earworm phrases that turn into trance-inducing anthems and mantras made especially for a new generation of ragers and moshers. “Magnolia”, the standout single produced by frequent collaborator Pi'erre Bourne, was Carti's mainstream arrival moment, largely thanks to his amiable rap style. Playboi Carti's songs, lyrics and ad-libs have seeped into the wider pop culture landscape, but make no mistake: on “Half & Half” he declares, “This ain't pop, this some sort of rock”. Inspired by hip-hop's unapologetic air and rock'n'roll's irreverent attitude, he dedicates himself",
+      ru: "Playboi Carti движется на чистой харизме Carti и его законодательном образе. Обладая уникальным чувством моды и любовью ко всему необычному, артист использует этот радикальный микстейп как отправную точку для своего нетрадиционного бренда самовыражения. Проект вдохновляется повторяющимися напевами и въедливыми фразами, которые превращаются во вводящие в транс гимны и мантры, созданные специально для нового поколения рейджеров и мошеров. «Magnolia» — выдающийся сингл, спродюсированный постоянным соавтором Pi'erre Bourne, — стал моментом выхода Carti в мейнстрим, во многом благодаря его дружелюбному рэп-стилю. Песни, тексты и эд-либы Playboi Carti впитались в более широкий ландшафт поп-культуры, но не заблуждайтесь: в песне «Half & Half» он заявляет: «Это не поп, это своего рода рок». Вдохновлённый непримиримым духом хип-хопа и дерзким отношением рок-н-ролла, он посвящает себя этому",
+    },
     tracklist: [
       { id: 1, name: "Location", isExplicit: true, duration: "2:48", spotifyEmbed: "https://open.spotify.com/embed/track/3yk7PJnryiJ8mAPqsrujzf?si=0bff960533e34a32" },
       { id: 2, name: "Magnolia", isExplicit: true, duration: "3:01", spotifyEmbed: "https://open.spotify.com/embed/track/1e1JKLEDKP7hEQzJfNAgPl?si=56d0754ac18e4917", musicVideo: "https://youtu.be/oCveByMXd_0?si=sAuvie9vPqFOGOvX" },
@@ -1478,7 +1558,11 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "cd",
-    description: "Playboi Carti, Cartinin saf xarizması və trend yaradan personajı ilə hərəkətə gəlir. Unikal moda hissi və hər şeyə fərqli olan sevgisi ilə qlobal mixteypdən qeyri-ənənəvi özünüifadə brendi üçün başlanğıc nöqtəsi kimi istifadə edən sənətçi, bu radikal miksteypdən qeyri-ənənəvi özünüifadə brendi üçün başlanğıc nöqtəsi kimi istifadə edir. Layihə, yeni nəsil qəzəbli və moşerlər üçün xüsusi olaraq hazırlanmış transa səbəb olan himnlərə və mantralara çevrilən təkrarlanan nəğmələr və qulaqcıq ifadələri ilə ruhlandırılır. Tez-tez əməkdaşlıq edən Pi'erre Bourne tərəfindən hazırlanan möhtəşəm sinql olan “Magnolia”, Cartinin əsas axına gəliş anı idi və bu, əsasən onun mehriban rep üslubu sayəsində idi. Playboi Cartinin mahnıları, sözləri və reklam kitabları daha geniş pop mədəniyyəti mənzərəsinə hopmuşdur, amma çaşqın olmayın: ”Half & Half“ mahnısında o, ”Bu, pop deyil, bu, bir növ rokdur“ deyə bildirir. Hip-hopun üzr istəməyən havasından və rok-n-rolun hörmətsiz münasibətindən ilhamlanaraq, o, həsr edir",
+    description: {
+      az: "Playboi Carti, Cartinin saf xarizması və trend yaradan personajı ilə hərəkətə gəlir. Unikal moda hissi və hər şeyə fərqli olan sevgisi ilə qlobal mixteypdən qeyri-ənənəvi özünüifadə brendi üçün başlanğıc nöqtəsi kimi istifadə edən sənətçi, bu radikal miksteypdən qeyri-ənənəvi özünüifadə brendi üçün başlanğıc nöqtəsi kimi istifadə edir. Layihə, yeni nəsil qəzəbli və moşerlər üçün xüsusi olaraq hazırlanmış transa səbəb olan himnlərə və mantralara çevrilən təkrarlanan nəğmələr və qulaqcıq ifadələri ilə ruhlandırılır. Tez-tez əməkdaşlıq edən Pi'erre Bourne tərəfindən hazırlanan möhtəşəm sinql olan “Magnolia”, Cartinin əsas axına gəliş anı idi və bu, əsasən onun mehriban rep üslubu sayəsində idi. Playboi Cartinin mahnıları, sözləri və reklam kitabları daha geniş pop mədəniyyəti mənzərəsinə hopmuşdur, amma çaşqın olmayın: ”Half & Half“ mahnısında o, ”Bu, pop deyil, bu, bir növ rokdur“ deyə bildirir. Hip-hopun üzr istəməyən havasından və rok-n-rolun hörmətsiz münasibətindən ilhamlanaraq, o, həsr edir",
+      en: "Playboi Carti runs on Carti's pure charisma and trendsetting persona. With a unique sense of fashion and a love for all things different, the artist uses this radical mixtape as a launching pad for his unconventional brand of self-expression. The project thrives on repetitive chants and earworm phrases that turn into trance-inducing anthems and mantras made especially for a new generation of ragers and moshers. “Magnolia”, the standout single produced by frequent collaborator Pi'erre Bourne, was Carti's mainstream arrival moment, largely thanks to his amiable rap style. Playboi Carti's songs, lyrics and ad-libs have seeped into the wider pop culture landscape, but make no mistake: on “Half & Half” he declares, “This ain't pop, this some sort of rock”. Inspired by hip-hop's unapologetic air and rock'n'roll's irreverent attitude, he dedicates himself",
+      ru: "Playboi Carti движется на чистой харизме Carti и его законодательном образе. Обладая уникальным чувством моды и любовью ко всему необычному, артист использует этот радикальный микстейп как отправную точку для своего нетрадиционного бренда самовыражения. Проект вдохновляется повторяющимися напевами и въедливыми фразами, которые превращаются во вводящие в транс гимны и мантры, созданные специально для нового поколения рейджеров и мошеров. «Magnolia» — выдающийся сингл, спродюсированный постоянным соавтором Pi'erre Bourne, — стал моментом выхода Carti в мейнстрим, во многом благодаря его дружелюбному рэп-стилю. Песни, тексты и эд-либы Playboi Carti впитались в более широкий ландшафт поп-культуры, но не заблуждайтесь: в песне «Half & Half» он заявляет: «Это не поп, это своего рода рок». Вдохновлённый непримиримым духом хип-хопа и дерзким отношением рок-н-ролла, он посвящает себя этому",
+    },
     tracklist: [
       { id: 1, name: "Location", isExplicit: true, duration: "2:48", spotifyEmbed: "https://open.spotify.com/embed/track/3yk7PJnryiJ8mAPqsrujzf?si=0bff960533e34a32" },
       { id: 2, name: "Magnolia", isExplicit: true, duration: "3:01", spotifyEmbed: "https://open.spotify.com/embed/track/1e1JKLEDKP7hEQzJfNAgPl?si=56d0754ac18e4917", musicVideo: "https://youtu.be/oCveByMXd_0?si=sAuvie9vPqFOGOvX" },
@@ -1516,7 +1600,11 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "”Die Lit“ albomu, 19 mahnı ilə birlikdə hitə çevrilən öz adını daşıyan albomdan bir il sonra gəlir. “Mıtıldayan reper” adlandırılması barədə açıq zarafat edən Karti, Atlanta aksentini daha da gücləndirərək, hətta beytlərinin ritmik, lakin anlaşılmaz vokallara çevrildiyi “Fell in Luv” və ”FlatBed Freestyle“ kimi mahnılarda da ifasını daha da gücləndirir. Ümumilikdə, ”Die Lit“ Pi'erre Bourne-dan minimal və bas-ağır istehsal üzərində qurulmuş və bəzən Lil Uzi Vert, Skepta və Nicki Minaj kimi müəlliflərin də dəstəklədiyi bir kolleksiyadır.",
+    description: {
+      az: "”Die Lit“ albomu, 19 mahnı ilə birlikdə hitə çevrilən öz adını daşıyan albomdan bir il sonra gəlir. “Mıtıldayan reper” adlandırılması barədə açıq zarafat edən Karti, Atlanta aksentini daha da gücləndirərək, hətta beytlərinin ritmik, lakin anlaşılmaz vokallara çevrildiyi “Fell in Luv” və ”FlatBed Freestyle“ kimi mahnılarda da ifasını daha da gücləndirir. Ümumilikdə, ”Die Lit“ Pi'erre Bourne-dan minimal və bas-ağır istehsal üzərində qurulmuş və bəzən Lil Uzi Vert, Skepta və Nicki Minaj kimi müəlliflərin də dəstəklədiyi bir kolleksiyadır.",
+      en: "“Die Lit” arrives a year after the self-titled album that became a hit, packing 19 songs. Openly joking about being called a “mumble rapper”, Carti leans even harder into his Atlanta accent, pushing his delivery further even on songs like “Fell in Luv” and “FlatBed Freestyle”, where his verses dissolve into rhythmic yet indecipherable vocals. Overall, “Die Lit” is a collection built on minimal, bass-heavy production from Pi'erre Bourne, occasionally supported by the likes of Lil Uzi Vert, Skepta and Nicki Minaj.",
+      ru: "«Die Lit» выходит через год после одноимённого альбома, ставшего хитом, и включает 19 песен. Открыто шутя над прозвищем «бормочущий рэпер», Carti ещё сильнее подчёркивает свой атлантский акцент, доводя подачу до предела даже в таких песнях, как «Fell in Luv» и «FlatBed Freestyle», где его куплеты превращаются в ритмичный, но неразборчивый вокал. В целом «Die Lit» — это коллекция, построенная на минималистичном и басовитом продакшене Pi'erre Bourne, которую местами поддерживают Lil Uzi Vert, Skepta и Nicki Minaj.",
+    },
     tracklist: [
       { id: 1, name: "Long Time (Intro)", isExplicit: true, duration: "3:31", spotifyEmbed: "https://open.spotify.com/embed/track/4IO2X2YoXoUMv0M2rwomLC?si=83770dccf311469a" },
       { id: 2, name: "R.I.P.", isExplicit: true, duration: "3:12", spotifyEmbed: "https://open.spotify.com/embed/track/3L0IKstjUgDFVQAbQIRZRv?si=c5372a7b746346e0", musicVideo: "https://youtu.be/GRoa6w-wnT4?si=QicClyGJS-0Ltncj", },
@@ -1559,7 +1647,11 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "vinyl",
-    description: "Whole Lotta Red —Filti və Pierre Bourne kimi an müəyyən edən oğlanlar tərəfindən istehsal olunmuş — səsi daha da irəli apararaq, möhtəşəm bir slasher filminin (“No Sl33p”, “Stop Breathing”) zirvəsini əks etdirən parlaq, qorxulu musiqi və ya təkrar-təkrar viral videolar yaratdı. Kartini lirik sadəliyi və ya palçıqda mühərrikin əks-sədası kimi tək bir ifadəyə ilişib qalması ilə fərqləndirmək — “Jump Out The House!” — mənasızdır: O, burada rep oxumur, təmiz, ani enerji ötürür. Bunu Three 6 Mafia və ya köhnə arkad oyunlarının səssiz səsi və ya 80-ci illərin pank və hardcore musiqisinin sıxılmış zorakılığı kimi şeylərə bağlaya bilərsiniz. Amma presedentlər heç bir əhəmiyyət kəsb etmirdi, heç olmasa əslində belə deyildi",
+    description: {
+      az: "Whole Lotta Red —Filti və Pierre Bourne kimi an müəyyən edən oğlanlar tərəfindən istehsal olunmuş — səsi daha da irəli apararaq, möhtəşəm bir slasher filminin (“No Sl33p”, “Stop Breathing”) zirvəsini əks etdirən parlaq, qorxulu musiqi və ya təkrar-təkrar viral videolar yaratdı. Kartini lirik sadəliyi və ya palçıqda mühərrikin əks-sədası kimi tək bir ifadəyə ilişib qalması ilə fərqləndirmək — “Jump Out The House!” — mənasızdır: O, burada rep oxumur, təmiz, ani enerji ötürür. Bunu Three 6 Mafia və ya köhnə arkad oyunlarının səssiz səsi və ya 80-ci illərin pank və hardcore musiqisinin sıxılmış zorakılığı kimi şeylərə bağlaya bilərsiniz. Amma presedentlər heç bir əhəmiyyət kəsb etmirdi, heç olmasa əslində belə deyildi",
+      en: "Whole Lotta Red — produced by moment-defining guys like F1lthy and Pi'erre Bourne — pushed the sound even further, creating brilliant, frightening music that mirrors the climax of a great slasher film (“No Sl33p”, “Stop Breathing”), or videos that went viral again and again. Singling Carti out for lyrical simplicity, or for getting stuck on a single phrase like an engine revving in the mud — “Jump Out The House!” — is pointless: he isn't rapping here, he's transmitting pure, immediate energy. You could tie it to things like Three 6 Mafia, or the muffled sound of old arcade games, or the compressed violence of '80s punk and hardcore. But precedents didn't matter at all, at least not really",
+      ru: "Whole Lotta Red — спродюсированный определяющими эпоху парнями вроде F1lthy и Pi'erre Bourne — продвинул звук ещё дальше, создав яркую, пугающую музыку, отражающую кульминацию отличного слэшера («No Sl33p», «Stop Breathing»), или видео, снова и снова становившиеся вирусными. Выделять Carti за лирическую простоту или за зацикленность на одной фразе, как двигатель, буксующий в грязи, — «Jump Out The House!» — бессмысленно: он здесь не читает рэп, а передаёт чистую, мгновенную энергию. Это можно связать с Three 6 Mafia, с приглушённым звуком старых аркадных автоматов или со сжатой яростью панка и хардкора 80-х. Но прецеденты не имели никакого значения, по крайней мере на самом деле",
+    },
     variants: [
       { id: 1, name: "Whole Lotta Red", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768319053/WLR_Vinyl_gi2cye.png" },
       { id: 2, name: "Whole Lotta Red (Indie)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226183/WLRVinyl_Indie_flowgy.jpg" },
@@ -1611,7 +1703,11 @@ export const albums = [
     tracklistImage: wholeLottaRed.tracklist,
     accentColor: "red",
     format: "cd",
-    description: "Whole Lotta Red —Filti və Pierre Bourne kimi an müəyyən edən oğlanlar tərəfindən istehsal olunmuş — səsi daha da irəli apararaq, möhtəşəm bir slasher filminin (“No Sl33p”, “Stop Breathing”) zirvəsini əks etdirən parlaq, qorxulu musiqi və ya təkrar-təkrar viral videolar yaratdı. Kartini lirik sadəliyi və ya palçıqda mühərrikin əks-sədası kimi tək bir ifadəyə ilişib qalması ilə fərqləndirmək — “Jump Out The House!” — mənasızdır: O, burada rep oxumur, təmiz, ani enerji ötürür. Bunu Three 6 Mafia və ya köhnə arkad oyunlarının səssiz səsi və ya 80-ci illərin pank və hardcore musiqisinin sıxılmış zorakılığı kimi şeylərə bağlaya bilərsiniz. Amma presedentlər heç bir əhəmiyyət kəsb etmirdi, heç olmasa əslində belə deyildi",
+    description: {
+      az: "Whole Lotta Red —Filti və Pierre Bourne kimi an müəyyən edən oğlanlar tərəfindən istehsal olunmuş — səsi daha da irəli apararaq, möhtəşəm bir slasher filminin (“No Sl33p”, “Stop Breathing”) zirvəsini əks etdirən parlaq, qorxulu musiqi və ya təkrar-təkrar viral videolar yaratdı. Kartini lirik sadəliyi və ya palçıqda mühərrikin əks-sədası kimi tək bir ifadəyə ilişib qalması ilə fərqləndirmək — “Jump Out The House!” — mənasızdır: O, burada rep oxumur, təmiz, ani enerji ötürür. Bunu Three 6 Mafia və ya köhnə arkad oyunlarının səssiz səsi və ya 80-ci illərin pank və hardcore musiqisinin sıxılmış zorakılığı kimi şeylərə bağlaya bilərsiniz. Amma presedentlər heç bir əhəmiyyət kəsb etmirdi, heç olmasa əslində belə deyildi",
+      en: "Whole Lotta Red — produced by moment-defining guys like F1lthy and Pi'erre Bourne — pushed the sound even further, creating brilliant, frightening music that mirrors the climax of a great slasher film (“No Sl33p”, “Stop Breathing”), or videos that went viral again and again. Singling Carti out for lyrical simplicity, or for getting stuck on a single phrase like an engine revving in the mud — “Jump Out The House!” — is pointless: he isn't rapping here, he's transmitting pure, immediate energy. You could tie it to things like Three 6 Mafia, or the muffled sound of old arcade games, or the compressed violence of '80s punk and hardcore. But precedents didn't matter at all, at least not really",
+      ru: "Whole Lotta Red — спродюсированный определяющими эпоху парнями вроде F1lthy и Pi'erre Bourne — продвинул звук ещё дальше, создав яркую, пугающую музыку, отражающую кульминацию отличного слэшера («No Sl33p», «Stop Breathing»), или видео, снова и снова становившиеся вирусными. Выделять Carti за лирическую простоту или за зацикленность на одной фразе, как двигатель, буксующий в грязи, — «Jump Out The House!» — бессмысленно: он здесь не читает рэп, а передаёт чистую, мгновенную энергию. Это можно связать с Three 6 Mafia, с приглушённым звуком старых аркадных автоматов или со сжатой яростью панка и хардкора 80-х. Но прецеденты не имели никакого значения, по крайней мере на самом деле",
+    },
     tracklist: [
       { id: 1, name: "Rockstar Made", isExplicit: true, duration: "3:13", spotifyEmbed: "https://open.spotify.com/embed/track/0F13K9dwYH2zpTWiR8d628?si=756272af3c484a64" },
       { id: 2, name: "Go2DaMoon", features: "Playboi Carti & Kanye West", isExplicit: true, duration: "1:59", spotifyEmbed: "https://open.spotify.com/embed/track/0F13K9dwYH2zpTWiR8d628?si=50a71523510b472a" },
@@ -1659,7 +1755,11 @@ export const albums = [
     sleeveColor: "white",
     accentColor: "white",
     format: "vinyl",
-    description: "Playboi Carti, Whole Lotta Red-dən təxminən dörd il ərzində Future, Latto və Trippie Redd kimi məşhurlarla birlikdə çıxış edərək, demək olar ki, orada olmayıb. Buna baxmayaraq, bu, onun böyük fanatlarının sonda sadəcə MUSIC kimi qısaldılmış adı ilə çıxan I AM MUSIC albomu ilə bağlı davamlı olaraq səs-küy salmasının qarşısını ala bilməyib. Mahnının uzunluğu gözləmə müddətini təsdiqləyir və ifaçının xoş gəlişini xəbər verən POP OUT və CRUSH kimi qəzəbli rep mahnıları ilə başlayır. 30 mahnıdan ibarət və 77 dəqiqəlik davam edən albomda onun səsləri aqressiv şəkildə şişirdilmiş, sintezator ağırlığı ilə məşhurlaşdığı post-trap ilə daha pop-trap arasında dəyişir, lakin bütün bunlar şübhəsiz ki, onun stilistik diapazonundadır. Karti əvvəlcə qonaq seçimini yüksək səviyyəli albom buraxılışları üçün adət halını aldığı kimi, jiletə yaxın saxlayırdı. Lakin Kendrick Lamarın GOOD CREDITə tüpürdüyünü, Future-ın TRIM-ə görə hisslərini ifadə etdiyini və ya əməkdaşlıq karyerasının əsas dayağı Lil Uzi Vertin TWIN TRIM də qələbə ilə sürüşdüyünü görməmək mümkün olmazdı. The Weeknd-in RATHER LIE mahnısındakı ən diqqət çəkən hissə, bəlkə də, onun buradakı zərfləri itələməsinin ən açıq nümunəsidir, baxmayaraq ki, Travis Scott-un PHILLY mahnısında və Young Thug və Ty Dolla $ign-dən ibarət komandanın WE NEED ALL DA VIBES mahnısında çıxışları bu istiqaməti daha da inandırıcı edir. Bu kimi dostları ilə belə, Carti özü daha parlaq şəkildə parlayır, nəfəsli, demək olar ki, falsetto səsi I SEEEEEE YOU BABY BOI video oyun arpecioları və xırıltılı xırıltısı COCAINE NOSE-nin kinematoqrafik səs-küyü ətrafında fırlanır. Yalnız gələcəyə baxmaqla kifayətlənməyərək, klassik 1017 Brick Squad kasetlərini xatırladan RADAR-da səslənən Atlantanın 2010-cu illərin əvvəllərindəki səsinə demək olar ki, nostaljik bir qiymətləndirmə var.",
+    description: {
+      az: "Playboi Carti, Whole Lotta Red-dən təxminən dörd il ərzində Future, Latto və Trippie Redd kimi məşhurlarla birlikdə çıxış edərək, demək olar ki, orada olmayıb. Buna baxmayaraq, bu, onun böyük fanatlarının sonda sadəcə MUSIC kimi qısaldılmış adı ilə çıxan I AM MUSIC albomu ilə bağlı davamlı olaraq səs-küy salmasının qarşısını ala bilməyib. Mahnının uzunluğu gözləmə müddətini təsdiqləyir və ifaçının xoş gəlişini xəbər verən POP OUT və CRUSH kimi qəzəbli rep mahnıları ilə başlayır. 30 mahnıdan ibarət və 77 dəqiqəlik davam edən albomda onun səsləri aqressiv şəkildə şişirdilmiş, sintezator ağırlığı ilə məşhurlaşdığı post-trap ilə daha pop-trap arasında dəyişir, lakin bütün bunlar şübhəsiz ki, onun stilistik diapazonundadır. Karti əvvəlcə qonaq seçimini yüksək səviyyəli albom buraxılışları üçün adət halını aldığı kimi, jiletə yaxın saxlayırdı. Lakin Kendrick Lamarın GOOD CREDITə tüpürdüyünü, Future-ın TRIM-ə görə hisslərini ifadə etdiyini və ya əməkdaşlıq karyerasının əsas dayağı Lil Uzi Vertin TWIN TRIM də qələbə ilə sürüşdüyünü görməmək mümkün olmazdı. The Weeknd-in RATHER LIE mahnısındakı ən diqqət çəkən hissə, bəlkə də, onun buradakı zərfləri itələməsinin ən açıq nümunəsidir, baxmayaraq ki, Travis Scott-un PHILLY mahnısında və Young Thug və Ty Dolla $ign-dən ibarət komandanın WE NEED ALL DA VIBES mahnısında çıxışları bu istiqaməti daha da inandırıcı edir. Bu kimi dostları ilə belə, Carti özü daha parlaq şəkildə parlayır, nəfəsli, demək olar ki, falsetto səsi I SEEEEEE YOU BABY BOI video oyun arpecioları və xırıltılı xırıltısı COCAINE NOSE-nin kinematoqrafik səs-küyü ətrafında fırlanır. Yalnız gələcəyə baxmaqla kifayətlənməyərək, klassik 1017 Brick Squad kasetlərini xatırladan RADAR-da səslənən Atlantanın 2010-cu illərin əvvəllərindəki səsinə demək olar ki, nostaljik bir qiymətləndirmə var.",
+      en: "Playboi Carti has been all but absent in the roughly four years since Whole Lotta Red, popping up alongside stars like Future, Latto and Trippie Redd. Even so, that couldn't stop his massive fanbase from constantly buzzing about I AM MUSIC, the album that ultimately arrived under the shortened title MUSIC. Its length justifies the wait, opening with raging rap songs like POP OUT and CRUSH that herald the artist's welcome return. Across 30 songs and 77 minutes, his vocals shift between the aggressively distorted, synth-heavy post-trap he became famous for and something more pop-trap, yet all of it sits firmly within his stylistic range. Carti initially kept his guest list close to the vest, as has become customary for high-profile album rollouts. But it would be impossible to miss Kendrick Lamar spitting on GOOD CREDIT, Future airing out his feelings on TRIM, or career-long collaborator Lil Uzi Vert gliding to victory on TWIN TRIM. The Weeknd's standout turn on RATHER LIE is perhaps the clearest example of the envelope-pushing here, though Travis Scott's appearance on PHILLY and the Young Thug and Ty Dolla $ign team-up on WE NEED ALL DA VIBES make the direction even more convincing. Even with friends like these, Carti himself shines brightest, his breathy, almost falsetto voice swirling around the video-game arpeggios of I SEEEEEE YOU BABY BOI and the cinematic din of COCAINE NOSE with his raspy growl. And not content to only look forward, there's an almost nostalgic appreciation of Atlanta's early-2010s sound on RADAR, which recalls classic 1017 Brick Squad tapes.",
+      ru: "Playboi Carti почти не появлялся на публике в течение примерно четырёх лет после Whole Lotta Red, лишь изредка выступая вместе со звёздами вроде Future, Latto и Trippie Redd. Тем не менее это не помешало его огромной армии фанатов постоянно шуметь вокруг альбома I AM MUSIC, который в итоге вышел под сокращённым названием MUSIC. Его продолжительность оправдывает ожидание: он открывается яростными рэп-треками POP OUT и CRUSH, возвещающими долгожданное возвращение артиста. На протяжении 30 песен и 77 минут его вокал колеблется между агрессивно искажённым, насыщенным синтезаторами пост-трэпом, прославившим его, и чем-то более поп-трэповым, но всё это, безусловно, в пределах его стилистического диапазона. Поначалу Carti держал список гостей в секрете, как это стало привычным для громких релизов. Но невозможно не заметить, как Kendrick Lamar читает на GOOD CREDIT, Future изливает чувства на TRIM, а многолетний соратник Lil Uzi Vert победно скользит по TWIN TRIM. Яркое участие The Weeknd в RATHER LIE — пожалуй, самый очевидный пример выхода за рамки, хотя появления Travis Scott на PHILLY и тандема Young Thug и Ty Dolla $ign на WE NEED ALL DA VIBES делают это направление ещё убедительнее. Даже с такими друзьями сам Carti сияет ярче всех: его воздушный, почти фальцетный голос вьётся вокруг видеоигровых арпеджио I SEEEEEE YOU BABY BOI и кинематографичного гула COCAINE NOSE с хриплым рычанием. Не ограничиваясь взглядом в будущее, на RADAR звучит почти ностальгическая дань звучанию Атланты начала 2010-х, напоминающая классические кассеты 1017 Brick Squad.",
+    },
     variants: [
       { id: 1, name: "MUSIC (AĞ VİNİL)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226171/musicWhite_vinyl_wfsgve.jpg", shopifyMerchandiseId: "gid://shopify/ProductVariant/45455755149503", },
       { id: 2, name: "MUSIC (QARA VİNİL)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226166/musicBlack_vinyl_x17lx8.jpg", shopifyMerchandiseId: "gid://shopify/ProductVariant/45455755182271" }
@@ -1714,7 +1814,11 @@ export const albums = [
     sleeveColor: "white",
     accentColor: "white",
     format: "cd",
-    description: "Playboi Carti, Whole Lotta Red-dən təxminən dörd il ərzində Future, Latto və Trippie Redd kimi məşhurlarla birlikdə çıxış edərək, demək olar ki, orada olmayıb. Buna baxmayaraq, bu, onun böyük fanatlarının sonda sadəcə MUSIC kimi qısaldılmış adı ilə çıxan I AM MUSIC albomu ilə bağlı davamlı olaraq səs-küy salmasının qarşısını ala bilməyib. Mahnının uzunluğu gözləmə müddətini təsdiqləyir və ifaçının xoş gəlişini xəbər verən POP OUT və CRUSH kimi qəzəbli rep mahnıları ilə başlayır. 30 mahnıdan ibarət və 77 dəqiqəlik davam edən albomda onun səsləri aqressiv şəkildə şişirdilmiş, sintezator ağırlığı ilə məşhurlaşdığı post-trap ilə daha pop-trap arasında dəyişir, lakin bütün bunlar şübhəsiz ki, onun stilistik diapazonundadır. Karti əvvəlcə qonaq seçimini yüksək səviyyəli albom buraxılışları üçün adət halını aldığı kimi, jiletə yaxın saxlayırdı. Lakin Kendrick Lamarın GOOD CREDITə tüpürdüyünü, Future-ın TRIM-ə görə hisslərini ifadə etdiyini və ya əməkdaşlıq karyerasının əsas dayağı Lil Uzi Vertin TWIN TRIM də qələbə ilə sürüşdüyünü görməmək mümkün olmazdı. The Weeknd-in RATHER LIE mahnısındakı ən diqqət çəkən hissə, bəlkə də, onun buradakı zərfləri itələməsinin ən açıq nümunəsidir, baxmayaraq ki, Travis Scott-un PHILLY mahnısında və Young Thug və Ty Dolla $ign-dən ibarət komandanın WE NEED ALL DA VIBES mahnısında çıxışları bu istiqaməti daha da inandırıcı edir. Bu kimi dostları ilə belə, Carti özü daha parlaq şəkildə parlayır, nəfəsli, demək olar ki, falsetto səsi I SEEEEEE YOU BABY BOI video oyun arpecioları və xırıltılı xırıltısı COCAINE NOSE-nin kinematoqrafik səs-küyü ətrafında fırlanır. Yalnız gələcəyə baxmaqla kifayətlənməyərək, klassik 1017 Brick Squad kasetlərini xatırladan RADAR-da səslənən Atlantanın 2010-cu illərin əvvəllərindəki səsinə demək olar ki, nostaljik bir qiymətləndirmə var.",
+    description: {
+      az: "Playboi Carti, Whole Lotta Red-dən təxminən dörd il ərzində Future, Latto və Trippie Redd kimi məşhurlarla birlikdə çıxış edərək, demək olar ki, orada olmayıb. Buna baxmayaraq, bu, onun böyük fanatlarının sonda sadəcə MUSIC kimi qısaldılmış adı ilə çıxan I AM MUSIC albomu ilə bağlı davamlı olaraq səs-küy salmasının qarşısını ala bilməyib. Mahnının uzunluğu gözləmə müddətini təsdiqləyir və ifaçının xoş gəlişini xəbər verən POP OUT və CRUSH kimi qəzəbli rep mahnıları ilə başlayır. 30 mahnıdan ibarət və 77 dəqiqəlik davam edən albomda onun səsləri aqressiv şəkildə şişirdilmiş, sintezator ağırlığı ilə məşhurlaşdığı post-trap ilə daha pop-trap arasında dəyişir, lakin bütün bunlar şübhəsiz ki, onun stilistik diapazonundadır. Karti əvvəlcə qonaq seçimini yüksək səviyyəli albom buraxılışları üçün adət halını aldığı kimi, jiletə yaxın saxlayırdı. Lakin Kendrick Lamarın GOOD CREDITə tüpürdüyünü, Future-ın TRIM-ə görə hisslərini ifadə etdiyini və ya əməkdaşlıq karyerasının əsas dayağı Lil Uzi Vertin TWIN TRIM də qələbə ilə sürüşdüyünü görməmək mümkün olmazdı. The Weeknd-in RATHER LIE mahnısındakı ən diqqət çəkən hissə, bəlkə də, onun buradakı zərfləri itələməsinin ən açıq nümunəsidir, baxmayaraq ki, Travis Scott-un PHILLY mahnısında və Young Thug və Ty Dolla $ign-dən ibarət komandanın WE NEED ALL DA VIBES mahnısında çıxışları bu istiqaməti daha da inandırıcı edir. Bu kimi dostları ilə belə, Carti özü daha parlaq şəkildə parlayır, nəfəsli, demək olar ki, falsetto səsi I SEEEEEE YOU BABY BOI video oyun arpecioları və xırıltılı xırıltısı COCAINE NOSE-nin kinematoqrafik səs-küyü ətrafında fırlanır. Yalnız gələcəyə baxmaqla kifayətlənməyərək, klassik 1017 Brick Squad kasetlərini xatırladan RADAR-da səslənən Atlantanın 2010-cu illərin əvvəllərindəki səsinə demək olar ki, nostaljik bir qiymətləndirmə var.",
+      en: "Playboi Carti has been all but absent in the roughly four years since Whole Lotta Red, popping up alongside stars like Future, Latto and Trippie Redd. Even so, that couldn't stop his massive fanbase from constantly buzzing about I AM MUSIC, the album that ultimately arrived under the shortened title MUSIC. Its length justifies the wait, opening with raging rap songs like POP OUT and CRUSH that herald the artist's welcome return. Across 30 songs and 77 minutes, his vocals shift between the aggressively distorted, synth-heavy post-trap he became famous for and something more pop-trap, yet all of it sits firmly within his stylistic range. Carti initially kept his guest list close to the vest, as has become customary for high-profile album rollouts. But it would be impossible to miss Kendrick Lamar spitting on GOOD CREDIT, Future airing out his feelings on TRIM, or career-long collaborator Lil Uzi Vert gliding to victory on TWIN TRIM. The Weeknd's standout turn on RATHER LIE is perhaps the clearest example of the envelope-pushing here, though Travis Scott's appearance on PHILLY and the Young Thug and Ty Dolla $ign team-up on WE NEED ALL DA VIBES make the direction even more convincing. Even with friends like these, Carti himself shines brightest, his breathy, almost falsetto voice swirling around the video-game arpeggios of I SEEEEEE YOU BABY BOI and the cinematic din of COCAINE NOSE with his raspy growl. And not content to only look forward, there's an almost nostalgic appreciation of Atlanta's early-2010s sound on RADAR, which recalls classic 1017 Brick Squad tapes.",
+      ru: "Playboi Carti почти не появлялся на публике в течение примерно четырёх лет после Whole Lotta Red, лишь изредка выступая вместе со звёздами вроде Future, Latto и Trippie Redd. Тем не менее это не помешало его огромной армии фанатов постоянно шуметь вокруг альбома I AM MUSIC, который в итоге вышел под сокращённым названием MUSIC. Его продолжительность оправдывает ожидание: он открывается яростными рэп-треками POP OUT и CRUSH, возвещающими долгожданное возвращение артиста. На протяжении 30 песен и 77 минут его вокал колеблется между агрессивно искажённым, насыщенным синтезаторами пост-трэпом, прославившим его, и чем-то более поп-трэповым, но всё это, безусловно, в пределах его стилистического диапазона. Поначалу Carti держал список гостей в секрете, как это стало привычным для громких релизов. Но невозможно не заметить, как Kendrick Lamar читает на GOOD CREDIT, Future изливает чувства на TRIM, а многолетний соратник Lil Uzi Vert победно скользит по TWIN TRIM. Яркое участие The Weeknd в RATHER LIE — пожалуй, самый очевидный пример выхода за рамки, хотя появления Travis Scott на PHILLY и тандема Young Thug и Ty Dolla $ign на WE NEED ALL DA VIBES делают это направление ещё убедительнее. Даже с такими друзьями сам Carti сияет ярче всех: его воздушный, почти фальцетный голос вьётся вокруг видеоигровых арпеджио I SEEEEEE YOU BABY BOI и кинематографичного гула COCAINE NOSE с хриплым рычанием. Не ограничиваясь взглядом в будущее, на RADAR звучит почти ностальгическая дань звучанию Атланты начала 2010-х, напоминающая классические кассеты 1017 Brick Squad.",
+    },
     variants: [
       { id: 1, name: "CD 1", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739012/music_CD1_dqh236.png" },
       { id: 2, name: "CD 2", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768739013/music_CD2_ntv903.png" },
@@ -1776,7 +1880,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "green",
     format: "vinyl",
-    description: "Wolf amerikalı reper Tyler, the Creator-un üçüncü studiya albomudur. Albom 2 aprel 2013-cü ildə buraxılmışdır. Albomda Mike G, Domo Genesis, Earl Sweatshirt, Left Brain, Hodgy Beats, Erykah Badu və Pharrell kimi qruplar qonaq kimi çıxış edirlər.",
+    description: {
+      az: "Wolf amerikalı reper Tyler, the Creator-un üçüncü studiya albomudur. Albom 2 aprel 2013-cü ildə buraxılmışdır. Albomda Mike G, Domo Genesis, Earl Sweatshirt, Left Brain, Hodgy Beats, Erykah Badu və Pharrell kimi qruplar qonaq kimi çıxış edirlər.",
+      en: "Wolf is the third studio album by American rapper Tyler, the Creator, released on April 2, 2013. The album features guest appearances from Mike G, Domo Genesis, Earl Sweatshirt, Left Brain, Hodgy Beats, Erykah Badu and Pharrell.",
+      ru: "Wolf — третий студийный альбом американского рэпера Tyler, the Creator, выпущенный 2 апреля 2013 года. В альбоме в качестве гостей участвуют Mike G, Domo Genesis, Earl Sweatshirt, Left Brain, Hodgy Beats, Erykah Badu и Pharrell.",
+    },
     tracklist: [
       { id: 1, name: "WOLF", isExplicit: true, duration: "1:50" },
       { id: 2, name: "Jamba (feat. Hodgy)", isExplicit: true, duration: "3:32" },
@@ -1816,7 +1924,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "Cherry Bomb amerikalı reper Tayler, The Creator-un dördüncü studiya albomudur. Albom 13 aprel 2015-ci ildə çıxıb. Albomun istehsalı tamamilə Taylerin özü tərəfindən həyata keçirilib, əlavə olaraq Incubus gitaraçısı Mayk Eynziger də iştirak edib. Albomda Schoolboy Q, Çarli Uilson, Kali Uçis, Kanye Uest, Lil Ueyn, Farrell Uilyams və Austin Feinstein kimi məşhurlar qonaq kimi çıxış ediblər.",
+    description: {
+      az: "Cherry Bomb amerikalı reper Tayler, The Creator-un dördüncü studiya albomudur. Albom 13 aprel 2015-ci ildə çıxıb. Albomun istehsalı tamamilə Taylerin özü tərəfindən həyata keçirilib, əlavə olaraq Incubus gitaraçısı Mayk Eynziger də iştirak edib. Albomda Schoolboy Q, Çarli Uilson, Kali Uçis, Kanye Uest, Lil Ueyn, Farrell Uilyams və Austin Feinstein kimi məşhurlar qonaq kimi çıxış ediblər.",
+      en: "Cherry Bomb is the fourth studio album by American rapper Tyler, The Creator, released on April 13, 2015. The album was produced entirely by Tyler himself, with an additional contribution from Incubus guitarist Mike Einziger. It features guest appearances from Schoolboy Q, Charlie Wilson, Kali Uchis, Kanye West, Lil Wayne, Pharrell Williams and Austin Feinstein.",
+      ru: "Cherry Bomb — четвёртый студийный альбом американского рэпера Tyler, The Creator, вышедший 13 апреля 2015 года. Продюсированием альбома полностью занимался сам Tyler при дополнительном участии гитариста Incubus Mike Einziger. Гостями альбома стали Schoolboy Q, Charlie Wilson, Kali Uchis, Kanye West, Lil Wayne, Pharrell Williams и Austin Feinstein.",
+    },
     variants: [
       { id: 1, name: "CHERRY BOMB", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768577242/cherryBomb_vinyl_tyou5v.png" },
       { id: 2, name: "CHERRY BOMB (Maska Versiyası)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226153/cherryBomb_vinyl_h6ekpf.jpg" }
@@ -1855,7 +1967,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Flower Boy Tyler, The Creator qrupunun uzun müddətdir gözlənilən yeni albomudur. Albom 2015-ci ildə çıxan Cherry Bomb albomunun davamıdır və vinil LP kimi satışa çıxarılıb.",
+    description: {
+      az: "Flower Boy Tyler, The Creator qrupunun uzun müddətdir gözlənilən yeni albomudur. Albom 2015-ci ildə çıxan Cherry Bomb albomunun davamıdır və vinil LP kimi satışa çıxarılıb.",
+      en: "Flower Boy is the long-awaited new album from Tyler, The Creator. It is the follow-up to 2015's Cherry Bomb and was released as a vinyl LP.",
+      ru: "Flower Boy — долгожданный новый альбом Tyler, The Creator. Это продолжение альбома Cherry Bomb 2015 года, выпущенное в виде виниловой пластинки.",
+    },
     tracklist: [
       { id: 1, name: "Foreword (feat. Rex Orange County)", isExplicit: true, duration: "3:14" },
       { id: 2, name: "Where This Flower Blooms", features: "Tyler, The Creator & Frank Ocean", isExplicit: true, duration: "3:14" },
@@ -1891,7 +2007,11 @@ export const albums = [
     sleeveColor: "pink",
     accentColor: "pink",
     format: "vinyl",
-    description: "Vinil LP, qapılı gödəkçədə basılır. 2019-cu ildə buraxılıb. Igor, reper Taylerin beşinci studiya albomu olan The Creator-dur. Tamamilə Tayler tərəfindən istehsal olunan albom, 2017-ci ildə çıxan Flower Boy albomundan sonra gəlir. Filmdə Playboi Carti, Lil Uzi Vert, Solange, Kanye West və Jerrod Carmichael qonaq çıxışları ilə yanaşı, Santigold, Jessy Wilson, La Roux, CeeLo Green, Charlie Wilson, Slowthai və Pharrell kimi vokalçılar da yer alır.",
+    description: {
+      az: "Vinil LP, qapılı gödəkçədə basılır. 2019-cu ildə buraxılıb. Igor, reper Taylerin beşinci studiya albomu olan The Creator-dur. Tamamilə Tayler tərəfindən istehsal olunan albom, 2017-ci ildə çıxan Flower Boy albomundan sonra gəlir. Filmdə Playboi Carti, Lil Uzi Vert, Solange, Kanye West və Jerrod Carmichael qonaq çıxışları ilə yanaşı, Santigold, Jessy Wilson, La Roux, CeeLo Green, Charlie Wilson, Slowthai və Pharrell kimi vokalçılar da yer alır.",
+      en: "Vinyl LP pressed in a gatefold jacket. Released in 2019. Igor is the fifth studio album by rapper Tyler, The Creator. Produced entirely by Tyler, the album follows 2017's Flower Boy. It features guest appearances from Playboi Carti, Lil Uzi Vert, Solange, Kanye West and Jerrod Carmichael, along with vocals from the likes of Santigold, Jessy Wilson, La Roux, CeeLo Green, Charlie Wilson, Slowthai and Pharrell.",
+      ru: "Виниловый LP в развороте (gatefold). Выпущен в 2019 году. Igor — пятый студийный альбом рэпера Tyler, The Creator. Полностью спродюсированный Tyler, альбом выходит вслед за Flower Boy 2017 года. В нём участвуют Playboi Carti, Lil Uzi Vert, Solange, Kanye West и Jerrod Carmichael, а также такие вокалисты, как Santigold, Jessy Wilson, La Roux, CeeLo Green, Charlie Wilson, Slowthai и Pharrell.",
+    },
     tracklist: [
       { id: 1, name: "IGOR'S THEME", isExplicit: false, duration: "3:20", spotifyEmbed: "https://open.spotify.com/embed/track/51RN0kzWd7xeR4th5HsEtW", musicVideo: "https://youtu.be/CEVXcP3VC3Y?si=rfArZi_weeSBgwDI" },
       { id: 2, name: "EARFQUAKE", features: "Tyler The Creator & Playboi Carti", isExplicit: true, duration: "3:10", spotifyEmbed: "https://open.spotify.com/embed/track/5hVghJ4KaYES3BFUATCYn0", musicVideo: "https://youtu.be/HmAsUQEFYGI?si=-0pKX6ogW8_BSpv-" },
@@ -1924,7 +2044,11 @@ export const albums = [
     sleeveColor: "pink",
     accentColor: "pink",
     format: "cd",
-    description: "CD, qapılı gödəkçədə basılır. 2019-cu ildə buraxılıb. Igor, reper Taylerin beşinci studiya albomu olan The Creator-dur. Tamamilə Tayler tərəfindən istehsal olunan albom, 2017-ci ildə çıxan Flower Boy albomundan sonra gəlir. Filmdə Playboi Carti, Lil Uzi Vert, Solange, Kanye West və Jerrod Carmichael qonaq çıxışları ilə yanaşı, Santigold, Jessy Wilson, La Roux, CeeLo Green, Charlie Wilson, Slowthai və Pharrell kimi vokalçılar da yer alır.",
+    description: {
+      az: "CD, qapılı gödəkçədə basılır. 2019-cu ildə buraxılıb. Igor, reper Taylerin beşinci studiya albomu olan The Creator-dur. Tamamilə Tayler tərəfindən istehsal olunan albom, 2017-ci ildə çıxan Flower Boy albomundan sonra gəlir. Filmdə Playboi Carti, Lil Uzi Vert, Solange, Kanye West və Jerrod Carmichael qonaq çıxışları ilə yanaşı, Santigold, Jessy Wilson, La Roux, CeeLo Green, Charlie Wilson, Slowthai və Pharrell kimi vokalçılar da yer alır.",
+      en: "CD pressed in a gatefold jacket. Released in 2019. Igor is the fifth studio album by rapper Tyler, The Creator. Produced entirely by Tyler, the album follows 2017's Flower Boy. It features guest appearances from Playboi Carti, Lil Uzi Vert, Solange, Kanye West and Jerrod Carmichael, along with vocals from the likes of Santigold, Jessy Wilson, La Roux, CeeLo Green, Charlie Wilson, Slowthai and Pharrell.",
+      ru: "CD в развороте (gatefold). Выпущен в 2019 году. Igor — пятый студийный альбом рэпера Tyler, The Creator. Полностью спродюсированный Tyler, альбом выходит вслед за Flower Boy 2017 года. В нём участвуют Playboi Carti, Lil Uzi Vert, Solange, Kanye West и Jerrod Carmichael, а также такие вокалисты, как Santigold, Jessy Wilson, La Roux, CeeLo Green, Charlie Wilson, Slowthai и Pharrell.",
+    },
     tracklist: [
       { id: 1, name: "IGOR'S THEME", isExplicit: false, duration: "3:20", spotifyEmbed: "https://open.spotify.com/embed/track/51RN0kzWd7xeR4th5HsEtW", musicVideo: "https://youtu.be/CEVXcP3VC3Y?si=rfArZi_weeSBgwDI" },
       { id: 2, name: "EARFQUAKE", features: "Tyler The Creator & Playboi Carti", isExplicit: true, duration: "3:10", spotifyEmbed: "https://open.spotify.com/embed/track/5hVghJ4KaYES3BFUATCYn0", musicVideo: "https://youtu.be/HmAsUQEFYGI?si=-0pKX6ogW8_BSpv-" },
@@ -1957,7 +2081,11 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "cd",
-    description: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir.",
+    description: {
+      az: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir.",
+      en: "Double vinyl LP pressing in a gatefold jacket. Poster included. Released in 2022. Call Me If You Get Lost is Tyler's sixth studio album and also features guest appearances from 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues and Daisy World.",
+      ru: "Двойной виниловый LP в развороте (gatefold). В комплекте постер. Выпущен в 2022 году. Call Me If You Get Lost — шестой студийный альбом Tyler, в котором также участвуют 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues и Daisy World.",
+    },
     tracklist: [
       { id: 1, name: "SIR BAUDELAIRE (feat. DJ Drama)", isExplicit: true, duration: "1:28" },
       { id: 2, name: "CORSO", isExplicit: true, duration: "2:26" },
@@ -2004,7 +2132,11 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "blue",
     format: "vinyl",
-    description: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir.",
+    description: {
+      az: "Gatefold gödəkçəsində ikiqat vinil LP presləmə. Poster daxildir. 2022-ci ildə buraxılıb. Call Me If You Get Lost Taylerin altıncı studiya albomudur və 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues və Daisy World kimi qrupların əlavə qonaq çıxışlarını da əhatə edir.",
+      en: "Double vinyl LP pressing in a gatefold jacket. Poster included. Released in 2022. Call Me If You Get Lost is Tyler's sixth studio album and also features guest appearances from 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues and Daisy World.",
+      ru: "Двойной виниловый LP в развороте (gatefold). В комплекте постер. Выпущен в 2022 году. Call Me If You Get Lost — шестой студийный альбом Tyler, в котором также участвуют 42 Dugg, Lil Wayne, Domo Genesis, Brent Faiyaz, Lil Uzi Vert, Pharrell Williams, Teezo Touchdown, Fana Hues и Daisy World.",
+    },
     tracklist: [
       { id: 1, name: "SIR BAUDELAIRE (feat. DJ Drama)", isExplicit: true, duration: "1:28" },
       { id: 2, name: "CORSO", isExplicit: true, duration: "2:26" },
@@ -2050,7 +2182,11 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "vinyl",
-    description: "Chromakopia, amerikalı reper Tyler, The Creator-un səkkizinci studiya albomudur. Albom 28 oktyabr 2024-cü ildə Call Me If You Get Lost (2021) albomunun davamı olaraq buraxılmışdır. Chromakopia albomunun ssenarisini yazan, prodüserlik edən və aranjiman edən Tylerdir. Albomda Daniel Caesar, Doechii, GloRilla, LaToiya Williams, Lil Wayne, Lola Young, Santigold, Schoolboy Q, Sexyy Red və Teezo Touchdown kimi qruplar qonaq kimi çıxış edirlər.",
+    description: {
+      az: "Chromakopia, amerikalı reper Tyler, The Creator-un səkkizinci studiya albomudur. Albom 28 oktyabr 2024-cü ildə Call Me If You Get Lost (2021) albomunun davamı olaraq buraxılmışdır. Chromakopia albomunun ssenarisini yazan, prodüserlik edən və aranjiman edən Tylerdir. Albomda Daniel Caesar, Doechii, GloRilla, LaToiya Williams, Lil Wayne, Lola Young, Santigold, Schoolboy Q, Sexyy Red və Teezo Touchdown kimi qruplar qonaq kimi çıxış edirlər.",
+      en: "Chromakopia is the eighth studio album by American rapper Tyler, The Creator. It was released on October 28, 2024, as the follow-up to Call Me If You Get Lost (2021). Chromakopia was written, produced and arranged by Tyler. The album features guest appearances from Daniel Caesar, Doechii, GloRilla, LaToiya Williams, Lil Wayne, Lola Young, Santigold, Schoolboy Q, Sexyy Red and Teezo Touchdown.",
+      ru: "Chromakopia — восьмой студийный альбом американского рэпера Tyler, The Creator. Он вышел 28 октября 2024 года как продолжение Call Me If You Get Lost (2021). Автором, продюсером и аранжировщиком Chromakopia выступил Tyler. Гостями альбома стали Daniel Caesar, Doechii, GloRilla, LaToiya Williams, Lil Wayne, Lola Young, Santigold, Schoolboy Q, Sexyy Red и Teezo Touchdown.",
+    },
     tracklist: [
       { id: 1, name: "St. Chroma", features: "Tyler The Creator & Daniel Caesar", isExplicit: true, duration: "3:17" },
       { id: 2, name: "Rah Tah Tah", isExplicit: true, duration: "2:45" },
@@ -2085,7 +2221,11 @@ export const albums = [
     sleeveColor: "brown",
     accentColor: "amber",
     format: "vinyl",
-    description: "Rodeo amerikalı reper Travis Skottun debüt studiya albomudur. Albom 4 sentyabr 2015-ci ildə buraxılmış paylanmışdır. Albomda Quavo, Future, 2 Chainz, Juicy J, Kacy Hill, The Weeknd, Swae Lee, Chief Keef, Kanye West, Justin Bieber, Young Thug, Toro y Moi və Schoolboy Q kimi qruplar qonaq kimi çıxış etmiş, prodüserlik işləri isə Skott özü, WondaGurl, Allen Ritter, Mike Dean, Metro Boomin, Frank Dukes və Sonny Digital tərəfindən həyata keçirilmişdir.",
+    description: {
+      az: "Rodeo amerikalı reper Travis Skottun debüt studiya albomudur. Albom 4 sentyabr 2015-ci ildə buraxılmış paylanmışdır. Albomda Quavo, Future, 2 Chainz, Juicy J, Kacy Hill, The Weeknd, Swae Lee, Chief Keef, Kanye West, Justin Bieber, Young Thug, Toro y Moi və Schoolboy Q kimi qruplar qonaq kimi çıxış etmiş, prodüserlik işləri isə Skott özü, WondaGurl, Allen Ritter, Mike Dean, Metro Boomin, Frank Dukes və Sonny Digital tərəfindən həyata keçirilmişdir.",
+      en: "Rodeo is the debut studio album by American rapper Travis Scott, released on September 4, 2015. The album features guest appearances from Quavo, Future, 2 Chainz, Juicy J, Kacy Hill, The Weeknd, Swae Lee, Chief Keef, Kanye West, Justin Bieber, Young Thug, Toro y Moi and Schoolboy Q, with production handled by Scott himself, WondaGurl, Allen Ritter, Mike Dean, Metro Boomin, Frank Dukes and Sonny Digital.",
+      ru: "Rodeo — дебютный студийный альбом американского рэпера Travis Scott, выпущенный 4 сентября 2015 года. В альбоме участвуют Quavo, Future, 2 Chainz, Juicy J, Kacy Hill, The Weeknd, Swae Lee, Chief Keef, Kanye West, Justin Bieber, Young Thug, Toro y Moi и Schoolboy Q, а продюсированием занимались сам Scott, WondaGurl, Allen Ritter, Mike Dean, Metro Boomin, Frank Dukes и Sonny Digital.",
+    },
     tracklist: [
       { id: 1, name: "Pornography", isExplicit: true, duration: "3:51" },
       { id: 2, name: "Oh My Dis Side", features: "Travis Scott & Quavo", isExplicit: true, duration: "5:51" },
@@ -2123,7 +2263,11 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "Birds in the Trap Sing McKnight amerikalı reper Travis Skottun ikinci studiya albomudur. Albom 2 sentyabr 2016-cı ildə çıxıb. Albomda André 3000, Blac Youngsta, Kid Cudi, Nav, 21 Savage, Kendrick Lamar, Bryson Tiller, Young Thug, Quavo, K. Forest və the Weeknd kimi qruplar qonaq kimi çıxış ediblər. İstehsal Nav, Vinylz, Mike Dean, Cardo, Frank Dukes, Allen Ritter və Murda Beatz da daxil olmaqla bir sıra səsyazma prodüserləri tərəfindən həyata keçirilib.",
+    description: {
+      az: "Birds in the Trap Sing McKnight amerikalı reper Travis Skottun ikinci studiya albomudur. Albom 2 sentyabr 2016-cı ildə çıxıb. Albomda André 3000, Blac Youngsta, Kid Cudi, Nav, 21 Savage, Kendrick Lamar, Bryson Tiller, Young Thug, Quavo, K. Forest və the Weeknd kimi qruplar qonaq kimi çıxış ediblər. İstehsal Nav, Vinylz, Mike Dean, Cardo, Frank Dukes, Allen Ritter və Murda Beatz da daxil olmaqla bir sıra səsyazma prodüserləri tərəfindən həyata keçirilib.",
+      en: "Birds in the Trap Sing McKnight is the second studio album by American rapper Travis Scott, released on September 2, 2016. The album features guest appearances from André 3000, Blac Youngsta, Kid Cudi, Nav, 21 Savage, Kendrick Lamar, Bryson Tiller, Young Thug, Quavo, K. Forest and The Weeknd. Production was handled by a number of record producers including Nav, Vinylz, Mike Dean, Cardo, Frank Dukes, Allen Ritter and Murda Beatz.",
+      ru: "Birds in the Trap Sing McKnight — второй студийный альбом американского рэпера Travis Scott, вышедший 2 сентября 2016 года. Гостями альбома стали André 3000, Blac Youngsta, Kid Cudi, Nav, 21 Savage, Kendrick Lamar, Bryson Tiller, Young Thug, Quavo, K. Forest и The Weeknd. Продюсированием занимался ряд продюсеров, включая Nav, Vinylz, Mike Dean, Cardo, Frank Dukes, Allen Ritter и Murda Beatz.",
+    },
     tracklist: [
       { id: 1, name: "the ends (feat. André 3000)", isExplicit: true, duration: "3:21" },
       { id: 2, name: "way back", isExplicit: true, duration: "4:32" },
@@ -2147,6 +2291,9 @@ export const albums = [
   {
     id: 27,
     title: "ASTROWORLD (2LP)",
+    releaseDate: "3 Avqust 2018",
+    duration: "17 mahnı, 58 dəqiqə",
+    label: "Cactus Jack/Grand Hustle/Epic",
     artist: ["Travis Scott"],
     price: 69.99,
     genre: "Hip-Hop/Rap",
@@ -2160,7 +2307,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Rəqəmsal yükləmə daxil olmaqla ikiqat vinil LP basımı. Astroworld, reper Travis Scottun üçüncü studiya albomudur. 3 avqust 2018-ci ildəburaxılmışdır. Albom, onun ikinci studiya albomu Birds in the Trap Sing McKnight (2016) və Quavo ilə birgə çıxardığı Huncho Jack, Jack Huncho (2017) albomundan sonra gəlir. Albomda Kid Cudi, Frank Ocean, Drake, The Weeknd, James Blake, Swae Lee, Gunna, Nav, 21 Savage, Quavo, Takeoff, Juice Wrld, Sheck Wes və Don Toliver kimi qonaq vokalçılar yer alır. İstehsal Mike Dean, Allen Ritter, Hit-Boy, WondaGurl, Tay Keith, Tame Impala, Frank Dukes, Sonny Digital və Thundercat da daxil olmaqla bir çox prodüser tərəfindən həyata keçirilmişdir.",
+    description: {
+      az: "Rəqəmsal yükləmə daxil olmaqla ikiqat vinil LP basımı. Astroworld, reper Travis Scottun üçüncü studiya albomudur. 3 avqust 2018-ci ildəburaxılmışdır. Albom, onun ikinci studiya albomu Birds in the Trap Sing McKnight (2016) və Quavo ilə birgə çıxardığı Huncho Jack, Jack Huncho (2017) albomundan sonra gəlir. Albomda Kid Cudi, Frank Ocean, Drake, The Weeknd, James Blake, Swae Lee, Gunna, Nav, 21 Savage, Quavo, Takeoff, Juice Wrld, Sheck Wes və Don Toliver kimi qonaq vokalçılar yer alır. İstehsal Mike Dean, Allen Ritter, Hit-Boy, WondaGurl, Tay Keith, Tame Impala, Frank Dukes, Sonny Digital və Thundercat da daxil olmaqla bir çox prodüser tərəfindən həyata keçirilmişdir.",
+      en: "Double vinyl LP pressing including digital download. Astroworld is the third studio album by rapper Travis Scott, released on August 3, 2018. It follows his second studio album Birds in the Trap Sing McKnight (2016) and Huncho Jack, Jack Huncho (2017), his joint album with Quavo. The album features guest vocals from Kid Cudi, Frank Ocean, Drake, The Weeknd, James Blake, Swae Lee, Gunna, Nav, 21 Savage, Quavo, Takeoff, Juice Wrld, Sheck Wes and Don Toliver. Production was handled by numerous producers including Mike Dean, Allen Ritter, Hit-Boy, WondaGurl, Tay Keith, Tame Impala, Frank Dukes, Sonny Digital and Thundercat.",
+      ru: "Двойной виниловый LP с цифровой загрузкой. Astroworld — третий студийный альбом рэпера Travis Scott, выпущенный 3 августа 2018 года. Он следует за вторым студийным альбомом Birds in the Trap Sing McKnight (2016) и совместным с Quavo альбомом Huncho Jack, Jack Huncho (2017). В альбоме звучит гостевой вокал Kid Cudi, Frank Ocean, Drake, The Weeknd, James Blake, Swae Lee, Gunna, Nav, 21 Savage, Quavo, Takeoff, Juice Wrld, Sheck Wes и Don Toliver. Продюсированием занимались многие, включая Mike Dean, Allen Ritter, Hit-Boy, WondaGurl, Tay Keith, Tame Impala, Frank Dukes, Sonny Digital и Thundercat.",
+    },
     tracklist: [
       { id: 1, name: "STARGAZING", isExplicit: true, duration: "4:30" },
       { id: 2, name: "CAROUSEL", features: "Travis Scott & Frank Ocean", isExplicit: true, duration: "3:00" },
@@ -2184,6 +2335,9 @@ export const albums = [
   {
     id: 33,
     title: "JACKBOYS (LP)",
+    releaseDate: "27 Dekabr 2019",
+    duration: "7 mahnı, 21 dəqiqə",
+    label: "Cactus Jack/Epic",
     artist: ["JACKBOYS", "Travis Scott"],
     price: 49.99,
     genre: "Hip-Hop/Rap",
@@ -2196,7 +2350,11 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "vinyl",
-    description: "Jackboys və amerikalı reper Travis Scott tərəfindən tərtib edilmiş albomdur. Jackboys, Scott-un özü, Sheck Wes, Don Toliver, Luxury Tax, Scott-un DJ-i Chase B və Pop Smoke-dan ibarət Scott-un ilə müqavilə imzalayan amerikalı reperlərdən ibarət kollektiv və qrupdur. Albom 27 dekabr 2019-cu ildə buraxılmışdır. Albomda Migos, Young Thug və Pop Smoke trap triosundan Rosalía, Lil Baby, Quavo və Offset qonaq çıxışları yer alır.",
+    description: {
+      az: "Jackboys və amerikalı reper Travis Scott tərəfindən tərtib edilmiş albomdur. Jackboys, Scott-un özü, Sheck Wes, Don Toliver, Luxury Tax, Scott-un DJ-i Chase B və Pop Smoke-dan ibarət Scott-un ilə müqavilə imzalayan amerikalı reperlərdən ibarət kollektiv və qrupdur. Albom 27 dekabr 2019-cu ildə buraxılmışdır. Albomda Migos, Young Thug və Pop Smoke trap triosundan Rosalía, Lil Baby, Quavo və Offset qonaq çıxışları yer alır.",
+      en: "Jackboys is a compilation album by Jackboys and American rapper Travis Scott. Jackboys is a collective and group of American rappers signed to Scott's label, consisting of Scott himself, Sheck Wes, Don Toliver, Luxury Tax, Scott's DJ Chase B and Pop Smoke. The album was released on December 27, 2019. It features guest appearances from the trap trio Migos, Young Thug and Pop Smoke, as well as Rosalía, Lil Baby, Quavo and Offset.",
+      ru: "Jackboys — сборник, составленный Jackboys и американским рэпером Travis Scott. Jackboys — коллектив американских рэперов, подписанных на лейбл Scott, в состав которого входят сам Scott, Sheck Wes, Don Toliver, Luxury Tax, диджей Scott по имени Chase B и Pop Smoke. Альбом вышел 27 декабря 2019 года. В нём есть гостевые участия трэп-трио Migos, Young Thug и Pop Smoke, а также Rosalía, Lil Baby, Quavo и Offset.",
+    },
     tracklist: [
       { id: 1, name: "HIGHEST IN THE ROOM (REMIX)", features: "Travis Scott, Lil Baby & ROSALÍA", isExplicit: true, duration: "4:04" },
       { id: 2, name: "JACKBOYS", isExplicit: false, duration: "0:46" },
@@ -2210,6 +2368,9 @@ export const albums = [
   {
     id: 18,
     title: "UTOPIA (2LP)",
+    releaseDate: "28 İyul 2023",
+    duration: "19 mahnı, 73 dəqiqə",
+    label: "Cactus Jack/Epic",
     artist: ["Travis Scott"],
     price: 79.99,
     genre: "Hip-Hop/Rap",
@@ -2224,7 +2385,11 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "Utopia, amerikalı reper Travis Scott-un dördüncü studiya albomudur. Albom 28 iyul 2023-cü ildə çıxıb. Albomda Teezo Touchdown, Drake, Playboi Carti, Beyoncé, Rob49, 21 Savage, the Weeknd, Swae Lee, Yung Lean, Dave Chappelle, Young Thug, Westside Gunn, Kid Cudi, Bad Bunny, SZA, Future və James Blake kimi məşhur qruplar qonaq kimi çıxış ediblər.",
+    description: {
+      az: "Utopia, amerikalı reper Travis Scott-un dördüncü studiya albomudur. Albom 28 iyul 2023-cü ildə çıxıb. Albomda Teezo Touchdown, Drake, Playboi Carti, Beyoncé, Rob49, 21 Savage, the Weeknd, Swae Lee, Yung Lean, Dave Chappelle, Young Thug, Westside Gunn, Kid Cudi, Bad Bunny, SZA, Future və James Blake kimi məşhur qruplar qonaq kimi çıxış ediblər.",
+      en: "Utopia is the fourth studio album by American rapper Travis Scott. The album was released on July 28, 2023. It features guest appearances from stars such as Teezo Touchdown, Drake, Playboi Carti, Beyoncé, Rob49, 21 Savage, The Weeknd, Swae Lee, Yung Lean, Dave Chappelle, Young Thug, Westside Gunn, Kid Cudi, Bad Bunny, SZA, Future and James Blake.",
+      ru: "Utopia — четвёртый студийный альбом американского рэпера Travis Scott. Альбом вышел 28 июля 2023 года. В нём в качестве гостей участвуют такие звёзды, как Teezo Touchdown, Drake, Playboi Carti, Beyoncé, Rob49, 21 Savage, The Weeknd, Swae Lee, Yung Lean, Dave Chappelle, Young Thug, Westside Gunn, Kid Cudi, Bad Bunny, SZA, Future и James Blake.",
+    },
     tracklist: [
       { id: 1, name: "HYENA", isExplicit: true, duration: "3:42" },
       { id: 2, name: "THANK GOD", isExplicit: true, duration: "3:04" },
@@ -2250,6 +2415,9 @@ export const albums = [
   {
     id: 16,
     title: "Late Registration (2LP)",
+    releaseDate: "30 Avqust 2005",
+    duration: "21 mahnı, 70 dəqiqə",
+    label: "Roc-A-Fella/Def Jam",
     artist: ["Kanye West"],
     price: 89.99,
     genre: "Hip-Hop/Rap",
@@ -2262,7 +2430,11 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "Late Registration amerikalı hip-hop sənətçisi Kanye Westin 30 avqust 2005-ci ildə buraxılan ikinci studiya albomudur. Albomun səsyazma sessiyaları bir il ərzində Hollivuddakı Record Plant Studios, Chalice Recording Studios və Grandmaster Recording Studios-da, eləcə də Nyu-York şəhərindəki Sony Music Studios-da baş tutub. Late Registration albomunu hazırlamaq üçün amerikalı səsyazma prodüseri və bəstəkar Con Brionla əməkdaşlıq edib və albomda JAY-Z, Common, Lupe Fiasco, Jamie Foxx, Nas, Brandy və Adam Levine kimi sənətçilərin qonaqları yer alıb. Albom çıxdıqdan sonra musiqi tənqidçilərindən yüksək rəylər alıb və West-ə bir neçə mükafat, o cümlədən 2006-cı il Grammy mükafatlarında Ən Yaxşı Rep Albomu nominasiyasında Qremmi mükafatı və İlin Albomu nominasiyasında mükafat qazandırıb. Albom bir neçə nəşrin ilin sonu üçün ən yaxşı albom siyahılarının başında yer alıb. Rolling Stone jurnalı onu 2005-ci ilin ən yaxşı albomu adlandırmış və 2012-ci ildə Bütün Zamanların 500 Ən Böyük Albomu siyahısında 118-ci yerə daxil etmişdir.",
+    description: {
+      az: "Late Registration amerikalı hip-hop sənətçisi Kanye Westin 30 avqust 2005-ci ildə buraxılan ikinci studiya albomudur. Albomun səsyazma sessiyaları bir il ərzində Hollivuddakı Record Plant Studios, Chalice Recording Studios və Grandmaster Recording Studios-da, eləcə də Nyu-York şəhərindəki Sony Music Studios-da baş tutub. Late Registration albomunu hazırlamaq üçün amerikalı səsyazma prodüseri və bəstəkar Con Brionla əməkdaşlıq edib və albomda JAY-Z, Common, Lupe Fiasco, Jamie Foxx, Nas, Brandy və Adam Levine kimi sənətçilərin qonaqları yer alıb. Albom çıxdıqdan sonra musiqi tənqidçilərindən yüksək rəylər alıb və West-ə bir neçə mükafat, o cümlədən 2006-cı il Grammy mükafatlarında Ən Yaxşı Rep Albomu nominasiyasında Qremmi mükafatı və İlin Albomu nominasiyasında mükafat qazandırıb. Albom bir neçə nəşrin ilin sonu üçün ən yaxşı albom siyahılarının başında yer alıb. Rolling Stone jurnalı onu 2005-ci ilin ən yaxşı albomu adlandırmış və 2012-ci ildə Bütün Zamanların 500 Ən Böyük Albomu siyahısında 118-ci yerə daxil etmişdir.",
+      en: "Late Registration is the second studio album by American hip-hop artist Kanye West, released on August 30, 2005. Recording sessions took place over the course of a year at Record Plant Studios, Chalice Recording Studios and Grandmaster Recording Studios in Hollywood, as well as Sony Music Studios in New York City. West collaborated with American record producer and composer Jon Brion to create Late Registration, and the album features guests such as JAY-Z, Common, Lupe Fiasco, Jamie Foxx, Nas, Brandy and Adam Levine. Upon release, the album received rave reviews from music critics and earned West several awards, including the Grammy for Best Rap Album at the 2006 Grammy Awards and a nomination for Album of the Year. It topped several publications' year-end best album lists. Rolling Stone named it the best album of 2005 and, in 2012, ranked it 118th on its list of the 500 Greatest Albums of All Time.",
+      ru: "Late Registration — второй студийный альбом американского хип-хоп-исполнителя Kanye West, выпущенный 30 августа 2005 года. Запись альбома проходила в течение года в студиях Record Plant Studios, Chalice Recording Studios и Grandmaster Recording Studios в Голливуде, а также в Sony Music Studios в Нью-Йорке. Для создания Late Registration West сотрудничал с американским продюсером и композитором Jon Brion, а гостями альбома стали JAY-Z, Common, Lupe Fiasco, Jamie Foxx, Nas, Brandy и Adam Levine. После выхода альбом получил восторженные отзывы музыкальных критиков и принёс West несколько наград, включая премию Grammy за лучший рэп-альбом на церемонии 2006 года и номинацию на альбом года. Альбом возглавил итоговые списки лучших альбомов года нескольких изданий. Журнал Rolling Stone назвал его лучшим альбомом 2005 года, а в 2012 году поместил на 118-е место в списке 500 величайших альбомов всех времён.",
+    },
     tracklist: [
       { id: 1, name: "Wake Up Mr. West", isExplicit: true, duration: "0:41" },
       { id: 2, name: "Heard 'Em Say (feat. Adam Levine)", isExplicit: true, duration: "3:23" },
@@ -2290,6 +2462,9 @@ export const albums = [
   {
     id: 43,
     title: "Graduation (CD)",
+    releaseDate: "11 Sentyabr 2007",
+    duration: "13 mahnı, 51 dəqiqə",
+    label: "Roc-A-Fella/Def Jam",
     artist: ["Kanye West"],
     price: 29.99,
     genre: "Hip-Hop/Rap",
@@ -2301,7 +2476,11 @@ export const albums = [
     tracklistImage: graduation.tracklist,
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768299876/graduation_animated_emuqiv.gif",
     format: "cd",
-    description: "Graduation amerikalı reper Kanye Westin üçüncü studiya albomudur. Albom 11 sentyabr 2007-ci ildə çıxıb. Albomun prodüserliyi əsasən Westin özü tərəfindən həyata keçirilib və DJ Toomp da daxil olmaqla, müxtəlif prodüserlər də bu albomu hazırlayıblar. Albomda Dwele, T-Pain, Lil Wayne, Mos Def, DJ Premier və Chris Martin kimi səsyazma sənətçiləri qonaq kimi çıxış ediblər.",
+    description: {
+      az: "Graduation amerikalı reper Kanye Westin üçüncü studiya albomudur. Albom 11 sentyabr 2007-ci ildə çıxıb. Albomun prodüserliyi əsasən Westin özü tərəfindən həyata keçirilib və DJ Toomp da daxil olmaqla, müxtəlif prodüserlər də bu albomu hazırlayıblar. Albomda Dwele, T-Pain, Lil Wayne, Mos Def, DJ Premier və Chris Martin kimi səsyazma sənətçiləri qonaq kimi çıxış ediblər.",
+      en: "Graduation is the third studio album by American rapper Kanye West, released on September 11, 2007. Production was handled primarily by West himself, with various producers including DJ Toomp also contributing. The album features guest appearances from recording artists such as Dwele, T-Pain, Lil Wayne, Mos Def, DJ Premier and Chris Martin.",
+      ru: "Graduation — третий студийный альбом американского рэпера Kanye West, вышедший 11 сентября 2007 года. Продюсированием занимался в основном сам West, а также различные продюсеры, включая DJ Toomp. Гостями альбома стали такие артисты, как Dwele, T-Pain, Lil Wayne, Mos Def, DJ Premier и Chris Martin.",
+    },
     tracklist: [
       { id: 1, name: "Good Morning", isExplicit: true, duration: "3:15" },
       { id: 2, name: "Champion", isExplicit: true, duration: "2:47" },
@@ -2322,6 +2501,9 @@ export const albums = [
   {
     id: 52,
     title: "808s & Heartbreak [2LP + CD]",
+    releaseDate: "24 Noyabr 2008",
+    duration: "12 mahnı, 52 dəqiqə",
+    label: "Roc-A-Fella/Def Jam",
     artist: ["Kanye West"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -2334,7 +2516,11 @@ export const albums = [
     sleeveColor: "white",
     accentColor: "white",
     format: "vinyl",
-    description: "Bəlkə də 808 & Heartbreak üçün ən yaxşı müqayisə Bob Dilanın 1965-ci ildə elektrik musiqisinə keçməsi ilə bağlıdır Lakin gələcəyinizi həmin küləyin sizi hara aparacağına bahis etmək üçün kifayət qədər yaxşı daxili kompasınız olmalıdır.",
+    description: {
+      az: "Bəlkə də 808 & Heartbreak üçün ən yaxşı müqayisə Bob Dilanın 1965-ci ildə elektrik musiqisinə keçməsi ilə bağlıdır Lakin gələcəyinizi həmin küləyin sizi hara aparacağına bahis etmək üçün kifayət qədər yaxşı daxili kompasınız olmalıdır.",
+      en: "Perhaps the best comparison for 808s & Heartbreak is Bob Dylan going electric in 1965. But you need a good enough inner compass to bet your future on where that wind will carry you.",
+      ru: "Пожалуй, лучшее сравнение для 808s & Heartbreak — переход Bob Dylan на электрическое звучание в 1965 году. Но нужен достаточно хороший внутренний компас, чтобы поставить своё будущее на то, куда унесёт этот ветер.",
+    },
     tracklist: [
       { id: 1, name: "Say You Will", isExplicit: false, duration: "6:17" },
       { id: 2, name: "Welcome To Heartbreak (feat. Kid Cudi)", isExplicit: false, duration: "4:22" },
@@ -2353,6 +2539,9 @@ export const albums = [
   {
     id: 13,
     title: "My Beautiful Dark Twisted Fantasy (3LP)",
+    releaseDate: "22 Noyabr 2010",
+    duration: "13 mahnı, 68 dəqiqə",
+    label: "Roc-A-Fella/Def Jam",
     artist: ["Kanye West"],
     price: 129.99,
     genre: "Hip-Hop/Rap",
@@ -2367,7 +2556,11 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "vinyl",
-    description: "İndiyə qədər yazılmış ən bahalı hip-hop albomu olan Kanye West-in beşinci albomu, reperin özünü tərifləmə və etiraf etmənin tək qarışığı ilə 68 dəqiqəlik LP idi. Albom, The Beatles-in art-rok ambisiyalarını, Pink Floydun dəbdəbəsini və Michael Jackson-un pop ulduz əzəmətini birləşdirdi - lakin müğənni-bəstəkar ifadəsinin şəxsi cazibəsinə malik idi. 35 dəqiqəlik qısametrajlı filmlə birlikdə doqquz dəqiqəlik prog-rap əsəri (“Runaway”) var. Albomun sənət əsəri müasir rəssam və Warhol-un əməkdaşı Corc Kondoya məxsusdur. “All of the Lights” da Rihanna, Alisiya Keys və Elton Conun orkestri və vokalları yer alır. Lakin dəbdəbəli görünüşünə baxmayaraq, “My Beautiful Dark Twisted Fantasy” albomunun əsasını Vestin köhnəlmiş düşüncələri, özünütənqidləri, münasibət problemləri, şöhrət haqqında düşüncələri və qəzəb anları ilə birlikdə dürüstlük təşkil edir. “My Beautiful Dark Twisted Fantasy” hip-hopun mənzərəsini əbədi olaraq dəyişdirəcək, janrları bir-birinə bağlayan cəsarəti, sonsuz təxəyyülü və təqdimatının dəbdəbəliliyi janrın 2010-cu illərdə maksimalist səslərə və arthaus dizaynına doğru dönüşünü qabaqcadan xəbər verir.",
+    description: {
+      az: "İndiyə qədər yazılmış ən bahalı hip-hop albomu olan Kanye West-in beşinci albomu, reperin özünü tərifləmə və etiraf etmənin tək qarışığı ilə 68 dəqiqəlik LP idi. Albom, The Beatles-in art-rok ambisiyalarını, Pink Floydun dəbdəbəsini və Michael Jackson-un pop ulduz əzəmətini birləşdirdi - lakin müğənni-bəstəkar ifadəsinin şəxsi cazibəsinə malik idi. 35 dəqiqəlik qısametrajlı filmlə birlikdə doqquz dəqiqəlik prog-rap əsəri (“Runaway”) var. Albomun sənət əsəri müasir rəssam və Warhol-un əməkdaşı Corc Kondoya məxsusdur. “All of the Lights” da Rihanna, Alisiya Keys və Elton Conun orkestri və vokalları yer alır. Lakin dəbdəbəli görünüşünə baxmayaraq, “My Beautiful Dark Twisted Fantasy” albomunun əsasını Vestin köhnəlmiş düşüncələri, özünütənqidləri, münasibət problemləri, şöhrət haqqında düşüncələri və qəzəb anları ilə birlikdə dürüstlük təşkil edir. “My Beautiful Dark Twisted Fantasy” hip-hopun mənzərəsini əbədi olaraq dəyişdirəcək, janrları bir-birinə bağlayan cəsarəti, sonsuz təxəyyülü və təqdimatının dəbdəbəliliyi janrın 2010-cu illərdə maksimalist səslərə və arthaus dizaynına doğru dönüşünü qabaqcadan xəbər verir.",
+      en: "The most expensive hip-hop album ever recorded, Kanye West's fifth album was a 68-minute LP mixing the rapper's self-aggrandizement with confession. The album combined The Beatles' art-rock ambition, Pink Floyd's grandeur and Michael Jackson's pop-star majesty — yet carried the personal intimacy of singer-songwriter expression. There is a nine-minute prog-rap piece (“Runaway”), accompanied by a 35-minute short film. The album's artwork is by contemporary artist and Warhol collaborator George Condo. “All of the Lights” features orchestration and vocals from Rihanna, Alicia Keys and Elton John. But despite its lavish appearance, at the core of “My Beautiful Dark Twisted Fantasy” lies honesty, along with West's weathered reflections, self-criticism, relationship problems, thoughts on fame and moments of rage. “My Beautiful Dark Twisted Fantasy” would change the hip-hop landscape forever: its genre-weaving audacity, boundless imagination and lavish presentation foreshadowed the genre's turn toward maximalist sounds and arthouse design in the 2010s.",
+      ru: "Самый дорогой хип-хоп-альбом из когда-либо записанных, пятый альбом Kanye West представлял собой 68-минутный LP, в котором самовосхваление рэпера смешивалось с исповедью. Альбом соединил арт-роковые амбиции The Beatles, размах Pink Floyd и поп-звёздное величие Michael Jackson — но обладал личной интимностью песенного высказывания. Здесь есть девятиминутная прог-рэп-композиция («Runaway»), сопровождаемая 35-минутным короткометражным фильмом. Обложка альбома принадлежит современному художнику и соратнику Warhol — George Condo. В «All of the Lights» звучат оркестровки и вокал Rihanna, Alicia Keys и Elton John. Но, несмотря на роскошный облик, основу «My Beautiful Dark Twisted Fantasy» составляет честность вместе с потрёпанными размышлениями West, самокритикой, проблемами в отношениях, мыслями о славе и вспышками гнева. «My Beautiful Dark Twisted Fantasy» навсегда изменил ландшафт хип-хопа: его дерзкое переплетение жанров, безграничное воображение и роскошная подача предвосхитили поворот жанра к максималистскому звучанию и артхаусному дизайну в 2010-х.",
+    },
     tracklist: [
       { id: 1, name: "Dark Fantasy", isExplicit: true, duration: "4:40" },
       { id: 2, name: "Gorgeous (feat. Raekwon)", features: "Kanye West & Kid Cudi", isExplicit: true, duration: "5:57" },
@@ -2387,6 +2580,9 @@ export const albums = [
   {
     id: 20,
     title: "Watch The Throne (2LP)",
+    releaseDate: "8 Avqust 2011",
+    duration: "12 mahnı, 46 dəqiqə",
+    label: "Roc-A-Fella/Roc Nation/Def Jam",
     artist: ["JAY-Z", "Kanye West"],
     price: 299.99,
     genre: "Hip-Hop/Rap",
@@ -2401,7 +2597,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Watch The Throne albomu, JAY-Z-nin əslində rahat səsləndiyi ilk albomdur. O qədər dar, gülməli bir şəkildə rahat deyil, sanki dağın zirvəsində vadiyə baxırmış kimi rahat: gedəcək yer yoxdur, çünki artıq oradasınız. O, 10 ildən çoxdur ki, Kanye West ilə əməkdaşlıq edir və qardaşlıqla sərhəddə olan bir kimya inkişaf etdirirdi - hiss edirsiniz ki, Cey təkcə biznesini deyil, həm də nüfuzunu ona bağlayıb. Cey baş (ayrıca, analitik) olduğu yerdə, Vest isə dağınıq, impulsiv ürəkdir. Onlar təkcə rep sikkəsinin iki fərqli tərəfini təmsil etmirlər (layihələrdə doğulmuş fırıldaqçı Cey, orta təbəqə müəllifi Vest; köhnə məktəbli Cey, yeni Kanye), onlar bir-birinin şəxsiyyətinin uzaq bölgələrini də ortaya çıxarırlar: Vestin özündən kənar dünya haqqında nüfuzlu olmaq inamı, Ceynin ehtiyatlılığını itirmək və sərbəst olmaq üçün rahatlığı.",
+    description: {
+      az: "Watch The Throne albomu, JAY-Z-nin əslində rahat səsləndiyi ilk albomdur. O qədər dar, gülməli bir şəkildə rahat deyil, sanki dağın zirvəsində vadiyə baxırmış kimi rahat: gedəcək yer yoxdur, çünki artıq oradasınız. O, 10 ildən çoxdur ki, Kanye West ilə əməkdaşlıq edir və qardaşlıqla sərhəddə olan bir kimya inkişaf etdirirdi - hiss edirsiniz ki, Cey təkcə biznesini deyil, həm də nüfuzunu ona bağlayıb. Cey baş (ayrıca, analitik) olduğu yerdə, Vest isə dağınıq, impulsiv ürəkdir. Onlar təkcə rep sikkəsinin iki fərqli tərəfini təmsil etmirlər (layihələrdə doğulmuş fırıldaqçı Cey, orta təbəqə müəllifi Vest; köhnə məktəbli Cey, yeni Kanye), onlar bir-birinin şəxsiyyətinin uzaq bölgələrini də ortaya çıxarırlar: Vestin özündən kənar dünya haqqında nüfuzlu olmaq inamı, Ceynin ehtiyatlılığını itirmək və sərbəst olmaq üçün rahatlığı.",
+      en: "Watch The Throne is the first album on which JAY-Z actually sounds comfortable. Not comfortable in a cramped, laughable way, but comfortable like standing on a mountaintop looking over the valley: there's nowhere left to go, because you're already there. He had been collaborating with Kanye West for over a decade, developing a chemistry bordering on brotherhood — you sense that Jay tied not just his business but his reputation to him. Where Jay is the head (detached, analytical), West is the messy, impulsive heart. They don't merely represent two different sides of the rap coin (Jay the project-born hustler, West the middle-class auteur; old-school Jay, new-school Kanye) — they also draw out remote regions of each other's personalities: West's conviction to speak with authority about the world beyond himself, and Jay's ease in letting his guard down and being free.",
+      ru: "Watch The Throne — первый альбом, на котором JAY-Z действительно звучит расслабленно. Не тесно и смехотворно расслабленно, а так, будто стоишь на вершине горы и смотришь на долину: идти больше некуда, потому что ты уже там. Он сотрудничал с Kanye West более десяти лет, развив химию, граничащую с братством, — чувствуется, что Jay связал с ним не только бизнес, но и репутацию. Там, где Jay — голова (отстранённая, аналитическая), West — беспорядочное, импульсивное сердце. Они не просто представляют две разные стороны рэп-монеты (Jay — хастлер, выросший в бедных кварталах, West — автор из среднего класса; Jay — старая школа, Kanye — новая), они раскрывают далёкие уголки личности друг друга: убеждённость West в праве авторитетно говорить о мире за пределами себя и лёгкость, с которой Jay теряет бдительность и становится свободным.",
+    },
     tracklist: [
       { id: 1, name: "No Church In The Wild", features: "JAY-Z, Kanye West & Frank Ocean", isExplicit: true, duration: "4:32" },
       { id: 2, name: "Lift Off", features: "JAY-Z, Kanye West & Beyoncé", isExplicit: true, duration: "4:26" },
@@ -2420,6 +2620,9 @@ export const albums = [
   {
     id: 68,
     title: "Yeezus (CD)",
+    releaseDate: "18 İyun 2013",
+    duration: "10 mahnı, 40 dəqiqə",
+    label: "Def Jam",
     artist: ["Kanye West"],
     price: 49.99,
     genre: "Hip-Hop/Rap",
@@ -2429,7 +2632,11 @@ export const albums = [
     image: yeezus.cover,
     accentColor: "red",
     format: "cd",
-    description: "Yeezus, amerikalı reper Kanye Westin altıncı studiya albomudur. Albom 18 iyun 2013-cü ildə çıxıb. Qonaq qruplar arasında Justin Vernon, Chief Keef, Kid Cudi, Assassin, King L, Charlie Wilson və Frank Ocean yer alır.",
+    description: {
+      az: "Yeezus, amerikalı reper Kanye Westin altıncı studiya albomudur. Albom 18 iyun 2013-cü ildə çıxıb. Qonaq qruplar arasında Justin Vernon, Chief Keef, Kid Cudi, Assassin, King L, Charlie Wilson və Frank Ocean yer alır.",
+      en: "Yeezus is the sixth studio album by American rapper Kanye West, released on June 18, 2013. Guest artists include Justin Vernon, Chief Keef, Kid Cudi, Assassin, King L, Charlie Wilson and Frank Ocean.",
+      ru: "Yeezus — шестой студийный альбом американского рэпера Kanye West, вышедший 18 июня 2013 года. Среди гостей — Justin Vernon, Chief Keef, Kid Cudi, Assassin, King L, Charlie Wilson и Frank Ocean.",
+    },
     tracklist: [
       { id: 1, name: "On Sight", isExplicit: true, duration: "2:36" },
       { id: 2, name: "Black Skinhead", isExplicit: true, duration: "3:08" },
@@ -2446,6 +2653,9 @@ export const albums = [
   {
     id: 32,
     title: "ye (LP)",
+    releaseDate: "1 İyun 2018",
+    duration: "7 mahnı, 24 dəqiqə",
+    label: "GOOD Music/Def Jam",
     artist: ["Kanye West"],
     price: 79.99,
     genre: "Hip-Hop/Rap",
@@ -2458,7 +2668,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "Vinil LP presləməsi. 2018-ci ildə buraxılan, reper/prodüser Kanye Westin səkkizinci studiya albomudur. Albomda Ty Dolla Sign, PartyNextDoor, Kid Cudi, Jeremih və 070 Shake kimi qruplar qonaq vokal ifa edir. Albomun tam versiyasını West istehsal edib, əlavə olaraq həmicraçı prodüser olan Mike Dean, eləcə də Francis and the Lights, Benny Blanco, Irv Gotti, 7 Aurelius, Noah Goldstein, Che Pope, Caroline Shaw, Pi'erre Bourne və Ty Dolla Sign kimi qruplar da prodüserlik edib. Ye, West tərəfindən Wyoming Sessions adlandırılan beş yeddi mahnıdan ibarət albomdan ikincisidir. Vest albomun adını, mahnılarında tez-tez istifadə olunan öz adının kiçildilmiş versiyasını belə izah etdi: İnanıram ki, Müqəddəs Kitabda ən çox istifadə edilən ye sözüdür və Müqəddəs Kitabda sən mənasını verir. Beləliklə, mən sənəm, mən bizəm, bu bizik. Bu söz yeganə mənasını verən Kanye sözündən sadəcə Ye sözünə keçdi - sadəcə yaxşılığımızın, pisliyimizin, çaşqınlığımızın, hər şeyimizin əks olunması. Albom daha çox kim olduğumuzun əksidir.",
+    description: {
+      az: "Vinil LP presləməsi. 2018-ci ildə buraxılan, reper/prodüser Kanye Westin səkkizinci studiya albomudur. Albomda Ty Dolla Sign, PartyNextDoor, Kid Cudi, Jeremih və 070 Shake kimi qruplar qonaq vokal ifa edir. Albomun tam versiyasını West istehsal edib, əlavə olaraq həmicraçı prodüser olan Mike Dean, eləcə də Francis and the Lights, Benny Blanco, Irv Gotti, 7 Aurelius, Noah Goldstein, Che Pope, Caroline Shaw, Pi'erre Bourne və Ty Dolla Sign kimi qruplar da prodüserlik edib. Ye, West tərəfindən Wyoming Sessions adlandırılan beş yeddi mahnıdan ibarət albomdan ikincisidir. Vest albomun adını, mahnılarında tez-tez istifadə olunan öz adının kiçildilmiş versiyasını belə izah etdi: İnanıram ki, Müqəddəs Kitabda ən çox istifadə edilən ye sözüdür və Müqəddəs Kitabda sən mənasını verir. Beləliklə, mən sənəm, mən bizəm, bu bizik. Bu söz yeganə mənasını verən Kanye sözündən sadəcə Ye sözünə keçdi - sadəcə yaxşılığımızın, pisliyimizin, çaşqınlığımızın, hər şeyimizin əks olunması. Albom daha çox kim olduğumuzun əksidir.",
+      en: "Vinyl LP pressing. Released in 2018, this is the eighth studio album by rapper/producer Kanye West. The album features guest vocals from Ty Dolla Sign, PartyNextDoor, Kid Cudi, Jeremih and 070 Shake. It was produced in full by West, with co-executive producer Mike Dean and additional production from Francis and the Lights, Benny Blanco, Irv Gotti, 7 Aurelius, Noah Goldstein, Che Pope, Caroline Shaw, Pi'erre Bourne and Ty Dolla Sign. Ye is the second of five seven-song albums from what West called the Wyoming Sessions. West explained the album's title, a shortened version of his own name often used in his songs: I believe ye is the most commonly used word in the Bible, and in the Bible it means you. So I'm you, I'm us, it's us. Going from Kanye, which means the only one, to just Ye — just being a reflection of our good, our bad, our confusion, everything. The album is more a reflection of who we are.",
+      ru: "Виниловое издание LP. Выпущенный в 2018 году восьмой студийный альбом рэпера и продюсера Kanye West. В альбоме звучит гостевой вокал Ty Dolla Sign, PartyNextDoor, Kid Cudi, Jeremih и 070 Shake. Полную версию альбома спродюсировал West, соисполнительным продюсером выступил Mike Dean, а дополнительным продюсированием занимались Francis and the Lights, Benny Blanco, Irv Gotti, 7 Aurelius, Noah Goldstein, Che Pope, Caroline Shaw, Pi'erre Bourne и Ty Dolla Sign. Ye — второй из пяти альбомов по семь песен, которые West назвал Wyoming Sessions. West объяснил название альбома — сокращённую версию собственного имени, часто звучащую в его песнях — так: я считаю, что ye — самое употребляемое слово в Библии, и в Библии оно означает «ты». Так что я — это ты, я — это мы, это мы. От слова Kanye, означающего «единственный», к просто Ye — просто отражению нашего хорошего, нашего плохого, нашей растерянности, всего. Альбом — скорее отражение того, кто мы есть.",
+    },
     tracklist: [
       { id: 1, name: "I Thought About Killing You", isExplicit: true, duration: "4:34" },
       { id: 2, name: "Yikes", isExplicit: true, duration: "3:08" },
@@ -2472,6 +2686,9 @@ export const albums = [
   {
     id: 30,
     title: "KIDS SEE GHOSTS (LP)",
+    releaseDate: "8 İyun 2018",
+    duration: "7 mahnı, 24 dəqiqə",
+    label: "GOOD Music/Def Jam",
     artist: ["KIDS SEE GHOSTS", "Kanye West", "Kid Cudi"],
     price: 79.99,
     genre: "Hip-Hop/Rap",
@@ -2484,7 +2701,11 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "vinyl",
-    description: "Kids See Ghosts hip-hop dueti Kids See Ghosts-un Kanye West və Kid Cudidən ibarət debüt studiya albomudur. Albomdan əvvəl West və Cudi 2008-ci ildə görüşdükdən bəri yaxın dost və musiqi müttəfiqləri kimi güclü münasibətlərdən zövq almış və birgə albom yazmaq istədiklərini bildirmişdilər. Albomda Pusha T, Yasiin Bey və Ty Dolla Sign-dən qonaqlar, eləcə də ölümündən sonra tanınmış sənətçi kimi tanınan Louis Prima-nın vokal nümunəsi yer alır. Albomda duetin hər iki üzvünün görkəmli prodüserliyi, eləcə də Dot da Genius, Mike Dean, Evan Mast, Plain Pat, BoogzDaBeast, Benny Blanco, Jeff Bhasker, Justin Vernon, Noah Goldstein, Andrew Dawson, Cashmere Cat və Andre 3000 və digərlərinin əsərləri yer alır.",
+    description: {
+      az: "Kids See Ghosts hip-hop dueti Kids See Ghosts-un Kanye West və Kid Cudidən ibarət debüt studiya albomudur. Albomdan əvvəl West və Cudi 2008-ci ildə görüşdükdən bəri yaxın dost və musiqi müttəfiqləri kimi güclü münasibətlərdən zövq almış və birgə albom yazmaq istədiklərini bildirmişdilər. Albomda Pusha T, Yasiin Bey və Ty Dolla Sign-dən qonaqlar, eləcə də ölümündən sonra tanınmış sənətçi kimi tanınan Louis Prima-nın vokal nümunəsi yer alır. Albomda duetin hər iki üzvünün görkəmli prodüserliyi, eləcə də Dot da Genius, Mike Dean, Evan Mast, Plain Pat, BoogzDaBeast, Benny Blanco, Jeff Bhasker, Justin Vernon, Noah Goldstein, Andrew Dawson, Cashmere Cat və Andre 3000 və digərlərinin əsərləri yer alır.",
+      en: "Kids See Ghosts is the debut studio album by the hip-hop duo of the same name, consisting of Kanye West and Kid Cudi. Prior to the album, West and Cudi had enjoyed a strong relationship as close friends and musical allies since meeting in 2008, and had expressed a desire to record a joint album. The album features guests Pusha T, Yasiin Bey and Ty Dolla Sign, as well as a vocal sample of Louis Prima, credited as a posthumously featured artist. It showcases prominent production from both members of the duo, alongside work from Dot da Genius, Mike Dean, Evan Mast, Plain Pat, BoogzDaBeast, Benny Blanco, Jeff Bhasker, Justin Vernon, Noah Goldstein, Andrew Dawson, Cashmere Cat, Andre 3000 and others.",
+      ru: "Kids See Ghosts — дебютный студийный альбом одноимённого хип-хоп-дуэта в составе Kanye West и Kid Cudi. Ещё до альбома West и Cudi были близкими друзьями и музыкальными союзниками с момента знакомства в 2008 году и говорили о желании записать совместный альбом. Гостями альбома стали Pusha T, Yasiin Bey и Ty Dolla Sign, также использован вокальный сэмпл покойного артиста Louis Prima. Заметную продюсерскую работу проделали оба участника дуэта наряду с Dot da Genius, Mike Dean, Evan Mast, Plain Pat, BoogzDaBeast, Benny Blanco, Jeff Bhasker, Justin Vernon, Noah Goldstein, Andrew Dawson, Cashmere Cat, Andre 3000 и другими.",
+    },
     tracklist: [
       { id: 1, name: "Feel The Love", features: "KIDS SEE GHOSTS, Kanye West, Kid Cudi & Pusha T", isExplicit: true, duration: "2:45" },
       { id: 2, name: "Fire", isExplicit: true, duration: "2:20" },
@@ -2498,6 +2719,9 @@ export const albums = [
   {
     id: 46,
     title: "Donda (Deluxe) [2LP]",
+    releaseDate: "14 Noyabr 2021",
+    duration: "32 mahnı, 129 dəqiqə",
+    label: "GOOD Music/Def Jam",
     artist: ["Kanye West"],
     price: 149.99,
     genre: "Hip-Hop/Rap",
@@ -2510,7 +2734,11 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "black",
     format: "vinyl",
-    description: "Kanye West-in 10-cu studiya albomu olan Donda-da o, alboma layihənin adını daşıyan mərhum anası haqqında düşüncələrlə başlayan Syleena Johnson-u işə götürür. West səsini təkrarlayır və ritmlərini dəyişir, lakin sakitləşdirici bir impuls saxlayır. Bu, West-in layihə boyunca istifadə etməyə çalışdığı bir keçid xəttidir və o, 2019-cu ildə çıxan “Jesus is King” mahnısının qospel impulslarını fanatlarının sevimlisi olan 2013-cü ildə çıxan “Yeezus” un elektro-treşi ilə birləşdirir. Həmişə olduğu kimi, West-də də albomda The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby və başqaları da daxil olmaqla bir çox əməkdaş iştirak edir. Bəzən albom amansızcasına eksperimental xarakter daşıyır, digərləri isə pop siyahılarının zirvəsinə yüksəlmək üçün çalışır. Lakin Kanye həmişə “Donda Chant” mahnısının açılışından qaynaqlanan əsas sülhü qorumağa çalışır. Albom, Vestin bir çox sevimli səs mövzularına toxunur və bu da onu onun təkrarolunmaz metodları üçün unikal bir başlanğıc nöqtəsi kimi uyğunlaşdırır.",
+    description: {
+      az: "Kanye West-in 10-cu studiya albomu olan Donda-da o, alboma layihənin adını daşıyan mərhum anası haqqında düşüncələrlə başlayan Syleena Johnson-u işə götürür. West səsini təkrarlayır və ritmlərini dəyişir, lakin sakitləşdirici bir impuls saxlayır. Bu, West-in layihə boyunca istifadə etməyə çalışdığı bir keçid xəttidir və o, 2019-cu ildə çıxan “Jesus is King” mahnısının qospel impulslarını fanatlarının sevimlisi olan 2013-cü ildə çıxan “Yeezus” un elektro-treşi ilə birləşdirir. Həmişə olduğu kimi, West-də də albomda The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby və başqaları da daxil olmaqla bir çox əməkdaş iştirak edir. Bəzən albom amansızcasına eksperimental xarakter daşıyır, digərləri isə pop siyahılarının zirvəsinə yüksəlmək üçün çalışır. Lakin Kanye həmişə “Donda Chant” mahnısının açılışından qaynaqlanan əsas sülhü qorumağa çalışır. Albom, Vestin bir çox sevimli səs mövzularına toxunur və bu da onu onun təkrarolunmaz metodları üçün unikal bir başlanğıc nöqtəsi kimi uyğunlaşdırır.",
+      en: "On Donda, Kanye West's tenth studio album, he opens with Syleena Johnson reflecting on his late mother, after whom the project is named. West loops her voice and shifts the beats beneath it while maintaining a soothing pulse. It's a through-line West works to sustain across the project, fusing the gospel impulses of 2019's Jesus Is King with the electro-thrash of fan favorite Yeezus (2013). As always with West, the album features a host of collaborators, including The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby and more. At times the album is relentlessly experimental; at others it strives for the top of the pop charts. But Kanye always works to preserve the core peace that flows from the opening “Donda Chant”. The album touches on many of West's favorite sonic themes, making it a unique jumping-off point for his inimitable methods.",
+      ru: "На Donda, десятом студийном альбоме Kanye West, он начинает с голоса Syleena Johnson, размышляющей о его покойной матери, в честь которой назван проект. West зацикливает её голос и меняет ритмы, сохраняя при этом умиротворяющий пульс. Эту сквозную линию West старается удерживать на протяжении всего проекта, соединяя госпел-импульсы Jesus Is King 2019 года с электро-трэшем любимого фанатами Yeezus 2013 года. Как всегда у West, в альбоме участвует множество соавторов, включая The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby и других. Временами альбом безжалостно экспериментален, а временами стремится на вершины поп-чартов. Но Kanye всегда старается сохранить внутренний покой, идущий от открывающей «Donda Chant». Альбом затрагивает многие любимые звуковые темы West, что делает его уникальной отправной точкой для его неповторимых методов.",
+    },
     tracklist: [
       { id: 1, name: "Donda Chant", isExplicit: false, duration: "0:52" },
       { id: 2, name: "Hurricane", features: "Kanye West, The Weeknd & Lil Baby", isExplicit: false, duration: "4:03" },
@@ -2549,6 +2777,9 @@ export const albums = [
   {
     id: 49,
     title: "Donda (Deluxe) [CD]",
+    releaseDate: "14 Noyabr 2021",
+    duration: "32 mahnı, 129 dəqiqə",
+    label: "GOOD Music/Def Jam",
     artist: ["Kanye West"],
     price: 49.99,
     genre: "Hip-Hop/Rap",
@@ -2558,7 +2789,11 @@ export const albums = [
     image: donda.cover,
     vinylImages: dondaCD.vinyl,
     format: "cd",
-    description: "Kanye West-in 10-cu studiya albomu olan Donda-da o, alboma layihənin adını daşıyan mərhum anası haqqında düşüncələrlə başlayan Syleena Johnson-u işə götürür. West səsini təkrarlayır və ritmlərini dəyişir, lakin sakitləşdirici bir impuls saxlayır. Bu, West-in layihə boyunca istifadə etməyə çalışdığı bir keçid xəttidir və o, 2019-cu ildə çıxan “Jesus is King” mahnısının qospel impulslarını fanatlarının sevimlisi olan 2013-cü ildə çıxan “Yeezus” un elektro-treşi ilə birləşdirir. Həmişə olduğu kimi, West-də də albomda The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby və başqaları da daxil olmaqla bir çox əməkdaş iştirak edir. Bəzən albom amansızcasına eksperimental xarakter daşıyır, digərləri isə pop siyahılarının zirvəsinə yüksəlmək üçün çalışır. Lakin Kanye həmişə “Donda Chant” mahnısının açılışından qaynaqlanan əsas sülhü qorumağa çalışır. Albom, Vestin bir çox sevimli səs mövzularına toxunur və bu da onu onun təkrarolunmaz metodları üçün unikal bir başlanğıc nöqtəsi kimi uyğunlaşdırır.",
+    description: {
+      az: "Kanye West-in 10-cu studiya albomu olan Donda-da o, alboma layihənin adını daşıyan mərhum anası haqqında düşüncələrlə başlayan Syleena Johnson-u işə götürür. West səsini təkrarlayır və ritmlərini dəyişir, lakin sakitləşdirici bir impuls saxlayır. Bu, West-in layihə boyunca istifadə etməyə çalışdığı bir keçid xəttidir və o, 2019-cu ildə çıxan “Jesus is King” mahnısının qospel impulslarını fanatlarının sevimlisi olan 2013-cü ildə çıxan “Yeezus” un elektro-treşi ilə birləşdirir. Həmişə olduğu kimi, West-də də albomda The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby və başqaları da daxil olmaqla bir çox əməkdaş iştirak edir. Bəzən albom amansızcasına eksperimental xarakter daşıyır, digərləri isə pop siyahılarının zirvəsinə yüksəlmək üçün çalışır. Lakin Kanye həmişə “Donda Chant” mahnısının açılışından qaynaqlanan əsas sülhü qorumağa çalışır. Albom, Vestin bir çox sevimli səs mövzularına toxunur və bu da onu onun təkrarolunmaz metodları üçün unikal bir başlanğıc nöqtəsi kimi uyğunlaşdırır.",
+      en: "On Donda, Kanye West's tenth studio album, he opens with Syleena Johnson reflecting on his late mother, after whom the project is named. West loops her voice and shifts the beats beneath it while maintaining a soothing pulse. It's a through-line West works to sustain across the project, fusing the gospel impulses of 2019's Jesus Is King with the electro-thrash of fan favorite Yeezus (2013). As always with West, the album features a host of collaborators, including The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby and more. At times the album is relentlessly experimental; at others it strives for the top of the pop charts. But Kanye always works to preserve the core peace that flows from the opening “Donda Chant”. The album touches on many of West's favorite sonic themes, making it a unique jumping-off point for his inimitable methods.",
+      ru: "На Donda, десятом студийном альбоме Kanye West, он начинает с голоса Syleena Johnson, размышляющей о его покойной матери, в честь которой назван проект. West зацикливает её голос и меняет ритмы, сохраняя при этом умиротворяющий пульс. Эту сквозную линию West старается удерживать на протяжении всего проекта, соединяя госпел-импульсы Jesus Is King 2019 года с электро-трэшем любимого фанатами Yeezus 2013 года. Как всегда у West, в альбоме участвует множество соавторов, включая The Weeknd, Lil Yachty, Travis Scott, JAY-Z, Playboi Carti, Lil Baby и других. Временами альбом безжалостно экспериментален, а временами стремится на вершины поп-чартов. Но Kanye всегда старается сохранить внутренний покой, идущий от открывающей «Donda Chant». Альбом затрагивает многие любимые звуковые темы West, что делает его уникальной отправной точкой для его неповторимых методов.",
+    },
     tracklist: [
       { id: 1, name: "Donda Chant", isExplicit: false, duration: "0:52" },
       { id: 2, name: "Hurricane", features: "Kanye West, The Weeknd & Lil Baby", isExplicit: false, duration: "4:03" },
@@ -2597,6 +2832,9 @@ export const albums = [
   {
     id: 31,
     title: "VULTURES 1 (2LP)",
+    releaseDate: "10 Fevral 2024",
+    duration: "16 mahnı, 58 dəqiqə",
+    label: "YZY",
     artist: ["¥$", "Kanye West", "Ty Dolla $ign"],
     price: 89.99,
     genre: "Hip-Hop/Rap",
@@ -2609,7 +2847,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "Vultures 1 reper Kanye West və müğənni Ty Dolla $ign-dən ibarət Amerika hip-hop superqrupu ¥$-ın debüt studiya albomudur. Albom 10 fevral 2024-cü ildə çıxıb. Qonaq qruplar arasında West-in qızı North, India Love, Freddie Gibbs, YG, Nipsey Hussle, Quavo, Playboi Carti, Travis Scott, Bump J, Lil Durk, Rich the Kid və Chris Brown yer alır. İstehsal əsasən West və Ty Dolla Sign tərəfindən Legendary Traxster, 88-Keys, Camper, JPEGMafia, Timbaland, Swizz Beatz, Ojivolta, Chrishan, Anthony Kilhoffer və başqaları tərəfindən həyata keçirilib.",
+    description: {
+      az: "Vultures 1 reper Kanye West və müğənni Ty Dolla $ign-dən ibarət Amerika hip-hop superqrupu ¥$-ın debüt studiya albomudur. Albom 10 fevral 2024-cü ildə çıxıb. Qonaq qruplar arasında West-in qızı North, India Love, Freddie Gibbs, YG, Nipsey Hussle, Quavo, Playboi Carti, Travis Scott, Bump J, Lil Durk, Rich the Kid və Chris Brown yer alır. İstehsal əsasən West və Ty Dolla Sign tərəfindən Legendary Traxster, 88-Keys, Camper, JPEGMafia, Timbaland, Swizz Beatz, Ojivolta, Chrishan, Anthony Kilhoffer və başqaları tərəfindən həyata keçirilib.",
+      en: "Vultures 1 is the debut studio album by ¥$, the American hip-hop supergroup of rapper Kanye West and singer Ty Dolla $ign. The album was released on February 10, 2024. Guests include West's daughter North, India Love, Freddie Gibbs, YG, Nipsey Hussle, Quavo, Playboi Carti, Travis Scott, Bump J, Lil Durk, Rich the Kid and Chris Brown. Production was handled primarily by West and Ty Dolla Sign, alongside Legendary Traxster, 88-Keys, Camper, JPEGMafia, Timbaland, Swizz Beatz, Ojivolta, Chrishan, Anthony Kilhoffer and others.",
+      ru: "Vultures 1 — дебютный студийный альбом американской хип-хоп-супергруппы ¥$ в составе рэпера Kanye West и певца Ty Dolla $ign. Альбом вышел 10 февраля 2024 года. Среди гостей — дочь West по имени North, India Love, Freddie Gibbs, YG, Nipsey Hussle, Quavo, Playboi Carti, Travis Scott, Bump J, Lil Durk, Rich the Kid и Chris Brown. Продюсированием занимались в основном West и Ty Dolla Sign вместе с Legendary Traxster, 88-Keys, Camper, JPEGMafia, Timbaland, Swizz Beatz, Ojivolta, Chrishan, Anthony Kilhoffer и другими.",
+    },
     tracklist: [
       { id: 1, name: "STARS", isExplicit: true, duration: "1:55" },
       { id: 2, name: "KEYS TO MY LIFE (feat. India Love)", isExplicit: true, duration: "2:54" },
@@ -2754,6 +2996,8 @@ export const albums = [
   {
     id: 35,
     title: "UY SCUTI (LP)",
+    releaseDate: "27 İyun 2025",
+    label: "Young Stoner Life/Atlantic",
     artist: ["Young Thug"],
     price: 59.99,
     genre: "Hip-Hop/Rap",
@@ -2767,7 +3011,11 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "vinyl",
-    description: "UY Scuti, amerikalı reper və müğənni Young Thug-un dördüncü studiya albomudur. 26 sentyabr 2025-ci ildə çıxıb. Albomda Ken Carson, Cardi B, T.I., Lil Baby, Sexyy Red, YFN Lucci, 21 Savage, Travis Scott, Quavo, Lil Gotit, 1300Saint, Future və Mariah the Scientist qonaq kimi çıxış ediblər, həmçinin mərhum Lil Keedin də iştirak etdiyi Supernova Edition delüksü yer alıb. ATL Jacob, London on Da Track, TM88, Wheezy, Southside və Metro Boomin kimi qrupların da daxil olduğu albomun tanınmış prodüserləri.",
+    description: {
+      az: "UY Scuti, amerikalı reper və müğənni Young Thug-un dördüncü studiya albomudur. 26 sentyabr 2025-ci ildə çıxıb. Albomda Ken Carson, Cardi B, T.I., Lil Baby, Sexyy Red, YFN Lucci, 21 Savage, Travis Scott, Quavo, Lil Gotit, 1300Saint, Future və Mariah the Scientist qonaq kimi çıxış ediblər, həmçinin mərhum Lil Keedin də iştirak etdiyi Supernova Edition delüksü yer alıb. ATL Jacob, London on Da Track, TM88, Wheezy, Southside və Metro Boomin kimi qrupların da daxil olduğu albomun tanınmış prodüserləri.",
+      en: "UY Scuti is the fourth studio album by American rapper and singer Young Thug, released on September 26, 2025. The album features guest appearances from Ken Carson, Cardi B, T.I., Lil Baby, Sexyy Red, YFN Lucci, 21 Savage, Travis Scott, Quavo, Lil Gotit, 1300Saint, Future and Mariah the Scientist, with the Supernova Edition deluxe also featuring the late Lil Keed. Notable producers on the album include ATL Jacob, London on Da Track, TM88, Wheezy, Southside and Metro Boomin.",
+      ru: "UY Scuti — четвёртый студийный альбом американского рэпера и певца Young Thug, вышедший 26 сентября 2025 года. Гостями альбома стали Ken Carson, Cardi B, T.I., Lil Baby, Sexyy Red, YFN Lucci, 21 Savage, Travis Scott, Quavo, Lil Gotit, 1300Saint, Future и Mariah the Scientist, а в делюкс-издании Supernova Edition участвует и покойный Lil Keed. Среди известных продюсеров альбома — ATL Jacob, London on Da Track, TM88, Wheezy, Southside и Metro Boomin.",
+    },
     variants: [
       { id: 1, name: "UY SCUTI (ALTERNATİV ÖRTÜK 1)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uySvuti_vinyl4_cfzzmx.png" },
       { id: 2, name: "UY SCUTI (SP5DER NƏŞRİ)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768656236/uy_scuti_vinyl1_zenbqk.png" }
@@ -2802,7 +3050,11 @@ export const albums = [
     sleeveColor: "yellow",
     accentColor: "yellow",
     format: "vinyl",
-    description: "ADL, amerikalı reper Yeat-in altıncı studiya albomudur. 27 mart 2026-cı ildə Lyfestyle Corporation, Field Trip Recordings və Capitol Records tərəfindən buraxılmışdır. İkiqat albom olan bu albom, A Dangerous Lyfe və A Dangerous Love disklərindən ibarətdir. Elton John, Don Toliver, YoungBoy Never Broke Again, Kid Cudi, Grimes, Julia Wolf, Kylie Jenner (onun alter-eqosu King Kylie-nin rəhbərliyi altında), Swizz Beatz, Joji və 070 Shake ilə əməkdaşlıq edir. İstehsal işləri Dylan Brady, Bnyx, Rampa, Synthetic, Lucid və Sapjer və digərləri tərəfindən həyata keçirilmişdir. Mahnıya “Let King Tonka Talk” sinqlı dəstək vermişdir.",
+    description: {
+      az: "ADL, amerikalı reper Yeat-in altıncı studiya albomudur. 27 mart 2026-cı ildə Lyfestyle Corporation, Field Trip Recordings və Capitol Records tərəfindən buraxılmışdır. İkiqat albom olan bu albom, A Dangerous Lyfe və A Dangerous Love disklərindən ibarətdir. Elton John, Don Toliver, YoungBoy Never Broke Again, Kid Cudi, Grimes, Julia Wolf, Kylie Jenner (onun alter-eqosu King Kylie-nin rəhbərliyi altında), Swizz Beatz, Joji və 070 Shake ilə əməkdaşlıq edir. İstehsal işləri Dylan Brady, Bnyx, Rampa, Synthetic, Lucid və Sapjer və digərləri tərəfindən həyata keçirilmişdir. Mahnıya “Let King Tonka Talk” sinqlı dəstək vermişdir.",
+      en: "ADL is the sixth studio album by American rapper Yeat. It was released on March 27, 2026, through Lyfestyle Corporation, Field Trip Recordings and Capitol Records. A double album, it consists of the discs A Dangerous Lyfe and A Dangerous Love. It features collaborations with Elton John, Don Toliver, YoungBoy Never Broke Again, Kid Cudi, Grimes, Julia Wolf, Kylie Jenner (under the direction of her alter ego King Kylie), Swizz Beatz, Joji and 070 Shake. Production was handled by Dylan Brady, Bnyx, Rampa, Synthetic, Lucid, Sapjer and others. The album was supported by the single “Let King Tonka Talk”.",
+      ru: "ADL — шестой студийный альбом американского рэпера Yeat. Он вышел 27 марта 2026 года на Lyfestyle Corporation, Field Trip Recordings и Capitol Records. Двойной альбом состоит из дисков A Dangerous Lyfe и A Dangerous Love. В нём есть коллаборации с Elton John, Don Toliver, YoungBoy Never Broke Again, Kid Cudi, Grimes, Julia Wolf, Kylie Jenner (под руководством её альтер-эго King Kylie), Swizz Beatz, Joji и 070 Shake. Продюсированием занимались Dylan Brady, Bnyx, Rampa, Synthetic, Lucid, Sapjer и другие. Альбом поддержал сингл «Let King Tonka Talk».",
+    },
     tracklist: [
       { id: 1, name: "Purpose General", isExplicit: true, duration: "3:25", spotifyEmbed: "https://open.spotify.com/embed/track/44PH8NLzVddk4qhAUvm4v3" },
       { id: 2, name: "Let King Tonka Talk", isExplicit: true, duration: "3:00", spotifyEmbed: "https://open.spotify.com/embed/track/10Jh65STFxzCdmm1CHgKW5?si=847aea1484fd400e" },
@@ -2838,7 +3090,11 @@ export const albums = [
     vinylImages: adlCD.vinyl,
     accentColor: "yellow",
     format: "cd",
-    description: "ADL, amerikalı reper Yeat-in altıncı studiya albomudur. 27 mart 2026-cı ildə Lyfestyle Corporation, Field Trip Recordings və Capitol Records tərəfindən buraxılmışdır. İkiqat albom olan bu albom, A Dangerous Lyfe və A Dangerous Love disklərindən ibarətdir. Elton John, Don Toliver, YoungBoy Never Broke Again, Kid Cudi, Grimes, Julia Wolf, Kylie Jenner (onun alter-eqosu King Kylie-nin rəhbərliyi altında), Swizz Beatz, Joji və 070 Shake ilə əməkdaşlıq edir. İstehsal işləri Dylan Brady, Bnyx, Rampa, Synthetic, Lucid və Sapjer və digərləri tərəfindən həyata keçirilmişdir. Mahnıya “Let King Tonka Talk” sinqlı dəstək vermişdir.",
+    description: {
+      az: "ADL, amerikalı reper Yeat-in altıncı studiya albomudur. 27 mart 2026-cı ildə Lyfestyle Corporation, Field Trip Recordings və Capitol Records tərəfindən buraxılmışdır. İkiqat albom olan bu albom, A Dangerous Lyfe və A Dangerous Love disklərindən ibarətdir. Elton John, Don Toliver, YoungBoy Never Broke Again, Kid Cudi, Grimes, Julia Wolf, Kylie Jenner (onun alter-eqosu King Kylie-nin rəhbərliyi altında), Swizz Beatz, Joji və 070 Shake ilə əməkdaşlıq edir. İstehsal işləri Dylan Brady, Bnyx, Rampa, Synthetic, Lucid və Sapjer və digərləri tərəfindən həyata keçirilmişdir. Mahnıya “Let King Tonka Talk” sinqlı dəstək vermişdir.",
+      en: "ADL is the sixth studio album by American rapper Yeat. It was released on March 27, 2026, through Lyfestyle Corporation, Field Trip Recordings and Capitol Records. A double album, it consists of the discs A Dangerous Lyfe and A Dangerous Love. It features collaborations with Elton John, Don Toliver, YoungBoy Never Broke Again, Kid Cudi, Grimes, Julia Wolf, Kylie Jenner (under the direction of her alter ego King Kylie), Swizz Beatz, Joji and 070 Shake. Production was handled by Dylan Brady, Bnyx, Rampa, Synthetic, Lucid, Sapjer and others. The album was supported by the single “Let King Tonka Talk”.",
+      ru: "ADL — шестой студийный альбом американского рэпера Yeat. Он вышел 27 марта 2026 года на Lyfestyle Corporation, Field Trip Recordings и Capitol Records. Двойной альбом состоит из дисков A Dangerous Lyfe и A Dangerous Love. В нём есть коллаборации с Elton John, Don Toliver, YoungBoy Never Broke Again, Kid Cudi, Grimes, Julia Wolf, Kylie Jenner (под руководством её альтер-эго King Kylie), Swizz Beatz, Joji и 070 Shake. Продюсированием занимались Dylan Brady, Bnyx, Rampa, Synthetic, Lucid, Sapjer и другие. Альбом поддержал сингл «Let King Tonka Talk».",
+    },
     tracklist: [
       { id: 1, name: "Purpose General", isExplicit: true, duration: "3:25", spotifyEmbed: "https://open.spotify.com/embed/track/44PH8NLzVddk4qhAUvm4v3" },
       { id: 2, name: "Let King Tonka Talk", isExplicit: true, duration: "3:00", spotifyEmbed: "https://open.spotify.com/embed/track/10Jh65STFxzCdmm1CHgKW5?si=847aea1484fd400e" },
@@ -2877,7 +3133,11 @@ export const albums = [
     sleeveColor: "red",
     accentColor: "red",
     format: "vinyl",
-    description: "Love Sick amerikalı reper və müğənni Don Toliverin üçüncü studiya albomudur. Albom 24 fevral 2023-cü ildə çıxıb. Albomda James Blake, Lil Durk, GloRilla, Kali Uchis, TisaKorean, Justin Bieber, Future, Wizkid, Charlie Wilson, Brent Faiyaz və Toro y Moi kimi qruplar qonaq kimi çıxış ediblər. Albomun delüks versiyası dörd gün sonra çıxıb və Travis Scott və Teezo Touchdown kimi qruplar da əlavə qonaq kimi çıxış ediblər. İstehsal işləri Blake və TisaKorean, Cardo, DJ Burn One, Oz, Wheezy, Hit-Boy, Nez, Rodaidh McDonald, Kaytranada, Sevn Thomas, Boi-1da, DJ Dahi, Ronny J və DJ Fresh kimi bir çox prodüser tərəfindən həyata keçirilib.",
+    description: {
+      az: "Love Sick amerikalı reper və müğənni Don Toliverin üçüncü studiya albomudur. Albom 24 fevral 2023-cü ildə çıxıb. Albomda James Blake, Lil Durk, GloRilla, Kali Uchis, TisaKorean, Justin Bieber, Future, Wizkid, Charlie Wilson, Brent Faiyaz və Toro y Moi kimi qruplar qonaq kimi çıxış ediblər. Albomun delüks versiyası dörd gün sonra çıxıb və Travis Scott və Teezo Touchdown kimi qruplar da əlavə qonaq kimi çıxış ediblər. İstehsal işləri Blake və TisaKorean, Cardo, DJ Burn One, Oz, Wheezy, Hit-Boy, Nez, Rodaidh McDonald, Kaytranada, Sevn Thomas, Boi-1da, DJ Dahi, Ronny J və DJ Fresh kimi bir çox prodüser tərəfindən həyata keçirilib.",
+      en: "Love Sick is the third studio album by American rapper and singer Don Toliver. The album was released on February 24, 2023. It features guest appearances from James Blake, Lil Durk, GloRilla, Kali Uchis, TisaKorean, Justin Bieber, Future, Wizkid, Charlie Wilson, Brent Faiyaz and Toro y Moi. A deluxe version of the album was released four days later, adding guest appearances from Travis Scott and Teezo Touchdown. Production was handled by many producers, including Blake and TisaKorean themselves, Cardo, DJ Burn One, Oz, Wheezy, Hit-Boy, Nez, Rodaidh McDonald, Kaytranada, Sevn Thomas, Boi-1da, DJ Dahi, Ronny J and DJ Fresh.",
+      ru: "Love Sick — третий студийный альбом американского рэпера и певца Don Toliver. Альбом вышел 24 февраля 2023 года. Гостями альбома стали James Blake, Lil Durk, GloRilla, Kali Uchis, TisaKorean, Justin Bieber, Future, Wizkid, Charlie Wilson, Brent Faiyaz и Toro y Moi. Делюкс-версия альбома вышла четыре дня спустя, и в ней дополнительно участвуют Travis Scott и Teezo Touchdown. Продюсированием занимались многие, включая самих Blake и TisaKorean, а также Cardo, DJ Burn One, Oz, Wheezy, Hit-Boy, Nez, Rodaidh McDonald, Kaytranada, Sevn Thomas, Boi-1da, DJ Dahi, Ronny J и DJ Fresh.",
+    },
     tracklist: [
       { id: 1, name: "No Pole", isExplicit: true, duration: "3:07" },
       { id: 2, name: "Embarassed", features: "Don Toliver & Travis Scott", isExplicit: true, duration: "3:12" },
@@ -2920,7 +3180,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "Hardstone Psycho albomuna Travis Scott, Future & Metro Boomin, Kodak Black kimi tanınmış musiqiçilər daxildir, həmçinin bu yaxınlarda buraxılmış Attitude (Ft. Charlie Wilson & Cash Cobain), Deep In The Water və Bandit kimi sinqllar da daxildir.",
+    description: {
+      az: "Hardstone Psycho albomuna Travis Scott, Future & Metro Boomin, Kodak Black kimi tanınmış musiqiçilər daxildir, həmçinin bu yaxınlarda buraxılmış Attitude (Ft. Charlie Wilson & Cash Cobain), Deep In The Water və Bandit kimi sinqllar da daxildir.",
+      en: "Hardstone Psycho features renowned musicians such as Travis Scott, Future & Metro Boomin and Kodak Black, and also includes recently released singles like Attitude (Ft. Charlie Wilson & Cash Cobain), Deep In The Water and Bandit.",
+      ru: "В Hardstone Psycho участвуют такие известные музыканты, как Travis Scott, Future & Metro Boomin и Kodak Black, а также вошли недавно выпущенные синглы Attitude (Ft. Charlie Wilson & Cash Cobain), Deep In The Water и Bandit.",
+    },
     discs: [
       {
         title: "Disk 1",
@@ -2978,7 +3242,11 @@ export const albums = [
     sleeveColor: "green",
     accentColor: "green",
     format: "vinyl",
-    description: "Octane amerikalı reper və müğənni Don Toliverin qarşıdan gələn beşinci studiya albomudur. Albomun 30 yanvar 2026-cı ildə satışa çıxarılması planlaşdırılır. Alboma iki sinql dəstək verib: Tiramisu və ATM.",
+    description: {
+      az: "Octane amerikalı reper və müğənni Don Toliverin qarşıdan gələn beşinci studiya albomudur. Albomun 30 yanvar 2026-cı ildə satışa çıxarılması planlaşdırılır. Alboma iki sinql dəstək verib: Tiramisu və ATM.",
+      en: "Octane is the upcoming fifth studio album by American rapper and singer Don Toliver. The album is scheduled for release on January 30, 2026. It has been supported by two singles: Tiramisu and ATM.",
+      ru: "Octane — предстоящий пятый студийный альбом американского рэпера и певца Don Toliver. Выход альбома запланирован на 30 января 2026 года. Альбом поддержали два сингла: Tiramisu и ATM.",
+    },
     tracklist: [
       { id: 1, name: "E85", isExplicit: true, duration: "2:33", spotifyEmbed: "https://open.spotify.com/embed/track/3B4cjvGlPvyBLNG3AzEgkZ" },
       { id: 2, name: "Body", isExplicit: true, duration: "2:35", spotifyEmbed: "https://open.spotify.com/embed/track/0FlcmZ13DGRmscCroro9GO" },
@@ -3023,7 +3291,11 @@ export const albums = [
     vinylImages: octaneCD.vinyl,
     accentColor: "green",
     format: "cd",
-    description: "Octane amerikalı reper və müğənni Don Toliverin qarşıdan gələn beşinci studiya albomudur. Albomun 30 yanvar 2026-cı ildə tərəfindən satışa çıxarılması planlaşdırılır. Alboma iki sinql dəstək verib: Tiramisu və ATM.",
+    description: {
+      az: "Octane amerikalı reper və müğənni Don Toliverin qarşıdan gələn beşinci studiya albomudur. Albomun 30 yanvar 2026-cı ildə tərəfindən satışa çıxarılması planlaşdırılır. Alboma iki sinql dəstək verib: Tiramisu və ATM.",
+      en: "Octane is the upcoming fifth studio album by American rapper and singer Don Toliver. The album is scheduled to be released on January 30, 2026. It has been supported by two singles: Tiramisu and ATM.",
+      ru: "Octane — предстоящий пятый студийный альбом американского рэпера и певца Don Toliver. Релиз альбома запланирован на 30 января 2026 года. Альбом поддержали два сингла: Tiramisu и ATM.",
+    },
     tracklist: [
       { id: 1, name: "E85", isExplicit: true, duration: "2:33", spotifyEmbed: "https://open.spotify.com/embed/track/3B4cjvGlPvyBLNG3AzEgkZ" },
       { id: 2, name: "Body", isExplicit: true, duration: "2:35", spotifyEmbed: "https://open.spotify.com/embed/track/0FlcmZ13DGRmscCroro9GO" },
@@ -3064,7 +3336,11 @@ export const albums = [
     accentColor: "yellow",
     sleeveColor: "white",
     format: "vinyl",
-    description: "Long.Live.ASAP, amerikalı reper A$AP Rocky-nin debüt studiya albomudur. 15 yanvar 2013-cü ildə çıxıb. Hip-Hop və cloud rep janrında olan albomda Kendrick Lamar, Schoolboy Q, 2 Chainz, Drake, Big K.R.I.T., Santigold, Overdoz, Yelawolf, Florence Welch, Danny Brown, Action Bronson, Joey Badass, Gunplay və A$AP Ferg kimi məşhur qruplar qonaq kimi çıxış ediblər. Albomun istehsalına Rocky özü, Hector Delgado, Hit-Boy, Clams Casino, Jim Jonsin, T-Minus, Danger Mouse, 40, Skrillex və Emile Haynie və digər tanınmış prodüserlər rəhbərlik ediblər.",
+    description: {
+      az: "Long.Live.ASAP, amerikalı reper A$AP Rocky-nin debüt studiya albomudur. 15 yanvar 2013-cü ildə çıxıb. Hip-Hop və cloud rep janrında olan albomda Kendrick Lamar, Schoolboy Q, 2 Chainz, Drake, Big K.R.I.T., Santigold, Overdoz, Yelawolf, Florence Welch, Danny Brown, Action Bronson, Joey Badass, Gunplay və A$AP Ferg kimi məşhur qruplar qonaq kimi çıxış ediblər. Albomun istehsalına Rocky özü, Hector Delgado, Hit-Boy, Clams Casino, Jim Jonsin, T-Minus, Danger Mouse, 40, Skrillex və Emile Haynie və digər tanınmış prodüserlər rəhbərlik ediblər.",
+      en: "Long.Live.ASAP is the debut studio album by American rapper A$AP Rocky, released on January 15, 2013. A hip-hop and cloud rap album, it features guest appearances from stars such as Kendrick Lamar, Schoolboy Q, 2 Chainz, Drake, Big K.R.I.T., Santigold, Overdoz, Yelawolf, Florence Welch, Danny Brown, Action Bronson, Joey Badass, Gunplay and A$AP Ferg. Production was led by Rocky himself along with renowned producers including Hector Delgado, Hit-Boy, Clams Casino, Jim Jonsin, T-Minus, Danger Mouse, 40, Skrillex and Emile Haynie.",
+      ru: "Long.Live.ASAP — дебютный студийный альбом американского рэпера A$AP Rocky, вышедший 15 января 2013 года. Альбом в жанрах хип-хоп и cloud rap включает гостевые участия таких звёзд, как Kendrick Lamar, Schoolboy Q, 2 Chainz, Drake, Big K.R.I.T., Santigold, Overdoz, Yelawolf, Florence Welch, Danny Brown, Action Bronson, Joey Badass, Gunplay и A$AP Ferg. Продюсированием руководил сам Rocky вместе с известными продюсерами, включая Hector Delgado, Hit-Boy, Clams Casino, Jim Jonsin, T-Minus, Danger Mouse, 40, Skrillex и Emile Haynie.",
+    },
     tracklist: [
       { id: 1, name: "Long Live A$AP", isExplicit: true, duration: "4:49", spotifyEmbed: "https://open.spotify.com/embed/track/60Mq4EumvcSXznNugo9Op3" },
       { id: 2, name: "Goldie", isExplicit: true, duration: "3:12", spotifyEmbed: "https://open.spotify.com/embed/track/31G9RaSaDOI2NWcpnIp734" },
@@ -3103,7 +3379,11 @@ export const albums = [
     accentColor: "white",
     sleeveColor: "white",
     format: "vinyl",
-    description: "2015-ci ildə çıxan amerikalı reperin ikinci solo studiya albomu. Albom, əvvəlki Long. Live. A$AP (2013) albomunun davamı olaraq təqdim olunur. Albomda Joe Fox, Bones, Future, M.I.A., Schoolboy Q, Kanye West, Juicy J, UGK, James Fauntleroy, Lil Wayne, Rod Stewart, Miguel, Mark Ronson, Mos Def, A-Cyde və A$AP Yams kimi məşhur qruplar qonaq kimi çıxış ediblər. Albomun istehsalına Rocky özü, eləcə də Hector Delgado, Danger Mouse, Frans Mernick, Jim Jonsin, Kanye West və Mark Ronson kimi bir sıra tanınmış prodüserlər rəhbərlik edib. Alboma üç sinql dəstək olub: Lord Pretty Flacko Jodye 2 (LPFJ2), Rod Stewart, Miguel və Mark Ronsonun iştirakı iləEveryday və L$D.",
+    description: {
+      az: "2015-ci ildə çıxan amerikalı reperin ikinci solo studiya albomu. Albom, əvvəlki Long. Live. A$AP (2013) albomunun davamı olaraq təqdim olunur. Albomda Joe Fox, Bones, Future, M.I.A., Schoolboy Q, Kanye West, Juicy J, UGK, James Fauntleroy, Lil Wayne, Rod Stewart, Miguel, Mark Ronson, Mos Def, A-Cyde və A$AP Yams kimi məşhur qruplar qonaq kimi çıxış ediblər. Albomun istehsalına Rocky özü, eləcə də Hector Delgado, Danger Mouse, Frans Mernick, Jim Jonsin, Kanye West və Mark Ronson kimi bir sıra tanınmış prodüserlər rəhbərlik edib. Alboma üç sinql dəstək olub: Lord Pretty Flacko Jodye 2 (LPFJ2), Rod Stewart, Miguel və Mark Ronsonun iştirakı iləEveryday və L$D.",
+      en: "The American rapper's second solo studio album, released in 2015. The album serves as the follow-up to Long. Live. A$AP (2013). It features guest appearances from stars such as Joe Fox, Bones, Future, M.I.A., Schoolboy Q, Kanye West, Juicy J, UGK, James Fauntleroy, Lil Wayne, Rod Stewart, Miguel, Mark Ronson, Mos Def, A-Cyde and A$AP Yams. Production was led by Rocky himself, along with a number of renowned producers including Hector Delgado, Danger Mouse, Frans Mernick, Jim Jonsin, Kanye West and Mark Ronson. The album was supported by three singles: Lord Pretty Flacko Jodye 2 (LPFJ2), Everyday featuring Rod Stewart, Miguel and Mark Ronson, and L$D.",
+      ru: "Второй сольный студийный альбом американского рэпера, вышедший в 2015 году. Альбом является продолжением Long. Live. A$AP (2013). Гостями альбома стали такие звёзды, как Joe Fox, Bones, Future, M.I.A., Schoolboy Q, Kanye West, Juicy J, UGK, James Fauntleroy, Lil Wayne, Rod Stewart, Miguel, Mark Ronson, Mos Def, A-Cyde и A$AP Yams. Продюсированием руководил сам Rocky вместе с рядом известных продюсеров, включая Hector Delgado, Danger Mouse, Frans Mernick, Jim Jonsin, Kanye West и Mark Ronson. Альбом поддержали три сингла: Lord Pretty Flacko Jodye 2 (LPFJ2), Everyday при участии Rod Stewart, Miguel и Mark Ronson, и L$D.",
+    },
     tracklist: [
       { id: 1, name: "Holy Ghost (feat. Joe Fox)", duration: "3:11", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/6AHNkRbVzkh95xilnYzDT7" },
       { id: 2, name: "Canal St. (feat. BONES)", duration: "3:47", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/0rBMP6VVGRgwnzZCLpijyl" },
@@ -3143,7 +3423,11 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "white",
     format: "vinyl",
-    description: "Don't Be Dumb amerikalı reper və səs prodüseri A$AP Rocky-nin dördüncü studiya albomudur. Albom 16 yanvar 2026-cı ildə vasitəsilə buraxılmışdır. Albomda BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn və will.i.am kimi qonaq qruplar da daxil olmaqla geniş sayda iştirakçı iştirak edir; rəqəmsal nəşrlərdə əlavə olaraq Jozzy, Tokischa və Tyler, the Creator da yer alır. Bu, Rocky-nin Testing (2018) albomundan bəri təxminən səkkiz il ərzində ilk albomudur.",
+    description: {
+      az: "Don't Be Dumb amerikalı reper və səs prodüseri A$AP Rocky-nin dördüncü studiya albomudur. Albom 16 yanvar 2026-cı ildə vasitəsilə buraxılmışdır. Albomda BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn və will.i.am kimi qonaq qruplar da daxil olmaqla geniş sayda iştirakçı iştirak edir; rəqəmsal nəşrlərdə əlavə olaraq Jozzy, Tokischa və Tyler, the Creator da yer alır. Bu, Rocky-nin Testing (2018) albomundan bəri təxminən səkkiz il ərzində ilk albomudur.",
+      en: "Don't Be Dumb is the fourth studio album by American rapper and record producer A$AP Rocky. The album was released on January 16, 2026. It features a wide cast of contributors, including guest appearances from BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn and will.i.am; digital editions additionally feature Jozzy, Tokischa and Tyler, the Creator. It is Rocky's first album in roughly eight years, since Testing (2018).",
+      ru: "Don't Be Dumb — четвёртый студийный альбом американского рэпера и продюсера A$AP Rocky. Альбом вышел 16 января 2026 года. В нём участвует широкий круг приглашённых артистов, включая BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn и will.i.am; в цифровых изданиях дополнительно участвуют Jozzy, Tokischa и Tyler, the Creator. Это первый альбом Rocky примерно за восемь лет — со времён Testing (2018).",
+    },
     tracklist: [
       { id: 1, name: "ORDER OF PROTECTION", isExplicit: true, duration: "2:51", spotifyEmbed: "https://open.spotify.com/embed/track/1jux3g1YXNub0NkYbLTLIp" },
       { id: 2, name: "HELICOPTER", isExplicit: true, duration: "2:40", spotifyEmbed: "https://open.spotify.com/embed/track/6zJ68ym0Buv2TpuUu8tw9A" },
@@ -3178,7 +3462,11 @@ export const albums = [
     vinylImages: dontBeDumbCD.vinyl,
     accentColor: "white",
     format: "cd",
-    description: "Don't Be Dumb amerikalı reper və səs prodüseri ASAP Rocky-nin dördüncü studiya albomudur. Albom 16 yanvar 2026-cı ildə buraxılmışdır. Albomda BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn və will.i.am kimi qonaq qruplar da daxil olmaqla geniş sayda iştirakçı iştirak edir; rəqəmsal nəşrlərdə əlavə olaraq Jozzy, Tokischa və Tyler, the Creator da yer alır. Bu, Rocky-nin Testing (2018) albomundan bəri təxminən səkkiz il ərzində ilk albomudur.",
+    description: {
+      az: "Don't Be Dumb amerikalı reper və səs prodüseri ASAP Rocky-nin dördüncü studiya albomudur. Albom 16 yanvar 2026-cı ildə buraxılmışdır. Albomda BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn və will.i.am kimi qonaq qruplar da daxil olmaqla geniş sayda iştirakçı iştirak edir; rəqəmsal nəşrlərdə əlavə olaraq Jozzy, Tokischa və Tyler, the Creator da yer alır. Bu, Rocky-nin Testing (2018) albomundan bəri təxminən səkkiz il ərzində ilk albomudur.",
+      en: "Don't Be Dumb is the fourth studio album by American rapper and record producer ASAP Rocky. The album was released on January 16, 2026. It features a wide cast of contributors, including guest appearances from BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn and will.i.am; digital editions additionally feature Jozzy, Tokischa and Tyler, the Creator. It is Rocky's first album in roughly eight years, since Testing (2018).",
+      ru: "Don't Be Dumb — четвёртый студийный альбом американского рэпера и продюсера ASAP Rocky. Альбом вышел 16 января 2026 года. В нём участвует широкий круг приглашённых артистов, включая BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn и will.i.am; в цифровых изданиях дополнительно участвуют Jozzy, Tokischa и Tyler, the Creator. Это первый альбом Rocky примерно за восемь лет — со времён Testing (2018).",
+    },
     tracklist: [
       { id: 1, name: "ORDER OF PROTECTION", isExplicit: true, duration: "2:51", spotifyEmbed: "https://open.spotify.com/embed/track/1jux3g1YXNub0NkYbLTLIp" },
       { id: 2, name: "HELICOPTER", isExplicit: true, duration: "2:40", spotifyEmbed: "https://open.spotify.com/embed/track/6zJ68ym0Buv2TpuUu8tw9A" },
@@ -3214,7 +3502,11 @@ export const albums = [
     cassetteColor: "white",
     accentColor: "white",
     format: "cassette",
-    description: "Don't Be Dumb amerikalı reper və səs prodüseri ASAP Rocky-nin dördüncü studiya albomudur. Albom 16 yanvar 2026-cı ildə buraxılmışdır. Albomda BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn və will.i.am kimi qonaq qruplar da daxil olmaqla geniş sayda iştirakçı iştirak edir; rəqəmsal nəşrlərdə əlavə olaraq Jozzy, Tokischa və Tyler, the Creator da yer alır. Bu, Rocky-nin Testing (2018) albomundan bəri təxminən səkkiz il ərzində ilk albomudur.",
+    description: {
+      az: "Don't Be Dumb amerikalı reper və səs prodüseri ASAP Rocky-nin dördüncü studiya albomudur. Albom 16 yanvar 2026-cı ildə buraxılmışdır. Albomda BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn və will.i.am kimi qonaq qruplar da daxil olmaqla geniş sayda iştirakçı iştirak edir; rəqəmsal nəşrlərdə əlavə olaraq Jozzy, Tokischa və Tyler, the Creator da yer alır. Bu, Rocky-nin Testing (2018) albomundan bəri təxminən səkkiz il ərzində ilk albomudur.",
+      en: "Don't Be Dumb is the fourth studio album by American rapper and record producer ASAP Rocky. The album was released on January 16, 2026. It features a wide cast of contributors, including guest appearances from BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn and will.i.am; digital editions additionally feature Jozzy, Tokischa and Tyler, the Creator. It is Rocky's first album in roughly eight years, since Testing (2018).",
+      ru: "Don't Be Dumb — четвёртый студийный альбом американского рэпера и продюсера ASAP Rocky. Альбом вышел 16 января 2026 года. В нём участвует широкий круг приглашённых артистов, включая BossMan Dlow, Brent Faiyaz, Gorillaz, Doechii, Jessica Pratt, Sauce Walka, Slay Squad, Westside Gunn и will.i.am; в цифровых изданиях дополнительно участвуют Jozzy, Tokischa и Tyler, the Creator. Это первый альбом Rocky примерно за восемь лет — со времён Testing (2018).",
+    },
     variants: [
       { id: 1, name: "DON'T BE DUMB (Qara Kaset)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteBlack_clgiay.jpg" },
       { id: 2, name: "DON'T BE DUMB (Ağ Kaset)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768642831/dontBeDumb_cassetteWhite_o8e9iu.jpg" }
@@ -3255,7 +3547,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "We Don't Trust You amerikalı reper Future və amerikalı səs prodüseri Metro Boomin tərəfindən 22 mart 2024-cü ildə çıxan ilk birgə studiya albomudur. Albomda Weeknd, Travis Scott, Playboi Carti, Kendrick Lamar və Rick Ross kimi məşhurlar qonaq kimi çıxış edirlər. İstehsal əsasən Metro tərəfindən özü, Mike Dean, Oz, Southside, Boi-1da, Honorable C.N.O.T.E., Allen Ritter, Dre Moon, Zaytoven, Doughboy, Lil 88, Wheezy, G Koop və başqaları tərəfindən həyata keçirilib.",
+    description: {
+      az: "We Don't Trust You amerikalı reper Future və amerikalı səs prodüseri Metro Boomin tərəfindən 22 mart 2024-cü ildə çıxan ilk birgə studiya albomudur. Albomda Weeknd, Travis Scott, Playboi Carti, Kendrick Lamar və Rick Ross kimi məşhurlar qonaq kimi çıxış edirlər. İstehsal əsasən Metro tərəfindən özü, Mike Dean, Oz, Southside, Boi-1da, Honorable C.N.O.T.E., Allen Ritter, Dre Moon, Zaytoven, Doughboy, Lil 88, Wheezy, G Koop və başqaları tərəfindən həyata keçirilib.",
+      en: "We Don't Trust You is the first collaborative studio album by American rapper Future and American record producer Metro Boomin, released on March 22, 2024. It features guest appearances from stars such as The Weeknd, Travis Scott, Playboi Carti, Kendrick Lamar and Rick Ross. Production was handled mainly by Metro himself, along with Mike Dean, Oz, Southside, Boi-1da, Honorable C.N.O.T.E., Allen Ritter, Dre Moon, Zaytoven, Doughboy, Lil 88, Wheezy, G Koop and others.",
+      ru: "We Don't Trust You — первый совместный студийный альбом американского рэпера Future и американского продюсера Metro Boomin, вышедший 22 марта 2024 года. В нём в качестве гостей участвуют такие звёзды, как The Weeknd, Travis Scott, Playboi Carti, Kendrick Lamar и Rick Ross. Продюсированием занимался в основном сам Metro вместе с Mike Dean, Oz, Southside, Boi-1da, Honorable C.N.O.T.E., Allen Ritter, Dre Moon, Zaytoven, Doughboy, Lil 88, Wheezy, G Koop и другими.",
+    },
     tracklist: [
       { id: 1, name: "We Don't Trust You", duration: "3:46", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/1pnDvUuAEd6z8bKEsbAjk1" },
       { id: 2, name: "Young Metro", features: "Future, Metro Boomin & The Weeknd", duration: "3:25", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3OxL6MuctgZp1e0zxoAZhH" },
@@ -3282,6 +3578,9 @@ export const albums = [
   {
     id: 65,
     title: "HEROES & VILLAINS (2LP)",
+    releaseDate: "2 Dekabr 2022",
+    duration: "15 mahnı, 47 dəqiqə",
+    label: "Boominati/Republic",
     artist: ["Metro Boomin"],
     price: 99.99,
     genre: "Hip-Hop/Rap",
@@ -3295,7 +3594,11 @@ export const albums = [
     sleeveColor: "white",
     accentColor: "white",
     format: "vinyl",
-    description: "Heroes & Villains Amerikalı səsyazma prodüseri Metro Boomin-in ikinci solo studiya albomudur. Albom 2 dekabr 2022-ci ildə çıxıb. Albomda John Legend, Future, Chris Brown, Don Toliver, Travis Scott, 21 Savage, Young Nudy, Young Thug, the Weeknd, Mustafa, ASAP Rocky, the late Takeoff və Gunna kimi qruplar qonaq kimi çıxış ediblər. Albomun istehsalı əsasən Metro özü, TM88, DJ Moon, Peter Lee Johnson, Johan Lenox, Allen Ritter, David x Eli, Honorable C.N.O.T.E., Scriptplugg, Prince85, Oz, Nik D, D. Rich, DaHeala, My Best Friend Jacob, Elkan, Simon on the Moon və Xz tərəfindən həyata keçirilib.",
+    description: {
+      az: "Heroes & Villains Amerikalı səsyazma prodüseri Metro Boomin-in ikinci solo studiya albomudur. Albom 2 dekabr 2022-ci ildə çıxıb. Albomda John Legend, Future, Chris Brown, Don Toliver, Travis Scott, 21 Savage, Young Nudy, Young Thug, the Weeknd, Mustafa, ASAP Rocky, the late Takeoff və Gunna kimi qruplar qonaq kimi çıxış ediblər. Albomun istehsalı əsasən Metro özü, TM88, DJ Moon, Peter Lee Johnson, Johan Lenox, Allen Ritter, David x Eli, Honorable C.N.O.T.E., Scriptplugg, Prince85, Oz, Nik D, D. Rich, DaHeala, My Best Friend Jacob, Elkan, Simon on the Moon və Xz tərəfindən həyata keçirilib.",
+      en: "Heroes & Villains is the second solo studio album by American record producer Metro Boomin. The album was released on December 2, 2022. It features guest appearances from John Legend, Future, Chris Brown, Don Toliver, Travis Scott, 21 Savage, Young Nudy, Young Thug, The Weeknd, Mustafa, ASAP Rocky, the late Takeoff and Gunna. Production was handled mainly by Metro himself, along with TM88, DJ Moon, Peter Lee Johnson, Johan Lenox, Allen Ritter, David x Eli, Honorable C.N.O.T.E., Scriptplugg, Prince85, Oz, Nik D, D. Rich, DaHeala, My Best Friend Jacob, Elkan, Simon on the Moon and Xz.",
+      ru: "Heroes & Villains — второй сольный студийный альбом американского продюсера Metro Boomin. Альбом вышел 2 декабря 2022 года. Гостями альбома стали John Legend, Future, Chris Brown, Don Toliver, Travis Scott, 21 Savage, Young Nudy, Young Thug, The Weeknd, Mustafa, ASAP Rocky, покойный Takeoff и Gunna. Продюсированием занимался в основном сам Metro вместе с TM88, DJ Moon, Peter Lee Johnson, Johan Lenox, Allen Ritter, David x Eli, Honorable C.N.O.T.E., Scriptplugg, Prince85, Oz, Nik D, D. Rich, DaHeala, My Best Friend Jacob, Elkan, Simon on the Moon и Xz.",
+    },
     tracklist: [
       { id: 1, name: "On Time", features: "Metro Boomin & John Legend", duration: "2:48", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/0YFqKxV9uNu6LUeYkLOKRS" },
       { id: 2, name: "Superhero", features: "Metro Boomin, Future & Chris Brown", duration: "3:02", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/0vjeOZ3Ft5jvAi9SBFJm1j" },
@@ -3317,6 +3620,9 @@ export const albums = [
   {
     id: 66,
     title: "METRO BOOMIN PRESENTS SPIDER-MAN: ACROSS THE SPIDER-VERSE (SOUNDTRACK FROM AND INSPIRED BY THE MOTION PICTURE) [2LP]",
+    releaseDate: "2 İyun 2023",
+    duration: "13 mahnı, 41 dəqiqə",
+    label: "Boominati/Republic",
     artist: ["Metro Boomin"],
     price: 119.99,
     genre: "Soundtrack",
@@ -3330,11 +3636,18 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "purple",
     format: "vinyl",
-    description: "Sony Pictures Animation tərəfindən istehsal olunmuş və Miles Moralesin superqəhrəman Hörümçək Adam təcəssümü əsasında çəkilmiş 2023-cü il Amerika cizgi filmi Spider-Man: Across The Spider-Verse-nın saundtreki, amerikalı səsyazma prodüseri Metro Boomin tərəfindən hazırlanmış saundtrek albomundan və ingilis bəstəkar Daniel Pemberton tərəfindən bəstələnmiş orijinal musiqidən ibarətdir. Hər iki albom filmin buraxılışı ilə birlikdə 2 iyun 2023-cü ildə buraxılmışdır. Filmdə Swae Lee, Lil Wayne, Offset, ASAP Rocky, Roisee, Future, Lil Uzi Vert, JID, James Blake, Nav, A Boogie wit da Hoodie, Ei8ht, Don Toliver, Wizkid, Beam, Toian, Coi Leray, 21 Savage, 2 Chainz və Nas rol almışdır. Saundtrekin delüks versiyası üç gün sonra, 5 iyun 2023-cü ildə yayımlandı. Filmdə Mora, Becky G, Ayra Starr, Shenseea, Myke Towers, Big Boss Vette, Omah Lay və Pop Money kimi digər sənətçilərin ifasında əlavə mahnılar da yer alır.",
+    description: {
+      az: "Sony Pictures Animation tərəfindən istehsal olunmuş və Miles Moralesin superqəhrəman Hörümçək Adam təcəssümü əsasında çəkilmiş 2023-cü il Amerika cizgi filmi Spider-Man: Across The Spider-Verse-nın saundtreki, amerikalı səsyazma prodüseri Metro Boomin tərəfindən hazırlanmış saundtrek albomundan və ingilis bəstəkar Daniel Pemberton tərəfindən bəstələnmiş orijinal musiqidən ibarətdir. Hər iki albom filmin buraxılışı ilə birlikdə 2 iyun 2023-cü ildə buraxılmışdır. Filmdə Swae Lee, Lil Wayne, Offset, ASAP Rocky, Roisee, Future, Lil Uzi Vert, JID, James Blake, Nav, A Boogie wit da Hoodie, Ei8ht, Don Toliver, Wizkid, Beam, Toian, Coi Leray, 21 Savage, 2 Chainz və Nas rol almışdır. Saundtrekin delüks versiyası üç gün sonra, 5 iyun 2023-cü ildə yayımlandı. Filmdə Mora, Becky G, Ayra Starr, Shenseea, Myke Towers, Big Boss Vette, Omah Lay və Pop Money kimi digər sənətçilərin ifasında əlavə mahnılar da yer alır.",
+      en: "The soundtrack to Spider-Man: Across the Spider-Verse, the 2023 American animated film produced by Sony Pictures Animation and based on the Miles Morales incarnation of the superhero Spider-Man, consists of a soundtrack album curated by American record producer Metro Boomin and an original score composed by English composer Daniel Pemberton. Both albums were released alongside the film on June 2, 2023. It features Swae Lee, Lil Wayne, Offset, ASAP Rocky, Roisee, Future, Lil Uzi Vert, JID, James Blake, Nav, A Boogie wit da Hoodie, Ei8ht, Don Toliver, Wizkid, Beam, Toian, Coi Leray, 21 Savage, 2 Chainz and Nas. A deluxe version of the soundtrack was released three days later, on June 5, 2023. It also includes additional songs performed by other artists such as Mora, Becky G, Ayra Starr, Shenseea, Myke Towers, Big Boss Vette, Omah Lay and Pop Money.",
+      ru: "Саундтрек к Spider-Man: Across the Spider-Verse — американскому анимационному фильму 2023 года производства Sony Pictures Animation, основанному на воплощении супергероя Человека-паука в лице Miles Morales, — состоит из альбома-саундтрека, подготовленного американским продюсером Metro Boomin, и оригинальной музыки английского композитора Daniel Pemberton. Оба альбома вышли одновременно с фильмом 2 июня 2023 года. В нём участвуют Swae Lee, Lil Wayne, Offset, ASAP Rocky, Roisee, Future, Lil Uzi Vert, JID, James Blake, Nav, A Boogie wit da Hoodie, Ei8ht, Don Toliver, Wizkid, Beam, Toian, Coi Leray, 21 Savage, 2 Chainz и Nas. Делюкс-версия саундтрека вышла три дня спустя, 5 июня 2023 года. В неё также вошли дополнительные песни в исполнении таких артистов, как Mora, Becky G, Ayra Starr, Shenseea, Myke Towers, Big Boss Vette, Omah Lay и Pop Money.",
+    },
   },
   {
     id: 67,
     title: "Spider-Man: Into the Spider-Verse (Soundtrack From & Inspired by the Motion Picture) [2LP]",
+    releaseDate: "14 Dekabr 2018",
+    duration: "13 mahnı, 42 dəqiqə",
+    label: "Republic",
     spotifyAlbumId: "35s58BRTGAEWztPo9WqCIs",
     artist: ["Various Artists"],
     price: 99.99,
@@ -3348,11 +3661,18 @@ export const albums = [
     sleeveColor: "black",
     accentColor: "purple",
     format: "vinyl",
-    description: "Sony Pictures Animation tərəfindən istehsal olunmuş və Marvel Comics personajı Hörümçək Adamın Miles Moralesin təcəssümü əsasında çəkilmiş 2018-ci il Amerika cizgi filmi Spider-Man: Into the Spider-Verse-nin saundtreki, film üçün yazılmış və ondan ilhamlanan orijinal mahnıların yer aldığı saundtrekdən və Daniel Pemberton tərəfindən bəstələnmiş orijinal musiqidən ibarətdir. Saundtrekdə Vince Staples, Jaden Smith, Nicki Minaj, Lil Wayne, Ski Mask the Slump God, Ty Dolla Sign, Post Malone, Swae Lee, Anuel AA, Thutmose, Coi Leray, indi mərhum Juice Wrld və mərhum XXXTentacion da daxil olmaqla bir sıra sənətçilərin ifa etdiyi mahnılar yer alır. Film 14 dekabr 2018-ci ildə, filmin kinoteatrlarda nümayişi ilə eyni gündə nümayiş olundu.",
+    description: {
+      az: "Sony Pictures Animation tərəfindən istehsal olunmuş və Marvel Comics personajı Hörümçək Adamın Miles Moralesin təcəssümü əsasında çəkilmiş 2018-ci il Amerika cizgi filmi Spider-Man: Into the Spider-Verse-nin saundtreki, film üçün yazılmış və ondan ilhamlanan orijinal mahnıların yer aldığı saundtrekdən və Daniel Pemberton tərəfindən bəstələnmiş orijinal musiqidən ibarətdir. Saundtrekdə Vince Staples, Jaden Smith, Nicki Minaj, Lil Wayne, Ski Mask the Slump God, Ty Dolla Sign, Post Malone, Swae Lee, Anuel AA, Thutmose, Coi Leray, indi mərhum Juice Wrld və mərhum XXXTentacion da daxil olmaqla bir sıra sənətçilərin ifa etdiyi mahnılar yer alır. Film 14 dekabr 2018-ci ildə, filmin kinoteatrlarda nümayişi ilə eyni gündə nümayiş olundu.",
+      en: "The soundtrack to Spider-Man: Into the Spider-Verse, the 2018 American animated film produced by Sony Pictures Animation and based on the Miles Morales incarnation of the Marvel Comics character Spider-Man, consists of a soundtrack of original songs written for and inspired by the film, and an original score composed by Daniel Pemberton. The soundtrack features songs performed by a number of artists, including Vince Staples, Jaden Smith, Nicki Minaj, Lil Wayne, Ski Mask the Slump God, Ty Dolla Sign, Post Malone, Swae Lee, Anuel AA, Thutmose, Coi Leray, the late Juice Wrld and the late XXXTentacion. It was released on December 14, 2018, the same day as the film's theatrical release.",
+      ru: "Саундтрек к Spider-Man: Into the Spider-Verse — американскому анимационному фильму 2018 года производства Sony Pictures Animation, основанному на воплощении персонажа Marvel Comics Человека-паука в лице Miles Morales, — состоит из саундтрека с оригинальными песнями, написанными для фильма и вдохновлёнными им, и оригинальной музыки, сочинённой Daniel Pemberton. В саундтреке звучат песни в исполнении ряда артистов, включая Vince Staples, Jaden Smith, Nicki Minaj, Lil Wayne, Ski Mask the Slump God, Ty Dolla Sign, Post Malone, Swae Lee, Anuel AA, Thutmose, Coi Leray, а также ныне покойных Juice Wrld и XXXTentacion. Он вышел 14 декабря 2018 года, в один день с премьерой фильма в кинотеатрах.",
+    },
   },
   {
     id: 71,
     title: "X (LP)",
+    releaseDate: "23 İyul 2021",
+    duration: "14 mahnı, 34 dəqiqə",
+    label: "Opium/Interscope",
     spotifyAlbumId: "3iBQSabXhatxvOKlo35Sya",
     artist: ["Ken Carson"],
     price: 79.99,
@@ -3367,7 +3687,11 @@ export const albums = [
     sleeveColor: "white",
     vinylColor: "white",
     format: "vinyl",
-    description: "X, amerikalı reper Ken Karsonun 8 iyul 2022-ci ildə çıxan ikinci studiya albomudur. Karsonun əsas leybldakı debütü olan albom, Opium leybl rəhbəri Playboi Carti tərəfindən icraçı prodüserlik edilmişdir və leybl həmkarları Destroy Lonely və Homixide Gang-ın qonaq çıxışlarını özündə birləşdirir. X, sintezatorlar, 808 zərb alətləri və Auto-Tuned vokalları ilə yüksək enerjili elektron istehsalı təqdim edən qəzəbli bir albomdur.",
+    description: {
+      az: "X, amerikalı reper Ken Karsonun 8 iyul 2022-ci ildə çıxan ikinci studiya albomudur. Karsonun əsas leybldakı debütü olan albom, Opium leybl rəhbəri Playboi Carti tərəfindən icraçı prodüserlik edilmişdir və leybl həmkarları Destroy Lonely və Homixide Gang-ın qonaq çıxışlarını özündə birləşdirir. X, sintezatorlar, 808 zərb alətləri və Auto-Tuned vokalları ilə yüksək enerjili elektron istehsalı təqdim edən qəzəbli bir albomdur.",
+      en: "X is the second studio album by American rapper Ken Carson, released on July 8, 2022. Carson's major-label debut, the album was executive-produced by Opium label head Playboi Carti and features guest appearances from labelmates Destroy Lonely and Homixide Gang. X is a rage album showcasing high-energy electronic production with synthesizers, 808 drums and Auto-Tuned vocals.",
+      ru: "X — второй студийный альбом американского рэпера Ken Carson, вышедший 8 июля 2022 года. Дебют Carson на крупном лейбле, альбом был спродюсирован главой лейбла Opium Playboi Carti в качестве исполнительного продюсера и включает гостевые участия коллег по лейблу Destroy Lonely и Homixide Gang. X — rage-альбом с высокоэнергичным электронным продакшеном: синтезаторы, 808-барабаны и вокал с Auto-Tune.",
+    },
     tracklist: [
       { id: 1, name: "Intro", duration: "3:15", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/6LAnpZIX3mgbLSF3YfNd7H" },
       { id: 2, name: "New", duration: "2:49", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/2ht2G1JL1yg0kIbz6Wfr8V" },
@@ -3378,6 +3702,9 @@ export const albums = [
   {
     id: 72,
     title: "A Great Chaos (LP)",
+    releaseDate: "13 Oktyabr 2023",
+    duration: "18 mahnı, 52 dəqiqə",
+    label: "Opium/Interscope",
     spotifyAlbumId: "6L6WCu3cwXc9XYa2zyH1y8",
     artist: ["Ken Carson"],
     price: 79.99,
@@ -3392,11 +3719,18 @@ export const albums = [
     sleeveColor: "gray",
     vinylColor: "black",
     format: "vinyl",
-    description: "A Great Chaos amerikalı reper Ken Karsonun 13 oktyabr 2023-cü ildə buraxılan üçüncü studiya albomudur. Albomun istehsalı F1lthy, Lil 88, Star Boy, Outtatown və TM88 daxil olmaqla müxtəlif prodüserlər tərəfindən həyata keçirilib və Destroy Lonely və Lil Uzi Vert qonaq kimi çıxış edir."
+    description: {
+      az: "A Great Chaos amerikalı reper Ken Karsonun 13 oktyabr 2023-cü ildə buraxılan üçüncü studiya albomudur. Albomun istehsalı F1lthy, Lil 88, Star Boy, Outtatown və TM88 daxil olmaqla müxtəlif prodüserlər tərəfindən həyata keçirilib və Destroy Lonely və Lil Uzi Vert qonaq kimi çıxış edir.",
+      en: "A Great Chaos is the third studio album by American rapper Ken Carson, released on October 13, 2023. Production was handled by various producers including F1lthy, Lil 88, Star Boy, Outtatown and TM88, with guest appearances from Destroy Lonely and Lil Uzi Vert.",
+      ru: "A Great Chaos — третий студийный альбом американского рэпера Ken Carson, выпущенный 13 октября 2023 года. Продюсированием занимались разные продюсеры, включая F1lthy, Lil 88, Star Boy, Outtatown и TM88, а гостями стали Destroy Lonely и Lil Uzi Vert.",
+    }
   },
   {
     id: 73,
     title: "More Chaos (2LP)",
+    releaseDate: "11 Aprel 2025",
+    duration: "20 mahnı, 54 dəqiqə",
+    label: "Opium/Interscope",
     spotifyAlbumId: "1qO5gHs2mJWd9Nx4dqvAMG",
     artist: ["Ken Carson"],
     price: 99.99,
@@ -3411,11 +3745,18 @@ export const albums = [
     sleeveColor: "red",
     vinylColor: "white",
     format: "vinyl",
-    description: "More Chaos amerikalı reper Ken Karsonun dördüncü studiya albomudur. Albom 11 aprel 2025-ci ildə buraxılıb. Karson albomun böyük hissəsini 2024-cü ildə üçüncü albomuna dəstək məqsədilə qastrol səfərlərində olarkən yazıb. Albomun prodüserləri F1lthy, Lil 88, Star Boy və Outtatown və digərləridir. Albomun standart nəşrində qonaq çıxışlar yoxdur, lakin Off the Meter adlı bonus trekdə Opium leybl yoldaşları Playboi Carti və Destroy Lonely yer alır."
+    description: {
+      az: "More Chaos amerikalı reper Ken Karsonun dördüncü studiya albomudur. Albom 11 aprel 2025-ci ildə buraxılıb. Karson albomun böyük hissəsini 2024-cü ildə üçüncü albomuna dəstək məqsədilə qastrol səfərlərində olarkən yazıb. Albomun prodüserləri F1lthy, Lil 88, Star Boy və Outtatown və digərləridir. Albomun standart nəşrində qonaq çıxışlar yoxdur, lakin Off the Meter adlı bonus trekdə Opium leybl yoldaşları Playboi Carti və Destroy Lonely yer alır.",
+      en: "More Chaos is the fourth studio album by American rapper Ken Carson, released on April 11, 2025. Carson wrote much of the album in 2024 while touring in support of his third album. Producers include F1lthy, Lil 88, Star Boy, Outtatown and others. The standard edition of the album has no guest appearances, but the bonus track Off the Meter features Opium labelmates Playboi Carti and Destroy Lonely.",
+      ru: "More Chaos — четвёртый студийный альбом американского рэпера Ken Carson, вышедший 11 апреля 2025 года. Большую часть альбома Carson написал в 2024 году во время гастролей в поддержку третьего альбома. Среди продюсеров — F1lthy, Lil 88, Star Boy, Outtatown и другие. В стандартном издании альбома нет гостей, но в бонус-треке Off the Meter участвуют коллеги по лейблу Opium Playboi Carti и Destroy Lonely.",
+    }
   },
   {
     id: 93,
     title: "More Chaos (CD)",
+    releaseDate: "11 Aprel 2025",
+    duration: "20 mahnı, 54 dəqiqə",
+    label: "Opium/Interscope",
     spotifyAlbumId: "1qO5gHs2mJWd9Nx4dqvAMG",
     artist: ["Ken Carson"],
     price: 29.99,
@@ -3429,7 +3770,11 @@ export const albums = [
     accentColor: "white",
     sleeveColor: "red",
     format: "cd",
-    description: "More Chaos amerikalı reper Ken Karsonun dördüncü studiya albomudur. Albom 11 aprel 2025-ci ildə buraxılıb. Karson albomun böyük hissəsini 2024-cü ildə üçüncü albomuna dəstək məqsədilə qastrol səfərlərində olarkən yazıb. Albomun prodüserləri F1lthy, Lil 88, Star Boy və Outtatown və digərləridir. Albomun standart nəşrində qonaq çıxışlar yoxdur, lakin Off the Meter adlı bonus trekdə Opium leybl yoldaşları Playboi Carti və Destroy Lonely yer alır."
+    description: {
+      az: "More Chaos amerikalı reper Ken Karsonun dördüncü studiya albomudur. Albom 11 aprel 2025-ci ildə buraxılıb. Karson albomun böyük hissəsini 2024-cü ildə üçüncü albomuna dəstək məqsədilə qastrol səfərlərində olarkən yazıb. Albomun prodüserləri F1lthy, Lil 88, Star Boy və Outtatown və digərləridir. Albomun standart nəşrində qonaq çıxışlar yoxdur, lakin Off the Meter adlı bonus trekdə Opium leybl yoldaşları Playboi Carti və Destroy Lonely yer alır.",
+      en: "More Chaos is the fourth studio album by American rapper Ken Carson, released on April 11, 2025. Carson wrote much of the album in 2024 while touring in support of his third album. Producers include F1lthy, Lil 88, Star Boy, Outtatown and others. The standard edition of the album has no guest appearances, but the bonus track Off the Meter features Opium labelmates Playboi Carti and Destroy Lonely.",
+      ru: "More Chaos — четвёртый студийный альбом американского рэпера Ken Carson, вышедший 11 апреля 2025 года. Большую часть альбома Carson написал в 2024 году во время гастролей в поддержку третьего альбома. Среди продюсеров — F1lthy, Lil 88, Star Boy, Outtatown и другие. В стандартном издании альбома нет гостей, но в бонус-треке Off the Meter участвуют коллеги по лейблу Opium Playboi Carti и Destroy Lonely.",
+    }
   },
   {
     id: 3418,
@@ -3447,7 +3792,11 @@ export const albums = [
     sleeveColor: "red",
     vinylColor: "red",
     format: "vinyl",
-    description: "Xperiment amerikalı reper Ken Karsonun 3 iyul 2026-cı ildə Opium və Interscope Records vasitəsilə buraxılan beşinci studiya albomudur. Xperiment 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti və Young Thug ilə əməkdaşlıq edir. Karsonun albomu dəstəkləmək üçün 2026-cı ilin avqust-sentyabr aylarında Şimali Amerikada Xperimenting Turuna çıxması planlaşdırılır. Albom tənqidçilərdən müsbət rəylər aldı və ABŞ Billboard 200-də yeddinci yerdə debüt etdiyi ilk həftədə 42.000 albom ekvivalenti qazandı.",
+    description: {
+      az: "Xperiment amerikalı reper Ken Karsonun 3 iyul 2026-cı ildə Opium və Interscope Records vasitəsilə buraxılan beşinci studiya albomudur. Xperiment 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti və Young Thug ilə əməkdaşlıq edir. Karsonun albomu dəstəkləmək üçün 2026-cı ilin avqust-sentyabr aylarında Şimali Amerikada Xperimenting Turuna çıxması planlaşdırılır. Albom tənqidçilərdən müsbət rəylər aldı və ABŞ Billboard 200-də yeddinci yerdə debüt etdiyi ilk həftədə 42.000 albom ekvivalenti qazandı.",
+      en: "Xperiment is the fifth studio album by American rapper Ken Carson, released on July 3, 2026, through Opium and Interscope Records. Xperiment features collaborations with 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti and Young Thug. Carson is set to embark on the Xperimenting Tour across North America in August and September 2026 to support the album. The album received positive reviews from critics and debuted at number seven on the US Billboard 200, earning 42,000 album-equivalent units in its first week.",
+      ru: "Xperiment — пятый студийный альбом американского рэпера Ken Carson, выпущенный 3 июля 2026 года на Opium и Interscope Records. В Xperiment есть коллаборации с 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti и Young Thug. В поддержку альбома Carson планирует отправиться в тур Xperimenting Tour по Северной Америке в августе–сентябре 2026 года. Альбом получил положительные отзывы критиков и дебютировал на седьмом месте US Billboard 200, набрав 42 000 эквивалентных альбомных единиц за первую неделю.",
+    },
     tracklist: [
       { name: "wheredoistart", isExplicit: true, duration: "2:43", spotifyEmbed: "https://open.spotify.com/embed/track/1lJWyDulWuGHlPccvRdZVs" },
       { name: "deaf note", features: "Ken Carson & Playboi Carti", isExplicit: true, duration: "3:18", spotifyEmbed: "hhttps://open.spotify.com/embed/track/17BcTd9O7iLnHQfGo31ntV" },
@@ -3470,7 +3819,7 @@ export const albums = [
       { name: "flamethrower", isExplicit: true, duration: "2:19", spotifyEmbed: "https://open.spotify.com/embed/track/5wJAqGjFPUPZVqk1f3k3PO" },
       { name: "knocking", isExplicit: true, duration: "3:15", spotifyEmbed: "https://open.spotify.com/embed/track/019BNL7sruegNcJiErXwFT" },
       { name: "addiction", isExplicit: true, duration: "3:16", spotifyEmbed: "https://open.spotify.com/embed/track/4aYn09UUPuJUrShKktcr02" },
-      { name: "wedidit", features: "Ken Carson & Playboi Carti", isExplicit: true, duration: "3:42", spotifyEmbed: "https://open.spotify.com/embed/track/7ijEnS2juTHSM7tD8byqrD" },
+      { name: "wedidit", features: "Ken Carson & Playboi Carti", isExplicit: true, duration: "3:42", spotifyEmbed: "https://open.spotify.com/embed/track/7ijEnS2juTHSM7tD8byqrD", musicVideo: "https://youtu.be/xHSeZUAq2-s" },
     ],
     releaseDate: "3 Iyul 2026",
     duration: "1 saat",
@@ -3491,7 +3840,11 @@ export const albums = [
     accentColor: "red",
     sleeveColor: "red",
     format: "cd",
-    description: "Xperiment amerikalı reper Ken Karsonun 3 iyul 2026-cı ildə Opium və Interscope Records vasitəsilə buraxılan beşinci studiya albomudur. Xperiment 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti və Young Thug ilə əməkdaşlıq edir. Karsonun albomu dəstəkləmək üçün 2026-cı ilin avqust-sentyabr aylarında Şimali Amerikada Xperimenting Turuna çıxması planlaşdırılır. Albom tənqidçilərdən müsbət rəylər aldı və ABŞ Billboard 200-də yeddinci yerdə debüt etdiyi ilk həftədə 42.000 albom ekvivalenti qazandı.",
+    description: {
+      az: "Xperiment amerikalı reper Ken Karsonun 3 iyul 2026-cı ildə Opium və Interscope Records vasitəsilə buraxılan beşinci studiya albomudur. Xperiment 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti və Young Thug ilə əməkdaşlıq edir. Karsonun albomu dəstəkləmək üçün 2026-cı ilin avqust-sentyabr aylarında Şimali Amerikada Xperimenting Turuna çıxması planlaşdırılır. Albom tənqidçilərdən müsbət rəylər aldı və ABŞ Billboard 200-də yeddinci yerdə debüt etdiyi ilk həftədə 42.000 albom ekvivalenti qazandı.",
+      en: "Xperiment is the fifth studio album by American rapper Ken Carson, released on July 3, 2026, through Opium and Interscope Records. Xperiment features collaborations with 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti and Young Thug. Carson is set to embark on the Xperimenting Tour across North America in August and September 2026 to support the album. The album received positive reviews from critics and debuted at number seven on the US Billboard 200, earning 42,000 album-equivalent units in its first week.",
+      ru: "Xperiment — пятый студийный альбом американского рэпера Ken Carson, выпущенный 3 июля 2026 года на Opium и Interscope Records. В Xperiment есть коллаборации с 2hollis, Destroy Lonely, Lil Uzi Vert, Playboi Carti и Young Thug. В поддержку альбома Carson планирует отправиться в тур Xperimenting Tour по Северной Америке в августе–сентябре 2026 года. Альбом получил положительные отзывы критиков и дебютировал на седьмом месте US Billboard 200, набрав 42 000 эквивалентных альбомных единиц за первую неделю.",
+    },
     tracklist: [
       { name: "wheredoistart", isExplicit: true, duration: "2:43", spotifyEmbed: "https://open.spotify.com/embed/track/1lJWyDulWuGHlPccvRdZVs" },
       { name: "deaf note", features: "Ken Carson & Playboi Carti", isExplicit: true, duration: "3:18", spotifyEmbed: "hhttps://open.spotify.com/embed/track/17BcTd9O7iLnHQfGo31ntV" },
@@ -3514,7 +3867,7 @@ export const albums = [
       { name: "flamethrower", isExplicit: true, duration: "2:19", spotifyEmbed: "https://open.spotify.com/embed/track/5wJAqGjFPUPZVqk1f3k3PO" },
       { name: "knocking", isExplicit: true, duration: "3:15", spotifyEmbed: "https://open.spotify.com/embed/track/019BNL7sruegNcJiErXwFT" },
       { name: "addiction", isExplicit: true, duration: "3:16", spotifyEmbed: "https://open.spotify.com/embed/track/4aYn09UUPuJUrShKktcr02" },
-      { name: "wedidit", features: "Ken Carson & Playboi Carti", isExplicit: true, duration: "3:42", spotifyEmbed: "https://open.spotify.com/embed/track/7ijEnS2juTHSM7tD8byqrD" },
+      { name: "wedidit", features: "Ken Carson & Playboi Carti", isExplicit: true, duration: "3:42", spotifyEmbed: "https://open.spotify.com/embed/track/7ijEnS2juTHSM7tD8byqrD", musicVideo: "https://youtu.be/xHSeZUAq2-s" },
     ],
     releaseDate: "3 Iyul 2026",
     duration: "1 saat",
@@ -3523,6 +3876,9 @@ export const albums = [
   {
     id: 74,
     title: "NO STYLIST (LP)",
+    releaseDate: "4 Noyabr 2022",
+    duration: "15 mahnı, 42 dəqiqə",
+    label: "Opium/Interscope",
     spotifyAlbumId: "42f9YhQCWIlQzBvxkkV8pP",
     artist: ["Destroy Lonely"],
     price: 79.99,
@@ -3536,11 +3892,18 @@ export const albums = [
     sleeveColor: "black",
     vinylColor: "black",
     format: "vinyl",
-    description: "No Stylist amerikalı reper Destroy Lonely-nin beşinci və ilk kommersiya miksteypidir. Albom 12 avqust 2022-ci ildə çıxıb. Miksteypdə Opium leyblının həmkarı Ken Karson qonaq kimi çıxış edir. İstehsalçılar Cxdy, Lil 88, TM88, Y2tnb və digərləri tərəfindən idarə olunub."
+    description: {
+      az: "No Stylist amerikalı reper Destroy Lonely-nin beşinci və ilk kommersiya miksteypidir. Albom 12 avqust 2022-ci ildə çıxıb. Miksteypdə Opium leyblının həmkarı Ken Karson qonaq kimi çıxış edir. İstehsalçılar Cxdy, Lil 88, TM88, Y2tnb və digərləri tərəfindən idarə olunub.",
+      en: "No Stylist is the fifth and first commercial mixtape by American rapper Destroy Lonely. It was released on August 12, 2022. The mixtape features a guest appearance from Opium labelmate Ken Carson. Production was handled by Cxdy, Lil 88, TM88, Y2tnb and others.",
+      ru: "No Stylist — пятый и первый коммерческий микстейп американского рэпера Destroy Lonely. Он вышел 12 августа 2022 года. В микстейпе гостем выступает коллега по лейблу Opium Ken Carson. Продюсированием занимались Cxdy, Lil 88, TM88, Y2tnb и другие.",
+    }
   },
   {
     id: 75,
     title: "if looks could kill (2LP)",
+    releaseDate: "5 May 2023",
+    duration: "25 mahnı, 79 dəqiqə",
+    label: "Opium/Interscope",
     spotifyAlbumId: "4FyesJzVpA39hbYvcseO2d",
     artist: ["Destroy Lonely"],
     price: 99.99,
@@ -3555,11 +3918,18 @@ export const albums = [
     sleeveColor: "purple",
     vinylColor: "purple",
     format: "vinyl",
-    description: "If Looks Could Kill amerikalı reper Destroy Lonely-nin 5 may 2023-cü ildə çıxan debüt studiya albomudur. Bu albom üzərində Clayco, Cxdy, DxnnyFxntom, Lil 88 və TM88 kimi bir sıra prodüserlər çalışıb. Qorxu filmləri, video oyunlar və alternativ rokdan təsirlənən bu albom, sintezator və gitaraları özündə birləşdirən qaranlıq, atmosferik istehsalı özündə birləşdirən hip-hop albomudur. Sözləri Lonely-nin həyat tərzini, narahatlığını, narkotikləri, pulu, qadınları, modasını və həyat seçimlərini araşdırır. Albomun mahnılarında, rəsm əsərlərində, musiqi videolarında və albomla eyni gündə çıxan qısametrajlı filmdə Look Killa kimi tanınan alter eqosu qəbul edən Lonely ifaçısıdır."
+    description: {
+      az: "If Looks Could Kill amerikalı reper Destroy Lonely-nin 5 may 2023-cü ildə çıxan debüt studiya albomudur. Bu albom üzərində Clayco, Cxdy, DxnnyFxntom, Lil 88 və TM88 kimi bir sıra prodüserlər çalışıb. Qorxu filmləri, video oyunlar və alternativ rokdan təsirlənən bu albom, sintezator və gitaraları özündə birləşdirən qaranlıq, atmosferik istehsalı özündə birləşdirən hip-hop albomudur. Sözləri Lonely-nin həyat tərzini, narahatlığını, narkotikləri, pulu, qadınları, modasını və həyat seçimlərini araşdırır. Albomun mahnılarında, rəsm əsərlərində, musiqi videolarında və albomla eyni gündə çıxan qısametrajlı filmdə Look Killa kimi tanınan alter eqosu qəbul edən Lonely ifaçısıdır.",
+      en: "If Looks Could Kill is the debut studio album by American rapper Destroy Lonely, released on May 5, 2023. A number of producers worked on the album, including Clayco, Cxdy, DxnnyFxntom, Lil 88 and TM88. Influenced by horror films, video games and alternative rock, it is a hip-hop album with dark, atmospheric production combining synthesizers and guitars. The lyrics explore Lonely's lifestyle, anxiety, drugs, money, women, fashion and life choices. Across the album's songs, artwork, music videos and the short film released the same day as the album, Lonely performs as his alter ego known as Look Killa.",
+      ru: "If Looks Could Kill — дебютный студийный альбом американского рэпера Destroy Lonely, вышедший 5 мая 2023 года. Над альбомом работал ряд продюсеров, включая Clayco, Cxdy, DxnnyFxntom, Lil 88 и TM88. Вдохновлённый фильмами ужасов, видеоиграми и альтернативным роком, это хип-хоп-альбом с тёмным атмосферным продакшеном, сочетающим синтезаторы и гитары. Тексты исследуют образ жизни Lonely, тревожность, наркотики, деньги, женщин, моду и жизненные выборы. В песнях, оформлении, клипах и короткометражном фильме, вышедшем в один день с альбомом, Lonely выступает в образе своего альтер-эго, известного как Look Killa.",
+    }
   },
   {
     id: 94,
     title: "LOVE LASTS FOREVER (2LP)",
+    releaseDate: "30 Avqust 2024",
+    duration: "16 mahnı, 44 dəqiqə",
+    label: "Opium/Interscope",
     spotifyAlbumId: "5EEPSOqhj6xXFmXQQb0gLK",
     artist: ["Destroy Lonely"],
     price: 99.99,
@@ -3593,11 +3963,46 @@ export const albums = [
     vinylImages: brokenHearts3CD.vinyl,
     accentColor: "grey",
     format: "cd",
-    description: "＜/3³ (Broken Hearts 3 kimi tələffüz olunur) amerikalı reper Destroy Lonely-nin altıncı miksteypidir. 19 sentyabr 2025-ci ildə çıxmışdır. Miksteyp onun üçüncü miksteypi olan ᐸ/3 (2020) və onun dəbdəbəli nəşri olan ᐸ/3² (2020)-nin davamıdır. Albomun yeganə qonaq qismində Opium leyblı Ken Karson Open It Up trekində çıxış etmişdir."
+    description: {
+      az: "＜/3³ (Broken Hearts 3 kimi tələffüz olunur) amerikalı reper Destroy Lonely-nin altıncı miksteypidir. 19 sentyabr 2025-ci ildə çıxmışdır. Miksteyp onun üçüncü miksteypi olan ᐸ/3 (2020) və onun dəbdəbəli nəşri olan ᐸ/3² (2020)-nin davamıdır. Albomun yeganə qonaq qismində Opium leyblı Ken Karson Open It Up trekində çıxış etmişdir.",
+      en: "＜/3³ (pronounced Broken Hearts 3) is the sixth mixtape by American rapper Destroy Lonely, released on September 19, 2025. The mixtape is a follow-up to his third mixtape ᐸ/3 (2020) and its deluxe edition ᐸ/3² (2020). The album's sole guest appearance comes from Opium labelmate Ken Carson on the track Open It Up.",
+      ru: "＜/3³ (произносится как Broken Hearts 3) — шестой микстейп американского рэпера Destroy Lonely, вышедший 19 сентября 2025 года. Микстейп является продолжением его третьего микстейпа ᐸ/3 (2020) и его делюкс-издания ᐸ/3² (2020). Единственным гостем альбома стал коллега по лейблу Opium Ken Carson в треке Open It Up.",
+    },
+    tracklist: [
+      { name: "aint hard", isExplicit: true, duration: "3:15", spotifyEmbed: "https://open.spotify.com/embed/track/6cF1WdjcCEdjS7aMq6kJDj" },
+      { name: "risk", isExplicit: true, duration: "3:00", spotifyEmbed: "https://open.spotify.com/embed/track/6kiNgYgpMhAw1OqWnc8W0Q" },
+      { name: "see no evil", isExplicit: true, duration: "2:22", spotifyEmbed: "https://open.spotify.com/embed/track/0iBalMrfTDyhSn0vAH7t87" },
+      { name: "no pressure", isExplicit: true, duration: "2:18", spotifyEmbed: "https://open.spotify.com/embed/track/419vPj2tN0KADfmLkBfBZe" },
+      { name: "stfu", isExplicit: true, duration: "3:21", spotifyEmbed: "https://open.spotify.com/embed/track/54uGPvLZO85hfbrtGN0oWF" },
+      { name: "show u how", isExplicit: true, duration: "2:08", spotifyEmbed: "https://open.spotify.com/embed/track/1tVyspjjYQ0NFDK6uOOoDx" },
+      { name: "top flo", isExplicit: true, duration: "2:38", spotifyEmbed: "https://open.spotify.com/embed/track/4JqrDSsXQF7fGXhJrgtAv3" },
+      { name: "whats it gon take?", isExplicit: true, duration: "2:39", spotifyEmbed: "https://open.spotify.com/embed/track/13fceAfv5ZN74ZIv9TM5zb" },
+      { name: "kansas", isExplicit: true, duration: "2:34", spotifyEmbed: "https://open.spotify.com/embed/track/509aLiyvluyLwdujOIsKHx" },
+      { name: "screwed up", isExplicit: true, duration: "2:33", spotifyEmbed: "https://open.spotify.com/embed/track/7bK9ZjEZXxGzYFs8YSZZvK" },
+      { name: "party n get high (interlude)", isExplicit: true, duration: "3:33", spotifyEmbed: "https://open.spotify.com/embed/track/2Q9XhrhksWBKyS5xh6cCqs" },
+      { name: "leash", isExplicit: true, duration: "2:29", spotifyEmbed: "https://open.spotify.com/embed/track/1D5HNNpWbDl884gcSeSnih" },
+      { name: "jumanji", isExplicit: true, duration: "2:17", spotifyEmbed: "https://open.spotify.com/embed/track/4yRGHaraXA2z6LFpQp6SCI" },
+      { name: "not the mayor", isExplicit: true, duration: "2:25", spotifyEmbed: "https://open.spotify.com/embed/track/08j3hmzcWvxM1gim09ns3F" },
+      { name: "blowin smoke", isExplicit: true, duration: "2:16", spotifyEmbed: "https://open.spotify.com/embed/track/177oDTNw9W7tZrOpzeX6XJ" },
+      { name: "kool on ya", isExplicit: true, duration: "3:23", spotifyEmbed: "https://open.spotify.com/embed/track/4BLWbGr09IUEknTPC5PPlw" },
+      { name: "soooo high", isExplicit: true, duration: "3:51", spotifyEmbed: "https://open.spotify.com/embed/track/467ez6VjGBtXKzUNo8A330" },
+      { name: "open it up", features: "Destroy Lonely & Ken Carson", isExplicit: true, duration: "4:22", spotifyEmbed: "https://open.spotify.com/embed/track/0F8K7mgOVEZ7cpOLBPQx38" },
+      { name: "leave u out 2 dry", isExplicit: true, duration: "3:00", spotifyEmbed: "https://open.spotify.com/embed/track/4D09OSRCi8GAmvxczdyvOZ" },
+
+    ],
+    releaseDate: "19 Sentyabr 2025",
+    duration: {
+      az: "54 Dəqiqə",
+      en: "54 Minutes",
+      ru: "54 Минуты"
+    },
+    label: "Opium/Interscope"
   },
   {
     id: 96,
     title: "Homixide Lifestyle (LP)",
+    releaseDate: "6 May 2022",
+    label: "Opium/Interscope",
     spotifyAlbumId: "3PFaHQZC8EWbhGPzGmLlNa",
     artist: ["Homixide Gang"],
     price: 79.99,
@@ -3611,11 +4016,18 @@ export const albums = [
     accentColor: "white",
     sleeveColor: "pink",
     format: "vinyl",
-    description: "Homixide Lifestyle Standart LP Zərgərlik qabı qablaşdırması.",
+    description: {
+      az: "Homixide Lifestyle Standart LP Zərgərlik qabı qablaşdırması.",
+      en: "Homixide Lifestyle Standard LP in jewel case packaging.",
+      ru: "Homixide Lifestyle — стандартный LP в упаковке jewel case.",
+    },
   },
   {
     id: 80,
     title: "Eternal Atake (2LP)",
+    releaseDate: "6 Mart 2020",
+    duration: "18 mahnı, 62 dəqiqə",
+    label: "Generation Now/Atlantic",
     spotifyAlbumId: "6WLJDhDIbyGFoj5u0iZTmg",
     artist: ["Lil Uzi Vert"],
     price: 129.99,
@@ -3629,11 +4041,18 @@ export const albums = [
     accentColor: "blue",
     sleeveColor: "blue",
     format: "vinyl",
-    description: "Eternal Atake amerikalı reper və müğənni Lil Uzi Vertin ikinci studiya albomudur. Albom 6 mart 2020-ci ildə çıxıb. Albomda amerikalı müğənni Syd yeganə qonaq kimi çıxış edir. Prodüserlik işləri Bobby Raps, Brandon Finessin, Bugz Ronin, Chief Keef, Oogie Mane, TM88, Wheezy və başqaları tərəfindən həyata keçirilib.",
+    description: {
+      az: "Eternal Atake amerikalı reper və müğənni Lil Uzi Vertin ikinci studiya albomudur. Albom 6 mart 2020-ci ildə çıxıb. Albomda amerikalı müğənni Syd yeganə qonaq kimi çıxış edir. Prodüserlik işləri Bobby Raps, Brandon Finessin, Bugz Ronin, Chief Keef, Oogie Mane, TM88, Wheezy və başqaları tərəfindən həyata keçirilib.",
+      en: "Eternal Atake is the second studio album by American rapper and singer Lil Uzi Vert. The album was released on March 6, 2020. American singer Syd is the album's only guest appearance. Production was handled by Bobby Raps, Brandon Finessin, Bugz Ronin, Chief Keef, Oogie Mane, TM88, Wheezy and others.",
+      ru: "Eternal Atake — второй студийный альбом американского рэпера и певца Lil Uzi Vert. Альбом вышел 6 марта 2020 года. Единственным гостем альбома стала американская певица Syd. Продюсированием занимались Bobby Raps, Brandon Finessin, Bugz Ronin, Chief Keef, Oogie Mane, TM88, Wheezy и другие.",
+    },
   },
   {
     id: 97,
     title: "Pink Tape (2LP)",
+    releaseDate: "30 İyun 2023",
+    duration: "26 mahnı, 87 dəqiqə",
+    label: "Generation Now/Atlantic",
     spotifyAlbumId: "7gjDAWSrFszPJRHtUvXWSN",
     artist: ["Lil Uzi Vert"],
     price: 99.99,
@@ -3648,7 +4067,11 @@ export const albums = [
     accentColor: "pink",
     sleeveColor: "pink",
     format: "vinyl",
-    description: "Pink Tape amerikalı reper və müğənni Lil Uzi Vertin üçüncü solo studiya albomudur. Albom 30 iyun 2023-cü ildə çıxıb. Albomda Travis Scott, Nicki Minaj, Snow Strippers, Bring Me the Horizon, Don Toliver və Babymetal kimi qruplar qonaq kimi çıxış ediblər. İstehsal işləri Bring Me the Horizon özləri, Don Cannon, Brandon Finessin, Arca, Bnyx, Oogie Mane, Cubeatz, WondaGurl, Bugz Ronin, Ken Carson, Bobby Raps, Rick Rubin, Serj Tankian, Daron Malakian, Kobametal, Wheezy və Charlie Handsome kimi müxtəlif səsyazma prodüserləri tərəfindən həyata keçirilib.",
+    description: {
+      az: "Pink Tape amerikalı reper və müğənni Lil Uzi Vertin üçüncü solo studiya albomudur. Albom 30 iyun 2023-cü ildə çıxıb. Albomda Travis Scott, Nicki Minaj, Snow Strippers, Bring Me the Horizon, Don Toliver və Babymetal kimi qruplar qonaq kimi çıxış ediblər. İstehsal işləri Bring Me the Horizon özləri, Don Cannon, Brandon Finessin, Arca, Bnyx, Oogie Mane, Cubeatz, WondaGurl, Bugz Ronin, Ken Carson, Bobby Raps, Rick Rubin, Serj Tankian, Daron Malakian, Kobametal, Wheezy və Charlie Handsome kimi müxtəlif səsyazma prodüserləri tərəfindən həyata keçirilib.",
+      en: "Pink Tape is the third solo studio album by American rapper and singer Lil Uzi Vert. The album was released on June 30, 2023. It features guest appearances from Travis Scott, Nicki Minaj, Snow Strippers, Bring Me the Horizon, Don Toliver and Babymetal. Production was handled by a variety of record producers, including Bring Me the Horizon themselves, Don Cannon, Brandon Finessin, Arca, Bnyx, Oogie Mane, Cubeatz, WondaGurl, Bugz Ronin, Ken Carson, Bobby Raps, Rick Rubin, Serj Tankian, Daron Malakian, Kobametal, Wheezy and Charlie Handsome.",
+      ru: "Pink Tape — третий сольный студийный альбом американского рэпера и певца Lil Uzi Vert. Альбом вышел 30 июня 2023 года. Гостями альбома стали Travis Scott, Nicki Minaj, Snow Strippers, Bring Me the Horizon, Don Toliver и Babymetal. Продюсированием занимались различные продюсеры, включая самих Bring Me the Horizon, Don Cannon, Brandon Finessin, Arca, Bnyx, Oogie Mane, Cubeatz, WondaGurl, Bugz Ronin, Ken Carson, Bobby Raps, Rick Rubin, Serj Tankian, Daron Malakian, Kobametal, Wheezy и Charlie Handsome.",
+    },
   },
   {
     id: 88,
@@ -3663,7 +4086,11 @@ export const albums = [
     vinylImages: wysCD.vinyl,
     accentColor: "gray",
     format: "cd",
-    description: "What You Saying / Regular Standart CD Zərgərlik qabı qablaşdırması.",
+    description: {
+      az: "What You Saying / Regular Standart CD Zərgərlik qabı qablaşdırması.",
+      en: "What You Saying / Regular Standard CD in jewel case packaging.",
+      ru: "What You Saying / Regular — стандартный CD в упаковке jewel case.",
+    },
     tracklist: [
       { id: 1, name: "What You Saying", duration: "2:11", isExplicit: false, spotifyEmbed: "https://open.spotify.com/embed/track/7cjoZVmWe2xsGR4wcXiV2v", musicVideo: "https://youtu.be/s_TUESTU7_4?si=h-X40cvLjx6VUBts" },
       { id: 1, name: "Regular", duration: "2:26", isExplicit: true, spotifyEmbed: "https://open.spotify.com/embed/track/3NZ3oBrDN9D2Bi1hykwXHb", musicVideo: "https://youtu.be/YokvSdIrA_g?si=BArWNHWZoUgmZxEf" }
@@ -3672,6 +4099,9 @@ export const albums = [
   {
     id: 85,
     title: "Good Kid M.A.A.D. City (2LP)",
+    releaseDate: "22 Oktyabr 2012",
+    duration: "12 mahnı, 68 dəqiqə",
+    label: "Top Dawg/Aftermath/Interscope",
     spotifyAlbumId: "3DGQ1iZ9XKUQxAUWjfC34w",
     artist: ["Kendrick Lamar"],
     price: 99.99,
@@ -3685,11 +4115,18 @@ export const albums = [
     accentColor: "grey",
     sleeveColor: "grey",
     format: "vinyl",
-    description: "Good Kid, M.A.A.D City amerikalı reper Kendrik Lamarın ikinci studiya albomudur. Albom 22 oktyabr 2012-ci ildə çıxıb. Albomda Dreyk, Dr. Dre, Cey Rok, Anna Uayz və MC Eyht qonaq kimi çıxış ediblər.",
+    description: {
+      az: "Good Kid, M.A.A.D City amerikalı reper Kendrik Lamarın ikinci studiya albomudur. Albom 22 oktyabr 2012-ci ildə çıxıb. Albomda Dreyk, Dr. Dre, Cey Rok, Anna Uayz və MC Eyht qonaq kimi çıxış ediblər.",
+      en: "Good Kid, M.A.A.D City is the second studio album by American rapper Kendrick Lamar, released on October 22, 2012. The album features guest appearances from Drake, Dr. Dre, Jay Rock, Anna Wise and MC Eiht.",
+      ru: "Good Kid, M.A.A.D City — второй студийный альбом американского рэпера Kendrick Lamar, вышедший 22 октября 2012 года. Гостями альбома стали Drake, Dr. Dre, Jay Rock, Anna Wise и MC Eiht.",
+    },
   },
   {
     id: 84,
     title: "DAMN. (2LP)",
+    releaseDate: "14 Aprel 2017",
+    duration: "14 mahnı, 55 dəqiqə",
+    label: "Top Dawg/Aftermath/Interscope",
     spotifyAlbumId: "4eLPsYPBmXABThSJ821sqY",
     artist: ["Kendrick Lamar"],
     price: 99.99,
@@ -3703,11 +4140,18 @@ export const albums = [
     accentColor: "red",
     sleeveColor: "red",
     format: "vinyl",
-    description: "La'na amerikalı reper Kendrik Lamarın 14 aprel 2017-ci ildə çıxan dördüncü studiya albomudur. Albomu yaratmaq üçün Lamar çoxsaylı sənətçi və prodüserləri, o cümlədən icraçı prodüser və Top Dawg Entertainment leybl rəhbəri Anthony Top Dawg Tiffith, Sounwave, DJ Dahi, Mike Will Made It və Ricci Riera, eləcə də James Blake, Steve Lacy, BadBadNotGood, Greg Kurstin, the Alchemist və 9th Wonder kimi qrupları bir araya gətirdi. Albomda Rihanna, Zacari və U2 qonaq kimi çıxış edirlər.",
+    description: {
+      az: "La'na amerikalı reper Kendrik Lamarın 14 aprel 2017-ci ildə çıxan dördüncü studiya albomudur. Albomu yaratmaq üçün Lamar çoxsaylı sənətçi və prodüserləri, o cümlədən icraçı prodüser və Top Dawg Entertainment leybl rəhbəri Anthony Top Dawg Tiffith, Sounwave, DJ Dahi, Mike Will Made It və Ricci Riera, eləcə də James Blake, Steve Lacy, BadBadNotGood, Greg Kurstin, the Alchemist və 9th Wonder kimi qrupları bir araya gətirdi. Albomda Rihanna, Zacari və U2 qonaq kimi çıxış edirlər.",
+      en: "DAMN. is the fourth studio album by American rapper Kendrick Lamar, released on April 14, 2017. To create the album, Lamar brought together numerous artists and producers, including executive producer and Top Dawg Entertainment label head Anthony Top Dawg Tiffith, Sounwave, DJ Dahi, Mike Will Made It and Ricci Riera, as well as James Blake, Steve Lacy, BadBadNotGood, Greg Kurstin, the Alchemist and 9th Wonder. The album features guest appearances from Rihanna, Zacari and U2.",
+      ru: "DAMN. — четвёртый студийный альбом американского рэпера Kendrick Lamar, вышедший 14 апреля 2017 года. Для создания альбома Lamar собрал множество артистов и продюсеров, включая исполнительного продюсера и главу лейбла Top Dawg Entertainment Anthony Top Dawg Tiffith, Sounwave, DJ Dahi, Mike Will Made It и Ricci Riera, а также James Blake, Steve Lacy, BadBadNotGood, Greg Kurstin, the Alchemist и 9th Wonder. Гостями альбома стали Rihanna, Zacari и U2.",
+    },
   },
   {
     id: 87,
     title: "Man's Best Friend (2LP)",
+    releaseDate: "29 Avqust 2025",
+    duration: "12 mahnı, 38 dəqiqə",
+    label: "Island",
     artist: ["Sabrina Carpenter"],
     price: 99.99,
     genre: "Pop",
@@ -3720,11 +4164,18 @@ export const albums = [
     accentColor: "red",
     sleeveColor: "red",
     format: "vinyl",
-    description: "Man's Best Friend amerikalı müğənni və bəstəkar Sabrina Karpenterin yeddinci studiya albomudur. Albom 29 avqust 2025-ci ildə buraxılmışdır. Karpenter albomu Cek Antonoff və Con Rayanla birlikdə hazırlamışdır. Rayan da onun əvvəlki studiya albomu olan Short n Sweet (2024) üçün mahnılar hazırlamışdır. Əsasən pop və soft rok albomudur.",
+    description: {
+      az: "Man's Best Friend amerikalı müğənni və bəstəkar Sabrina Karpenterin yeddinci studiya albomudur. Albom 29 avqust 2025-ci ildə buraxılmışdır. Karpenter albomu Cek Antonoff və Con Rayanla birlikdə hazırlamışdır. Rayan da onun əvvəlki studiya albomu olan Short n Sweet (2024) üçün mahnılar hazırlamışdır. Əsasən pop və soft rok albomudur.",
+      en: "Man's Best Friend is the seventh studio album by American singer-songwriter Sabrina Carpenter, released on August 29, 2025. Carpenter created the album together with Jack Antonoff and John Ryan, the latter of whom also worked on songs for her previous studio album Short n Sweet (2024). It is primarily a pop and soft rock album.",
+      ru: "Man's Best Friend — седьмой студийный альбом американской певицы и автора песен Sabrina Carpenter, выпущенный 29 августа 2025 года. Carpenter создала альбом вместе с Jack Antonoff и John Ryan; последний также работал над песнями для её предыдущего студийного альбома Short n Sweet (2024). Это преимущественно поп- и софт-рок-альбом.",
+    },
   },
   {
     id: 86,
     title: "How I'm Feeling Now (LP)",
+    releaseDate: "15 May 2020",
+    duration: "11 mahnı, 37 dəqiqə",
+    label: "Atlantic",
     spotifyAlbumId: "3f1PiqKPvdSZgaYP0u4j3m",
     artist: ["Charli xcx"],
     price: 99.99,
@@ -3738,11 +4189,18 @@ export const albums = [
     accentColor: "grey",
     sleeveColor: "grey",
     format: "vinyl",
-    description: "How I'm Feeling Now (tamamilə kiçik hərflərlə stilizə edilmiş) Britaniyalı müğənni Charli XCX-in 15 may 2020-ci ildə Asylum Records və Atlantic Records tərəfindən buraxılmış dördüncü studiya albomudur. Əvvəlki albomu Charli (2019)-dan səkkiz ay sonra buraxılmışdır. Albomun icraçı prodüserləri Charli XCX, A. G. Cook və BJ Burton olub.",
+    description: {
+      az: "How I'm Feeling Now (tamamilə kiçik hərflərlə stilizə edilmiş) Britaniyalı müğənni Charli XCX-in 15 may 2020-ci ildə Asylum Records və Atlantic Records tərəfindən buraxılmış dördüncü studiya albomudur. Əvvəlki albomu Charli (2019)-dan səkkiz ay sonra buraxılmışdır. Albomun icraçı prodüserləri Charli XCX, A. G. Cook və BJ Burton olub.",
+      en: "How I'm Feeling Now (stylized in all lowercase) is the fourth studio album by British singer Charli XCX, released on May 15, 2020, by Asylum Records and Atlantic Records. It was released eight months after her previous album Charli (2019). The album's executive producers were Charli XCX, A. G. Cook and BJ Burton.",
+      ru: "How I'm Feeling Now (стилизовано строчными буквами) — четвёртый студийный альбом британской певицы Charli XCX, выпущенный 15 мая 2020 года лейблами Asylum Records и Atlantic Records. Он вышел через восемь месяцев после её предыдущего альбома Charli (2019). Исполнительными продюсерами альбома выступили Charli XCX, A. G. Cook и BJ Burton.",
+    },
   },
   {
     id: 82,
     title: "BRAT (2LP)",
+    releaseDate: "7 İyun 2024",
+    duration: "15 mahnı, 41 dəqiqə",
+    label: "Atlantic",
     spotifyAlbumId: "2lIZef4lzdvZkiiCzvPKj7",
     artist: ["Charli xcx"],
     price: 119.99,
@@ -3757,11 +4215,18 @@ export const albums = [
     accentColor: "green",
     sleeveColor: "green",
     format: "vinyl",
-    description: "Brat britaniyalı müğənni Charli XCX-in 7 iyun 2024-cü ildə çıxan altıncı studiya albomudur. Albomda Charli XCX, onun uzun müddətdir icraçı prodüseri olan A. G. Cook, Finn Keane, Cirkut, partnyoru George Daniel və başqaları prodüserlik edir. Albom 2000-ci illərin ingilis reyv musiqi səhnəsindən təsirlənir və əvvəlki Crash (2022) albomundan daha aqressiv klub səsi ilə seçilir.",
+    description: {
+      az: "Brat britaniyalı müğənni Charli XCX-in 7 iyun 2024-cü ildə çıxan altıncı studiya albomudur. Albomda Charli XCX, onun uzun müddətdir icraçı prodüseri olan A. G. Cook, Finn Keane, Cirkut, partnyoru George Daniel və başqaları prodüserlik edir. Albom 2000-ci illərin ingilis reyv musiqi səhnəsindən təsirlənir və əvvəlki Crash (2022) albomundan daha aqressiv klub səsi ilə seçilir.",
+      en: "Brat is the sixth studio album by British singer Charli XCX, released on June 7, 2024. The album was produced by Charli XCX, her longtime executive producer A. G. Cook, Finn Keane, Cirkut, her partner George Daniel and others. It draws on the 2000s British rave music scene and stands out with a more aggressive club sound than her previous album Crash (2022).",
+      ru: "Brat — шестой студийный альбом британской певицы Charli XCX, вышедший 7 июня 2024 года. Продюсерами альбома выступили Charli XCX, её давний исполнительный продюсер A. G. Cook, Finn Keane, Cirkut, её партнёр George Daniel и другие. Альбом вдохновлён британской рейв-сценой 2000-х и отличается более агрессивным клубным звучанием, чем предыдущий Crash (2022).",
+    },
   },
   {
     id: 89,
     title: "Immunity (LP)",
+    releaseDate: "2 Avqust 2019",
+    duration: "11 mahnı, 41 dəqiqə",
+    label: "Fader Label",
     spotifyAlbumId: "2DDv7gTOpB3D3kDEHddP9z",
     artist: ["Clairo"],
     price: 99.99,
@@ -3796,7 +4261,11 @@ export const albums = [
     sleeveColor: "gray",
     accentColor: "gray",
     format: "vinyl",
-    description: "“Big Mama” amerikalı reper Lattonun dördüncü studiya albomudur. 29 may 2026-cı ildə Streamcut və RCA Records vasitəsilə satışa çıxarılıb. Albom onun 2024-cü ildə çıxan “Sugar Honey Iced Tea” albomunun davamı olaraq təqdim olunur və üç sinql ilə dəstəklənir: “Somebody”, “Business and Personal (Intro)” və “GOMF”. Albomda GloRilla, Doja Cat, 21 Savage, Sexyy Red, Mariah the Scientist, Odeal, Wizkid, Teyana Taylor və Jelly Roll qonaq çıxışları var.",
+    description: {
+      az: "“Big Mama” amerikalı reper Lattonun dördüncü studiya albomudur. 29 may 2026-cı ildə Streamcut və RCA Records vasitəsilə satışa çıxarılıb. Albom onun 2024-cü ildə çıxan “Sugar Honey Iced Tea” albomunun davamı olaraq təqdim olunur və üç sinql ilə dəstəklənir: “Somebody”, “Business and Personal (Intro)” və “GOMF”. Albomda GloRilla, Doja Cat, 21 Savage, Sexyy Red, Mariah the Scientist, Odeal, Wizkid, Teyana Taylor və Jelly Roll qonaq çıxışları var.",
+      en: "“Big Mama” is the fourth studio album by American rapper Latto. It was released on May 29, 2026, via Streamcut and RCA Records. The album serves as the follow-up to her 2024 album “Sugar Honey Iced Tea” and is supported by three singles: “Somebody”, “Business and Personal (Intro)” and “GOMF”. The album features guest appearances from GloRilla, Doja Cat, 21 Savage, Sexyy Red, Mariah the Scientist, Odeal, Wizkid, Teyana Taylor and Jelly Roll.",
+      ru: "«Big Mama» — четвёртый студийный альбом американской рэп-исполнительницы Latto. Он вышел 29 мая 2026 года на Streamcut и RCA Records. Альбом является продолжением её альбома 2024 года «Sugar Honey Iced Tea» и поддержан тремя синглами: «Somebody», «Business and Personal (Intro)» и «GOMF». Гостями альбома стали GloRilla, Doja Cat, 21 Savage, Sexyy Red, Mariah the Scientist, Odeal, Wizkid, Teyana Taylor и Jelly Roll.",
+    },
     tracklist: [
       { id: 1, name: "Business & Personal (Intro)", isExplicit: true, duration: "5:33" },
     ]
@@ -3824,6 +4293,9 @@ export const albums = [
   {
     id: 92,
     title: "C, XOXO (2LP)",
+    releaseDate: "28 İyun 2024",
+    duration: "14 mahnı, 41 dəqiqə",
+    label: "Geffen/Interscope",
     artist: ["Camila Cabello"],
     price: 99.99,
     genre: "Pop",
@@ -3837,7 +4309,11 @@ export const albums = [
     sleeveColor: "blue",
     accentColor: "blue",
     format: "vinyl",
-    description: "C,XOXO — ABŞ müğənnisi Kamila Kabellonun dördüncü studiya albomu. 28 iyun 2024-cü ildə Geffen-in və Interscope Records tərəfindən buraxılıb.",
+    description: {
+      az: "C,XOXO — ABŞ müğənnisi Kamila Kabellonun dördüncü studiya albomu. 28 iyun 2024-cü ildə Geffen-in və Interscope Records tərəfindən buraxılıb.",
+      en: "C,XOXO is the fourth studio album by American singer Camila Cabello. It was released on June 28, 2024, by Geffen and Interscope Records.",
+      ru: "C,XOXO — четвёртый студийный альбом американской певицы Camila Cabello. Он вышел 28 июня 2024 года на лейблах Geffen и Interscope Records.",
+    },
     variants: [
       { id: 1, name: "Mavi Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1777305768/Standard_Sky_Blue_Vinyl_svbsuy.png" },
       { id: 2, name: "Çəhrayı Vinil", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1777305768/Exclusive_Baby_Pink_Vinyl_fh3jno.png" },

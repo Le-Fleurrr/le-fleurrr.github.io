@@ -3,6 +3,8 @@ import { Button } from "./ui/Button";
 import { VinylRecord } from "./VinylRecord";
 import { useLanguage } from "./LanguageContext.jsx";
 import { toast } from "sonner";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../Firebase/Firebase.js";
 
 export const Newsletter = () => {
   const { t } = useLanguage();
@@ -21,6 +23,9 @@ export const Newsletter = () => {
         localStorage.setItem("newsletter_subscribers", JSON.stringify(subscribers));
       }
     } catch { /* storage unavailable — subscription is still acknowledged */ }
+    // Central copy for when Firestore is provisioned; local copy is the fallback
+    addDoc(collection(db, "newsletter"), { email: email.trim(), createdAt: Date.now() })
+      .catch(() => { /* unreachable — subscriber kept in localStorage */ });
     toast.success(t.subscribedToast);
     setEmail("");
   };

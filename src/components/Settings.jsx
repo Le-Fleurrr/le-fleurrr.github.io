@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { X, Type, MousePointer, Zap, Palette, Sun, Moon, Languages, Disc } from "lucide-react";
 import { Button } from "./ui/Button.tsx";
 import { useLanguage } from "./LanguageContext.jsx";
+import { applyUserSettings } from "./applyUserSettings.js";
 
 export const Settings = ({ isOpen, onClose }) => {
   const { setLanguage, t } = useLanguage();
@@ -26,7 +27,7 @@ export const Settings = ({ isOpen, onClose }) => {
       try {
         const parsed = JSON.parse(saved);
         setSettings(parsed);
-        applySettings(parsed);
+        applyUserSettings(parsed);
       } catch (e) {
         console.error(e);
       }
@@ -35,7 +36,7 @@ export const Settings = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     localStorage.setItem("userSettings", JSON.stringify(settings));
-    applySettings(settings);
+    applyUserSettings(settings);
     setLanguage(settings.language);
   }, [settings]);
 
@@ -47,45 +48,6 @@ export const Settings = ({ isOpen, onClose }) => {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [isOpen, onClose]);
-
-  const applySettings = (s) => {
-    const root = document.documentElement;
-
-    root.style.fontSize = s.biggerText ? "120%" : "100%";
-
-    if (s.biggerCursor) {
-      root.classList.add("custom-cursor");
-    } else {
-      root.classList.remove("custom-cursor");
-    }
-
-    const lhMap = { normal: "1.5", relaxed: "1.8", loose: "2" };
-    root.style.lineHeight = lhMap[s.lineHeight] || "1.5";
-
-    if (s.stopAnimations) {
-      root.classList.add("no-animations");
-    } else {
-      root.classList.remove("no-animations");
-    }
-
-    const invertVal = s.invertColors ? "invert(1) hue-rotate(180deg)" : "invert(0)";
-    root.style.filter = `brightness(${s.brightness}%) contrast(${s.contrast}%) ${invertVal}`;
-
-    if (s.theme === "light") {
-      root.classList.add("light");
-      root.classList.remove("dark");
-    } else {
-      root.classList.add("dark");
-      root.classList.remove("light");
-    }
-
-    let vinylState = "none";
-    if (s.hideVinylEntirely) vinylState = "all";
-    else if (s.hideVinylArtistOnly) vinylState = "artist";
-    root.setAttribute("data-hide-vinyl", vinylState);
-
-    root.setAttribute("lang", s.language);
-  };
 
   const resetSettings = () => {
     setSettings({

@@ -3,9 +3,11 @@ import { useAuth } from '../contexts/authContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { useLanguage } from './LanguageContext.jsx';
+import { defaultProfile, saveProfile } from './userProfileStore.js';
 
 export function Signup() {
   const { t } = useLanguage();
+  const [username, setUsername] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,7 +31,15 @@ export function Signup() {
     try {
       setError('');
       setLoading(true);
-      await signup(email, password, name);
+      const credential = await signup(email, password, name);
+      if (credential?.user) {
+        saveProfile(credential.user.uid, {
+          ...defaultProfile(credential.user),
+          username: username.trim(),
+          name,
+          email,
+        });
+      }
       navigate('/');
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
@@ -77,6 +87,21 @@ export function Signup() {
 
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
+            <div>
+              <label htmlFor="username" className="block text-sm font-medium mb-2">
+                {t.username}
+              </label>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                required
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none"
+              />
+            </div>
+
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
                 {t.nameLabel}

@@ -67,10 +67,15 @@ export function AccessoriesSection() {
             >
               {/* Product Image */}
               <div className="relative aspect-square bg-muted">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <ShoppingCart className="w-10 h-10 text-muted-foreground/40" />
+                </div>
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  className="relative w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 {!item.inStock && (
                   <div className="absolute inset-0 bg-black/60 flex items-center justify-center">

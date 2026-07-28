@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
@@ -223,23 +224,16 @@ html.custom-cursor * {
   font-style: normal;
 }
 
-* {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+/* Brand-colored highlight for selected text */
+::selection {
+  background-color: hsl(var(--primary) / 0.35);
 }
- 
-/* Allow selection in input fields and textareas */
-input,
-textarea,
-[contenteditable="true"] {
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
+
+/* Spotify-style titles (Figtree ≈ Spotify's proprietary Circular) */
+.font-spotify {
+  font-family: 'Figtree', 'CircularSp', Helvetica, Arial, sans-serif;
 }
- 
+
 /* Disable image dragging */
 img {
   -webkit-user-drag: none;
@@ -248,12 +242,4 @@ img {
   -o-user-drag: none;
   user-drag: none;
   pointer-events: auto;
-}
- 
-/* Prevent selection on links while still allowing clicking */
-a {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }

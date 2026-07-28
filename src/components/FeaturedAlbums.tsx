@@ -224,7 +224,7 @@ export const FeaturedAlbums = () => {
                           {album.title}
                         </h3>
                         {album.isExplicit && (
-                          <span className="text-xs font-bold px-2 py-0.5 bg-muted text-muted-foreground border border-border rounded">
+                          <span className="text-xs font-bold px-2 py-0.5 bg-muted text-muted-foreground border border-border rounded select-none">
                             E
                           </span>
                         )}

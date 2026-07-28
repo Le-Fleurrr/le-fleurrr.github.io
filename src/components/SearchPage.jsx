@@ -5,6 +5,7 @@ import { Search, ArrowLeft } from 'lucide-react';
 import { albums } from '../components/Albums'; // Adjust path if needed
 import { Button } from '../components/ui/Button'; // Adjust path if needed
 import { useLanguage } from './LanguageContext.jsx';
+import { normalizeForSearch } from './searchUtils.js';
 
 export function SearchPage() {
   const { t } = useLanguage();
@@ -39,11 +40,11 @@ export function SearchPage() {
 
     // Filter by search query
     if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase();
-      results = results.filter(album => 
-        album.title?.toLowerCase().includes(query) ||
-        album.artist?.some(a => a.toLowerCase().includes(query)) ||
-        album.genre?.toLowerCase().includes(query)
+      const query = normalizeForSearch(searchQuery);
+      results = results.filter(album =>
+        normalizeForSearch(album.title).includes(query) ||
+        album.artist?.some(a => normalizeForSearch(a).includes(query)) ||
+        normalizeForSearch(album.genre).includes(query)
       );
     }
 
@@ -154,6 +155,7 @@ export function SearchPage() {
                     <img
                       src={Array.isArray(album.image) ? album.image[0] : album.image}
                       alt={album.title}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     {album.isNew && (
@@ -170,7 +172,7 @@ export function SearchPage() {
                         {album.title}
                       </h3>
                       {album.isExplicit && (
-                        <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black rounded flex-shrink-0">
+                        <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black rounded flex-shrink-0 select-none">
                           E
                         </span>
                       )}

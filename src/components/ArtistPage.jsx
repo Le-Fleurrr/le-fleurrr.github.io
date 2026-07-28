@@ -218,7 +218,7 @@ const ArtistPage = () => {
                     {latestAlbum.title}
                   </h3>
                   {latestAlbum.isExplicit && (
-                    <span className="text-sm font-bold px-2.5 py-1 bg-gray-400 text-black border border-border rounded flex-shrink-0">
+                    <span className="text-sm font-bold px-2.5 py-1 bg-gray-400 text-black border border-border rounded flex-shrink-0 select-none">
                       E
                     </span>
                   )}
@@ -296,7 +296,7 @@ const ArtistPage = () => {
                     {album.title}
                   </h3>
                   {album.isExplicit && (
-                    <span className="text-xs font-bold px-2 py-0.5 bg-gray-400 text-black border border-border rounded flex-shrink-0">
+                    <span className="text-xs font-bold px-2 py-0.5 bg-gray-400 text-black border border-border rounded flex-shrink-0 select-none">
                       E
                     </span>
                   )}

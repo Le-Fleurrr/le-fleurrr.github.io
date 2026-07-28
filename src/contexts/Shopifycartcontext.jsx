@@ -1,5 +1,9 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import client from '../shopify-client'; 
+import { toast } from 'sonner';
+import client from '../shopify-client';
+import { useLanguage } from '../components/LanguageContext.jsx';
+
+const MAX_PER_ITEM = 4;
 
 const ShopifyCartContext = createContext();
 
@@ -10,6 +14,7 @@ export function useShopifyCart() {
 export function ShopifyCartProvider({ children }) {
   const [cart, setCart] = useState(null);
   const [loading, setLoading] = useState(false);
+  const { t } = useLanguage();
 
   // Helper to prevent the "undefined" crash
   const isClientReady = client && client.cart;
@@ -56,6 +61,21 @@ export function ShopifyCartProvider({ children }) {
 
   async function addToCart(merchandiseId, quantity = 1) {
     if (!isClientReady) return { success: false, error: 'Client not ready' };
+
+    // Per-product cap: count what's already in the cart for this variant
+    const existingQty = cart?.lines?.edges
+      ?.filter(({ node }) => node.merchandise?.id === merchandiseId)
+      .reduce((sum, { node }) => sum + node.quantity, 0) || 0;
+    const allowed = MAX_PER_ITEM - existingQty;
+    if (allowed <= 0) {
+      toast.error(t.maxQuantityReached);
+      return { success: false, error: 'max-quantity' };
+    }
+    const cappedQty = Math.min(allowed, parseInt(quantity, 10) || 1);
+    if (cappedQty < (parseInt(quantity, 10) || 1)) {
+      toast.error(t.maxQuantityReached);
+    }
+
     setLoading(true);
     try {
       let currentCartId = cart?.id;
@@ -67,7 +87,7 @@ export function ShopifyCartProvider({ children }) {
 
       const lines = [{
         merchandiseId,
-        quantity: parseInt(quantity, 10)
+        quantity: cappedQty
       }];
       
       const updatedCart = await client.cart.linesAdd(currentCartId, lines);
@@ -96,9 +116,14 @@ export function ShopifyCartProvider({ children }) {
 
   async function updateQuantity(lineId, quantity) {
     if (!isClientReady || !cart?.id) return;
+    let qty = parseInt(quantity, 10);
+    if (qty > MAX_PER_ITEM) {
+      toast.error(t.maxQuantityReached);
+      qty = MAX_PER_ITEM;
+    }
     setLoading(true);
     try {
-      const lines = [{ id: lineId, quantity: parseInt(quantity, 10) }];
+      const lines = [{ id: lineId, quantity: qty }];
       const updatedCart = await client.cart.linesUpdate(cart.id, lines);
       setCart(updatedCart);
     } catch (error) {

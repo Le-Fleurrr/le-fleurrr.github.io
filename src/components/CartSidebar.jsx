@@ -3,10 +3,18 @@ import { Link } from 'react-router-dom';
 import { useShopifyCart } from '../contexts/Shopifycartcontext';
 import { Button } from './ui/Button';
 import { useLanguage } from './LanguageContext.jsx';
+import { useAuth } from '../contexts/authContext';
+import { recordCheckoutOrder } from './userProfileStore.js';
 
 export function CartSidebar({ isOpen, onClose }) {
   const { cart, cartCount, cartTotal, removeFromCart, updateQuantity, openCheckout, loading } = useShopifyCart();
   const { t } = useLanguage();
+  const { currentUser } = useAuth();
+
+  const handleCheckout = () => {
+    recordCheckoutOrder(currentUser, cart, cartTotal);
+    openCheckout();
+  };
 
   if (!isOpen) return null;
 
@@ -73,7 +81,7 @@ export function CartSidebar({ isOpen, onClose }) {
                       <span className="w-8 text-center">{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        disabled={loading}
+                        disabled={loading || item.quantity >= 4}
                         className="w-7 h-7 rounded border border-border hover:bg-muted transition disabled:opacity-50"
                       >
                         +
@@ -111,8 +119,8 @@ export function CartSidebar({ isOpen, onClose }) {
               </span>
             </div>
             
-            <Button 
-              onClick={openCheckout}
+            <Button
+              onClick={handleCheckout}
               disabled={loading}
               className="w-full h-12 text-lg font-bold"
             >

@@ -197,6 +197,7 @@ export const Collections = () => {
                         <img
                           src={Array.isArray(album.image) ? album.image[0] : album.image}
                           alt={`${album.title} cover`}
+                          loading="lazy"
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -236,7 +237,7 @@ export const Collections = () => {
                           {album.title}
                         </h3>
                         {album.isExplicit && (
-                          <span className="text-xs text-black font-bold px-2 py-0.5 bg-gray-400 border border-border rounded">
+                          <span className="text-xs text-black font-bold px-2 py-0.5 bg-gray-400 border border-border rounded select-none">
                             E
                           </span>
                         )}

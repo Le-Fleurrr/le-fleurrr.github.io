@@ -10,5 +10,16 @@ export default defineConfig({
     fs: {
       allow: ['..']
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        // Stable vendor chunks load in parallel and stay cached across deploys
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'firebase': ['firebase/app', 'firebase/auth', 'firebase/firestore']
+        }
+      }
+    }
   }
 });

@@ -101,6 +101,7 @@ export const FavoritesPage = () => {
                       <img
                         src={cover}
                         alt={album.title}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     ) : (
@@ -124,7 +125,7 @@ export const FavoritesPage = () => {
                         {album.title}
                       </h3>
                       {album.isExplicit && (
-                        <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black rounded flex-shrink-0">
+                        <span className="text-[10px] font-bold px-1.5 py-0.5 bg-gray-400 text-black rounded flex-shrink-0 select-none">
                           E
                         </span>
                       )}

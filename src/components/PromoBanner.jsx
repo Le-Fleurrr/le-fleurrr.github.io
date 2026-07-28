@@ -1,29 +1,38 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { albums } from './Albums.jsx';
+
+const basePromos = [
+  { id: 1, albumId: 9, image: "" },
+  { id: 2, albumId: 45, image: "https://your-image-url.com/damn-banner.jpg" },
+  { id: 3, albumId: 67, image: "https://your-image-url.com/brat-banner.jpg" }
+];
+
+// A custom banner image wins when it's a real URL; otherwise the slide
+// falls back to the promoted album's own cover art.
+const isRealImage = (url) => !!url && !url.includes('your-image-url.com');
+
+const promos = basePromos
+  .map((promo) => {
+    const album = albums.find((a) => a.id === promo.albumId);
+    const cover = album
+      ? (Array.isArray(album.image) ? album.image[0] : album.image)
+      : null;
+    return {
+      ...promo,
+      image: isRealImage(promo.image) ? promo.image : cover,
+      title: album?.title || '',
+    };
+  })
+  .filter((promo) => promo.image);
 
 export function PromoBanner() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef(null);
 
-  const promos = [
-    {
-      id: 1,
-      albumId: 9,
-      image: ""
-    },
-    {
-      id: 2,
-      albumId: 45,
-      image: "https://your-image-url.com/damn-banner.jpg",
-    },
-    {
-      id: 3,
-      albumId: 67,
-      image: "https://your-image-url.com/brat-banner.jpg",
-    }
-  ];
+  if (promos.length === 0) return null;
 
   useEffect(() => {
     if (!isPaused) {
@@ -65,18 +74,25 @@ export function PromoBanner() {
           <Link
             key={promo.id}
             to={`/album/${promo.albumId}`}
-            className="min-w-full h-full relative flex items-center justify-center"
-            style={{ backgroundColor: promo.bgColor }}
+            className="min-w-full h-full relative flex items-center justify-center bg-black"
           >
-            <div 
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${promo.image})` }}
+            {/* Blurred cover as the wide backdrop */}
+            <div
+              className="absolute inset-0 scale-125"
+              style={{
+                backgroundImage: `url(${promo.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'blur(60px) saturate(1.4)',
+                opacity: 0.55,
+              }}
             />
-            
-            <div className="relative z-10 container mx-auto px-6 flex items-center gap-8">
-              <div className="hidden md:block">
-              </div>
-            </div>
+            <img
+              src={promo.image}
+              alt={promo.title}
+              loading={promo.id === promos[0]?.id ? 'eager' : 'lazy'}
+              className="relative z-10 h-3/4 max-w-[85%] object-contain rounded-xl shadow-2xl"
+            />
           </Link>
         ))}
       </div>
