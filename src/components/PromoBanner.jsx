@@ -4,22 +4,42 @@ import { Link } from 'react-router-dom';
 import { albums } from './Albums.jsx';
 
 // Three random albums are promoted on every visit (picked once per page
-// load, stable while browsing within the session).
+// load, stable while browsing within the session). Albums with animated
+// covers are preferred so the banner moves; LP/CD variants sharing the
+// same artwork are deduped so one album can't take two slides.
 const getCover = (album) =>
   Array.isArray(album.image) ? album.image[0] : album.image;
 
-const shuffled = albums
-  .filter((album) => getCover(album))
-  .map((album) => ({ album, sort: Math.random() }))
-  .sort((a, b) => a.sort - b.sort)
-  .map(({ album }) => album);
+const isVideo = (url) => /\.(mp4|webm|mov)(\?|$)/i.test(String(url || ''));
 
-const promos = shuffled.slice(0, 3).map((album) => ({
-  id: album.id,
-  albumId: album.id,
-  image: getCover(album),
-  title: album.title,
-}));
+const shuffle = (list) =>
+  list
+    .map((item) => ({ item, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ item }) => item);
+
+const withMedia = albums.filter((a) => a.animatedCover || getCover(a));
+const pool = [
+  ...shuffle(withMedia.filter((a) => a.animatedCover)),
+  ...shuffle(withMedia.filter((a) => !a.animatedCover)),
+];
+
+const seenArt = new Set();
+const promos = pool
+  .filter((album) => {
+    const key = album.animatedCover || getCover(album);
+    if (seenArt.has(key)) return false;
+    seenArt.add(key);
+    return true;
+  })
+  .slice(0, 3)
+  .map((album) => ({
+    id: album.id,
+    albumId: album.id,
+    media: album.animatedCover || getCover(album),
+    backdrop: getCover(album) || album.animatedCover,
+    title: album.title,
+  }));
 
 export function PromoBanner() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -70,23 +90,34 @@ export function PromoBanner() {
             to={`/album/${promo.albumId}`}
             className="min-w-full h-full relative flex items-center justify-center bg-black"
           >
-            {/* Blurred cover as the wide backdrop */}
+            {/* Blurred static cover as the wide backdrop */}
             <div
               className="absolute inset-0 scale-125"
               style={{
-                backgroundImage: `url(${promo.image})`,
+                backgroundImage: `url(${promo.backdrop})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 filter: 'blur(60px) saturate(1.4)',
                 opacity: 0.55,
               }}
             />
-            <img
-              src={promo.image}
-              alt={promo.title}
-              loading={promo.id === promos[0]?.id ? 'eager' : 'lazy'}
-              className="relative z-10 h-3/4 max-w-[85%] object-contain rounded-xl shadow-2xl"
-            />
+            {isVideo(promo.media) ? (
+              <video
+                src={promo.media}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="relative z-10 h-3/4 max-w-[85%] object-contain rounded-xl shadow-2xl"
+              />
+            ) : (
+              <img
+                src={promo.media}
+                alt={promo.title}
+                loading={promo.id === promos[0]?.id ? 'eager' : 'lazy'}
+                className="relative z-10 h-3/4 max-w-[85%] object-contain rounded-xl shadow-2xl"
+              />
+            )}
           </Link>
         ))}
       </div>

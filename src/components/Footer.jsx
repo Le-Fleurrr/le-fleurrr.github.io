@@ -1,14 +1,34 @@
 import { Instagram, Twitter, Youtube, Facebook } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "./LanguageContext.jsx";
 
 export const Footer = () => {
   const { t } = useLanguage();
 
   const footerLinks = {
-    [t.footerShop]: [t.footerNewArrivals, t.footerBestSellers, t.footerPreOrders, t.footerSale],
-    [t.footerGenres]: ["Jazz", "Rock", "Electronic", "Classic", "Hip-Hop"],
-    [t.footerSupport]: [t.footerContact, t.footerShipping, t.footerReturns, t.footerFaq],
-    [t.footerCompany]: [t.footerAbout, t.footerCareers, t.footerBlog],
+    [t.footerShop]: [
+      { label: t.footerNewArrivals, to: "/collections" },
+      { label: t.footerBestSellers, to: "/collections" },
+      { label: t.footerPreOrders, to: "/collections" },
+      { label: t.footerSale, to: "/collections" },
+    ],
+    [t.footerGenres]: [
+      { label: "Hip-Hop/Rap", to: "/search?genre=Hip-Hop%2FRap" },
+      { label: "R&B/Soul", to: "/search?genre=R%26B%2FSoul" },
+      { label: "Pop", to: "/search?genre=Pop" },
+      { label: "Alternative", to: "/search?genre=Alternative" },
+    ],
+    [t.footerSupport]: [
+      { label: t.footerContact, to: "/info/contact" },
+      { label: t.footerShipping, to: "/info/shipping" },
+      { label: t.footerReturns, to: "/info/returns" },
+      { label: t.footerFaq, to: "/info/faq" },
+    ],
+    [t.footerCompany]: [
+      { label: t.footerAbout },
+      { label: t.footerCareers },
+      { label: t.footerBlog },
+    ],
   };
 
   return (
@@ -43,13 +63,19 @@ export const Footer = () => {
               <h4 className="font-serif font-bold mb-4">{title}</h4>
               <ul className="space-y-3">
                 {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
-                    >
-                      {link}
-                    </a>
+                  <li key={link.label}>
+                    {link.to ? (
+                      <Link
+                        to={link.to}
+                        className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <span className="text-muted-foreground/60 text-sm cursor-default select-none">
+                        {link.label}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>

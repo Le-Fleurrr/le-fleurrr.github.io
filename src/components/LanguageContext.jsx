@@ -122,6 +122,12 @@ const translations = {
     viewCart: "Səbətə bax",
     maxQuantityReached: "Bir məhsuldan maksimum 4 ədəd əlavə etmək olar",
     quantityLimitNote: "Hər müştəri üçün limit: bir məhsuldan maksimum 4 ədəd",
+    vinylWord: "Vinil",
+    vinylColors: {
+      black: "Qara", red: "Qırmızı", blue: "Mavi", purple: "Bənövşəyi",
+      green: "Yaşıl", orange: "Narıncı", pink: "Çəhrayı", clear: "Şəffaf",
+      yellow: "Sarı", white: "Ağ", brown: "Qəhvəyi", gray: "Boz", grey: "Boz",
+    },
     orderSummary: "Sifariş xülasəsi",
     total: "Cəmi:",
     checkout: "Ödənişə keç",
@@ -258,6 +264,12 @@ const translations = {
     removeItem: "Sil",
     savedToast: "Yadda saxlanıldı ✓",
     signedInAs: "Daxil olub:",
+    somethingWentWrong: "Nəsə səhv getdi",
+    errorHint: "Səhifəni yeniləyin və ya ana səhifəyə qayıdın.",
+    contactBody: "Suallarınız üçün bizə yazın: info@backrooms.az — Instagram səhifəmizdən də əlaqə saxlaya bilərsiniz.",
+    shippingBody: "Bakı daxilində çatdırılma 1–3 iş günü, bölgələrə 3–7 iş günü ərzində həyata keçirilir. Sifarişiniz yola salındıqdan sonra sizə məlumat veriləcək.",
+    returnsBody: "Məhsulu aldıqdan sonra 14 gün ərzində qaytara bilərsiniz. Məhsul istifadə olunmamış və orijinal qablaşdırmasında olmalıdır.",
+    faqBody: "Tez-tez verilən suallar bölməsi hazırlanır. Sualınız varsa, bizimlə əlaqə saxlayın — məmnuniyyətlə kömək edərik.",
   },
   en: {
     settings: "Settings",
@@ -380,6 +392,12 @@ const translations = {
     viewCart: "View Cart",
     maxQuantityReached: "Maximum 4 of the same product per order",
     quantityLimitNote: "Limit of 4 per product per customer",
+    vinylWord: "Vinyl",
+    vinylColors: {
+      black: "Black", red: "Red", blue: "Blue", purple: "Purple",
+      green: "Green", orange: "Orange", pink: "Pink", clear: "Clear",
+      yellow: "Yellow", white: "White", brown: "Brown", gray: "Gray", grey: "Gray",
+    },
     orderSummary: "Order Summary",
     total: "Total:",
     checkout: "Checkout",
@@ -516,6 +534,12 @@ const translations = {
     removeItem: "Remove",
     savedToast: "Saved ✓",
     signedInAs: "Signed in as",
+    somethingWentWrong: "Something went wrong",
+    errorHint: "Refresh the page or return to the home page.",
+    contactBody: "For any questions, write to us at info@backrooms.az — you can also reach us on Instagram.",
+    shippingBody: "Delivery within Baku takes 1–3 business days, and 3–7 business days to the regions. We'll notify you once your order ships.",
+    returnsBody: "You can return a product within 14 days of receiving it. Items must be unused and in their original packaging.",
+    faqBody: "The FAQ section is being prepared. If you have a question, contact us — we'll be happy to help.",
   },
   ru: {
     settings: "Настройки",
@@ -638,6 +662,12 @@ const translations = {
     viewCart: "Перейти в корзину",
     maxQuantityReached: "Не более 4 штук одного товара в заказе",
     quantityLimitNote: "Лимит: не более 4 штук одного товара на покупателя",
+    vinylWord: "винил",
+    vinylColors: {
+      black: "Чёрный", red: "Красный", blue: "Синий", purple: "Фиолетовый",
+      green: "Зелёный", orange: "Оранжевый", pink: "Розовый", clear: "Прозрачный",
+      yellow: "Жёлтый", white: "Белый", brown: "Коричневый", gray: "Серый", grey: "Серый",
+    },
     orderSummary: "Сводка заказа",
     total: "Итого:",
     checkout: "Оформить заказ",
@@ -774,6 +804,12 @@ const translations = {
     removeItem: "Удалить",
     savedToast: "Сохранено ✓",
     signedInAs: "Вы вошли как",
+    somethingWentWrong: "Что-то пошло не так",
+    errorHint: "Обновите страницу или вернитесь на главную.",
+    contactBody: "По всем вопросам пишите нам: info@backrooms.az — также можно связаться с нами в Instagram.",
+    shippingBody: "Доставка по Баку занимает 1–3 рабочих дня, по регионам — 3–7 рабочих дней. Мы сообщим вам, когда заказ будет отправлен.",
+    returnsBody: "Вы можете вернуть товар в течение 14 дней после получения. Товар должен быть неиспользованным и в оригинальной упаковке.",
+    faqBody: "Раздел с частыми вопросами готовится. Если у вас есть вопрос, свяжитесь с нами — мы с радостью поможем.",
   }
 };
 
@@ -825,14 +861,19 @@ export const localizeDuration = (value, language) => {
   if (!value || language === "az") return value;
   const str = String(value).trim();
 
-  const full = str.match(/^(\d+)\s*mahnı(?:lar)?\s*,\s*(\d+)\s*dəqiqə$/i);
+  // "26 mahnı, 87 dəqiqə" and "26 mahnı, 1 saat 17 dəqiqə" both supported
+  const full = str.match(/^(\d+)\s*mahnı(?:lar)?\s*,\s*(?:(\d+)\s*saat\s*)?(\d+)\s*dəqiqə$/i);
   if (full) {
-    const songs = parseInt(full[1], 10), mins = parseInt(full[2], 10);
+    const songs = parseInt(full[1], 10);
+    const hours = full[2] ? parseInt(full[2], 10) : 0;
+    const mins = parseInt(full[3], 10);
     if (language === "en") {
-      return `${songs} ${songs === 1 ? "song" : "songs"}, ${mins} ${mins === 1 ? "minute" : "minutes"}`;
+      const hoursPart = hours ? `${hours} ${hours === 1 ? "hour" : "hours"} ` : "";
+      return `${songs} ${songs === 1 ? "song" : "songs"}, ${hoursPart}${mins} ${mins === 1 ? "minute" : "minutes"}`;
     }
     if (language === "ru") {
-      return `${songs} ${ruPlural(songs, "песня", "песни", "песен")}, ${mins} ${ruPlural(mins, "минута", "минуты", "минут")}`;
+      const hoursPart = hours ? `${hours} ${ruPlural(hours, "час", "часа", "часов")} ` : "";
+      return `${songs} ${ruPlural(songs, "песня", "песни", "песен")}, ${hoursPart}${mins} ${ruPlural(mins, "минута", "минуты", "минут")}`;
     }
   }
 

@@ -298,7 +298,7 @@ const AlbumPage = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/45 to-background" />
         </div>
       )}
-      <div className="container mx-auto px-6 py-12 relative">
+      <div className="container mx-auto px-6 py-12 pb-28 md:pb-12 relative">
         <Button variant="ghost" onClick={() => navigate(-1)} className="mb-8 font-bold">
           <ArrowLeft className="w-4 h-4 mr-2" /> {t.back}
         </Button>
@@ -413,7 +413,7 @@ const AlbumPage = () => {
                   <span className="px-3 py-1 bg-secondary rounded-lg">{album.genre}</span>
                   <span>•</span>
                   <span>{album.year}</span>
-                  {album.vinylColor && (<><span>•</span><span className="capitalize">{album.vinylColor} Vinyl</span></>)}
+                  {album.vinylColor && (<><span>•</span><span>{t.vinylColors?.[String(album.vinylColor).toLowerCase()] || album.vinylColor} {t.vinylWord}</span></>)}
                 </div>
 
                 {album.description && (
@@ -757,6 +757,19 @@ const AlbumPage = () => {
                 </Button>
               </div>
             </div>
+          </div>
+
+          {/* Mobile: price + add-to-cart stay visible while scrolling */}
+          <div className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-background/95 backdrop-blur border-t border-border px-4 py-3 flex items-center justify-between gap-4">
+            <p className="text-xl font-serif font-bold">{(album.price * quantity).toFixed(2)} ₼</p>
+            <Button
+              onClick={handleAddToCart}
+              disabled={cartLoading}
+              className="font-bold px-6 bg-primary text-primary-foreground"
+            >
+              <ShoppingCart className="mr-2 h-4 w-4" />
+              {cartLoading ? t.adding : t.addToCart}
+            </Button>
           </div>
 
           <div className="mt-16 pt-8 border-t border-border">
