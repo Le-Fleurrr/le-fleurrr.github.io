@@ -129,7 +129,10 @@ export const FeaturedAlbums = () => {
       navigate(`/album/${album.id}`);
     }
   };
-  const featuredAlbums: Album[] = normalizeAlbums(rawAlbums).slice(0, 6);
+  // New releases lead the homepage regardless of catalog order
+  const featuredAlbums: Album[] = [...normalizeAlbums(rawAlbums)]
+    .sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0))
+    .slice(0, 6);
 
   return (
     <section id="new" className="py-24 bg-secondary/30">
