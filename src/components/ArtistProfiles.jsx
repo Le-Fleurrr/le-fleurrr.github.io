@@ -2,15 +2,30 @@ export const artistProfiles = {
   "Playboi Carti": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751199/playboiCarti_banner_n8qpjf.jpg",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751234/playboiCarti_pfp_fzma49.png",
-    merchBanner: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769169960/Logos-Desktop-Carti_e853d832-8fa_f2cl7m.png'
+    merchBanner: 'https://res.cloudinary.com/deroy68n9/image/upload/v1769169960/Logos-Desktop-Carti_e853d832-8fa_f2cl7m.png',
+    description: {
+      az: "Playboi Carti Atlantadan olan amerikalı reperdir; minimalist ifa tərzi və eksperimental 'rage' səsi ilə tanınır. Die Lit, Whole Lotta Red və MUSIC albomları underground hip-hopun bütöv bir nəslini formalaşdırıb, Opium leybli isə Ken Carson, Destroy Lonely və Homixide Gang-ə ev sahibliyi edir.",
+      en: "Playboi Carti is an American rapper from Atlanta known for his minimalist delivery and experimental 'rage' sound. His albums Die Lit, Whole Lotta Red and MUSIC shaped a generation of underground hip-hop, and his Opium label is home to Ken Carson, Destroy Lonely and Homixide Gang.",
+      ru: "Playboi Carti — американский рэпер из Атланты, известный минималистичной подачей и экспериментальным 'rage'-звучанием. Его альбомы Die Lit, Whole Lotta Red и MUSIC сформировали целое поколение андеграундного хип-хопа, а его лейбл Opium — дом для Ken Carson, Destroy Lonely и Homixide Gang.",
+    },
   },
   "The Weeknd": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751228/theWeeknd_banner_qm2hrs.jpg",
-    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751229/theWeeknd_pfp_tjfmnb.jpg"
+    profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751229/theWeeknd_pfp_tjfmnb.jpg",
+    description: {
+      az: "The Weeknd (Abel Tesfaye) kanadalı müğənni, mahnı müəllifi və prodüserdir; tünd R&B ilə popun qarışığı onu dünyanın ən çox dinlənilən artistlərindən birinə çevirib. After Hours dövrünün 'Blinding Lights' hitindən Hurry Up Tomorrow finalına qədər albomları müasir R&B-ni müəyyən edir.",
+      en: "The Weeknd (Abel Tesfaye) is a Canadian singer, songwriter and producer whose blend of dark R&B and pop made him one of the most-streamed artists in the world. From the After Hours era's 'Blinding Lights' to the Hurry Up Tomorrow finale, his albums define modern R&B.",
+      ru: "The Weeknd (Эйбел Тесфайе) — канадский певец, автор песен и продюсер, чьё сочетание мрачного R&B и попа сделало его одним из самых прослушиваемых артистов мира. От 'Blinding Lights' эпохи After Hours до финала Hurry Up Tomorrow его альбомы определяют современный R&B.",
+    },
   },
   "Kanye West": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751231/kanyeWest_pfp_neut7h.png",
     profileImage: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751231/kanyeWest_pfp_neut7h.png",
+    description: {
+      az: "Kanye West (Ye) Çikaqodan olan amerikalı reper, prodüser və dizaynerdir; The College Dropout-dan My Beautiful Dark Twisted Fantasy-yə qədərki dövrü hip-hop tarixinin ən güclü seriyalarından sayılır. Soul sempllərindən 808-lərə, gospeldən industrial səsə daimi yenilənməsi populyar musiqinin səsini dəyişib.",
+      en: "Kanye West (Ye) is an American rapper, producer and designer from Chicago whose run from The College Dropout to My Beautiful Dark Twisted Fantasy is considered one of the greatest in hip-hop history. His restless reinvention — soul samples, 808s, gospel, industrial — reshaped the sound of popular music.",
+      ru: "Kanye West (Ye) — американский рэпер, продюсер и дизайнер из Чикаго; его путь от The College Dropout до My Beautiful Dark Twisted Fantasy считается одним из величайших в истории хип-хопа. Постоянное переизобретение себя — соул-семплы, 808-е, госпел, индастриал — изменило звучание популярной музыки.",
+    },
   },
   "Travis Scott": {
     banner: "https://res.cloudinary.com/deroy68n9/image/upload/v1768751788/travisScott_banner_cocq1j.gif",

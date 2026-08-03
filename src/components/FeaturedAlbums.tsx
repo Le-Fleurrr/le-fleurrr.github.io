@@ -227,9 +227,7 @@ export const FeaturedAlbums = () => {
                           {album.title}
                         </h3>
                         {album.isExplicit && (
-                          <span className="text-xs font-bold px-2 py-0.5 bg-muted text-muted-foreground border border-border rounded select-none">
-                            E
-                          </span>
+                          <span className="bg-gray-400 text-black border px-2 py-1 rounded text-xs font-bold self-center select-none">E</span>
                         )}
                       </div>
                       <div className="flex flex-wrap items-center gap-2 text-sm">
@@ -284,7 +282,7 @@ export const FeaturedAlbums = () => {
                     </Button>
                     <div className="absolute top-1 left-1 z-10">
                       <FavoriteButton albumId={album.id} size="medium" />
-                  </div>
+                    </div>
                   </div>
                 </div>
               </div>

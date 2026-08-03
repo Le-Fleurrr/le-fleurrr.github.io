@@ -15,6 +15,40 @@ import { toast } from 'sonner';
 import { useAuth } from '../contexts/authContext';
 import { loadInteractions, addInteraction, addReplyToInteraction } from './albumInteractions.js';
 import { usePageTitle } from './usePageTitle.js';
+import { cleanAlbumTitle } from './spotifyClient.js';
+
+// Per-album recommendations: same artist first, then same genre, shuffled
+// deterministically by album id so every album shows its own stable set,
+// with LP/CD variants of the same record deduped.
+const getRecommendedAlbums = (album, artistList) => {
+  let seed = album.id * 7919 + 17;
+  const rand = () => {
+    seed = (seed * 9301 + 49297) % 233280;
+    return seed / 233280;
+  };
+  const shuffle = (list) =>
+    list
+      .map((item) => ({ item, sort: rand() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ item }) => item);
+
+  const others = albums.filter((a) => a.id !== album.id);
+  const sameArtist = others.filter((a) => a.artist?.includes(artistList[0]));
+  const sameGenre = others.filter(
+    (a) => !a.artist?.includes(artistList[0]) && a.genre === album.genre
+  );
+
+  const seenTitles = new Set([cleanAlbumTitle(album.title).toLowerCase()]);
+  const picks = [];
+  for (const candidate of [...shuffle(sameArtist), ...shuffle(sameGenre)]) {
+    const key = cleanAlbumTitle(candidate.title).toLowerCase();
+    if (seenTitles.has(key)) continue;
+    seenTitles.add(key);
+    picks.push(candidate);
+    if (picks.length === 4) break;
+  }
+  return picks;
+};
 
 const getArtistList = (album) => {
   if (!album) return [];
@@ -760,7 +794,7 @@ const AlbumPage = () => {
           </div>
 
           {/* Mobile: price + add-to-cart stay visible while scrolling */}
-          <div className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-background/95 backdrop-blur border-t border-border px-4 py-3 flex items-center justify-between gap-4">
+          <div className="glass-panel md:hidden fixed bottom-0 inset-x-0 z-40 bg-background/95 backdrop-blur border-t border-border px-4 py-3 flex items-center justify-between gap-4">
             <p className="text-xl font-serif font-bold">{(album.price * quantity).toFixed(2)} ₼</p>
             <Button
               onClick={handleAddToCart}
@@ -775,12 +809,7 @@ const AlbumPage = () => {
           <div className="mt-16 pt-8 border-t border-border">
             <h2 className="text-2xl font-bold mb-6">{t.recommendedProducts}</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {albums
-                .filter(a =>
-                  a.id !== album.id &&
-                  (a.artist?.includes(artistList[0]) || a.genre === album.genre)
-                )
-                .slice(0, 4)
+              {getRecommendedAlbums(album, artistList)
                 .map((recommendedAlbum) => {
                   const recommendedArtists = Array.isArray(recommendedAlbum.artist)
                     ? recommendedAlbum.artist

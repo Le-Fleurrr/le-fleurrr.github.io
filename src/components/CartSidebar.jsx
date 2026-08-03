@@ -27,7 +27,7 @@ export function CartSidebar({ isOpen, onClose }) {
       />
       
       {/* Sidebar */}
-      <div className="fixed right-0 top-0 h-full w-full max-w-md bg-background border-l border-border z-50 flex flex-col">
+      <div className="glass-panel fixed right-0 top-0 h-full w-full max-w-md bg-background border-l border-border z-50 flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border">
           <div className="flex items-center gap-2">

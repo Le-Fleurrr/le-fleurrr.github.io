@@ -234,6 +234,29 @@ html.custom-cursor * {
   font-family: 'Figtree', 'CircularSp', Helvetica, Arial, sans-serif;
 }
 
+/* ---- Liquid Glass mode (toggle in Settings, on by default) -------------
+   Translucent, blurred surfaces in the spirit of iOS 26's Liquid Glass.
+   Cards pick it up automatically via .bg-card; overlaid panels (modal,
+   cart sidebar, dropdowns, sticky bars) opt in with .glass-panel. */
+html.liquid-glass .bg-card {
+  background-color: hsl(var(--card) / 0.55);
+  border-color: hsl(var(--border) / 0.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  backdrop-filter: blur(18px) saturate(1.6);
+}
+
+html.liquid-glass nav.fixed {
+  background-color: hsl(var(--background) / 0.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  backdrop-filter: blur(24px) saturate(1.8);
+}
+
+html.liquid-glass .glass-panel {
+  background-color: hsl(var(--background) / 0.62);
+  -webkit-backdrop-filter: blur(26px) saturate(1.7);
+  backdrop-filter: blur(26px) saturate(1.7);
+}
+
 /* Disable image dragging */
 img {
   -webkit-user-drag: none;

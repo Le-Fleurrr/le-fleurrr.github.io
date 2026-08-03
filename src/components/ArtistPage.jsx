@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Info } from "lucide-react";
 import { albums } from "./Albums.jsx";
 import { artistProfiles } from "./ArtistProfiles.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { VinylRecord } from "./VinylRecord.tsx";
 import { CDDisc } from "./CDDisc.tsx";
 import { CassetteTape } from "./CassetteTape.tsx";
 import { Button } from "./ui/Button.tsx";
-import { useLanguage } from "./LanguageContext.jsx";
+import { useLanguage, localizeText } from "./LanguageContext.jsx";
 import { usePageTitle } from "./usePageTitle.js";
 
 const getAccentColor = (color) => {
@@ -28,8 +28,16 @@ const getAccentColor = (color) => {
 
 const ArtistPage = () => {
   const { artistName } = useParams();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [hoveredId, setHoveredId] = useState(null);
+  const [showInfo, setShowInfo] = useState(false);
+
+  useEffect(() => {
+    if (!showInfo) return;
+    const onKeyDown = (e) => { if (e.key === "Escape") setShowInfo(false); };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [showInfo]);
   const [hoveredAlbumId, setHoveredAlbumId] = useState(null);
   const [bannerError, setBannerError] = useState(false);
   const [profileError, setProfileError] = useState(false);
@@ -153,12 +161,19 @@ const ArtistPage = () => {
               )}
 
               <div className="flex-1">
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-2 drop-shadow-lg">
-                  {artist}
-                </h1>
-                <p className="text-muted-foreground text-lg">
-                  {artistAlbums[0]?.genre || t.music}
-                </p>
+                <div className="flex items-center gap-4">
+                  <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-2 drop-shadow-lg">
+                    {artist}
+                  </h1>
+                  <button
+                    onClick={() => setShowInfo(true)}
+                    className="mt-3 w-11 h-11 rounded-full bg-secondary/70 text-foreground hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-colors flex-shrink-0"
+                    aria-label={t.description}
+                    aria-haspopup="dialog"
+                  >
+                    <Info className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -308,6 +323,59 @@ const ArtistPage = () => {
           ))}
         </div>
       </div>
+
+      {showInfo && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4"
+          onClick={() => setShowInfo(false)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={artist}
+            onClick={(e) => e.stopPropagation()}
+            className="glass-panel bg-background border border-border w-full max-w-md rounded-2xl shadow-2xl overflow-hidden"
+          >
+            <div className="p-8">
+              <div className="flex items-center gap-4 mb-6">
+                {artistProfileImage && !profileError && (
+                  <img
+                    src={artistProfileImage}
+                    alt={artist}
+                    className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                  />
+                )}
+                <div>
+                  <h2 className="text-2xl font-bold">{artist}</h2>
+                  <span className="inline-block mt-1 px-3 py-1 bg-secondary rounded-full text-xs text-muted-foreground">
+                    {artistAlbums[0]?.genre || t.music}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex gap-10 mb-6">
+                <div>
+                  <p className="text-2xl font-serif font-bold">{artistAlbums.length}</p>
+                  <p className="text-xs text-muted-foreground">{t.albumsWord}</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-serif font-bold">{latestAlbum?.year}</p>
+                  <p className="text-xs text-muted-foreground">{t.latestRelease}</p>
+                </div>
+              </div>
+
+              <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
+                {t.description}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {artistProfile.description
+                  ? localizeText(artistProfile.description, language)
+                  : t.artistNoDescription}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="h-20" />
     </div>

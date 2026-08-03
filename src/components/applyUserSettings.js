@@ -17,6 +17,10 @@ export function applyUserSettings(s) {
   if (s.stopAnimations) root.classList.add("no-animations");
   else root.classList.remove("no-animations");
 
+  // Liquid Glass is on unless explicitly turned off
+  if (s.liquidGlass === false) root.classList.remove("liquid-glass");
+  else root.classList.add("liquid-glass");
+
   const invertVal = s.invertColors ? "invert(1) hue-rotate(180deg)" : "invert(0)";
   root.style.filter = `brightness(${s.brightness ?? 100}%) contrast(${s.contrast ?? 100}%) ${invertVal}`;
 

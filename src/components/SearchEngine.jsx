@@ -80,7 +80,7 @@ export function SearchEngine({ albums }) {
 
       {/* Quick Results Dropdown */}
       {query.trim() && (quickResults.length > 0 || merchResults.length > 0) && (
-        <div className="absolute top-full mt-2 w-full bg-card border border-border rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
+        <div className="glass-panel absolute top-full mt-2 w-full bg-card border border-border rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
           {quickResults.map((album) => {
             const albumImage = Array.isArray(album.image) ? album.image[0] : album.image;
             

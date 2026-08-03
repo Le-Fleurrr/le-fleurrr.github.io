@@ -63,7 +63,7 @@ export const UserMenu = () => {
       </Button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-56 bg-background border border-border rounded-md shadow-lg z-50 overflow-hidden">
+        <div className="glass-panel absolute right-0 mt-2 w-56 bg-background border border-border rounded-md shadow-lg z-50 overflow-hidden">
           <div className="px-4 py-3 border-b border-border">
             <p className="text-sm font-semibold truncate">{currentUser.displayName || t.account}</p>
             <p className="text-xs text-muted-foreground truncate">{currentUser.email}</p>

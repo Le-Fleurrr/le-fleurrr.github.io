@@ -15,6 +15,7 @@ const translations = {
     lineRelaxed: "Rahat",
     lineLoose: "Geniş",
     effectsColors: "Effektlər və Rənglər",
+    liquidGlass: "Liquid Glass effekti",
     stopAnimations: "Animasiyaları Dayandır",
     invertColors: "Rəngləri Çevir",
     brightness: "Parlaqlıq",
@@ -156,6 +157,7 @@ const translations = {
     sortExpensive: "Bahadan Ucuza",
     // Artist page
     artistNotFound: "Artist Tapılmadı",
+    artistNoDescription: "Bu artist haqqında məlumat tezliklə əlavə olunacaq.",
     latestRelease: "Son Buraxılış",
     discography: "Diskografiya",
     music: "Musiqi",
@@ -285,6 +287,7 @@ const translations = {
     lineRelaxed: "Relaxed",
     lineLoose: "Loose",
     effectsColors: "Effects & Colors",
+    liquidGlass: "Liquid Glass",
     stopAnimations: "Stop Animations",
     invertColors: "Invert Colors",
     brightness: "Brightness",
@@ -426,6 +429,7 @@ const translations = {
     sortExpensive: "Most Expensive → Cheapest",
     // Artist page
     artistNotFound: "Artist Not Found",
+    artistNoDescription: "Information about this artist is coming soon.",
     latestRelease: "Latest Release",
     discography: "Discography",
     music: "Music",
@@ -555,6 +559,7 @@ const translations = {
     lineRelaxed: "Удобный",
     lineLoose: "Широкий",
     effectsColors: "Эффекты и цвета",
+    liquidGlass: "Эффект Liquid Glass",
     stopAnimations: "Остановить анимации",
     invertColors: "Инвертировать цвета",
     brightness: "Яркость",
@@ -696,6 +701,7 @@ const translations = {
     sortExpensive: "Сначала дорогие",
     // Artist page
     artistNotFound: "Исполнитель не найден",
+    artistNoDescription: "Информация об этом исполнителе скоро появится.",
     latestRelease: "Последний релиз",
     discography: "Дискография",
     music: "Музыка",

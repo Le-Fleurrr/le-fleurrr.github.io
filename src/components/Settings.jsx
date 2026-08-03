@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, Type, MousePointer, Zap, Palette, Sun, Moon, Languages, Disc } from "lucide-react";
+import { X, Type, MousePointer, Zap, Palette, Sun, Moon, Languages, Disc, Droplets } from "lucide-react";
 import { Button } from "./ui/Button.tsx";
 import { useLanguage } from "./LanguageContext.jsx";
 import { applyUserSettings } from "./applyUserSettings.js";
@@ -15,6 +15,7 @@ export const Settings = ({ isOpen, onClose }) => {
     hideVinylEntirely: false,
     hideVinylArtistOnly: false,
     invertColors: false,
+    liquidGlass: true,
     brightness: 100,
     contrast: 100,
     language: "az",
@@ -26,7 +27,8 @@ export const Settings = ({ isOpen, onClose }) => {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        setSettings(parsed);
+        // Merge over defaults so newly added settings keep their default value
+        setSettings(prev => ({ ...prev, ...parsed }));
         applyUserSettings(parsed);
       } catch (e) {
         console.error(e);
@@ -58,6 +60,7 @@ export const Settings = ({ isOpen, onClose }) => {
       hideVinylEntirely: false,
       hideVinylArtistOnly: false,
       invertColors: false,
+      liquidGlass: true,
       brightness: 100,
       contrast: 100,
       language: "az",
@@ -77,7 +80,7 @@ export const Settings = ({ isOpen, onClose }) => {
         aria-modal="true"
         aria-label={t.settings}
         onClick={(e) => e.stopPropagation()}
-        className="bg-background border border-border w-full max-w-2xl max-h-[85vh] overflow-hidden shadow-2xl rounded-2xl flex flex-col"
+        className="glass-panel bg-background border border-border w-full max-w-2xl max-h-[85vh] overflow-hidden shadow-2xl rounded-2xl flex flex-col"
       >
         <div className="px-8 py-6 border-b border-border flex items-center justify-between bg-muted/30">
           <div>
@@ -177,6 +180,14 @@ export const Settings = ({ isOpen, onClose }) => {
               >
                 <Palette className={`w-6 h-6 ${settings.invertColors ? "text-primary" : "text-muted-foreground"}`} />
                 <span className="font-semibold">{t.invertColors}</span>
+              </button>
+
+              <button
+                onClick={() => setSettings(s => ({ ...s, liquidGlass: s.liquidGlass === false }))}
+                className={`flex items-center gap-4 p-4 rounded-xl border-2 transition-all ${settings.liquidGlass !== false ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"}`}
+              >
+                <Droplets className={`w-6 h-6 ${settings.liquidGlass !== false ? "text-primary" : "text-muted-foreground"}`} />
+                <span className="font-semibold">{t.liquidGlass}</span>
               </button>
             </div>
 
