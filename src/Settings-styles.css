@@ -1,0 +1,20 @@
+html.no-animations *,
+html.no-animations *::before,
+html.no-animations *::after {
+  animation-play-state: paused !important;
+  animation-duration: 0s !important;
+  transition-duration: 0s !important;
+}
+
+html[data-hide-vinyl="all"] .vinyl-record-container {
+  display: none !important;
+}
+
+html[data-hide-vinyl="artist"] .artist-page .vinyl-record-container {
+  display: none !important;
+}
+
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path d="M7 2l12 11.2-5.8.5 3.3 7.3-2.2 1-3.2-7.4L7 19V2z" fill="white" stroke="black" stroke-width="1.5"/></svg>'), pointer !important;
+}

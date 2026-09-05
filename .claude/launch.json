@@ -1,0 +1,16 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "backrooms-dev",
+      "url": "http://localhost:5173",
+      "port": 5173
+    },
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "../portfolio", "run", "dev"],
+      "port": 5180
+    }
+  ]
+}
