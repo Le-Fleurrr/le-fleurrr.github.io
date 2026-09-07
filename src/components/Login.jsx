@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { X } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { useLanguage } from './LanguageContext.jsx';
+import { verifyRecaptcha } from '../lib/recaptcha.js';
 
 export function Login() {
   const { t } = useLanguage();
@@ -20,6 +21,14 @@ export function Login() {
     try {
       setError('');
       setLoading(true);
+
+      const { success } = await verifyRecaptcha('LOGIN');
+      if (!success) {
+        setError(t.recaptchaFailed);
+        setLoading(false);
+        return;
+      }
+
       await login(email, password);
       navigate('/');
     } catch (error) {

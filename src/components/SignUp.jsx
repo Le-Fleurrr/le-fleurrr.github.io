@@ -5,6 +5,7 @@ import { X } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { useLanguage } from './LanguageContext.jsx';
 import { defaultProfile, saveProfile } from './userProfileStore.js';
+import { verifyRecaptcha } from '../lib/recaptcha.js';
 
 export function Signup() {
   const { t } = useLanguage();
@@ -32,6 +33,14 @@ export function Signup() {
     try {
       setError('');
       setLoading(true);
+
+      const { success } = await verifyRecaptcha('SIGNUP');
+      if (!success) {
+        setError(t.recaptchaFailed);
+        setLoading(false);
+        return;
+      }
+
       const credential = await signup(email, password, name);
       if (credential?.user) {
         saveProfile(credential.user.uid, {
