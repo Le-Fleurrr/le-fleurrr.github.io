@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/authContext';
 import { useNavigate, Link } from 'react-router-dom';
+import { X } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { useLanguage } from './LanguageContext.jsx';
 
@@ -41,8 +42,25 @@ export function Login() {
     setLoading(false);
   }
 
+  function handleClose() {
+    if (window.history.length > 2) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4 relative">
+      <button
+        type="button"
+        onClick={handleClose}
+        aria-label={t.closeWindow}
+        className="absolute top-4 right-4 p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+      >
+        <X className="w-6 h-6" />
+      </button>
+
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="text-center text-3xl font-bold">{t.loginTitle}</h2>
@@ -76,9 +94,17 @@ export function Login() {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium mb-2">
-                {t.passwordLabel}
-              </label>
+              <div className="flex items-center justify-between mb-2">
+                <label htmlFor="password" className="block text-sm font-medium">
+                  {t.passwordLabel}
+                </label>
+                <Link
+                  to="/forgot-password"
+                  className="text-sm text-primary hover:underline font-medium"
+                >
+                  {t.forgotPasswordLink}
+                </Link>
+              </div>
               <input
                 id="password"
                 name="password"

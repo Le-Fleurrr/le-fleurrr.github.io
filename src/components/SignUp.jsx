@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/authContext';
 import { useNavigate, Link } from 'react-router-dom';
+import { X } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { useLanguage } from './LanguageContext.jsx';
 import { defaultProfile, saveProfile } from './userProfileStore.js';
@@ -69,8 +70,25 @@ export function Signup() {
     setLoading(false);
   }
 
+  function handleClose() {
+    if (window.history.length > 2) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4">
+    <div className="min-h-screen bg-background flex items-center justify-center px-4 relative">
+      <button
+        type="button"
+        onClick={handleClose}
+        aria-label={t.closeWindow}
+        className="absolute top-4 right-4 p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+      >
+        <X className="w-6 h-6" />
+      </button>
+
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="text-center text-3xl font-bold">{t.signupTitle}</h2>

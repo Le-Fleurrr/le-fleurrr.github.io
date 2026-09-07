@@ -2918,7 +2918,7 @@ export const albums = [
       { id: 5, name: "Whole Lotta Red (Ağ Fon)", image: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226187/WLR_5yearWhite_d5bnx8.png" }
     ],
     tracklist: [
-      { id: 1, name: "Rockstar Made", isExplicit: true, duration: "3:13", spotifyEmbed: "https://open.spotify.com/embed/track/0F13K9dwYH2zpTWiR8d628?si=756272af3c484a64" },
+      { id: 1, name: "Rockstar Made", isExplicit: true, duration: "3:13", spotifyEmbed: "https://open.spotify.com/embed/track/3cWmqvMwVQKDigWLSZ3w9h" },
       { id: 2, name: "Go2DaMoon", features: "Playboi Carti & Kanye West", isExplicit: true, duration: "1:59", spotifyEmbed: "https://open.spotify.com/embed/track/0F13K9dwYH2zpTWiR8d628?si=50a71523510b472a" },
       { id: 3, name: "Stop Breathing", isExplicit: true, duration: "3:38", spotifyEmbed: "https://open.spotify.com/embed/track/2lLG56qpLP3UbcLuzMvkWX?si=bed66bc009744df3" },
       { id: 4, name: "Beno!", isExplicit: true, duration: "2:33", spotifyEmbed: "https://open.spotify.com/embed/track/4CYTQpr2jc4uBScYvpEK2w?si=206725c7e8de4e74" },
@@ -3718,7 +3718,7 @@ export const albums = [
       { id: 15, name: "Back Home", features: "Yeat & Joji", isExplicit: true, duration: "3:11", spotifyEmbed: "https://open.spotify.com/embed/track/40oYjPdjvFBCZH1Smsk46H?si=a8ebeb9d188042b0" },
       { id: 16, name: "Up From Here", isExplicit: true, duration: "3:40", spotifyEmbed: "https://open.spotify.com/embed/track/63jpEaRkGiUGvhnC9tRfVZ?si=44d85c6b7cf74de7" },
     ],
-    duration: "21 mahnılar, 1 saat 2 dəqiqə",
+    duration: "16 mahnılar, 1 saat 2 dəqiqə",
     releaseDate: "27 Mart 2026",
     label: "Lyfestyle Corporation / Field Trip Recordings and UMG Recordings, Inc"
   },
@@ -3758,7 +3758,7 @@ export const albums = [
       { id: 15, name: "Back Home", features: "Yeat & Joji", isExplicit: true, duration: "3:11", spotifyEmbed: "https://open.spotify.com/embed/track/40oYjPdjvFBCZH1Smsk46H?si=a8ebeb9d188042b0" },
       { id: 16, name: "Up From Here", isExplicit: true, duration: "3:40", spotifyEmbed: "https://open.spotify.com/embed/track/63jpEaRkGiUGvhnC9tRfVZ?si=44d85c6b7cf74de7" },
     ],
-    duration: "21 mahnılar, 1 saat 2 dəqiqə",
+    duration: "16 mahnılar, 1 saat 2 dəqiqə",
     releaseDate: "27 Mart 2026",
     label: "Lyfestyle Corporation / Field Trip Recordings and UMG Recordings, Inc",
   },

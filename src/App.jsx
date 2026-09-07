@@ -23,6 +23,7 @@ const MerchCollectionsPage = lazy(() => import('./components/MerchCollectionsPag
 const MerchPage = lazy(() => import('./components/MerchPage').then(m => ({ default: m.MerchPage })));
 const Login = lazy(() => import('./components/Login').then(m => ({ default: m.Login })));
 const Signup = lazy(() => import('./components/SignUp').then(m => ({ default: m.Signup })));
+const ForgotPassword = lazy(() => import('./components/ForgotPassword').then(m => ({ default: m.ForgotPassword })));
 const SearchPage = lazy(() => import('./components/SearchPage').then(m => ({ default: m.SearchPage })));
 const CartPage = lazy(() => import('./components/CartPage'));
 const AccountPage = lazy(() => import('./components/AccountPage'));
@@ -71,6 +72,7 @@ function App() {
                     <Routes>
                       <Route path="/login" element={<Login />} />
                       <Route path="/signup" element={<Signup />} />
+                      <Route path="/forgot-password" element={<ForgotPassword />} />
                       <Route path="/" element={<Index />} />
                       <Route path="/search" element={<SearchPage />} />
                       <Route path="/collections" element={<Collections />} />
